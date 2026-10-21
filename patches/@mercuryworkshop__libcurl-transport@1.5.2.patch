@@ -1,0 +1,144 @@
+diff --git a/dist/index.cjs b/dist/index.cjs
+index a15c56bced92a4f83f62246f48140c31e2a0ccb7..d2c1ec1cf3191407d38075a4b4802c10eb48da50 100644
+--- a/dist/index.cjs
++++ b/dist/index.cjs
+@@ -6417,25 +6417,25 @@ var LibcurlClient = class {
+   async init() {
+     if (this.transport)
+       libcurl.transport = this.transport;
+-    libcurl.set_websocket(this.wisp);
+-    this.session = new libcurl.HTTPSession({
+-      proxy: this.proxy
+-    });
+-    if (this.connections)
+-      this.session.set_connections(...this.connections);
+-    this.ready = libcurl.ready;
+-    if (this.ready) {
+-      console.log("running libcurl.js v" + libcurl.version.lib);
+-      return;
++    // HTTPSession throws "wasm not loaded yet" until the WASM runtime is ready,
++    // which slower engines such as WebKit hit on the first proxied request.
++    // Listen for the load event so concurrent init() calls all resolve.
++    if (!libcurl.ready) {
++      await new Promise((resolve, reject) => {
++        libcurl.events.addEventListener("libcurl_load", () => resolve(null), { once: true });
++        libcurl.events.addEventListener("libcurl_abort", (event) => reject(event.detail), { once: true });
++      });
+     }
+-    ;
+-    await new Promise((resolve, reject) => {
+-      libcurl.onload = () => {
+-        console.log("loaded libcurl.js v" + libcurl.version.lib);
+-        this.ready = true;
+-        resolve(null);
+-      };
+-    });
++    if (!this.session) {
++      libcurl.set_websocket(this.wisp);
++      this.session = new libcurl.HTTPSession({
++        proxy: this.proxy
++      });
++      if (this.connections)
++        this.session.set_connections(...this.connections);
++    }
++    this.ready = true;
++    console.log("running libcurl.js v" + libcurl.version.lib);
+   }
+   ready = false;
+   async meta() {
+diff --git a/dist/index.js b/dist/index.js
+index a15c56bced92a4f83f62246f48140c31e2a0ccb7..d2c1ec1cf3191407d38075a4b4802c10eb48da50 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -6417,25 +6417,25 @@ var LibcurlClient = class {
+   async init() {
+     if (this.transport)
+       libcurl.transport = this.transport;
+-    libcurl.set_websocket(this.wisp);
+-    this.session = new libcurl.HTTPSession({
+-      proxy: this.proxy
+-    });
+-    if (this.connections)
+-      this.session.set_connections(...this.connections);
+-    this.ready = libcurl.ready;
+-    if (this.ready) {
+-      console.log("running libcurl.js v" + libcurl.version.lib);
+-      return;
++    // HTTPSession throws "wasm not loaded yet" until the WASM runtime is ready,
++    // which slower engines such as WebKit hit on the first proxied request.
++    // Listen for the load event so concurrent init() calls all resolve.
++    if (!libcurl.ready) {
++      await new Promise((resolve, reject) => {
++        libcurl.events.addEventListener("libcurl_load", () => resolve(null), { once: true });
++        libcurl.events.addEventListener("libcurl_abort", (event) => reject(event.detail), { once: true });
++      });
+     }
+-    ;
+-    await new Promise((resolve, reject) => {
+-      libcurl.onload = () => {
+-        console.log("loaded libcurl.js v" + libcurl.version.lib);
+-        this.ready = true;
+-        resolve(null);
+-      };
+-    });
++    if (!this.session) {
++      libcurl.set_websocket(this.wisp);
++      this.session = new libcurl.HTTPSession({
++        proxy: this.proxy
++      });
++      if (this.connections)
++        this.session.set_connections(...this.connections);
++    }
++    this.ready = true;
++    console.log("running libcurl.js v" + libcurl.version.lib);
+   }
+   ready = false;
+   async meta() {
+diff --git a/dist/index.mjs b/dist/index.mjs
+index 95cb36786b2f20a62297216c6d2866749e02c107..5b82de65428c2cf3f11d25ac26e9210e3dc8a4eb 100644
+--- a/dist/index.mjs
++++ b/dist/index.mjs
+@@ -6397,25 +6397,25 @@ var LibcurlClient = class {
+   async init() {
+     if (this.transport)
+       libcurl.transport = this.transport;
+-    libcurl.set_websocket(this.wisp);
+-    this.session = new libcurl.HTTPSession({
+-      proxy: this.proxy
+-    });
+-    if (this.connections)
+-      this.session.set_connections(...this.connections);
+-    this.ready = libcurl.ready;
+-    if (this.ready) {
+-      console.log("running libcurl.js v" + libcurl.version.lib);
+-      return;
++    // HTTPSession throws "wasm not loaded yet" until the WASM runtime is ready,
++    // which slower engines such as WebKit hit on the first proxied request.
++    // Listen for the load event so concurrent init() calls all resolve.
++    if (!libcurl.ready) {
++      await new Promise((resolve, reject) => {
++        libcurl.events.addEventListener("libcurl_load", () => resolve(null), { once: true });
++        libcurl.events.addEventListener("libcurl_abort", (event) => reject(event.detail), { once: true });
++      });
+     }
+-    ;
+-    await new Promise((resolve, reject) => {
+-      libcurl.onload = () => {
+-        console.log("loaded libcurl.js v" + libcurl.version.lib);
+-        this.ready = true;
+-        resolve(null);
+-      };
+-    });
++    if (!this.session) {
++      libcurl.set_websocket(this.wisp);
++      this.session = new libcurl.HTTPSession({
++        proxy: this.proxy
++      });
++      if (this.connections)
++        this.session.set_connections(...this.connections);
++    }
++    this.ready = true;
++    console.log("running libcurl.js v" + libcurl.version.lib);
+   }
+   ready = false;
+   async meta() {

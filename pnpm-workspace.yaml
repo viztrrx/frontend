@@ -1,0 +1,2 @@
+patchedDependencies:
+  '@mercuryworkshop/libcurl-transport@1.5.2': patches/@mercuryworkshop__libcurl-transport@1.5.2.patch

@@ -14,10 +14,14 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v4
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '22'
+      - name: Install dependencies (applies patches/)
+        run: pnpm install --frozen-lockfile
       - name: Check JavaScript syntax
         run: |
           node --check public/index.js
@@ -25,5 +29,6 @@ jobs:
           node --check src/index.js
           node --check tests/frontend.test.mjs
           node --check tests/service-worker.test.mjs
+          node --check tests/libcurl-transport.test.mjs
       - name: Run frontend regression tests
         run: npm test
