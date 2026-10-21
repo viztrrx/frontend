@@ -5,10 +5,11 @@ import { runInNewContext } from "node:vm";
 
 const source = readFileSync(new URL("../public/index.js", import.meta.url), "utf8");
 
-function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails = false, controllerFails = false, workerHang = false, transportHang = false } = {}) {
+function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails = false, controllerFails = false, workerHang = false, transportHang = false, blankFrame = false } = {}) {
   const elements = new Map();
   const frames = [];
   const transports = [];
+  const swCallbacks = new Map();
   let websocketCount = 0;
   let timerId = 0;
   const timers = new Map();
@@ -50,7 +51,19 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
     async init() { if (controllerFails) throw new Error("Wasm init failed"); }
     createFrame() {
       const el = makeElement("frame-" + frames.length);
-      return { frame: el, async go(url) { el.url = url; el.dispatch("load"); } };
+      el.contentWindow = { location: { href: blankFrame ? "about:blank" : "https://frontend.viztrrx.workers.dev/scramjet/test" } };
+      el.contentDocument = {
+        URL: blankFrame ? "about:blank" : "https://frontend.viztrrx.workers.dev/scramjet/test",
+        body: { innerText: blankFrame ? "" : "Example page", querySelector: () => null }
+      };
+      return {
+        frame: el,
+        go(url) {
+          el.url = url;
+          el.src = "/scramjet/" + encodeURIComponent(url);
+          el.dispatch("load");
+        }
+      };
     }
   }
   class BareMuxConnection {
@@ -66,12 +79,16 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
   const ctx = {
     document,
     window: { BareMux: { BareMuxConnection } },
-    navigator: { serviceWorker: { ready: Promise.resolve() } },
+    navigator: { serviceWorker: {
+      ready: Promise.resolve(),
+      addEventListener(kind, fn) { swCallbacks.set(kind, fn); }
+    } },
     _CONFIG: { wispUrl },
     $scramjetLoadController: () => ({ ScramjetController }),
     registerSW: async () => {},
     search: (value) => "https://" + value,
     URL,
+    location: { href: "https://frontend.viztrrx.workers.dev/" },
     WebSocket: MockWebSocket,
     SharedWorker: class MockSharedWorker {},
     Error,
@@ -90,6 +107,15 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
     elements, frames, transports, timers,
     websocketCount: () => websocketCount,
     submit: () => elements.get("sj-form").dispatch("submit"),
+    sendNavStatus(status, message = "") {
+      const frame = frames.at(-1);
+      swCallbacks.get("message")?.({ data: {
+        type: "scramjet-navigation-status",
+        path: new URL(frame.src, "https://frontend.viztrrx.workers.dev/").pathname,
+        status,
+        message
+      }});
+    },
     async advance(ms) {
       // Allow async initialization and successful WebSocket probes to finish.
       for (let i = 0; i < 80; i++) await Promise.resolve();
@@ -113,7 +139,9 @@ test("checks Render Wisp and configures the transport before navigating", async 
   assert.equal(x.frames.length, 1);
   assert.equal(x.frames[0].url, "https://example.com");
   assert.equal(x.elements.get("sj-toolbar").hidden, false);
+  await x.advance(4000);
   assert.equal(x.elements.get("sj-loading").hidden, true);
+  assert.equal(x.elements.get("sj-toolbar-status").textContent, "Website content detected");
   await x.elements.get("sj-close").dispatch("click");
   assert.equal(x.frames[0].removed, true);
   assert.equal(x.elements.get("sj-toolbar").hidden, true);
@@ -171,4 +199,25 @@ test("transport setup timeout diagnoses libcurl rather than hiding the whole pag
   assert.equal(x.frames.length, 0);
   assert.match(x.elements.get("sj-error-code").textContent, /libcurl transport did not initialize/);
   assert.equal(x.elements.get("sj-progress").hidden, true);
+});
+
+test("blank about:blank iframe never counts as website loaded", async () => {
+  const x = setup({ blankFrame: true });
+  await x.submit();
+  assert.equal(x.elements.get("sj-loading").hidden, false);
+  await x.advance(35000);
+  assert.equal(x.elements.get("sj-loading").hidden, false);
+  assert.match(x.elements.get("sj-loading-status").textContent, /No completed proxied webpage/);
+  assert.notEqual(x.elements.get("sj-toolbar-status").textContent, "Page frame loaded");
+});
+
+test("service-worker navigation HTTP errors remain visible instead of being dismissed", async () => {
+  const x = setup();
+  await x.submit();
+  x.sendNavStatus(502, "Upstream service unavailable");
+  await x.advance(4000);
+  assert.equal(x.elements.get("sj-loading").hidden, false);
+  assert.match(x.elements.get("sj-loading-status").textContent, /HTTP 502/);
+  assert.match(x.elements.get("sj-loading-status").textContent, /Upstream service unavailable/);
+  assert.equal(x.elements.get("sj-toolbar-status").textContent, "Website request failed");
 });
