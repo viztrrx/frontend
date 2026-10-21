@@ -21,7 +21,9 @@ jobs:
       - name: Check JavaScript syntax
         run: |
           node --check public/index.js
+          node --check public/sw.js
           node --check src/index.js
           node --check tests/frontend.test.mjs
+          node --check tests/service-worker.test.mjs
       - name: Run frontend regression tests
         run: npm test
