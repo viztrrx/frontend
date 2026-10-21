@@ -55,6 +55,7 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
   }
   class BareMuxConnection {
     async setTransport(...args) { transports.push(args); }
+    async getTransport() { return transports.length ? "/libcurl/index.mjs" : ""; }
   }
   const ctx = {
     document,
@@ -66,6 +67,7 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
     search: (value) => "https://" + value,
     URL,
     WebSocket: MockWebSocket,
+    SharedWorker: class MockSharedWorker {},
     Error,
     Promise,
     console,
