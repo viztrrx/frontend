@@ -187,3 +187,20 @@ footer a:hover {
 #sj-toolbar button:focus-visible { outline: 2px solid #ffa356; }
 #sj-toolbar-status { flex: 1; text-align: center; min-width: 0; overflow: hidden;
   text-overflow: ellipsis; white-space: nowrap; }
+#sj-options {
+  flex-wrap: wrap; gap: 8px 20px; margin: 14px 16px 0; color: #ccc;
+  font-size: 14px;
+}
+#sj-options label { display: flex; align-items: center; gap: 8px; cursor: pointer; }
+#sj-options select {
+  padding: 6px 8px; border: 1px solid #555; border-radius: 6px;
+  background: #222; color: #eee; font: inherit;
+}
+#sj-options input[type="checkbox"] { width: 18px; height: 18px; accent-color: #ff973b; }
+#sj-show-page {
+  margin-top: 6px; padding: 8px 14px; border: 1px solid #777; border-radius: 8px;
+  color: #fff; background: #303030; font: inherit; cursor: pointer;
+}
+/* Long proxy errors wrap to two lines instead of being cut off on phones. */
+#sj-toolbar-status { white-space: normal; display: -webkit-box; -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical; line-height: 1.3; }

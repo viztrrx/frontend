@@ -5,11 +5,10 @@ import { runInNewContext } from "node:vm";
 
 const source = readFileSync(new URL("../public/sw.js", import.meta.url), "utf8");
 
-function createHarness({ failing = false } = {}) {
+function createHarness({ failing = false, transport = "/libcurl/index.mjs", fetchResponse } = {}) {
+  const transports = [];
   const handlers = new Map();
   const messages = [];
-  const waits = [];
-  let respond;
   const client = {
     url: "https://frontend.viztrrx.workers.dev/",
     postMessage(value) { messages.push(value); }
@@ -30,20 +29,33 @@ function createHarness({ failing = false } = {}) {
     route(event) {
       return new URL(event.request.url).pathname.startsWith("/scramjet/");
     }
-    async fetch() { return new Response("Website reached", { status: 200 }); }
+    async fetch() {
+      return fetchResponse ? fetchResponse() : new Response("Website reached", { status: 200 });
+    }
+  }
+  class BareMuxConnection {
+    async getTransport() { return transport; }
+    async setTransport(path, args) {
+      transports.push([path, args]);
+      await new Promise((resolve) => setTimeout(resolve, 5));
+      transport = path;
+    }
   }
   runInNewContext(source, {
     importScripts() {},
     $scramjetLoadWorker() { return { ScramjetServiceWorker }; },
-    self, URL, Response, Error, console,
+    self, URL, Response, Error, console, setTimeout,
+    BareMux: { BareMuxConnection },
+    _CONFIG: { wispUrl: "wss://backend-ivvq.onrender.com/wisp/" },
     fetch: async () => new Response("Static asset", { status: 200 })
   });
   return {
     handlers,
     messages,
+    transports,
     async request(path, mode = "navigate") {
-      waits.length = 0;
-      respond = undefined;
+      let respond;
+      const waits = [];
       handlers.get("fetch")({
         request: { url: "https://frontend.viztrrx.workers.dev" + path, mode },
         respondWith(value) { respond = value; },
@@ -82,4 +94,46 @@ test("static assets are served without sending proxy navigation events", async (
   const response = await h.request("/config.js", "cors");
   assert.equal(response.status, 200);
   assert.equal(h.messages.length, 0);
+});
+
+test("full-tab pages get the libcurl transport restored once after BareMux restarts", async () => {
+  const h = createHarness({ transport: "" });
+  const asset = (name) => "/scramjet/" + encodeURIComponent("https://example.com/" + name);
+  const responses = await Promise.all([h.request(asset("a.css"), "no-cors"), h.request(asset("b.js"), "no-cors")]);
+  assert.deepEqual(responses.map((r) => r.status), [200, 200]);
+  assert.equal(h.transports.length, 1, "concurrent requests share one setTransport call");
+  assert.equal(JSON.stringify(h.transports[0]), JSON.stringify(["/libcurl/index.mjs", [{ websocket: "wss://backend-ivvq.onrender.com/wisp/" }]]));
+  await h.request(asset("c.png"), "no-cors");
+  assert.equal(h.transports.length, 1);
+});
+
+test("Scramjet's WASM loader does not wait on BareMux", async () => {
+  const h = createHarness({ transport: "" });
+  const response = await h.request("/scramjet/../scram/scramjet.wasm.wasm".replace("/scramjet/..", ""), "no-cors");
+  assert.equal(response.status, 200);
+  assert.equal(h.transports.length, 0);
+});
+
+test("proxied documents let BareMux messages through before parsing finishes", async () => {
+  const h = createHarness({
+    fetchResponse: () => new Response("<!doctype html><html><head lang=en><title>t</title></head><body>x</body></html>", {
+      status: 200, headers: { "content-type": "text/html; charset=utf-8", "x-kept": "1" },
+    }),
+  });
+  const response = await h.request("/scramjet/" + encodeURIComponent("https://example.com/"));
+  const body = await response.text();
+  assert.match(body, /^<!doctype html><html><head lang=en><script>navigator\.serviceWorker&&navigator\.serviceWorker\.startMessages\(\)<\/script><title>/);
+  assert.equal(response.headers.get("x-kept"), "1");
+});
+
+test("Scramjet proxy error details are forwarded to the page", async () => {
+  const script = encodeURIComponent('errorTrace.value = "Message: Request failed with error code 7: Could not connect to server\\n\\nUrl: x";');
+  const h = createHarness({
+    fetchResponse: () => new Response(`<html><head></head><body><script src="data:application/javascript,${script}"></script></body></html>`, {
+      status: 500, headers: { "content-type": "text/html" },
+    }),
+  });
+  await h.request("/scramjet/" + encodeURIComponent("https://www.google.com/"));
+  assert.equal(h.messages[0].status, 500);
+  assert.equal(h.messages[0].message, "Request failed with error code 7: Could not connect to server");
 });

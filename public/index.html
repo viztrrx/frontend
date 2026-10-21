@@ -34,13 +34,22 @@
 		</div>
 
 		<form id="sj-form" class="flex-center">
-			<input
-				id="sj-search-engine"
-				value="https://www.google.com/search?q=%s"
-				type="hidden"
-			/>
 			<input id="sj-address" type="text" placeholder="Search the web freely" />
 		</form>
+		<div id="sj-options" class="flex-center">
+			<label>
+				Search with
+				<select id="sj-search-engine">
+					<option value="https://www.google.com/search?q=%s">Google</option>
+					<option value="https://duckduckgo.com/?q=%s">DuckDuckGo</option>
+					<option value="https://www.bing.com/search?q=%s">Bing</option>
+				</select>
+			</label>
+			<label>
+				<input id="sj-fulltab" type="checkbox" />
+				Open sites in the full tab (no frame)
+			</label>
+		</div>
 		<div class="desc left-margin">
 			<p id="sj-progress" role="status" hidden></p>
 			<p id="sj-error" role="alert"></p>
@@ -50,6 +59,7 @@
           <div class="sj-spinner" aria-hidden="true"></div>
           <p id="sj-loading-status">Loading website…</p>
           <p class="sj-hint">Render's free service may take a minute to wake up.</p>
+          <button type="button" id="sj-show-page">Show page</button>
         </div>
         <nav id="sj-toolbar" aria-label="Browsing controls" hidden>
           <button type="button" id="sj-close">← Back</button>

@@ -13,6 +13,8 @@ const loading = document.getElementById("sj-loading");
 const loadingStatus = document.getElementById("sj-loading-status");
 const closeButton = document.getElementById("sj-close");
 const reloadButton = document.getElementById("sj-reload");
+const fullTab = document.getElementById("sj-fulltab");
+const showPageButton = document.getElementById("sj-show-page");
 
 const TRANSPORT = "/libcurl/index.mjs";
 const WISP_TIMEOUT_MS = 25000;
@@ -42,7 +44,32 @@ let pageCheckTimer = null;
 let currentNavigationPath = null;
 let navigationResponseStatus = null;
 let navigationError = null;
+let httpWarning = false;
 let busy = false;
+
+// Remember the search engine and full-tab choice; storage can be unavailable.
+function loadPreference(key, apply) {
+  try {
+    const value = localStorage.getItem(key);
+    if (value !== null) apply(value);
+  } catch {}
+}
+function savePreference(key, value) {
+  try { localStorage.setItem(key, value); } catch {}
+}
+loadPreference("sj-search-engine", (value) => {
+  if ([...(searchEngine.options || [])].some((option) => option.value === value)) searchEngine.value = value;
+});
+loadPreference("sj-fulltab", (value) => { if (fullTab) fullTab.checked = value === "true"; });
+searchEngine.addEventListener?.("change", () => savePreference("sj-search-engine", searchEngine.value));
+fullTab?.addEventListener?.("change", () => savePreference("sj-fulltab", String(fullTab.checked)));
+
+function describeHttpStatus(status, message) {
+  if (message) return "Proxy error (HTTP " + status + "): " + message;
+  if (status === 429) return "HTTP 429: the site is rate-limiting the backend server. Try another search engine.";
+  if (status === 403) return "HTTP 403: the site refused the backend server.";
+  return "The site returned HTTP " + status + ".";
+}
 
 function inspectPage(element) {
   try {
@@ -73,12 +100,17 @@ navigator.serviceWorker?.addEventListener?.("message", (event) => {
       !currentFrame || data.path !== currentNavigationPath) return;
   if (typeof data.status !== "number") return;
   navigationResponseStatus = data.status;
-  if (data.status === 0 || data.status >= 400) {
+  if (data.status === 0) {
     reportNavigationFailure(
-      "Scramjet could not load the remote document" +
-      (data.status ? " (HTTP " + data.status + ")" : "") +
-      ". " + (data.message || "Check the Render logs and retry.")
+      "Scramjet could not load the remote document. " +
+      (data.message || "Check the Render logs and retry.")
     );
+  } else if (data.status >= 400) {
+    // Show the delivered page (a captcha, consent page or Scramjet's error
+    // details) and report the status in the toolbar instead of covering it.
+    httpWarning = true;
+    loading.hidden = true;
+    toolbarStatus.textContent = describeHttpStatus(data.status, data.message);
   } else {
     toolbarStatus.textContent = "Website responded (HTTP " + data.status + ")";
   }
@@ -190,6 +222,7 @@ function closeFrame() {
   currentNavigationPath = null;
   navigationResponseStatus = null;
   navigationError = null;
+  httpWarning = false;
   if (currentFrame) {
     currentFrame.remove();
     currentFrame = null;
@@ -252,6 +285,13 @@ async function openUrl(url) {
       throw new Error("BareMux reports an unexpected transport: " + String(transportName));
     }
 
+    if (fullTab?.checked) {
+      // The site replaces this page; the browser's own Back button returns here.
+      showProgress("Opening website…");
+      location.assign(scramjet.encodeUrl(url));
+      return;
+    }
+
     showProgress("Loading website…");
     const frame = scramjet.createFrame();
     if (!frame || !frame.frame) throw new Error("Scramjet did not create a browser frame.");
@@ -262,6 +302,29 @@ async function openUrl(url) {
     toolbar.hidden = false;
     loading.hidden = false;
     let loaded = false;
+    // Hide the loading cover as soon as the page shows content, even before
+    // its load event (slow sites such as YouTube render long before it fires).
+    const watchContent = () => {
+      if (currentFrame !== element || navigationError) return;
+      const content = inspectPage(element);
+      if (content !== false) {
+        loading.hidden = true;
+        progress.textContent = "";
+        progress.hidden = true;
+        if (!httpWarning) {
+          toolbarStatus.textContent = content === true
+            ? "Website content detected"
+            : "Navigation finished (content could not be inspected)";
+        }
+        return;
+      }
+      if (loaded) {
+        // A delivered document stays visible while it finishes rendering.
+        loading.hidden = true;
+        if (!httpWarning) toolbarStatus.textContent = "Page loaded but still blank…";
+      }
+      pageCheckTimer = setTimeout(watchContent, 1000);
+    };
     element.addEventListener("load", () => {
       if (currentFrame !== element || navigationError) return;
 
@@ -270,28 +333,13 @@ async function openUrl(url) {
       try { href = element.contentWindow?.location?.href || ""; } catch {}
       if (href === "about:blank") return;
       loaded = true;
-      toolbarStatus.textContent = navigationResponseStatus === null
-        ? "Checking website content…"
-        : "Website responded (HTTP " + navigationResponseStatus + ")";
-
+      if (!httpWarning) {
+        toolbarStatus.textContent = navigationResponseStatus === null
+          ? "Checking website content…"
+          : "Website responded (HTTP " + navigationResponseStatus + ")";
+      }
       if (pageCheckTimer !== null) clearTimeout(pageCheckTimer);
-      pageCheckTimer = setTimeout(() => {
-        if (currentFrame !== element || navigationError) return;
-        const content = inspectPage(element);
-        if (content === false) {
-          loading.hidden = false;
-          loadingStatus.textContent = navigationResponseStatus === null
-            ? "The iframe navigated but is still blank, with no confirmed Scramjet document response. The service worker may not be intercepting the request."
-            : "The website responded (HTTP " + navigationResponseStatus + "), but the frame shows no visible content. Safari/Scramjet rendering may be incompatible.";
-          toolbarStatus.textContent = "Blank website";
-        } else {
-          loading.hidden = true;
-          showProgress("");
-          toolbarStatus.textContent = content === true
-            ? "Website content detected"
-            : "Navigation finished (content could not be inspected)";
-        }
-      }, 4000);
+      watchContent();
     });
     element.addEventListener("error", () => {
       if (currentFrame === element) {
@@ -306,13 +354,16 @@ async function openUrl(url) {
     currentNavigationPath = new URL(frameSource, location.href).pathname;
     document.body.appendChild(element);
 
+    pageCheckTimer = setTimeout(watchContent, 1000);
     loadingTimer = setTimeout(() => {
-      if (currentFrame !== element || navigationError) return;
-      if (!loaded || inspectPage(element) === false) {
+      if (currentFrame !== element || navigationError || httpWarning) return;
+      if (inspectPage(element) === false) {
+        if (pageCheckTimer !== null) clearTimeout(pageCheckTimer);
+        pageCheckTimer = null;
         loading.hidden = false;
         loadingStatus.textContent = navigationResponseStatus === null
           ? "No completed proxied webpage was detected. The iframe may not be intercepted by Scramjet's service worker. Try Retry or check browser developer tools."
-          : "The website responded (HTTP " + navigationResponseStatus + ") but is still blank. Try another website or test in desktop Chrome.";
+          : "The website responded (HTTP " + navigationResponseStatus + ") but is still blank. Try Retry, another website, or the full-tab option.";
         toolbarStatus.textContent = "Website still blank";
       }
     }, 35000);
@@ -341,6 +392,9 @@ form.addEventListener("submit", async (event) => {
 });
 
 closeButton.addEventListener("click", () => closeFrame());
+showPageButton?.addEventListener?.("click", () => { loading.hidden = true; });
+// Returning from a full-tab site through the back/forward cache restores this page.
+window.addEventListener?.("pageshow", (event) => { if (event.persisted) closeFrame(); });
 reloadButton.addEventListener("click", () => {
   const url = lastUrl;
   if (url && !busy) void openUrl(url);

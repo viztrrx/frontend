@@ -5,7 +5,7 @@ import { runInNewContext } from "node:vm";
 
 const source = readFileSync(new URL("../public/index.js", import.meta.url), "utf8");
 
-function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails = false, controllerFails = false, workerHang = false, transportHang = false, blankFrame = false } = {}) {
+function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails = false, controllerFails = false, workerHang = false, transportHang = false, blankFrame = false, noLoad = false, storage = {} } = {}) {
   const elements = new Map();
   const frames = [];
   const transports = [];
@@ -26,7 +26,13 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
     elements.set(id, element);
     return element;
   };
-  for (const id of ["sj-form", "sj-address", "sj-search-engine", "sj-error", "sj-error-code", "sj-progress", "sj-toolbar", "sj-toolbar-status", "sj-loading", "sj-loading-status", "sj-close", "sj-reload"]) makeElement(id);
+  for (const id of ["sj-form", "sj-address", "sj-search-engine", "sj-error", "sj-error-code", "sj-progress", "sj-toolbar", "sj-toolbar-status", "sj-loading", "sj-loading-status", "sj-close", "sj-reload", "sj-fulltab", "sj-show-page"]) makeElement(id);
+  elements.get("sj-fulltab").checked = false;
+  elements.get("sj-search-engine").value = "https://www.google.com/search?q=%s";
+  elements.get("sj-search-engine").options = [
+    { value: "https://www.google.com/search?q=%s" }, { value: "https://duckduckgo.com/?q=%s" },
+  ];
+  const assigned = [];
   elements.get("sj-address").value = "example.com";
   const document = {
     getElementById: (id) => elements.get(id),
@@ -49,6 +55,7 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
   }
   class ScramjetController {
     async init() { if (controllerFails) throw new Error("Wasm init failed"); }
+    encodeUrl(url) { return "/scramjet/" + encodeURIComponent(url); }
     createFrame() {
       const el = makeElement("frame-" + frames.length);
       el.contentWindow = { location: { href: blankFrame ? "about:blank" : "https://frontend.viztrrx.workers.dev/scramjet/test" } };
@@ -61,7 +68,7 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
         go(url) {
           el.url = url;
           el.src = "/scramjet/" + encodeURIComponent(url);
-          el.dispatch("load");
+          if (!noLoad) el.dispatch("load");
         }
       };
     }
@@ -88,7 +95,11 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
     registerSW: async () => {},
     search: (value) => "https://" + value,
     URL,
-    location: { href: "https://frontend.viztrrx.workers.dev/" },
+    location: { href: "https://frontend.viztrrx.workers.dev/", assign: (url) => assigned.push(url) },
+    localStorage: {
+      getItem: (key) => (key in storage ? storage[key] : null),
+      setItem: (key, value) => { storage[key] = String(value); },
+    },
     WebSocket: MockWebSocket,
     SharedWorker: class MockSharedWorker {},
     Error,
@@ -96,7 +107,7 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
     console,
     setTimeout(fn, milliseconds) {
       const id = ++timerId;
-      if (milliseconds <= 2500) queueMicrotask(fn);
+      if (milliseconds === 2500) queueMicrotask(fn);
       else timers.set(id, { fn, milliseconds });
       return id;
     },
@@ -104,7 +115,7 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
   };
   runInNewContext(source, ctx, { filename: "public/index.js" });
   return {
-    elements, frames, transports, timers,
+    elements, frames, transports, timers, assigned, storage,
     websocketCount: () => websocketCount,
     submit: () => elements.get("sj-form").dispatch("submit"),
     sendNavStatus(status, message = "") {
@@ -211,13 +222,61 @@ test("blank about:blank iframe never counts as website loaded", async () => {
   assert.notEqual(x.elements.get("sj-toolbar-status").textContent, "Page frame loaded");
 });
 
-test("service-worker navigation HTTP errors remain visible instead of being dismissed", async () => {
+test("site HTTP errors keep the delivered page visible and explain the status", async () => {
   const x = setup();
   await x.submit();
-  x.sendNavStatus(502, "Upstream service unavailable");
+  x.sendNavStatus(502, "Request failed with error code 7: Could not connect to server");
+  await x.advance(4000);
+  assert.equal(x.elements.get("sj-loading").hidden, true);
+  assert.match(x.elements.get("sj-toolbar-status").textContent, /HTTP 502/);
+  assert.match(x.elements.get("sj-toolbar-status").textContent, /Could not connect to server/);
+  await x.advance(35000);
+  assert.equal(x.elements.get("sj-loading").hidden, true);
+});
+
+test("rate-limited search pages (HTTP 429) are shown with a search engine hint", async () => {
+  const x = setup();
+  await x.submit();
+  x.sendNavStatus(429);
+  await x.advance(4000);
+  assert.equal(x.elements.get("sj-loading").hidden, true);
+  assert.match(x.elements.get("sj-toolbar-status").textContent, /429.*another search engine/);
+});
+
+test("service worker failures without a document still cover the frame with the reason", async () => {
+  const x = setup();
+  await x.submit();
+  x.sendNavStatus(0, "Upstream service unavailable");
   await x.advance(4000);
   assert.equal(x.elements.get("sj-loading").hidden, false);
-  assert.match(x.elements.get("sj-loading-status").textContent, /HTTP 502/);
   assert.match(x.elements.get("sj-loading-status").textContent, /Upstream service unavailable/);
   assert.equal(x.elements.get("sj-toolbar-status").textContent, "Website request failed");
+  x.elements.get("sj-show-page").dispatch("click");
+  assert.equal(x.elements.get("sj-loading").hidden, true);
+});
+
+test("content appearing before the load event uncovers the page", async () => {
+  const x = setup({ noLoad: true });
+  await x.submit();
+  assert.equal(x.elements.get("sj-loading").hidden, false);
+  await x.advance(1000);
+  assert.equal(x.elements.get("sj-loading").hidden, true);
+  assert.equal(x.elements.get("sj-toolbar-status").textContent, "Website content detected");
+});
+
+test("full-tab mode opens the proxied site in the tab instead of a frame", async () => {
+  const x = setup({ storage: { "sj-fulltab": "true" } });
+  assert.equal(x.elements.get("sj-fulltab").checked, true);
+  await x.submit();
+  assert.equal(x.transports.length, 1, "transport is configured before leaving the page");
+  assert.equal(x.frames.length, 0);
+  assert.deepEqual(x.assigned, ["/scramjet/" + encodeURIComponent("https://example.com")]);
+});
+
+test("search engine and full-tab choices are remembered", async () => {
+  const x = setup({ storage: { "sj-search-engine": "https://duckduckgo.com/?q=%s" } });
+  assert.equal(x.elements.get("sj-search-engine").value, "https://duckduckgo.com/?q=%s");
+  x.elements.get("sj-fulltab").checked = true;
+  x.elements.get("sj-fulltab").dispatch("change");
+  assert.equal(x.storage["sj-fulltab"], "true");
 });
