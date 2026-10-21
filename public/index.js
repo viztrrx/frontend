@@ -47,11 +47,14 @@ form.addEventListener("submit", async (event) => {
 
 	const url = search(address.value, searchEngine.value);
 
-	let wispUrl =
-		(location.protocol === "https:" ? "wss" : "ws") +
-		"://" +
-		location.host +
-		"/wisp/";
+	// Wisp runs in the separate Railway backend, not on this Worker.
+	const wispUrl = typeof _CONFIG === "object" && typeof _CONFIG.wispUrl === "string"
+		? _CONFIG.wispUrl.trim()
+		: "";
+	if (!/^wss:\/\//i.test(wispUrl)) {
+		error.textContent = "Configure the Railway Wisp URL in config.js before browsing.";
+		return;
+	}
 	if ((await connection.getTransport()) !== "/libcurl/index.mjs") {
 		await connection.setTransport("/libcurl/index.mjs", [
 			{ websocket: wispUrl },
