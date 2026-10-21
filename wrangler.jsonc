@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "scramjet-frontend",
+  "name": "frontend",
   "main": "./src/index.js",
   "compatibility_date": "2026-10-21",
   "workers_dev": true,
