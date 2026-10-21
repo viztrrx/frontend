@@ -1,2 +1,2 @@
-// Set this to your separately deployed Railway backend's secure Wisp URL.
-let _CONFIG = { wispUrl: "" };
+// Secure WebSocket endpoint for the separately deployed Render Wisp backend.
+let _CONFIG = { wispUrl: "wss://backend-ivvq.onrender.com/wisp/" };
