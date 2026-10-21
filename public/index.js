@@ -16,6 +16,24 @@ const reloadButton = document.getElementById("sj-reload");
 
 const TRANSPORT = "/libcurl/index.mjs";
 const WISP_TIMEOUT_MS = 25000;
+const BAREMUX_RESPONSE_TIMEOUT_MS = 8000;
+const TRANSPORT_RESPONSE_TIMEOUT_MS = 18000;
+
+// BareMux's worker request/response paths have no upper bound when a worker
+// stops answering. Fail visibly rather than leaving mobile users stuck forever.
+async function withTimeout(operation, ms, detail) {
+  let timer;
+  try {
+    return await Promise.race([
+      Promise.resolve(operation),
+      new Promise((_, reject) => {
+        timer = setTimeout(() => reject(new Error(detail)), ms);
+      }),
+    ]);
+  } finally {
+    clearTimeout(timer);
+  }
+}
 let controllerPromise;
 let currentFrame = null;
 let lastUrl = "";
@@ -155,10 +173,33 @@ async function openUrl(url) {
     if (!window.BareMux?.BareMuxConnection) {
       throw new Error("BareMux browser assets did not load. Check /baremux/index.js.");
     }
-    showProgress("Configuring browser transport…");
+    if (typeof SharedWorker === "undefined") {
+      throw new Error("This browser has no SharedWorker support, which BareMux requires. Try the latest Safari or a desktop browser.");
+    }
+
+    showProgress("Checking BareMux worker…");
     const connection = new window.BareMux.BareMuxConnection("/baremux/worker.js");
+    await withTimeout(
+      connection.getTransport(),
+      BAREMUX_RESPONSE_TIMEOUT_MS,
+      "The BareMux SharedWorker isn't responding. Safari may block this worker, or /baremux/worker.js may be failing to start. Check the browser's developer console and deployed worker asset."
+    );
+
+    showProgress("Configuring browser transport…");
     // A persistent SharedWorker can retain an old URL despite matching getTransport().
-    await connection.setTransport(TRANSPORT, [{ websocket: wispUrl }]);
+    await withTimeout(
+      connection.setTransport(TRANSPORT, [{ websocket: wispUrl }]),
+      TRANSPORT_RESPONSE_TIMEOUT_MS,
+      "The libcurl transport did not initialize within 18 seconds. The backend WebSocket connected, but BareMux couldn't activate /libcurl/index.mjs. Check Safari compatibility and the SharedWorker console."
+    );
+    const transportName = await withTimeout(
+      connection.getTransport(),
+      BAREMUX_RESPONSE_TIMEOUT_MS,
+      "The BareMux worker stopped responding after transport initialization."
+    );
+    if (transportName !== TRANSPORT) {
+      throw new Error("BareMux reports an unexpected transport: " + String(transportName));
+    }
 
     showProgress("Loading website…");
     const frame = scramjet.createFrame();
