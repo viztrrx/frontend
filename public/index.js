@@ -391,6 +391,32 @@ form.addEventListener("submit", async (event) => {
   await openUrl(url);
 });
 
+// Show the deployed commit (written by scripts/build.mjs) so a new deployment
+// can be confirmed from the page itself.
+const versionLabel = document.getElementById("sj-version");
+async function showVersion() {
+  if (!versionLabel || typeof fetch !== "function") return;
+  try {
+    const response = await fetch("/version.json", { cache: "no-store" });
+    if (!response.ok) throw new Error("HTTP " + response.status);
+    const version = await response.json();
+    const commit = typeof version.commit === "string" ? version.commit : "";
+    if (!/^[0-9a-f]{7,40}$/.test(commit)) throw new Error("no commit");
+    const when = new Date(version.committedAt || version.builtAt);
+    const link = document.createElement("a");
+    link.href = "https://github.com/viztrrx/scramjet-frontend/commit/" + commit;
+    link.textContent = commit.slice(0, 7);
+    link.target = "_blank";
+    link.rel = "noopener";
+    versionLabel.textContent = "Live version: ";
+    versionLabel.append(link, " · " + (isNaN(when) ? "unknown date" : when.toLocaleString()) +
+      (version.message ? " · " + version.message : ""));
+  } catch {
+    versionLabel.textContent = "Live version: unknown";
+  }
+}
+void showVersion();
+
 closeButton.addEventListener("click", () => closeFrame());
 showPageButton?.addEventListener?.("click", () => { loading.hidden = true; });
 // Returning from a full-tab site through the back/forward cache restores this page.

@@ -30,5 +30,6 @@ jobs:
           node --check tests/frontend.test.mjs
           node --check tests/service-worker.test.mjs
           node --check tests/libcurl-transport.test.mjs
+          node --check tests/build.test.mjs
       - name: Run frontend regression tests
         run: npm test

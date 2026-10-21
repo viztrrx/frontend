@@ -5,7 +5,7 @@ import { runInNewContext } from "node:vm";
 
 const source = readFileSync(new URL("../public/index.js", import.meta.url), "utf8");
 
-function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails = false, controllerFails = false, workerHang = false, transportHang = false, blankFrame = false, noLoad = false, storage = {} } = {}) {
+function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails = false, controllerFails = false, workerHang = false, transportHang = false, blankFrame = false, noLoad = false, storage = {}, versionFetch } = {}) {
   const elements = new Map();
   const frames = [];
   const transports = [];
@@ -26,7 +26,11 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
     elements.set(id, element);
     return element;
   };
-  for (const id of ["sj-form", "sj-address", "sj-search-engine", "sj-error", "sj-error-code", "sj-progress", "sj-toolbar", "sj-toolbar-status", "sj-loading", "sj-loading-status", "sj-close", "sj-reload", "sj-fulltab", "sj-show-page"]) makeElement(id);
+  for (const id of ["sj-form", "sj-address", "sj-search-engine", "sj-error", "sj-error-code", "sj-progress", "sj-toolbar", "sj-toolbar-status", "sj-loading", "sj-loading-status", "sj-close", "sj-reload", "sj-fulltab", "sj-show-page", "sj-version"]) makeElement(id);
+  elements.get("sj-version").append = function (...nodes) {
+    this.textContent += nodes.map((node) => typeof node === "string" ? node : node.textContent).join("");
+    this.children = nodes;
+  };
   elements.get("sj-fulltab").checked = false;
   elements.get("sj-search-engine").value = "https://www.google.com/search?q=%s";
   elements.get("sj-search-engine").options = [
@@ -37,6 +41,7 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
   const document = {
     getElementById: (id) => elements.get(id),
     body: { appendChild: (node) => frames.push(node) },
+    createElement: () => ({ textContent: "" }),
   };
   class MockWebSocket {
     static OPEN = 1;
@@ -104,6 +109,9 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
     SharedWorker: class MockSharedWorker {},
     Error,
     Promise,
+    Date,
+    isNaN,
+    ...(versionFetch ? { fetch: versionFetch } : {}),
     console,
     setTimeout(fn, milliseconds) {
       const id = ++timerId;
@@ -279,4 +287,29 @@ test("search engine and full-tab choices are remembered", async () => {
   x.elements.get("sj-fulltab").checked = true;
   x.elements.get("sj-fulltab").dispatch("change");
   assert.equal(x.storage["sj-fulltab"], "true");
+});
+
+test("shows the deployed commit from version.json", async () => {
+  const requests = [];
+  const x = setup({
+    versionFetch: async (url, options) => {
+      requests.push([url, options.cache]);
+      return { ok: true, json: async () => ({
+        commit: "c5d09bea9539f96187fcd1d80478a81a6e72713d",
+        message: "Add full-tab mode",
+        committedAt: "2026-10-21T19:33:18+00:00",
+      }) };
+    },
+  });
+  await x.advance(0);
+  assert.deepEqual(requests, [["/version.json", "no-store"]]);
+  const label = x.elements.get("sj-version");
+  assert.match(label.textContent, /^Live version: c5d09be · .+ · Add full-tab mode$/);
+  assert.equal(label.children[0].href, "https://github.com/viztrrx/scramjet-frontend/commit/c5d09bea9539f96187fcd1d80478a81a6e72713d");
+});
+
+test("version label reports unknown when version.json is missing", async () => {
+  const x = setup({ versionFetch: async () => ({ ok: false, status: 404 }) });
+  await x.advance(0);
+  assert.equal(x.elements.get("sj-version").textContent, "Live version: unknown");
 });
