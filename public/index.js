@@ -38,7 +38,51 @@ let controllerPromise;
 let currentFrame = null;
 let lastUrl = "";
 let loadingTimer = null;
+let pageCheckTimer = null;
+let currentNavigationPath = null;
+let navigationResponseStatus = null;
+let navigationError = null;
 let busy = false;
+
+function inspectPage(element) {
+  try {
+    const doc = element.contentDocument;
+    if (!doc || doc.URL === "about:blank") return false;
+    const body = doc.body;
+    if (!body) return false;
+    if ((body.innerText || body.textContent || "").trim().length > 0) return true;
+    return !!body.querySelector?.("img, video, canvas, svg, iframe");
+  } catch {
+    // Some browser versions deny inspecting a proxied child frame.
+    return null;
+  }
+}
+
+function reportNavigationFailure(details) {
+  navigationError = details;
+  toolbarStatus.textContent = "Website request failed";
+  loadingStatus.textContent = details;
+  loading.hidden = false;
+}
+
+// The Service Worker sends the actual response status of document requests.
+// An iframe "load" event alone can fire for about:blank or error pages.
+navigator.serviceWorker?.addEventListener?.("message", (event) => {
+  const data = event.data;
+  if (!data || data.type !== "scramjet-navigation-status" ||
+      !currentFrame || data.path !== currentNavigationPath) return;
+  if (typeof data.status !== "number") return;
+  navigationResponseStatus = data.status;
+  if (data.status === 0 || data.status >= 400) {
+    reportNavigationFailure(
+      "Scramjet could not load the remote document" +
+      (data.status ? " (HTTP " + data.status + ")" : "") +
+      ". " + (data.message || "Check the Render logs and retry.")
+    );
+  } else {
+    toolbarStatus.textContent = "Website responded (HTTP " + data.status + ")";
+  }
+});
 
 function showProgress(message) {
   progress.textContent = message;
@@ -139,6 +183,13 @@ function closeFrame() {
     clearTimeout(loadingTimer);
     loadingTimer = null;
   }
+  if (pageCheckTimer !== null) {
+    clearTimeout(pageCheckTimer);
+    pageCheckTimer = null;
+  }
+  currentNavigationPath = null;
+  navigationResponseStatus = null;
+  navigationError = null;
   if (currentFrame) {
     currentFrame.remove();
     currentFrame = null;
@@ -212,30 +263,59 @@ async function openUrl(url) {
     loading.hidden = false;
     let loaded = false;
     element.addEventListener("load", () => {
-      if (currentFrame !== element) return;
+      if (currentFrame !== element || navigationError) return;
+
+      // Ignore the initial blank document; it's not a website response.
+      let href = "";
+      try { href = element.contentWindow?.location?.href || ""; } catch {}
+      if (href === "about:blank") return;
       loaded = true;
-      clearTimeout(loadingTimer);
-      loadingTimer = null;
-      loading.hidden = true;
-      showProgress("");
-      toolbarStatus.textContent = "Page frame loaded";
+      toolbarStatus.textContent = navigationResponseStatus === null
+        ? "Checking website content…"
+        : "Website responded (HTTP " + navigationResponseStatus + ")";
+
+      if (pageCheckTimer !== null) clearTimeout(pageCheckTimer);
+      pageCheckTimer = setTimeout(() => {
+        if (currentFrame !== element || navigationError) return;
+        const content = inspectPage(element);
+        if (content === false) {
+          loading.hidden = false;
+          loadingStatus.textContent = navigationResponseStatus === null
+            ? "The iframe navigated but is still blank, with no confirmed Scramjet document response. The service worker may not be intercepting the request."
+            : "The website responded (HTTP " + navigationResponseStatus + "), but the frame shows no visible content. Safari/Scramjet rendering may be incompatible.";
+          toolbarStatus.textContent = "Blank website";
+        } else {
+          loading.hidden = true;
+          showProgress("");
+          toolbarStatus.textContent = content === true
+            ? "Website content detected"
+            : "Navigation finished (content could not be inspected)";
+        }
+      }, 4000);
     });
     element.addEventListener("error", () => {
       if (currentFrame === element) {
-        loading.hidden = false;
-        loadingStatus.textContent = "Navigation failed. Use Back to try again.";
+        reportNavigationFailure("The iframe navigation failed. Try Retry or use Back.");
       }
     });
+
+    // Set src before attaching the iframe to avoid a spurious about:blank load.
+    frame.go(url);
+    const frameSource = element.getAttribute?.("src") || element.src;
+    if (!frameSource) throw new Error("Scramjet did not set an iframe navigation URL.");
+    currentNavigationPath = new URL(frameSource, location.href).pathname;
     document.body.appendChild(element);
-    await frame.go(url);
-    if (!loaded) {
-      loadingTimer = setTimeout(() => {
-        if (!loaded && currentFrame === element) {
-          loadingStatus.textContent = "This page is taking unusually long. Check Render logs or tap Back to try again.";
-          toolbarStatus.textContent = "Still loading";
-        }
-      }, 30000);
-    }
+
+    loadingTimer = setTimeout(() => {
+      if (currentFrame !== element || navigationError) return;
+      if (!loaded || inspectPage(element) === false) {
+        loading.hidden = false;
+        loadingStatus.textContent = navigationResponseStatus === null
+          ? "No completed proxied webpage was detected. The iframe may not be intercepted by Scramjet's service worker. Try Retry or check browser developer tools."
+          : "The website responded (HTTP " + navigationResponseStatus + ") but is still blank. Try another website or test in desktop Chrome.";
+        toolbarStatus.textContent = "Website still blank";
+      }
+    }, 35000);
   } catch (cause) {
     closeFrame();
     showError("Unable to open the page. Your original screen is still available.",
