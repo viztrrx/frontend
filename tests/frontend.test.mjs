@@ -5,7 +5,7 @@ import { runInNewContext } from "node:vm";
 
 const source = readFileSync(new URL("../public/index.js", import.meta.url), "utf8");
 
-function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails = false, controllerFails = false } = {}) {
+function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails = false, controllerFails = false, workerHang = false, transportHang = false } = {}) {
   const elements = new Map();
   const frames = [];
   const transports = [];
@@ -54,8 +54,14 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
     }
   }
   class BareMuxConnection {
-    async setTransport(...args) { transports.push(args); }
-    async getTransport() { return transports.length ? "/libcurl/index.mjs" : ""; }
+    async setTransport(...args) {
+      if (transportHang) return new Promise(() => {});
+      transports.push(args);
+    }
+    async getTransport() {
+      if (workerHang) return new Promise(() => {});
+      return transports.length ? "/libcurl/index.mjs" : "";
+    }
   }
   const ctx = {
     document,
@@ -74,7 +80,7 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
     setTimeout(fn, milliseconds) {
       const id = ++timerId;
       if (milliseconds <= 2500) queueMicrotask(fn);
-      else timers.set(id, fn);
+      else timers.set(id, { fn, milliseconds });
       return id;
     },
     clearTimeout(id) { timers.delete(id); },
@@ -84,6 +90,16 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
     elements, frames, transports, timers,
     websocketCount: () => websocketCount,
     submit: () => elements.get("sj-form").dispatch("submit"),
+    async advance(ms) {
+      // Allow async initialization and successful WebSocket probes to finish.
+      for (let i = 0; i < 80; i++) await Promise.resolve();
+      const entries = [...timers.entries()].filter(([, timer]) => timer.milliseconds <= ms);
+      for (const [id, timer] of entries) {
+        timers.delete(id);
+        timer.fn();
+      }
+      for (let i = 0; i < 80; i++) await Promise.resolve();
+    },
   };
 }
 
@@ -135,4 +151,24 @@ test("Retry always refreshes the Wisp transport", async () => {
   assert.equal(x.transports.length, 2);
   assert.equal(x.frames.length, 2);
   assert.equal(x.frames[0].removed, true);
+});
+
+test("unresponsive BareMux SharedWorker reports an error rather than hanging forever", async () => {
+  const x = setup({ workerHang: true });
+  const pending = x.submit();
+  await x.advance(8000);
+  await pending;
+  assert.equal(x.frames.length, 0);
+  assert.match(x.elements.get("sj-error-code").textContent, /SharedWorker isn't responding/);
+  assert.equal(x.elements.get("sj-progress").hidden, true);
+});
+
+test("transport setup timeout diagnoses libcurl rather than hiding the whole page", async () => {
+  const x = setup({ transportHang: true });
+  const pending = x.submit();
+  await x.advance(18000);
+  await pending;
+  assert.equal(x.frames.length, 0);
+  assert.match(x.elements.get("sj-error-code").textContent, /libcurl transport did not initialize/);
+  assert.equal(x.elements.get("sj-progress").hidden, true);
 });
