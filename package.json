@@ -10,7 +10,8 @@
   "scripts": {
     "build": "node scripts/build.mjs",
     "dev": "npx wrangler dev",
-    "deploy": "npx wrangler deploy"
+    "deploy": "npx wrangler deploy",
+    "test": "node --test tests/frontend.test.mjs"
   },
   "dependencies": {
     "@mercuryworkshop/bare-mux": "^2.1.9",

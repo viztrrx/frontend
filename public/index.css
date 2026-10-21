@@ -157,3 +157,33 @@ footer a:hover {
 .credit input:checked ~ pre {
 	display: block;
 }
+
+
+/* Visible loading and recovery controls for frames that cannot render. */
+[hidden] { display: none !important; }
+#sj-progress { color: #ffb26b; }
+#sj-frame { z-index: 10; }
+#sj-loading {
+  position: fixed; inset: 0; z-index: 20; background: #111; color: #fff;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 10px; padding: 65px 24px; text-align: center; box-sizing: border-box;
+}
+#sj-loading p { max-width: 440px; margin: 0; line-height: 1.5; overflow-wrap: anywhere; }
+#sj-loading .sj-hint { color: #aaa; font-size: 13px; }
+.sj-spinner { width: 35px; height: 35px; border: 3px solid #555; border-top-color: #ff973b;
+  border-radius: 50%; animation: sj-spin 0.9s linear infinite; }
+@keyframes sj-spin { to { transform: rotate(360deg); } }
+@media (prefers-reduced-motion: reduce) { .sj-spinner { animation: none; } }
+#sj-toolbar {
+  position: fixed; z-index: 30; top: 0; left: 0; right: 0; min-height: 44px;
+  padding: calc(6px + env(safe-area-inset-top, 0px)) 8px 6px; box-sizing: border-box;
+  background: #1b1b1b; color: #eee; display: flex; align-items: center; gap: 8px;
+  font: 13px Roboto, Arial, sans-serif;
+}
+#sj-toolbar button {
+  padding: 8px 12px; border: 1px solid #777; border-radius: 8px;
+  color: #fff; background: #303030; font: inherit; cursor: pointer;
+}
+#sj-toolbar button:focus-visible { outline: 2px solid #ffa356; }
+#sj-toolbar-status { flex: 1; text-align: center; min-width: 0; overflow: hidden;
+  text-overflow: ellipsis; white-space: nowrap; }

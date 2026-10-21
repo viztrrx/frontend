@@ -42,9 +42,20 @@
 			<input id="sj-address" type="text" placeholder="Search the web freely" />
 		</form>
 		<div class="desc left-margin">
-			<p id="sj-error"></p>
+			<p id="sj-progress" role="status" hidden></p>
+			<p id="sj-error" role="alert"></p>
 			<pre id="sj-error-code"></pre>
 		</div>
+		<div id="sj-loading" role="status" aria-live="polite" hidden>
+          <div class="sj-spinner" aria-hidden="true"></div>
+          <p id="sj-loading-status">Loading website…</p>
+          <p class="sj-hint">Render's free service may take a minute to wake up.</p>
+        </div>
+        <nav id="sj-toolbar" aria-label="Browsing controls" hidden>
+          <button type="button" id="sj-close">← Back</button>
+          <span id="sj-toolbar-status" aria-live="polite">Loading…</span>
+          <button type="button" id="sj-reload">Retry</button>
+        </nav>
 		<footer>
 			<div>
 				<a
