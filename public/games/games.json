@@ -89,6 +89,12 @@
     "path": "/games/public/ducklife4/"
   },
   {
+    "slug": "eaglercraft",
+    "title": "Eaglercraft",
+    "image": "/games/thumbnails/eaglercraft.svg",
+    "frame": "https://donnajbe.viztrrx.workers.dev/eagler/?autoPack=1"
+  },
+  {
     "slug": "fireboy-and-watergirl-forest-temple",
     "title": "Fireboy & Watergirl Into the Forest Temple",
     "image": "/games/thumbnails/fireboy-and-watergirl-forest-temple.jpg",
@@ -144,12 +150,6 @@
     "slug": "microsoft-flight-simulator",
     "title": "Microsoft Flight Simulator",
     "path": "/games/public/microsoft-flight-simulator/"
-  },
-  {
-    "slug": "minecraft",
-    "title": "Minecraft Classic",
-    "image": "/games/thumbnails/minecraft.jpg",
-    "path": "/games/public/mc-classic/"
   },
   {
     "slug": "pacman",

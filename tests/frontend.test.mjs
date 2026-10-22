@@ -8,7 +8,7 @@ const blockSource = readFileSync(new URL("../public/blocked.js", import.meta.url
 
 function setup({ games = null, epoxyFails = false, libcurlFails = false, wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails = false, controllerFails = false, workerHang = false, transportHang = false, blankFrame = false, noLoad = false, storage = {}, versionFetch, embed = false, realUrls = false } = {}) {
   const posts = [];
-  const winMessage = { fn: null };
+  const winMessage = { fns: [], fn: (event) => winMessage.fns.forEach((f) => f(event)) };
   const elements = new Map();
   const frames = [];
   const made = [];   // every frame Scramjet created, attached or not
@@ -141,7 +141,7 @@ function setup({ games = null, epoxyFails = false, libcurlFails = false, wispUrl
   }
   const ctx = {
     document,
-    window: { navigator: { audioSession: windowAudio }, BareMux: { BareMuxConnection }, addEventListener: (kind, fn) => { if (kind === 'message') winMessage.fn = fn; if (kind === 'load') winMessage.load = fn; }, ...(embed ? { parent: { postMessage: (message) => posts.push(message) } } : {}) },
+    window: { navigator: { audioSession: windowAudio }, BareMux: { BareMuxConnection }, addEventListener: (kind, fn) => { if (kind === 'message') winMessage.fns.push(fn); if (kind === 'load') winMessage.load = fn; }, ...(embed ? { parent: { postMessage: (message) => posts.push(message) } } : {}) },
     navigator: { serviceWorker: {
       ready: Promise.resolve(),
       addEventListener(kind, fn) { swCallbacks.set(kind, fn); }
@@ -185,6 +185,7 @@ function setup({ games = null, epoxyFails = false, libcurlFails = false, wispUrl
     initialAddress,
     elements, frames, transports, timers, assigned, storage, posts, windowAudio,
     load: () => winMessage.load?.(),
+    message: (event) => winMessage.fn(event),
     navigate: (query) => winMessage.fn?.({ source: ctx.window.parent, data: { saintsProxy: 1, type: "navigate", query } }),
     chrome: (opts) => winMessage.fn?.({ source: ctx.window.parent, data: { saintsProxy: 1, type: "chrome", ...opts } }),
     websocketCount: () => websocketCount,
@@ -928,4 +929,35 @@ test("a site that never answers gets one retry with the other transport", async 
   await x.advance(35000);
   assert.equal(x.transports.length, 2, "only once");
   assert.match(x.elements.get("sj-loading-status").textContent, /No completed proxied webpage/);
+});
+
+test("games: Eaglercraft launches the Saints Worker's game frame like the console", async () => {
+  const eagler = { slug: "eaglercraft", title: "Eaglercraft", image: "/games/thumbnails/eaglercraft.svg", frame: "https://donnajbe.viztrrx.workers.dev/eagler/?autoPack=1" };
+  const x = setup({ games: [...GAMES, eagler] });
+  x.elements.get("sj-games-open").dispatch("click");
+  await x.advance(0);
+  tileFor(x, "eaglercraft").dispatch("click");
+  const frame = x.frames.at(-1);
+  assert.equal(frame.src, eagler.frame);
+  assert.equal(frame.attrs.allow, "fullscreen; autoplay; gamepad; clipboard-read; clipboard-write");
+  assert.equal(frame.attrs.referrerpolicy, "no-referrer");
+  assert.equal(x.websocketCount(), 0, "no proxy needed");
+  assert.equal(x.elements.get("sj-loading").hidden, false);
+  assert.equal(x.elements.get("sj-loading-status").textContent, "Starting Eaglercraft\u2026");
+  assert.equal(x.elements.get("sj-address").value, "saints://games/eaglercraft");
+  const posted = [];
+  frame.contentWindow = { postMessage: (m, origin) => posted.push([m.type, origin]) };
+  const origin = "https://donnajbe.viztrrx.workers.dev";
+  // Messages from anywhere else are ignored.
+  x.message({ source: frame.contentWindow, origin: "https://evil.example", data: { eagler: 1, type: "started" } });
+  assert.equal(x.elements.get("sj-loading").hidden, false);
+  x.message({ source: frame.contentWindow, origin, data: { eagler: 1, type: "loading" } });
+  assert.match(x.elements.get("sj-loading-status").textContent, /through the Saints Worker/);
+  x.message({ source: frame.contentWindow, origin, data: { eagler: 1, type: "started" } });
+  assert.equal(x.elements.get("sj-loading").hidden, true, "the game is showing");
+  assert.deepEqual(posted, [["focus", origin]]);
+  // The game's own errors are shown in plain words.
+  x.message({ source: frame.contentWindow, origin, data: { eagler: 1, type: "error", message: "WebGL 2.0 isn't available." } });
+  assert.equal(x.elements.get("sj-loading").hidden, false);
+  assert.equal(x.elements.get("sj-loading-status").textContent, "WebGL 2.0 isn't available.");
 });

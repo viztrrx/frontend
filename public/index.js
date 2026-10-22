@@ -471,7 +471,7 @@ function loadGames() {
     const r = await fetch("/games/games.json");
     if (!r.ok) throw new Error("HTTP " + r.status);
     const list = await r.json();
-    gamesList = Array.isArray(list) ? list.filter((g) => g && g.slug && g.title && (g.path || g.url)) : [];
+    gamesList = Array.isArray(list) ? list.filter((g) => g && g.slug && g.title && (g.path || g.url || g.frame)) : [];
     if (gamesCount) gamesCount.textContent = String(gamesList.length);
     return gamesList;
   })().catch((cause) => { gamesLoading = null; throw cause; });
@@ -555,9 +555,18 @@ function openGame(game) {
   const element = document.createElement("iframe");
   element.className = "sj-frame";
   element.setAttribute("title", game.title);
-  element.setAttribute("allow", FRAME_PERMISSIONS + "; gamepad; screen-wake-lock");
-  element.addEventListener("load", () => playbackAudio(element.contentWindow));
-  element.src = game.path;
+  if (game.frame) {
+    // A game served by another site (Eaglercraft, from the Saints Worker): the
+    // same frame and permissions the Saints console's Eaglercraft tab uses.
+    element.setAttribute("allow", "fullscreen; autoplay; gamepad; clipboard-read; clipboard-write");
+    element.setAttribute("referrerpolicy", "no-referrer");
+    element.tabIndex = 0;
+    element.src = game.frame;
+  } else {
+    element.setAttribute("allow", FRAME_PERMISSIONS + "; gamepad; screen-wake-lock");
+    element.addEventListener("load", () => playbackAudio(element.contentWindow));
+    element.src = game.path;
+  }
   currentFrame = element;
   currentSjFrame = null;
   currentGame = game;
@@ -569,11 +578,70 @@ function openGame(game) {
   loading.hidden = true;
   setLoading(false);
   toolbarStatus.textContent = "";
+  if (game.frame) startFrameGame(game, element);
   (view || document.body).appendChild(element);
   showAddress();
   syncNav();
   renderTabs();
 }
+
+// ---- Eaglercraft (frame games) ------------------------------------------------
+// The game frame reports to the page that embeds it ({eagler: 1, type}) as in
+// the console: "loading", "started", "error"; and it takes "pause" (let go of
+// the mouse, which opens the game's pause menu) and "focus".
+let frameGame = null;   // { game, element, origin, started, timer }
+function frameGameOrigin(game) {
+  try { return new URL(game.frame).origin; } catch { return ""; }
+}
+function startFrameGame(game, element) {
+  if (frameGame) clearTimeout(frameGame.timer);
+  frameGame = { game, element, origin: frameGameOrigin(game), started: false, heard: false, timer: 0 };
+  loading.hidden = false;
+  setLoading(true);
+  loadingStatus.textContent = "Starting " + game.title + "\u2026";
+  const fg = frameGame;
+  fg.timer = setTimeout(() => {
+    if (frameGame !== fg || fg.heard) return;
+    setLoading(false);
+    loadingStatus.textContent = game.title + " didn\u2019t load from the Saints Worker. Check your connection, then press Reload.";
+  }, 20000);
+}
+function postToFrameGame(type) {
+  const fg = frameGame;
+  if (!fg || !fg.element.contentWindow || !fg.origin) return;
+  try { fg.element.contentWindow.postMessage({ eagler: 1, type }, fg.origin); } catch {}
+}
+window.addEventListener?.("message", (event) => {
+  const fg = frameGame;
+  if (!fg || event.source !== fg.element.contentWindow || event.origin !== fg.origin) return;
+  const d = event.data;
+  if (!d || d.eagler !== 1) return;
+  fg.heard = true;
+  const showing = currentFrame === fg.element;
+  if (d.type === "loading") {
+    if (showing) loadingStatus.textContent = "Loading " + fg.game.title + " through the Saints Worker\u2026";
+  } else if (d.type === "started") {
+    fg.started = true;
+    clearTimeout(fg.timer);
+    if (showing) {
+      loading.hidden = true;
+      setLoading(false);
+      try { fg.element.focus(); } catch {}
+      postToFrameGame("focus");
+    }
+  } else if (d.type === "error") {
+    clearTimeout(fg.timer);
+    if (showing) {
+      loading.hidden = false;
+      setLoading(false);
+      loadingStatus.textContent = String(d.message || fg.game.title + " couldn\u2019t start.").slice(0, 300);
+    }
+  }
+});
+// Hidden (another tab, another app) or left: pause, like the console does.
+document.addEventListener?.("visibilitychange", () => {
+  if (document.visibilityState === "hidden") postToFrameGame("pause");
+});
 async function openGameBySlug(slug) {
   try { await loadGames(); } catch {}
   const game = (gamesList || []).find((g) => g.slug === String(slug).toLowerCase());
@@ -793,6 +861,7 @@ function closeFrame() {
     if (currentSite || lastUrl) homeForward = currentSite || lastUrl;
     // Back from a game lands on saints://games.
     if (currentGame) startPage = "games";
+    if (frameGame && frameGame.element === currentFrame) { clearTimeout(frameGame.timer); frameGame = null; }
     currentFrame.remove();
     currentFrame = null;
   }
@@ -1223,7 +1292,11 @@ reloadButton.addEventListener("click", () => {
     setLoading(true);
     try { currentSjFrame.reload(); return; } catch {}
   }
-  if (currentGame && currentFrame) { currentFrame.src = currentGame.path; return; }
+  if (currentGame && currentFrame) {
+    if (currentGame.frame) { startFrameGame(currentGame, currentFrame); currentFrame.src = currentGame.frame; }
+    else currentFrame.src = currentGame.path;
+    return;
+  }
   if (currentFrame && lastUrl) void openUrl(lastUrl);
 });
 backButton?.addEventListener?.("click", () => {

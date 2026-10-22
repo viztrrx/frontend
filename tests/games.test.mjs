@@ -16,6 +16,8 @@ test("every game in the list has its files and thumbnail", () => {
     if (g.image) assert.ok(existsSync(pub(g.image)), g.image);
     if (g.url) {
       assert.match(g.url, /^https:\/\/[a-z0-9.-]+\/$/, g.slug);
+    } else if (g.frame) {
+      assert.match(g.frame, /^https:\/\/[a-z0-9.-]+\//, g.slug);
     } else {
       assert.match(g.path, /^\/games\/public\/[^/]+\//, g.slug);
       assert.ok(existsSync(pub(g.path.split("#")[0] + "index.html")), g.path);
@@ -60,4 +62,13 @@ test("the Worker streams a split file back as one", async () => {
   assert.equal(response.headers.get("cross-origin-embedder-policy"), "require-corp");
   const body = Buffer.from(await response.arrayBuffer());
   assert.equal(createHash("sha256").update(body).digest("hex"), GAME_PARTS[path].sha256);
+});
+
+test("Eaglercraft replaces Minecraft Classic and launches the Saints Worker's game frame", () => {
+  assert.equal(games.find((g) => g.slug === "minecraft"), undefined);
+  assert.ok(!existsSync(pub("/games/public/mc-classic/index.html")), "the old files are gone");
+  const e = games.find((g) => g.slug === "eaglercraft");
+  assert.equal(e.title, "Eaglercraft");
+  assert.equal(e.frame, "https://donnajbe.viztrrx.workers.dev/eagler/?autoPack=1", "the same frame as the console's Eaglercraft tab");
+  assert.match(readFileSync(pub(e.image), "utf8"), /^<svg/);
 });
