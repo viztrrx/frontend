@@ -16,6 +16,34 @@ const reloadButton = document.getElementById("sj-reload");
 const fullTab = document.getElementById("sj-fulltab");
 const showPageButton = document.getElementById("sj-show-page");
 
+// When this frontend runs inside the Saints Service console (an embedding
+// parent frame), report the proxied site to that parent so the console can
+// show which site is open and keep the owner's activity log. Only the site
+// URL is sent, only to the parent window, and only when actually embedded.
+const parentConsole =
+  (typeof window !== "undefined" && window.parent && window.parent !== window &&
+    typeof window.parent.postMessage === "function") ? window.parent : null;
+let scramjetController = null;
+let lastReportedUrl = null;
+function reportToConsole(url) {
+  if (!parentConsole) return;
+  const value = typeof url === "string" ? url : "";
+  if (value === lastReportedUrl) return;
+  lastReportedUrl = value;
+  try { parentConsole.postMessage({ saintsProxy: 1, type: "nav", url: value }, "*"); } catch {}
+}
+// The real site a Scramjet frame is on (it runs on this origin, so its
+// encoded location is readable here), decoded back to the site's own URL.
+function frameRealUrl(element) {
+  let href = "";
+  try { href = element?.contentWindow?.location?.href || ""; } catch {}
+  if (!href || href === "about:blank") return "";
+  if (scramjetController && typeof scramjetController.decodeUrl === "function") {
+    try { const real = scramjetController.decodeUrl(href); if (real) return real; } catch {}
+  }
+  return href;
+}
+
 const TRANSPORT = "/libcurl/index.mjs";
 const WISP_TIMEOUT_MS = 25000;
 const BAREMUX_RESPONSE_TIMEOUT_MS = 8000;
@@ -232,6 +260,7 @@ function closeFrame() {
   busy = false;
   address.disabled = false;
   showProgress("");
+  reportToConsole("");
 }
 
 async function openUrl(url) {
@@ -249,6 +278,7 @@ async function openUrl(url) {
     await waitForWisp(wispUrl);
     showProgress("Initializing Scramjet…");
     const scramjet = await initializeController();
+    scramjetController = scramjet;
 
     if (typeof registerSW !== "function") throw new Error("Service worker bootstrap was not loaded.");
     await registerSW();
@@ -285,7 +315,9 @@ async function openUrl(url) {
       throw new Error("BareMux reports an unexpected transport: " + String(transportName));
     }
 
-    if (fullTab?.checked) {
+    // In the console's frame, always browse in-frame: a full-tab navigation
+    // would replace the console's own frame and stop the activity reports.
+    if (fullTab?.checked && !parentConsole) {
       // The site replaces this page; the browser's own Back button returns here.
       showProgress("Opening website…");
       location.assign(scramjet.encodeUrl(url));
@@ -299,6 +331,11 @@ async function openUrl(url) {
     element.id = "sj-frame";
     element.setAttribute("title", "Scramjet browsing frame");
     currentFrame = element;
+    frame.addEventListener?.("urlchange", (event) => {
+      if (currentFrame !== element) return;
+      const u = event && typeof event.url === "string" && event.url ? event.url : frameRealUrl(element);
+      if (u) reportToConsole(u);
+    });
     toolbar.hidden = false;
     loading.hidden = false;
     let loaded = false;
@@ -333,6 +370,7 @@ async function openUrl(url) {
       try { href = element.contentWindow?.location?.href || ""; } catch {}
       if (href === "about:blank") return;
       loaded = true;
+      reportToConsole(frameRealUrl(element));
       if (!httpWarning) {
         toolbarStatus.textContent = navigationResponseStatus === null
           ? "Checking website content…"
@@ -425,3 +463,6 @@ reloadButton.addEventListener("click", () => {
   const url = lastUrl;
   if (url && !busy) void openUrl(url);
 });
+
+// Tell the console (when embedded) it is on the start page to begin with.
+reportToConsole("");

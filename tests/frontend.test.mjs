@@ -5,7 +5,8 @@ import { runInNewContext } from "node:vm";
 
 const source = readFileSync(new URL("../public/index.js", import.meta.url), "utf8");
 
-function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails = false, controllerFails = false, workerHang = false, transportHang = false, blankFrame = false, noLoad = false, storage = {}, versionFetch } = {}) {
+function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails = false, controllerFails = false, workerHang = false, transportHang = false, blankFrame = false, noLoad = false, storage = {}, versionFetch, embed = false } = {}) {
+  const posts = [];
   const elements = new Map();
   const frames = [];
   const transports = [];
@@ -61,6 +62,7 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
   class ScramjetController {
     async init() { if (controllerFails) throw new Error("Wasm init failed"); }
     encodeUrl(url) { return "/scramjet/" + encodeURIComponent(url); }
+    decodeUrl() { return "https://example.com/"; }
     createFrame() {
       const el = makeElement("frame-" + frames.length);
       el.contentWindow = { location: { href: blankFrame ? "about:blank" : "https://frontend.viztrrx.workers.dev/scramjet/test" } };
@@ -90,7 +92,7 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
   }
   const ctx = {
     document,
-    window: { BareMux: { BareMuxConnection } },
+    window: { BareMux: { BareMuxConnection }, ...(embed ? { parent: { postMessage: (message) => posts.push(message) } } : {}) },
     navigator: { serviceWorker: {
       ready: Promise.resolve(),
       addEventListener(kind, fn) { swCallbacks.set(kind, fn); }
@@ -123,7 +125,7 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
   };
   runInNewContext(source, ctx, { filename: "public/index.js" });
   return {
-    elements, frames, transports, timers, assigned, storage,
+    elements, frames, transports, timers, assigned, storage, posts,
     websocketCount: () => websocketCount,
     submit: () => elements.get("sj-form").dispatch("submit"),
     sendNavStatus(status, message = "") {
@@ -312,4 +314,25 @@ test("version label reports unknown when version.json is missing", async () => {
   const x = setup({ versionFetch: async () => ({ ok: false, status: 404 }) });
   await x.advance(0);
   assert.equal(x.elements.get("sj-version").textContent, "Live version: unknown");
+});
+
+test("embedded: reports the proxied site, and the start page on close, to the console parent", async () => {
+  const x = setup({ embed: true });
+  // On load it tells the parent it is on the start page.
+  const J = (m) => JSON.stringify(m);
+  assert.equal(J(x.posts.at(-1)), J({ saintsProxy: 1, type: "nav", url: "" }));
+  await x.submit();
+  await x.advance(4000);
+  // The opened site is reported with its real (decoded) URL.
+  assert.equal(J(x.posts.at(-1)), J({ saintsProxy: 1, type: "nav", url: "https://example.com/" }));
+  await x.elements.get("sj-close").dispatch("click");
+  // Closing the site reports the start page again.
+  assert.equal(J(x.posts.at(-1)), J({ saintsProxy: 1, type: "nav", url: "" }));
+});
+
+test("not embedded: nothing is posted to any parent", async () => {
+  const x = setup();
+  await x.submit();
+  await x.advance(4000);
+  assert.equal(x.posts.length, 0);
 });
