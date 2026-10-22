@@ -507,18 +507,18 @@ reloadButton.addEventListener("click", () => {
 // avatars in each service's brand colour (not the services' own logos) with
 // the name beside them.
 const APPS = [
-  { name: "YouTube", url: "https://m.youtube.com/", tag: "YT", bg: "#ff0000" },
-  { name: "TikTok", url: "https://www.tiktok.com/", tag: "TT", bg: "#111111", fg: "#ffffff" },
-  { name: "Instagram", url: "https://www.instagram.com/", tag: "IG", bg: "linear-gradient(135deg,#feda75,#d62976 55%,#4f5bd5)" },
-  { name: "Spotify", url: "https://open.spotify.com/", tag: "SP", bg: "#1db954", fg: "#0b2e18" },
-  { name: "SoundCloud", url: "https://soundcloud.com/", tag: "SC", bg: "#ff5500" },
-  { name: "Twitch", url: "https://m.twitch.tv/", tag: "TV", bg: "#9146ff" },
-  { name: "Reddit", url: "https://www.reddit.com/", tag: "RD", bg: "#ff4500" },
-  { name: "Discord", url: "https://discord.com/app", tag: "DC", bg: "#5865f2" },
-  { name: "Netflix", url: "https://www.netflix.com/", tag: "NF", bg: "#111111", fg: "#e50914" },
-  { name: "X", url: "https://x.com/", tag: "X", bg: "#111111", fg: "#ffffff" },
-  { name: "Snapchat", url: "https://www.snapchat.com/", tag: "SN", bg: "#fffc00", fg: "#111111" },
-  { name: "Pinterest", url: "https://www.pinterest.com/", tag: "PT", bg: "#e60023" },
+  { name: "YouTube", url: "https://m.youtube.com/", domain: "youtube.com", tag: "YT", bg: "#ff0000" },
+  { name: "TikTok", url: "https://www.tiktok.com/", domain: "tiktok.com", tag: "TT", bg: "#111111", fg: "#ffffff" },
+  { name: "Instagram", url: "https://www.instagram.com/", domain: "instagram.com", tag: "IG", bg: "linear-gradient(135deg,#feda75,#d62976 55%,#4f5bd5)" },
+  { name: "Spotify", url: "https://open.spotify.com/", domain: "spotify.com", tag: "SP", bg: "#1db954", fg: "#0b2e18" },
+  { name: "SoundCloud", url: "https://soundcloud.com/", domain: "soundcloud.com", tag: "SC", bg: "#ff5500" },
+  { name: "Twitch", url: "https://m.twitch.tv/", domain: "twitch.tv", tag: "TV", bg: "#9146ff" },
+  { name: "Reddit", url: "https://www.reddit.com/", domain: "reddit.com", tag: "RD", bg: "#ff4500" },
+  { name: "Discord", url: "https://discord.com/app", domain: "discord.com", tag: "DC", bg: "#5865f2" },
+  { name: "Netflix", url: "https://www.netflix.com/", domain: "netflix.com", tag: "NF", bg: "#111111", fg: "#e50914" },
+  { name: "X", url: "https://x.com/", domain: "x.com", tag: "X", bg: "#111111", fg: "#ffffff" },
+  { name: "Snapchat", url: "https://www.snapchat.com/", domain: "snapchat.com", tag: "SN", bg: "#fffc00", fg: "#111111" },
+  { name: "Pinterest", url: "https://www.pinterest.com/", domain: "pinterest.com", tag: "PT", bg: "#e60023" },
 ];
 const appsGrid = document.getElementById("sj-apps");
 if (appsGrid) {
@@ -534,6 +534,21 @@ if (appsGrid) {
     icon.style.background = app.bg;
     if (app.fg) icon.style.color = app.fg;
     icon.textContent = app.tag;
+    // Show the site's own favicon when it loads; keep the monogram otherwise.
+    if (app.domain) {
+      const img = new Image();
+      img.alt = "";
+      img.loading = "lazy";
+      img.decoding = "async";
+      img.className = "ss-app-img";
+      img.addEventListener("load", () => {
+        icon.textContent = "";
+        icon.style.background = "#ffffff";
+        icon.classList.add("has-img");
+        icon.appendChild(img);
+      });
+      img.src = "/icon?d=" + encodeURIComponent(app.domain);
+    }
     const label = document.createElement("span");
     label.className = "ss-app-name";
     label.textContent = app.name;
