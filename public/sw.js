@@ -88,12 +88,113 @@ function loadScramjetConfig() {
   return configLoaded;
 }
 
+// ---- Cookie jar persistence and saved sessions ------------------------------
+// Scramjet 1.1 keeps its cookie jar in memory and saves it to IndexedDB, but
+// CookieStore.load() ignores the object it saved, so every worker restart
+// (iOS stops idle workers) dropped every proxied sign-in. Cookies from HTTP
+// responses weren't saved at all, only document.cookie writes. This worker
+// keeps its own copy in the "saints-sessions" database and restores it
+// before the first proxied request.
+const JAR_DB = "saints-sessions";
+const JAR_STORE = "jar";
+function jarDb() {
+  return new Promise((resolve, reject) => {
+    const open = indexedDB.open(JAR_DB, 1);
+    open.onupgradeneeded = () => open.result.createObjectStore(JAR_STORE);
+    open.onsuccess = () => resolve(open.result);
+    open.onerror = () => reject(open.error);
+  });
+}
+async function jarGet() {
+  const db = await jarDb();
+  try {
+    return await new Promise((resolve, reject) => {
+      const req = db.transaction(JAR_STORE).objectStore(JAR_STORE).get("cookies");
+      req.onsuccess = () => resolve(req.result);
+      req.onerror = () => reject(req.error);
+    });
+  } finally {
+    db.close();
+  }
+}
+async function jarPut(value) {
+  const db = await jarDb();
+  try {
+    await new Promise((resolve, reject) => {
+      const tx = db.transaction(JAR_STORE, "readwrite");
+      tx.objectStore(JAR_STORE).put(value, "cookies");
+      tx.oncomplete = () => resolve();
+      tx.onerror = () => reject(tx.error);
+    });
+  } finally {
+    db.close();
+  }
+}
+const hasJar = () => !!(scramjet.cookieStore && typeof scramjet.cookieStore.dump === "function");
+let jarLoaded = null;
+let jarSaved = "";
+function loadJar() {
+  if (typeof indexedDB === "undefined" || !hasJar()) return Promise.resolve();
+  jarLoaded ??= jarGet().then((saved) => {
+    // Cookies set before the saved copy was read (none in practice) win.
+    if (typeof saved === "string" && saved) {
+      const now = JSON.parse(scramjet.cookieStore.dump() || "{}");
+      scramjet.cookieStore.load(JSON.stringify({ ...JSON.parse(saved), ...now }));
+    }
+    jarSaved = scramjet.cookieStore.dump();
+  }).catch((cause) => {
+    jarLoaded = null;
+    console.error("Could not restore the proxy's cookies:", cause);
+  });
+  return jarLoaded;
+}
+// Called after each proxied request: writes only when the jar changed.
+async function saveJar() {
+  if (typeof indexedDB === "undefined" || !hasJar()) return;
+  await loadJar();
+  const now = scramjet.cookieStore.dump();
+  if (now === jarSaved) return;
+  jarSaved = now;
+  try { await jarPut(now); } catch (cause) { jarSaved = ""; console.error("Could not save the proxy's cookies:", cause); }
+}
+async function replaceJar(cookies) {
+  await loadJar();
+  scramjet.cookieStore.load(typeof cookies === "string" && cookies ? cookies : "{}");
+  await saveJar();
+}
+
+// The page (sessions.js) reads and replaces the jar to save and resume
+// sessions: {saintsSessions: 1, type: "dump" | "load" | "clear", cookies?},
+// answered on the MessagePort it sends along.
+self.addEventListener("message", (event) => {
+  const data = event.data;
+  const port = event.ports && event.ports[0];
+  if (!data || data.saintsSessions !== 1 || !port) return;
+  if (event.source && event.source.url && new URL(event.source.url).origin !== self.location.origin) return;
+  const work = (async () => {
+    if (!hasJar()) throw new Error("Scramjet's cookie jar isn't available.");
+    if (data.type === "dump") { await loadJar(); return { cookies: scramjet.cookieStore.dump() }; }
+    if (data.type === "load") { await replaceJar(data.cookies); return {}; }
+    if (data.type === "clear") { await replaceJar("{}"); return {}; }
+    throw new Error("unknown request");
+  })();
+  const reply = work.then((value) => port.postMessage({ ok: true, ...value }),
+    (cause) => port.postMessage({ ok: false, error: cause instanceof Error ? cause.message : String(cause) }));
+  if (typeof event.waitUntil === "function") event.waitUntil(reply);
+});
+
 async function handleRequest(event) {
   const pathname = new URL(event.request.url).pathname;
   const isDocumentNavigation = event.request.mode === "navigate" &&
     pathname.startsWith("/scramjet/");
   try {
-    await loadScramjetConfig();
+    try {
+      await loadScramjetConfig();
+    } catch (cause) {
+      // This site's own files and /sessions don't need Scramjet's settings.
+      if (!pathname.startsWith("/scramjet/")) return fetch(event.request);
+      throw cause;
+    }
     if (!scramjet.config) {
       if (pathname.startsWith("/scramjet/")) throw new Error("Scramjet settings are not stored yet. Go Back and open the site again.");
       return fetch(event.request);
@@ -102,7 +203,9 @@ async function handleRequest(event) {
     // Scramjet's WASM loader is routed too, but must not wait on BareMux:
     // the page needs it before it can hand this worker a port.
     if (pathname.startsWith("/scramjet/")) await ensureTransport();
+    await loadJar();
     let response = await scramjet.fetch(event);
+    event.waitUntil(saveJar());
     if (isDocumentNavigation) {
       const message = response.status === 500 ? await scramjetErrorMessage(response) : "";
       event.waitUntil(reportNavigation(pathname, response.status, message));

@@ -541,6 +541,8 @@ function closeFrame() {
   showAddress();
   syncNav();
   reportToConsole("");
+  // Back on saints://home: the saved session (sessions.js) catches up.
+  globalThis.saintsSessions?.changed?.();
 }
 
 async function openUrl(url) {
@@ -922,6 +924,30 @@ if (appsGrid) {
     appsGrid.appendChild(tile);
   }
 }
+
+// Saved sessions (sessions.js) swap the cookie jar, so every tab closes
+// first: no page keeps running with the previous session's sign-ins.
+globalThis.saintsBrowser = {
+  isBusy: () => busy,
+  // The service worker, ready to answer. Scramjet's controller must run
+  // first: it creates the IndexedDB stores the worker opens on start.
+  async worker() {
+    scramjetController = await initializeController();
+    if (typeof registerSW !== "function") throw new Error("Service worker bootstrap was not loaded.");
+    await registerSW();
+    return navigator.serviceWorker.ready;
+  },
+  closeAllTabs() {
+    if (busy) return false;
+    for (const t of tabs) if (t !== activeTab && t.frame) t.frame.remove();
+    tabs = activeTab ? [activeTab] : [];
+    closeFrame();
+    homeForward = "";
+    syncNav();
+    renderTabs();
+    return true;
+  },
+};
 
 // Start with one tab on saints://home, and tell the console (when embedded) so.
 activeTab = newTabState();

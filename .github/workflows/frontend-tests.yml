@@ -26,11 +26,14 @@ jobs:
         run: |
           node --check public/index.js
           node --check public/sw.js
+          node --check public/sessions.js
           node --check src/index.js
+          node --check src/sessions.js
           node --check tests/frontend.test.mjs
           node --check tests/service-worker.test.mjs
           node --check tests/libcurl-transport.test.mjs
           node --check tests/build.test.mjs
+          node --check tests/sessions-api.test.mjs
       - name: Run frontend regression tests
         run: npm test
       - name: Build Cloudflare Worker assets

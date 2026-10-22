@@ -232,6 +232,35 @@ body.ss {
   overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
 }
 
+/* ---- Saved sessions ---- */
+.ss-sessions { width: min(620px, 100%); }
+.ss-sess-head { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+.ss-sess-who { color: var(--sub); font-size: 12.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ss-sess-current { margin: 0 0 10px; color: var(--sub); font-size: 13.5px; text-align: left; }
+.ss-sess-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
+.ss-sess-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+.ss-sess {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap;
+  padding: 10px 12px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--panel);
+}
+.ss-sess.is-active { border-color: #4a4a4a; background: #202020; }
+.ss-sess-info { display: flex; flex-direction: column; min-width: 0; flex: 1 1 180px; text-align: left; }
+.ss-sess-name { font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ss-sess-meta { color: var(--sub); font-size: 12.5px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ss-sess-btns { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.ss-sess-btn {
+  min-height: 34px; padding: 0 12px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--field); color: var(--text); font: inherit; font-size: 13.5px; cursor: pointer;
+}
+.ss-sess-btn:hover:not(:disabled) { border-color: #3a3a3a; }
+.ss-sess-btn:disabled { opacity: 0.5; cursor: default; }
+.ss-sess-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.ss-sess-btn.is-primary { background: var(--accent); color: var(--accent-fg); border-color: transparent; font-weight: 600; }
+.ss-sess-btn.is-danger { color: var(--danger); }
+.ss-sess-badge { padding: 4px 10px; border-radius: 999px; background: #2c2c2c; color: var(--text); font-size: 12px; font-weight: 600; }
+.ss-sess-msg { margin: 8px 0 0; min-height: 1em; color: var(--sub); font-size: 13px; text-align: left; }
+.ss-sess-msg.is-error { color: var(--danger); }
+
 /* ---- Inline messages ---- */
 .ss-msg { max-width: 560px; }
 .ss-msg p, .ss-msg pre { margin: 0; }

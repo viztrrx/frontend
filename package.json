@@ -11,7 +11,7 @@
     "build": "node scripts/build.mjs",
     "dev": "npx wrangler dev",
     "deploy": "npx wrangler deploy",
-    "test": "node --test tests/frontend.test.mjs tests/service-worker.test.mjs tests/libcurl-transport.test.mjs tests/build.test.mjs"
+    "test": "node --test tests/frontend.test.mjs tests/service-worker.test.mjs tests/libcurl-transport.test.mjs tests/build.test.mjs tests/sessions-api.test.mjs"
   },
   "dependencies": {
     "@mercuryworkshop/bare-mux": "^2.1.9",

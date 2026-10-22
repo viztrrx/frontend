@@ -15,6 +15,7 @@
 		<script src="search.js" defer></script>
 		<script src="config.js" defer></script>
 		<script src="index.js" defer></script>
+		<script src="sessions.js" defer></script>
 	</head>
 
 	<body class="ss">
@@ -113,6 +114,21 @@
 				<p id="sj-error" role="alert"></p>
 				<pre id="sj-error-code"></pre>
 			</div>
+
+			<!-- Saved sessions for the signed-in Saints account (sessions.js). -->
+			<section id="sj-sessions" class="ss-sessions" aria-label="Your sessions" hidden>
+				<div class="ss-sess-head">
+					<p class="ss-apps-label">Your sessions</p>
+					<span id="sj-sess-who" class="ss-sess-who"></span>
+				</div>
+				<p id="sj-sess-current" class="ss-sess-current"></p>
+				<div id="sj-sess-actions" class="ss-sess-actions" hidden>
+					<button type="button" id="sj-sess-new" class="ss-sess-btn is-primary">New session</button>
+					<button type="button" id="sj-sess-save" class="ss-sess-btn">Save current sign-ins</button>
+				</div>
+				<ul id="sj-sess-list" class="ss-sess-list"></ul>
+				<p id="sj-sess-msg" class="ss-sess-msg" role="status"></p>
+			</section>
 
 			<section class="ss-apps-wrap" aria-label="Quick launch">
 				<p class="ss-apps-label">Apps</p>

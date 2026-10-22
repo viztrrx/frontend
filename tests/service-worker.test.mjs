@@ -5,7 +5,40 @@ import { runInNewContext } from "node:vm";
 
 const source = readFileSync(new URL("../public/sw.js", import.meta.url), "utf8");
 
-function createHarness({ failing = false, transport = "/libcurl/index.mjs", fetchResponse } = {}) {
+// A tiny IndexedDB stand-in (one database, key/value stores) shared across
+// "restarts" of the worker, like the browser's real one.
+function fakeIndexedDB(data = new Map()) {
+  const later = (fn) => setTimeout(fn, 0);
+  return {
+    data,
+    open() {
+      const req = {};
+      later(() => {
+        const db = {
+          createObjectStore(name) { data.set(name, data.get(name) || new Map()); },
+          transaction(name) {
+            const tx = {
+              objectStore() {
+                return {
+                  get(key) { const r = {}; later(() => { r.result = data.get(name)?.get(key); r.onsuccess?.(); }); return r; },
+                  put(value, key) { data.get(name).set(key, value); later(() => tx.oncomplete?.()); },
+                };
+              },
+            };
+            return tx;
+          },
+          close() {},
+        };
+        req.result = db;
+        if (!data.has("jar")) req.onupgradeneeded?.();
+        req.onsuccess?.();
+      });
+      return req;
+    },
+  };
+}
+
+function createHarness({ failing = false, transport = "/libcurl/index.mjs", fetchResponse, indexedDB, setCookie } = {}) {
   const transports = [];
   const handlers = new Map();
   const messages = [];
@@ -26,8 +59,15 @@ function createHarness({ failing = false, transport = "/libcurl/index.mjs", fetc
   const stored = { prefix: "/scramjet/" };
   // Mirrors Scramjet 1.1: a "loadConfig" message only stores the config, and
   // loadConfig() applies it from IndexedDB unless a config is already set.
+  // Mirrors Scramjet 1.1's CookieStore (load() takes a JSON string).
+  class CookieStore {
+    cookies = {};
+    load(text) { if (typeof text === "object") return text; this.cookies = JSON.parse(text); }
+    dump() { return JSON.stringify(this.cookies); }
+  }
   class ScramjetServiceWorker {
     config;
+    cookieStore = indexedDB ? new CookieStore() : undefined;
     receiveConfigMessage(config) { this.config = config; }
     async loadConfig() {
       if (failing) throw new Error("<em>Backend problem</em>");
@@ -40,6 +80,7 @@ function createHarness({ failing = false, transport = "/libcurl/index.mjs", fetc
     }
     async fetch() {
       if (!applied) throw new TypeError("undefined is not an object (evaluating 'n.$W.prefix')");
+      if (setCookie) this.cookieStore.cookies[setCookie] = { name: setCookie, value: "1", domain: ".example.com", path: "/" };
       return fetchResponse ? fetchResponse() : new Response("Website reached", { status: 200 });
     }
   }
@@ -58,7 +99,8 @@ function createHarness({ failing = false, transport = "/libcurl/index.mjs", fetc
   runInNewContext(source, {
     importScripts() {},
     $scramjetLoadWorker,
-    self, URL, Response, Error, console, setTimeout,
+    self, URL, Response, Error, console, setTimeout, JSON, Promise,
+    ...(indexedDB ? { indexedDB } : {}),
     BareMux: { BareMuxConnection },
     _CONFIG: { wispUrl: "wss://backend-ivvq.onrender.com/wisp/" },
     fetch: async () => new Response("Static asset", { status: 200 })
@@ -68,6 +110,19 @@ function createHarness({ failing = false, transport = "/libcurl/index.mjs", fetc
     messages,
     transports,
     receiveConfigMessage: () => worker.receiveConfigMessage({ prefix: "/scramjet/" }),
+    worker: () => worker,
+    // A page asking the worker about saved sessions (sessions.js).
+    ask(message) {
+      return new Promise((resolve) => {
+        const waits = [];
+        handlers.get("message")({
+          data: { saintsSessions: 1, ...message },
+          ports: [{ postMessage: resolve }],
+          source: { url: "https://frontend.viztrrx.workers.dev/" },
+          waitUntil(p) { waits.push(p); },
+        });
+      });
+    },
     async request(path, mode = "navigate") {
       let respond;
       const waits = [];
@@ -160,4 +215,25 @@ test("a worker woken by Scramjet's loadConfig message still applies the config",
   const response = await h.request(path);
   assert.equal(response.status, 200);
   assert.equal(h.messages[0].status, 200);
+});
+
+test("proxied sign-ins survive a service worker restart", async () => {
+  const idb = fakeIndexedDB();
+  const first = createHarness({ indexedDB: idb, setCookie: "SID" });
+  await first.request("/scramjet/" + encodeURIComponent("https://example.com/"));
+  // A fresh worker (the browser stopped the idle one) starts with an empty jar.
+  const second = createHarness({ indexedDB: idb });
+  assert.equal(second.worker().cookieStore.dump(), "{}");
+  await second.request("/scramjet/" + encodeURIComponent("https://example.com/next"));
+  assert.ok(JSON.parse(second.worker().cookieStore.dump()).SID, "the saved cookie was restored");
+});
+
+test("the page can read, replace and clear the cookie jar for saved sessions", async () => {
+  const h = createHarness({ indexedDB: fakeIndexedDB() });
+  const jar = JSON.stringify({ ".example.com@/@a": { name: "a", value: "1", domain: ".example.com", path: "/" } });
+  assert.equal((await h.ask({ type: "load", cookies: jar })).ok, true);
+  assert.equal((await h.ask({ type: "dump" })).cookies, jar);
+  await h.ask({ type: "clear" });
+  assert.equal((await h.ask({ type: "dump" })).cookies, "{}");
+  assert.equal((await h.ask({ type: "nonsense" })).ok, false, "unknown requests are refused");
 });

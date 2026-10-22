@@ -1,4 +1,5 @@
 // Static frontend Worker; assets are produced by scripts/build.mjs.
+import { handleSessions } from "./sessions.js";
 
 // Only plausible public hostnames, and the value is only ever handed to a
 // favicon service (never fetched directly), so there is no SSRF surface.
@@ -43,6 +44,9 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (url.pathname === "/icon") return iconResponse(url);
+    if (url.pathname === "/sessions" || url.pathname.startsWith("/sessions/")) {
+      return handleSessions(request, env, url);
+    }
 
     const response = await env.ASSETS.fetch(request);
     const headers = new Headers(response.headers);
@@ -50,7 +54,7 @@ export default {
     headers.set("Cross-Origin-Opener-Policy", "same-origin");
     headers.set("Cross-Origin-Embedder-Policy", "require-corp");
     // Avoid stale configuration, boot scripts and service worker code after deployment.
-    if (["/config.js", "/index.js", "/register-sw.js", "/sw.js", "/version.json"].includes(url.pathname)) {
+    if (["/config.js", "/index.js", "/sessions.js", "/register-sw.js", "/sw.js", "/version.json"].includes(url.pathname)) {
       headers.set("Cache-Control", "no-store");
     }
     return new Response(response.body, { status: response.status, headers });
