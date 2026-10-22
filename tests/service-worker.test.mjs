@@ -4,6 +4,7 @@ import { readFileSync } from "node:fs";
 import { runInNewContext } from "node:vm";
 
 const source = readFileSync(new URL("../public/sw.js", import.meta.url), "utf8");
+const aiBlockSource = readFileSync(new URL("../public/ai-block.js", import.meta.url), "utf8");
 
 // A tiny IndexedDB stand-in (one database, key/value stores) shared across
 // "restarts" of the worker, like the browser's real one.
@@ -97,7 +98,8 @@ function createHarness({ failing = false, transport = "/libcurl/index.mjs", fetc
     ScramjetServiceWorker: class extends ScramjetServiceWorker { constructor() { super(); worker = this; } },
   });
   runInNewContext(source, {
-    importScripts() {},
+    // ai-block.js runs for real (it puts saintsAiBlock on self).
+    importScripts(...paths) { if (paths.includes("/ai-block.js")) runInNewContext(aiBlockSource, { self, URL }); },
     $scramjetLoadWorker,
     self, URL, Response, Error, console, setTimeout, JSON, Promise,
     ...(indexedDB ? { indexedDB } : {}),
@@ -236,4 +238,17 @@ test("the page can read, replace and clear the cookie jar for saved sessions", a
   await h.ask({ type: "clear" });
   assert.equal((await h.ask({ type: "dump" })).cookies, "{}");
   assert.equal((await h.ask({ type: "nonsense" })).ok, false, "unknown requests are refused");
+});
+
+test("proxied AI sites are refused by the worker, page loads and their requests alike", async () => {
+  const h = createHarness();
+  const page = "/scramjet/" + encodeURIComponent("https://chatgpt.com/c/123");
+  const response = await h.request(page);
+  assert.equal(response.status, 403);
+  assert.match(await response.text(), /unsafe and inaccurate/);
+  assert.equal(h.messages[0].status, 403);
+  const api = await h.request("/scramjet/" + encodeURIComponent("https://gemini.google.com/_/BardChatUi/data"), "cors");
+  assert.equal(api.status, 403);
+  // Ordinary sites still go through.
+  assert.equal((await h.request("/scramjet/" + encodeURIComponent("https://www.google.com/search?q=chatgpt"))).status, 200);
 });

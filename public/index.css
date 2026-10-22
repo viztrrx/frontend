@@ -298,6 +298,28 @@ body.ss {
 .sb-view.is-loading .sb-status:not(:empty), .sb-view.has-warning .sb-status:not(:empty) { opacity: 1; transform: none; }
 .sb-view.has-warning .sb-status { color: #ffb4a8; }
 
+/* ---- AI sites are blocked (inside the page area, over everything) ---- */
+.sj-ai-block {
+  position: absolute; inset: 0; z-index: 30; background: var(--bg);
+  display: grid; place-items: center; padding: 24px; overflow: auto;
+}
+.sj-ai-block[hidden] { display: none; }
+.sj-ai-block-card { max-width: 440px; text-align: center; }
+.sj-ai-block-ic {
+  width: 56px; height: 56px; margin: 0 auto 14px; display: grid; place-items: center;
+  border-radius: 16px; background: #2a1414; color: var(--danger);
+}
+.sj-ai-block-ic svg { width: 28px; height: 28px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.sj-ai-block h2 { margin: 0 0 8px; font-size: 21px; }
+.sj-ai-block p { margin: 0 0 8px; line-height: 1.5; }
+.sj-ai-block-site { color: var(--sub); font-size: 13px; overflow-wrap: anywhere; }
+.sj-ai-block-btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 16px; }
+.sj-ai-block-btns button {
+  min-height: 40px; padding: 0 16px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--field); color: var(--text); font: inherit; font-weight: 600; cursor: pointer;
+}
+.sj-ai-block-btns button.is-primary { background: var(--accent); color: var(--accent-fg); border-color: transparent; }
+
 /* ---- Loading cover (inside the page area) ---- */
 #sj-loading {
   position: absolute; inset: 0; z-index: 20; background: var(--bg); color: var(--text);

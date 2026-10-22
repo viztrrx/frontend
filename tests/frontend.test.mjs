@@ -4,6 +4,7 @@ import { readFileSync } from "node:fs";
 import { runInNewContext } from "node:vm";
 
 const source = readFileSync(new URL("../public/index.js", import.meta.url), "utf8");
+const aiBlockSource = readFileSync(new URL("../public/ai-block.js", import.meta.url), "utf8");
 
 function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails = false, controllerFails = false, workerHang = false, transportHang = false, blankFrame = false, noLoad = false, storage = {}, versionFetch, embed = false, realUrls = false } = {}) {
   const posts = [];
@@ -30,7 +31,9 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
     elements.set(id, element);
     return element;
   };
-  for (const id of ["sj-form", "sj-address", "sj-search-engine", "sj-error", "sj-error-code", "sj-progress", "sj-toolbar", "sj-toolbar-status", "sj-loading", "sj-loading-status", "sj-home-btn", "sj-reload", "sj-back", "sj-forward", "sj-show-page", "sj-version", "sj-home", "sj-view", "sj-home-form", "sj-home-q", "sj-omni-ic", "sj-fs", "sj-exit", "sj-tabs", "sj-newtab"]) makeElement(id);
+  for (const id of ["sj-form", "sj-address", "sj-search-engine", "sj-error", "sj-error-code", "sj-progress", "sj-toolbar", "sj-toolbar-status", "sj-loading", "sj-loading-status", "sj-home-btn", "sj-reload", "sj-back", "sj-forward", "sj-show-page", "sj-version", "sj-home", "sj-view", "sj-home-form", "sj-home-q", "sj-omni-ic", "sj-fs", "sj-exit", "sj-tabs", "sj-newtab", "sj-ai-block", "sj-ai-block-site", "sj-ai-block-home", "sj-ai-block-console"]) makeElement(id);
+  elements.get("sj-ai-block").hidden = true;
+  elements.get("sj-ai-block-console").hidden = true;
   // The tab strip: keeps the rendered tabs so tests can read and click them.
   elements.get("sj-tabs").replaceChildren = function (...items) { this.items = items; };
   // The proxied page goes in the page area under the toolbar.
@@ -164,6 +167,7 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
     },
     clearTimeout(id) { timers.delete(id); },
   };
+  runInNewContext(aiBlockSource, ctx, { filename: "public/ai-block.js" });
   runInNewContext(source, ctx, { filename: "public/index.js" });
   const initialAddress = elements.get("sj-address").value;
   elements.get("sj-address").value = "example.com";   // what the tests type
@@ -633,4 +637,46 @@ test("the Home button stays visible on phones", () => {
   assert.doesNotMatch(css, /\.sb-home-btn\s*\{[^}]*display:\s*none/);
   const html = readFileSync(new URL("../public/index.html", import.meta.url), "utf8");
   assert.match(html, /<button[^>]*id="sj-home-btn"[^>]*aria-label="Home \(saints:\/\/home\)"/);
+});
+
+test("typing an AI site shows the notice instead of the site", async () => {
+  const x = setup({ embed: true });
+  x.elements.get("sj-address").value = "gemini.google.com/app";
+  await x.submit();
+  await x.advance(4000);
+  assert.equal(x.frames.length, 0, "no page is loaded");
+  assert.equal(x.websocketCount(), 0, "the backend isn't even contacted");
+  assert.equal(x.elements.get("sj-ai-block").hidden, false);
+  assert.equal(x.elements.get("sj-view").hidden, false);
+  assert.equal(x.elements.get("sj-ai-block-site").textContent, "gemini.google.com");
+  assert.equal(x.elements.get("sj-address").value, "https://gemini.google.com/app", "the bar shows the blocked address");
+  assert.equal(x.elements.get("sj-ai-block-console").hidden, false, "in the console: Use Saints Service AI");
+  x.elements.get("sj-ai-block-console").dispatch("click");
+  assert.equal(x.posts.at(-1).type, "open-ai");
+  x.elements.get("sj-ai-block-home").dispatch("click");
+  assert.equal(x.elements.get("sj-ai-block").hidden, true);
+  assert.equal(x.elements.get("sj-address").value, "saints://home");
+});
+
+test("a page that leads to an AI site is replaced by the notice", async () => {
+  const x = setup({ realUrls: true });
+  await x.submit();
+  await x.advance(4000);
+  const frame = x.frames[0];
+  // A link or redirect inside the page lands on ChatGPT.
+  frame.url = "https://chatgpt.com/";
+  frame.contentWindow.location.href = "https://frontend.viztrrx.workers.dev/scramjet/" + encodeURIComponent(frame.url);
+  frame.dispatch("load");
+  assert.equal(frame.removed, true, "the AI page is gone, so it can't be used");
+  assert.equal(x.elements.get("sj-ai-block").hidden, false);
+  assert.equal(x.elements.get("sj-address").value, "https://chatgpt.com/");
+});
+
+test("searching for an AI by name still searches", async () => {
+  const x = setup();
+  x.elements.get("sj-address").value = "www.google.com/search?q=chatgpt";
+  await x.submit();
+  await x.advance(4000);
+  assert.equal(x.frames.length, 1);
+  assert.equal(x.elements.get("sj-ai-block").hidden, true);
 });

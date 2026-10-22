@@ -1,4 +1,4 @@
-importScripts("/scram/scramjet.all.js", "/baremux/index.js", "/config.js");
+importScripts("/scram/scramjet.all.js", "/baremux/index.js", "/config.js", "/ai-block.js");
 
 const { ScramjetServiceWorker } = $scramjetLoadWorker();
 const scramjet = new ScramjetServiceWorker();
@@ -183,8 +183,42 @@ self.addEventListener("message", (event) => {
   if (typeof event.waitUntil === "function") event.waitUntil(reply);
 });
 
+// ---- AI sites (ai-block.js) --------------------------------------------------
+// Proxied addresses are "/scramjet/" + encodeURIComponent(real URL) (Scramjet's
+// default codec); Scramjet may add its own "?type=…" after it.
+const PROXY_PREFIX = "/scramjet/";
+function realUrlOf(requestUrl) {
+  const u = new URL(requestUrl);
+  if (u.origin !== self.location.origin || !u.pathname.startsWith(PROXY_PREFIX)) return "";
+  try { return decodeURIComponent(u.pathname.slice(PROXY_PREFIX.length)); } catch { return ""; }
+}
+function escapeHtml(text) {
+  return String(text).replace(/[&<>"']/g, (char) =>
+    ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]);
+}
+// What a blocked AI page shows (the frontend also covers it with its own
+// notice, index.js); other requests to AI sites just fail.
+function aiBlockedResponse(event, site) {
+  const headers = { "content-type": "text/html; charset=utf-8", "cache-control": "no-store" };
+  if (event.request.mode !== "navigate") return new Response("Blocked: AI sites can't be used through Saints Search.", { status: 403, headers });
+  let host = "";
+  try { host = new URL(site).hostname; } catch {}
+  return new Response(
+    '<!doctype html><meta name="viewport" content="width=device-width,initial-scale=1"><title>AI blocked</title>' +
+    '<body style="margin:0;min-height:100vh;display:grid;place-items:center;background:#131313;color:#e6e6e6;font:16px/1.5 -apple-system,system-ui,sans-serif;text-align:center;padding:24px;box-sizing:border-box">' +
+    '<div style="max-width:420px"><h1 style="font-size:22px;margin:0 0 10px">AI isn\u2019t allowed here</h1><p style="margin:0 0 8px">' +
+    escapeHtml(self.saintsAiBlock.MESSAGE) + '</p><p style="margin:0;color:#9c9c9c;font-size:13px">' + escapeHtml(host) + "</p></div></body>",
+    { status: 403, headers }
+  );
+}
+
 async function handleRequest(event) {
   const pathname = new URL(event.request.url).pathname;
+  const site = realUrlOf(event.request.url);
+  if (site && self.saintsAiBlock && self.saintsAiBlock.isBlocked(site)) {
+    if (event.request.mode === "navigate") event.waitUntil(reportNavigation(pathname, 403, "AI sites are blocked"));
+    return aiBlockedResponse(event, site);
+  }
   const isDocumentNavigation = event.request.mode === "navigate" &&
     pathname.startsWith("/scramjet/");
   try {
