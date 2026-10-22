@@ -126,8 +126,14 @@ body.ss {
   .sb-tab { flex-basis: 150px; min-width: 112px; }
   .sb-row { gap: 0; }
   .sb-btn { width: 34px; height: 34px; }
-  .sb-home-btn { display: none; }   /* the address bar says saints://home; Back gets you there */
   .sb-omni { margin: 0 2px; padding: 0 12px 0 10px; }
+}
+/* Small phones: Home stays visible, so the buttons get a little narrower. */
+@media (max-width: 380px) {
+  .sb-row { padding-left: 2px; padding-right: 2px; }
+  .sb-btn { width: 31px; height: 34px; }
+  .sb-btn svg { width: 18px; height: 18px; }
+  .sb-omni { gap: 6px; padding: 0 10px 0 8px; }
 }
 
 /* ---- saints://home ---- */

@@ -631,3 +631,10 @@ test("embedded: switching tabs tells the console which site is showing", async (
   tabsOf(x)[0].open();
   assert.equal(J(x.posts.at(-1)), J({ saintsProxy: 1, type: "nav", url: "https://example.com/" }));
 });
+
+test("the Home button stays visible on phones", () => {
+  const css = readFileSync(new URL("../public/index.css", import.meta.url), "utf8");
+  assert.doesNotMatch(css, /\.sb-home-btn\s*\{[^}]*display:\s*none/);
+  const html = readFileSync(new URL("../public/index.html", import.meta.url), "utf8");
+  assert.match(html, /<button[^>]*id="sj-home-btn"[^>]*aria-label="Home \(saints:\/\/home\)"/);
+});
