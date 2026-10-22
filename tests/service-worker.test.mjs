@@ -10,9 +10,12 @@ const blockSource = readFileSync(new URL("../public/blocked.js", import.meta.url
 // "restarts" of the worker, like the browser's real one.
 function fakeIndexedDB(data = new Map()) {
   const later = (fn) => setTimeout(fn, 0);
+  const counts = { puts: 0, opens: 0 };
   return {
     data,
+    counts,
     open() {
+      counts.opens++;
       const req = {};
       later(() => {
         const db = {
@@ -21,8 +24,8 @@ function fakeIndexedDB(data = new Map()) {
             const tx = {
               objectStore() {
                 return {
-                  get(key) { const r = {}; later(() => { r.result = data.get(name)?.get(key); r.onsuccess?.(); }); return r; },
-                  put(value, key) { data.get(name).set(key, value); later(() => tx.oncomplete?.()); },
+                  get(key) { const r = {}; later(() => { r.result = data.get(name)?.get(key); r.onsuccess?.(); tx.oncomplete?.(); }); return r; },
+                  put(value, key) { counts.puts++; data.get(name).set(key, value); const r = { result: key }; later(() => tx.oncomplete?.()); return r; },
                 };
               },
             };
@@ -39,7 +42,7 @@ function fakeIndexedDB(data = new Map()) {
   };
 }
 
-function createHarness({ failing = false, transport = "/libcurl/index.mjs", fetchResponse, indexedDB, setCookie } = {}) {
+function createHarness({ failing = false, transport = "/libcurl/index.mjs", fetchResponse, indexedDB, setCookie, setCookieEach } = {}) {
   const transports = [];
   const handlers = new Map();
   const messages = [];
@@ -82,6 +85,7 @@ function createHarness({ failing = false, transport = "/libcurl/index.mjs", fetc
     async fetch() {
       if (!applied) throw new TypeError("undefined is not an object (evaluating 'n.$W.prefix')");
       if (setCookie) this.cookieStore.cookies[setCookie] = { name: setCookie, value: "1", domain: ".example.com", path: "/" };
+      if (setCookieEach) { const name = setCookieEach(); this.cookieStore.cookies[name] = { name, value: "1", domain: ".tiktok.com", path: "/" }; }
       return fetchResponse ? fetchResponse() : new Response("Website reached", { status: 200 });
     }
   }
@@ -269,4 +273,41 @@ test("a page set up with Epoxy keeps it", async () => {
   const h = createHarness({ transport: "/epoxy/index.mjs" });
   await h.request("/scramjet/" + encodeURIComponent("https://example.com/a.css"), "no-cors");
   assert.equal(h.transports.length, 0);
+});
+
+test("a burst of cookie-setting requests saves the jar once, over one connection", async () => {
+  const idb = fakeIndexedDB();
+  let n = 0;
+  const h = createHarness({ indexedDB: idb, setCookieEach: () => "c" + n++ });
+  const asset = (i) => "/scramjet/" + encodeURIComponent("https://www.tiktok.com/video/" + i);
+  await Promise.all(Array.from({ length: 25 }, (_, i) => h.request(asset(i), "no-cors")));
+  assert.equal(Object.keys(JSON.parse(h.worker().cookieStore.dump())).length, 25);
+  assert.equal(idb.counts.puts, 1, "one write for the whole burst");
+  assert.equal(idb.counts.opens, 1, "the database stays open");
+  assert.equal(Object.keys(JSON.parse(idb.data.get("jar").get("cookies"))).length, 25, "all 25 cookies saved");
+});
+
+test("a page that fails with Safari's storage AbortError is loaded again once", async () => {
+  const script = encodeURIComponent('errorTrace.value = "Message: AbortError\\n\\nUrl: x";');
+  let calls = 0;
+  const h = createHarness({
+    fetchResponse: () => (++calls === 1
+      ? new Response(`<html><head></head><body><script src="data:application/javascript,${script}"></script></body></html>`, { status: 500, headers: { "content-type": "text/html" } })
+      : new Response("<html><head></head><body>For You</body></html>", { status: 200, headers: { "content-type": "text/html" } })),
+  });
+  const response = await h.request("/scramjet/" + encodeURIComponent("https://www.tiktok.com/foryou"));
+  assert.equal(calls, 2);
+  assert.equal(response.status, 200);
+  assert.match(await response.text(), /For You/);
+});
+
+test("a real site error is shown, not retried", async () => {
+  const script = encodeURIComponent('errorTrace.value = "Message: Request failed with error code 7\\n\\nUrl: x";');
+  let calls = 0;
+  const h = createHarness({
+    fetchResponse: () => { calls++; return new Response(`<html><head></head><body><script src="data:application/javascript,${script}"></script></body></html>`, { status: 500, headers: { "content-type": "text/html" } }); },
+  });
+  const response = await h.request("/scramjet/" + encodeURIComponent("https://example.com/"));
+  assert.equal(calls, 1);
+  assert.equal(response.status, 500);
 });

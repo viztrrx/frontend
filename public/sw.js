@@ -106,39 +106,41 @@ function loadScramjetConfig() {
 // before the first proxied request.
 const JAR_DB = "saints-sessions";
 const JAR_STORE = "jar";
+// One connection, kept open: opening and closing the database for every
+// request (TikTok sets cookies on dozens) strained Safari's IndexedDB, which
+// Scramjet also relies on for every page.
+let jarConnection = null;
 function jarDb() {
-  return new Promise((resolve, reject) => {
+  jarConnection ??= new Promise((resolve, reject) => {
     const open = indexedDB.open(JAR_DB, 1);
     open.onupgradeneeded = () => open.result.createObjectStore(JAR_STORE);
-    open.onsuccess = () => resolve(open.result);
+    open.onsuccess = () => {
+      const db = open.result;
+      // Safari can drop the connection; the next use opens a new one.
+      db.onclose = () => { jarConnection = null; };
+      db.onversionchange = () => { db.close(); jarConnection = null; };
+      resolve(db);
+    };
     open.onerror = () => reject(open.error);
-  });
+  }).catch((cause) => { jarConnection = null; throw cause; });
+  return jarConnection;
 }
-async function jarGet() {
+async function jarRequest(mode, run) {
   const db = await jarDb();
   try {
     return await new Promise((resolve, reject) => {
-      const req = db.transaction(JAR_STORE).objectStore(JAR_STORE).get("cookies");
-      req.onsuccess = () => resolve(req.result);
-      req.onerror = () => reject(req.error);
+      const tx = db.transaction(JAR_STORE, mode);
+      const result = run(tx.objectStore(JAR_STORE));
+      tx.oncomplete = () => resolve(result.result);
+      tx.onerror = tx.onabort = () => reject(tx.error || new Error("The cookie store's transaction was aborted."));
     });
-  } finally {
-    db.close();
+  } catch (cause) {
+    jarConnection = null;
+    throw cause;
   }
 }
-async function jarPut(value) {
-  const db = await jarDb();
-  try {
-    await new Promise((resolve, reject) => {
-      const tx = db.transaction(JAR_STORE, "readwrite");
-      tx.objectStore(JAR_STORE).put(value, "cookies");
-      tx.oncomplete = () => resolve();
-      tx.onerror = () => reject(tx.error);
-    });
-  } finally {
-    db.close();
-  }
-}
+const jarGet = () => jarRequest("readonly", (store) => store.get("cookies"));
+const jarPut = (value) => jarRequest("readwrite", (store) => store.put(value, "cookies"));
 const hasJar = () => !!(scramjet.cookieStore && typeof scramjet.cookieStore.dump === "function");
 let jarLoaded = null;
 let jarSaved = "";
@@ -165,6 +167,15 @@ async function saveJar() {
   if (now === jarSaved) return;
   jarSaved = now;
   try { await jarPut(now); } catch (cause) { jarSaved = ""; console.error("Could not save the proxy's cookies:", cause); }
+}
+// After proxied requests the jar is saved at most once a second, not per request.
+const SAVE_DELAY_MS = 1000;
+let saveSoonPromise = null;
+function saveJarSoon() {
+  saveSoonPromise ??= new Promise((resolve) => setTimeout(resolve, SAVE_DELAY_MS))
+    .then(saveJar)
+    .finally(() => { saveSoonPromise = null; });
+  return saveSoonPromise;
 }
 async function replaceJar(cookies) {
   await loadJar();
@@ -226,6 +237,9 @@ function blockedResponse(event, site, block) {
   );
 }
 
+// Scramjet error messages that come from the browser's storage, not the site.
+const TRANSIENT = /AbortError|InvalidStateError|UnknownError|Indexed Database|transaction/i;
+
 async function handleRequest(event) {
   const pathname = new URL(event.request.url).pathname;
   const site = realUrlOf(event.request.url);
@@ -254,7 +268,12 @@ async function handleRequest(event) {
     if (pathname.startsWith("/scramjet/")) await ensureTransport();
     await loadJar();
     let response = await scramjet.fetch(event);
-    event.waitUntil(saveJar());
+    // Safari sometimes aborts Scramjet's IndexedDB work mid-page (Scramjet
+    // then shows "Message: AbortError"); one more try nearly always works.
+    if (isDocumentNavigation && response.status === 500 && TRANSIENT.test(await scramjetErrorMessage(response))) {
+      response = await scramjet.fetch(event);
+    }
+    event.waitUntil(saveJarSoon());
     if (isDocumentNavigation) {
       const message = response.status === 500 ? await scramjetErrorMessage(response) : "";
       event.waitUntil(reportNavigation(pathname, response.status, message));
