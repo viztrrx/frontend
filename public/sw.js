@@ -70,12 +70,34 @@ async function ensureTransport() {
   await settingTransport;
 }
 
+// Scramjet's "loadConfig" message stores the config without applying it, and
+// loadConfig() then returns early. A worker woken by that message (iOS stops
+// idle workers while the page stays open) crashed with "n.$W.prefix", so load
+// and apply the config from IndexedDB once per worker start.
+let configLoaded = null;
+function loadScramjetConfig() {
+  configLoaded ??= (async () => {
+    scramjet.config = undefined;
+    await scramjet.loadConfig();
+    // Not stored yet (the frontend stores it before registering this worker); retry next time.
+    if (!scramjet.config) configLoaded = null;
+  })().catch((cause) => {
+    configLoaded = null;
+    throw cause;
+  });
+  return configLoaded;
+}
+
 async function handleRequest(event) {
   const pathname = new URL(event.request.url).pathname;
   const isDocumentNavigation = event.request.mode === "navigate" &&
     pathname.startsWith("/scramjet/");
   try {
-    await scramjet.loadConfig();
+    await loadScramjetConfig();
+    if (!scramjet.config) {
+      if (pathname.startsWith("/scramjet/")) throw new Error("Scramjet settings are not stored yet. Go Back and open the site again.");
+      return fetch(event.request);
+    }
     if (!scramjet.route(event)) return fetch(event.request);
     // Scramjet's WASM loader is routed too, but must not wait on BareMux:
     // the page needs it before it can hand this worker a port.

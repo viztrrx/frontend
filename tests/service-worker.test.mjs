@@ -22,14 +22,24 @@ function createHarness({ failing = false, transport = "/libcurl/index.mjs", fetc
     async skipWaiting() {},
     addEventListener(kind, fn) { handlers.set(kind, fn); }
   };
+  let applied = null;
+  const stored = { prefix: "/scramjet/" };
+  // Mirrors Scramjet 1.1: a "loadConfig" message only stores the config, and
+  // loadConfig() applies it from IndexedDB unless a config is already set.
   class ScramjetServiceWorker {
+    config;
+    receiveConfigMessage(config) { this.config = config; }
     async loadConfig() {
       if (failing) throw new Error("<em>Backend problem</em>");
+      if (this.config) return;
+      this.config = stored;
+      applied = stored;
     }
     route(event) {
       return new URL(event.request.url).pathname.startsWith("/scramjet/");
     }
     async fetch() {
+      if (!applied) throw new TypeError("undefined is not an object (evaluating 'n.$W.prefix')");
       return fetchResponse ? fetchResponse() : new Response("Website reached", { status: 200 });
     }
   }
@@ -41,9 +51,13 @@ function createHarness({ failing = false, transport = "/libcurl/index.mjs", fetc
       transport = path;
     }
   }
+  let worker;
+  const $scramjetLoadWorker = () => ({
+    ScramjetServiceWorker: class extends ScramjetServiceWorker { constructor() { super(); worker = this; } },
+  });
   runInNewContext(source, {
     importScripts() {},
-    $scramjetLoadWorker() { return { ScramjetServiceWorker }; },
+    $scramjetLoadWorker,
     self, URL, Response, Error, console, setTimeout,
     BareMux: { BareMuxConnection },
     _CONFIG: { wispUrl: "wss://backend-ivvq.onrender.com/wisp/" },
@@ -53,6 +67,7 @@ function createHarness({ failing = false, transport = "/libcurl/index.mjs", fetc
     handlers,
     messages,
     transports,
+    receiveConfigMessage: () => worker.receiveConfigMessage({ prefix: "/scramjet/" }),
     async request(path, mode = "navigate") {
       let respond;
       const waits = [];
@@ -136,4 +151,13 @@ test("Scramjet proxy error details are forwarded to the page", async () => {
   await h.request("/scramjet/" + encodeURIComponent("https://www.google.com/"));
   assert.equal(h.messages[0].status, 500);
   assert.equal(h.messages[0].message, "Request failed with error code 7: Could not connect to server");
+});
+
+test("a worker woken by Scramjet's loadConfig message still applies the config", async () => {
+  const h = createHarness();
+  h.receiveConfigMessage();
+  const path = "/scramjet/" + encodeURIComponent("https://example.com/");
+  const response = await h.request(path);
+  assert.equal(response.status, 200);
+  assert.equal(h.messages[0].status, 200);
 });
