@@ -1,18 +1,15 @@
 <!doctype html>
-<html>
+<html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
-		/>
-		<title>Proxy</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, shrink-to-fit=no" />
+		<meta name="theme-color" content="#0b0c0f" />
+		<title>Saints Search</title>
+		<link rel="icon" href="sj.svg" />
 
-		<link rel="shortcut icon" content="favicon.webp" />
-	
 		<script src="/scram/scramjet.all.js"></script>
 		<script src="/baremux/index.js"></script>
-		
+
 		<link rel="stylesheet" href="index.css" />
 		<script src="register-sw.js" defer></script>
 		<script src="search.js" defer></script>
@@ -20,41 +17,80 @@
 		<script src="index.js" defer></script>
 	</head>
 
-	<body>
-		<div class="flex-center header-center"><h1 class="sj-heading">Search</h1></div>
-		<form id="sj-form" class="flex-center">
-			<input id="sj-address" type="text" placeholder="Search or enter a website" />
-		</form>
-		<div id="sj-options" class="flex-center">
-			<label>
-				Search with
-				<select id="sj-search-engine">
-					<option value="https://www.google.com/search?q=%s">Google</option>
-					<option value="https://duckduckgo.com/?q=%s">DuckDuckGo</option>
-					<option value="https://www.bing.com/search?q=%s">Bing</option>
-				</select>
-			</label>
-			<label>
-				<input id="sj-fulltab" type="checkbox" />
-				Open sites in the full tab (no frame)
-			</label>
-		</div>
-		<div class="desc left-margin">
-			<p id="sj-progress" role="status" hidden></p>
-			<p id="sj-error" role="alert"></p>
-			<pre id="sj-error-code"></pre>
-		</div>
+	<body class="ss">
+		<main class="ss-home">
+			<div class="ss-brand">
+				<span class="ss-logo" aria-hidden="true">
+					<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<defs>
+							<radialGradient id="ssPlanet" cx="38%" cy="30%" r="78%">
+								<stop offset="0%" stop-color="#bcd6ff" />
+								<stop offset="42%" stop-color="#5b8cff" />
+								<stop offset="100%" stop-color="#101f3c" />
+							</radialGradient>
+							<linearGradient id="ssRing" x1="0" y1="0" x2="1" y2="1">
+								<stop offset="0%" stop-color="#d7e4ff" />
+								<stop offset="100%" stop-color="#5b8cff" />
+							</linearGradient>
+						</defs>
+						<g transform="rotate(-20 32 32)">
+							<path d="M6 32 A26 8.5 0 0 1 58 32" stroke="url(#ssRing)" stroke-width="2.6" stroke-linecap="round" opacity="0.85" />
+							<circle cx="32" cy="32" r="15.5" fill="url(#ssPlanet)" />
+							<circle cx="26" cy="26" r="4.5" fill="#dce8ff" opacity="0.5" />
+							<path d="M58 32 A26 8.5 0 0 1 6 32" stroke="url(#ssRing)" stroke-width="2.6" stroke-linecap="round" />
+						</g>
+					</svg>
+				</span>
+				<h1 class="ss-title">Saints Search</h1>
+				<p class="ss-tagline">Search the web, or enter a site to open.</p>
+			</div>
+
+			<form id="sj-form" class="ss-searchbar" role="search">
+				<svg class="ss-search-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" /><path d="M20 20l-4.2-4.2" /></svg>
+				<input id="sj-address" type="text" placeholder="Search or enter a website" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="go" aria-label="Search or enter a website" />
+				<button type="submit" class="ss-go" aria-label="Search">
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+				</button>
+			</form>
+
+			<div id="sj-options" class="ss-options">
+				<label class="ss-field">
+					<span>Search engine</span>
+					<select id="sj-search-engine">
+						<option value="https://www.google.com/search?q=%s">Google</option>
+						<option value="https://duckduckgo.com/?q=%s">DuckDuckGo</option>
+						<option value="https://www.bing.com/search?q=%s">Bing</option>
+					</select>
+				</label>
+				<label class="ss-check">
+					<input id="sj-fulltab" type="checkbox" />
+					<span>Open sites in the full tab (no frame)</span>
+				</label>
+			</div>
+
+			<div class="ss-msg">
+				<p id="sj-progress" role="status" hidden></p>
+				<p id="sj-error" role="alert"></p>
+				<pre id="sj-error-code"></pre>
+			</div>
+		</main>
+
 		<div id="sj-loading" role="status" aria-live="polite" hidden>
-          <div class="sj-spinner" aria-hidden="true"></div>
-          <p id="sj-loading-status">Loading website…</p>
-          <p class="sj-hint">Render's free service may take a minute to wake up.</p>
-          <button type="button" id="sj-show-page">Show page</button>
-        </div>
-        <nav id="sj-toolbar" aria-label="Browsing controls" hidden>
-          <button type="button" id="sj-close">← Back</button>
-          <span id="sj-toolbar-status" aria-live="polite">Loading…</span>
-          <button type="button" id="sj-reload">Retry</button>
-        </nav>
-		<!-- footer removed -->
+			<div class="sj-spinner" aria-hidden="true"></div>
+			<p id="sj-loading-status">Loading website…</p>
+			<p class="sj-hint">The connection may take a moment to wake up.</p>
+			<button type="button" id="sj-show-page">Show page</button>
+		</div>
+
+		<nav id="sj-toolbar" aria-label="Browsing controls" hidden>
+			<button type="button" id="sj-close">
+				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
+				<span>Back</span>
+			</button>
+			<span id="sj-toolbar-status" aria-live="polite">Loading…</span>
+			<button type="button" id="sj-reload" aria-label="Retry">
+				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 10-.5 4M20 5v6h-6" /></svg>
+			</button>
+		</nav>
 	</body>
 </html>
