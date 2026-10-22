@@ -1028,6 +1028,8 @@ async function openUrl(url, { retry = false } = {}) {
     loadingTimer = setTimeout(() => {
       if (currentFrame !== element || navigationError || httpWarning) return;
       if (inspectPage(element) === false) {
+        // No answer at all (not even an error): one more try, other transport.
+        if (navigationResponseStatus === null && retryWithOtherTransport()) return;
         if (pageCheckTimer !== null) clearTimeout(pageCheckTimer);
         pageCheckTimer = null;
         loading.hidden = false;

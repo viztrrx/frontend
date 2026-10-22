@@ -335,6 +335,7 @@ test("blank about:blank iframe never counts as website loaded", async () => {
   const x = setup({ blankFrame: true });
   await x.submit();
   assert.equal(x.elements.get("sj-loading").hidden, false);
+  await x.advance(35000);   // the one retry with the other transport
   await x.advance(35000);
   assert.equal(x.elements.get("sj-loading").hidden, false);
   assert.match(x.elements.get("sj-loading-status").textContent, /No completed proxied webpage/);
@@ -916,4 +917,15 @@ test("games: typing saints://games/<slug> opens that game", async () => {
   x.elements.get("sj-address").value = "saints://games";
   await x.submit();
   assert.equal(x.elements.get("sj-games").hidden, false);
+});
+
+test("a site that never answers gets one retry with the other transport", async () => {
+  const x = setup({ blankFrame: true });
+  await x.submit();
+  await x.advance(35000);
+  assert.equal(x.transports.length, 2, "retried with the other transport");
+  assert.equal(x.transports[1][0], "/epoxy/index.mjs");
+  await x.advance(35000);
+  assert.equal(x.transports.length, 2, "only once");
+  assert.match(x.elements.get("sj-loading-status").textContent, /No completed proxied webpage/);
 });
