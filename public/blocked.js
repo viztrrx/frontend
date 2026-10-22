@@ -23,11 +23,21 @@
     },
   };
 
-  // Google's sign-in lives on accounts.google.com (its sign-in pages, the
-  // OAuth consent screens behind "Sign in with Google" / "Continue with
-  // Google", and the One Tap and button frames under /gsi/). accounts.youtube.com
-  // finishes a Google sign-in for YouTube.
-  const GOOGLE_SIGN_IN = /^accounts\.(google\.[a-z.]+|youtube\.com)$/;
+  // Signing in with Google: only the sign-in steps on accounts.google.com.
+  // Google's own sites (YouTube, Search, Maps, Docs…) also call other
+  // accounts.google.com and accounts.youtube.com pages in the background, even
+  // for people who aren't signed in (CheckConnection, ListAccounts,
+  // RotateCookiesPage, SetSID), so those stay open and nothing used without
+  // signing in is affected.
+  const GOOGLE_ACCOUNTS_HOST = /^accounts\.google\.[a-z]{2,3}(\.[a-z]{2})?$/;
+  const GOOGLE_SIGN_IN_PATH = new RegExp("^/(" + [
+    "$",                               // accounts.google.com itself (it's the sign-in page)
+    "o/oauth2/",                       // "Sign in with Google" / "Continue with Google" on other sites
+    "signin(/|$)", "v3/signin(/|$)",    // Google's sign-in pages and consent screens
+    "servicelogin", "serviceloginauth", "accountchooser", "addsession", "interactivelogin",
+    "gsi/",                            // Sign in with Google buttons and One Tap
+    "signup", "lifecycle/",            // making a Google account to sign in with
+  ].join("|") + ")", "i");
 
   // Whole sites, subdomains included (chat.deepseek.com is deepseek.com).
   const HOSTS = [
@@ -97,7 +107,7 @@
     try { u = address instanceof URL ? address : new URL(String(address)); } catch { return null; }
     if (u.protocol !== "https:" && u.protocol !== "http:" && u.protocol !== "wss:" && u.protocol !== "ws:") return null;
     const host = u.hostname.toLowerCase().replace(/\.$/, "");
-    if (GOOGLE_SIGN_IN.test(host)) return KINDS.googleSignIn;
+    if (GOOGLE_ACCOUNTS_HOST.test(host) && GOOGLE_SIGN_IN_PATH.test(u.pathname)) return KINDS.googleSignIn;
     if (HOSTS.some((d) => onHost(host, d))) return KINDS.ai;
     if (HOST_WORDS.test(host)) return KINDS.ai;
     if (PAGES.some(([d, test]) => onHost(host, d) && test(u))) return KINDS.ai;
