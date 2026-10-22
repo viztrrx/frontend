@@ -12,6 +12,10 @@ test("build records the deployed commit in dist/version.json", () => {
   assert.equal(version.commit, execFileSync("git", ["rev-parse", "HEAD"], { cwd: root, encoding: "utf8" }).trim());
   assert.ok(version.message.length > 0);
   assert.ok(!isNaN(new Date(version.builtAt)));
+  for (const file of ["index.mjs", "index.js", "index.cjs"]) {
+    const built = readFileSync(new URL("dist/libcurl/" + file, root), "utf8");
+    assert.match(built, /libcurl\.events\.addEventListener\("libcurl_load"/, file + " has the WASM readiness fix");
+  }
 });
 
 test("Cloudflare's commit variable takes precedence", () => {

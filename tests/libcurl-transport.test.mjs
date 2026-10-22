@@ -5,13 +5,16 @@ import { createRequire } from "node:module";
 import { join } from "node:path";
 import { runInNewContext } from "node:vm";
 
-// The browser build served at /libcurl/index.mjs, after patches/ is applied.
+import { patchLibcurlTransport } from "../scripts/patch-libcurl.mjs";
+
+// The browser build served at /libcurl/index.mjs, as scripts/build.mjs patches it.
 const { libcurlPath } = createRequire(import.meta.url)("@mercuryworkshop/libcurl-transport");
-const source = readFileSync(join(libcurlPath, "index.mjs"), "utf8");
+const original = readFileSync(join(libcurlPath, "index.mjs"), "utf8");
+const source = patchLibcurlTransport(original);
 
 // Load the transport the way BareMux's SharedWorker does: a worker-like global
 // where libcurl's WASM is still compiling when the first request calls init().
-function loadClient() {
+function loadClient(code = source) {
   const context = {
     importScripts() {}, location: { href: "https://frontend.viztrrx.workers.dev/libcurl/index.mjs" },
     TextEncoder, TextDecoder, console: { ...console, log() {} }, setTimeout, clearTimeout,
@@ -22,7 +25,7 @@ function loadClient() {
   context.self = context;
   context.globalThis = context;
   runInNewContext(
-    source.replace(/export\s*\{\s*LibcurlClient as default\s*\};?\s*$/, "globalThis.LibcurlClient = LibcurlClient;"),
+    code.replace(/export\s*\{\s*LibcurlClient as default\s*\};?\s*$/, "globalThis.LibcurlClient = LibcurlClient;"),
     context
   );
   assert.equal(typeof context.LibcurlClient, "function");
@@ -44,4 +47,9 @@ test("concurrent first requests share one session and all resolve", async () => 
   assert.equal(client.ready, true);
   await client.init();
   assert.equal(client.session, session);
+});
+
+test("the unpatched 1.5.2 transport still has the race the build patch fixes", async () => {
+  await assert.rejects(loadClient(original).init(), /wasm not loaded yet/);
+  assert.equal(patchLibcurlTransport(source), source, "patching is idempotent");
 });

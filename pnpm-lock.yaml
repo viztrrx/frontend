@@ -4,11 +4,6 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
-patchedDependencies:
-  '@mercuryworkshop/libcurl-transport@1.5.2':
-    hash: 0c18a8a286c73cb39dcf1607f6956ad34cd0fef6e9a5ea4cd9dbf25615c1ca1c
-    path: patches/@mercuryworkshop__libcurl-transport@1.5.2.patch
-
 importers:
 
   .:
@@ -18,7 +13,7 @@ importers:
         version: 2.1.9
       '@mercuryworkshop/libcurl-transport':
         specifier: ^1.5.2
-        version: 1.5.2(patch_hash=0c18a8a286c73cb39dcf1607f6956ad34cd0fef6e9a5ea4cd9dbf25615c1ca1c)
+        version: 1.5.2
       '@mercuryworkshop/scramjet':
         specifier: https://github.com/MercuryWorkshop/scramjet/releases/download/v1.1.0/mercuryworkshop-scramjet-1.1.0.tgz
         version: https://github.com/MercuryWorkshop/scramjet/releases/download/v1.1.0/mercuryworkshop-scramjet-1.1.0.tgz
@@ -502,7 +497,7 @@ snapshots:
 
   '@mercuryworkshop/bare-mux@2.1.9': {}
 
-  '@mercuryworkshop/libcurl-transport@1.5.2(patch_hash=0c18a8a286c73cb39dcf1607f6956ad34cd0fef6e9a5ea4cd9dbf25615c1ca1c)':
+  '@mercuryworkshop/libcurl-transport@1.5.2':
     dependencies:
       libcurl.js: 0.7.4
 
