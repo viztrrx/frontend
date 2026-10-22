@@ -202,6 +202,16 @@ self.addEventListener("message", (event) => {
   if (typeof event.waitUntil === "function") event.waitUntil(reply);
 });
 
+// Pages this worker writes itself go into Saints Search's frames, and Saints
+// Search is cross-origin isolated (COEP require-corp): a framed page without
+// COEP is refused, and the frame shows the browser's error page instead.
+const OWN_PAGE_HEADERS = {
+  "content-type": "text/html; charset=utf-8",
+  "cache-control": "no-store",
+  "cross-origin-embedder-policy": "require-corp",
+  "cross-origin-resource-policy": "same-origin",
+};
+
 // ---- Blocked sites (blocked.js): AI, and signing in with Google -------------
 // Proxied addresses are "/scramjet/" + encodeURIComponent(real URL) (Scramjet's
 // default codec); Scramjet may add its own "?type=…" after it.
@@ -219,7 +229,7 @@ function escapeHtml(text) {
 // covers it with its notice; this is what pop-ups ("Sign in with Google"
 // windows) and frames inside sites show. Other requests just fail.
 function blockedResponse(event, site, block) {
-  const headers = { "content-type": "text/html; charset=utf-8", "cache-control": "no-store" };
+  const headers = OWN_PAGE_HEADERS;
   if (event.request.mode !== "navigate") return new Response("Blocked: " + block.message, { status: 403, headers });
   let host = "";
   try { host = new URL(site).hostname; } catch {}
@@ -290,7 +300,7 @@ async function handleRequest(event) {
       return new Response(
         '<!doctype html><title>Scramjet error</title><body style="background:#111;color:white;font:16px sans-serif;padding:24px"><h1>Website failed to load</h1><p>' +
         safeText + "</p></body>",
-        { status: 502, headers: { "content-type": "text/html; charset=utf-8", "cache-control": "no-store" } }
+        { status: 502, headers: OWN_PAGE_HEADERS }
       );
     }
     throw cause;

@@ -160,6 +160,7 @@ test("failed proxy navigation returns a diagnostic HTML response", async () => {
   const path = "/scramjet/" + encodeURIComponent("https://google.com");
   const response = await h.request(path);
   assert.equal(response.status, 502);
+  assert.equal(response.headers.get("cross-origin-embedder-policy"), "require-corp");
   const body = await response.text();
   assert.match(body, /&lt;em&gt;Backend problem&lt;\/em&gt;/);
   assert.equal(h.messages[0].status, 0);
@@ -264,6 +265,7 @@ test("Google sign-in pages and pop-ups get the notice with a Go back button", as
   const html = await popup.text();
   assert.match(html, /doesn&#39;t support signing in with Google|doesn\u2019t support signing in with Google/);
   assert.match(html, />Go back<\/button>/);
+  assert.equal(popup.headers.get("cross-origin-embedder-policy"), "require-corp", "Saints Search (COEP) may show it in its frame");
   // Google's sign-in script and One Tap requests fail too.
   const script = await h.request("/scramjet/" + encodeURIComponent("https://accounts.google.com/gsi/client"), "no-cors");
   assert.equal(script.status, 403);
