@@ -4,7 +4,7 @@ import { readFileSync } from "node:fs";
 import { runInNewContext } from "node:vm";
 
 const source = readFileSync(new URL("../public/sw.js", import.meta.url), "utf8");
-const aiBlockSource = readFileSync(new URL("../public/ai-block.js", import.meta.url), "utf8");
+const blockSource = readFileSync(new URL("../public/blocked.js", import.meta.url), "utf8");
 
 // A tiny IndexedDB stand-in (one database, key/value stores) shared across
 // "restarts" of the worker, like the browser's real one.
@@ -98,8 +98,8 @@ function createHarness({ failing = false, transport = "/libcurl/index.mjs", fetc
     ScramjetServiceWorker: class extends ScramjetServiceWorker { constructor() { super(); worker = this; } },
   });
   runInNewContext(source, {
-    // ai-block.js runs for real (it puts saintsAiBlock on self).
-    importScripts(...paths) { if (paths.includes("/ai-block.js")) runInNewContext(aiBlockSource, { self, URL }); },
+    // blocked.js runs for real (it puts saintsBlock on self).
+    importScripts(...paths) { if (paths.includes("/blocked.js")) runInNewContext(blockSource, { self, URL }); },
     $scramjetLoadWorker,
     self, URL, Response, Error, console, setTimeout, JSON, Promise,
     ...(indexedDB ? { indexedDB } : {}),
@@ -251,4 +251,16 @@ test("proxied AI sites are refused by the worker, page loads and their requests 
   assert.equal(api.status, 403);
   // Ordinary sites still go through.
   assert.equal((await h.request("/scramjet/" + encodeURIComponent("https://www.google.com/search?q=chatgpt"))).status, 200);
+});
+
+test("Google sign-in pages and pop-ups get the notice with a Go back button", async () => {
+  const h = createHarness();
+  const popup = await h.request("/scramjet/" + encodeURIComponent("https://accounts.google.com/o/oauth2/v2/auth?client_id=1"));
+  assert.equal(popup.status, 403);
+  const html = await popup.text();
+  assert.match(html, /doesn&#39;t support signing in with Google|doesn\u2019t support signing in with Google/);
+  assert.match(html, />Go back<\/button>/);
+  // Google's sign-in script and One Tap requests fail too.
+  const script = await h.request("/scramjet/" + encodeURIComponent("https://accounts.google.com/gsi/client"), "no-cors");
+  assert.equal(script.status, 403);
 });

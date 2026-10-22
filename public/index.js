@@ -59,7 +59,9 @@ function reportPage(element) {
   const query = pendingQuery;
   pendingQuery = "";
   const url = frameRealUrl(element);
-  if (isAiSite(url)) { pendingQuery = query; showAiBlock(url); return; }
+  pendingQuery = query;
+  if (frameLanded(url)) return;
+  pendingQuery = "";
   frameUrlChanged(url);
   reportToConsole(url, query);
 }
@@ -117,37 +119,75 @@ function frameRealUrl(element) {
   return href;
 }
 
-// ---- AI sites (ai-block.js) --------------------------------------------------
-// AI chat sites and providers aren't shown: the page area says to use the
-// Saints Service AI instead. sw.js refuses their requests as well, so a link,
-// redirect or script inside a page can't reach them either.
-const aiBlockPanel = document.getElementById("sj-ai-block");
-const aiBlockSite = document.getElementById("sj-ai-block-site");
-const aiBlockHome = document.getElementById("sj-ai-block-home");
-const aiBlockConsole = document.getElementById("sj-ai-block-console");
-function isAiSite(url) {
-  try { return !!(url && globalThis.saintsAiBlock && globalThis.saintsAiBlock.isBlocked(url)); } catch { return false; }
+// ---- Blocked pages (blocked.js) --------------------------------------------
+// AI sites, and signing in with Google, aren't shown: the page area says why
+// instead. sw.js refuses their requests as well, so a link, redirect, pop-up
+// or script inside a page can't reach them either.
+//   AI: the page is removed; "Use Saints Service AI" (in the console) or home.
+//   Google sign-in: the notice covers the page that had the Google button,
+//   and Go back returns to it to sign in another way.
+const blockPanel = document.getElementById("sj-block");
+const blockTitle = document.getElementById("sj-block-title");
+const blockMsg = document.getElementById("sj-block-msg");
+const blockSite = document.getElementById("sj-block-site");
+const blockBack = document.getElementById("sj-block-back");
+const blockHome = document.getElementById("sj-block-home");
+const blockConsole = document.getElementById("sj-block-console");
+function blockOf(url) {
+  try { return (url && globalThis.saintsBlock && globalThis.saintsBlock.check(url)) || null; } catch { return null; }
 }
-// Replaces whatever the active tab shows with the notice. The page is
-// removed, so nothing on it keeps running or can be clicked.
-function showAiBlock(url) {
+function renderBlock() {
+  if (!blockPanel) return;
+  blockPanel.hidden = !blocked;
+  if (!blocked) return;
+  if (blockTitle) blockTitle.textContent = blocked.title;
+  if (blockMsg) blockMsg.textContent = blocked.message;
+  if (blockSite) blockSite.textContent = hostOf(blocked.url) || blocked.url;
+  if (blockBack) blockBack.hidden = !(blocked.kind === "googleSignIn" && currentFrame && currentSite);
+  if (blockConsole) blockConsole.hidden = !(blocked.kind === "ai" && parentConsole);
+}
+function showBlock(url, info) {
   const query = pendingQuery;
   pendingQuery = "";
-  closeFrame();
-  homeForward = "";
-  aiBlocked = url;
-  showView(true);
-  if (aiBlockPanel) aiBlockPanel.hidden = false;
-  if (aiBlockSite) aiBlockSite.textContent = hostOf(url) || url;
-  if (aiBlockConsole) aiBlockConsole.hidden = !parentConsole;
-  toolbarStatus.textContent = "AI site blocked";
+  if (info.kind === "googleSignIn" && currentFrame && currentSite) {
+    // Keep the site that had the Google button, under the notice.
+    if (loadingTimer !== null) { clearTimeout(loadingTimer); loadingTimer = null; }
+    if (pageCheckTimer !== null) { clearTimeout(pageCheckTimer); pageCheckTimer = null; }
+    loading.hidden = true;
+    setLoading(false);
+  } else {
+    // Nothing to go back to (or an AI site): the page goes away entirely.
+    closeFrame();
+    homeForward = "";
+    showView(true);
+  }
+  blocked = { url, kind: info.kind, title: info.title, message: info.message };
+  toolbarStatus.textContent = info.title;
+  renderBlock();
   showAddress();
   syncNav();
   // The console still logs the attempt for the owner.
   reportToConsole(url, query);
 }
-aiBlockHome?.addEventListener?.("click", () => closeFrame());
-aiBlockConsole?.addEventListener?.("click", () => tellConsole("open-ai"));
+// The page that had the Google button, loaded again under the toolbar.
+function goBackFromBlock() {
+  if (!(currentFrame && currentSjFrame && currentSite)) { closeFrame(); return; }
+  const site = currentSite;
+  blocked = null;
+  renderBlock();
+  navigateFrame(site);
+  showAddress();
+}
+// A page the active frame landed on: blocked, or clears a Google notice.
+function frameLanded(url) {
+  const info = blockOf(url);
+  if (info) { showBlock(url, info); return true; }
+  if (blocked && currentFrame) { blocked = null; renderBlock(); showAddress(); }
+  return false;
+}
+blockBack?.addEventListener?.("click", () => goBackFromBlock());
+blockHome?.addEventListener?.("click", () => closeFrame());
+blockConsole?.addEventListener?.("click", () => tellConsole("open-ai"));
 
 const TRANSPORT = "/libcurl/index.mjs";
 const WISP_TIMEOUT_MS = 25000;
@@ -188,7 +228,7 @@ let forwardCount = 0;
 let historyMove = null;    // "back" | "forward" while that navigation lands
 let homeForward = "";      // the site Forward reopens from saints://home
 let frameTitle = "";       // the open page's own <title>, for its tab
-let aiBlocked = "";        // an AI site this tab was stopped from showing
+let blocked = null;        // { url, kind, title, message } this tab won't show
 
 // ---- Tabs ------------------------------------------------------------------
 // Each tab keeps its own frame (hidden while another tab is shown), address
@@ -201,7 +241,7 @@ let nextTabId = 1;
 function newTabState() {
   return { id: nextTabId++, frame: null, sj: null, site: "", lastUrl: "", title: "", backCount: 0, forwardCount: 0,
     homeForward: "", navigationError: null, navigationResponseStatus: null, navigationPath: null, httpWarning: false,
-    loadingHidden: true, loadingText: "", statusText: "", aiBlocked: "" };
+    loadingHidden: true, loadingText: "", statusText: "", blocked: null };
 }
 function saveActiveTab() {
   const t = activeTab;
@@ -211,7 +251,7 @@ function saveActiveTab() {
   t.navigationError = navigationError; t.navigationResponseStatus = navigationResponseStatus;
   t.navigationPath = currentNavigationPath; t.httpWarning = httpWarning;
   t.loadingHidden = loading.hidden; t.loadingText = loadingStatus.textContent; t.statusText = toolbarStatus.textContent;
-  t.aiBlocked = aiBlocked;
+  t.blocked = blocked;
 }
 function loadTab(t) {
   activeTab = t;
@@ -219,7 +259,7 @@ function loadTab(t) {
   backCount = t.backCount; forwardCount = t.forwardCount; homeForward = t.homeForward;
   navigationError = t.navigationError; navigationResponseStatus = t.navigationResponseStatus;
   currentNavigationPath = t.navigationPath; httpWarning = t.httpWarning;
-  aiBlocked = t.aiBlocked || "";
+  blocked = t.blocked || null;
   historyMove = null;
   loadingStatus.textContent = t.loadingText; toolbarStatus.textContent = t.statusText;
 }
@@ -236,8 +276,8 @@ function switchTab(t) {
   if (pageCheckTimer !== null) { clearTimeout(pageCheckTimer); pageCheckTimer = null; }
   loadTab(t);
   if (currentFrame) currentFrame.style.display = "";
-  showView(!!currentFrame || !!aiBlocked);
-  if (aiBlockPanel) aiBlockPanel.hidden = !aiBlocked;
+  showView(!!currentFrame || !!blocked);
+  renderBlock();
   // A page that finished while its tab was in the background is uncovered.
   let cover = !t.loadingHidden;
   if (cover && currentFrame && !navigationError && inspectPage(currentFrame) !== false) cover = false;
@@ -345,9 +385,9 @@ function setWarning(on) {
 // The address bar's resting text: saints://home, or the site's real address.
 // Left alone while the user is typing in it.
 function showAddress() {
-  const text = currentFrame ? (currentSite || lastUrl || "") : (aiBlocked || HOME_URL);
+  const text = blocked ? blocked.url : currentFrame ? (currentSite || lastUrl || "") : HOME_URL;
   if (document.activeElement !== address) address.value = text;
-  if (omniIcon && omniIcon.dataset) omniIcon.dataset.kind = currentFrame || aiBlocked ? "site" : "home";
+  if (omniIcon && omniIcon.dataset) omniIcon.dataset.kind = currentFrame || blocked ? "site" : "home";
   try { document.title = currentFrame && currentSite ? hostOf(currentSite) + " · Saints Search" : "Saints Search"; } catch {}
   renderTabs();
 }
@@ -566,8 +606,8 @@ function closeFrame() {
   currentSjFrame = null;
   currentSite = "";
   frameTitle = "";
-  aiBlocked = "";
-  if (aiBlockPanel) aiBlockPanel.hidden = true;
+  blocked = null;
+  renderBlock();
   backCount = 0;
   forwardCount = 0;
   historyMove = null;
@@ -586,7 +626,8 @@ function closeFrame() {
 
 async function openUrl(url) {
   if (busy) return;
-  if (isAiSite(url)) { showAiBlock(url); return; }
+  const block = blockOf(url);
+  if (block) { showBlock(url, block); return; }
   busy = true;
   showError("");
   closeFrame();
@@ -656,7 +697,7 @@ async function openUrl(url) {
       const u = event && typeof event.url === "string" && event.url ? event.url : frameRealUrl(element);
       if (!u) return;
       if (currentFrame !== element) { backgroundPage(element, u); return; }
-      if (isAiSite(u)) { showAiBlock(u); return; }
+      if (frameLanded(u)) return;
       frameUrlChanged(u); reportToConsole(u, "");
     });
     syncNav();
@@ -748,10 +789,17 @@ async function openUrl(url) {
 function backgroundPage(element, url) {
   const t = tabOfFrame(element);
   if (!t || t === activeTab) return;
-  if (isAiSite(url)) {
-    // A background tab wandered onto an AI site: drop its page now.
-    element.remove();
-    Object.assign(t, { frame: null, sj: null, site: "", title: "", aiBlocked: url, backCount: 0, forwardCount: 0, loadingHidden: true });
+  const block = blockOf(url);
+  if (block) {
+    const info = { url, kind: block.kind, title: block.title, message: block.message };
+    if (block.kind === "googleSignIn" && t.site) {
+      // Shown, with Go back, when the tab is opened again.
+      t.blocked = info;
+    } else {
+      // A background tab wandered onto an AI site: drop its page now.
+      element.remove();
+      Object.assign(t, { frame: null, sj: null, site: "", title: "", blocked: info, backCount: 0, forwardCount: 0, loadingHidden: true });
+    }
     renderTabs();
     return;
   }
@@ -799,7 +847,8 @@ async function go(raw) {
   }
   // Remember a search term (not a web address) so the console logs it.
   pendingQuery = looksLikeUrl(text) ? "" : text.slice(0, 200);
-  if (isAiSite(url)) { showAiBlock(url); return; }
+  const block = blockOf(url);
+  if (block) { showBlock(url, block); return; }
   if (currentFrame && currentSjFrame && scramjetController && !busy && !navigationError) {
     if (document.activeElement !== address) address.value = url;
     navigateFrame(url);
@@ -889,6 +938,8 @@ reloadButton.addEventListener("click", () => {
 });
 backButton?.addEventListener?.("click", () => {
   if (!currentFrame || busy) return;
+  // Under a Google sign-in notice: back to the page that had the button.
+  if (blocked) { goBackFromBlock(); return; }
   // First page of this visit: Back goes to saints://home (never into the
   // history of the page hosting the proxy).
   if (backCount <= 0 || !currentSjFrame) { closeFrame(); return; }

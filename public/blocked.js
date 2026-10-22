@@ -1,11 +1,33 @@
 "use strict";
 
-// AI chat sites and AI providers can't be used through the proxy: people are
-// sent back to the Saints Service console's own AI. Loaded by the page
-// (index.js shows the notice) and by the service worker (sw.js refuses the
-// requests, so links, redirects and scripts can't get around the page).
+// What the proxy won't show, and what it says instead:
+//   ai           AI chat sites and AI providers: people are sent back to the
+//                Saints Service console's own AI.
+//   googleSignIn Google's sign-in pages ("Sign in with Google" on any site, and
+//                signing in to Google itself): people go back and sign in
+//                another way.
+// Loaded by the page (index.js shows the notice) and by the service worker
+// (sw.js refuses the requests, so links, redirects, pop-ups and scripts can't
+// get around the page).
 (function (scope) {
-  const MESSAGE = "This AI is unsafe and inaccurate. Please go back to using the AI in the Saints Service interface.";
+  const KINDS = {
+    ai: {
+      kind: "ai",
+      title: "AI isn\u2019t allowed here",
+      message: "This AI is unsafe and inaccurate. Please go back to using the AI in the Saints Service interface.",
+    },
+    googleSignIn: {
+      kind: "googleSignIn",
+      title: "Google sign-in isn\u2019t supported",
+      message: "This proxy doesn\u2019t support signing in with Google. Please go back and sign in a different way.",
+    },
+  };
+
+  // Google's sign-in lives on accounts.google.com (its sign-in pages, the
+  // OAuth consent screens behind "Sign in with Google" / "Continue with
+  // Google", and the One Tap and button frames under /gsi/). accounts.youtube.com
+  // finishes a Google sign-in for YouTube.
+  const GOOGLE_SIGN_IN = /^accounts\.(google\.[a-z.]+|youtube\.com)$/;
 
   // Whole sites, subdomains included (chat.deepseek.com is deepseek.com).
   const HOSTS = [
@@ -69,16 +91,18 @@
 
   const onHost = (host, domain) => host === domain || host.endsWith("." + domain);
 
-  // Is this real (not proxied) web address an AI site or AI feature?
-  function isBlocked(address) {
+  // Why this real (not proxied) web address is blocked: one of KINDS, or null.
+  function check(address) {
     let u;
-    try { u = address instanceof URL ? address : new URL(String(address)); } catch { return false; }
-    if (u.protocol !== "https:" && u.protocol !== "http:" && u.protocol !== "wss:" && u.protocol !== "ws:") return false;
+    try { u = address instanceof URL ? address : new URL(String(address)); } catch { return null; }
+    if (u.protocol !== "https:" && u.protocol !== "http:" && u.protocol !== "wss:" && u.protocol !== "ws:") return null;
     const host = u.hostname.toLowerCase().replace(/\.$/, "");
-    if (HOSTS.some((d) => onHost(host, d))) return true;
-    if (HOST_WORDS.test(host)) return true;
-    return PAGES.some(([d, test]) => onHost(host, d) && test(u));
+    if (GOOGLE_SIGN_IN.test(host)) return KINDS.googleSignIn;
+    if (HOSTS.some((d) => onHost(host, d))) return KINDS.ai;
+    if (HOST_WORDS.test(host)) return KINDS.ai;
+    if (PAGES.some(([d, test]) => onHost(host, d) && test(u))) return KINDS.ai;
+    return null;
   }
 
-  scope.saintsAiBlock = { isBlocked, MESSAGE };
+  scope.saintsBlock = { check, KINDS };
 })(typeof self !== "undefined" ? self : globalThis);

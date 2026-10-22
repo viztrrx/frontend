@@ -14,7 +14,7 @@
 		<script src="register-sw.js" defer></script>
 		<script src="search.js" defer></script>
 		<script src="config.js" defer></script>
-		<script src="ai-block.js" defer></script>
+		<script src="blocked.js" defer></script>
 		<script src="index.js" defer></script>
 		<script src="sessions.js" defer></script>
 	</head>
@@ -141,18 +141,20 @@
 				<p class="sj-hint">The connection may take a moment to wake up.</p>
 				<button type="button" id="sj-show-page">Show page</button>
 			</div>
-			<!-- Shown instead of AI sites (ai-block.js): use the Saints Service AI. -->
-			<div id="sj-ai-block" class="sj-ai-block" role="alert" hidden>
-				<div class="sj-ai-block-card">
-					<div class="sj-ai-block-ic" aria-hidden="true">
+			<!-- Shown instead of blocked pages (blocked.js): AI sites, and signing
+			     in with Google. Filled in by index.js. -->
+			<div id="sj-block" class="sj-block" role="alert" hidden>
+				<div class="sj-block-card">
+					<div class="sj-block-ic" aria-hidden="true">
 						<svg viewBox="0 0 24 24"><path d="M12 3l9 16H3z" /><path d="M12 10v4M12 17h.01" /></svg>
 					</div>
-					<h2>AI isn&rsquo;t allowed here</h2>
-					<p id="sj-ai-block-msg">This AI is unsafe and inaccurate. Please go back to using the AI in the Saints Service interface.</p>
-					<p id="sj-ai-block-site" class="sj-ai-block-site"></p>
-					<div class="sj-ai-block-btns">
-						<button type="button" id="sj-ai-block-console" class="is-primary" hidden>Use Saints Service AI</button>
-						<button type="button" id="sj-ai-block-home">Back to Saints Search</button>
+					<h2 id="sj-block-title"></h2>
+					<p id="sj-block-msg"></p>
+					<p id="sj-block-site" class="sj-block-site"></p>
+					<div class="sj-block-btns">
+						<button type="button" id="sj-block-back" class="is-primary" hidden>Go back</button>
+						<button type="button" id="sj-block-console" class="is-primary" hidden>Use Saints Service AI</button>
+						<button type="button" id="sj-block-home">Back to Saints Search</button>
 					</div>
 				</div>
 			</div>

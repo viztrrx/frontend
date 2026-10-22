@@ -4,8 +4,10 @@ import { readFileSync } from "node:fs";
 import { runInNewContext } from "node:vm";
 
 const ctx = { URL };
-runInNewContext(readFileSync(new URL("../public/ai-block.js", import.meta.url), "utf8"), ctx);
-const { isBlocked, MESSAGE } = ctx.saintsAiBlock;
+runInNewContext(readFileSync(new URL("../public/blocked.js", import.meta.url), "utf8"), ctx);
+const { check, KINDS } = ctx.saintsBlock;
+const isBlocked = (url) => check(url)?.kind === "ai";
+const MESSAGE = KINDS.ai.message;
 
 test("AI chat sites and providers are blocked, subdomains included", () => {
   for (const url of [
@@ -37,4 +39,20 @@ test("ordinary sites, and searching for AI by name, are not blocked", () => {
 test("the notice tells people to use the Saints Service AI", () => {
   assert.match(MESSAGE, /unsafe and inaccurate/);
   assert.match(MESSAGE, /Saints Service/);
+});
+
+test("Google sign-in pages are blocked as Google sign-in", () => {
+  for (const url of [
+    "https://accounts.google.com/", "https://accounts.google.com/v3/signin/identifier?continue=x",
+    "https://accounts.google.com/o/oauth2/v2/auth?client_id=1&redirect_uri=https://site.example/cb",
+    "https://accounts.google.com/signin/oauth/consent", "https://accounts.google.com/gsi/button?type=standard",
+    "https://accounts.google.com/gsi/select", "https://accounts.google.co.uk/ServiceLogin",
+    "https://accounts.youtube.com/accounts/SetSID",
+  ]) assert.equal(check(url)?.kind, "googleSignIn", url);
+  assert.equal(KINDS.googleSignIn.message, "This proxy doesn\u2019t support signing in with Google. Please go back and sign in a different way.");
+});
+
+test("other Google pages aren't treated as sign-in", () => {
+  for (const url of ["https://www.google.com/", "https://mail.google.com/", "https://myaccount.google.com/", "https://www.youtube.com/", "https://accounts.example.com/google"])
+    assert.notEqual(check(url)?.kind, "googleSignIn", url);
 });

@@ -67,3 +67,10 @@ The **Your sessions** list on `saints://home` keeps people signed in to sites th
 Storage: the `SESSIONS` binding in `wrangler.jsonc` points at the R2 bucket **`donnajbe-eaglercraft-client`**, the same bucket the donnajbe Worker uses (R2 buckets belong to the Cloudflare account, so both Workers can bind it). Objects are written under `proxy-sessions/<sha256(account)>/<id>.json`, apart from `chat-media/`, `eaglercraft-client/` and `music/`. Limits: 20 sessions per account, 5 MB per session. Set the optional `AUTH_BASE` variable to point the sign-in check at another Worker.
 
 > The bucket has **public access enabled**. Session objects hold sign-in cookies, and anyone who learns an object's full key can download it through the public URL. The keys contain a random 128-bit ID and are never shown to anyone but their owner, but a private bucket is safer. To use one, create it and change `bucket_name` above.
+
+## Blocked pages
+
+`public/blocked.js` lists what the proxy won't show. `public/index.js` shows a notice in the page area instead, and `public/sw.js` refuses the requests, so links, redirects, pop-ups and scripts can't get around it:
+
+- **AI sites and providers** (ChatGPT, Gemini, Claude, Copilot, Perplexity and many more, plus AI features such as Google's AI Mode). The page is removed and the notice says: *"This AI is unsafe and inaccurate. Please go back to using the AI in the Saints Service interface."* In the console, **Use Saints Service AI** opens Ask AI.
+- **Signing in with Google** (`accounts.google.com`, which "Sign in with Google" on any site goes through). The notice covers the site and says: *"This proxy doesn't support signing in with Google. Please go back and sign in a different way."* **Go back** reloads the site's own page so people can use another sign-in option.

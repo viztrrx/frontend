@@ -4,7 +4,7 @@ import { readFileSync } from "node:fs";
 import { runInNewContext } from "node:vm";
 
 const source = readFileSync(new URL("../public/index.js", import.meta.url), "utf8");
-const aiBlockSource = readFileSync(new URL("../public/ai-block.js", import.meta.url), "utf8");
+const blockSource = readFileSync(new URL("../public/blocked.js", import.meta.url), "utf8");
 
 function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails = false, controllerFails = false, workerHang = false, transportHang = false, blankFrame = false, noLoad = false, storage = {}, versionFetch, embed = false, realUrls = false } = {}) {
   const posts = [];
@@ -31,9 +31,8 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
     elements.set(id, element);
     return element;
   };
-  for (const id of ["sj-form", "sj-address", "sj-search-engine", "sj-error", "sj-error-code", "sj-progress", "sj-toolbar", "sj-toolbar-status", "sj-loading", "sj-loading-status", "sj-home-btn", "sj-reload", "sj-back", "sj-forward", "sj-show-page", "sj-version", "sj-home", "sj-view", "sj-home-form", "sj-home-q", "sj-omni-ic", "sj-fs", "sj-exit", "sj-tabs", "sj-newtab", "sj-ai-block", "sj-ai-block-site", "sj-ai-block-home", "sj-ai-block-console"]) makeElement(id);
-  elements.get("sj-ai-block").hidden = true;
-  elements.get("sj-ai-block-console").hidden = true;
+  for (const id of ["sj-form", "sj-address", "sj-search-engine", "sj-error", "sj-error-code", "sj-progress", "sj-toolbar", "sj-toolbar-status", "sj-loading", "sj-loading-status", "sj-home-btn", "sj-reload", "sj-back", "sj-forward", "sj-show-page", "sj-version", "sj-home", "sj-view", "sj-home-form", "sj-home-q", "sj-omni-ic", "sj-fs", "sj-exit", "sj-tabs", "sj-newtab", "sj-block", "sj-block-title", "sj-block-msg", "sj-block-site", "sj-block-back", "sj-block-home", "sj-block-console"]) makeElement(id);
+  for (const id of ["sj-block", "sj-block-back", "sj-block-console"]) elements.get(id).hidden = true;
   // The tab strip: keeps the rendered tabs so tests can read and click them.
   elements.get("sj-tabs").replaceChildren = function (...items) { this.items = items; };
   // The proxied page goes in the page area under the toolbar.
@@ -167,7 +166,7 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
     },
     clearTimeout(id) { timers.delete(id); },
   };
-  runInNewContext(aiBlockSource, ctx, { filename: "public/ai-block.js" });
+  runInNewContext(blockSource, ctx, { filename: "public/blocked.js" });
   runInNewContext(source, ctx, { filename: "public/index.js" });
   const initialAddress = elements.get("sj-address").value;
   elements.get("sj-address").value = "example.com";   // what the tests type
@@ -646,15 +645,18 @@ test("typing an AI site shows the notice instead of the site", async () => {
   await x.advance(4000);
   assert.equal(x.frames.length, 0, "no page is loaded");
   assert.equal(x.websocketCount(), 0, "the backend isn't even contacted");
-  assert.equal(x.elements.get("sj-ai-block").hidden, false);
+  assert.equal(x.elements.get("sj-block").hidden, false);
   assert.equal(x.elements.get("sj-view").hidden, false);
-  assert.equal(x.elements.get("sj-ai-block-site").textContent, "gemini.google.com");
+  assert.equal(x.elements.get("sj-block-site").textContent, "gemini.google.com");
+  assert.equal(x.elements.get("sj-block-title").textContent, "AI isn\u2019t allowed here");
+  assert.match(x.elements.get("sj-block-msg").textContent, /unsafe and inaccurate/);
+  assert.equal(x.elements.get("sj-block-back").hidden, true);
   assert.equal(x.elements.get("sj-address").value, "https://gemini.google.com/app", "the bar shows the blocked address");
-  assert.equal(x.elements.get("sj-ai-block-console").hidden, false, "in the console: Use Saints Service AI");
-  x.elements.get("sj-ai-block-console").dispatch("click");
+  assert.equal(x.elements.get("sj-block-console").hidden, false, "in the console: Use Saints Service AI");
+  x.elements.get("sj-block-console").dispatch("click");
   assert.equal(x.posts.at(-1).type, "open-ai");
-  x.elements.get("sj-ai-block-home").dispatch("click");
-  assert.equal(x.elements.get("sj-ai-block").hidden, true);
+  x.elements.get("sj-block-home").dispatch("click");
+  assert.equal(x.elements.get("sj-block").hidden, true);
   assert.equal(x.elements.get("sj-address").value, "saints://home");
 });
 
@@ -668,7 +670,7 @@ test("a page that leads to an AI site is replaced by the notice", async () => {
   frame.contentWindow.location.href = "https://frontend.viztrrx.workers.dev/scramjet/" + encodeURIComponent(frame.url);
   frame.dispatch("load");
   assert.equal(frame.removed, true, "the AI page is gone, so it can't be used");
-  assert.equal(x.elements.get("sj-ai-block").hidden, false);
+  assert.equal(x.elements.get("sj-block").hidden, false);
   assert.equal(x.elements.get("sj-address").value, "https://chatgpt.com/");
 });
 
@@ -678,5 +680,39 @@ test("searching for an AI by name still searches", async () => {
   await x.submit();
   await x.advance(4000);
   assert.equal(x.frames.length, 1);
-  assert.equal(x.elements.get("sj-ai-block").hidden, true);
+  assert.equal(x.elements.get("sj-block").hidden, true);
+});
+
+test("Sign in with Google is covered by a notice, and Go back returns to the site", async () => {
+  const x = setup({ realUrls: true, embed: true });
+  x.elements.get("sj-address").value = "www.example.com/login";
+  await x.submit();
+  await x.advance(4000);
+  const frame = x.frames[0];
+  // The site's "Continue with Google" button sends the frame to Google.
+  frame.url = "https://accounts.google.com/o/oauth2/v2/auth?client_id=abc&redirect_uri=x";
+  frame.contentWindow.location.href = "https://frontend.viztrrx.workers.dev/scramjet/" + encodeURIComponent(frame.url);
+  frame.dispatch("load");
+  assert.equal(x.elements.get("sj-block").hidden, false);
+  assert.equal(x.elements.get("sj-block-title").textContent, "Google sign-in isn\u2019t supported");
+  assert.equal(x.elements.get("sj-block-msg").textContent,
+    "This proxy doesn\u2019t support signing in with Google. Please go back and sign in a different way.");
+  assert.equal(frame.removed, false, "the site stays under the notice");
+  assert.equal(x.elements.get("sj-block-back").hidden, false);
+  assert.equal(x.elements.get("sj-block-console").hidden, true, "no AI button for Google sign-in");
+  assert.match(x.elements.get("sj-address").value, /^https:\/\/accounts\.google\.com\//);
+  x.elements.get("sj-block-back").dispatch("click");
+  assert.equal(x.elements.get("sj-block").hidden, true);
+  assert.equal(frame.url, "https://www.example.com/login", "back on the site's sign-in page");
+  assert.equal(x.elements.get("sj-address").value, "https://www.example.com/login");
+});
+
+test("typing Google's sign-in page directly shows the notice with no page behind it", async () => {
+  const x = setup();
+  x.elements.get("sj-address").value = "accounts.google.com";
+  await x.submit();
+  await x.advance(4000);
+  assert.equal(x.frames.length, 0);
+  assert.equal(x.elements.get("sj-block").hidden, false);
+  assert.equal(x.elements.get("sj-block-back").hidden, true, "nothing to go back to: Back to Saints Search");
 });
