@@ -25,12 +25,48 @@ const parentConsole =
     typeof window.parent.postMessage === "function") ? window.parent : null;
 let scramjetController = null;
 let lastReportedUrl = null;
-function reportToConsole(url) {
+// What the user typed to reach the current page, when it was a search term
+// rather than a web address (Scramjet then runs a search). Sent once with
+// that page's report so the console can log the search ("tiktok"), since the
+// resolved search URL loses the words. Cleared after it is reported.
+let pendingQuery = "";
+function reportToConsole(url, query = "") {
   if (!parentConsole) return;
   const value = typeof url === "string" ? url : "";
-  if (value === lastReportedUrl) return;
+  if (value === lastReportedUrl && !query) return;
   lastReportedUrl = value;
-  try { parentConsole.postMessage({ saintsProxy: 1, type: "nav", url: value }, "*"); } catch {}
+  const message = { saintsProxy: 1, type: "nav", url: value };
+  if (query) message.query = query;
+  try { parentConsole.postMessage(message, "*"); } catch {}
+}
+// The page a load/navigation landed on, with the search term that reached it
+// (once); link clicks and closing carry no term.
+function reportPage(element) {
+  const query = pendingQuery;
+  pendingQuery = "";
+  reportToConsole(frameRealUrl(element), query);
+}
+// Does the input look like a web address (so Scramjet opens it directly),
+// or a search term (so Scramjet searches for it)? Mirrors search.js.
+function looksLikeUrl(input) {
+  const value = String(input || "").trim();
+  if (!value) return false;
+  try { new URL(value); return true; } catch {}
+  try { return new URL("http://" + value).hostname.includes("."); } catch {}
+  return false;
+}
+// The console shows its own address bar over the frame (the Scramjet search
+// box is covered once a site loads) and asks this page to navigate.
+if (parentConsole && typeof window.addEventListener === "function") {
+  window.addEventListener("message", (event) => {
+    if (event.source !== parentConsole) return;
+    const data = event.data;
+    if (!data || data.saintsProxy !== 1 || data.type !== "navigate" || typeof data.query !== "string") return;
+    const typed = data.query.trim().slice(0, 500);
+    if (!typed || busy) return;
+    pendingQuery = looksLikeUrl(typed) ? "" : typed;
+    try { void openUrl(search(typed, searchEngine.value)); } catch {}
+  });
 }
 // The real site a Scramjet frame is on (it runs on this origin, so its
 // encoded location is readable here), decoded back to the site's own URL.
@@ -334,7 +370,7 @@ async function openUrl(url) {
     frame.addEventListener?.("urlchange", (event) => {
       if (currentFrame !== element) return;
       const u = event && typeof event.url === "string" && event.url ? event.url : frameRealUrl(element);
-      if (u) reportToConsole(u);
+      if (u) reportToConsole(u, "");
     });
     toolbar.hidden = false;
     loading.hidden = false;
@@ -370,7 +406,7 @@ async function openUrl(url) {
       try { href = element.contentWindow?.location?.href || ""; } catch {}
       if (href === "about:blank") return;
       loaded = true;
-      reportToConsole(frameRealUrl(element));
+      reportPage(element);
       if (!httpWarning) {
         toolbarStatus.textContent = navigationResponseStatus === null
           ? "Checking website content…"
@@ -426,6 +462,8 @@ form.addEventListener("submit", async (event) => {
     showError("That address could not be opened.", cause.message || String(cause));
     return;
   }
+  // Remember a search term (not a web address) so the console logs it.
+  pendingQuery = looksLikeUrl(address.value) ? "" : address.value.trim().slice(0, 200);
   await openUrl(url);
 });
 

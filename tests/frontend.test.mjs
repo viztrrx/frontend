@@ -7,6 +7,7 @@ const source = readFileSync(new URL("../public/index.js", import.meta.url), "utf
 
 function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails = false, controllerFails = false, workerHang = false, transportHang = false, blankFrame = false, noLoad = false, storage = {}, versionFetch, embed = false } = {}) {
   const posts = [];
+  const winMessage = { fn: null };
   const elements = new Map();
   const frames = [];
   const transports = [];
@@ -92,7 +93,7 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
   }
   const ctx = {
     document,
-    window: { BareMux: { BareMuxConnection }, ...(embed ? { parent: { postMessage: (message) => posts.push(message) } } : {}) },
+    window: { BareMux: { BareMuxConnection }, addEventListener: (kind, fn) => { if (kind === 'message') winMessage.fn = fn; }, ...(embed ? { parent: { postMessage: (message) => posts.push(message) } } : {}) },
     navigator: { serviceWorker: {
       ready: Promise.resolve(),
       addEventListener(kind, fn) { swCallbacks.set(kind, fn); }
@@ -126,6 +127,7 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
   runInNewContext(source, ctx, { filename: "public/index.js" });
   return {
     elements, frames, transports, timers, assigned, storage, posts,
+    navigate: (query) => winMessage.fn?.({ source: ctx.window.parent, data: { saintsProxy: 1, type: "navigate", query } }),
     websocketCount: () => websocketCount,
     submit: () => elements.get("sj-form").dispatch("submit"),
     sendNavStatus(status, message = "") {
@@ -335,4 +337,32 @@ test("not embedded: nothing is posted to any parent", async () => {
   await x.submit();
   await x.advance(4000);
   assert.equal(x.posts.length, 0);
+});
+
+test("embedded: a search term the user types is reported to the console with the page", async () => {
+  const x = setup({ embed: true });
+  const J = (m) => JSON.stringify(m);
+  x.elements.get("sj-address").value = "tiktok";          // plain words, not a URL
+  await x.submit();
+  await x.advance(4000);
+  // The page URL and the search term both reach the console.
+  assert.equal(J(x.posts.at(-1)), J({ saintsProxy: 1, type: "nav", url: "https://example.com/", query: "tiktok" }));
+});
+
+test("embedded: a typed web address is reported without a search term", async () => {
+  const x = setup({ embed: true });
+  const J = (m) => JSON.stringify(m);
+  x.elements.get("sj-address").value = "tiktok.com";      // a domain
+  await x.submit();
+  await x.advance(4000);
+  assert.equal(J(x.posts.at(-1)), J({ saintsProxy: 1, type: "nav", url: "https://example.com/" }));
+});
+
+test("embedded: the console can drive navigation, and a search term is reported", async () => {
+  const x = setup({ embed: true });
+  const J = (m) => JSON.stringify(m);
+  x.navigate("funny cats");
+  await x.advance(4000);
+  assert.equal(x.frames.length, 1);
+  assert.equal(J(x.posts.at(-1)), J({ saintsProxy: 1, type: "nav", url: "https://example.com/", query: "funny cats" }));
 });
