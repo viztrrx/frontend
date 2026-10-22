@@ -770,6 +770,8 @@ async function openUrl(url) {
     const element = frame.frame;
     element.className = "sj-frame";
     element.setAttribute("title", "Scramjet browsing frame");
+    // Sites in the frame may play sound and video like a normal tab.
+    element.setAttribute("allow", FRAME_PERMISSIONS);
     currentFrame = element;
     currentSjFrame = frame;
     frame.addEventListener?.("urlchange", (event) => {
@@ -809,6 +811,7 @@ async function openUrl(url) {
       pageCheckTimer = setTimeout(watchContent, 1000);
     };
     element.addEventListener("load", () => {
+      playbackAudio(element.contentWindow);
       // A tab in the background: just keep its tab's address and title current.
       if (currentFrame !== element) { backgroundPage(element, frameRealUrl(element)); return; }
       if (navigationError) return;
@@ -886,6 +889,20 @@ function backgroundPage(element, url) {
   try { t.title = String(element.contentDocument?.title || "").trim().slice(0, 80); } catch {}
   renderTabs();
 }
+// ---- Sound --------------------------------------------------------------------
+// iPhone Safari keeps Web Audio silent while the ringer switch is on silent,
+// unless the page asks for "playback" audio (Safari 16.4+), the way a video
+// or music app does. Saints Search asks for it, and so does every page in its
+// frames (same-origin, so it can be set from here).
+const FRAME_PERMISSIONS = "autoplay; fullscreen; picture-in-picture; encrypted-media";
+function playbackAudio(win) {
+  try {
+    const session = win && win.navigator && win.navigator.audioSession;
+    if (session && session.type !== "playback") session.type = "playback";
+  } catch {}
+}
+playbackAudio(window);
+
 // The page's own title for its tab (Scramjet pages are same-origin).
 function readTitle(element) {
   if (currentFrame !== element) return;

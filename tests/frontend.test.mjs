@@ -12,6 +12,7 @@ function setup({ epoxyFails = false, wispUrl = "wss://backend-ivvq.onrender.com/
   const elements = new Map();
   const frames = [];
   const made = [];   // every frame Scramjet created, attached or not
+  const windowAudio = { type: "auto" };
   const transports = [];
   const swCallbacks = new Map();
   let websocketCount = 0;
@@ -24,7 +25,8 @@ function setup({ epoxyFails = false, wispUrl = "wss://backend-ivvq.onrender.com/
       textContent: "", value: "", disabled: false, removed: false,
       addEventListener: (kind, fn) => callbacks.set(kind, fn),
       dispatch: (kind, event = {}) => callbacks.get(kind)?.({ preventDefault() {}, ...event }),
-      setAttribute() {},
+      attrs: {},
+      setAttribute(k, v) { this.attrs[k] = v; },
       style: {},
       remove() { this.removed = true; },
     };
@@ -92,7 +94,7 @@ function setup({ epoxyFails = false, wispUrl = "wss://backend-ivvq.onrender.com/
     createFrame() {
       const el = makeElement("frame-" + made.length);
       made.push(el);
-      el.contentWindow = { location: { href: blankFrame ? "about:blank" : "https://frontend.viztrrx.workers.dev/scramjet/test" } };
+      el.contentWindow = { navigator: { audioSession: { type: "auto" } }, location: { href: blankFrame ? "about:blank" : "https://frontend.viztrrx.workers.dev/scramjet/test" } };
       el.contentDocument = {
         URL: blankFrame ? "about:blank" : "https://frontend.viztrrx.workers.dev/scramjet/test",
         body: { innerText: blankFrame ? "" : "Example page", querySelector: () => null }
@@ -135,7 +137,7 @@ function setup({ epoxyFails = false, wispUrl = "wss://backend-ivvq.onrender.com/
   }
   const ctx = {
     document,
-    window: { BareMux: { BareMuxConnection }, addEventListener: (kind, fn) => { if (kind === 'message') winMessage.fn = fn; if (kind === 'load') winMessage.load = fn; }, ...(embed ? { parent: { postMessage: (message) => posts.push(message) } } : {}) },
+    window: { navigator: { audioSession: windowAudio }, BareMux: { BareMuxConnection }, addEventListener: (kind, fn) => { if (kind === 'message') winMessage.fn = fn; if (kind === 'load') winMessage.load = fn; }, ...(embed ? { parent: { postMessage: (message) => posts.push(message) } } : {}) },
     navigator: { serviceWorker: {
       ready: Promise.resolve(),
       addEventListener(kind, fn) { swCallbacks.set(kind, fn); }
@@ -173,7 +175,7 @@ function setup({ epoxyFails = false, wispUrl = "wss://backend-ivvq.onrender.com/
   elements.get("sj-address").value = "example.com";   // what the tests type
   return {
     initialAddress,
-    elements, frames, transports, timers, assigned, storage, posts,
+    elements, frames, transports, timers, assigned, storage, posts, windowAudio,
     load: () => winMessage.load?.(),
     navigate: (query) => winMessage.fn?.({ source: ctx.window.parent, data: { saintsProxy: 1, type: "navigate", query } }),
     chrome: (opts) => winMessage.fn?.({ source: ctx.window.parent, data: { saintsProxy: 1, type: "chrome", ...opts } }),
@@ -775,4 +777,15 @@ test("opening a site during the warm-up shows the setup steps", async () => {
   await x.advance(18000);
   await x.advance(18000);
   await pending;
+});
+
+test("sound: the frame may autoplay, and pages ask iPhone Safari for playback audio", async () => {
+  const x = setup();
+  assert.equal(x.windowAudio.type, "playback", "Saints Search itself");
+  await x.submit();
+  await x.advance(4000);
+  const frame = x.frames[0];
+  assert.match(frame.attrs.allow, /autoplay/);
+  assert.match(frame.attrs.allow, /fullscreen/);
+  assert.equal(frame.contentWindow.navigator.audioSession.type, "playback", "the site in the frame");
 });
