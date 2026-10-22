@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, shrink-to-fit=no" />
-		<meta name="theme-color" content="#0b0c0f" />
+		<meta name="theme-color" content="#1a1a1a" />
 		<title>Saints Search</title>
 		<link rel="icon" href="sj.svg" />
 
@@ -18,7 +18,41 @@
 	</head>
 
 	<body class="ss">
-		<main class="ss-home">
+		<!-- Browser chrome: always on top, never over the page (the page area
+		     starts below it), like Chrome's toolbar. -->
+		<header id="sj-toolbar" class="sb-chrome" aria-label="Browser controls">
+			<div class="sb-row">
+				<button type="button" id="sj-back" class="sb-btn" aria-label="Back" title="Back" disabled>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M11 18l-6-6 6-6" /></svg>
+				</button>
+				<button type="button" id="sj-forward" class="sb-btn" aria-label="Forward" title="Forward" disabled>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
+				</button>
+				<button type="button" id="sj-reload" class="sb-btn" aria-label="Reload" title="Reload">
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 10-.5 4M20 5v6h-6" /></svg>
+				</button>
+				<button type="button" id="sj-home-btn" class="sb-btn sb-home-btn" aria-label="Home (saints://home)" title="Home">
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11l8-7 8 7M6 9.5V20h4.5v-5.5h3V20H18V9.5" /></svg>
+				</button>
+				<form id="sj-form" class="sb-omni" role="search" autocomplete="off">
+					<span id="sj-omni-ic" class="sb-omni-ic" data-kind="home" aria-hidden="true">
+						<svg class="sb-ic-home" viewBox="0 0 64 64"><g transform="rotate(-20 32 32)"><path d="M6 32 A26 8.5 0 0 1 58 32" stroke="#8fb3ff" stroke-width="4" fill="none" stroke-linecap="round" opacity="0.8" /><circle cx="32" cy="32" r="15.5" fill="#5b8cff" /><path d="M58 32 A26 8.5 0 0 1 6 32" stroke="#8fb3ff" stroke-width="4" fill="none" stroke-linecap="round" /></g></svg>
+						<svg class="sb-ic-site" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" /><path d="M3.5 12h17M12 3.5c2.6 2.4 3.8 5.2 3.8 8.5s-1.2 6.1-3.8 8.5c-2.6-2.4-3.8-5.2-3.8-8.5s1.2-6.1 3.8-8.5z" /></svg>
+					</span>
+					<input id="sj-address" type="text" value="saints://home" placeholder="Search or type a web address" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false" enterkeyhint="go" inputmode="url" aria-label="Address and search bar" />
+				</form>
+				<button type="button" id="sj-fs" class="sb-btn" aria-label="Fullscreen" title="Fullscreen" hidden>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" /></svg>
+				</button>
+				<button type="button" id="sj-exit" class="sb-btn" aria-label="Close the proxy" title="Close the proxy" hidden>
+					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" /></svg>
+				</button>
+			</div>
+			<div class="sb-loadbar" aria-hidden="true"></div>
+		</header>
+
+		<!-- saints://home -->
+		<main id="sj-home" class="ss-home">
 			<div class="ss-brand">
 				<span class="ss-logo" aria-hidden="true">
 					<svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -45,9 +79,9 @@
 				<p class="ss-tagline">Search the web, or enter a site to open.</p>
 			</div>
 
-			<form id="sj-form" class="ss-searchbar" role="search">
+			<form id="sj-home-form" class="ss-searchbar" role="search" autocomplete="off">
 				<svg class="ss-search-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" /><path d="M20 20l-4.2-4.2" /></svg>
-				<input id="sj-address" type="text" placeholder="Search or enter a website" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="go" aria-label="Search or enter a website" />
+				<input id="sj-home-q" type="text" placeholder="Search or enter a website" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="go" aria-label="Search or enter a website" />
 				<button type="submit" class="ss-go" aria-label="Search">
 					<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" /></svg>
 				</button>
@@ -80,22 +114,15 @@
 			</section>
 		</main>
 
-		<div id="sj-loading" role="status" aria-live="polite" hidden>
-			<div class="sj-spinner" aria-hidden="true"></div>
-			<p id="sj-loading-status">Loading website…</p>
-			<p class="sj-hint">The connection may take a moment to wake up.</p>
-			<button type="button" id="sj-show-page">Show page</button>
+		<!-- The page area under the toolbar: the proxied site's frame goes here. -->
+		<div id="sj-view" class="sb-view" hidden>
+			<div id="sj-loading" role="status" aria-live="polite" hidden>
+				<div class="sj-spinner" aria-hidden="true"></div>
+				<p id="sj-loading-status">Loading website…</p>
+				<p class="sj-hint">The connection may take a moment to wake up.</p>
+				<button type="button" id="sj-show-page">Show page</button>
+			</div>
+			<span id="sj-toolbar-status" class="sb-status" aria-live="polite"></span>
 		</div>
-
-		<nav id="sj-toolbar" aria-label="Browsing controls" hidden>
-			<button type="button" id="sj-close">
-				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7" /></svg>
-				<span>Back</span>
-			</button>
-			<span id="sj-toolbar-status" aria-live="polite">Loading…</span>
-			<button type="button" id="sj-reload" aria-label="Retry">
-				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11a8 8 0 10-.5 4M20 5v6h-6" /></svg>
-			</button>
-		</nav>
 	</body>
 </html>

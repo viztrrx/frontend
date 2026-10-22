@@ -30,7 +30,59 @@ body.ss {
   -webkit-font-smoothing: antialiased;
 }
 
-/* ---- Home ---- */
+/* ---- Browser chrome (always on top; the page area starts below it) ---- */
+:root { --chrome-h: calc(52px + env(safe-area-inset-top, 0px)); }
+.sb-chrome {
+  position: fixed; z-index: 40; top: 0; left: 0; right: 0;
+  padding: env(safe-area-inset-top, 0px) max(8px, env(safe-area-inset-right)) 0 max(8px, env(safe-area-inset-left));
+  background: var(--panel); border-bottom: 1px solid var(--border);
+}
+.sb-row { height: 52px; display: flex; align-items: center; gap: 4px; }
+.sb-btn {
+  flex: none; width: 36px; height: 36px; display: grid; place-items: center;
+  border: none; border-radius: 50%; background: transparent; color: var(--text); cursor: pointer;
+  transition: background 0.12s ease;
+}
+.sb-btn svg { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.sb-btn:hover:not(:disabled) { background: #ffffff14; }
+.sb-btn:active:not(:disabled) { background: #ffffff22; }
+.sb-btn:disabled { color: #5a5a5a; cursor: default; }
+.sb-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.sb-btn[hidden] { display: none !important; }
+.sb-omni {
+  flex: 1; min-width: 0; height: 38px; margin: 0 4px;
+  display: flex; align-items: center; gap: 8px; padding: 0 14px 0 12px;
+  border-radius: 999px; background: var(--field); border: 1px solid transparent;
+  transition: border-color 0.12s ease, background 0.12s ease;
+}
+.sb-omni:focus-within { background: #1e1e1e; border-color: var(--accent); }
+.sb-omni-ic { flex: none; width: 18px; height: 18px; display: grid; place-items: center; color: var(--sub); }
+.sb-omni-ic svg { width: 18px; height: 18px; }
+.sb-ic-site { fill: none; stroke: currentColor; stroke-width: 1.7; }
+.sb-omni-ic[data-kind="home"] .sb-ic-site, .sb-omni-ic[data-kind="site"] .sb-ic-home { display: none; }
+#sj-address {
+  flex: 1; min-width: 0; height: 100%; padding: 0;
+  background: none; border: none; outline: none;
+  color: var(--text); font: inherit; font-size: 16px; /* 16px: iOS won't zoom on focus */
+  text-overflow: ellipsis;
+}
+#sj-address::placeholder { color: var(--sub); }
+#sj-address::selection { background: #5b8cff66; }
+.sb-loadbar {
+  position: absolute; left: 0; bottom: -1px; height: 2px; width: 0; opacity: 0;
+  background: linear-gradient(90deg, #5b8cff, #bcd6ff);
+}
+.sb-chrome.is-loading .sb-loadbar { opacity: 1; animation: sb-load 2.4s ease-out infinite; }
+@keyframes sb-load { 0% { width: 0; } 60% { width: 70%; } 100% { width: 92%; } }
+@media (prefers-reduced-motion: reduce) { .sb-chrome.is-loading .sb-loadbar { animation: none; width: 60%; } }
+@media (max-width: 480px) {
+  .sb-row { gap: 0; }
+  .sb-btn { width: 34px; height: 34px; }
+  .sb-home-btn { display: none; }   /* the address bar says saints://home; Back gets you there */
+  .sb-omni { margin: 0 2px; padding: 0 12px 0 10px; }
+}
+
+/* ---- saints://home ---- */
 .ss-home {
   min-height: 100vh;
   min-height: 100dvh;
@@ -39,10 +91,11 @@ body.ss {
   align-items: center;
   justify-content: center;
   gap: 22px;
-  padding: calc(40px + env(safe-area-inset-top)) max(20px, env(safe-area-inset-right))
+  padding: calc(var(--chrome-h) + 32px) max(20px, env(safe-area-inset-right))
            calc(40px + env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left));
   text-align: center;
 }
+.ss-home[hidden] { display: none; }
 .ss-brand { display: flex; flex-direction: column; align-items: center; gap: 8px; }
 .ss-logo {
   width: 76px; height: 76px; display: grid; place-items: center;
@@ -70,12 +123,12 @@ body.ss {
   box-shadow: 0 10px 30px -16px #000, 0 0 0 3px #ffffff0f;
 }
 .ss-search-ic { width: 18px; height: 18px; flex: none; color: var(--sub); fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
-#sj-address {
+#sj-home-q {
   flex: 1; min-width: 0;
   background: none; border: none; outline: none;
   color: var(--text); font: inherit; font-size: 16px; padding: 10px 0;
 }
-#sj-address::placeholder { color: var(--sub); }
+#sj-home-q::placeholder { color: var(--sub); }
 .ss-go {
   flex: none; width: 42px; height: 42px; display: grid; place-items: center;
   border-radius: 999px; border: none; cursor: pointer;
@@ -142,18 +195,33 @@ body.ss {
 }
 [hidden] { display: none !important; }
 
-/* ---- The proxied site frame ---- */
-#sj-frame {
-  border: none; position: absolute; inset: 0; z-index: 10;
-  width: 100vw; height: 100vh; background: var(--bg);
+/* ---- The page area: below the toolbar, never under it ---- */
+.sb-view {
+  position: fixed; z-index: 10; left: 0; right: 0; bottom: 0; top: calc(var(--chrome-h) + 1px); /* + the toolbar border */
+  background: var(--bg);
 }
+.sb-view[hidden] { display: none; }
+#sj-frame { border: none; display: block; width: 100%; height: 100%; background: #fff; }
 
-/* ---- Loading overlay ---- */
-#sj-loading {
-  position: fixed; inset: 0; z-index: 20; background: var(--bg); color: var(--text);
-  display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 12px; padding: 72px 24px; text-align: center; box-sizing: border-box;
+/* Status bubble, bottom-left, while a page loads or has a problem (Chrome-style). */
+.sb-status {
+  position: absolute; z-index: 25; left: 8px; bottom: calc(8px + env(safe-area-inset-bottom, 0px));
+  max-width: min(70%, 520px); padding: 5px 10px; border-radius: 8px;
+  background: #222222ee; border: 1px solid var(--border); color: var(--sub);
+  font-size: 12px; line-height: 1.35; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  opacity: 0; transform: translateY(4px); pointer-events: none;
+  transition: opacity 0.15s ease, transform 0.15s ease;
 }
+.sb-view.is-loading .sb-status:not(:empty), .sb-view.has-warning .sb-status:not(:empty) { opacity: 1; transform: none; }
+.sb-view.has-warning .sb-status { color: #ffb4a8; }
+
+/* ---- Loading cover (inside the page area) ---- */
+#sj-loading {
+  position: absolute; inset: 0; z-index: 20; background: var(--bg); color: var(--text);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 12px; padding: 48px 24px; text-align: center; box-sizing: border-box;
+}
+#sj-loading[hidden] { display: none; }
 #sj-loading p { max-width: 440px; margin: 0; line-height: 1.5; overflow-wrap: anywhere; }
 #sj-loading .sj-hint { color: var(--sub); font-size: 13px; }
 .sj-spinner {
@@ -168,29 +236,7 @@ body.ss {
 }
 #sj-show-page:hover { border-color: #3a3a3a; }
 
-/* ---- Toolbar over a proxied page ---- */
-#sj-toolbar {
-  position: fixed; z-index: 30; top: 0; left: 0; right: 0; min-height: 48px;
-  padding: calc(7px + env(safe-area-inset-top, 0px)) 10px 7px; box-sizing: border-box;
-  background: var(--panel); color: var(--text); border-bottom: 1px solid var(--border);
-  display: flex; align-items: center; gap: 8px; font: 13px var(--font);
-}
-#sj-toolbar button {
-  display: inline-flex; align-items: center; gap: 6px;
-  min-height: 34px; padding: 0 12px; border: 1px solid var(--border); border-radius: 10px;
-  color: var(--text); background: var(--field); font: inherit; font-weight: 600; cursor: pointer;
-}
-#sj-toolbar button:hover { border-color: #3a3a3a; }
-#sj-toolbar button:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
-#sj-toolbar button svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
-#sj-toolbar-status {
-  flex: 1; text-align: center; min-width: 0; color: var(--sub);
-  white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;
-  overflow: hidden; line-height: 1.3;
-}
-
 @media (max-width: 420px) {
   .ss-title { font-size: 26px; }
   .ss-logo { width: 68px; height: 68px; }
-  #sj-toolbar button span { display: none; }
 }

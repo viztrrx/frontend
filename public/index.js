@@ -11,10 +11,23 @@ const toolbar = document.getElementById("sj-toolbar");
 const toolbarStatus = document.getElementById("sj-toolbar-status");
 const loading = document.getElementById("sj-loading");
 const loadingStatus = document.getElementById("sj-loading-status");
-const closeButton = document.getElementById("sj-close");
+const homeButton = document.getElementById("sj-home-btn");
 const reloadButton = document.getElementById("sj-reload");
+const backButton = document.getElementById("sj-back");
+const forwardButton = document.getElementById("sj-forward");
 const fullTab = document.getElementById("sj-fulltab");
 const showPageButton = document.getElementById("sj-show-page");
+const homePage = document.getElementById("sj-home");
+const view = document.getElementById("sj-view");
+const homeForm = document.getElementById("sj-home-form");
+const homeInput = document.getElementById("sj-home-q");
+const omniIcon = document.getElementById("sj-omni-ic");
+const fullscreenButton = document.getElementById("sj-fs");
+const exitButton = document.getElementById("sj-exit");
+
+// The start page has its own address, like chrome://settings. The address
+// bar shows it on the home page; typing replaces it (it's selected on focus).
+const HOME_URL = "saints://home";
 
 // When this frontend runs inside the Saints Service console (an embedding
 // parent frame), report the proxied site to that parent so the console can
@@ -44,7 +57,9 @@ function reportToConsole(url, query = "") {
 function reportPage(element) {
   const query = pendingQuery;
   pendingQuery = "";
-  reportToConsole(frameRealUrl(element), query);
+  const url = frameRealUrl(element);
+  frameUrlChanged(url);
+  reportToConsole(url, query);
 }
 // Does the input look like a web address (so Scramjet opens it directly),
 // or a search term (so Scramjet searches for it)? Mirrors search.js.
@@ -61,13 +76,33 @@ if (parentConsole && typeof window.addEventListener === "function") {
   window.addEventListener("message", (event) => {
     if (event.source !== parentConsole) return;
     const data = event.data;
-    if (!data || data.saintsProxy !== 1 || data.type !== "navigate" || typeof data.query !== "string") return;
+    if (!data || data.saintsProxy !== 1) return;
+    // Which window buttons the console wants in this toolbar (its own bar is
+    // gone, so Close and Fullscreen live here).
+    if (data.type === "chrome") {
+      if (exitButton) exitButton.hidden = data.close === false;
+      if (fullscreenButton) {
+        fullscreenButton.hidden = !data.fullscreen;
+        const label = data.fullscreenOn ? "Exit fullscreen" : "Fullscreen";
+        fullscreenButton.title = label;
+        fullscreenButton.setAttribute?.("aria-label", label);
+      }
+      return;
+    }
+    if (data.type !== "navigate" || typeof data.query !== "string") return;
     const typed = data.query.trim().slice(0, 500);
     if (!typed || busy) return;
-    pendingQuery = looksLikeUrl(typed) ? "" : typed;
-    try { void openUrl(search(typed, searchEngine.value)); } catch {}
+    void go(typed);
   });
 }
+// Ask the console (when embedded) to close the proxy or toggle fullscreen.
+function tellConsole(type) {
+  if (!parentConsole) return;
+  try { parentConsole.postMessage({ saintsProxy: 1, type }, "*"); } catch {}
+}
+if (exitButton) exitButton.hidden = !parentConsole;
+exitButton?.addEventListener?.("click", () => tellConsole("close"));
+fullscreenButton?.addEventListener?.("click", () => tellConsole("fullscreen"));
 // The real site a Scramjet frame is on (it runs on this origin, so its
 // encoded location is readable here), decoded back to the site's own URL.
 function frameRealUrl(element) {
@@ -110,6 +145,54 @@ let navigationResponseStatus = null;
 let navigationError = null;
 let httpWarning = false;
 let busy = false;
+// The ScramjetFrame for the open site, and a simple history so Back from the
+// first page returns to saints://home (never past it into the host page).
+let currentSjFrame = null;
+let currentSite = "";      // real URL of the page in the frame
+let backCount = 0;         // pages behind the current one, inside the frame
+let forwardCount = 0;
+let historyMove = null;    // "back" | "forward" while that navigation lands
+let homeForward = "";      // the site Forward reopens from saints://home
+
+// ---- Toolbar state -------------------------------------------------------
+function setLoading(on) {
+  try { toolbar.classList?.toggle("is-loading", !!on); } catch {}
+  try { view?.classList?.toggle("is-loading", !!on); } catch {}
+}
+function setWarning(on) {
+  try { view?.classList?.toggle("has-warning", !!on); } catch {}
+}
+// The address bar's resting text: saints://home, or the site's real address.
+// Left alone while the user is typing in it.
+function showAddress() {
+  const text = currentFrame ? (currentSite || lastUrl || "") : HOME_URL;
+  if (document.activeElement !== address) address.value = text;
+  if (omniIcon && omniIcon.dataset) omniIcon.dataset.kind = currentFrame ? "site" : "home";
+  try { document.title = currentFrame && currentSite ? hostOf(currentSite) + " · Saints Search" : "Saints Search"; } catch {}
+}
+function hostOf(url) {
+  try { return new URL(url).hostname.replace(/^www\./, ""); } catch { return ""; }
+}
+function syncNav() {
+  if (backButton) backButton.disabled = !currentFrame;
+  if (forwardButton) forwardButton.disabled = currentFrame ? forwardCount <= 0 : !homeForward;
+}
+// Page area vs. saints://home.
+function showView(on) {
+  if (homePage) homePage.hidden = !!on;
+  if (view) view.hidden = !on;
+}
+// A page the frame landed on (load or in-page URL change): history + bar.
+function frameUrlChanged(url) {
+  if (!url || url === currentSite) return;
+  if (historyMove === "back") { backCount = Math.max(0, backCount - 1); forwardCount++; }
+  else if (historyMove === "forward") { backCount++; forwardCount = Math.max(0, forwardCount - 1); }
+  else if (currentSite) { backCount++; forwardCount = 0; }
+  historyMove = null;
+  currentSite = url;
+  showAddress();
+  syncNav();
+}
 
 // Remember the search engine and full-tab choice; storage can be unavailable.
 function loadPreference(key, apply) {
@@ -151,6 +234,8 @@ function inspectPage(element) {
 
 function reportNavigationFailure(details) {
   navigationError = details;
+  setLoading(false);
+  setWarning(true);
   toolbarStatus.textContent = "Website request failed";
   loadingStatus.textContent = details;
   loading.hidden = false;
@@ -174,6 +259,8 @@ navigator.serviceWorker?.addEventListener?.("message", (event) => {
     // details) and report the status in the toolbar instead of covering it.
     httpWarning = true;
     loading.hidden = true;
+    setLoading(false);
+    setWarning(true);
     toolbarStatus.textContent = describeHttpStatus(data.status, data.message);
   } else {
     toolbarStatus.textContent = "Website responded (HTTP " + data.status + ")";
@@ -288,26 +375,43 @@ function closeFrame() {
   navigationError = null;
   httpWarning = false;
   if (currentFrame) {
+    // Forward on saints://home reopens the site that was just left.
+    if (currentSite || lastUrl) homeForward = currentSite || lastUrl;
     currentFrame.remove();
     currentFrame = null;
   }
-  toolbar.hidden = true;
+  currentSjFrame = null;
+  currentSite = "";
+  backCount = 0;
+  forwardCount = 0;
+  historyMove = null;
   loading.hidden = true;
+  setLoading(false);
+  setWarning(false);
+  showView(false);
   busy = false;
-  address.disabled = false;
   showProgress("");
+  showAddress();
+  syncNav();
   reportToConsole("");
 }
 
 async function openUrl(url) {
   if (busy) return;
   busy = true;
-  address.disabled = true;
   showError("");
   closeFrame();
   busy = true;
-  address.disabled = true;
   lastUrl = url;
+  homeForward = "";
+  // Straight to the page area: the toolbar shows where we're going and the
+  // loading cover reports the connection steps.
+  showView(true);
+  loading.hidden = false;
+  setLoading(true);
+  showAddress();
+  if (document.activeElement !== address) address.value = url;
+  syncNav();
 
   try {
     const wispUrl = getWispUrl();
@@ -367,12 +471,13 @@ async function openUrl(url) {
     element.id = "sj-frame";
     element.setAttribute("title", "Scramjet browsing frame");
     currentFrame = element;
+    currentSjFrame = frame;
     frame.addEventListener?.("urlchange", (event) => {
       if (currentFrame !== element) return;
       const u = event && typeof event.url === "string" && event.url ? event.url : frameRealUrl(element);
-      if (u) reportToConsole(u, "");
+      if (u) { frameUrlChanged(u); reportToConsole(u, ""); }
     });
-    toolbar.hidden = false;
+    syncNav();
     loading.hidden = false;
     let loaded = false;
     // Hide the loading cover as soon as the page shows content, even before
@@ -382,6 +487,7 @@ async function openUrl(url) {
       const content = inspectPage(element);
       if (content !== false) {
         loading.hidden = true;
+        setLoading(false);
         progress.textContent = "";
         progress.hidden = true;
         if (!httpWarning) {
@@ -394,6 +500,7 @@ async function openUrl(url) {
       if (loaded) {
         // A delivered document stays visible while it finishes rendering.
         loading.hidden = true;
+        setLoading(false);
         if (!httpWarning) toolbarStatus.textContent = "Page loaded but still blank…";
       }
       pageCheckTimer = setTimeout(watchContent, 1000);
@@ -426,7 +533,7 @@ async function openUrl(url) {
     const frameSource = element.getAttribute?.("src") || element.src;
     if (!frameSource) throw new Error("Scramjet did not set an iframe navigation URL.");
     currentNavigationPath = new URL(frameSource, location.href).pathname;
-    document.body.appendChild(element);
+    (view || document.body).appendChild(element);
 
     pageCheckTimer = setTimeout(watchContent, 1000);
     loadingTimer = setTimeout(() => {
@@ -447,24 +554,85 @@ async function openUrl(url) {
       cause instanceof Error ? cause.message : String(cause));
   } finally {
     busy = false;
-    address.disabled = false;
   }
+}
+
+// Somewhere new while a site is open: navigate the same frame, so Back
+// returns to the page before it (a fresh frame would lose that).
+function navigateFrame(url) {
+  lastUrl = url;
+  navigationError = null;
+  navigationResponseStatus = null;
+  httpWarning = false;
+  setWarning(false);
+  setLoading(true);
+  toolbarStatus.textContent = "Loading website…";
+  try { currentNavigationPath = new URL(scramjetController.encodeUrl(url), location.href).pathname; } catch {}
+  currentSjFrame.go(url);
+}
+
+// What the address bar (or the home page box) was given: saints://home,
+// a web address, or words to search for.
+async function go(raw) {
+  const text = String(raw || "").trim();
+  if (!text) return;
+  if (/^saints:(\/\/)?/i.test(text)) { closeFrame(); return; }
+  let url;
+  try {
+    url = search(text, searchEngine.value);
+    if (!url) throw new Error("Enter a website address or search term.");
+  } catch (cause) {
+    closeFrame();
+    showError("That address could not be opened.", cause.message || String(cause));
+    return;
+  }
+  // Remember a search term (not a web address) so the console logs it.
+  pendingQuery = looksLikeUrl(text) ? "" : text.slice(0, 200);
+  if (currentFrame && currentSjFrame && scramjetController && !busy && !navigationError) {
+    if (document.activeElement !== address) address.value = url;
+    navigateFrame(url);
+    return;
+  }
+  await openUrl(url);
 }
 
 form.addEventListener("submit", async (event) => {
   event.preventDefault();
   if (busy) return;
-  let url;
-  try {
-    url = search(address.value, searchEngine.value);
-    if (!url) throw new Error("Enter a website address or search term.");
-  } catch (cause) {
-    showError("That address could not be opened.", cause.message || String(cause));
-    return;
-  }
-  // Remember a search term (not a web address) so the console logs it.
-  pendingQuery = looksLikeUrl(address.value) ? "" : address.value.trim().slice(0, 200);
-  await openUrl(url);
+  const typed = address.value;
+  address.blur?.();
+  await go(typed);
+});
+homeForm?.addEventListener?.("submit", async (event) => {
+  event.preventDefault();
+  if (busy || !homeInput) return;
+  const typed = homeInput.value;
+  homeInput.value = "";
+  homeInput.blur?.();
+  await go(typed);
+});
+
+// The whole address is selected when the bar is focused, so typing replaces
+// saints://home (or the site's address) without deleting anything first.
+let selectOnMouseUp = false;
+function selectAddress() {
+  try { address.select?.(); address.setSelectionRange?.(0, address.value.length); } catch {}
+}
+address.addEventListener("focus", () => {
+  selectAddress();
+  selectOnMouseUp = true;
+  // iOS places the caret after focus; select again once it settles.
+  setTimeout(selectAddress, 0);
+});
+// A click that focused the bar would otherwise drop the selection on mouseup.
+address.addEventListener("mouseup", (event) => {
+  if (!selectOnMouseUp) return;
+  selectOnMouseUp = false;
+  event.preventDefault?.();
+});
+address.addEventListener("blur", () => { selectOnMouseUp = false; showAddress(); });
+address.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") { address.value = currentFrame ? (currentSite || lastUrl) : HOME_URL; address.blur?.(); }
 });
 
 // Show the deployed commit (written by scripts/build.mjs) so a new deployment
@@ -493,13 +661,36 @@ async function showVersion() {
 }
 void showVersion();
 
-closeButton.addEventListener("click", () => closeFrame());
-showPageButton?.addEventListener?.("click", () => { loading.hidden = true; });
+homeButton?.addEventListener?.("click", () => closeFrame());
+showPageButton?.addEventListener?.("click", () => { loading.hidden = true; setLoading(false); });
 // Returning from a full-tab site through the back/forward cache restores this page.
 window.addEventListener?.("pageshow", (event) => { if (event.persisted) closeFrame(); });
+// Reload the page; after a failure, reconnect from scratch (refreshes the
+// Wisp transport). On saints://home there is nothing to reload.
 reloadButton.addEventListener("click", () => {
-  const url = lastUrl;
-  if (url && !busy) void openUrl(url);
+  if (busy) return;
+  if (currentFrame && currentSjFrame && !navigationError && typeof currentSjFrame.reload === "function") {
+    setLoading(true);
+    try { currentSjFrame.reload(); return; } catch {}
+  }
+  if (currentFrame && lastUrl) void openUrl(lastUrl);
+});
+backButton?.addEventListener?.("click", () => {
+  if (!currentFrame || busy) return;
+  // First page of this visit: Back goes to saints://home (never into the
+  // history of the page hosting the proxy).
+  if (backCount <= 0 || !currentSjFrame) { closeFrame(); return; }
+  historyMove = "back";
+  setLoading(true);
+  try { currentSjFrame.back(); } catch { historyMove = null; setLoading(false); }
+});
+forwardButton?.addEventListener?.("click", () => {
+  if (busy) return;
+  if (!currentFrame) { if (homeForward) void openUrl(homeForward); return; }
+  if (forwardCount <= 0 || !currentSjFrame) return;
+  historyMove = "forward";
+  setLoading(true);
+  try { currentSjFrame.forward(); } catch { historyMove = null; setLoading(false); }
 });
 
 // Quick-launch app presets on the home page: a tile per popular site that
@@ -562,5 +753,7 @@ if (appsGrid) {
   }
 }
 
-// Tell the console (when embedded) it is on the start page to begin with.
+// Start on saints://home, and tell the console (when embedded) so.
+showAddress();
+syncNav();
 reportToConsole("");

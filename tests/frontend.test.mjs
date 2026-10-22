@@ -5,11 +5,12 @@ import { runInNewContext } from "node:vm";
 
 const source = readFileSync(new URL("../public/index.js", import.meta.url), "utf8");
 
-function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails = false, controllerFails = false, workerHang = false, transportHang = false, blankFrame = false, noLoad = false, storage = {}, versionFetch, embed = false } = {}) {
+function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails = false, controllerFails = false, workerHang = false, transportHang = false, blankFrame = false, noLoad = false, storage = {}, versionFetch, embed = false, realUrls = false } = {}) {
   const posts = [];
   const winMessage = { fn: null };
   const elements = new Map();
   const frames = [];
+  const made = [];   // every frame Scramjet created, attached or not
   const transports = [];
   const swCallbacks = new Map();
   let websocketCount = 0;
@@ -18,7 +19,7 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
   const makeElement = (id) => {
     const callbacks = new Map();
     const element = {
-      id, hidden: id === "sj-toolbar" || id === "sj-loading" || id === "sj-progress",
+      id, hidden: id === "sj-loading" || id === "sj-progress" || id === "sj-view" || id === "sj-fs" || id === "sj-exit",
       textContent: "", value: "", disabled: false, removed: false,
       addEventListener: (kind, fn) => callbacks.set(kind, fn),
       dispatch: (kind, event = {}) => callbacks.get(kind)?.({ preventDefault() {}, ...event }),
@@ -28,7 +29,9 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
     elements.set(id, element);
     return element;
   };
-  for (const id of ["sj-form", "sj-address", "sj-search-engine", "sj-error", "sj-error-code", "sj-progress", "sj-toolbar", "sj-toolbar-status", "sj-loading", "sj-loading-status", "sj-close", "sj-reload", "sj-fulltab", "sj-show-page", "sj-version"]) makeElement(id);
+  for (const id of ["sj-form", "sj-address", "sj-search-engine", "sj-error", "sj-error-code", "sj-progress", "sj-toolbar", "sj-toolbar-status", "sj-loading", "sj-loading-status", "sj-home-btn", "sj-reload", "sj-back", "sj-forward", "sj-fulltab", "sj-show-page", "sj-version", "sj-home", "sj-view", "sj-home-form", "sj-home-q", "sj-omni-ic", "sj-fs", "sj-exit"]) makeElement(id);
+  // The proxied page goes in the page area under the toolbar.
+  elements.get("sj-view").appendChild = (node) => frames.push(node);
   elements.get("sj-version").append = function (...nodes) {
     this.textContent += nodes.map((node) => typeof node === "string" ? node : node.textContent).join("");
     this.children = nodes;
@@ -41,6 +44,7 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
   const assigned = [];
   elements.get("sj-address").value = "example.com";
   const document = {
+    activeElement: null,
     getElementById: (id) => elements.get(id),
     body: { appendChild: (node) => frames.push(node) },
     createElement: () => ({ textContent: "" }),
@@ -63,22 +67,42 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
   class ScramjetController {
     async init() { if (controllerFails) throw new Error("Wasm init failed"); }
     encodeUrl(url) { return "/scramjet/" + encodeURIComponent(url); }
-    decodeUrl() { return "https://example.com/"; }
+    decodeUrl(href) {
+      // realUrls: the frame's real page is whatever it was last sent to.
+      if (realUrls) { const f = made.find((x) => x.contentWindow.location.href === href); return f ? f.url : "https://example.com/"; }
+      return "https://example.com/";
+    }
     createFrame() {
-      const el = makeElement("frame-" + frames.length);
+      const el = makeElement("frame-" + made.length);
+      made.push(el);
       el.contentWindow = { location: { href: blankFrame ? "about:blank" : "https://frontend.viztrrx.workers.dev/scramjet/test" } };
       el.contentDocument = {
         URL: blankFrame ? "about:blank" : "https://frontend.viztrrx.workers.dev/scramjet/test",
         body: { innerText: blankFrame ? "" : "Example page", querySelector: () => null }
       };
-      return {
-        frame: el,
-        go(url) {
-          el.url = url;
-          el.src = "/scramjet/" + encodeURIComponent(url);
-          if (!noLoad) el.dispatch("load");
-        }
+      const history = [];
+      let at = -1;
+      const land = (url) => {
+        el.url = url;
+        if (!blankFrame) el.contentWindow.location.href = "https://frontend.viztrrx.workers.dev/scramjet/" + encodeURIComponent(url);
+        if (!noLoad) el.dispatch("load");
       };
+      const sj = {
+        frame: el,
+        reloads: 0,
+        go(url) {
+          history.splice(at + 1);
+          history.push(url);
+          at = history.length - 1;
+          el.src = "/scramjet/" + encodeURIComponent(url);
+          land(url);
+        },
+        back() { if (at > 0) land(history[--at]); },
+        forward() { if (at < history.length - 1) land(history[++at]); },
+        reload() { sj.reloads++; },
+      };
+      if (blankFrame) el.contentWindow.location.href = "about:blank";
+      return sj;
     }
   }
   class BareMuxConnection {
@@ -125,9 +149,13 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
     clearTimeout(id) { timers.delete(id); },
   };
   runInNewContext(source, ctx, { filename: "public/index.js" });
+  const initialAddress = elements.get("sj-address").value;
+  elements.get("sj-address").value = "example.com";   // what the tests type
   return {
+    initialAddress,
     elements, frames, transports, timers, assigned, storage, posts,
     navigate: (query) => winMessage.fn?.({ source: ctx.window.parent, data: { saintsProxy: 1, type: "navigate", query } }),
+    chrome: (opts) => winMessage.fn?.({ source: ctx.window.parent, data: { saintsProxy: 1, type: "chrome", ...opts } }),
     websocketCount: () => websocketCount,
     submit: () => elements.get("sj-form").dispatch("submit"),
     sendNavStatus(status, message = "") {
@@ -161,13 +189,16 @@ test("checks Render Wisp and configures the transport before navigating", async 
   assert.equal(x.transports[0][1][0].websocket, "wss://backend-ivvq.onrender.com/wisp/");
   assert.equal(x.frames.length, 1);
   assert.equal(x.frames[0].url, "https://example.com");
-  assert.equal(x.elements.get("sj-toolbar").hidden, false);
+  assert.equal(x.elements.get("sj-view").hidden, false);
+  assert.equal(x.elements.get("sj-home").hidden, true);
   await x.advance(4000);
   assert.equal(x.elements.get("sj-loading").hidden, true);
   assert.equal(x.elements.get("sj-toolbar-status").textContent, "Website content detected");
-  await x.elements.get("sj-close").dispatch("click");
+  await x.elements.get("sj-home-btn").dispatch("click");
   assert.equal(x.frames[0].removed, true);
-  assert.equal(x.elements.get("sj-toolbar").hidden, true);
+  assert.equal(x.elements.get("sj-view").hidden, true);
+  assert.equal(x.elements.get("sj-home").hidden, false);
+  assert.equal(x.elements.get("sj-address").value, "saints://home");
 });
 
 test("invalid Wisp URL preserves the original page and reports an error", async () => {
@@ -194,9 +225,10 @@ test("controller initialization failure is shown without masking the page", asyn
   assert.match(x.elements.get("sj-error-code").textContent, /Wasm init failed/);
 });
 
-test("Retry always refreshes the Wisp transport", async () => {
+test("Reload after a failed load reconnects and refreshes the Wisp transport", async () => {
   const x = setup();
   await x.submit();
+  x.sendNavStatus(0, "Upstream service unavailable");
   await x.elements.get("sj-reload").dispatch("click");
   await new Promise((resolve) => setImmediate(resolve));
   assert.equal(x.transports.length, 2);
@@ -327,8 +359,8 @@ test("embedded: reports the proxied site, and the start page on close, to the co
   await x.advance(4000);
   // The opened site is reported with its real (decoded) URL.
   assert.equal(J(x.posts.at(-1)), J({ saintsProxy: 1, type: "nav", url: "https://example.com/" }));
-  await x.elements.get("sj-close").dispatch("click");
-  // Closing the site reports the start page again.
+  await x.elements.get("sj-home-btn").dispatch("click");
+  // Going home reports the start page again.
   assert.equal(J(x.posts.at(-1)), J({ saintsProxy: 1, type: "nav", url: "" }));
 });
 
@@ -365,4 +397,106 @@ test("embedded: the console can drive navigation, and a search term is reported"
   await x.advance(4000);
   assert.equal(x.frames.length, 1);
   assert.equal(J(x.posts.at(-1)), J({ saintsProxy: 1, type: "nav", url: "https://example.com/", query: "funny cats" }));
+});
+
+// ---- Chrome-style toolbar and saints://home ----
+
+test("starts on saints://home with Back and Forward disabled", () => {
+  const x = setup();
+  assert.equal(x.initialAddress, "saints://home");
+  assert.equal(x.elements.get("sj-home").hidden, false);
+  assert.equal(x.elements.get("sj-view").hidden, true);
+  assert.equal(x.elements.get("sj-back").disabled, true);
+  assert.equal(x.elements.get("sj-forward").disabled, true);
+});
+
+test("the address bar selects everything on focus, so typing replaces saints://home", () => {
+  const x = setup();
+  const bar = x.elements.get("sj-address");
+  bar.value = "saints://home";
+  let selected = null;
+  bar.select = () => { selected = bar.value; };
+  bar.dispatch("focus");
+  assert.equal(selected, "saints://home");
+});
+
+test("typing saints://home while on a site goes back to the home page", async () => {
+  const x = setup();
+  await x.submit();
+  await x.advance(4000);
+  x.elements.get("sj-address").value = "saints://home";
+  await x.submit();
+  assert.equal(x.frames[0].removed, true);
+  assert.equal(x.elements.get("sj-home").hidden, false);
+  assert.equal(x.elements.get("sj-address").value, "saints://home");
+});
+
+test("the address bar shows the real site, a new address reuses the frame, and Back/Forward walk it", async () => {
+  const x = setup({ realUrls: true });
+  await x.submit();
+  await x.advance(4000);
+  const bar = x.elements.get("sj-address");
+  assert.equal(bar.value, "https://example.com");
+  assert.equal(x.elements.get("sj-back").disabled, false, "Back is on: it returns to saints://home");
+  assert.equal(x.elements.get("sj-forward").disabled, true);
+  bar.value = "youtube.com";
+  await x.submit();
+  await x.advance(4000);
+  assert.equal(x.frames.length, 1, "the same frame navigates (history kept)");
+  assert.equal(bar.value, "https://youtube.com");
+  await x.elements.get("sj-back").dispatch("click");
+  assert.equal(bar.value, "https://example.com");
+  assert.equal(x.elements.get("sj-forward").disabled, false);
+  await x.elements.get("sj-forward").dispatch("click");
+  assert.equal(bar.value, "https://youtube.com");
+  await x.elements.get("sj-back").dispatch("click");
+  await x.elements.get("sj-back").dispatch("click");
+  // Back from the first page lands on saints://home — never past it.
+  assert.equal(x.frames[0].removed, true);
+  assert.equal(bar.value, "saints://home");
+  assert.equal(x.elements.get("sj-forward").disabled, false, "Forward from home reopens the site");
+  await x.elements.get("sj-forward").dispatch("click");
+  await x.advance(4000);
+  assert.equal(x.frames.length, 2);
+  assert.equal(x.elements.get("sj-home").hidden, true);
+});
+
+test("Reload reloads the page in place", async () => {
+  const x = setup();
+  await x.submit();
+  await x.advance(4000);
+  const frame = x.frames[0];
+  await x.elements.get("sj-reload").dispatch("click");
+  assert.equal(x.frames.length, 1);
+  assert.equal(x.transports.length, 1);
+});
+
+test("the proxied page sits in the page area below the toolbar, never under it", () => {
+  const css = readFileSync(new URL("../public/index.css", import.meta.url), "utf8");
+  const html = readFileSync(new URL("../public/index.html", import.meta.url), "utf8");
+  assert.match(css, /\.sb-view \{[^}]*top: calc\(var\(--chrome-h\) \+ 1px\)/);
+  assert.match(css, /#sj-frame \{[^}]*width: 100%; height: 100%/);
+  assert.doesNotMatch(css.match(/#sj-frame \{[^}]*\}/)[0], /position/);
+  assert.ok(html.indexOf('id="sj-toolbar"') < html.indexOf('id="sj-view"'));
+});
+
+test("not embedded: no Close or Fullscreen buttons", () => {
+  const x = setup();
+  assert.equal(x.elements.get("sj-exit").hidden, true);
+  assert.equal(x.elements.get("sj-fs").hidden, true);
+});
+
+test("embedded: the toolbar has the console's Close, and Fullscreen when the console offers it", async () => {
+  const x = setup({ embed: true });
+  const J = (m) => JSON.stringify(m);
+  assert.equal(x.elements.get("sj-exit").hidden, false);
+  assert.equal(x.elements.get("sj-fs").hidden, true);
+  x.elements.get("sj-exit").dispatch("click");
+  assert.equal(J(x.posts.at(-1)), J({ saintsProxy: 1, type: "close" }));
+  x.chrome({ close: true, fullscreen: true, fullscreenOn: false });
+  assert.equal(x.elements.get("sj-fs").hidden, false);
+  x.elements.get("sj-fs").dispatch("click");
+  assert.equal(J(x.posts.at(-1)), J({ saintsProxy: 1, type: "fullscreen" }));
+  x.chrome({ close: true, fullscreen: false });
+  assert.equal(x.elements.get("sj-fs").hidden, true);
 });
