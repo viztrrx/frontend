@@ -1,0 +1,268 @@
+[
+  {
+    "slug": "1-on-1-soccer",
+    "title": "1 on 1 Soccer",
+    "image": "/games/thumbnails/1-on-1-soccer.jpg",
+    "path": "/games/public/swfs/#1on1soccer"
+  },
+  {
+    "slug": "1v1-lol",
+    "title": "1v1.LOL",
+    "image": "/games/thumbnails/1v1-lol.jpg",
+    "url": "https://1v1.lol/"
+  },
+  {
+    "slug": "2048",
+    "title": "2048",
+    "image": "/games/thumbnails/2048.jpg",
+    "path": "/games/public/2048/"
+  },
+  {
+    "slug": "a-fancy-pants-adventure",
+    "title": "A Fancy Pants Adventure",
+    "image": "/games/thumbnails/a-fancy-pants-adventure.jpg",
+    "path": "/games/public/swfs/#a-fancy-pants-adventure-world1"
+  },
+  {
+    "slug": "alien-hominid",
+    "title": "Alien Hominid",
+    "image": "/games/thumbnails/alien-hominid.jpg",
+    "path": "/games/public/swfs/#alienhominid"
+  },
+  {
+    "slug": "astray",
+    "title": "Astray",
+    "image": "/games/thumbnails/astray.jpg",
+    "path": "/games/public/astray/"
+  },
+  {
+    "slug": "breaklock",
+    "title": "BreakLock",
+    "path": "/games/public/breaklock/"
+  },
+  {
+    "slug": "chrome-dinosaur",
+    "title": "Chrome Dinosaur",
+    "image": "/games/thumbnails/chrome-dinosaur.jpg",
+    "path": "/games/public/dinosaur/"
+  },
+  {
+    "slug": "cookie-clicker",
+    "title": "Cookie Clicker",
+    "image": "/games/thumbnails/cookie-clicker.jpg",
+    "path": "/games/public/cookie/"
+  },
+  {
+    "slug": "cubefield",
+    "title": "Cubefield",
+    "image": "/games/thumbnails/cubefield.jpg",
+    "path": "/games/public/cubefield/"
+  },
+  {
+    "slug": "doodle-jump",
+    "title": "Doodle Jump",
+    "image": "/games/thumbnails/doodle-jump.jpg",
+    "path": "/games/public/doodle-jump/"
+  },
+  {
+    "slug": "drift-hunters",
+    "title": "Drift Hunters",
+    "image": "/games/thumbnails/drift-hunters.jpg",
+    "path": "/games/public/drift/"
+  },
+  {
+    "slug": "ducklife",
+    "title": "Duck Life",
+    "image": "/games/thumbnails/ducklife.jpg",
+    "path": "/games/public/ducklife/"
+  },
+  {
+    "slug": "ducklife2",
+    "title": "Duck Life 2",
+    "image": "/games/thumbnails/ducklife2.jpg",
+    "path": "/games/public/ducklife2/"
+  },
+  {
+    "slug": "ducklife3",
+    "title": "Duck Life 3: Evolution",
+    "image": "/games/thumbnails/ducklife3.jpg",
+    "path": "/games/public/ducklife3/"
+  },
+  {
+    "slug": "ducklife4",
+    "title": "Duck Life 4",
+    "image": "/games/thumbnails/ducklife4.jpg",
+    "path": "/games/public/ducklife4/"
+  },
+  {
+    "slug": "fireboy-and-watergirl-forest-temple",
+    "title": "Fireboy & Watergirl Into the Forest Temple",
+    "image": "/games/thumbnails/fireboy-and-watergirl-forest-temple.jpg",
+    "path": "/games/public/fireboy-and-watergirl-forest-temple/"
+  },
+  {
+    "slug": "flappy-2048",
+    "title": "Flappy 2048",
+    "path": "/games/public/flappy-2048/"
+  },
+  {
+    "slug": "flappybird",
+    "title": "Flappy Bird",
+    "image": "/games/thumbnails/flappybird.jpg",
+    "path": "/games/public/flappybird/"
+  },
+  {
+    "slug": "friendlyfire",
+    "title": "Friendly Fire",
+    "image": "/games/thumbnails/friendlyfire.jpg",
+    "path": "/games/public/friendlyfire/"
+  },
+  {
+    "slug": "geometry",
+    "title": "Geometry Dash",
+    "image": "/games/thumbnails/geometry.jpg",
+    "path": "/games/public/geometry/"
+  },
+  {
+    "slug": "gopherkart",
+    "title": "Gopher Kart",
+    "image": "/games/thumbnails/gopherkart.jpg",
+    "path": "/games/public/gopher-kart/"
+  },
+  {
+    "slug": "hexgl",
+    "title": "HexGL",
+    "image": "/games/thumbnails/hexgl.jpg",
+    "path": "/games/public/hexgl/"
+  },
+  {
+    "slug": "hextris",
+    "title": "Hextris",
+    "path": "/games/public/hextris/"
+  },
+  {
+    "slug": "justfall-lol",
+    "title": "Justfall.LOL",
+    "image": "/games/thumbnails/justfall-lol.jpg",
+    "url": "https://justfall.lol/"
+  },
+  {
+    "slug": "littlebigsnake",
+    "title": "LittleBigSnake",
+    "image": "/games/thumbnails/littlebigsnake.jpg",
+    "url": "https://littlebigsnake.com/"
+  },
+  {
+    "slug": "microsoft-flight-simulator",
+    "title": "Microsoft Flight Simulator",
+    "path": "/games/public/microsoft-flight-simulator/"
+  },
+  {
+    "slug": "minecraft",
+    "title": "Minecraft Classic",
+    "image": "/games/thumbnails/minecraft.jpg",
+    "path": "/games/public/mc-classic/"
+  },
+  {
+    "slug": "pacman",
+    "title": "Pac Man",
+    "image": "/games/thumbnails/pacman.jpg",
+    "path": "/games/public/pacman/"
+  },
+  {
+    "slug": "paper-io",
+    "title": "Paper.io",
+    "image": "/games/thumbnails/paper-io.jpg",
+    "url": "https://paper-io.com/"
+  },
+  {
+    "slug": "portal2d",
+    "title": "Portal 2D",
+    "image": "/games/thumbnails/portal2d.jpg",
+    "path": "/games/public/swfs/#portal2d"
+  },
+  {
+    "slug": "radiusraid",
+    "title": "Radius Raid",
+    "image": "/games/thumbnails/radiusraid.jpg",
+    "path": "/games/public/radius-raid/"
+  },
+  {
+    "slug": "retro-bowl",
+    "title": "Retro Bowl",
+    "image": "/games/thumbnails/retro-bowl.jpg",
+    "path": "/games/public/retro-bowl/"
+  },
+  {
+    "slug": "ritz",
+    "title": "Ritz",
+    "image": "/games/thumbnails/ritz.jpg",
+    "path": "/games/public/ritz/"
+  },
+  {
+    "slug": "run3",
+    "title": "Run 3",
+    "image": "/games/thumbnails/run3.jpg",
+    "path": "/games/public/run3/"
+  },
+  {
+    "slug": "slope",
+    "title": "Slope",
+    "image": "/games/thumbnails/slope.jpg",
+    "path": "/games/public/slope/"
+  },
+  {
+    "slug": "spaceinvaders",
+    "title": "Space Invaders",
+    "image": "/games/thumbnails/spaceinvaders.jpg",
+    "path": "/games/public/spaceinvaders/"
+  },
+  {
+    "slug": "sm64",
+    "title": "Super Mario 64",
+    "image": "/games/thumbnails/sm64.jpg",
+    "path": "/games/public/sm64/"
+  },
+  {
+    "slug": "chroma",
+    "title": "The Chroma Incident",
+    "image": "/games/thumbnails/chroma.jpg",
+    "path": "/games/public/chroma/"
+  },
+  {
+    "slug": "vex3",
+    "title": "Vex 3",
+    "image": "/games/thumbnails/vex3.jpg",
+    "path": "/games/public/vex3/"
+  },
+  {
+    "slug": "vex4",
+    "title": "Vex 4",
+    "image": "/games/thumbnails/vex4.jpg",
+    "path": "/games/public/vex4/"
+  },
+  {
+    "slug": "vex5",
+    "title": "Vex 5",
+    "image": "/games/thumbnails/vex5.jpg",
+    "path": "/games/public/vex5/"
+  },
+  {
+    "slug": "warfare1917",
+    "title": "Warfare 1917",
+    "image": "/games/thumbnails/warfare1917.png",
+    "path": "/games/public/swfs/#warfare1917"
+  },
+  {
+    "slug": "warfare1944",
+    "title": "Warfare 1944",
+    "image": "/games/thumbnails/warfare1944.jpg",
+    "path": "/games/public/swfs/#warfare1944"
+  },
+  {
+    "slug": "zombsroyale",
+    "title": "ZombsRoyale.io",
+    "image": "/games/thumbnails/zombsroyale.jpg",
+    "url": "https://zombsroyale.io/"
+  }
+]
