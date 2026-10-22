@@ -24,6 +24,8 @@ const homeInput = document.getElementById("sj-home-q");
 const omniIcon = document.getElementById("sj-omni-ic");
 const fullscreenButton = document.getElementById("sj-fs");
 const exitButton = document.getElementById("sj-exit");
+const tabList = document.getElementById("sj-tabs");
+const newTabButton = document.getElementById("sj-newtab");
 
 // The start page has its own address, like chrome://settings. The address
 // bar shows it on the home page; typing replaces it (it's selected on focus).
@@ -153,6 +155,148 @@ let backCount = 0;         // pages behind the current one, inside the frame
 let forwardCount = 0;
 let historyMove = null;    // "back" | "forward" while that navigation lands
 let homeForward = "";      // the site Forward reopens from saints://home
+let frameTitle = "";       // the open page's own <title>, for its tab
+
+// ---- Tabs ------------------------------------------------------------------
+// Each tab keeps its own frame (hidden while another tab is shown), address
+// and back/forward history. The variables above always hold the active tab;
+// switching saves them into its tab object and loads the other one's.
+const MAX_TABS = 12;
+let tabs = [];
+let activeTab = null;
+let nextTabId = 1;
+function newTabState() {
+  return { id: nextTabId++, frame: null, sj: null, site: "", lastUrl: "", title: "", backCount: 0, forwardCount: 0,
+    homeForward: "", navigationError: null, navigationResponseStatus: null, navigationPath: null, httpWarning: false,
+    loadingHidden: true, loadingText: "", statusText: "" };
+}
+function saveActiveTab() {
+  const t = activeTab;
+  if (!t) return;
+  t.frame = currentFrame; t.sj = currentSjFrame; t.site = currentSite; t.lastUrl = lastUrl; t.title = frameTitle;
+  t.backCount = backCount; t.forwardCount = forwardCount; t.homeForward = homeForward;
+  t.navigationError = navigationError; t.navigationResponseStatus = navigationResponseStatus;
+  t.navigationPath = currentNavigationPath; t.httpWarning = httpWarning;
+  t.loadingHidden = loading.hidden; t.loadingText = loadingStatus.textContent; t.statusText = toolbarStatus.textContent;
+}
+function loadTab(t) {
+  activeTab = t;
+  currentFrame = t.frame; currentSjFrame = t.sj; currentSite = t.site; lastUrl = t.lastUrl; frameTitle = t.title;
+  backCount = t.backCount; forwardCount = t.forwardCount; homeForward = t.homeForward;
+  navigationError = t.navigationError; navigationResponseStatus = t.navigationResponseStatus;
+  currentNavigationPath = t.navigationPath; httpWarning = t.httpWarning;
+  historyMove = null;
+  loadingStatus.textContent = t.loadingText; toolbarStatus.textContent = t.statusText;
+}
+// The tab a frame belongs to (its events keep coming while it's in the background).
+function tabOfFrame(element) {
+  if (element === currentFrame) return activeTab;
+  return tabs.find((t) => t.frame === element) || null;
+}
+function switchTab(t) {
+  if (!t || t === activeTab || busy) return;
+  saveActiveTab();
+  if (currentFrame) currentFrame.style.display = "none";
+  if (loadingTimer !== null) { clearTimeout(loadingTimer); loadingTimer = null; }
+  if (pageCheckTimer !== null) { clearTimeout(pageCheckTimer); pageCheckTimer = null; }
+  loadTab(t);
+  if (currentFrame) currentFrame.style.display = "";
+  showView(!!currentFrame);
+  // A page that finished while its tab was in the background is uncovered.
+  let cover = !t.loadingHidden;
+  if (cover && currentFrame && !navigationError && inspectPage(currentFrame) !== false) cover = false;
+  loading.hidden = !cover;
+  setLoading(cover);
+  setWarning(!!(currentFrame && (httpWarning || navigationError)));
+  showError("");
+  showAddress();
+  syncNav();
+  renderTabs();
+  reportToConsole(currentSite, "");
+}
+function newTab() {
+  if (busy || tabs.length >= MAX_TABS) return;
+  const t = newTabState();
+  tabs.push(t);
+  switchTab(t);
+  // Ready to type, like a new browser tab.
+  try { address.focus?.(); } catch {}
+}
+function closeTab(t) {
+  if (!t || busy) return;
+  const i = tabs.indexOf(t);
+  if (i < 0) return;
+  if (t === activeTab) {
+    // The last tab doesn't close the browser: it goes back to saints://home.
+    if (tabs.length === 1) { closeFrame(); homeForward = ""; syncNav(); renderTabs(); return; }
+    switchTab(tabs[i + 1] || tabs[i - 1]);
+  }
+  if (t.frame) t.frame.remove();
+  tabs.splice(tabs.indexOf(t), 1);
+  renderTabs();
+}
+function tabLabel(t) {
+  const isActive = t === activeTab;
+  const frame = isActive ? currentFrame : t.frame;
+  const site = isActive ? currentSite : t.site;
+  const title = isActive ? frameTitle : t.title;
+  if (!frame) return "Saints Search";
+  return title || hostOf(site || (isActive ? lastUrl : t.lastUrl)) || "Loading…";
+}
+function renderTabs() {
+  if (!tabList || typeof document.createElement !== "function") return;
+  if (newTabButton) newTabButton.disabled = tabs.length >= MAX_TABS;
+  const items = tabs.map((t) => {
+    const isActive = t === activeTab;
+    const frame = isActive ? currentFrame : t.frame;
+    const site = isActive ? currentSite : t.site;
+    const label = tabLabel(t);
+    const tab = document.createElement("div");
+    tab.className = "sb-tab" + (isActive ? " is-active" : "");
+    tab.dataset.tab = String(t.id);
+    tab.setAttribute("role", "tab");
+    tab.setAttribute("aria-selected", isActive ? "true" : "false");
+    tab.setAttribute("tabindex", isActive ? "0" : "-1");
+    tab.title = label;
+    const icon = document.createElement("span");
+    icon.className = "sb-tab-ic" + (frame ? "" : " is-home");
+    const host = frame ? hostOf(site) : "";
+    if (host) {
+      const img = document.createElement("img");
+      img.alt = "";
+      img.src = "/icon?d=" + encodeURIComponent(host);
+      img.addEventListener?.("error", () => img.remove());
+      icon.appendChild(img);
+    }
+    const text = document.createElement("span");
+    text.className = "sb-tab-title";
+    text.textContent = label;
+    const close = document.createElement("button");
+    close.type = "button";
+    close.className = "sb-tab-close";
+    close.setAttribute("aria-label", "Close tab: " + label);
+    close.title = "Close tab";
+    close.textContent = "\u00d7";
+    close.addEventListener("click", (event) => { event.stopPropagation?.(); closeTab(t); });
+    tab.append(icon, text, close);
+    tab.addEventListener("click", () => switchTab(t));
+    // Middle-click closes, as in Chrome.
+    tab.addEventListener("auxclick", (event) => { if (event.button === 1) { event.preventDefault?.(); closeTab(t); } });
+    return tab;
+  });
+  tabList.replaceChildren(...items);
+  const current = items[tabs.indexOf(activeTab)];
+  try { current?.scrollIntoView?.({ block: "nearest", inline: "nearest" }); } catch {}
+}
+newTabButton?.addEventListener?.("click", () => newTab());
+// Ctrl/⌘+Shift+? would collide with the browser's own tab keys; Alt works
+// inside a page: Alt+T new tab, Alt+W close tab.
+document.addEventListener?.("keydown", (event) => {
+  if (!event.altKey || event.ctrlKey || event.metaKey) return;
+  const key = String(event.key || "").toLowerCase();
+  if (key === "t") { event.preventDefault?.(); newTab(); }
+  else if (key === "w") { event.preventDefault?.(); closeTab(activeTab); }
+});
 
 // ---- Toolbar state -------------------------------------------------------
 function setLoading(on) {
@@ -169,6 +313,7 @@ function showAddress() {
   if (document.activeElement !== address) address.value = text;
   if (omniIcon && omniIcon.dataset) omniIcon.dataset.kind = currentFrame ? "site" : "home";
   try { document.title = currentFrame && currentSite ? hostOf(currentSite) + " · Saints Search" : "Saints Search"; } catch {}
+  renderTabs();
 }
 function hostOf(url) {
   try { return new URL(url).hostname.replace(/^www\./, ""); } catch { return ""; }
@@ -190,6 +335,7 @@ function frameUrlChanged(url) {
   else if (currentSite) { backCount++; forwardCount = 0; }
   historyMove = null;
   currentSite = url;
+  frameTitle = "";
   showAddress();
   syncNav();
 }
@@ -382,6 +528,7 @@ function closeFrame() {
   }
   currentSjFrame = null;
   currentSite = "";
+  frameTitle = "";
   backCount = 0;
   forwardCount = 0;
   historyMove = null;
@@ -468,14 +615,15 @@ async function openUrl(url) {
     const frame = scramjet.createFrame();
     if (!frame || !frame.frame) throw new Error("Scramjet did not create a browser frame.");
     const element = frame.frame;
-    element.id = "sj-frame";
+    element.className = "sj-frame";
     element.setAttribute("title", "Scramjet browsing frame");
     currentFrame = element;
     currentSjFrame = frame;
     frame.addEventListener?.("urlchange", (event) => {
-      if (currentFrame !== element) return;
       const u = event && typeof event.url === "string" && event.url ? event.url : frameRealUrl(element);
-      if (u) { frameUrlChanged(u); reportToConsole(u, ""); }
+      if (!u) return;
+      if (currentFrame !== element) { backgroundPage(element, u); return; }
+      frameUrlChanged(u); reportToConsole(u, "");
     });
     syncNav();
     loading.hidden = false;
@@ -488,6 +636,7 @@ async function openUrl(url) {
       if (content !== false) {
         loading.hidden = true;
         setLoading(false);
+        readTitle(element);
         progress.textContent = "";
         progress.hidden = true;
         if (!httpWarning) {
@@ -506,7 +655,9 @@ async function openUrl(url) {
       pageCheckTimer = setTimeout(watchContent, 1000);
     };
     element.addEventListener("load", () => {
-      if (currentFrame !== element || navigationError) return;
+      // A tab in the background: just keep its tab's address and title current.
+      if (currentFrame !== element) { backgroundPage(element, frameRealUrl(element)); return; }
+      if (navigationError) return;
 
       // Ignore the initial blank document; it's not a website response.
       let href = "";
@@ -514,6 +665,7 @@ async function openUrl(url) {
       if (href === "about:blank") return;
       loaded = true;
       reportPage(element);
+      readTitle(element);
       if (!httpWarning) {
         toolbarStatus.textContent = navigationResponseStatus === null
           ? "Checking website content…"
@@ -555,6 +707,24 @@ async function openUrl(url) {
   } finally {
     busy = false;
   }
+}
+
+// A background tab's page changed (a redirect, or a page that finished
+// loading after its tab was left): update that tab only.
+function backgroundPage(element, url) {
+  const t = tabOfFrame(element);
+  if (!t || t === activeTab) return;
+  if (url && url !== "about:blank") t.site = url;
+  try { t.title = String(element.contentDocument?.title || "").trim().slice(0, 80); } catch {}
+  renderTabs();
+}
+// The page's own title for its tab (Scramjet pages are same-origin).
+function readTitle(element) {
+  if (currentFrame !== element) return;
+  try {
+    const title = String(element.contentDocument?.title || "").trim().slice(0, 80);
+    if (title && title !== frameTitle) { frameTitle = title; renderTabs(); }
+  } catch {}
 }
 
 // Somewhere new while a site is open: navigate the same frame, so Back
@@ -753,7 +923,9 @@ if (appsGrid) {
   }
 }
 
-// Start on saints://home, and tell the console (when embedded) so.
+// Start with one tab on saints://home, and tell the console (when embedded) so.
+activeTab = newTabState();
+tabs.push(activeTab);
 showAddress();
 syncNav();
 reportToConsole("");

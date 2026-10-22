@@ -24,12 +24,15 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
       addEventListener: (kind, fn) => callbacks.set(kind, fn),
       dispatch: (kind, event = {}) => callbacks.get(kind)?.({ preventDefault() {}, ...event }),
       setAttribute() {},
+      style: {},
       remove() { this.removed = true; },
     };
     elements.set(id, element);
     return element;
   };
-  for (const id of ["sj-form", "sj-address", "sj-search-engine", "sj-error", "sj-error-code", "sj-progress", "sj-toolbar", "sj-toolbar-status", "sj-loading", "sj-loading-status", "sj-home-btn", "sj-reload", "sj-back", "sj-forward", "sj-fulltab", "sj-show-page", "sj-version", "sj-home", "sj-view", "sj-home-form", "sj-home-q", "sj-omni-ic", "sj-fs", "sj-exit"]) makeElement(id);
+  for (const id of ["sj-form", "sj-address", "sj-search-engine", "sj-error", "sj-error-code", "sj-progress", "sj-toolbar", "sj-toolbar-status", "sj-loading", "sj-loading-status", "sj-home-btn", "sj-reload", "sj-back", "sj-forward", "sj-fulltab", "sj-show-page", "sj-version", "sj-home", "sj-view", "sj-home-form", "sj-home-q", "sj-omni-ic", "sj-fs", "sj-exit", "sj-tabs", "sj-newtab"]) makeElement(id);
+  // The tab strip: keeps the rendered tabs so tests can read and click them.
+  elements.get("sj-tabs").replaceChildren = function (...items) { this.items = items; };
   // The proxied page goes in the page area under the toolbar.
   elements.get("sj-view").appendChild = (node) => frames.push(node);
   elements.get("sj-version").append = function (...nodes) {
@@ -47,7 +50,20 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
     activeElement: null,
     getElementById: (id) => elements.get(id),
     body: { appendChild: (node) => frames.push(node) },
-    createElement: () => ({ textContent: "" }),
+    createElement: () => {
+      const callbacks = new Map();
+      const node = {
+        textContent: "", className: "", dataset: {}, style: {}, children: [], attrs: {},
+        setAttribute(k, v) { this.attrs[k] = v; },
+        addEventListener(kind, fn) { callbacks.set(kind, fn); },
+        dispatch(kind, event = {}) { callbacks.get(kind)?.({ preventDefault() {}, stopPropagation() {}, ...event }); },
+        append(...nodes) { this.children.push(...nodes); },
+        appendChild(n) { this.children.push(n); },
+        remove() {},
+      };
+      return node;
+    },
+    addEventListener() {},
   };
   class MockWebSocket {
     static OPEN = 1;
@@ -475,8 +491,8 @@ test("the proxied page sits in the page area below the toolbar, never under it",
   const css = readFileSync(new URL("../public/index.css", import.meta.url), "utf8");
   const html = readFileSync(new URL("../public/index.html", import.meta.url), "utf8");
   assert.match(css, /\.sb-view \{[^}]*top: calc\(var\(--chrome-h\) \+ 1px\)/);
-  assert.match(css, /#sj-frame \{[^}]*width: 100%; height: 100%/);
-  assert.doesNotMatch(css.match(/#sj-frame \{[^}]*\}/)[0], /position/);
+  assert.match(css, /\.sj-frame \{[^}]*width: 100%; height: 100%/);
+  assert.doesNotMatch(css.match(/\.sj-frame \{[^}]*\}/)[0], /position/);
   assert.ok(html.indexOf('id="sj-toolbar"') < html.indexOf('id="sj-view"'));
 });
 
@@ -499,4 +515,119 @@ test("embedded: the toolbar has the console's Close, and Fullscreen when the con
   assert.equal(J(x.posts.at(-1)), J({ saintsProxy: 1, type: "fullscreen" }));
   x.chrome({ close: true, fullscreen: false });
   assert.equal(x.elements.get("sj-fs").hidden, true);
+});
+
+// ---- Tabs ----
+const tabsOf = (x) => (x.elements.get("sj-tabs").items || []).map((t) => ({
+  label: t.children[1].textContent, active: t.attrs["aria-selected"] === "true", el: t,
+  close: () => t.children[2].dispatch("click"), open: () => t.dispatch("click"),
+}));
+
+test("tabs: starts with one saints://home tab", () => {
+  const x = setup();
+  const t = tabsOf(x);
+  assert.equal(t.length, 1);
+  assert.equal(t[0].label, "Saints Search");
+  assert.equal(t[0].active, true);
+});
+
+test("tabs: + opens a new saints://home tab and keeps the other tab's page", async () => {
+  const x = setup({ realUrls: true });
+  await x.submit();
+  await x.advance(4000);
+  x.elements.get("sj-newtab").dispatch("click");
+  let t = tabsOf(x);
+  assert.equal(t.length, 2);
+  assert.equal(t[1].active, true);
+  assert.equal(t[1].label, "Saints Search");
+  assert.equal(t[0].label, "example.com", "the first tab still shows its site");
+  assert.equal(x.elements.get("sj-address").value, "saints://home");
+  assert.equal(x.elements.get("sj-home").hidden, false);
+  assert.equal(x.frames[0].style.display, "none", "the other tab's page is kept, just hidden");
+  assert.equal(x.frames[0].removed, false);
+  // Back to the first tab: its page and address come back.
+  t[0].open();
+  assert.equal(x.elements.get("sj-address").value, "https://example.com");
+  assert.equal(x.elements.get("sj-view").hidden, false);
+  assert.equal(x.frames[0].style.display, "");
+});
+
+test("tabs: each tab has its own history", async () => {
+  const x = setup({ realUrls: true });
+  await x.submit();                                   // tab 1: example.com
+  await x.advance(4000);
+  x.elements.get("sj-newtab").dispatch("click");
+  x.elements.get("sj-address").value = "youtube.com"; // tab 2: youtube.com
+  await x.submit();
+  await x.advance(4000);
+  assert.equal(x.frames.length, 2);
+  assert.equal(tabsOf(x)[1].label, "youtube.com");
+  // Back in tab 2 goes to its saints://home, not to tab 1's page.
+  await x.elements.get("sj-back").dispatch("click");
+  assert.equal(x.elements.get("sj-address").value, "saints://home");
+  assert.equal(x.frames[1].removed, true);
+  assert.equal(x.frames[0].removed, false);
+  tabsOf(x)[0].open();
+  assert.equal(x.elements.get("sj-address").value, "https://example.com");
+});
+
+test("tabs: closing the active tab shows its neighbour and frees its page", async () => {
+  const x = setup({ realUrls: true });
+  await x.submit();
+  await x.advance(4000);
+  x.elements.get("sj-newtab").dispatch("click");
+  x.elements.get("sj-address").value = "youtube.com";
+  await x.submit();
+  await x.advance(4000);
+  tabsOf(x)[1].close();
+  const t = tabsOf(x);
+  assert.equal(t.length, 1);
+  assert.equal(t[0].active, true);
+  assert.equal(x.frames[1].removed, true);
+  assert.equal(x.elements.get("sj-address").value, "https://example.com");
+});
+
+test("tabs: closing a background tab leaves the current one alone", async () => {
+  const x = setup({ realUrls: true });
+  await x.submit();
+  await x.advance(4000);
+  x.elements.get("sj-newtab").dispatch("click");
+  tabsOf(x)[0].close();
+  const t = tabsOf(x);
+  assert.equal(t.length, 1);
+  assert.equal(t[0].label, "Saints Search");
+  assert.equal(t[0].active, true);
+  assert.equal(x.frames[0].removed, true);
+  assert.equal(x.elements.get("sj-address").value, "saints://home");
+});
+
+test("tabs: closing the last tab goes back to saints://home instead", async () => {
+  const x = setup();
+  await x.submit();
+  await x.advance(4000);
+  tabsOf(x)[0].close();
+  const t = tabsOf(x);
+  assert.equal(t.length, 1);
+  assert.equal(x.frames[0].removed, true);
+  assert.equal(x.elements.get("sj-home").hidden, false);
+  assert.equal(x.elements.get("sj-address").value, "saints://home");
+  assert.equal(x.elements.get("sj-forward").disabled, true, "a closed tab can't be reopened with Forward");
+});
+
+test("tabs: at most 12", () => {
+  const x = setup();
+  for (let i = 0; i < 15; i++) x.elements.get("sj-newtab").dispatch("click");
+  assert.equal(tabsOf(x).length, 12);
+  assert.equal(x.elements.get("sj-newtab").disabled, true);
+});
+
+test("embedded: switching tabs tells the console which site is showing", async () => {
+  const x = setup({ embed: true });
+  const J = (m) => JSON.stringify(m);
+  await x.submit();
+  await x.advance(4000);
+  x.elements.get("sj-newtab").dispatch("click");
+  assert.equal(J(x.posts.at(-1)), J({ saintsProxy: 1, type: "nav", url: "" }));
+  tabsOf(x)[0].open();
+  assert.equal(J(x.posts.at(-1)), J({ saintsProxy: 1, type: "nav", url: "https://example.com/" }));
 });

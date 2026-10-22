@@ -31,13 +31,60 @@ body.ss {
 }
 
 /* ---- Browser chrome (always on top; the page area starts below it) ---- */
-:root { --chrome-h: calc(52px + env(safe-area-inset-top, 0px)); }
+:root { --tabs-h: 40px; --chrome-h: calc(var(--tabs-h) + 52px + env(safe-area-inset-top, 0px)); }
 .sb-chrome {
   position: fixed; z-index: 40; top: 0; left: 0; right: 0;
-  padding: env(safe-area-inset-top, 0px) max(8px, env(safe-area-inset-right)) 0 max(8px, env(safe-area-inset-left));
-  background: var(--panel); border-bottom: 1px solid var(--border);
+  padding-top: env(safe-area-inset-top, 0px);
+  background: #0e0e0e; border-bottom: 1px solid var(--border);
 }
-.sb-row { height: 52px; display: flex; align-items: center; gap: 4px; }
+.sb-row {
+  height: 52px; display: flex; align-items: center; gap: 4px; background: var(--panel);
+  padding: 0 max(8px, env(safe-area-inset-right)) 0 max(8px, env(safe-area-inset-left));
+}
+
+/* ---- Tab strip (Chrome-style: the active tab joins the toolbar) ---- */
+.sb-tabs {
+  height: var(--tabs-h); display: flex; align-items: flex-end; gap: 2px;
+  padding: 0 max(8px, env(safe-area-inset-right)) 0 max(6px, env(safe-area-inset-left));
+}
+.sb-tablist {
+  flex: 0 1 auto; min-width: 0; height: 34px; display: flex; align-items: flex-end; gap: 2px;
+  overflow-x: auto; overflow-y: hidden; scrollbar-width: none; -webkit-overflow-scrolling: touch;
+}
+.sb-tablist::-webkit-scrollbar { display: none; }
+.sb-tab {
+  position: relative; flex: 0 1 220px; min-width: 124px; height: 34px;
+  display: flex; align-items: center; gap: 8px; padding: 0 4px 0 12px;
+  border-radius: 10px 10px 0 0; color: var(--sub); cursor: pointer; user-select: none; -webkit-user-select: none;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+.sb-tab:hover:not(.is-active) { background: #1a1a1a99; color: var(--text); }
+.sb-tab.is-active { background: var(--panel); color: var(--text); }
+/* Thin separators between inactive tabs, like Chrome. */
+.sb-tab:not(.is-active) + .sb-tab:not(.is-active)::before {
+  content: ""; position: absolute; left: -1px; top: 9px; bottom: 9px; width: 1px; background: #2e2e2e;
+}
+.sb-tab:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+.sb-tab-ic {
+  flex: none; width: 16px; height: 16px; border-radius: 4px; overflow: hidden;
+  background: center / 16px 16px no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239c9c9c' stroke-width='1.7'%3E%3Ccircle cx='12' cy='12' r='8.5'/%3E%3Cpath d='M3.5 12h17M12 3.5c2.6 2.4 3.8 5.2 3.8 8.5s-1.2 6.1-3.8 8.5c-2.6-2.4-3.8-5.2-3.8-8.5s1.2-6.1 3.8-8.5z'/%3E%3C/svg%3E");
+}
+.sb-tab-ic.is-home { background-image: url("sj.svg"); }
+.sb-tab-ic img { width: 16px; height: 16px; display: block; background: #fff; }
+.sb-tab-title { flex: 1; min-width: 0; font-size: 12.5px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.sb-tab-close {
+  flex: none; width: 22px; height: 22px; display: grid; place-items: center; padding: 0;
+  border: none; border-radius: 50%; background: transparent; color: var(--sub);
+  font: 16px/1 var(--font); cursor: pointer;
+}
+.sb-tab-close:hover { background: #ffffff1f; color: var(--text); }
+.sb-newtab {
+  flex: none; width: 30px; height: 30px; margin: 0 0 2px 2px; display: grid; place-items: center;
+  border: none; border-radius: 50%; background: transparent; color: var(--sub); cursor: pointer;
+}
+.sb-newtab svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+.sb-newtab:hover:not(:disabled) { background: #ffffff14; color: var(--text); }
+.sb-newtab:disabled { opacity: 0.35; cursor: default; }
 .sb-btn {
   flex: none; width: 36px; height: 36px; display: grid; place-items: center;
   border: none; border-radius: 50%; background: transparent; color: var(--text); cursor: pointer;
@@ -76,6 +123,7 @@ body.ss {
 @keyframes sb-load { 0% { width: 0; } 60% { width: 70%; } 100% { width: 92%; } }
 @media (prefers-reduced-motion: reduce) { .sb-chrome.is-loading .sb-loadbar { animation: none; width: 60%; } }
 @media (max-width: 480px) {
+  .sb-tab { flex-basis: 150px; min-width: 112px; }
   .sb-row { gap: 0; }
   .sb-btn { width: 34px; height: 34px; }
   .sb-home-btn { display: none; }   /* the address bar says saints://home; Back gets you there */
@@ -201,7 +249,7 @@ body.ss {
   background: var(--bg);
 }
 .sb-view[hidden] { display: none; }
-#sj-frame { border: none; display: block; width: 100%; height: 100%; background: #fff; }
+.sj-frame { border: none; display: block; width: 100%; height: 100%; background: #fff; }
 
 /* Status bubble, bottom-left, while a page loads or has a problem (Chrome-style). */
 .sb-status {
