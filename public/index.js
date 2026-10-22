@@ -101,9 +101,24 @@ if (parentConsole && typeof window.addEventListener === "function") {
   });
 }
 // Ask the console (when embedded) to close the proxy or toggle fullscreen.
-function tellConsole(type) {
+function tellConsole(type, extra) {
   if (!parentConsole) return;
-  try { parentConsole.postMessage({ saintsProxy: 1, type }, "*"); } catch {}
+  try { parentConsole.postMessage({ saintsProxy: 1, type, ...extra }, "*"); } catch {}
+}
+// Tells the console when a game is on screen, so it keeps Esc and shortcuts
+// for the game (Keyboard Lock) while it shows, and lets them go after.
+let gameKeysOn = false;
+function syncGameKeys() {
+  const on = !!(currentGame && currentFrame);
+  if (on === gameKeysOn) return;
+  gameKeysOn = on;
+  tellConsole("game", { playing: on });
+}
+// Keys go to the game: the console focuses its frame (Saints Search), and
+// Saints Search focuses the game's frame inside it.
+function focusGame(element) {
+  tellConsole("focus");
+  try { element.focus({ preventScroll: true }); } catch { try { element.focus(); } catch {} }
 }
 if (exitButton) exitButton.hidden = !parentConsole;
 exitButton?.addEventListener?.("click", () => tellConsole("close"));
@@ -419,6 +434,7 @@ function showAddress() {
   const text = blocked ? blocked.url : currentFrame ? (currentSite || lastUrl || "") : startPage === "games" ? GAMES_URL : HOME_URL;
   if (document.activeElement !== address) address.value = text;
   if (omniIcon && omniIcon.dataset) omniIcon.dataset.kind = currentFrame || blocked ? "site" : "home";
+  syncGameKeys();
   try {
     document.title = currentGame ? currentGame.title + " · Saints Search"
       : currentFrame && currentSite ? hostOf(currentSite) + " · Saints Search"
@@ -564,7 +580,12 @@ function openGame(game) {
     element.src = game.frame;
   } else {
     element.setAttribute("allow", FRAME_PERMISSIONS + "; gamepad; screen-wake-lock");
-    element.addEventListener("load", () => playbackAudio(element.contentWindow));
+    element.tabIndex = 0;
+    element.addEventListener("load", () => {
+      playbackAudio(element.contentWindow);
+      // Ready for WASD and typing without tapping the game first.
+      if (currentFrame === element) focusGame(element);
+    });
     element.src = game.path;
   }
   currentFrame = element;
@@ -626,7 +647,7 @@ window.addEventListener?.("message", (event) => {
     if (showing) {
       loading.hidden = true;
       setLoading(false);
-      try { fg.element.focus(); } catch {}
+      focusGame(fg.element);
       postToFrameGame("focus");
     }
   } else if (d.type === "error") {

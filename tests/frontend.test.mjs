@@ -961,3 +961,24 @@ test("games: Eaglercraft launches the Saints Worker's game frame like the consol
   assert.equal(x.elements.get("sj-loading").hidden, false);
   assert.equal(x.elements.get("sj-loading-status").textContent, "WebGL 2.0 isn't available.");
 });
+
+test("games: in the console, a game takes the keyboard and the console is told while it shows", async () => {
+  const x = setup({ games: GAMES, embed: true });
+  x.elements.get("sj-games-open").dispatch("click");
+  await x.advance(0);
+  tileFor(x, "2048").dispatch("click");
+  const games = () => x.posts.filter((p) => p.type === "game").map((p) => p.playing);
+  assert.deepEqual(games(), [true], "the console keeps Esc for the game");
+  const frame = x.frames.at(-1);
+  let focused = 0;
+  frame.focus = () => { focused++; };
+  frame.contentWindow = {};
+  frame.dispatch("load");
+  assert.equal(focused, 1, "the game frame has the keyboard once it loads");
+  assert.ok(x.posts.some((p) => p.type === "focus"), "the console focuses Saints Search's frame");
+  x.elements.get("sj-back").dispatch("click");
+  assert.deepEqual(games(), [true, false], "and lets Esc go when the game closes");
+  // Not a game: nothing sent.
+  x.elements.get("sj-home-btn").dispatch("click");
+  assert.deepEqual(games(), [true, false]);
+});
