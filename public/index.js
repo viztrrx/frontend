@@ -502,5 +502,50 @@ reloadButton.addEventListener("click", () => {
   if (url && !busy) void openUrl(url);
 });
 
+// Quick-launch app presets on the home page: a tile per popular site that
+// opens it through the proxy in one tap. The tiles are original monogram
+// avatars in each service's brand colour (not the services' own logos) with
+// the name beside them.
+const APPS = [
+  { name: "YouTube", url: "https://m.youtube.com/", tag: "YT", bg: "#ff0000" },
+  { name: "TikTok", url: "https://www.tiktok.com/", tag: "TT", bg: "#111111", fg: "#ffffff" },
+  { name: "Instagram", url: "https://www.instagram.com/", tag: "IG", bg: "linear-gradient(135deg,#feda75,#d62976 55%,#4f5bd5)" },
+  { name: "Spotify", url: "https://open.spotify.com/", tag: "SP", bg: "#1db954", fg: "#0b2e18" },
+  { name: "SoundCloud", url: "https://soundcloud.com/", tag: "SC", bg: "#ff5500" },
+  { name: "Twitch", url: "https://m.twitch.tv/", tag: "TV", bg: "#9146ff" },
+  { name: "Reddit", url: "https://www.reddit.com/", tag: "RD", bg: "#ff4500" },
+  { name: "Discord", url: "https://discord.com/app", tag: "DC", bg: "#5865f2" },
+  { name: "Netflix", url: "https://www.netflix.com/", tag: "NF", bg: "#111111", fg: "#e50914" },
+  { name: "X", url: "https://x.com/", tag: "X", bg: "#111111", fg: "#ffffff" },
+  { name: "Snapchat", url: "https://www.snapchat.com/", tag: "SN", bg: "#fffc00", fg: "#111111" },
+  { name: "Pinterest", url: "https://www.pinterest.com/", tag: "PT", bg: "#e60023" },
+];
+const appsGrid = document.getElementById("sj-apps");
+if (appsGrid) {
+  for (const app of APPS) {
+    const tile = document.createElement("button");
+    tile.type = "button";
+    tile.className = "ss-app";
+    tile.dataset.url = app.url;
+    tile.setAttribute("aria-label", "Open " + app.name);
+    const icon = document.createElement("span");
+    icon.className = "ss-app-ic";
+    icon.setAttribute("aria-hidden", "true");
+    icon.style.background = app.bg;
+    if (app.fg) icon.style.color = app.fg;
+    icon.textContent = app.tag;
+    const label = document.createElement("span");
+    label.className = "ss-app-name";
+    label.textContent = app.name;
+    tile.append(icon, label);
+    tile.addEventListener("click", () => {
+      if (busy) return;
+      pendingQuery = "";
+      void openUrl(app.url);
+    });
+    appsGrid.appendChild(tile);
+  }
+}
+
 // Tell the console (when embedded) it is on the start page to begin with.
 reportToConsole("");
