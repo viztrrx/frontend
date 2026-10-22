@@ -190,17 +190,25 @@ blockHome?.addEventListener?.("click", () => closeFrame());
 blockConsole?.addEventListener?.("click", () => tellConsole("open-ai"));
 
 // How the browser reaches sites through the Wisp backend. Epoxy (TLS in
-// Rust/WASM) is the faster one; libcurl is the fallback if Epoxy fails on this
-// browser (for the rest of the visit).
+// Rust/WASM) is the faster one; libcurl is the fallback. A browser that can't
+// load Epoxy at all (it failed on iPhone Safari with "Importing a module
+// script failed.") switches to libcurl at once and keeps it on that device;
+// a page that fails to load with Epoxy uses libcurl for the rest of the visit.
 const TRANSPORTS = {
   epoxy: { path: "/epoxy/index.mjs", args: (wisp) => [{ wisp }] },
   libcurl: { path: "/libcurl/index.mjs", args: (wisp) => [{ websocket: wisp }] },
 };
+const TRANSPORT_KEY = "sj-transport";
 let transportKind = "epoxy";
+try { if (localStorage.getItem(TRANSPORT_KEY) === "libcurl") transportKind = "libcurl"; } catch {}
 // Set once the proxy is connected in this page: later sites open straight
 // away instead of probing the backend and rebuilding the transport again.
 let proxyReady = false;
 let preparing = null;
+// Where setup progress is shown: nowhere during the warm-up, the loading
+// cover once someone opens a site (even while the warm-up is still running).
+let reportProgress = () => {};
+let setupStep = "";   // the step setup is on, shown to someone who joins midway
 const WISP_TIMEOUT_MS = 25000;
 const BAREMUX_RESPONSE_TIMEOUT_MS = 8000;
 const TRANSPORT_RESPONSE_TIMEOUT_MS = 18000;
@@ -641,9 +649,10 @@ function closeFrame() {
 // Everything the proxy needs before a site can open: the backend awake, Scramjet,
 // the service worker and the BareMux transport. Runs once per page (shared by
 // concurrent callers); later calls return at once while it still works.
-async function prepareProxy(report) {
+async function prepareProxy() {
+  const report = (message) => { setupStep = message; reportProgress(message); };
   const wispUrl = getWispUrl();
-  const transport = TRANSPORTS[transportKind];
+  let transport = TRANSPORTS[transportKind];
   if (proxyReady && scramjetController && window.BareMux?.BareMuxConnection) {
     // Already connected: just make sure the SharedWorker still has it.
     try {
@@ -678,6 +687,22 @@ async function prepareProxy(report) {
   );
 
   report("Configuring browser transport…");
+  try {
+    await setTransport(connection, transport, wispUrl);
+  } catch (cause) {
+    if (transportKind !== "epoxy") throw cause;
+    // This browser can't run Epoxy: use libcurl, now and from now on here.
+    console.warn("Epoxy transport failed, switching to libcurl:", cause);
+    transportKind = "libcurl";
+    try { localStorage.setItem(TRANSPORT_KEY, "libcurl"); } catch {}
+    transport = TRANSPORTS.libcurl;
+    report("Configuring browser transport (compatibility mode)…");
+    await setTransport(connection, transport, wispUrl);
+  }
+  proxyReady = true;
+  return scramjet;
+}
+async function setTransport(connection, transport, wispUrl) {
   // A persistent SharedWorker can retain an old URL despite matching getTransport().
   await withTimeout(
     connection.setTransport(transport.path, transport.args(wispUrl)),
@@ -692,11 +717,10 @@ async function prepareProxy(report) {
   if (transportName !== transport.path) {
     throw new Error("BareMux reports an unexpected transport: " + String(transportName));
   }
-  proxyReady = true;
-  return scramjet;
 }
-function prepare(report = () => {}) {
-  preparing ??= prepareProxy(report).finally(() => { preparing = null; });
+function prepare(report) {
+  if (report) reportProgress = report;
+  preparing ??= prepareProxy().finally(() => { preparing = null; setupStep = ""; reportProgress = () => {}; });
   return preparing;
 }
 // Warm up as soon as Saints Search has loaded, so the first site opens without
@@ -736,8 +760,8 @@ async function openUrl(url) {
   syncNav();
 
   try {
-    // A warm-up already under way finishes first (its steps aren't shown).
-    if (preparing) showProgress("Connecting to backend…");
+    // A warm-up already under way carries on, now showing its steps here.
+    if (preparing) showProgress(setupStep || "Connecting to backend…");
     const scramjet = await prepare(showProgress);
 
     showProgress("Loading website…");

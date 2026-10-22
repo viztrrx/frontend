@@ -168,13 +168,13 @@ test("static assets are served without sending proxy navigation events", async (
   assert.equal(h.messages.length, 0);
 });
 
-test("pages get the Epoxy transport restored once after BareMux restarts", async () => {
+test("pages get a transport (libcurl) restored once after BareMux restarts", async () => {
   const h = createHarness({ transport: "" });
   const asset = (name) => "/scramjet/" + encodeURIComponent("https://example.com/" + name);
   const responses = await Promise.all([h.request(asset("a.css"), "no-cors"), h.request(asset("b.js"), "no-cors")]);
   assert.deepEqual(responses.map((r) => r.status), [200, 200]);
   assert.equal(h.transports.length, 1, "concurrent requests share one setTransport call");
-  assert.equal(JSON.stringify(h.transports[0]), JSON.stringify(["/epoxy/index.mjs", [{ wisp: "wss://backend-ivvq.onrender.com/wisp/" }]]));
+  assert.equal(JSON.stringify(h.transports[0]), JSON.stringify(["/libcurl/index.mjs", [{ websocket: "wss://backend-ivvq.onrender.com/wisp/" }]]));
   await h.request(asset("c.png"), "no-cors");
   assert.equal(h.transports.length, 1);
 });
@@ -265,8 +265,8 @@ test("Google sign-in pages and pop-ups get the notice with a Go back button", as
   assert.equal(script.status, 403);
 });
 
-test("a page set up with libcurl keeps it", async () => {
-  const h = createHarness({ transport: "/libcurl/index.mjs" });
+test("a page set up with Epoxy keeps it", async () => {
+  const h = createHarness({ transport: "/epoxy/index.mjs" });
   await h.request("/scramjet/" + encodeURIComponent("https://example.com/a.css"), "no-cors");
   assert.equal(h.transports.length, 0);
 });

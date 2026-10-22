@@ -57,11 +57,12 @@ async function enableEarlyMessages(response) {
 
 // BareMux keeps its transport only in SharedWorker memory. If the SharedWorker
 // restarts empty (a proxied page outlived the page that configured it),
-// restore a transport the frontend uses (index.js) before fetching: Epoxy,
-// or libcurl if Epoxy can't be set.
+// restore a transport the frontend uses (index.js) before fetching: libcurl,
+// which works in every browser (Epoxy doesn't load on iPhone Safari), or
+// Epoxy if libcurl can't be set.
 const TRANSPORTS = [
-  ["/epoxy/index.mjs", () => [{ wisp: _CONFIG.wispUrl }]],
   ["/libcurl/index.mjs", () => [{ websocket: _CONFIG.wispUrl }]],
+  ["/epoxy/index.mjs", () => [{ wisp: _CONFIG.wispUrl }]],
 ];
 let bareMux = null;
 let settingTransport = null;

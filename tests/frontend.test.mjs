@@ -6,7 +6,7 @@ import { runInNewContext } from "node:vm";
 const source = readFileSync(new URL("../public/index.js", import.meta.url), "utf8");
 const blockSource = readFileSync(new URL("../public/blocked.js", import.meta.url), "utf8");
 
-function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails = false, controllerFails = false, workerHang = false, transportHang = false, blankFrame = false, noLoad = false, storage = {}, versionFetch, embed = false, realUrls = false } = {}) {
+function setup({ epoxyFails = false, wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails = false, controllerFails = false, workerHang = false, transportHang = false, blankFrame = false, noLoad = false, storage = {}, versionFetch, embed = false, realUrls = false } = {}) {
   const posts = [];
   const winMessage = { fn: null };
   const elements = new Map();
@@ -125,6 +125,7 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
   class BareMuxConnection {
     async setTransport(...args) {
       if (transportHang) return new Promise(() => {});
+      if (epoxyFails && args[0] === "/epoxy/index.mjs") throw new Error("Importing a module script failed.");
       transports.push(args);
     }
     async getTransport() {
@@ -271,10 +272,11 @@ test("unresponsive BareMux SharedWorker reports an error rather than hanging for
 test("transport setup timeout names the transport rather than hiding the whole page", async () => {
   const x = setup({ transportHang: true });
   const pending = x.submit();
+  await x.advance(18000);   // Epoxy times out; libcurl is tried next
   await x.advance(18000);
   await pending;
   assert.equal(x.frames.length, 0);
-  assert.match(x.elements.get("sj-error-code").textContent, /epoxy transport did not initialize/);
+  assert.match(x.elements.get("sj-error-code").textContent, /libcurl transport did not initialize/);
   assert.equal(x.elements.get("sj-progress").hidden, true);
 });
 
@@ -745,4 +747,32 @@ test("the connection warms up as soon as the page loads", async () => {
   assert.equal(x.websocketCount(), 1, "the first site uses the warmed-up connection");
   assert.equal(x.transports.length, 1);
   assert.equal(x.frames.length, 1);
+});
+
+test("a browser that can't load Epoxy switches to libcurl at once and keeps it", async () => {
+  const x = setup({ epoxyFails: true });
+  await x.submit();
+  await x.advance(4000);
+  assert.equal(x.frames.length, 1, "the site still opens");
+  assert.equal(x.elements.get("sj-error").textContent, "");
+  assert.deepEqual(x.transports.map((t) => t[0]), ["/libcurl/index.mjs"]);
+  assert.equal(x.storage["sj-transport"], "libcurl", "remembered on this device");
+  // Next visit: straight to libcurl, no failed Epoxy attempt first.
+  const again = setup({ epoxyFails: true, storage: { "sj-transport": "libcurl" } });
+  await again.submit();
+  await again.advance(4000);
+  assert.equal(again.frames.length, 1);
+  assert.deepEqual(again.transports.map((t) => t[0]), ["/libcurl/index.mjs"]);
+});
+
+test("opening a site during the warm-up shows the setup steps", async () => {
+  const x = setup({ transportHang: true });
+  x.load();
+  await x.advance(0);
+  const pending = x.submit();
+  await x.advance(0);
+  assert.equal(x.elements.get("sj-loading-status").textContent, "Configuring browser transport…");
+  await x.advance(18000);
+  await x.advance(18000);
+  await pending;
 });
