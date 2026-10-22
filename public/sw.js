@@ -212,7 +212,7 @@ const OWN_PAGE_HEADERS = {
   "cross-origin-resource-policy": "same-origin",
 };
 
-// ---- Blocked sites (blocked.js): AI, and signing in with Google -------------
+// ---- Blocked sites (blocked.js): AI ------------------------------------------
 // Proxied addresses are "/scramjet/" + encodeURIComponent(real URL) (Scramjet's
 // default codec); Scramjet may add its own "?type=…" after it.
 const PROXY_PREFIX = "/scramjet/";
@@ -226,22 +226,18 @@ function escapeHtml(text) {
     ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[char]);
 }
 // What a blocked page shows. In Saints Search's own frame the page (index.js)
-// covers it with its notice; this is what pop-ups ("Sign in with Google"
-// windows) and frames inside sites show. Other requests just fail.
+// covers it with its notice; this is what pop-ups and frames inside sites
+// show. Other requests just fail.
 function blockedResponse(event, site, block) {
   const headers = OWN_PAGE_HEADERS;
   if (event.request.mode !== "navigate") return new Response("Blocked: " + block.message, { status: 403, headers });
   let host = "";
   try { host = new URL(site).hostname; } catch {}
-  // Back to the page that sent you here; a pop-up with nowhere to go closes.
-  const back = block.kind === "googleSignIn"
-    ? '<button onclick="history.length>1?history.back():window.close()" style="margin-top:14px;min-height:40px;padding:0 16px;border:0;border-radius:10px;background:#b0b0b0;color:#171717;font:inherit;font-weight:600;cursor:pointer">Go back</button>'
-    : "";
   return new Response(
     '<!doctype html><meta name="viewport" content="width=device-width,initial-scale=1"><title>' + escapeHtml(block.title) + "</title>" +
     '<body style="margin:0;min-height:100vh;display:grid;place-items:center;overflow:hidden;background:#131313;color:#e6e6e6;font:min(16px,4.2vw)/1.5 -apple-system,system-ui,sans-serif;text-align:center;padding:16px;box-sizing:border-box">' +
     '<div style="max-width:420px"><h1 style="font-size:1.35em;margin:0 0 10px">' + escapeHtml(block.title) + '</h1><p style="margin:0 0 8px">' +
-    escapeHtml(block.message) + '</p><p style="margin:0;color:#9c9c9c;font-size:.8em">' + escapeHtml(host) + "</p>" + back + "</div></body>",
+    escapeHtml(block.message) + '</p><p style="margin:0;color:#9c9c9c;font-size:.8em">' + escapeHtml(host) + "</p>" + "</div></body>",
     { status: 403, headers }
   );
 }

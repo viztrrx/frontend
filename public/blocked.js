@@ -1,11 +1,8 @@
 "use strict";
 
 // What the proxy won't show, and what it says instead:
-//   ai           AI chat sites and AI providers: people are sent back to the
-//                Saints Service console's own AI.
-//   googleSignIn Google's sign-in pages ("Sign in with Google" on any site, and
-//                signing in to Google itself): people go back and sign in
-//                another way.
+//   ai  AI chat sites and AI providers: people are sent back to the Saints
+//       Service console's own AI.
 // Loaded by the page (index.js shows the notice) and by the service worker
 // (sw.js refuses the requests, so links, redirects, pop-ups and scripts can't
 // get around the page).
@@ -16,28 +13,7 @@
       title: "AI isn\u2019t allowed here",
       message: "This AI is unsafe and inaccurate. Please go back to using the AI in the Saints Service interface.",
     },
-    googleSignIn: {
-      kind: "googleSignIn",
-      title: "Google sign-in isn\u2019t supported",
-      message: "This proxy doesn\u2019t support signing in with Google. Please go back and sign in a different way.",
-    },
   };
-
-  // Signing in with Google: only the sign-in steps on accounts.google.com.
-  // Google's own sites (YouTube, Search, Maps, Docs…) also call other
-  // accounts.google.com and accounts.youtube.com pages in the background, even
-  // for people who aren't signed in (CheckConnection, ListAccounts,
-  // RotateCookiesPage, SetSID), so those stay open and nothing used without
-  // signing in is affected.
-  const GOOGLE_ACCOUNTS_HOST = /^accounts\.google\.[a-z]{2,3}(\.[a-z]{2})?$/;
-  const GOOGLE_SIGN_IN_PATH = new RegExp("^/(" + [
-    "$",                               // accounts.google.com itself (it's the sign-in page)
-    "o/oauth2/",                       // "Sign in with Google" / "Continue with Google" on other sites
-    "signin(/|$)", "v3/signin(/|$)",    // Google's sign-in pages and consent screens
-    "servicelogin", "serviceloginauth", "accountchooser", "addsession", "interactivelogin",
-    "gsi/",                            // Sign in with Google buttons and One Tap
-    "signup", "lifecycle/",            // making a Google account to sign in with
-  ].join("|") + ")", "i");
 
   // Whole sites, subdomains included (chat.deepseek.com is deepseek.com).
   const HOSTS = [
@@ -107,7 +83,6 @@
     try { u = address instanceof URL ? address : new URL(String(address)); } catch { return null; }
     if (u.protocol !== "https:" && u.protocol !== "http:" && u.protocol !== "wss:" && u.protocol !== "ws:") return null;
     const host = u.hostname.toLowerCase().replace(/\.$/, "");
-    if (GOOGLE_ACCOUNTS_HOST.test(host) && GOOGLE_SIGN_IN_PATH.test(u.pathname)) return KINDS.googleSignIn;
     if (HOSTS.some((d) => onHost(host, d))) return KINDS.ai;
     if (HOST_WORDS.test(host)) return KINDS.ai;
     if (PAGES.some(([d, test]) => onHost(host, d) && test(u))) return KINDS.ai;

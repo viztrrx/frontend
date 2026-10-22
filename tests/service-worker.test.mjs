@@ -251,6 +251,7 @@ test("proxied AI sites are refused by the worker, page loads and their requests 
   const response = await h.request(page);
   assert.equal(response.status, 403);
   assert.match(await response.text(), /unsafe and inaccurate/);
+  assert.equal(response.headers.get("cross-origin-embedder-policy"), "require-corp", "Saints Search (COEP) may show it in its frame");
   assert.equal(h.messages[0].status, 403);
   const api = await h.request("/scramjet/" + encodeURIComponent("https://gemini.google.com/_/BardChatUi/data"), "cors");
   assert.equal(api.status, 403);
@@ -258,17 +259,12 @@ test("proxied AI sites are refused by the worker, page loads and their requests 
   assert.equal((await h.request("/scramjet/" + encodeURIComponent("https://www.google.com/search?q=chatgpt"))).status, 200);
 });
 
-test("Google sign-in pages and pop-ups get the notice with a Go back button", async () => {
+test("Google sign-in goes through the proxy like any page", async () => {
   const h = createHarness();
-  const popup = await h.request("/scramjet/" + encodeURIComponent("https://accounts.google.com/o/oauth2/v2/auth?client_id=1"));
-  assert.equal(popup.status, 403);
-  const html = await popup.text();
-  assert.match(html, /doesn&#39;t support signing in with Google|doesn\u2019t support signing in with Google/);
-  assert.match(html, />Go back<\/button>/);
-  assert.equal(popup.headers.get("cross-origin-embedder-policy"), "require-corp", "Saints Search (COEP) may show it in its frame");
-  // Google's sign-in script and One Tap requests fail too.
+  const page = await h.request("/scramjet/" + encodeURIComponent("https://accounts.google.com/o/oauth2/v2/auth?client_id=1"));
+  assert.equal(page.status, 200);
   const script = await h.request("/scramjet/" + encodeURIComponent("https://accounts.google.com/gsi/client"), "no-cors");
-  assert.equal(script.status, 403);
+  assert.equal(script.status, 200);
 });
 
 test("a page set up with Epoxy keeps it", async () => {

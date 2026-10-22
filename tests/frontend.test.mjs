@@ -33,11 +33,11 @@ function setup({ games = null, epoxyFails = false, libcurlFails = false, wispUrl
     elements.set(id, element);
     return element;
   };
-  for (const id of ["sj-form", "sj-address", "sj-search-engine", "sj-error", "sj-error-code", "sj-progress", "sj-toolbar", "sj-toolbar-status", "sj-loading", "sj-loading-status", "sj-home-btn", "sj-reload", "sj-back", "sj-forward", "sj-show-page", "sj-version", "sj-home", "sj-view", "sj-home-form", "sj-home-q", "sj-omni-ic", "sj-fs", "sj-exit", "sj-tabs", "sj-newtab", "sj-block", "sj-block-title", "sj-block-msg", "sj-block-site", "sj-block-back", "sj-block-home", "sj-block-console", "sj-games", "sj-games-grid", "sj-games-q", "sj-games-status", "sj-games-count", "sj-games-open", "sj-games-form"]) makeElement(id);
+  for (const id of ["sj-form", "sj-address", "sj-search-engine", "sj-error", "sj-error-code", "sj-progress", "sj-toolbar", "sj-toolbar-status", "sj-loading", "sj-loading-status", "sj-home-btn", "sj-reload", "sj-back", "sj-forward", "sj-show-page", "sj-version", "sj-home", "sj-view", "sj-home-form", "sj-home-q", "sj-omni-ic", "sj-fs", "sj-exit", "sj-tabs", "sj-newtab", "sj-block", "sj-block-title", "sj-block-msg", "sj-block-site", "sj-block-home", "sj-block-console", "sj-games", "sj-games-grid", "sj-games-q", "sj-games-status", "sj-games-count", "sj-games-open", "sj-games-form"]) makeElement(id);
   elements.get("sj-games").hidden = true;
   elements.get("sj-games-grid").replaceChildren = function (...items) { this.items = items; this.children = items; };
   elements.get("sj-games-grid").querySelector = function () { return (this.items || [])[0] || null; };
-  for (const id of ["sj-block", "sj-block-back", "sj-block-console"]) elements.get(id).hidden = true;
+  for (const id of ["sj-block", "sj-block-console"]) elements.get(id).hidden = true;
   // The tab strip: keeps the rendered tabs so tests can read and click them.
   elements.get("sj-tabs").replaceChildren = function (...items) { this.items = items; };
   // The proxied page goes in the page area under the toolbar.
@@ -710,7 +710,6 @@ test("typing an AI site shows the notice instead of the site", async () => {
   assert.equal(x.elements.get("sj-block-site").textContent, "gemini.google.com");
   assert.equal(x.elements.get("sj-block-title").textContent, "AI isn\u2019t allowed here");
   assert.match(x.elements.get("sj-block-msg").textContent, /unsafe and inaccurate/);
-  assert.equal(x.elements.get("sj-block-back").hidden, true);
   assert.equal(x.elements.get("sj-address").value, "https://gemini.google.com/app", "the bar shows the blocked address");
   assert.equal(x.elements.get("sj-block-console").hidden, false, "in the console: Use Saints Service AI");
   x.elements.get("sj-block-console").dispatch("click");
@@ -743,38 +742,18 @@ test("searching for an AI by name still searches", async () => {
   assert.equal(x.elements.get("sj-block").hidden, true);
 });
 
-test("Sign in with Google is covered by a notice, and Go back returns to the site", async () => {
+test("Continue with Google on a site just goes to Google (no notice)", async () => {
   const x = setup({ realUrls: true, embed: true });
   x.elements.get("sj-address").value = "www.example.com/login";
   await x.submit();
   await x.advance(4000);
   const frame = x.frames[0];
-  // The site's "Continue with Google" button sends the frame to Google.
   frame.url = "https://accounts.google.com/o/oauth2/v2/auth?client_id=abc&redirect_uri=x";
   frame.contentWindow.location.href = "https://frontend.viztrrx.workers.dev/scramjet/" + encodeURIComponent(frame.url);
   frame.dispatch("load");
-  assert.equal(x.elements.get("sj-block").hidden, false);
-  assert.equal(x.elements.get("sj-block-title").textContent, "Google sign-in isn\u2019t supported");
-  assert.equal(x.elements.get("sj-block-msg").textContent,
-    "This proxy doesn\u2019t support signing in with Google. Please go back and sign in a different way.");
-  assert.equal(frame.removed, false, "the site stays under the notice");
-  assert.equal(x.elements.get("sj-block-back").hidden, false);
-  assert.equal(x.elements.get("sj-block-console").hidden, true, "no AI button for Google sign-in");
-  assert.match(x.elements.get("sj-address").value, /^https:\/\/accounts\.google\.com\//);
-  x.elements.get("sj-block-back").dispatch("click");
   assert.equal(x.elements.get("sj-block").hidden, true);
-  assert.equal(frame.url, "https://www.example.com/login", "back on the site's sign-in page");
-  assert.equal(x.elements.get("sj-address").value, "https://www.example.com/login");
-});
-
-test("typing Google's sign-in page directly shows the notice with no page behind it", async () => {
-  const x = setup();
-  x.elements.get("sj-address").value = "accounts.google.com";
-  await x.submit();
-  await x.advance(4000);
-  assert.equal(x.frames.length, 0);
-  assert.equal(x.elements.get("sj-block").hidden, false);
-  assert.equal(x.elements.get("sj-block-back").hidden, true, "nothing to go back to: Back to Saints Search");
+  assert.equal(frame.removed, false);
+  assert.match(x.elements.get("sj-address").value, /^https:\/\/accounts\.google\.com\//);
 });
 
 test("opening another site reuses the live connection instead of reconnecting", async () => {

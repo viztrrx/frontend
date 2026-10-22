@@ -136,17 +136,14 @@ function frameRealUrl(element) {
 }
 
 // ---- Blocked pages (blocked.js) --------------------------------------------
-// AI sites, and signing in with Google, aren't shown: the page area says why
-// instead. sw.js refuses their requests as well, so a link, redirect, pop-up
-// or script inside a page can't reach them either.
-//   AI: the page is removed; "Use Saints Service AI" (in the console) or home.
-//   Google sign-in: the notice covers the page that had the Google button,
-//   and Go back returns to it to sign in another way.
+// AI sites aren't shown: the page is removed and the page area says why,
+// with "Use Saints Service AI" (in the console) or Back to Saints Search.
+// sw.js refuses their requests as well, so a link, redirect, pop-up or script
+// inside a page can't reach them either.
 const blockPanel = document.getElementById("sj-block");
 const blockTitle = document.getElementById("sj-block-title");
 const blockMsg = document.getElementById("sj-block-msg");
 const blockSite = document.getElementById("sj-block-site");
-const blockBack = document.getElementById("sj-block-back");
 const blockHome = document.getElementById("sj-block-home");
 const blockConsole = document.getElementById("sj-block-console");
 function blockOf(url) {
@@ -159,24 +156,15 @@ function renderBlock() {
   if (blockTitle) blockTitle.textContent = blocked.title;
   if (blockMsg) blockMsg.textContent = blocked.message;
   if (blockSite) blockSite.textContent = hostOf(blocked.url) || blocked.url;
-  if (blockBack) blockBack.hidden = !(blocked.kind === "googleSignIn" && currentFrame && currentSite);
   if (blockConsole) blockConsole.hidden = !(blocked.kind === "ai" && parentConsole);
 }
 function showBlock(url, info) {
   const query = pendingQuery;
   pendingQuery = "";
-  if (info.kind === "googleSignIn" && currentFrame && currentSite) {
-    // Keep the site that had the Google button, under the notice.
-    if (loadingTimer !== null) { clearTimeout(loadingTimer); loadingTimer = null; }
-    if (pageCheckTimer !== null) { clearTimeout(pageCheckTimer); pageCheckTimer = null; }
-    loading.hidden = true;
-    setLoading(false);
-  } else {
-    // Nothing to go back to (or an AI site): the page goes away entirely.
-    closeFrame();
-    homeForward = "";
-    showView(true);
-  }
+  // The page goes away entirely, so nothing on it keeps running.
+  closeFrame();
+  homeForward = "";
+  showView(true);
   blocked = { url, kind: info.kind, title: info.title, message: info.message };
   toolbarStatus.textContent = info.title;
   renderBlock();
@@ -185,15 +173,6 @@ function showBlock(url, info) {
   // The console still logs the attempt for the owner.
   reportToConsole(url, query);
 }
-// The page that had the Google button, loaded again under the toolbar.
-function goBackFromBlock() {
-  if (!(currentFrame && currentSjFrame && currentSite)) { closeFrame(); return; }
-  const site = currentSite;
-  blocked = null;
-  renderBlock();
-  navigateFrame(site);
-  showAddress();
-}
 // A page the active frame landed on: blocked, or clears a Google notice.
 function frameLanded(url) {
   const info = blockOf(url);
@@ -201,7 +180,6 @@ function frameLanded(url) {
   if (blocked && currentFrame) { blocked = null; renderBlock(); showAddress(); }
   return false;
 }
-blockBack?.addEventListener?.("click", () => goBackFromBlock());
 blockHome?.addEventListener?.("click", () => closeFrame());
 blockConsole?.addEventListener?.("click", () => tellConsole("open-ai"));
 
@@ -1145,15 +1123,10 @@ function backgroundPage(element, url) {
   if (!t || t === activeTab) return;
   const block = blockOf(url);
   if (block) {
+    // A background tab wandered onto an AI site: drop its page now.
     const info = { url, kind: block.kind, title: block.title, message: block.message };
-    if (block.kind === "googleSignIn" && t.site) {
-      // Shown, with Go back, when the tab is opened again.
-      t.blocked = info;
-    } else {
-      // A background tab wandered onto an AI site: drop its page now.
-      element.remove();
-      Object.assign(t, { frame: null, sj: null, site: "", title: "", blocked: info, backCount: 0, forwardCount: 0, loadingHidden: true });
-    }
+    element.remove();
+    Object.assign(t, { frame: null, sj: null, site: "", title: "", blocked: info, backCount: 0, forwardCount: 0, loadingHidden: true });
     renderTabs();
     return;
   }
@@ -1322,8 +1295,6 @@ reloadButton.addEventListener("click", () => {
 });
 backButton?.addEventListener?.("click", () => {
   if (!currentFrame || busy) return;
-  // Under a Google sign-in notice: back to the page that had the button.
-  if (blocked) { goBackFromBlock(); return; }
   // First page of this visit: Back goes to saints://home (never into the
   // history of the page hosting the proxy).
   if (backCount <= 0 || !currentSjFrame) { closeFrame(); return; }

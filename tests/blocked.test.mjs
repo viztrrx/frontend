@@ -41,14 +41,14 @@ test("the notice tells people to use the Saints Service AI", () => {
   assert.match(MESSAGE, /Saints Service/);
 });
 
-test("Google sign-in pages are blocked as Google sign-in", () => {
+test("Google sign-in is not blocked: signing in with Google goes through", () => {
   for (const url of [
     "https://accounts.google.com/", "https://accounts.google.com/v3/signin/identifier?continue=x",
     "https://accounts.google.com/o/oauth2/v2/auth?client_id=1&redirect_uri=https://site.example/cb",
     "https://accounts.google.com/signin/oauth/consent", "https://accounts.google.com/gsi/button?type=standard",
-    "https://accounts.google.com/gsi/select", "https://accounts.google.co.uk/ServiceLogin",
-  ]) assert.equal(check(url)?.kind, "googleSignIn", url);
-  assert.equal(KINDS.googleSignIn.message, "This proxy doesn\u2019t support signing in with Google. Please go back and sign in a different way.");
+    "https://accounts.google.com/ServiceLogin?service=youtube", "https://accounts.youtube.com/accounts/SetSID",
+  ]) assert.equal(check(url), null, url);
+  assert.deepEqual(Object.keys(KINDS), ["ai"]);
 });
 
 test("YouTube and Google's other sites work without signing in", () => {
@@ -70,12 +70,4 @@ test("YouTube and Google's other sites work without signing in", () => {
     "https://www.blogger.com/", "https://myaccount.google.com/", "https://support.google.com/youtube",
     "https://fonts.googleapis.com/css2", "https://www.gstatic.com/x.js", "https://www.google.com/recaptcha/api.js",
   ]) assert.equal(check(url), null, url);
-});
-
-test("only Google's sign-in steps count as Google sign-in", () => {
-  for (const url of ["https://accounts.google.com/", "https://accounts.google.com/o/oauth2/auth", "https://accounts.google.com/ServiceLogin?service=youtube",
-    "https://accounts.google.com/AccountChooser", "https://accounts.google.com/gsi/client", "https://accounts.google.com/signup",
-    "https://accounts.google.com/lifecycle/steps/signup/name"])
-    assert.equal(check(url)?.kind, "googleSignIn", url);
-  assert.equal(check("https://accounts.example.com/google"), null);
 });
