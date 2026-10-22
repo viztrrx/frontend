@@ -190,18 +190,22 @@ blockBack?.addEventListener?.("click", () => goBackFromBlock());
 blockHome?.addEventListener?.("click", () => closeFrame());
 blockConsole?.addEventListener?.("click", () => tellConsole("open-ai"));
 
-// How the browser reaches sites through the Wisp backend. Epoxy (TLS in
-// Rust/WASM) is the faster one; libcurl is the fallback. A browser that can't
-// load Epoxy at all (it failed on iPhone Safari with "Importing a module
-// script failed.") switches to libcurl at once and keeps it on that device;
-// a page that fails to load with Epoxy uses libcurl for the rest of the visit.
+// How the browser reaches sites through the Wisp backend. libcurl is the
+// default: it's the one proven on iPhone Safari. Epoxy (TLS in Rust/WASM) is
+// the other: used where libcurl can't be set up (remembered on that device),
+// and tried once when a page fails with a connection error (tls handshake eof,
+// connection reset…) before giving up on it.
 const TRANSPORTS = {
-  epoxy: { path: "/epoxy/index.mjs", args: (wisp) => [{ wisp }] },
   libcurl: { path: "/libcurl/index.mjs", args: (wisp) => [{ websocket: wisp }] },
+  epoxy: { path: "/epoxy/index.mjs", args: (wisp) => [{ wisp }] },
 };
+const otherTransport = (kind) => (kind === "libcurl" ? "epoxy" : "libcurl");
 const TRANSPORT_KEY = "sj-transport";
-let transportKind = "epoxy";
-try { if (localStorage.getItem(TRANSPORT_KEY) === "libcurl") transportKind = "libcurl"; } catch {}
+function preferredTransport() {
+  try { if (localStorage.getItem(TRANSPORT_KEY) === "epoxy") return "epoxy"; } catch {}
+  return "libcurl";
+}
+let transportKind = preferredTransport();
 // Set once the proxy is connected in this page: later sites open straight
 // away instead of probing the backend and rebuilding the transport again.
 let proxyReady = false;
@@ -618,9 +622,9 @@ function inspectPage(element) {
 
 function reportNavigationFailure(details) {
   navigationError = details;
-  // The next try reconnects from scratch, with libcurl if Epoxy was in use.
+  // The next try reconnects from scratch, with the other transport.
   proxyReady = false;
-  if (transportKind === "epoxy") transportKind = "libcurl";
+  transportKind = otherTransport(transportKind);
   setLoading(false);
   setWarning(true);
   toolbarStatus.textContent = "Website request failed";
@@ -628,14 +632,37 @@ function reportNavigationFailure(details) {
   loading.hidden = false;
 }
 
+// Proxy errors that are about reaching the site, not the site's own answer.
+const CONNECTION_ERROR = /tls|handshake|eof|connect|reset|refused|timed? ?out|hyper client|error code \d+|wisp|websocket/i;
+let followRedirect = false;
+let transportRetried = false;   // this page already had its one retry
+function retryWithOtherTransport() {
+  if (transportRetried || !lastUrl || !currentFrame || currentGame) return false;
+  transportRetried = true;
+  proxyReady = false;
+  transportKind = otherTransport(transportKind);
+  const url = currentSite || lastUrl;
+  closeFrame();
+  void openUrl(url, { retry: true });
+  showProgress("Retrying with another connection\u2026");
+  return true;
+}
+
 // The Service Worker sends the actual response status of document requests.
 // An iframe "load" event alone can fire for about:blank or error pages.
 navigator.serviceWorker?.addEventListener?.("message", (event) => {
   const data = event.data;
-  if (!data || data.type !== "scramjet-navigation-status" ||
-      !currentFrame || data.path !== currentNavigationPath) return;
+  if (!data || data.type !== "scramjet-navigation-status" || !currentFrame) return;
   if (typeof data.status !== "number") return;
+  if (data.path !== currentNavigationPath) {
+    // After a redirect, the page it leads to is the one to watch.
+    if (!followRedirect) return;
+    currentNavigationPath = data.path;
+  }
+  followRedirect = data.status >= 300 && data.status < 400;
   navigationResponseStatus = data.status;
+  // A connection failure gets one more try with the other transport.
+  if ((data.status === 0 || (data.status === 500 && CONNECTION_ERROR.test(data.message || ""))) && retryWithOtherTransport()) return;
   if (data.status === 0) {
     reportNavigationFailure(
       "Scramjet could not load the remote document. " +
@@ -835,12 +862,13 @@ async function prepareProxy() {
   try {
     await setTransport(connection, transport, wispUrl);
   } catch (cause) {
-    if (transportKind !== "epoxy") throw cause;
-    // This browser can't run Epoxy: use libcurl, now and from now on here.
-    console.warn("Epoxy transport failed, switching to libcurl:", cause);
-    transportKind = "libcurl";
-    try { localStorage.setItem(TRANSPORT_KEY, "libcurl"); } catch {}
-    transport = TRANSPORTS.libcurl;
+    // This browser can't set up this transport: use the other, now and from
+    // now on here.
+    const other = otherTransport(transportKind);
+    console.warn(transportKind + " transport failed, switching to " + other + ":", cause);
+    transportKind = other;
+    try { localStorage.setItem(TRANSPORT_KEY, other); } catch {}
+    transport = TRANSPORTS[other];
     report("Configuring browser transport (compatibility mode)…");
     await setTransport(connection, transport, wispUrl);
   }
@@ -885,8 +913,15 @@ async function warmUp() {
   }
 }
 
-async function openUrl(url) {
+async function openUrl(url, { retry = false } = {}) {
   if (busy) return;
+  if (!retry) {
+    transportRetried = false;
+    // A new site starts on this device's usual transport again.
+    const preferred = preferredTransport();
+    if (transportKind !== preferred) { transportKind = preferred; proxyReady = false; }
+  }
+  followRedirect = false;
   const block = blockOf(url);
   if (block) { showBlock(url, block); return; }
   busy = true;
@@ -1061,6 +1096,8 @@ function readTitle(element) {
 // returns to the page before it (a fresh frame would lose that).
 function navigateFrame(url) {
   lastUrl = url;
+  transportRetried = false;
+  followRedirect = false;
   navigationError = null;
   navigationResponseStatus = null;
   httpWarning = false;

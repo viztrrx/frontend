@@ -6,7 +6,7 @@ import { runInNewContext } from "node:vm";
 const source = readFileSync(new URL("../public/index.js", import.meta.url), "utf8");
 const blockSource = readFileSync(new URL("../public/blocked.js", import.meta.url), "utf8");
 
-function setup({ games = null, epoxyFails = false, wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails = false, controllerFails = false, workerHang = false, transportHang = false, blankFrame = false, noLoad = false, storage = {}, versionFetch, embed = false, realUrls = false } = {}) {
+function setup({ games = null, epoxyFails = false, libcurlFails = false, wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails = false, controllerFails = false, workerHang = false, transportHang = false, blankFrame = false, noLoad = false, storage = {}, versionFetch, embed = false, realUrls = false } = {}) {
   const posts = [];
   const winMessage = { fn: null };
   const elements = new Map();
@@ -131,6 +131,7 @@ function setup({ games = null, epoxyFails = false, wispUrl = "wss://backend-ivvq
     async setTransport(...args) {
       if (transportHang) return new Promise(() => {});
       if (epoxyFails && args[0] === "/epoxy/index.mjs") throw new Error("Importing a module script failed.");
+      if (libcurlFails && args[0] === "/libcurl/index.mjs") throw new Error("Importing a module script failed.");
       transports.push(args);
     }
     async getTransport() {
@@ -188,6 +189,9 @@ function setup({ games = null, epoxyFails = false, wispUrl = "wss://backend-ivvq
     chrome: (opts) => winMessage.fn?.({ source: ctx.window.parent, data: { saintsProxy: 1, type: "chrome", ...opts } }),
     websocketCount: () => websocketCount,
     submit: () => elements.get("sj-form").dispatch("submit"),
+    sendNavStatusFor(path, status, message = "") {
+      swCallbacks.get("message")?.({ data: { type: "scramjet-navigation-status", path, status, message } });
+    },
     sendNavStatus(status, message = "") {
       const frame = frames.at(-1);
       swCallbacks.get("message")?.({ data: {
@@ -215,8 +219,8 @@ test("checks Render Wisp and configures the transport before navigating", async 
   await x.submit();
   assert.equal(x.websocketCount(), 1);
   assert.equal(x.transports.length, 1);
-  assert.equal(x.transports[0][0], "/epoxy/index.mjs", "Epoxy, the faster transport");
-  assert.equal(x.transports[0][1][0].wisp, "wss://backend-ivvq.onrender.com/wisp/");
+  assert.equal(x.transports[0][0], "/libcurl/index.mjs", "libcurl, proven on iPhone");
+  assert.equal(x.transports[0][1][0].websocket, "wss://backend-ivvq.onrender.com/wisp/");
   assert.equal(x.frames.length, 1);
   assert.equal(x.frames[0].url, "https://example.com");
   assert.equal(x.elements.get("sj-view").hidden, false);
@@ -255,17 +259,55 @@ test("controller initialization failure is shown without masking the page", asyn
   assert.match(x.elements.get("sj-error-code").textContent, /Wasm init failed/);
 });
 
-test("Reload after a failed load reconnects and refreshes the Wisp transport", async () => {
+test("a connection failure retries once with the other transport, then Reload reconnects", async () => {
   const x = setup();
   await x.submit();
   x.sendNavStatus(0, "Upstream service unavailable");
-  await x.elements.get("sj-reload").dispatch("click");
   await new Promise((resolve) => setImmediate(resolve));
+  // Retried by itself with Epoxy.
   assert.equal(x.transports.length, 2);
-  assert.equal(x.transports[1][0], "/libcurl/index.mjs", "the retry falls back to libcurl");
-  assert.equal(x.transports[1][1][0].websocket, "wss://backend-ivvq.onrender.com/wisp/");
+  assert.equal(x.transports[1][0], "/epoxy/index.mjs");
+  assert.equal(x.transports[1][1][0].wisp, "wss://backend-ivvq.onrender.com/wisp/");
   assert.equal(x.frames.length, 2);
   assert.equal(x.frames[0].removed, true);
+  // The retry fails too: the failure is shown, no endless retrying.
+  x.sendNavStatus(0, "Upstream service unavailable");
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.equal(x.frames.length, 2);
+  assert.equal(x.elements.get("sj-toolbar-status").textContent, "Website request failed");
+  // Reload reconnects from scratch.
+  await x.elements.get("sj-reload").dispatch("click");
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.equal(x.transports.length, 3);
+  assert.equal(x.frames.length, 3);
+});
+
+test("Epoxy's \"tls handshake eof\" proxy error retries with the other transport", async () => {
+  const x = setup();
+  await x.submit();
+  x.sendNavStatus(500, "Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: UnexpectedEof, error: \"tls handshake eof\" }))");
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.equal(x.transports.length, 2);
+  assert.equal(x.frames.length, 2);
+});
+
+test("a site's own error page (HTTP 500 without a connection error) isn't retried", async () => {
+  const x = setup();
+  await x.submit();
+  x.sendNavStatus(500, "");
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.equal(x.frames.length, 1);
+  assert.equal(x.transports.length, 1);
+});
+
+test("after a redirect, the page it leads to is watched", async () => {
+  const x = setup();
+  await x.submit();
+  x.sendNavStatus(301);
+  assert.equal(x.elements.get("sj-toolbar-status").textContent, "Website responded (HTTP 301)");
+  // The redirected page (another address) reports its own status.
+  x.sendNavStatusFor("/scramjet/" + encodeURIComponent("https://paper-io.com/en/"), 404);
+  assert.match(x.elements.get("sj-toolbar-status").textContent, /404/);
 });
 
 test("unresponsive BareMux SharedWorker reports an error rather than hanging forever", async () => {
@@ -281,11 +323,11 @@ test("unresponsive BareMux SharedWorker reports an error rather than hanging for
 test("transport setup timeout names the transport rather than hiding the whole page", async () => {
   const x = setup({ transportHang: true });
   const pending = x.submit();
-  await x.advance(18000);   // Epoxy times out; libcurl is tried next
+  await x.advance(18000);   // libcurl times out; Epoxy is tried next
   await x.advance(18000);
   await pending;
   assert.equal(x.frames.length, 0);
-  assert.match(x.elements.get("sj-error-code").textContent, /libcurl transport did not initialize/);
+  assert.match(x.elements.get("sj-error-code").textContent, /epoxy transport did not initialize/);
   assert.equal(x.elements.get("sj-progress").hidden, true);
 });
 
@@ -323,6 +365,8 @@ test("rate-limited search pages (HTTP 429) are shown with a search engine hint",
 test("service worker failures without a document still cover the frame with the reason", async () => {
   const x = setup();
   await x.submit();
+  x.sendNavStatus(0, "Upstream service unavailable");
+  await x.advance(0);   // the one automatic retry
   x.sendNavStatus(0, "Upstream service unavailable");
   await x.advance(4000);
   assert.equal(x.elements.get("sj-loading").hidden, false);
@@ -758,20 +802,24 @@ test("the connection warms up as soon as the page loads", async () => {
   assert.equal(x.frames.length, 1);
 });
 
-test("a browser that can't load Epoxy switches to libcurl at once and keeps it", async () => {
-  const x = setup({ epoxyFails: true });
+test("a browser that can't set up a transport switches to the other at once and keeps it", async () => {
+  const x = setup({ libcurlFails: true });
   await x.submit();
   await x.advance(4000);
   assert.equal(x.frames.length, 1, "the site still opens");
   assert.equal(x.elements.get("sj-error").textContent, "");
-  assert.deepEqual(x.transports.map((t) => t[0]), ["/libcurl/index.mjs"]);
-  assert.equal(x.storage["sj-transport"], "libcurl", "remembered on this device");
-  // Next visit: straight to libcurl, no failed Epoxy attempt first.
-  const again = setup({ epoxyFails: true, storage: { "sj-transport": "libcurl" } });
+  assert.deepEqual(x.transports.map((t) => t[0]), ["/epoxy/index.mjs"]);
+  assert.equal(x.storage["sj-transport"], "epoxy", "remembered on this device");
+  const again = setup({ libcurlFails: true, storage: { "sj-transport": "epoxy" } });
   await again.submit();
   await again.advance(4000);
-  assert.equal(again.frames.length, 1);
-  assert.deepEqual(again.transports.map((t) => t[0]), ["/libcurl/index.mjs"]);
+  assert.deepEqual(again.transports.map((t) => t[0]), ["/epoxy/index.mjs"]);
+  // And the other way round: a remembered Epoxy that fails goes back to libcurl.
+  const back = setup({ epoxyFails: true, storage: { "sj-transport": "epoxy" } });
+  await back.submit();
+  await back.advance(4000);
+  assert.deepEqual(back.transports.map((t) => t[0]), ["/libcurl/index.mjs"]);
+  assert.equal(back.storage["sj-transport"], "libcurl");
 });
 
 test("opening a site during the warm-up shows the setup steps", async () => {
