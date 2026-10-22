@@ -35,3 +35,18 @@ test("a branch name in Cloudflare's commit variable falls back to git", () => {
   const version = JSON.parse(readFileSync(new URL("dist/version.json", root), "utf8"));
   assert.equal(version.commit, execFileSync("git", ["rev-parse", "HEAD"], { cwd: root, encoding: "utf8" }).trim());
 });
+
+test("renamed repository matches Cloudflare Worker configuration", () => {
+  const pkg = JSON.parse(readFileSync(new URL("package.json", root), "utf8"));
+  const config = JSON.parse(readFileSync(new URL("wrangler.jsonc", root), "utf8"));
+  const worker = readFileSync(new URL("src/index.js", root), "utf8");
+
+  assert.equal(pkg.name, "frontend");
+  assert.equal(config.name, pkg.name);
+  assert.equal(config.main, "./src/index.js");
+  assert.equal(config.workers_dev, true);
+  assert.equal(config.assets.directory, "./dist");
+  assert.equal(config.assets.binding, "ASSETS");
+  assert.equal(config.assets.run_worker_first, true);
+  assert.match(worker, /env\.ASSETS\.fetch\(request\)/);
+});

@@ -1,4 +1,4 @@
-name: Scramjet Frontend Regression Tests
+name: Frontend Tests and Cloudflare Build Check
 
 on:
   push:
@@ -33,3 +33,7 @@ jobs:
           node --check tests/build.test.mjs
       - name: Run frontend regression tests
         run: npm test
+      - name: Build Cloudflare Worker assets
+        run: pnpm build
+      - name: Check Worker packaging without deploying
+        run: npx --yes wrangler deploy --dry-run --outdir .wrangler-dry-run
