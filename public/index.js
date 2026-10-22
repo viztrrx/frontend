@@ -384,7 +384,16 @@ function renderTabs() {
     tab.addEventListener("auxclick", (event) => { if (event.button === 1) { event.preventDefault?.(); closeTab(t); } });
     return tab;
   });
-  tabList.replaceChildren(...items);
+  // "+" goes right after the last tab, like Chrome (it stays pinned at the
+  // strip's right edge once the tabs fill it). It's placed once and the tabs
+  // are swapped in front of it: moving it mid-tap (the address bar's blur
+  // re-renders the strip) would lose the click.
+  if (newTabButton && newTabButton.parentNode === tabList) {
+    for (const el of [...tabList.children]) if (el !== newTabButton) el.remove();
+    for (const el of items) tabList.insertBefore(el, newTabButton);
+  } else {
+    tabList.replaceChildren(...items, ...(newTabButton ? [newTabButton] : []));
+  }
   const current = items[tabs.indexOf(activeTab)];
   try { current?.scrollIntoView?.({ block: "nearest", inline: "nearest" }); } catch {}
 }

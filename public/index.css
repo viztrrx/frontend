@@ -48,8 +48,10 @@ body.ss {
   padding: 0 max(8px, env(safe-area-inset-right)) 0 max(6px, env(safe-area-inset-left));
 }
 .sb-tablist {
-  flex: 0 1 auto; min-width: 0; height: 34px; display: flex; align-items: flex-end; gap: 2px;
+  flex: 1 1 auto; min-width: 0; height: 34px; display: flex; align-items: flex-end; gap: 2px;
   overflow-x: auto; overflow-y: hidden; scrollbar-width: none; -webkit-overflow-scrolling: touch;
+  /* A tab scrolled into view stops short of the pinned "+" instead of under it. */
+  scroll-padding-inline-end: 36px;
 }
 .sb-tablist::-webkit-scrollbar { display: none; }
 .sb-tab {
@@ -78,12 +80,15 @@ body.ss {
   font: 16px/1 var(--font); cursor: pointer;
 }
 .sb-tab-close:hover { background: #ffffff1f; color: var(--text); }
+/* Inside the tab list, right after the last tab; pinned to the right edge
+   (over the strip's background) once the tabs fill it. */
 .sb-newtab {
+  position: sticky; right: 0; z-index: 1;
   flex: none; width: 30px; height: 30px; margin: 0 0 2px 2px; display: grid; place-items: center;
-  border: none; border-radius: 50%; background: transparent; color: var(--sub); cursor: pointer;
+  border: none; border-radius: 50%; background: #0e0e0e; color: var(--sub); cursor: pointer;
 }
 .sb-newtab svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
-.sb-newtab:hover:not(:disabled) { background: #ffffff14; color: var(--text); }
+.sb-newtab:hover:not(:disabled) { background: #262626; color: var(--text); }
 .sb-newtab:disabled { opacity: 0.35; cursor: default; }
 .sb-btn {
   flex: none; width: 36px; height: 36px; display: grid; place-items: center;

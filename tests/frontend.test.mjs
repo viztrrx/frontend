@@ -578,7 +578,7 @@ test("embedded: the toolbar has the console's Close, and Fullscreen when the con
 });
 
 // ---- Tabs ----
-const tabsOf = (x) => (x.elements.get("sj-tabs").items || []).map((t) => ({
+const tabsOf = (x) => (x.elements.get("sj-tabs").items || []).filter((t) => t.dataset && t.dataset.tab).map((t) => ({
   label: t.children[1].textContent, active: t.attrs["aria-selected"] === "true", el: t,
   close: () => t.children[2].dispatch("click"), open: () => t.dispatch("click"),
 }));
@@ -997,4 +997,13 @@ test("Google stays the default search engine", () => {
   const html = readFileSync(new URL("../public/index.html", import.meta.url), "utf8");
   assert.match(html, /<option value="https:\/\/www\.google\.com\/search\?q=%s">Google<\/option>/);
   assert.doesNotMatch(html, /selected>/);
+});
+
+test("tabs: the + button comes right after the last tab", async () => {
+  const x = setup();
+  const items = () => x.elements.get("sj-tabs").items;
+  assert.equal(items().at(-1), x.elements.get("sj-newtab"));
+  x.elements.get("sj-newtab").dispatch("click");
+  assert.equal(items().length, 3, "two tabs, then +");
+  assert.equal(items().at(-1), x.elements.get("sj-newtab"));
 });
