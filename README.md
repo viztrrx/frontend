@@ -74,3 +74,10 @@ Storage: the `SESSIONS` binding in `wrangler.jsonc` points at the R2 bucket **`d
 
 - **AI sites and providers** (ChatGPT, Gemini, Claude, Copilot, Perplexity and many more, plus AI features such as Google's AI Mode). The page is removed and the notice says: *"This AI is unsafe and inaccurate. Please go back to using the AI in the Saints Service interface."* In the console, **Use Saints Service AI** opens Ask AI.
 - **Signing in with Google**: only the sign-in steps on `accounts.google.com` (sign-in and account-chooser pages, the consent screens behind "Sign in with Google" on any site, the Google sign-in buttons and One Tap, and sign-up). YouTube, Search, Maps, Docs and Google's other sites keep working for people who aren't signed in, including the background account checks they make. The notice covers the site and says: *"This proxy doesn't support signing in with Google. Please go back and sign in a different way."* **Go back** reloads the site's own page so people can use another sign-in option.
+
+## Speed
+
+- **The backend stays awake.** A cron trigger (`wrangler.jsonc`, every 10 minutes) calls the backend's `/health` (`src/index.js`), so Render's free plan never puts it to sleep and nobody waits for it to wake. The address is read from `wispUrl` in `public/config.js`, so moving the backend only means changing that line. Each ping is logged under **Workers & Pages → frontend → Logs**.
+- **Epoxy transport.** Pages are fetched through Epoxy (`/epoxy/`, `@mercuryworkshop/epoxy-transport` 2.1.28, TLS in Rust/WASM). If a page fails to load with Epoxy, the retry and the rest of that visit use libcurl (`/libcurl/`) instead.
+- **One connection per visit.** The backend check, Scramjet, the service worker and the transport are set up once, when Saints Search finishes loading (with one small request to the backend's `/health` to start the TLS engine). Every site opened after that uses the same connection.
+- **Backend region.** For Florida, the backend should be in Render's **Virginia** region. Render can't move a service, so create a new one there, then set its address in `public/config.js`.

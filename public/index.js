@@ -189,7 +189,18 @@ blockBack?.addEventListener?.("click", () => goBackFromBlock());
 blockHome?.addEventListener?.("click", () => closeFrame());
 blockConsole?.addEventListener?.("click", () => tellConsole("open-ai"));
 
-const TRANSPORT = "/libcurl/index.mjs";
+// How the browser reaches sites through the Wisp backend. Epoxy (TLS in
+// Rust/WASM) is the faster one; libcurl is the fallback if Epoxy fails on this
+// browser (for the rest of the visit).
+const TRANSPORTS = {
+  epoxy: { path: "/epoxy/index.mjs", args: (wisp) => [{ wisp }] },
+  libcurl: { path: "/libcurl/index.mjs", args: (wisp) => [{ websocket: wisp }] },
+};
+let transportKind = "epoxy";
+// Set once the proxy is connected in this page: later sites open straight
+// away instead of probing the backend and rebuilding the transport again.
+let proxyReady = false;
+let preparing = null;
 const WISP_TIMEOUT_MS = 25000;
 const BAREMUX_RESPONSE_TIMEOUT_MS = 8000;
 const TRANSPORT_RESPONSE_TIMEOUT_MS = 18000;
@@ -457,6 +468,9 @@ function inspectPage(element) {
 
 function reportNavigationFailure(details) {
   navigationError = details;
+  // The next try reconnects from scratch, with libcurl if Epoxy was in use.
+  proxyReady = false;
+  if (transportKind === "epoxy") transportKind = "libcurl";
   setLoading(false);
   setWarning(true);
   toolbarStatus.textContent = "Website request failed";
@@ -570,10 +584,10 @@ function websocketProbe(url, timeoutMs = WISP_TIMEOUT_MS) {
   });
 }
 
-async function waitForWisp(url) {
+async function waitForWisp(url, report = showProgress) {
   // Free Render instances may take 50+ seconds to wake.
   for (let attempt = 1; attempt <= 3; attempt++) {
-    showProgress(attempt === 1 ? "Connecting to backend…" : "Waking backend (attempt " + attempt + "/3)…");
+    report(attempt === 1 ? "Connecting to backend…" : "Waking backend (attempt " + attempt + "/3)…");
     try {
       await websocketProbe(url);
       return;
@@ -624,6 +638,84 @@ function closeFrame() {
   globalThis.saintsSessions?.changed?.();
 }
 
+// Everything the proxy needs before a site can open: the backend awake, Scramjet,
+// the service worker and the BareMux transport. Runs once per page (shared by
+// concurrent callers); later calls return at once while it still works.
+async function prepareProxy(report) {
+  const wispUrl = getWispUrl();
+  const transport = TRANSPORTS[transportKind];
+  if (proxyReady && scramjetController && window.BareMux?.BareMuxConnection) {
+    // Already connected: just make sure the SharedWorker still has it.
+    try {
+      const connection = new window.BareMux.BareMuxConnection("/baremux/worker.js");
+      const name = await withTimeout(connection.getTransport(), BAREMUX_RESPONSE_TIMEOUT_MS, "BareMux stopped responding.");
+      if (name === transport.path) return scramjetController;
+    } catch {}
+    proxyReady = false;
+  }
+  await waitForWisp(wispUrl, report);
+  report("Initializing Scramjet…");
+  const scramjet = await initializeController();
+  scramjetController = scramjet;
+
+  if (typeof registerSW !== "function") throw new Error("Service worker bootstrap was not loaded.");
+  await registerSW();
+  await navigator.serviceWorker.ready;
+
+  if (!window.BareMux?.BareMuxConnection) {
+    throw new Error("BareMux browser assets did not load. Check /baremux/index.js.");
+  }
+  if (typeof SharedWorker === "undefined") {
+    throw new Error("This browser has no SharedWorker support, which BareMux requires. Try the latest Safari or a desktop browser.");
+  }
+
+  report("Checking BareMux worker…");
+  const connection = new window.BareMux.BareMuxConnection("/baremux/worker.js");
+  await withTimeout(
+    connection.getTransport(),
+    BAREMUX_RESPONSE_TIMEOUT_MS,
+    "The BareMux SharedWorker isn't responding. Safari may block this worker, or /baremux/worker.js may be failing to start. Check the browser's developer console and deployed worker asset."
+  );
+
+  report("Configuring browser transport…");
+  // A persistent SharedWorker can retain an old URL despite matching getTransport().
+  await withTimeout(
+    connection.setTransport(transport.path, transport.args(wispUrl)),
+    TRANSPORT_RESPONSE_TIMEOUT_MS,
+    "The " + transportKind + " transport did not initialize within 18 seconds. The backend WebSocket connected, but BareMux couldn't activate " + transport.path + ". Check Safari compatibility and the SharedWorker console."
+  );
+  const transportName = await withTimeout(
+    connection.getTransport(),
+    BAREMUX_RESPONSE_TIMEOUT_MS,
+    "The BareMux worker stopped responding after transport initialization."
+  );
+  if (transportName !== transport.path) {
+    throw new Error("BareMux reports an unexpected transport: " + String(transportName));
+  }
+  proxyReady = true;
+  return scramjet;
+}
+function prepare(report = () => {}) {
+  preparing ??= prepareProxy(report).finally(() => { preparing = null; });
+  return preparing;
+}
+// Warm up as soon as Saints Search has loaded, so the first site opens without
+// waiting (and a sleeping backend starts waking while people type). One small
+// request through the proxy, to the backend's own /health, also starts the
+// transport's TLS engine and its Wisp connection ahead of the first site.
+async function warmUp() {
+  try {
+    await prepare();
+    if (typeof window.BareMux?.BareClient !== "function") return;
+    const health = new URL(getWispUrl());
+    health.protocol = "https:";
+    health.pathname = "/health";
+    await new window.BareMux.BareClient().fetch(health.origin + "/health");
+  } catch {
+    // openUrl reports any problem when a site is opened
+  }
+}
+
 async function openUrl(url) {
   if (busy) return;
   const block = blockOf(url);
@@ -644,46 +736,9 @@ async function openUrl(url) {
   syncNav();
 
   try {
-    const wispUrl = getWispUrl();
-    await waitForWisp(wispUrl);
-    showProgress("Initializing Scramjet…");
-    const scramjet = await initializeController();
-    scramjetController = scramjet;
-
-    if (typeof registerSW !== "function") throw new Error("Service worker bootstrap was not loaded.");
-    await registerSW();
-    await navigator.serviceWorker.ready;
-
-    if (!window.BareMux?.BareMuxConnection) {
-      throw new Error("BareMux browser assets did not load. Check /baremux/index.js.");
-    }
-    if (typeof SharedWorker === "undefined") {
-      throw new Error("This browser has no SharedWorker support, which BareMux requires. Try the latest Safari or a desktop browser.");
-    }
-
-    showProgress("Checking BareMux worker…");
-    const connection = new window.BareMux.BareMuxConnection("/baremux/worker.js");
-    await withTimeout(
-      connection.getTransport(),
-      BAREMUX_RESPONSE_TIMEOUT_MS,
-      "The BareMux SharedWorker isn't responding. Safari may block this worker, or /baremux/worker.js may be failing to start. Check the browser's developer console and deployed worker asset."
-    );
-
-    showProgress("Configuring browser transport…");
-    // A persistent SharedWorker can retain an old URL despite matching getTransport().
-    await withTimeout(
-      connection.setTransport(TRANSPORT, [{ websocket: wispUrl }]),
-      TRANSPORT_RESPONSE_TIMEOUT_MS,
-      "The libcurl transport did not initialize within 18 seconds. The backend WebSocket connected, but BareMux couldn't activate /libcurl/index.mjs. Check Safari compatibility and the SharedWorker console."
-    );
-    const transportName = await withTimeout(
-      connection.getTransport(),
-      BAREMUX_RESPONSE_TIMEOUT_MS,
-      "The BareMux worker stopped responding after transport initialization."
-    );
-    if (transportName !== TRANSPORT) {
-      throw new Error("BareMux reports an unexpected transport: " + String(transportName));
-    }
+    // A warm-up already under way finishes first (its steps aren't shown).
+    if (preparing) showProgress("Connecting to backend…");
+    const scramjet = await prepare(showProgress);
 
     showProgress("Loading website…");
     const frame = scramjet.createFrame();
@@ -1039,6 +1094,8 @@ globalThis.saintsBrowser = {
     return true;
   },
 };
+
+window.addEventListener?.("load", () => setTimeout(() => void warmUp(), 0));
 
 // Start with one tab on saints://home, and tell the console (when embedded) so.
 activeTab = newTabState();

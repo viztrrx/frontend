@@ -36,6 +36,7 @@ jobs:
           node --check tests/build.test.mjs
           node --check tests/sessions-api.test.mjs
           node --check tests/blocked.test.mjs
+          node --check tests/keepalive.test.mjs
       - name: Run frontend regression tests
         run: npm test
       - name: Build Cloudflare Worker assets

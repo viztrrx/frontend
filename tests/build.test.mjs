@@ -16,6 +16,8 @@ test("build records the deployed commit in dist/version.json", () => {
     const built = readFileSync(new URL("dist/libcurl/" + file, root), "utf8");
     assert.match(built, /libcurl\.events\.addEventListener\("libcurl_load"/, file + " has the WASM readiness fix");
   }
+  // Epoxy, the faster transport, ships next to libcurl.
+  for (const file of ["index.mjs", "index.js"]) assert.ok(readFileSync(new URL("dist/epoxy/" + file, root), "utf8").length > 1000, "dist/epoxy/" + file);
 });
 
 test("Cloudflare's commit variable takes precedence", () => {

@@ -55,18 +55,26 @@ async function enableEarlyMessages(response) {
   });
 }
 
-// BareMux keeps its transport only in SharedWorker memory. When a full-tab
-// site replaces the page that configured it, the SharedWorker restarts empty,
-// so restore the same transport the frontend sets (index.js) before fetching.
-const TRANSPORT = "/libcurl/index.mjs";
+// BareMux keeps its transport only in SharedWorker memory. If the SharedWorker
+// restarts empty (a proxied page outlived the page that configured it),
+// restore a transport the frontend uses (index.js) before fetching: Epoxy,
+// or libcurl if Epoxy can't be set.
+const TRANSPORTS = [
+  ["/epoxy/index.mjs", () => [{ wisp: _CONFIG.wispUrl }]],
+  ["/libcurl/index.mjs", () => [{ websocket: _CONFIG.wispUrl }]],
+];
 let bareMux = null;
 let settingTransport = null;
 async function ensureTransport() {
   bareMux ??= new BareMux.BareMuxConnection();
-  if ((await bareMux.getTransport()) === TRANSPORT) return;
-  settingTransport ??= bareMux
-    .setTransport(TRANSPORT, [{ websocket: _CONFIG.wispUrl }])
-    .finally(() => { settingTransport = null; });
+  const current = await bareMux.getTransport();
+  if (TRANSPORTS.some(([path]) => path === current)) return;
+  settingTransport ??= (async () => {
+    for (const [path, args] of TRANSPORTS) {
+      try { await bareMux.setTransport(path, args()); return; } catch (cause) { console.error("Couldn't set " + path + ":", cause); }
+    }
+    throw new Error("No proxy transport could be set up.");
+  })().finally(() => { settingTransport = null; });
   await settingTransport;
 }
 

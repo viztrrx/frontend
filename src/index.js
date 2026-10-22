@@ -40,7 +40,46 @@ async function iconResponse(url) {
   return new Response("no icon", { status: 404 });
 }
 
+// ---- Keeping the Render backend awake --------------------------------------
+// Render's free plan puts the backend to sleep after 15 idle minutes, and the
+// next visitor waits up to a minute for it. A cron trigger (wrangler.jsonc,
+// every 10 minutes) calls its /health so it never gets there. The address is
+// read from config.js, the file the browser uses, so moving the backend only
+// means changing wispUrl there.
+const FALLBACK_HEALTH_URL = "https://backend-ivvq.onrender.com/health";
+export async function backendHealthUrl(env) {
+  try {
+    const r = await env.ASSETS.fetch("https://assets.local/config.js");
+    const m = /wispUrl\s*:\s*["']([^"']+)["']/.exec(await r.text());
+    if (m) {
+      const u = new URL(m[1]);
+      if (u.protocol === "wss:" || u.protocol === "ws:") {
+        u.protocol = u.protocol === "wss:" ? "https:" : "http:";
+        return u.origin + "/health";
+      }
+    }
+  } catch {}
+  return FALLBACK_HEALTH_URL;
+}
+export async function pingBackend(env) {
+  const url = await backendHealthUrl(env);
+  const started = Date.now();
+  try {
+    // Waking from sleep can take most of a minute.
+    const r = await fetch(url, { headers: { "user-agent": "saints-service-keepalive" }, signal: AbortSignal.timeout(90000) });
+    console.log("Backend " + url + " answered " + r.status + " in " + (Date.now() - started) + " ms");
+    return r.status;
+  } catch (cause) {
+    console.error("Backend " + url + " didn't answer:", cause && cause.message);
+    return 0;
+  }
+}
+
 export default {
+  async scheduled(event, env, ctx) {
+    ctx.waitUntil(pingBackend(env));
+  },
+
   async fetch(request, env) {
     const url = new URL(request.url);
     if (url.pathname === "/icon") return iconResponse(url);

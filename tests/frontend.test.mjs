@@ -129,12 +129,12 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
     }
     async getTransport() {
       if (workerHang) return new Promise(() => {});
-      return transports.length ? "/libcurl/index.mjs" : "";
+      return transports.length ? transports.at(-1)[0] : "";
     }
   }
   const ctx = {
     document,
-    window: { BareMux: { BareMuxConnection }, addEventListener: (kind, fn) => { if (kind === 'message') winMessage.fn = fn; }, ...(embed ? { parent: { postMessage: (message) => posts.push(message) } } : {}) },
+    window: { BareMux: { BareMuxConnection }, addEventListener: (kind, fn) => { if (kind === 'message') winMessage.fn = fn; if (kind === 'load') winMessage.load = fn; }, ...(embed ? { parent: { postMessage: (message) => posts.push(message) } } : {}) },
     navigator: { serviceWorker: {
       ready: Promise.resolve(),
       addEventListener(kind, fn) { swCallbacks.set(kind, fn); }
@@ -173,6 +173,7 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
   return {
     initialAddress,
     elements, frames, transports, timers, assigned, storage, posts,
+    load: () => winMessage.load?.(),
     navigate: (query) => winMessage.fn?.({ source: ctx.window.parent, data: { saintsProxy: 1, type: "navigate", query } }),
     chrome: (opts) => winMessage.fn?.({ source: ctx.window.parent, data: { saintsProxy: 1, type: "chrome", ...opts } }),
     websocketCount: () => websocketCount,
@@ -204,8 +205,8 @@ test("checks Render Wisp and configures the transport before navigating", async 
   await x.submit();
   assert.equal(x.websocketCount(), 1);
   assert.equal(x.transports.length, 1);
-  assert.equal(x.transports[0][0], "/libcurl/index.mjs");
-  assert.equal(x.transports[0][1][0].websocket, "wss://backend-ivvq.onrender.com/wisp/");
+  assert.equal(x.transports[0][0], "/epoxy/index.mjs", "Epoxy, the faster transport");
+  assert.equal(x.transports[0][1][0].wisp, "wss://backend-ivvq.onrender.com/wisp/");
   assert.equal(x.frames.length, 1);
   assert.equal(x.frames[0].url, "https://example.com");
   assert.equal(x.elements.get("sj-view").hidden, false);
@@ -251,6 +252,8 @@ test("Reload after a failed load reconnects and refreshes the Wisp transport", a
   await x.elements.get("sj-reload").dispatch("click");
   await new Promise((resolve) => setImmediate(resolve));
   assert.equal(x.transports.length, 2);
+  assert.equal(x.transports[1][0], "/libcurl/index.mjs", "the retry falls back to libcurl");
+  assert.equal(x.transports[1][1][0].websocket, "wss://backend-ivvq.onrender.com/wisp/");
   assert.equal(x.frames.length, 2);
   assert.equal(x.frames[0].removed, true);
 });
@@ -265,13 +268,13 @@ test("unresponsive BareMux SharedWorker reports an error rather than hanging for
   assert.equal(x.elements.get("sj-progress").hidden, true);
 });
 
-test("transport setup timeout diagnoses libcurl rather than hiding the whole page", async () => {
+test("transport setup timeout names the transport rather than hiding the whole page", async () => {
   const x = setup({ transportHang: true });
   const pending = x.submit();
   await x.advance(18000);
   await pending;
   assert.equal(x.frames.length, 0);
-  assert.match(x.elements.get("sj-error-code").textContent, /libcurl transport did not initialize/);
+  assert.match(x.elements.get("sj-error-code").textContent, /epoxy transport did not initialize/);
   assert.equal(x.elements.get("sj-progress").hidden, true);
 });
 
@@ -715,4 +718,31 @@ test("typing Google's sign-in page directly shows the notice with no page behind
   assert.equal(x.frames.length, 0);
   assert.equal(x.elements.get("sj-block").hidden, false);
   assert.equal(x.elements.get("sj-block-back").hidden, true, "nothing to go back to: Back to Saints Search");
+});
+
+test("opening another site reuses the live connection instead of reconnecting", async () => {
+  const x = setup();
+  await x.submit();
+  await x.advance(4000);
+  x.elements.get("sj-home-btn").dispatch("click");
+  x.elements.get("sj-address").value = "youtube.com";
+  await x.submit();
+  await x.advance(4000);
+  assert.equal(x.websocketCount(), 1, "no second backend probe");
+  assert.equal(x.transports.length, 1, "the transport isn't rebuilt");
+  assert.equal(x.frames.at(-1).url, "https://youtube.com");
+});
+
+test("the connection warms up as soon as the page loads", async () => {
+  const x = setup();
+  x.load();
+  await x.advance(0);
+  assert.equal(x.websocketCount(), 1, "the backend is woken before anything is opened");
+  assert.equal(x.transports.length, 1);
+  assert.equal(x.frames.length, 0, "nothing opens by itself");
+  await x.submit();
+  await x.advance(4000);
+  assert.equal(x.websocketCount(), 1, "the first site uses the warmed-up connection");
+  assert.equal(x.transports.length, 1);
+  assert.equal(x.frames.length, 1);
 });

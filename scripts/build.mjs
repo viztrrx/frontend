@@ -3,6 +3,7 @@ import { execFileSync } from "node:child_process";
 import { patchLibcurlTransport } from "./patch-libcurl.mjs";
 import { scramjetPath } from "@mercuryworkshop/scramjet/path";
 import { libcurlPath } from "@mercuryworkshop/libcurl-transport";
+import { epoxyPath } from "@mercuryworkshop/epoxy-transport";
 import { baremuxPath } from "@mercuryworkshop/bare-mux/node";
 
 const out = new URL("../dist/", import.meta.url);
@@ -13,6 +14,7 @@ for (const [from, dest] of [
   [new URL("../public/", import.meta.url), new URL("../dist/", import.meta.url)],
   [scramjetPath, new URL("../dist/scram/", import.meta.url)],
   [libcurlPath, new URL("../dist/libcurl/", import.meta.url)],
+  [epoxyPath, new URL("../dist/epoxy/", import.meta.url)],
   [baremuxPath, new URL("../dist/baremux/", import.meta.url)],
 ]) {
   if (!(await stat(from)).isDirectory()) throw new Error("Not a directory: " + from);
