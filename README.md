@@ -84,7 +84,7 @@ Storage: the `SESSIONS` binding in `wrangler.jsonc` points at the R2 bucket **`d
 
 ## Games (`saints://games`)
 
-The **Games** button on `saints://home` (or typing `saints://games`) opens the games library. A game plays in the page area under the toolbar, at `saints://games/<slug>`, like a site in a tab: Back returns to the library, Reload restarts the game, Home goes to `saints://home`. The five online games (1v1.LOL, Justfall.LOL, LittleBigSnake, Paper.io, ZombsRoyale.io) open their real site through the proxy instead.
+The **Games** button on `saints://home` (or typing `saints://games`) opens the games library. A game plays in the page area under the toolbar, at `saints://games/<slug>`, like a site in a tab: Back returns to the library, Reload restarts the game, Home goes to `saints://home`. The three online games (LittleBigSnake, Paper.io at paperio.site, ZombsRoyale.io) open their real site through the proxy instead.
 
 - `public/games/` holds the game files, taken from `static/src/gs/` in [viztrrx/incog-frontend](https://github.com/viztrrx/incog-frontend) (the Incognito games): `public/<game>/`, `ruffle/` (Flash emulator for the Flash games) and `thumbnails/`.
 - `public/games/games.json` is the list (title, thumbnail, and `path` or, for online games, `url`), built from Incognito's `gs.json` plus four games it didn't list (BreakLock, Flappy 2048, Hextris, Microsoft Flight Simulator).

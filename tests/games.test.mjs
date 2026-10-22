@@ -9,7 +9,7 @@ const pub = (path) => new URL("../public" + path, import.meta.url);
 const games = JSON.parse(readFileSync(pub("/games/games.json"), "utf8"));
 
 test("every game in the list has its files and thumbnail", () => {
-  assert.ok(games.length >= 45);
+  assert.ok(games.length >= 43);
   assert.equal(new Set(games.map((g) => g.slug)).size, games.length, "slugs are unique");
   for (const g of games) {
     assert.ok(g.title, g.slug);

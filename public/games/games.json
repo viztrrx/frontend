@@ -6,12 +6,6 @@
     "path": "/games/public/swfs/#1on1soccer"
   },
   {
-    "slug": "1v1-lol",
-    "title": "1v1.LOL",
-    "image": "/games/thumbnails/1v1-lol.jpg",
-    "url": "https://1v1.lol/"
-  },
-  {
     "slug": "2048",
     "title": "2048",
     "image": "/games/thumbnails/2048.jpg",
@@ -141,12 +135,6 @@
     "path": "/games/public/hextris/"
   },
   {
-    "slug": "justfall-lol",
-    "title": "Justfall.LOL",
-    "image": "/games/thumbnails/justfall-lol.jpg",
-    "url": "https://justfall.lol/"
-  },
-  {
     "slug": "littlebigsnake",
     "title": "LittleBigSnake",
     "image": "/games/thumbnails/littlebigsnake.jpg",
@@ -173,7 +161,7 @@
     "slug": "paper-io",
     "title": "Paper.io",
     "image": "/games/thumbnails/paper-io.jpg",
-    "url": "https://paper-io.com/"
+    "url": "https://paperio.site/"
   },
   {
     "slug": "portal2d",
