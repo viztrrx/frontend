@@ -29,6 +29,7 @@ const newTabButton = document.getElementById("sj-newtab");
 // The start page has its own address, like chrome://settings. The address
 // bar shows it on the home page; typing replaces it (it's selected on focus).
 const HOME_URL = "saints://home";
+const GAMES_URL = "saints://games";
 
 // When this frontend runs inside the Saints Service console (an embedding
 // parent frame), report the proxied site to that parent so the console can
@@ -248,6 +249,8 @@ let historyMove = null;    // "back" | "forward" while that navigation lands
 let homeForward = "";      // the site Forward reopens from saints://home
 let frameTitle = "";       // the open page's own <title>, for its tab
 let blocked = null;        // { url, kind, title, message } this tab won't show
+let currentGame = null;    // the game playing in this tab's page area (games.json entry)
+let startPage = "home";    // which start page shows with no site open: "home" | "games"
 
 // ---- Tabs ------------------------------------------------------------------
 // Each tab keeps its own frame (hidden while another tab is shown), address
@@ -260,7 +263,7 @@ let nextTabId = 1;
 function newTabState() {
   return { id: nextTabId++, frame: null, sj: null, site: "", lastUrl: "", title: "", backCount: 0, forwardCount: 0,
     homeForward: "", navigationError: null, navigationResponseStatus: null, navigationPath: null, httpWarning: false,
-    loadingHidden: true, loadingText: "", statusText: "", blocked: null };
+    loadingHidden: true, loadingText: "", statusText: "", blocked: null, game: null, page: "home" };
 }
 function saveActiveTab() {
   const t = activeTab;
@@ -271,6 +274,8 @@ function saveActiveTab() {
   t.navigationPath = currentNavigationPath; t.httpWarning = httpWarning;
   t.loadingHidden = loading.hidden; t.loadingText = loadingStatus.textContent; t.statusText = toolbarStatus.textContent;
   t.blocked = blocked;
+  t.game = currentGame;
+  t.page = startPage;
 }
 function loadTab(t) {
   activeTab = t;
@@ -279,6 +284,8 @@ function loadTab(t) {
   navigationError = t.navigationError; navigationResponseStatus = t.navigationResponseStatus;
   currentNavigationPath = t.navigationPath; httpWarning = t.httpWarning;
   blocked = t.blocked || null;
+  currentGame = t.game || null;
+  startPage = t.page || "home";
   historyMove = null;
   loadingStatus.textContent = t.loadingText; toolbarStatus.textContent = t.statusText;
 }
@@ -335,7 +342,7 @@ function tabLabel(t) {
   const frame = isActive ? currentFrame : t.frame;
   const site = isActive ? currentSite : t.site;
   const title = isActive ? frameTitle : t.title;
-  if (!frame) return "Saints Search";
+  if (!frame) return (isActive ? startPage : t.page) === "games" ? "Games" : "Saints Search";
   return title || hostOf(site || (isActive ? lastUrl : t.lastUrl)) || "Loading…";
 }
 function renderTabs() {
@@ -355,11 +362,12 @@ function renderTabs() {
     tab.title = label;
     const icon = document.createElement("span");
     icon.className = "sb-tab-ic" + (frame ? "" : " is-home");
-    const host = frame ? hostOf(site) : "";
-    if (host) {
+    const game = isActive ? currentGame : t.game;
+    const host = frame && !game ? hostOf(site) : "";
+    if (host || (game && game.image)) {
       const img = document.createElement("img");
       img.alt = "";
-      img.src = "/icon?d=" + encodeURIComponent(host);
+      img.src = game ? game.image : "/icon?d=" + encodeURIComponent(host);
       img.addEventListener?.("error", () => img.remove());
       icon.appendChild(img);
     }
@@ -404,10 +412,14 @@ function setWarning(on) {
 // The address bar's resting text: saints://home, or the site's real address.
 // Left alone while the user is typing in it.
 function showAddress() {
-  const text = blocked ? blocked.url : currentFrame ? (currentSite || lastUrl || "") : HOME_URL;
+  const text = blocked ? blocked.url : currentFrame ? (currentSite || lastUrl || "") : startPage === "games" ? GAMES_URL : HOME_URL;
   if (document.activeElement !== address) address.value = text;
   if (omniIcon && omniIcon.dataset) omniIcon.dataset.kind = currentFrame || blocked ? "site" : "home";
-  try { document.title = currentFrame && currentSite ? hostOf(currentSite) + " · Saints Search" : "Saints Search"; } catch {}
+  try {
+    document.title = currentGame ? currentGame.title + " · Saints Search"
+      : currentFrame && currentSite ? hostOf(currentSite) + " · Saints Search"
+      : startPage === "games" ? "Games · Saints Search" : "Saints Search";
+  } catch {}
   renderTabs();
 }
 function hostOf(url) {
@@ -419,8 +431,10 @@ function syncNav() {
 }
 // Page area vs. saints://home.
 function showView(on) {
-  if (homePage) homePage.hidden = !!on;
+  if (homePage) homePage.hidden = !!on || startPage !== "home";
+  if (gamesPage) gamesPage.hidden = !!on || startPage !== "games";
   if (view) view.hidden = !on;
+  if (!on && startPage === "games") void showGames();
 }
 // A page the frame landed on (load or in-page URL change): history + bar.
 function frameUrlChanged(url) {
@@ -433,6 +447,134 @@ function frameUrlChanged(url) {
   frameTitle = "";
   showAddress();
   syncNav();
+}
+
+// ---- Games (saints://games) -------------------------------------------------
+// The games library (public/games/, from the Incognito games) has its own
+// start page. A game plays in the page area under the toolbar like a site,
+// at saints://games/<slug>; the few that are online games open their real
+// site through the proxy instead.
+const gamesPage = document.getElementById("sj-games");
+const gamesGrid = document.getElementById("sj-games-grid");
+const gamesSearch = document.getElementById("sj-games-q");
+const gamesStatus = document.getElementById("sj-games-status");
+const gamesCount = document.getElementById("sj-games-count");
+let gamesList = null;
+let gamesLoading = null;
+function loadGames() {
+  gamesLoading ??= (async () => {
+    if (typeof fetch !== "function") throw new Error("no fetch");
+    const r = await fetch("/games/games.json");
+    if (!r.ok) throw new Error("HTTP " + r.status);
+    const list = await r.json();
+    gamesList = Array.isArray(list) ? list.filter((g) => g && g.slug && g.title && (g.path || g.url)) : [];
+    if (gamesCount) gamesCount.textContent = String(gamesList.length);
+    return gamesList;
+  })().catch((cause) => { gamesLoading = null; throw cause; });
+  return gamesLoading;
+}
+function gameTile(game) {
+  const tile = document.createElement("button");
+  tile.type = "button";
+  tile.className = "ss-game";
+  tile.dataset.slug = game.slug;
+  tile.setAttribute("aria-label", "Play " + game.title);
+  const art = document.createElement("span");
+  art.className = "ss-game-art";
+  art.setAttribute("aria-hidden", "true");
+  art.textContent = game.title.replace(/[^A-Za-z0-9]/g, "").slice(0, 2).toUpperCase();
+  // The thumbnail covers the letters; if it can't load, the letters show.
+  if (game.image) {
+    const img = document.createElement("img");
+    img.alt = "";
+    img.loading = "lazy";
+    img.decoding = "async";
+    img.addEventListener?.("error", () => img.remove());
+    img.src = game.image;
+    art.appendChild(img);
+  }
+  const info = document.createElement("span");
+  info.className = "ss-game-info";
+  const title = document.createElement("span");
+  title.className = "ss-game-title";
+  title.textContent = game.title;
+  info.appendChild(title);
+  if (game.url) {
+    const tag = document.createElement("span");
+    tag.className = "ss-game-tag";
+    tag.textContent = "Online";
+    info.appendChild(tag);
+  }
+  tile.append(art, info);
+  tile.addEventListener("click", () => openGame(game));
+  return tile;
+}
+function renderGames() {
+  if (!gamesGrid || !gamesList) return;
+  const q = String(gamesSearch?.value || "").trim().toLowerCase();
+  const shown = gamesList.filter((g) => !q || g.title.toLowerCase().includes(q));
+  gamesGrid.replaceChildren(...shown.map(gameTile));
+  if (gamesStatus) gamesStatus.textContent = shown.length ? "" : "No games match \u201c" + q + "\u201d.";
+}
+async function showGames() {
+  if (gamesList) { if (!gamesGrid?.children?.length) renderGames(); return; }
+  if (gamesStatus) gamesStatus.textContent = "Loading games\u2026";
+  try {
+    await loadGames();
+    if (gamesStatus) gamesStatus.textContent = "";
+    renderGames();
+  } catch {
+    if (gamesStatus) gamesStatus.textContent = "The games list couldn\u2019t load. Check your connection and try again.";
+  }
+}
+gamesSearch?.addEventListener?.("input", () => renderGames());
+document.getElementById("sj-games-form")?.addEventListener?.("submit", (event) => {
+  event.preventDefault();
+  const first = gamesGrid?.querySelector?.(".ss-game");
+  if (first) first.click();
+});
+document.getElementById("sj-games-open")?.addEventListener?.("click", () => showStart("games"));
+// saints://home or saints://games in the active tab (closing any open page).
+function showStart(page) {
+  if (currentFrame || blocked || busy) closeFrame();
+  startPage = page === "games" ? "games" : "home";
+  showView(false);
+  showAddress();
+  syncNav();
+  renderTabs();
+}
+// A game in the page area (or, for an online game, its site through the proxy).
+function openGame(game) {
+  if (busy || !game) return;
+  if (game.url) { pendingQuery = ""; void openUrl(game.url); return; }
+  closeFrame();
+  const element = document.createElement("iframe");
+  element.className = "sj-frame";
+  element.setAttribute("title", game.title);
+  element.setAttribute("allow", FRAME_PERMISSIONS + "; gamepad; screen-wake-lock");
+  element.addEventListener("load", () => playbackAudio(element.contentWindow));
+  element.src = game.path;
+  currentFrame = element;
+  currentSjFrame = null;
+  currentGame = game;
+  currentSite = GAMES_URL + "/" + game.slug;
+  lastUrl = currentSite;
+  frameTitle = game.title;
+  homeForward = "";
+  showView(true);
+  loading.hidden = true;
+  setLoading(false);
+  toolbarStatus.textContent = "";
+  (view || document.body).appendChild(element);
+  showAddress();
+  syncNav();
+  renderTabs();
+}
+async function openGameBySlug(slug) {
+  try { await loadGames(); } catch {}
+  const game = (gamesList || []).find((g) => g.slug === String(slug).toLowerCase());
+  if (game) openGame(game);
+  else { showStart("games"); if (gamesStatus) gamesStatus.textContent = "There\u2019s no game called \u201c" + slug + "\u201d."; }
 }
 
 // Remember the search engine; storage can be unavailable.
@@ -622,10 +764,13 @@ function closeFrame() {
   if (currentFrame) {
     // Forward on saints://home reopens the site that was just left.
     if (currentSite || lastUrl) homeForward = currentSite || lastUrl;
+    // Back from a game lands on saints://games.
+    if (currentGame) startPage = "games";
     currentFrame.remove();
     currentFrame = null;
   }
   currentSjFrame = null;
+  currentGame = null;
   currentSite = "";
   frameTitle = "";
   blocked = null;
@@ -931,7 +1076,16 @@ function navigateFrame(url) {
 async function go(raw) {
   const text = String(raw || "").trim();
   if (!text) return;
-  if (/^saints:(\/\/)?/i.test(text)) { closeFrame(); return; }
+  if (/^saints:(\/\/)?/i.test(text)) {
+    const [, page, slug] = /^saints:(?:\/\/)?([a-z]*)\/?([^/?#]*)/i.exec(text) || [];
+    if (/^games$/i.test(page || "")) {
+      if (slug) { await openGameBySlug(slug); return; }
+      showStart("games");
+      return;
+    }
+    showStart("home");
+    return;
+  }
   let url;
   try {
     url = search(text, searchEngine.value);
@@ -1018,7 +1172,7 @@ async function showVersion() {
 }
 void showVersion();
 
-homeButton?.addEventListener?.("click", () => closeFrame());
+homeButton?.addEventListener?.("click", () => showStart("home"));
 showPageButton?.addEventListener?.("click", () => { loading.hidden = true; setLoading(false); });
 // Coming back to this page through the back/forward cache: start on saints://home.
 window.addEventListener?.("pageshow", (event) => { if (event.persisted) closeFrame(); });
@@ -1030,6 +1184,7 @@ reloadButton.addEventListener("click", () => {
     setLoading(true);
     try { currentSjFrame.reload(); return; } catch {}
   }
+  if (currentGame && currentFrame) { currentFrame.src = currentGame.path; return; }
   if (currentFrame && lastUrl) void openUrl(lastUrl);
 });
 backButton?.addEventListener?.("click", () => {
@@ -1045,7 +1200,7 @@ backButton?.addEventListener?.("click", () => {
 });
 forwardButton?.addEventListener?.("click", () => {
   if (busy) return;
-  if (!currentFrame) { if (homeForward) void openUrl(homeForward); return; }
+  if (!currentFrame) { if (homeForward) void go(homeForward); return; }
   if (forwardCount <= 0 || !currentSjFrame) return;
   historyMove = "forward";
   setLoading(true);

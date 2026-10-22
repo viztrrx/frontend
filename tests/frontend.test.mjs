@@ -6,7 +6,7 @@ import { runInNewContext } from "node:vm";
 const source = readFileSync(new URL("../public/index.js", import.meta.url), "utf8");
 const blockSource = readFileSync(new URL("../public/blocked.js", import.meta.url), "utf8");
 
-function setup({ epoxyFails = false, wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails = false, controllerFails = false, workerHang = false, transportHang = false, blankFrame = false, noLoad = false, storage = {}, versionFetch, embed = false, realUrls = false } = {}) {
+function setup({ games = null, epoxyFails = false, wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails = false, controllerFails = false, workerHang = false, transportHang = false, blankFrame = false, noLoad = false, storage = {}, versionFetch, embed = false, realUrls = false } = {}) {
   const posts = [];
   const winMessage = { fn: null };
   const elements = new Map();
@@ -33,7 +33,10 @@ function setup({ epoxyFails = false, wispUrl = "wss://backend-ivvq.onrender.com/
     elements.set(id, element);
     return element;
   };
-  for (const id of ["sj-form", "sj-address", "sj-search-engine", "sj-error", "sj-error-code", "sj-progress", "sj-toolbar", "sj-toolbar-status", "sj-loading", "sj-loading-status", "sj-home-btn", "sj-reload", "sj-back", "sj-forward", "sj-show-page", "sj-version", "sj-home", "sj-view", "sj-home-form", "sj-home-q", "sj-omni-ic", "sj-fs", "sj-exit", "sj-tabs", "sj-newtab", "sj-block", "sj-block-title", "sj-block-msg", "sj-block-site", "sj-block-back", "sj-block-home", "sj-block-console"]) makeElement(id);
+  for (const id of ["sj-form", "sj-address", "sj-search-engine", "sj-error", "sj-error-code", "sj-progress", "sj-toolbar", "sj-toolbar-status", "sj-loading", "sj-loading-status", "sj-home-btn", "sj-reload", "sj-back", "sj-forward", "sj-show-page", "sj-version", "sj-home", "sj-view", "sj-home-form", "sj-home-q", "sj-omni-ic", "sj-fs", "sj-exit", "sj-tabs", "sj-newtab", "sj-block", "sj-block-title", "sj-block-msg", "sj-block-site", "sj-block-back", "sj-block-home", "sj-block-console", "sj-games", "sj-games-grid", "sj-games-q", "sj-games-status", "sj-games-count", "sj-games-open", "sj-games-form"]) makeElement(id);
+  elements.get("sj-games").hidden = true;
+  elements.get("sj-games-grid").replaceChildren = function (...items) { this.items = items; this.children = items; };
+  elements.get("sj-games-grid").querySelector = function () { return (this.items || [])[0] || null; };
   for (const id of ["sj-block", "sj-block-back", "sj-block-console"]) elements.get(id).hidden = true;
   // The tab strip: keeps the rendered tabs so tests can read and click them.
   elements.get("sj-tabs").replaceChildren = function (...items) { this.items = items; };
@@ -159,7 +162,11 @@ function setup({ epoxyFails = false, wispUrl = "wss://backend-ivvq.onrender.com/
     Promise,
     Date,
     isNaN,
-    ...(versionFetch ? { fetch: versionFetch } : {}),
+    ...(versionFetch || games ? { fetch: async (url, options) => {
+      if (games && String(url) === "/games/games.json") return new Response(JSON.stringify(games));
+      if (versionFetch) return versionFetch(url, options);
+      return new Response("", { status: 404 });
+    } } : {}),
     console,
     setTimeout(fn, milliseconds) {
       const id = ++timerId;
@@ -788,4 +795,77 @@ test("sound: the frame may autoplay, and pages ask iPhone Safari for playback au
   assert.match(frame.attrs.allow, /autoplay/);
   assert.match(frame.attrs.allow, /fullscreen/);
   assert.equal(frame.contentWindow.navigator.audioSession.type, "playback", "the site in the frame");
+});
+
+const GAMES = [
+  { slug: "2048", title: "2048", image: "/games/thumbnails/2048.jpg", path: "/games/public/2048/" },
+  { slug: "1v1-lol", title: "1v1.LOL", image: "/games/thumbnails/1v1-lol.jpg", url: "https://1v1.lol/" },
+  { slug: "slope", title: "Slope", image: "/games/thumbnails/slope.jpg", path: "/games/public/slope/" },
+];
+const tiles = (x) => x.elements.get("sj-games-grid").items || [];
+const tileFor = (x, slug) => tiles(x).find((t) => t.dataset.slug === slug);
+
+test("games: the Games button opens saints://games with every game", async () => {
+  const x = setup({ games: GAMES });
+  x.elements.get("sj-games-open").dispatch("click");
+  await x.advance(0);
+  assert.equal(x.elements.get("sj-games").hidden, false);
+  assert.equal(x.elements.get("sj-home").hidden, true);
+  assert.equal(x.elements.get("sj-address").value, "saints://games");
+  assert.equal(tiles(x).length, 3);
+  assert.equal(x.elements.get("sj-tabs").items[0].title, "Games");
+  // Searching narrows the list.
+  x.elements.get("sj-games-q").value = "slo";
+  x.elements.get("sj-games-q").dispatch("input");
+  assert.deepEqual(tiles(x).map((t) => t.dataset.slug), ["slope"]);
+});
+
+test("games: a game plays in the page area, and Back returns to saints://games", async () => {
+  const x = setup({ games: GAMES });
+  x.elements.get("sj-games-open").dispatch("click");
+  await x.advance(0);
+  tileFor(x, "2048").dispatch("click");
+  const frame = x.frames.at(-1);
+  assert.equal(frame.src, "/games/public/2048/");
+  assert.match(frame.attrs.allow, /autoplay/);
+  assert.equal(x.websocketCount(), 0, "games don't need the proxy backend");
+  assert.equal(x.elements.get("sj-view").hidden, false);
+  assert.equal(x.elements.get("sj-address").value, "saints://games/2048");
+  assert.equal(x.elements.get("sj-tabs").items[0].title, "2048");
+  assert.equal(x.elements.get("sj-back").disabled, false);
+  // Reload restarts the game.
+  frame.src = "about:blank";
+  x.elements.get("sj-reload").dispatch("click");
+  assert.equal(frame.src, "/games/public/2048/");
+  x.elements.get("sj-back").dispatch("click");
+  assert.equal(x.elements.get("sj-view").hidden, true, "the game is closed");
+  assert.equal(x.elements.get("sj-games").hidden, false);
+  assert.equal(x.elements.get("sj-address").value, "saints://games");
+  // Home goes to saints://home.
+  x.elements.get("sj-home-btn").dispatch("click");
+  assert.equal(x.elements.get("sj-home").hidden, false);
+  assert.equal(x.elements.get("sj-games").hidden, true);
+  assert.equal(x.elements.get("sj-address").value, "saints://home");
+});
+
+test("games: online games open their real site through the proxy", async () => {
+  const x = setup({ games: GAMES });
+  x.elements.get("sj-games-open").dispatch("click");
+  await x.advance(0);
+  tileFor(x, "1v1-lol").dispatch("click");
+  await x.advance(4000);
+  assert.equal(x.transports.length, 1);
+  assert.equal(x.frames.at(-1).url, "https://1v1.lol/");
+});
+
+test("games: typing saints://games/<slug> opens that game", async () => {
+  const x = setup({ games: GAMES });
+  x.elements.get("sj-address").value = "saints://games/slope";
+  await x.submit();
+  await x.advance(0);
+  assert.equal(x.frames.at(-1).src, "/games/public/slope/");
+  assert.equal(x.elements.get("sj-address").value, "saints://games/slope");
+  x.elements.get("sj-address").value = "saints://games";
+  await x.submit();
+  assert.equal(x.elements.get("sj-games").hidden, false);
 });

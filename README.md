@@ -81,3 +81,12 @@ Storage: the `SESSIONS` binding in `wrangler.jsonc` points at the R2 bucket **`d
 - **Epoxy transport.** Pages are fetched through Epoxy (`/epoxy/`, `@mercuryworkshop/epoxy-transport` 2.1.28, TLS in Rust/WASM) where the browser can run it. A browser that can't load Epoxy (iPhone Safari reported "Importing a module script failed.") switches to libcurl (`/libcurl/`) straight away and keeps using it on that device (`sj-transport` in localStorage). If a page fails to load with Epoxy, the retry and the rest of that visit use libcurl.
 - **One connection per visit.** The backend check, Scramjet, the service worker and the transport are set up once, when Saints Search finishes loading (with one small request to the backend's `/health` to start the TLS engine). Every site opened after that uses the same connection.
 - **Backend region.** For Florida, the backend should be in Render's **Virginia** region. Render can't move a service, so create a new one there, then set its address in `public/config.js`.
+
+## Games (`saints://games`)
+
+The **Games** button on `saints://home` (or typing `saints://games`) opens the games library. A game plays in the page area under the toolbar, at `saints://games/<slug>`, like a site in a tab: Back returns to the library, Reload restarts the game, Home goes to `saints://home`. The five online games (1v1.LOL, Justfall.LOL, LittleBigSnake, Paper.io, ZombsRoyale.io) open their real site through the proxy instead.
+
+- `public/games/` holds the game files, taken from `static/src/gs/` in [viztrrx/incog-frontend](https://github.com/viztrrx/incog-frontend) (the Incognito games): `public/<game>/`, `ruffle/` (Flash emulator for the Flash games) and `thumbnails/`.
+- `public/games/games.json` is the list (title, thumbnail, and `path` or, for online games, `url`), built from Incognito's `gs.json` plus four games it didn't list (BreakLock, Flappy 2048, Hextris, Microsoft Flight Simulator).
+- The Unity files that incog-frontend kept in Git LFS (Duck Life 1–4, Slope, Drift Hunters) weren't in its LFS storage, so they came from [titaniumnetwork-dev/Incognito-old](https://github.com/titaniumnetwork-dev/Incognito-old), checked against the SHA-256 in each LFS pointer. They're stored as normal files here.
+- Cloudflare serves static files up to 25 MiB. The two bigger files are stored as `<file>.part0`, `.part1`, … and `src/index.js` streams them back as one file (`src/game-parts.js` lists them with their size and SHA-256).

@@ -1,5 +1,6 @@
 // Static frontend Worker; assets are produced by scripts/build.mjs.
 import { handleSessions } from "./sessions.js";
+import GAME_PARTS from "./game-parts.js";
 
 // Only plausible public hostnames, and the value is only ever handed to a
 // favicon service (never fetched directly), so there is no SSRF surface.
@@ -75,6 +76,35 @@ export async function pingBackend(env) {
   }
 }
 
+// ---- Games too big for one static asset ---------------------------------------
+// Cloudflare serves static files up to 25 MiB, but two game data files are
+// bigger (Drift, Duck Life 4). They're stored as <file>.part0, .part1, … and
+// streamed back as the one file the game asks for (game-parts.json lists them).
+async function joinedGameFile(request, env, url) {
+  const entry = GAME_PARTS[url.pathname];
+  if (request.method !== "GET" && request.method !== "HEAD") return new Response("method not allowed", { status: 405 });
+  const headers = new Headers({
+    "content-type": "application/octet-stream",
+    "content-length": String(entry.size),
+    "cache-control": "public, max-age=86400",
+  });
+  if (request.method === "HEAD") return new Response(null, { status: 200, headers });
+  const { readable, writable } = new TransformStream();
+  (async () => {
+    try {
+      for (let i = 0; i < entry.parts; i++) {
+        const part = await env.ASSETS.fetch(new URL(url.pathname + ".part" + i, url));
+        if (!part.ok || !part.body) throw new Error("missing part " + i + " of " + url.pathname);
+        await part.body.pipeTo(writable, { preventClose: true });
+      }
+      await writable.close();
+    } catch (cause) {
+      await writable.abort(cause);
+    }
+  })();
+  return new Response(readable, { status: 200, headers });
+}
+
 export default {
   async scheduled(event, env, ctx) {
     ctx.waitUntil(pingBackend(env));
@@ -87,7 +117,9 @@ export default {
       return handleSessions(request, env, url);
     }
 
-    const response = await env.ASSETS.fetch(request);
+    const response = Object.hasOwn(GAME_PARTS, url.pathname)
+      ? await joinedGameFile(request, env, url)
+      : await env.ASSETS.fetch(request);
     const headers = new Headers(response.headers);
     // Match the isolation headers used by Scramjet-App's original server.
     headers.set("Cross-Origin-Opener-Policy", "same-origin");

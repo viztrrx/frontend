@@ -30,6 +30,7 @@ jobs:
           node --check public/blocked.js
           node --check src/index.js
           node --check src/sessions.js
+          node --check src/game-parts.js
           node --check tests/frontend.test.mjs
           node --check tests/service-worker.test.mjs
           node --check tests/libcurl-transport.test.mjs
@@ -37,6 +38,7 @@ jobs:
           node --check tests/sessions-api.test.mjs
           node --check tests/blocked.test.mjs
           node --check tests/keepalive.test.mjs
+          node --check tests/games.test.mjs
       - name: Run frontend regression tests
         run: npm test
       - name: Build Cloudflare Worker assets

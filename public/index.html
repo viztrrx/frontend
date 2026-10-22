@@ -112,6 +112,13 @@
 				<pre id="sj-error-code"></pre>
 			</div>
 
+			<!-- saints://games -->
+			<button type="button" id="sj-games-open" class="ss-games-open">
+				<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 9v4M5 11h4M15.5 10.5h.01M17.5 12.5h.01" /><path d="M6.5 6h11a4 4 0 014 4v3.5a3.5 3.5 0 01-6.3 2.1L14 14h-4l-1.2 1.6A3.5 3.5 0 012.5 13.5V10a4 4 0 014-4z" /></svg>
+				<span>Games</span>
+				<span id="sj-games-count" class="ss-games-count"></span>
+			</button>
+
 			<!-- Saved sessions for the signed-in Saints account (sessions.js). -->
 			<section id="sj-sessions" class="ss-sessions" aria-label="Your sessions" hidden>
 				<div class="ss-sess-head">
@@ -131,6 +138,20 @@
 				<p class="ss-apps-label">Apps</p>
 				<div id="sj-apps" class="ss-apps"></div>
 			</section>
+		</main>
+
+		<!-- saints://games: the games library (public/games/), played in the page area. -->
+		<main id="sj-games" class="ss-home ss-games" hidden>
+			<div class="ss-brand ss-games-brand">
+				<h1 class="ss-title">Games</h1>
+				<p class="ss-tagline">Pick a game. It plays right here, no proxy needed.</p>
+			</div>
+			<form id="sj-games-form" class="ss-searchbar" role="search" autocomplete="off">
+				<svg class="ss-search-ic" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6.5" /><path d="M20 20l-4.2-4.2" /></svg>
+				<input id="sj-games-q" type="search" placeholder="Search games" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search" aria-label="Search games" />
+			</form>
+			<p id="sj-games-status" class="ss-games-status" role="status"></p>
+			<div id="sj-games-grid" class="ss-games-grid"></div>
 		</main>
 
 		<!-- The page area under the toolbar: the proxied site's frame goes here. -->
