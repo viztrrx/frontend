@@ -27,3 +27,11 @@ test("Cloudflare's commit variable takes precedence", () => {
   assert.equal(version.commit, sha);
   assert.equal(version.branch, "main");
 });
+
+test("a branch name in Cloudflare's commit variable falls back to git", () => {
+  execFileSync(process.execPath, ["scripts/build.mjs"], {
+    cwd: root, env: { ...process.env, WORKERS_CI_COMMIT_SHA: "main", WORKERS_CI_BRANCH: "main" }, stdio: "ignore",
+  });
+  const version = JSON.parse(readFileSync(new URL("dist/version.json", root), "utf8"));
+  assert.equal(version.commit, execFileSync("git", ["rev-parse", "HEAD"], { cwd: root, encoding: "utf8" }).trim());
+});

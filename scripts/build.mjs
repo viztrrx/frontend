@@ -32,8 +32,10 @@ function git(...args) {
     return "";
   }
 }
+// Only accept a real commit hash: Workers Builds has been seen to pass "main" here.
+const isCommit = (value) => /^[0-9a-f]{7,40}$/i.test(value || "");
 const version = {
-  commit: process.env.WORKERS_CI_COMMIT_SHA || git("rev-parse", "HEAD"),
+  commit: [process.env.WORKERS_CI_COMMIT_SHA, git("rev-parse", "HEAD")].find(isCommit) || "",
   branch: process.env.WORKERS_CI_BRANCH || git("rev-parse", "--abbrev-ref", "HEAD"),
   message: git("log", "-1", "--format=%s"),
   committedAt: git("log", "-1", "--format=%cI"),
