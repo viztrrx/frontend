@@ -15,6 +15,9 @@ async function iconResponse(url) {
   const d = (url.searchParams.get("d") || "").toLowerCase();
   if (!validIconDomain(d)) return new Response("bad domain", { status: 400 });
   const sources = [
+    // Google's faviconV2 returns a clean 64px icon for most sites; the others
+    // are fallbacks if it has none.
+    "https://t3.gstatic.com/faviconV2?client=SOCIAL&type=FAVICON&fallback_opts=TYPE,SIZE,URL&size=64&url=https://" + d,
     "https://icons.duckduckgo.com/ip3/" + d + ".ico",
     "https://www.google.com/s2/favicons?sz=64&domain=" + d,
   ];
