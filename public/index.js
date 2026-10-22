@@ -648,6 +648,53 @@ async function openGameBySlug(slug) {
   else { showStart("games"); if (gamesStatus) gamesStatus.textContent = "There\u2019s no game called \u201c" + slug + "\u201d."; }
 }
 
+// ---- Google results that never show -----------------------------------------
+// Google often holds its results back from proxied visits (traffic from the
+// backend's data-center address): the page loads but stays blank. When a
+// Google search shows no text after a few seconds, offer the same search on
+// DuckDuckGo, which answers proxies normally.
+const altSearchButton = document.getElementById("sj-alt-search");
+const ALT_SEARCH = "https://duckduckgo.com/?q=%s";
+let altSearchTimer = null;
+let altSearchQuery = "";
+function googleQuery(url) {
+  try {
+    const u = new URL(url);
+    return /(^|\.)google\.[a-z.]+$/.test(u.hostname) && u.pathname === "/search" ? (u.searchParams.get("q") || "") : "";
+  } catch { return ""; }
+}
+function visibleTextLength(element) {
+  try { return String(element.contentDocument?.body?.innerText || "").trim().length; } catch { return -1; }
+}
+function hideAltSearch() {
+  clearTimeout(altSearchTimer);
+  altSearchTimer = null;
+  if (altSearchButton) altSearchButton.hidden = true;
+}
+function checkSearchResults(element) {
+  hideAltSearch();
+  const q = googleQuery(frameRealUrl(element));
+  if (!q || !altSearchButton) return;
+  altSearchTimer = setTimeout(() => {
+    if (currentFrame !== element || googleQuery(frameRealUrl(element)) !== q) return;
+    const text = visibleTextLength(element);
+    if (text < 0 || text > 40) return;   // results showed (or the page can't be read)
+    loading.hidden = false;
+    setLoading(false);
+    loadingStatus.textContent = "Google didn\u2019t show results through the proxy (it often holds them back from proxied visits).";
+    altSearchQuery = q;
+    altSearchButton.hidden = false;
+  }, 6000);
+}
+altSearchButton?.addEventListener?.("click", () => {
+  const q = altSearchQuery;
+  hideAltSearch();
+  if (!q || !currentFrame || !currentSjFrame) return;
+  loading.hidden = true;
+  pendingQuery = q;
+  navigateFrame(ALT_SEARCH.replace("%s", encodeURIComponent(q)));
+});
+
 // Remember the search engine; storage can be unavailable.
 function loadPreference(key, apply) {
   try {
@@ -865,6 +912,7 @@ function closeFrame() {
     currentFrame = null;
   }
   currentSjFrame = null;
+  hideAltSearch();
   currentGame = null;
   currentSite = "";
   frameTitle = "";
@@ -1078,6 +1126,7 @@ async function openUrl(url, { retry = false } = {}) {
       }
       if (pageCheckTimer !== null) clearTimeout(pageCheckTimer);
       watchContent();
+      checkSearchResults(element);
     });
     element.addEventListener("error", () => {
       if (currentFrame === element) {

@@ -382,6 +382,10 @@ body.ss {
   color: var(--text); background: var(--field); font: inherit; font-weight: 600; cursor: pointer;
 }
 #sj-show-page:hover { border-color: #3a3a3a; }
+#sj-alt-search {
+  min-height: 40px; padding: 0 16px; border: 0; border-radius: 10px;
+  color: var(--accent-fg); background: var(--accent); font: inherit; font-weight: 600; cursor: pointer;
+}
 
 @media (max-width: 420px) {
   .ss-title { font-size: 26px; }

@@ -33,7 +33,8 @@ function setup({ games = null, epoxyFails = false, libcurlFails = false, wispUrl
     elements.set(id, element);
     return element;
   };
-  for (const id of ["sj-form", "sj-address", "sj-search-engine", "sj-error", "sj-error-code", "sj-progress", "sj-toolbar", "sj-toolbar-status", "sj-loading", "sj-loading-status", "sj-home-btn", "sj-reload", "sj-back", "sj-forward", "sj-show-page", "sj-version", "sj-home", "sj-view", "sj-home-form", "sj-home-q", "sj-omni-ic", "sj-fs", "sj-exit", "sj-tabs", "sj-newtab", "sj-block", "sj-block-title", "sj-block-msg", "sj-block-site", "sj-block-home", "sj-block-console", "sj-games", "sj-games-grid", "sj-games-q", "sj-games-status", "sj-games-count", "sj-games-open", "sj-games-form"]) makeElement(id);
+  for (const id of ["sj-form", "sj-address", "sj-search-engine", "sj-error", "sj-error-code", "sj-progress", "sj-toolbar", "sj-toolbar-status", "sj-loading", "sj-loading-status", "sj-home-btn", "sj-reload", "sj-back", "sj-forward", "sj-show-page", "sj-version", "sj-home", "sj-view", "sj-home-form", "sj-home-q", "sj-omni-ic", "sj-fs", "sj-exit", "sj-tabs", "sj-newtab", "sj-block", "sj-block-title", "sj-block-msg", "sj-block-site", "sj-block-home", "sj-block-console", "sj-games", "sj-games-grid", "sj-games-q", "sj-games-status", "sj-games-count", "sj-games-open", "sj-games-form", "sj-alt-search"]) makeElement(id);
+  elements.get("sj-alt-search").hidden = true;
   elements.get("sj-games").hidden = true;
   elements.get("sj-games-grid").replaceChildren = function (...items) { this.items = items; this.children = items; };
   elements.get("sj-games-grid").querySelector = function () { return (this.items || [])[0] || null; };
@@ -960,4 +961,40 @@ test("games: in the console, a game takes the keyboard and the console is told w
   // Not a game: nothing sent.
   x.elements.get("sj-home-btn").dispatch("click");
   assert.deepEqual(games(), [true, false]);
+});
+
+test("a blank Google results page offers the same search on DuckDuckGo", async () => {
+  const x = setup({ realUrls: true });
+  x.elements.get("sj-address").value = "www.google.com/search?q=tiktok";
+  await x.submit();
+  const frame = x.frames[0];
+  // Google's page loaded but shows nothing (held back from the proxy).
+  frame.contentDocument.body.innerText = "";
+  frame.contentDocument.body.querySelector = () => ({});   // invisible scripts/svgs count as "content"
+  frame.dispatch("load");
+  await x.advance(6000);
+  const alt = x.elements.get("sj-alt-search");
+  assert.equal(alt.hidden, false);
+  assert.equal(x.elements.get("sj-loading").hidden, false);
+  assert.match(x.elements.get("sj-loading-status").textContent, /Google didn\u2019t show results/);
+  alt.dispatch("click");
+  assert.equal(frame.url, "https://duckduckgo.com/?q=tiktok");
+  assert.equal(alt.hidden, true);
+});
+
+test("Google results that do show aren't interrupted", async () => {
+  const x = setup({ realUrls: true });
+  x.elements.get("sj-address").value = "www.google.com/search?q=cats";
+  await x.submit();
+  x.frames[0].contentDocument.body.innerText = "About 1,000,000 results. Cats are small domesticated carnivorous mammals...";
+  x.frames[0].dispatch("load");
+  await x.advance(6000);
+  assert.equal(x.elements.get("sj-alt-search").hidden, true);
+  assert.equal(x.elements.get("sj-loading").hidden, true);
+});
+
+test("Google stays the default search engine", () => {
+  const html = readFileSync(new URL("../public/index.html", import.meta.url), "utf8");
+  assert.match(html, /<option value="https:\/\/www\.google\.com\/search\?q=%s">Google<\/option>/);
+  assert.doesNotMatch(html, /selected>/);
 });
