@@ -30,7 +30,7 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
     elements.set(id, element);
     return element;
   };
-  for (const id of ["sj-form", "sj-address", "sj-search-engine", "sj-error", "sj-error-code", "sj-progress", "sj-toolbar", "sj-toolbar-status", "sj-loading", "sj-loading-status", "sj-home-btn", "sj-reload", "sj-back", "sj-forward", "sj-fulltab", "sj-show-page", "sj-version", "sj-home", "sj-view", "sj-home-form", "sj-home-q", "sj-omni-ic", "sj-fs", "sj-exit", "sj-tabs", "sj-newtab"]) makeElement(id);
+  for (const id of ["sj-form", "sj-address", "sj-search-engine", "sj-error", "sj-error-code", "sj-progress", "sj-toolbar", "sj-toolbar-status", "sj-loading", "sj-loading-status", "sj-home-btn", "sj-reload", "sj-back", "sj-forward", "sj-show-page", "sj-version", "sj-home", "sj-view", "sj-home-form", "sj-home-q", "sj-omni-ic", "sj-fs", "sj-exit", "sj-tabs", "sj-newtab"]) makeElement(id);
   // The tab strip: keeps the rendered tabs so tests can read and click them.
   elements.get("sj-tabs").replaceChildren = function (...items) { this.items = items; };
   // The proxied page goes in the page area under the toolbar.
@@ -39,7 +39,6 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
     this.textContent += nodes.map((node) => typeof node === "string" ? node : node.textContent).join("");
     this.children = nodes;
   };
-  elements.get("sj-fulltab").checked = false;
   elements.get("sj-search-engine").value = "https://www.google.com/search?q=%s";
   elements.get("sj-search-engine").options = [
     { value: "https://www.google.com/search?q=%s" }, { value: "https://duckduckgo.com/?q=%s" },
@@ -147,6 +146,7 @@ function setup({ wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails 
     localStorage: {
       getItem: (key) => (key in storage ? storage[key] : null),
       setItem: (key, value) => { storage[key] = String(value); },
+      removeItem: (key) => { delete storage[key]; },
     },
     WebSocket: MockWebSocket,
     SharedWorker: class MockSharedWorker {},
@@ -324,21 +324,17 @@ test("content appearing before the load event uncovers the page", async () => {
   assert.equal(x.elements.get("sj-toolbar-status").textContent, "Website content detected");
 });
 
-test("full-tab mode opens the proxied site in the tab instead of a frame", async () => {
+test("sites always open in the frame under the toolbar, even with the old full-tab setting", async () => {
   const x = setup({ storage: { "sj-fulltab": "true" } });
-  assert.equal(x.elements.get("sj-fulltab").checked, true);
+  assert.equal(x.storage["sj-fulltab"], undefined, "the old setting is cleared");
   await x.submit();
-  assert.equal(x.transports.length, 1, "transport is configured before leaving the page");
-  assert.equal(x.frames.length, 0);
-  assert.deepEqual(x.assigned, ["/scramjet/" + encodeURIComponent("https://example.com")]);
+  assert.equal(x.frames.length, 1);
+  assert.deepEqual(x.assigned, [], "the page itself never navigates away");
 });
 
-test("search engine and full-tab choices are remembered", async () => {
+test("the search engine choice is remembered", async () => {
   const x = setup({ storage: { "sj-search-engine": "https://duckduckgo.com/?q=%s" } });
   assert.equal(x.elements.get("sj-search-engine").value, "https://duckduckgo.com/?q=%s");
-  x.elements.get("sj-fulltab").checked = true;
-  x.elements.get("sj-fulltab").dispatch("change");
-  assert.equal(x.storage["sj-fulltab"], "true");
 });
 
 test("shows the deployed commit from version.json", async () => {

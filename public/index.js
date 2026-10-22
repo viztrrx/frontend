@@ -15,7 +15,6 @@ const homeButton = document.getElementById("sj-home-btn");
 const reloadButton = document.getElementById("sj-reload");
 const backButton = document.getElementById("sj-back");
 const forwardButton = document.getElementById("sj-forward");
-const fullTab = document.getElementById("sj-fulltab");
 const showPageButton = document.getElementById("sj-show-page");
 const homePage = document.getElementById("sj-home");
 const view = document.getElementById("sj-view");
@@ -340,7 +339,7 @@ function frameUrlChanged(url) {
   syncNav();
 }
 
-// Remember the search engine and full-tab choice; storage can be unavailable.
+// Remember the search engine; storage can be unavailable.
 function loadPreference(key, apply) {
   try {
     const value = localStorage.getItem(key);
@@ -353,9 +352,10 @@ function savePreference(key, value) {
 loadPreference("sj-search-engine", (value) => {
   if ([...(searchEngine.options || [])].some((option) => option.value === value)) searchEngine.value = value;
 });
-loadPreference("sj-fulltab", (value) => { if (fullTab) fullTab.checked = value === "true"; });
 searchEngine.addEventListener?.("change", () => savePreference("sj-search-engine", searchEngine.value));
-fullTab?.addEventListener?.("change", () => savePreference("sj-fulltab", String(fullTab.checked)));
+// Sites always open under the toolbar, like Chrome: the old "full tab"
+// option (it replaced this page, toolbar and all) is gone with its setting.
+try { localStorage.removeItem("sj-fulltab"); } catch {}
 
 function describeHttpStatus(status, message) {
   if (message) return "Proxy error (HTTP " + status + "): " + message;
@@ -604,15 +604,6 @@ async function openUrl(url) {
       throw new Error("BareMux reports an unexpected transport: " + String(transportName));
     }
 
-    // In the console's frame, always browse in-frame: a full-tab navigation
-    // would replace the console's own frame and stop the activity reports.
-    if (fullTab?.checked && !parentConsole) {
-      // The site replaces this page; the browser's own Back button returns here.
-      showProgress("Opening website…");
-      location.assign(scramjet.encodeUrl(url));
-      return;
-    }
-
     showProgress("Loading website…");
     const frame = scramjet.createFrame();
     if (!frame || !frame.frame) throw new Error("Scramjet did not create a browser frame.");
@@ -698,7 +689,7 @@ async function openUrl(url) {
         loading.hidden = false;
         loadingStatus.textContent = navigationResponseStatus === null
           ? "No completed proxied webpage was detected. The iframe may not be intercepted by Scramjet's service worker. Try Retry or check browser developer tools."
-          : "The website responded (HTTP " + navigationResponseStatus + ") but is still blank. Try Retry, another website, or the full-tab option.";
+          : "The website responded (HTTP " + navigationResponseStatus + ") but is still blank. Try Retry or another website.";
         toolbarStatus.textContent = "Website still blank";
       }
     }, 35000);
@@ -835,7 +826,7 @@ void showVersion();
 
 homeButton?.addEventListener?.("click", () => closeFrame());
 showPageButton?.addEventListener?.("click", () => { loading.hidden = true; setLoading(false); });
-// Returning from a full-tab site through the back/forward cache restores this page.
+// Coming back to this page through the back/forward cache: start on saints://home.
 window.addEventListener?.("pageshow", (event) => { if (event.persisted) closeFrame(); });
 // Reload the page; after a failure, reconnect from scratch (refreshes the
 // Wisp transport). On saints://home there is nothing to reload.
