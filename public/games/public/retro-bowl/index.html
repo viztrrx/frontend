@@ -18,6 +18,10 @@
             }
             canvas {
                       image-rendering: optimizeSpeed;
+                      image-rendering: -moz-crisp-edges;
+                      image-rendering: -webkit-optimize-contrast;
+                      image-rendering: crisp-edges;
+                      image-rendering: pixelated;
                       -webkit-interpolation-mode: nearest-neighbor;
                       -ms-touch-action: none;
                       margin: 0px;
@@ -73,8 +77,56 @@
                      <p>Your browser doesn't support HTML5 canvas.</p>
             </canvas>
             <script>
-                document.querySelector('canvas').width = window.innerWidth;
-                document.querySelector('canvas').height = window.innerHeight;
+                // Fit the game to the frame it's in.
+                //
+                // The menus draw on GameMaker's GUI layer, which it scales to the
+                // canvas, so they fill the frame on their own. A match doesn't:
+                // starting one calls window_set_size(960, 540), and the runtime
+                // answers that by setting the canvas's width/height attributes and
+                // nothing else, so the canvas collapses to 960x540 CSS pixels and
+                // the match sits unscaled in the top-left corner.
+                //
+                // So leave the drawing size to the game and set only the CSS size:
+                // scale the canvas up to fill the frame, keeping its aspect ratio
+                // and centering what's left over. The runtime recomputes mouse
+                // coordinates from clientWidth/width every frame, so clicks, drags
+                // and touches still land where they look like they do.
+                (function () {
+                  var canvas = document.querySelector('canvas');
+                  canvas.width = window.innerWidth;
+                  canvas.height = window.innerHeight;
+
+                  function set(prop, value) {
+                    // Only write when it actually changes: the observer below
+                    // watches the style attribute, so idle writes would loop.
+                    if (canvas.style[prop] !== value) canvas.style[prop] = value;
+                  }
+                  function fit() {
+                    var w = canvas.width, h = canvas.height;
+                    var availW = window.innerWidth, availH = window.innerHeight;
+                    if (!w || !h || !availW || !availH) return;
+                    var scale = Math.min(availW / w, availH / h);
+                    var dw = Math.round(w * scale), dh = Math.round(h * scale);
+                    set('position', 'absolute');
+                    set('left', Math.round((availW - dw) / 2) + 'px');
+                    set('top', Math.round((availH - dh) / 2) + 'px');
+                    set('width', dw + 'px');
+                    set('height', dh + 'px');
+                  }
+
+                  // The game resizes the canvas itself (kickoff, leaving a match)
+                  // and moves it on fullscreen, so follow the canvas as well as
+                  // the frame.
+                  if (window.MutationObserver) {
+                    new MutationObserver(fit).observe(canvas,
+                      { attributes: true, attributeFilter: ['width', 'height', 'style'] });
+                  }
+                  window.addEventListener('resize', fit);
+                  window.addEventListener('orientationchange', fit);
+                  document.addEventListener('fullscreenchange', fit);
+                  document.addEventListener('webkitfullscreenchange', fit);
+                  fit();
+                })();
             </script>
         </div>
 
