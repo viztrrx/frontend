@@ -62,7 +62,7 @@ function inspect() {
   if (error) return { state: "error", detail: (error + " " + text(document.getElementById("sj-error-code"))).trim() };
   const frame = document.querySelector("iframe.sj-frame");
   const address = document.getElementById("sj-address");
-  const out = { state: "waiting", address: address ? address.value : "", status: text(document.getElementById("sj-toolbar-status")), textLength: 0, images: 0, canvases: 0, videos: 0, playingVideo: false, title: "", sample: "" };
+  const out = { state: "waiting", address: address ? address.value : "", status: text(document.getElementById("sj-toolbar-status")), failure: text(document.getElementById("sj-loading-status")), textLength: 0, images: 0, canvases: 0, videos: 0, playingVideo: false, title: "", sample: "" };
   if (!frame) return out;
   let doc;
   try { doc = frame.contentDocument; } catch { return { ...out, state: "opaque" }; }
@@ -114,6 +114,8 @@ async function checkSite(context, site) {
       state = await page.evaluate(inspect).catch(() => ({ state: "waiting" }));
       if (state.state === "blocked" || state.state === "error") break;
       if (/^Proxy error/i.test(state.status || "")) { state = { ...state, state: "error", detail: state.status }; break; }
+      // index.js gave up on the page (after retrying with the other transport).
+      if (state.status === "Website request failed") { state = { ...state, state: "error", detail: state.failure || state.status }; break; }
       if (contentAt === null && hasContent(state)) contentAt = Date.now();
       // Once content shows, give it a few seconds to finish (or start a video).
       if (contentAt !== null && (Date.now() - contentAt > 4000 || (!site.media || state.playingVideo) && Date.now() - contentAt > 1500)) break;
@@ -218,7 +220,7 @@ const lines = [
   "",
   `**${passed}/${results.length} sites working**, ${report.partial} partly, ${report.failed} failing. Median time to content: **${secs(median)}**.`,
   "",
-  `Frontend build \`${commit}\`${version.message ? ` (${version.message})` : ""}, tested ${report.testedAt.replace("T", " ").slice(0, 16)} UTC.`,
+  `Frontend build \`${commit}\`${version.message ? ` (${version.message})` : ""}${version.engine ? `, Scramjet ${version.engine === 2 ? "2" : "1.1"}` : ""}, tested ${report.testedAt.replace("T", " ").slice(0, 16)} UTC.`,
   "",
 ];
 if (previous) {

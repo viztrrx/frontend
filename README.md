@@ -81,6 +81,28 @@ Storage: the `SESSIONS` binding in `wrangler.jsonc` points at the R2 bucket **`d
 - **One connection per visit.** The backend check, Scramjet, the service worker and the transport are set up once, when Saints Search finishes loading (with one small request to the backend's `/health` to start the TLS engine). Every site opened after that uses the same connection.
 - **Backend region.** For Florida, the backend should be in Render's **Virginia** region. Render can't move a service, so create a new one there, then set its address in `public/config.js`.
 
+## Scramjet 2 beta (`frontend-beta`)
+
+The same site can be built on **Scramjet 2** (`@mercuryworkshop/scramjet` 2.0.67-alpha.2), the next version of the proxy engine, with many site fixes since 1.1. It runs as a second Worker, **`https://frontend-beta.viztrrx.workers.dev`**, so it can be compared with production before switching. Production is untouched.
+
+- **Build:** `pnpm build:beta` (`SCRAMJET_ENGINE=2`). `scripts/build.mjs` then ships Scramjet 2, its controller, `libcurl-transport` 2 and `epoxy-transport` 3 (installed under the aliases `scramjet2`, `scramjet-controller2`, `libcurl-transport2`, `epoxy-transport3`), uses `public/sw2.js` as `/sw.js`, and loads `public/engine2.js` in place of Scramjet 1.1 and BareMux. `version.json` says `"engine": 2`.
+- **How it differs:** Scramjet 2 fetches and rewrites in the page, and the transport (libcurl or Epoxy) runs in the page too; there's no BareMux SharedWorker. `public/engine2.js` gives `index.js` the same controller, frame and BareMux functions it uses with 1.1, blocks `blocked.js` sites and reports navigation status from Scramjet 2's hooks. Scramjet 2 saves its cookie jar itself, so `sw2.js` is small: it routes requests to the page and answers saved-session requests from the jar in IndexedDB.
+- **Sessions:** the beta Worker keeps saved sessions under `proxy-sessions-beta/` (`SESSIONS_PREFIX` in `wrangler.beta.jsonc`), apart from production's.
+- **Checked:** the Site check runs against both Workers, so their tables can be compared on each run's summary page.
+
+### Set up the beta Worker (once)
+
+In Cloudflare: **Workers & Pages → Create → Import a repository → `viztrrx/frontend`**, then:
+
+| Setting | Value |
+| --- | --- |
+| Worker name | `frontend-beta` |
+| Production branch | `main` |
+| Build command | `pnpm build:beta` |
+| Deploy command | `npx wrangler deploy --config wrangler.beta.jsonc` |
+
+Every push to `main` then deploys both Workers. To move production to Scramjet 2 later, change the production Worker's build command to `pnpm build:beta` (the Worker name stays `frontend`, set by `wrangler.jsonc`).
+
 ## Site check (which sites work, and how fast)
 
 `.github/workflows/site-check.yml` opens about 30 popular sites (`site-check/sites.json`) through the live proxy in headless Chrome every 6 hours, and records for each one whether it showed content, how long that took, and a screenshot.
