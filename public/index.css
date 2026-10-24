@@ -313,6 +313,20 @@ body.ss {
 .ss-sess-badge { padding: 4px 10px; border-radius: 999px; background: #2c2c2c; color: var(--text); font-size: 12px; font-weight: 600; }
 .ss-sess-msg { margin: 8px 0 0; min-height: 1em; color: var(--sub); font-size: 13px; text-align: left; }
 .ss-sess-msg.is-error { color: var(--danger); }
+.ss-sess-status { margin-left: 6px; padding: 1px 8px; border-radius: 999px; background: #2a2a2a; color: var(--sub); font-size: 11px; font-weight: 600; vertical-align: 1px; }
+.ss-sess-status.is-active { background: var(--accent); color: var(--accent-fg); }
+.ss-pick { position: fixed; inset: 0; z-index: 50; display: grid; place-items: center; padding: 16px; background: rgba(0, 0, 0, 0.6); }
+.ss-pick[hidden] { display: none; }
+.ss-pick-box { width: min(560px, 100%); max-height: calc(100vh - 32px); overflow: auto; padding: 20px; border: 1px solid #2c2c2c; border-radius: 14px; background: #181818; color: var(--text); text-align: left; }
+.ss-pick-title { margin: 0 0 6px; font-size: 18px; }
+.ss-pick-text { margin: 0 0 14px; color: var(--sub); font-size: 13.5px; }
+.ss-pick-label { display: block; margin-bottom: 6px; font-size: 13px; font-weight: 600; }
+.ss-pick-row { display: flex; gap: 8px; }
+.ss-pick-input { flex: 1; min-width: 0; padding: 8px 12px; border: 1px solid #333; border-radius: 10px; background: #111; color: var(--text); font: inherit; }
+.ss-pick-input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.ss-pick-error { min-height: 1em; margin: 6px 0 0; color: var(--danger); font-size: 13px; }
+.ss-pick-saved { margin-top: 12px; }
+.ss-pick-foot { display: flex; justify-content: flex-end; margin-top: 14px; }
 
 /* ---- Inline messages ---- */
 .ss-msg { max-width: 560px; }

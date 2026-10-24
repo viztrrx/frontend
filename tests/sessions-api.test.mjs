@@ -128,3 +128,24 @@ test("SESSIONS_PREFIX keeps the beta Worker's sessions apart", async () => {
   assert.equal((await call(prod, "GET", "/sessions", "tok-ivan")).data.sessions.length, 0);
   assert.equal((await call(beta, "GET", "/sessions", "tok-ivan")).data.sessions.length, 1);
 });
+
+test("a refused sign-in says why, and a non-JSON answer is reported as unreachable", async () => {
+  const env = { SESSIONS: fakeBucket(), AUTH_BASE: "https://auth.test" };
+  const saved = globalThis.fetch;
+  try {
+    globalThis.fetch = async () => new Response(JSON.stringify({ ok: false, error: "not signed in", reason: "signed_in_elsewhere" }), { status: 401 });
+    let r = await call(env, "GET", "/sessions", "tok-elsewhere");
+    assert.equal(r.status, 401);
+    assert.match(r.data.error, /signed in somewhere else/);
+    globalThis.fetch = async () => new Response(JSON.stringify({ ok: false, reason: "invalid_or_expired" }), { status: 401 });
+    r = await call(env, "GET", "/sessions", "tok-expired");
+    assert.match(r.data.error, /expired/);
+    // Cloudflare's error page (e.g. 1042, a Worker fetching another on the same subdomain).
+    globalThis.fetch = async () => new Response("<html>error code: 1042</html>", { status: 403, headers: { "content-type": "text/html" } });
+    r = await call(env, "GET", "/sessions", "tok-1042");
+    assert.equal(r.status, 502);
+    assert.match(r.data.error, /HTTP 403/);
+  } finally {
+    globalThis.fetch = saved;
+  }
+});

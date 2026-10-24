@@ -36,25 +36,36 @@ function randomId() {
   return [...crypto.getRandomValues(new Uint8Array(16))].map((b) => b.toString(16).padStart(2, "0")).join("");
 }
 
-// The account a sign-in token belongs to, or null.
+// The account a sign-in token belongs to: { user } or { user: null, reason }
+// (the Saints Worker's reason for refusing it). Throws when the Saints Worker
+// can't be reached or doesn't answer with JSON.
 async function accountFor(token, env) {
-  if (!token || token.length > 4096) return null;
+  if (!token || token.length > 4096) return { user: null, reason: "no_session" };
   const cached = authCache.get(token);
-  if (cached && cached.until > Date.now()) return cached.user;
+  if (cached && cached.until > Date.now()) return { user: cached.user };
   const base = String(env.AUTH_BASE || DEFAULT_AUTH_BASE).replace(/\/+$/, "");
-  let user = null;
+  let r;
   try {
-    const r = await fetch(base + "/auth/me", { headers: { "X-GPA-Session": token } });
-    const d = await r.json().catch(() => null);
-    if (r.ok && d && d.ok && d.account && typeof d.account.user === "string" && d.account.user) {
-      user = d.account.user.toLowerCase();
-    }
-  } catch {
-    throw new Error("auth unreachable");
+    r = await fetch(base + "/auth/me", { headers: { "X-GPA-Session": token } });
+  } catch (cause) {
+    throw new Error("unreachable (" + (cause && cause.message || cause) + ")");
   }
-  if (authCache.size > 500) authCache.clear();
-  if (user) authCache.set(token, { user, until: Date.now() + AUTH_CACHE_MS });
-  return user;
+  const d = await r.json().catch(() => null);
+  if (!d || typeof d !== "object") throw new Error("HTTP " + r.status + " without an answer");
+  if (r.ok && d.ok && d.account && typeof d.account.user === "string" && d.account.user) {
+    const user = d.account.user.toLowerCase();
+    if (authCache.size > 500) authCache.clear();
+    authCache.set(token, { user, until: Date.now() + AUTH_CACHE_MS });
+    return { user };
+  }
+  return { user: null, reason: String(d.reason || d.error || "HTTP " + r.status).slice(0, 120) };
+}
+// What the page shows when the Saints Worker refused the sign-in.
+function signInMessage(reason) {
+  if (reason === "signed_in_elsewhere") return "Your Saints account signed in somewhere else, which signed this one out. Sign in again in the Saints console.";
+  if (reason === "invalid_or_expired" || reason === "revoked") return "Your Saints sign-in has expired. Sign in again in the Saints console.";
+  if (reason === "no_session") return "Sign in to Saints to use saved sessions.";
+  return "Saints didn't accept this sign-in (" + reason + "). Sign in again in the Saints console.";
 }
 
 function cleanName(value, fallback) {
@@ -123,13 +134,15 @@ export async function handleSessions(request, env, url) {
   if (!bucket) return fail(503, "Saved sessions aren't set up on this server (no SESSIONS bucket).");
   if (request.headers.get("Origin") && request.headers.get("Origin") !== url.origin) return fail(403, "forbidden");
 
-  let user;
+  let auth;
   try {
-    user = await accountFor(request.headers.get("X-GPA-Session") || "", env);
-  } catch {
-    return fail(502, "Can't reach the Saints sign-in server right now.");
+    auth = await accountFor(request.headers.get("X-GPA-Session") || "", env);
+  } catch (cause) {
+    console.error("Saints sign-in check failed:", cause.message);
+    return fail(502, "Can't check your Saints sign-in right now (" + cause.message + ").");
   }
-  if (!user) return fail(401, "Sign in to Saints to use saved sessions.");
+  if (!auth.user) return fail(401, signInMessage(auth.reason));
+  const user = auth.user;
 
   // SESSIONS_PREFIX keeps another deployment's sessions apart (the beta Worker).
   const prefix = (env.SESSIONS_PREFIX || PREFIX) + (await sha256Hex(user)) + "/";

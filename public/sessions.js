@@ -35,6 +35,7 @@
   let account = null;        // { user, token } from the console
   let sessions = [];         // this account's saved sessions (metadata)
   let loaded = false;        // list fetched for the current account
+  let loadError = false;     // the list couldn't be fetched (browsing isn't held up then)
   let working = false;       // a resume/new/delete is running
   let lastSaved = "";        // the snapshot last saved for the active session
   let saving = null;
@@ -143,9 +144,8 @@
   }
 
   // Saves the active session if it belongs to the signed-in account and
-  // something changed. Quiet unless it fails.
-  function save() {
-    saving ??= (async () => {
+  // something changed. persist() throws on failure; save() only reports it.
+  async function persist() {
       const active = readActive();
       if (!mine(active)) return;
       const snap = await snapshot();
@@ -166,7 +166,10 @@
           say("This session was deleted on another device. Save it again to keep these sign-ins.", true);
         } else throw cause;
       }
-    })().catch((cause) => { say("Couldn't save your session: " + cause.message, true); })
+  }
+  function save() {
+    saving ??= persist()
+      .catch((cause) => { say("Couldn't save your session: " + cause.message, true); })
       .finally(() => { saving = null; });
     return saving;
   }
@@ -175,16 +178,19 @@
   function browserBusy() {
     return !!(globalThis.saintsBrowser && globalThis.saintsBrowser.isBusy());
   }
+  // Runs one action at a time; true when it finished without an error.
   async function run(label, fn) {
-    if (working || !account) return;
-    if (browserBusy()) { say("Wait for the page to finish opening, then try again.", true); return; }
+    if (working || !account) return false;
+    if (browserBusy()) { say("Wait for the page to finish opening, then try again.", true); return false; }
     working = true;
     render();
     say(label);
     try {
       await fn();
+      return true;
     } catch (cause) {
       say(cause.message || String(cause), true);
+      return false;
     } finally {
       working = false;
       render();
@@ -213,11 +219,11 @@
       say("“" + d.session.name + "” is open. Sites you open now use its sign-ins.");
     });
   }
-  function startNew() {
-    return run("Starting a new session…", async () => {
+  function startNew(name) {
+    return run("Starting “" + name + "”…", async () => {
       const active = readActive();
       if (mine(active)) await save();
-      const d = await api("POST", "", {});
+      const d = await api("POST", "", { name });
       closeTabs();
       await clearHere();
       writeActive({ user: account.user, id: d.session.id, name: d.session.name });
@@ -228,13 +234,30 @@
   // Keeps what's signed in right now (used before sessions existed, or after
   // leaving a session) as a new saved session.
   function saveCurrent() {
+    const name = typeof prompt === "function" ? prompt("Name this session", "") : null;
+    if (name === null || !name.trim()) return;
     return run("Saving…", async () => {
-      const d = await api("POST", "", {});
+      const d = await api("POST", "", { name: name.trim() });
       writeActive({ user: account.user, id: d.session.id, name: d.session.name });
       sessions.unshift(d.session);
       lastSaved = "";
       await save();
       say("Saved as “" + d.session.name + "”.");
+    });
+  }
+  // Stops using the active session: it's saved, every tab closes and the
+  // sign-ins leave this browser until it's resumed. Nothing is cleared if the
+  // save fails.
+  function pause() {
+    const active = readActive();
+    if (!mine(active)) return;
+    return run("Pausing “" + active.name + "”…", async () => {
+      if (saving) await saving;
+      await persist();
+      closeTabs();
+      await clearHere();
+      writeActive(null);
+      say("“" + active.name + "” is paused. Resume it to pick up where you left off.");
     });
   }
   function rename(s) {
@@ -273,9 +296,11 @@
       const d = await api("GET", "");
       sessions = d.sessions || [];
       loaded = true;
+      loadError = false;
       const active = readActive();
       if (mine(active) && !sessions.some((s) => s.id === active.id)) writeActive(null);
     } catch (cause) {
+      loadError = true;
       say(cause.message, true);
     }
     render();
@@ -287,6 +312,8 @@
     if (!changedUser) { render(); return; }
     sessions = [];
     loaded = false;
+    loadError = false;
+    closePicker();
     say("");
     const active = readActive();
     if (account && active && active.user !== account.user) {
@@ -340,40 +367,134 @@
     newBtn.disabled = working;
     saveBtn.hidden = !!activeId;
     saveBtn.disabled = working;
-    currentEl.textContent = !loaded ? "Loading your sessions…"
+    currentEl.textContent = !loaded ? (loadError ? "Your sessions couldn't be loaded." : "Loading your sessions…")
       : activeId ? "Using “" + (sessions.find((s) => s.id === activeId) || active).name + "”. New sign-ins are saved to it automatically."
-      : sessions.length ? "Pick a session to continue where you left off, or start a new one."
-      : "No saved sessions yet. Start one and the sites you sign in to stay signed in next time.";
+      : sessions.length ? "Resume a session or start a new one to start browsing."
+      : "Start a session to start browsing: the sites you sign in to stay signed in next time.";
 
-    const items = sessions.map((s) => {
-      const li = document.createElement("li");
-      li.className = "ss-sess" + (s.id === activeId ? " is-active" : "");
-      const info = document.createElement("div");
-      info.className = "ss-sess-info";
-      const name = document.createElement("span");
-      name.className = "ss-sess-name";
-      name.textContent = s.name;
-      const meta = document.createElement("span");
-      meta.className = "ss-sess-meta";
-      const sites = (s.sites || []).slice(0, 4).join(", ") + ((s.sites || []).length > 4 ? " +" + (s.sites.length - 4) : "");
-      meta.textContent = (sites || "No sites yet") + (s.updatedAt ? " · " + ago(s.updatedAt) : "");
-      info.append(name, meta);
-      const buttons = document.createElement("div");
-      buttons.className = "ss-sess-btns";
-      buttons.append(
-        s.id === activeId
-          ? Object.assign(document.createElement("span"), { className: "ss-sess-badge", textContent: "Active" })
-          : button("Resume", "is-primary", () => resume(s), working),
-        button("Rename", "", () => rename(s), working),
-        button("Delete", "is-danger", () => remove(s), working),
-      );
-      li.append(info, buttons);
-      return li;
-    });
-    listEl.replaceChildren(...items);
+    listEl.replaceChildren(...sessions.map((s) => sessionItem(s, activeId, true)));
+    if (picker && !picker.hidden) renderPicker();
   }
 
-  newBtn.addEventListener("click", () => startNew());
+  // ---- Labels ---------------------------------------------------------------
+  function when(ms) {
+    if (!ms) return "";
+    try { return new Date(ms).toLocaleString(undefined, { month: "short", day: "numeric", hour: "numeric", minute: "2-digit" }); } catch { return ""; }
+  }
+  function siteList(s) {
+    const sites = s.sites || [];
+    if (!sites.length) return "No sign-ins saved yet";
+    return (sites.length === 1 ? "1 site: " : sites.length + " sites: ") + sites.slice(0, 4).join(", ") + (sites.length > 4 ? " +" + (sites.length - 4) + " more" : "");
+  }
+  // One session in a list: its name, status, when it was made and last used,
+  // and the sites it has sign-ins for. full adds Pause/Rename/Delete.
+  function sessionItem(s, activeId, full) {
+    const li = document.createElement("li");
+    const isActive = s.id === activeId;
+    li.className = "ss-sess" + (isActive ? " is-active" : "");
+    const info = document.createElement("div");
+    info.className = "ss-sess-info";
+    const name = document.createElement("span");
+    name.className = "ss-sess-name";
+    name.textContent = s.name;
+    const badge = document.createElement("span");
+    badge.className = "ss-sess-status" + (isActive ? " is-active" : "");
+    badge.textContent = isActive ? "Active" : "Paused";
+    name.append(" ", badge);
+    const dates = document.createElement("span");
+    dates.className = "ss-sess-meta";
+    dates.textContent = [s.createdAt ? "Created " + when(s.createdAt) : "", s.updatedAt ? "last used " + ago(s.updatedAt) : ""].filter(Boolean).join(" · ");
+    const sites = document.createElement("span");
+    sites.className = "ss-sess-meta";
+    sites.textContent = siteList(s);
+    sites.title = (s.sites || []).join(", ");
+    info.append(name, dates, sites);
+    const buttons = document.createElement("div");
+    buttons.className = "ss-sess-btns";
+    if (isActive) {
+      if (full) buttons.append(button("Pause", "", () => pause(), working));
+    } else {
+      buttons.append(button("Resume", "is-primary", () => resumeThenOpen(s), working));
+    }
+    if (full) buttons.append(button("Rename", "", () => rename(s), working), button("Delete", "is-danger", () => remove(s), working));
+    li.append(info, buttons);
+    return li;
+  }
+
+  // ---- Starting or resuming before browsing --------------------------------
+  // Signed in from the console, sites only open inside a session, so what
+  // people do is saved to one they can find again. The picker asks for a name
+  // for a new session or offers the saved ones; the site they were opening
+  // opens once one is active.
+  let picker = null;
+  let pendingOpen = null;
+  function buildPicker() {
+    picker = document.createElement("div");
+    picker.className = "ss-pick";
+    picker.hidden = true;
+    picker.setAttribute("role", "dialog");
+    picker.setAttribute("aria-modal", "true");
+    picker.setAttribute("aria-labelledby", "ss-pick-title");
+    picker.innerHTML =
+      '<div class="ss-pick-box">' +
+      '<h2 id="ss-pick-title" class="ss-pick-title">Start a session</h2>' +
+      '<p class="ss-pick-text">A session keeps your sign-ins and site data, so you can come back to it later. Name a new one, or resume one you started before.</p>' +
+      '<form class="ss-pick-form"><label class="ss-pick-label" for="ss-pick-name">Session name</label>' +
+      '<div class="ss-pick-row"><input id="ss-pick-name" class="ss-pick-input" type="text" maxlength="60" autocomplete="off" placeholder="For example: Homework, Music, Games" />' +
+      '<button type="submit" class="ss-sess-btn is-primary">Start session</button></div>' +
+      '<p class="ss-pick-error" role="alert"></p></form>' +
+      '<div class="ss-pick-saved"><p class="ss-apps-label">Or resume</p><ul class="ss-sess-list"></ul></div>' +
+      '<div class="ss-pick-foot"><button type="button" class="ss-sess-btn ss-pick-cancel">Cancel</button></div>' +
+      "</div>";
+    const form = picker.querySelector("form");
+    const input = picker.querySelector("input");
+    const error = picker.querySelector(".ss-pick-error");
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const name = input.value.replace(/\s+/g, " ").trim();
+      if (!name) { error.textContent = "Give the session a name."; input.focus(); return; }
+      error.textContent = "";
+      if (await startNew(name)) finishPicker();
+      else error.textContent = msgEl.textContent || "The session couldn't be started.";
+    });
+    picker.querySelector(".ss-pick-cancel").addEventListener("click", () => closePicker());
+    picker.addEventListener("keydown", (event) => { if (event.key === "Escape") closePicker(); });
+    document.body.appendChild(picker);
+  }
+  function renderPicker() {
+    const list = picker.querySelector(".ss-sess-list");
+    list.replaceChildren(...sessions.map((s) => sessionItem(s, "", false)));
+    picker.querySelector(".ss-pick-saved").hidden = !sessions.length;
+    for (const el of picker.querySelectorAll("button, input")) el.disabled = working;
+  }
+  function openPicker(onReady) {
+    if (!account) return;
+    if (!picker) buildPicker();
+    pendingOpen = typeof onReady === "function" ? onReady : null;
+    picker.querySelector(".ss-pick-error").textContent = "";
+    picker.querySelector("input").value = "";
+    renderPicker();
+    picker.hidden = false;
+    picker.querySelector("input").focus();
+  }
+  function closePicker() {
+    if (picker) picker.hidden = true;
+    pendingOpen = null;
+  }
+  function finishPicker() {
+    const next = pendingOpen;
+    closePicker();
+    if (next) next();
+  }
+  async function resumeThenOpen(s) {
+    if (await resume(s) && picker && !picker.hidden) finishPicker();
+  }
+  // Whether opening a site has to wait for a session (index.js asks).
+  function required() {
+    return embedded && !!account && loaded && !loadError && !mine(readActive());
+  }
+
+  newBtn.addEventListener("click", () => openPicker(null));
   saveBtn.addEventListener("click", () => saveCurrent());
 
   // Keep the active session saved: on a timer while browsing, when the tab is
@@ -382,7 +503,11 @@
   document.addEventListener("visibilitychange", () => {
     if (document.visibilityState === "hidden" && !working && mine(readActive())) void save();
   });
-  globalThis.saintsSessions = { changed: () => { if (!working && mine(readActive())) void save(); } };
+  globalThis.saintsSessions = {
+    changed: () => { if (!working && mine(readActive())) void save(); },
+    required,
+    ask: (onReady) => openPicker(onReady),
+  };
 
   render();
 })();

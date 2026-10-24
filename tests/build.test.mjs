@@ -90,3 +90,11 @@ test("the beta Worker is the same Worker code with its own name and sessions", (
   assert.equal(beta.vars.SESSIONS_PREFIX, "proxy-sessions-beta/");
   assert.equal(beta.triggers, undefined, "production's cron already keeps the backend awake");
 });
+
+test("both Workers may fetch the Saints Worker on the same workers.dev subdomain", () => {
+  const strip = (text) => JSON.parse(text.replace(/^\s*\/\/.*$/gm, ""));
+  for (const file of ["wrangler.jsonc", "wrangler.beta.jsonc"]) {
+    const config = strip(readFileSync(new URL(file, root), "utf8"));
+    assert.ok((config.compatibility_flags || []).includes("global_fetch_strictly_public"), file);
+  }
+});
