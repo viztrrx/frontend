@@ -45,6 +45,7 @@ jobs:
           curl -sL -A "$UA" "https://www.youtube.com/watch?v=jNQXAC9IVRw" -o out/yt/watch.html
           grep -oE '/s/desktop/[a-z0-9]+/jsbin/[A-Za-z0-9_.-]+\.vflset/[A-Za-z0-9_.-]+\.js' out/yt/watch.html | sort -u | tee out/yt/scripts.txt
           while read -r p; do curl -sL -A "$UA" "https://www.youtube.com$p" -o "out/yt/$(basename "$p")"; done < out/yt/scripts.txt
+          i=0; while read -r u; do i=$((i+1)); curl -sL -A "$UA" "$u" -o "out/yt/reader-$i.js"; done < diag/sr-readers.txt
           ls -la out/yt
       - name: Play the video
         env:
@@ -61,10 +62,9 @@ jobs:
             echo "== $name crashed=$(grep -o '"crashed": [a-z]*' "out/$name/stdout.txt")"
             grep -iE "fatal|check failed|out of memory|oom|v8|renderer|crash" "out/$name/browser.log" | grep -viE "crashpad|cpufreq" | head -15 || true
           done <<'RUNS'
-          v2-noprobe;8782;epoxy;;--noprobe
-          v2-noprobe-libcurl;8782;libcurl;;--noprobe
-          v1-noprobe;8781;libcurl;;--noprobe
-          v2-probe;8782;epoxy;;
+          V-hasinstance;8782;epoxy;;--fix V:hasinstance
+          V-hasinstance-libcurl;8782;libcurl;;--fix V:hasinstance
+          V-orig;8782;epoxy;;--fix V:orig
           RUNS
           cp /tmp/lab-server.log out/
       - name: Save results to the diag-results branch
