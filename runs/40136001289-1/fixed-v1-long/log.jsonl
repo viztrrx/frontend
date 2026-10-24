@@ -1,0 +1,762 @@
+{"t":0.4,"kind":"req","id":1,"method":"GET","type":"document","url":"http://localhost:8781/","sw":false}
+{"t":0.5,"kind":"req","id":2,"method":"GET","type":"script","url":"http://localhost:8781/scram/scramjet.all.js","sw":false}
+{"t":0.5,"kind":"req","id":3,"method":"GET","type":"script","url":"http://localhost:8781/baremux/index.js","sw":false}
+{"t":0.5,"kind":"req","id":4,"method":"GET","type":"stylesheet","url":"http://localhost:8781/index.css","sw":false}
+{"t":0.5,"kind":"req","id":5,"method":"GET","type":"script","url":"http://localhost:8781/register-sw.js","sw":false}
+{"t":0.5,"kind":"req","id":6,"method":"GET","type":"script","url":"http://localhost:8781/search.js","sw":false}
+{"t":0.5,"kind":"req","id":7,"method":"GET","type":"script","url":"http://localhost:8781/config.js","sw":false}
+{"t":0.5,"kind":"req","id":8,"method":"GET","type":"script","url":"http://localhost:8781/blocked.js","sw":false}
+{"t":0.5,"kind":"req","id":9,"method":"GET","type":"script","url":"http://localhost:8781/sitefixes.js","sw":false}
+{"t":0.5,"kind":"req","id":10,"method":"GET","type":"script","url":"http://localhost:8781/index.js","sw":false}
+{"t":0.5,"kind":"req","id":11,"method":"GET","type":"script","url":"http://localhost:8781/sessions.js","sw":false}
+{"t":0.5,"kind":"console","type":"debug","text":"bare-mux: running v2.1.9 (build dc9dc6e)"}
+{"t":0.6,"kind":"done","id":1,"status":200,"size":9649}
+{"t":0.6,"kind":"done","id":4,"status":200,"size":20762}
+{"t":0.6,"kind":"done","id":3,"status":200,"size":8689}
+{"t":0.6,"kind":"done","id":2,"status":200,"size":180333}
+{"t":0.6,"kind":"done","id":5,"status":200,"size":609}
+{"t":0.6,"kind":"done","id":6,"status":200,"size":940}
+{"t":0.6,"kind":"done","id":9,"status":200,"size":1686}
+{"t":0.6,"kind":"done","id":8,"status":200,"size":4972}
+{"t":0.6,"kind":"done","id":7,"status":200,"size":68}
+{"t":0.6,"kind":"done","id":11,"status":200,"size":16207}
+{"t":0.6,"kind":"done","id":10,"status":200,"size":61339}
+{"t":0.6,"kind":"done","id":12,"status":200,"size":915}
+{"t":0.6,"kind":"mem","mb":[132,140,74]}
+{"t":0.7,"kind":"console","type":"warning","text":"you are using the last version of scramjet v1, if possible, please upgrade to v2 for better performance and more features"}
+{"t":0.7,"kind":"console","type":"log","text":"%cinit%c config loaded \n  \tbackground-color: #000;\n  \tcolor: #fff;\n  \tpadding: 2px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n   "}
+{"t":0.7,"kind":"req","id":14,"method":"GET","type":"script","url":"http://localhost:8781/sw.js","sw":true}
+{"t":0.7,"kind":"done","id":13,"status":200,"size":915}
+{"t":0.7,"kind":"req","id":15,"method":"GET","type":"other","url":"http://localhost:8781/scram/scramjet.all.js","sw":true}
+{"t":0.7,"kind":"req","id":16,"method":"GET","type":"other","url":"http://localhost:8781/baremux/index.js","sw":true}
+{"t":0.7,"kind":"done","id":15,"status":200,"size":-272}
+{"t":0.7,"kind":"console","type":"debug","text":"bare-mux: running v2.1.9 (build dc9dc6e)"}
+{"t":0.7,"kind":"done","id":16,"status":200,"size":-272}
+{"t":0.7,"kind":"req","id":17,"method":"GET","type":"other","url":"http://localhost:8781/config.js","sw":true}
+{"t":0.7,"kind":"req","id":18,"method":"GET","type":"other","url":"http://localhost:8781/blocked.js","sw":true}
+{"t":0.7,"kind":"done","id":17,"status":200,"size":-272}
+{"t":0.7,"kind":"req","id":19,"method":"GET","type":"other","url":"http://localhost:8781/sitefixes.js","sw":true}
+{"t":0.7,"kind":"done","id":18,"status":200,"size":-272}
+{"t":0.7,"kind":"console","type":"debug","text":"bare-mux: running v2.1.9 (build dc9dc6e)"}
+{"t":0.7,"kind":"done","id":19,"status":200,"size":-272}
+{"t":0.7,"kind":"done","id":14,"status":200,"size":0}
+{"t":0.8,"kind":"req","id":20,"method":"GET","type":"script","url":"http://localhost:8781/baremux/worker.js","sw":false}
+{"t":0.8,"kind":"console","type":"debug","text":"bare-mux: setting localStorage bare-mux-path to /baremux/worker.js"}
+{"t":0.8,"kind":"req","id":21,"method":"GET","type":"fetch","url":"http://localhost:8781/scram/scramjet.wasm.wasm","sw":true}
+{"t":0.8,"kind":"req","id":22,"method":"GET","type":"fetch","url":"http://localhost:8781/baremux/worker.js","sw":true}
+{"t":0.8,"kind":"done","id":21,"status":200,"size":537008}
+{"t":0.8,"kind":"done","id":22,"status":200,"size":2915}
+{"t":0.8,"kind":"console","type":"debug","text":"bare-mux: recieved request for port from sw"}
+{"t":0.8,"kind":"req","id":23,"method":"GET","type":"fetch","url":"http://localhost:8781/libcurl/index.mjs","sw":true}
+{"t":0.8,"kind":"done","id":23,"status":200,"size":2111122}
+{"t":0.8,"kind":"mem","mb":[144,155,106,73]}
+{"t":0.8,"kind":"console","type":"debug","text":"bare-mux: got localStorage bare-mux-path: /baremux/worker.js"}
+{"t":1,"kind":"mem","mb":[145,159,125,73]}
+{"t":1.2,"kind":"mem","mb":[145,159,127,103]}
+{"t":1.4,"kind":"mem","mb":[145,159,127,103]}
+{"t":1.6,"kind":"mem","mb":[145,159,127,103]}
+{"t":1.7,"kind":"console","type":"warning","text":"bare-mux: failed to get a bare-mux SharedWorker MessagePort within 1s, retrying"}
+{"t":1.8,"kind":"console","type":"debug","text":"bare-mux: recieved request for port from sw"}
+{"t":1.8,"kind":"console","type":"debug","text":"bare-mux: recieved request for port from sw"}
+{"t":1.8,"kind":"mem","mb":[145,160,127,103]}
+{"t":2,"kind":"mem","mb":[145,160,127,103]}
+{"t":2.1,"kind":"req","id":24,"method":"GET","type":"fetch","url":"http://localhost:8781/version.json","sw":false}
+{"t":2.1,"kind":"req","id":25,"method":"GET","type":"fetch","url":"http://localhost:8781/version.json","sw":true}
+{"t":2.1,"kind":"version","version":{"engine":1,"commit":"0f321661c022398f0b6f377a8776801e02bec86c","branch":"diag-verify","message":"diag: verify the ShadyDOM fix on real YouTube (no overrides)","committedAt":"2026-10-24T21:50:42Z","builtAt":"2026-10-24T21:51:03.804Z"}}
+{"t":2.1,"kind":"done","id":25,"status":200,"size":272}
+{"t":2.1,"kind":"done","id":24,"status":200,"size":-273}
+{"t":2.1,"kind":"console","type":"debug","text":"bare-mux: setting localStorage bare-mux-path to /baremux/worker.js"}
+{"t":2.1,"kind":"opened","video":"https://www.youtube.com/watch?v=dQw4w9WgXcQ"}
+{"t":2.1,"kind":"console","type":"log","text":"%copenUrl -> go%c navigated to \n  \tbackground-color: #000;\n  \tcolor: #fff;\n  \tpadding: 2px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n    https://www.youtube.com/watch?v=dQw4w9WgXcQ"}
+{"t":2.1,"kind":"req","id":26,"method":"GET","type":"document","url":"https://www.youtube.com/watch?v=dQw4w9WgXcQ","sw":false}
+{"t":2.1,"kind":"console","type":"debug","text":"bare-mux: recieved request for port from sw"}
+{"t":2.2,"kind":"console","type":"debug","text":"bare-mux: recieved request for port from sw"}
+{"t":2.2,"kind":"console","type":"debug","text":"bare-mux: recieved request for port from sw"}
+{"t":2.2,"kind":"mem","mb":[145,172,129,103]}
+{"t":2.4,"kind":"mem","mb":[145,174,133,103]}
+{"t":2.6,"kind":"mem","mb":[145,174,133,104]}
+{"t":2.8,"kind":"mem","mb":[145,178,136,104]}
+{"t":3,"kind":"mem","mb":[145,219,136,104]}
+{"t":3.2,"kind":"req","id":27,"method":"GET","type":"fetch","url":"http://localhost:8781/scram/scramjet.all.js","sw":true}
+{"t":3.2,"kind":"req","id":28,"method":"GET","type":"fetch","url":"http://localhost:8781/scram/scramjet.wasm.wasm","sw":true}
+{"t":3.2,"kind":"req","id":29,"method":"GET","type":"script","url":"http://localhost:8781/scram/scramjet.wasm.wasm","sw":false}
+{"t":3.2,"kind":"req","id":30,"method":"GET","type":"script","url":"http://localhost:8781/scram/scramjet.all.js","sw":false}
+{"t":3.2,"kind":"req","id":31,"method":"GET","type":"other","url":"https://i.ytimg.com/generate_204","sw":false}
+{"t":3.2,"kind":"req","id":32,"method":"GET","type":"script","url":"https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/base.js","sw":false}
+{"t":3.2,"kind":"req","id":33,"method":"GET","type":"image","url":"https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg","sw":false}
+{"t":3.2,"kind":"req","id":34,"method":"GET","type":"script","url":"https://www.youtube.com/s/_/ytmainappweb/_/js/k=ytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O/am=AAAAACAAEICU/d=1/br=1/rs=AGKMywEpqwFUt3vSV9kEOJjpvJ-fIlbNzw/m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk","sw":false}
+{"t":3.2,"kind":"req","id":35,"method":"GET","type":"script","url":"https://www.youtube.com/s/desktop/dc0b62b0/jsbin/custom-elements-es5-adapter.vflset/custom-elements-es5-adapter.js","sw":false}
+{"t":3.2,"kind":"req","id":36,"method":"GET","type":"script","url":"https://www.youtube.com/s/desktop/dc0b62b0/jsbin/webcomponents-sd.vflset/webcomponents-sd.js","sw":false}
+{"t":3.2,"kind":"req","id":37,"method":"GET","type":"script","url":"https://www.youtube.com/s/desktop/dc0b62b0/jsbin/intersection-observer.min.vflset/intersection-observer.min.js","sw":false}
+{"t":3.2,"kind":"done","id":27,"status":200,"size":180333}
+{"t":3.2,"kind":"done","id":28,"status":200,"size":537008}
+{"t":3.2,"kind":"req","id":38,"method":"GET","type":"script","url":"https://www.youtube.com/s/desktop/dc0b62b0/jsbin/scheduler.vflset/scheduler.js","sw":false}
+{"t":3.2,"kind":"req","id":39,"method":"GET","type":"script","url":"https://www.youtube.com/s/desktop/dc0b62b0/jsbin/www-i18n-constants-en_US.vflset/www-i18n-constants.js","sw":false}
+{"t":3.2,"kind":"req","id":40,"method":"GET","type":"stylesheet","url":"https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=YouTube+Sans:wght@300..900&display=swap","sw":false}
+{"t":3.2,"kind":"req","id":41,"method":"GET","type":"stylesheet","url":"https://www.youtube.com/s/player/cbcfbf2f/www-player.css","sw":false}
+{"t":3.2,"kind":"req","id":42,"method":"GET","type":"stylesheet","url":"https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-main-desktop-watch-page-skeleton.css","sw":false}
+{"t":3.2,"kind":"req","id":43,"method":"GET","type":"stylesheet","url":"https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-main-desktop-player-skeleton.css","sw":false}
+{"t":3.2,"kind":"req","id":44,"method":"GET","type":"stylesheet","url":"https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-onepick.css","sw":false}
+{"t":3.2,"kind":"req","id":45,"method":"GET","type":"stylesheet","url":"https://www.youtube.com/s/_/ytmainappweb/_/ss/k=ytmainappweb.kevlar_base.NZ7X3F12ieY.L.B1.O/am=AAAAACDAEMCe/d=0/br=1/rs=AGKMywFr1ZpGZ6SSlxxMYidtoLDGcgzMzQ","sw":false}
+{"t":3.2,"kind":"req","id":46,"method":"GET","type":"other","url":"https://rr4---sn-vgqsrnld.googlevideo.com/generate_204","sw":false}
+{"t":3.2,"kind":"req","id":47,"method":"GET","type":"other","url":"https://rr4---sn-vgqsrnld.c.youtube.com/generate_204","sw":false}
+{"t":3.2,"kind":"req","id":48,"method":"GET","type":"script","url":"https://www.youtube.com/s/desktop/dc0b62b0/jsbin/spf.vflset/spf.js","sw":false}
+{"t":3.2,"kind":"req","id":49,"method":"GET","type":"script","url":"https://www.youtube.com/s/desktop/dc0b62b0/jsbin/network.vflset/network.js","sw":false}
+{"t":3.2,"kind":"tick","memory":[{"pid":5859,"mb":145},{"pid":5868,"mb":250},{"pid":5902,"mb":136},{"pid":5939,"mb":104}],"heap":{"usedMB":3,"totalMB":4,"nodes":582,"docs":10,"frames":6},"video":{"status":"Website responded (HTTP 200)","title":"","app":{"elements":4,"player":false,"flexy":false,"botcheck":false}},"answerMs":16}
+{"t":3.2,"kind":"done","id":30,"status":200,"size":-272}
+{"t":3.2,"kind":"mem","mb":[145,257,136,104]}
+{"t":3.2,"kind":"done","id":26,"status":200,"size":-10136}
+{"t":3.2,"kind":"done","id":29,"status":200,"size":-48}
+{"t":3.3,"kind":"console","type":"debug","text":"bare-mux: running v2.1.9 (build dc9dc6e)"}
+{"t":3.3,"kind":"console","type":"log","text":"%cg%c initializing scramjet client \n  \tbackground-color: #000;\n  \tcolor: #fff;\n  \tpadding: 2px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n   "}
+{"t":3.3,"kind":"console","type":"warning","text":"%cg -> g%c Creating SingletonBox \n  \tbackground-color: #f80;\n  \tcolor: #fff;\n  \tpadding: 4px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n   "}
+{"t":3.3,"kind":"console","type":"debug","text":"bare-mux: got localStorage bare-mux-path: /baremux/worker.js"}
+{"t":3.3,"kind":"req","id":50,"method":"GET","type":"fetch","url":"http://localhost:8781/icon?d=youtube.com","sw":true}
+{"t":3.3,"kind":"req","id":51,"method":"GET","type":"image","url":"http://localhost:8781/icon?d=youtube.com","sw":false}
+{"t":3.3,"kind":"done","id":50,"status":404,"size":19}
+{"t":3.3,"kind":"console","type":"error","text":"Failed to load resource: the server responded with a status of 404 (Not Found)"}
+{"t":3.3,"kind":"done","id":51,"status":404,"size":-248}
+{"t":3.4,"kind":"mem","mb":[145,250,151,104]}
+{"t":3.5,"kind":"done","id":35,"status":200,"size":-675}
+{"t":3.5,"kind":"done","id":37,"status":200,"size":-676}
+{"t":3.5,"kind":"done","id":38,"status":200,"size":-676}
+{"t":3.5,"kind":"done","id":39,"status":200,"size":-676}
+{"t":3.5,"kind":"done","id":42,"status":200,"size":-669}
+{"t":3.5,"kind":"done","id":43,"status":200,"size":-668}
+{"t":3.5,"kind":"done","id":44,"status":200,"size":-668}
+{"t":3.5,"kind":"done","id":36,"status":200,"size":-677}
+{"t":3.6,"kind":"done","id":48,"status":200,"size":-677}
+{"t":3.6,"kind":"done","id":49,"status":200,"size":-676}
+{"t":3.6,"kind":"done","id":41,"status":200,"size":-670}
+{"t":3.6,"kind":"mem","mb":[145,274,175,104]}
+{"t":3.8,"kind":"mem","mb":[145,314,170,104]}
+{"t":4,"kind":"mem","mb":[145,383,170,104]}
+{"t":4.2,"kind":"mem","mb":[145,418,170,104]}
+{"t":4.2,"kind":"tick","memory":[{"pid":5859,"mb":145},{"pid":5868,"mb":426},{"pid":5902,"mb":170},{"pid":5939,"mb":104}],"heap":{"usedMB":12,"totalMB":20,"nodes":669,"docs":14,"frames":7},"video":{"status":"Website responded (HTTP 200)","title":"","app":{"elements":34,"player":false,"flexy":false,"botcheck":false}},"answerMs":3}
+{"t":4.4,"kind":"done","id":45,"status":200,"size":-681}
+{"t":4.4,"kind":"mem","mb":[145,498,170,104]}
+{"t":4.5,"kind":"done","id":32,"status":200,"size":-678}
+{"t":4.6,"kind":"mem","mb":[145,511,170,104]}
+{"t":4.7,"kind":"done","id":31,"status":204,"size":-121}
+{"t":4.7,"kind":"done","id":33,"status":200,"size":-559}
+{"t":4.7,"kind":"done","id":40,"status":200,"size":-686}
+{"t":4.7,"kind":"done","id":46,"status":204,"size":-716}
+{"t":4.8,"kind":"done","id":47,"status":204,"size":-716}
+{"t":4.8,"kind":"mem","mb":[145,591,171,104]}
+{"t":4.8,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_cfg' cannot have a negative start time.\n    at hy (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2034:492)\n    at http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:1307:139\n    at Object.oy [as tick] (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2060:66)\n    at playerBootstrap (http://localhost:878"}
+{"t":4.9,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Cannot read properties of undefined (reading 'length')\n    at $f (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:399:54)\n    at RK (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:3489:58)\n    at QJa (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:3593:362)\n    at g.zU.setData (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fpla"}
+{"t":5,"kind":"mem","mb":[145,547,183,104]}
+{"t":5.1,"kind":"req","id":53,"method":"GET","type":"script","url":"https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/offline.js","sw":false}
+{"t":5.1,"kind":"req","id":54,"method":"POST","type":"fetch","url":"https://rr4---sn-vgqsrnld.googlevideo.com/videoplayback?expire=1792900603&ei=myndao23NNLtir4Pw9CukQw&ip=52.176.124.178&id=o-AEEWYYaGm5a79FTGm1rBNUMasNFgfujw86Sqfvoqjf9w&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=1218&met=1792879003%2C&mh=7c&mm=18%2C26&mn=sn-vgqsrnld%2Csn-aj2im9-5j&ms=aub","sw":false}
+{"t":5.1,"kind":"req","id":55,"method":"GET","type":"script","url":"https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/remote.js","sw":false}
+{"t":5.1,"kind":"req","id":56,"method":"GET","type":"script","url":"https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/miniplayer.js","sw":false}
+{"t":5.1,"kind":"req","id":57,"method":"GET","type":"script","url":"https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/captions.js","sw":false}
+{"t":5.1,"kind":"req","id":58,"method":"GET","type":"script","url":"https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/endscreen.js","sw":false}
+{"t":5.1,"kind":"req","id":59,"method":"GET","type":"script","url":"https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/annotations_module.js","sw":false}
+{"t":5.1,"kind":"done","id":52,"status":200,"size":-525}
+{"t":5.1,"kind":"done","id":53,"status":200,"size":-677}
+{"t":5.1,"kind":"done","id":34,"status":200,"size":-689}
+{"t":5.1,"kind":"done","id":56,"status":200,"size":-676}
+{"t":5.1,"kind":"done","id":58,"status":200,"size":-676}
+{"t":5.1,"kind":"done","id":55,"status":200,"size":-677}
+{"t":5.1,"kind":"done","id":57,"status":200,"size":-677}
+{"t":5.1,"kind":"done","id":59,"status":200,"size":-677}
+{"t":5.1,"kind":"req","id":60,"method":"POST","type":"fetch","url":"https://www.youtube.com/api/stats/qoe?fmt=397&afmt=251&cpn=J-pg9ui9dP5Z03_N&el=detailpage&ns=yt&fexp=v1%2C100673025%2C-76668381%2C15321210%2C11737789%2C31835%2C2821%2C124674%2C77203%2C65%2C13917%2C26504%2C9252%2C16509%2C23206%2C10365%2C59431%2C45%2C8206%2C2625%2C1904%2C18126%2C15105%2C25059%2C4174%2","sw":false}
+{"t":5.1,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_bs' cannot have a negative start time.\n    at hy (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2034:492)\n    at http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:1307:139\n    at Object.oy [as tick] (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2060:66)\n    at http://localhost:8781/scramjet/https%3"}
+{"t":5.1,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_ai' cannot have a negative start time.\n    at hy (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2034:492)\n    at http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:1307:139\n    at Object.oy [as tick] (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2060:66)\n    at http://localhost:8781/scramjet/https%3"}
+{"t":5.1,"kind":"req","id":61,"method":"GET","type":"document","url":"https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3D%252Fsignin_passive%26feature%3Dpassive&hl=en","sw":false}
+{"t":5.1,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_nc_pj' cannot have a negative start time.\n    at hy (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2034:492)\n    at http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:1307:139\n    at Object.oy [as tick] (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2060:66)\n    at http://localhost:8781/scramjet/http"}
+{"t":5.1,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_rsbe_dpj' cannot have a negative start time.\n    at hy (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2034:492)\n    at http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:1307:139\n    at Object.oy [as tick] (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2060:66)\n    at http://localhost:8781/scramjet/h"}
+{"t":5.1,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_js_ld' cannot have a negative start time.\n    at hy (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2034:492)\n    at http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:1307:139\n    at Object.oy [as tick] (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2060:66)\n    at http://localhost:8781/scramjet/http"}
+{"t":5.2,"kind":"mem","mb":[145,568,178,104]}
+{"t":5.3,"kind":"req","id":62,"method":"GET","type":"document","url":"https://accounts.google.com/v3/signin/identifier?continue=https://www.youtube.com/signin?action_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3D%252Fsignin_passive%26feature%3Dpassive&hl=en&passive=true&service=youtube&uilel=3&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S723490612:1792","sw":false}
+{"t":5.3,"kind":"done","id":61,"status":302,"size":0}
+{"t":5.4,"kind":"mem","mb":[145,616,164,104]}
+{"t":5.6,"kind":"mem","mb":[145,623,164,104]}
+{"t":5.7,"kind":"console","type":"info","text":"LegacyDataMixin will be applied to all legacy elements.\nSet `_legacyUndefinedCheck: true` on element class to enable."}
+{"t":5.8,"kind":"mem","mb":[145,597,164,104]}
+{"t":5.9,"kind":"req","id":63,"method":"GET","type":"script","url":"https://www.gstatic.com/cv/js/sender/v1/cast_sender.js","sw":false}
+{"t":5.9,"kind":"req","id":64,"method":"GET","type":"image","url":"https://yt3.ggpht.com/_ShEGOdg-t5YGJse14Ooq6FYBZqX_QSlhaTNjG06miYusm5lWm1UroLyVxnYtahADfRTVLtuVQ=s400-c-k-c0x00ffffff-no-rj","sw":false}
+{"t":5.9,"kind":"req","id":65,"method":"GET","type":"image","url":"https://i.ytimg.com/vi/qQDrqV5Hw4c/maxresdefault.jpg?sqp=-oaymwEmCIAKENAF8quKqQMa8AEB-AH-CYAC0AWKAgwIABABGFggXyhlMA8=&rs=AOn4CLBDFgN-ehq0DU9qYo5qdDhC4mg_sw","sw":false}
+{"t":5.9,"kind":"req","id":66,"method":"GET","type":"image","url":"https://i.ytimg.com/vi_webp/yi6fWPV6qXg/maxresdefault.webp","sw":false}
+{"t":5.9,"kind":"req","id":67,"method":"GET","type":"image","url":"https://i.ytimg.com/vi_webp/LLFhKaqnWwk/maxresdefault.webp","sw":false}
+{"t":5.9,"kind":"req","id":68,"method":"GET","type":"image","url":"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYBAMAAAASWSDLAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAJ1BMVEVMaXGzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7P///9RfzIKAAAAC3RSTlMAvDeyLvxYtDK9Ogx4T1QAAAABYktHRAyBs1FjAAAAK0lEQVQY02NgoBjshgO8HJoYwKiAMGAD92","sw":false}
+{"t":5.9,"kind":"req","id":70,"method":"GET","type":"image","url":"https://i.ytimg.com/an/uAXFkgsw1L7xaCfnd5JJOw/featured_channel.jpg?v=6101641a","sw":false}
+{"t":6,"kind":"req","id":71,"method":"GET","type":"script","url":"http://localhost:8781/scram/scramjet.wasm.wasm","sw":false}
+{"t":6,"kind":"req","id":72,"method":"GET","type":"script","url":"http://localhost:8781/scram/scramjet.all.js","sw":false}
+{"t":6,"kind":"req","id":73,"method":"GET","type":"script","url":"https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0CAFBFAAE/d=1/excm=_b,_tp,identifierview/ed=1/dg=0/wt=2/ujg=1/rs=AOaEmlHWsW7_HH60u7I0uv7nMedg3A2NHA/dti=1/m=_b,_tp","sw":false}
+{"t":6,"kind":"tick","memory":[{"pid":5859,"mb":145},{"pid":5868,"mb":572},{"pid":5902,"mb":178},{"pid":5939,"mb":104}],"heap":{"usedMB":30,"totalMB":37,"nodes":1593,"docs":8,"frames":8},"video":{"status":"Website responded (HTTP 200)","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":0,"paused":false,"ready":0,"net":2,"error":null,"buffered":0,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1635,"player":true,"flexy":false,"botcheck":false}},"answerMs":271}
+{"t":6,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_rsef_dpj' cannot have a negative start time.\n    at YAK (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAACAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEpqwFUt3vSV9kEOJjpvJ-fIlbNzw%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk:2703:511)\n    at _.uK (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5"}
+{"t":6,"kind":"done","id":68,"status":200,"size":-129}
+{"t":6,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_rsae_dpj' cannot have a negative start time.\n    at YAK (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAACAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEpqwFUt3vSV9kEOJjpvJ-fIlbNzw%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk:2703:511)\n    at _.uK (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5"}
+{"t":6,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_js_r' cannot have a negative start time.\n    at YAK (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAACAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEpqwFUt3vSV9kEOJjpvJ-fIlbNzw%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk:2703:511)\n    at _.uK (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2"}
+{"t":6,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_ac' cannot have a negative start time.\n    at YAK (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAACAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEpqwFUt3vSV9kEOJjpvJ-fIlbNzw%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk:2703:511)\n    at _.uK (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fa"}
+{"t":6,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_apr' cannot have a negative start time.\n    at YAK (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAACAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEpqwFUt3vSV9kEOJjpvJ-fIlbNzw%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk:2703:511)\n    at _.uK (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2F"}
+{"t":6,"kind":"mem","mb":[145,539,164,104]}
+{"t":6,"kind":"req","id":75,"method":"GET","type":"image","url":"http://localhost:8781/icon?d=youtube.com","sw":false}
+{"t":6,"kind":"req","id":76,"method":"GET","type":"fetch","url":"http://localhost:8781/scram/scramjet.all.js","sw":true}
+{"t":6,"kind":"req","id":77,"method":"GET","type":"fetch","url":"http://localhost:8781/scram/scramjet.wasm.wasm","sw":true}
+{"t":6,"kind":"req","id":78,"method":"GET","type":"fetch","url":"http://localhost:8781/icon?d=youtube.com","sw":true}
+{"t":6,"kind":"failed","id":60,"url":"https://www.youtube.com/api/stats/qoe?fmt=397&afmt=251&cpn=J-pg9ui9dP5Z03_N&el=detailpage&ns=yt&fexp=v1%2C100673025%2C-76668381%2C15321210%2C11737789%2C31835%2C2821%2C124674%2C77203%2C65%2C13917%2C26504%2C9252%2C16509%2C23206%2C10365%2C59431%2C45%2C8206%2C2625%2C1904%2C18126%2C15105%2C25059%2C4174%2","error":"net::ERR_ABORTED"}
+{"t":6,"kind":"done","id":76,"status":200,"size":180333}
+{"t":6,"kind":"done","id":77,"status":200,"size":537008}
+{"t":6.1,"kind":"done","id":62,"status":200,"size":-2020}
+{"t":6.1,"kind":"req","id":79,"method":"GET","type":"script","url":"https://www.google.com/js/th/pxwG18Euy-n6Uq6PY9vb4Ohp58yKH_56NpBvs6fBnH8.js","sw":false}
+{"t":6.1,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_pdc' cannot have a negative start time.\n    at YAK (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAACAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEpqwFUt3vSV9kEOJjpvJ-fIlbNzw%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk:2703:511)\n    at _.uK (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2F"}
+{"t":6.1,"kind":"done","id":78,"status":404,"size":19}
+{"t":6.1,"kind":"console","type":"error","text":"Failed to load resource: the server responded with a status of 404 (Not Found)"}
+{"t":6.1,"kind":"done","id":75,"status":404,"size":-248}
+{"t":6.1,"kind":"done","id":72,"status":200,"size":-272}
+{"t":6.1,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_pdr' cannot have a negative start time.\n    at YAK (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAACAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEpqwFUt3vSV9kEOJjpvJ-fIlbNzw%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk:2703:511)\n    at _.uK (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2F"}
+{"t":6.1,"kind":"done","id":71,"status":200,"size":-48}
+{"t":6.1,"kind":"console","type":"warning","text":"CAUGHT ERROR SyntaxError: Unexpected token 'Y', \"YOUTUBE_LOGO\" is not valid JSON\n    at JSON.parse (<anonymous>)\n    at S._deserializeValue (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAACAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEpqwFUt3vSV9kEOJjpvJ-fIlbNzw%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk:8750:114)\n    at H._attributeToProperty (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevl"}
+{"t":6.2,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: b.Aa is not a function\n    at Q.attachShadow [as __shady_attachShadow] (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js:97:252)\n    at k.attachShadow (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js:125:184)\n    at T._attachDom (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAA"}
+{"t":6.2,"kind":"mem","mb":[145,584,166,104]}
+{"t":6.2,"kind":"console","type":"debug","text":"bare-mux: running v2.1.9 (build dc9dc6e)"}
+{"t":6.2,"kind":"console","type":"log","text":"%cg%c initializing scramjet client \n  \tbackground-color: #000;\n  \tcolor: #fff;\n  \tpadding: 2px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n   "}
+{"t":6.2,"kind":"console","type":"debug","text":"bare-mux: got localStorage bare-mux-path: /baremux/worker.js"}
+{"t":6.3,"kind":"done","id":65,"status":200,"size":-547}
+{"t":6.3,"kind":"done","id":70,"status":200,"size":-558}
+{"t":6.3,"kind":"done","id":69,"status":200,"size":-525}
+{"t":6.3,"kind":"req","id":80,"method":"GET","type":"fetch","url":"data:application/json;base64,eyJhZFBsYWNlbWVudHMiOnRydWUsInBsYXllckFkcyI6dHJ1ZSwicGxheWVyUmVzcG9uc2UiOnsiYWRQbGFjZW1lbnRzIjp0cnVlLCJwbGF5ZXJBZHMiOnRydWUsInBsYXllckNvbmZpZyI6IHsiYXVkaW9Db25maWciOiB7fSwgInN0cmVhbVNlbGVjdGlvbkNvbmZpZyI6IHt9LCAid2ViUGxheWVyQ29uZmlnIjogeyJ3ZWJQbGF5ZXJBY3Rpb25zUG9ydGluZyI","sw":false}
+{"t":6.3,"kind":"req","id":81,"method":"GET","type":"fetch","url":"https://rr5---sn-q4flrnes.googlevideo.com/videoplayback?expire=0361883000&ei=IqgBQz6pojdoZZpVtT2ORqv&ip=28.1.18.68&id=o-AFoU02MAFwY9qktaohWI1RENbnE3PC8yTUSPG63bwYS7O&itag=18&source=youtube&requiressl=yes&mh=X6&mm=382%2C53289%2C36874&mn=Gs0xz%2CYpGsR%2CwMZ8M&ms=Gs0xz%2CYpGsR%2CwMZ8M&mv=u&mvi=3&pl=21&","sw":false}
+{"t":6.3,"kind":"req","id":82,"method":"GET","type":"fetch","url":"https://rr5---sn-q4flrnes.googlevideo.com/videoplayback?expire=0361883000&ei=IqgBQz6pojdoZZpVtT2ORqv&ip=28.1.18.68&id=o-AFoU02MAFwY9qktaohWI1RENbnE3PC8yTUSPG63bwYS7O&itag=18&source=youtube&requiressl=yes&mh=X6&mm=382%2C53289%2C36874&mn=Gs0xz%2CYpGsR%2CwMZ8M&ms=Gs0xz%2CYpGsR%2CwMZ8M&mv=u&mvi=3&pl=21&","sw":false}
+{"t":6.3,"kind":"done","id":63,"status":200,"size":-585}
+{"t":6.4,"kind":"req","id":83,"method":"POST","type":"xhr","url":"https://www.youtube.com/api/stats/playback?ns=yt&el=detailpage&cpn=J-pg9ui9dP5Z03_N&ver=2&cmt=0.117&fmt=397&fs=0&rt=1.459&euri&lact=1495&cl=1003072181&mos=0&volume=100&cbr=Chrome&cbrver=155.0.0.0&c=WEB&cver=2.20261023.01.00&cplayer=UNIPLAYER&cos=X11&cplatform=DESKTOP&hl=en_US&cr=US&len=213.061&fexp=","sw":false}
+{"t":6.4,"kind":"req","id":84,"method":"GET","type":"fetch","url":"https://www.youtube.com/ptracking?html5=1&video_id=dQw4w9WgXcQ&cpn=J-pg9ui9dP5Z03_N&ei=myndao23NNLtir4Pw9CukQw&ptk=youtube_single&oid=QuEoptyF_C_7jHTEUMsRjA&ptchn=uAXFkgsw1L7xaCfnd5JJOw&pltype=content&m=A6CTVib-lVqsyFf72bIVRHjBLKieFmRK2Kv4ru1iYo4MfMlsxFFCaa1MUFFeRkxLz4V6Pp1R1DxMMfF4wc92JFcn","sw":false}
+{"t":6.4,"kind":"req","id":85,"method":"GET","type":"fetch","url":"https://www.youtube.com/pagead/viewthroughconversion/962985656/?backend=innertube&cname=1&cver=2_20261023&data=backend%3Dinnertube%3Bcname%3D1%3Bcver%3D2_20261023%3Bm%3D1%3Bptype%3Df_view%3Btype%3Dview%3Butuid%3DuAXFkgsw1L7xaCfnd5JJOw%3Butvid%3DdQw4w9WgXcQ%3Bw%3D1&foc_id=uAXFkgsw1L7xaCfnd5JJOw&label","sw":false}
+{"t":6.4,"kind":"req","id":86,"method":"GET","type":"image","url":"https://www.google.com/pagead/1p-user-list/962985656/?backend=innertube&cname=1&cver=2_20261023&data=backend%3Dinnertube%3Bcname%3D1%3Bcver%3D2_20261023%3Bm%3D1%3Bptype%3Df_view%3Btype%3Dview%3Butuid%3DuAXFkgsw1L7xaCfnd5JJOw%3Butvid%3DdQw4w9WgXcQ%3Bw%3D1&is_vtc=0&ptype=f_view&random=855957827&utuid=","sw":false}
+{"t":6.4,"kind":"done","id":74,"status":200,"size":-613}
+{"t":6.4,"kind":"done","id":67,"status":200,"size":-514}
+{"t":6.4,"kind":"req","id":89,"method":"GET","type":"other","url":"https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDv2Q0yAnW19SsfDxlWNZc2MfRnvQ","sw":false}
+{"t":6.4,"kind":"done","id":66,"status":200,"size":-514}
+{"t":6.4,"kind":"req","id":90,"method":"GET","type":"fetch","url":"https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDv2Q0yAnW19SsfDxlWNZc2MfRnvQ","sw":true}
+{"t":6.4,"kind":"done","id":64,"status":200,"size":-469}
+{"t":6.4,"kind":"done","id":88,"status":200,"size":915}
+{"t":6.4,"kind":"done","id":87,"status":200,"size":-270}
+{"t":6.4,"kind":"req","id":91,"method":"GET","type":"other","url":"https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDv2Q0yAnW19SsfDxlWNZc2MfRnvQ","sw":false}
+{"t":6.4,"kind":"done","id":80,"status":200,"size":-136}
+{"t":6.4,"kind":"req","id":92,"method":"GET","type":"fetch","url":"data:application/json;base64,W3siYWRQbGFjZW1lbnRzIjp0cnVlLCJwbGF5ZXJBZHMiOnRydWUsInBsYXllclJlc3BvbnNlIjp7ImFkUGxhY2VtZW50cyI6dHJ1ZSwicGxheWVyQWRzIjp0cnVlfX1d","sw":false}
+{"t":6.4,"kind":"req","id":93,"method":"GET","type":"fetch","url":"https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDv2Q0yAnW19SsfDxlWNZc2MfRnvQ","sw":true}
+{"t":6.4,"kind":"mem","mb":[145,628,168,104]}
+{"t":6.4,"kind":"req","id":94,"method":"GET","type":"script","url":"https://static.doubleclick.net/instream/ad_status.js","sw":false}
+{"t":6.4,"kind":"done","id":79,"status":200,"size":-606}
+{"t":6.5,"kind":"done","id":90,"status":200,"size":7129}
+{"t":6.5,"kind":"done","id":93,"status":200,"size":-643}
+{"t":6.5,"kind":"done","id":89,"status":200,"size":-643}
+{"t":6.5,"kind":"done","id":91,"status":200,"size":-643}
+{"t":6.5,"kind":"done","id":73,"status":200,"size":-680}
+{"t":6.6,"kind":"req","id":95,"method":"GET","type":"script","url":"https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0CAFBFAAE/d=1/exm=_b,_tp/excm=_b,_tp,identifierview/ed=1/wt=2/ujg=1/rs=AOaEmlEN6u6MKuWezC9WS2a","sw":false}
+{"t":6.6,"kind":"console","type":"verbose","text":"[DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o"}
+{"t":6.6,"kind":"done","id":86,"status":200,"size":-422}
+{"t":6.6,"kind":"done","id":92,"status":200,"size":-136}
+{"t":6.6,"kind":"done","id":83,"status":204,"size":-289}
+{"t":6.6,"kind":"req","id":96,"method":"GET","type":"script","url":"https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0CAFBFAAE/d=1/exm=LEikZe,_b,_tp,byfTOb,lsjVmc/excm=_b,_tp,identifierview/ed=1/wt=2/ujg=1/rs=AO","sw":false}
+{"t":6.6,"kind":"req","id":97,"method":"GET","type":"fetch","url":"https://googleads.g.doubleclick.net/pagead/viewthroughconversion/962985656/?backend=innertube&cname=1&cver=2_20261023&data=backend%3Dinnertube%3Bcname%3D1%3Bcver%3D2_20261023%3Bm%3D1%3Bptype%3Df_view%3Btype%3Dview%3Butuid%3DuAXFkgsw1L7xaCfnd5JJOw%3Butvid%3DdQw4w9WgXcQ%3Bw%3D1&foc_id=uAXFkgsw1L7xaCfn","sw":false}
+{"t":6.6,"kind":"done","id":85,"status":302,"size":42}
+{"t":6.6,"kind":"console","type":"error","text":"Failed to load resource: the server responded with a status of 403 (Forbidden)"}
+{"t":6.6,"kind":"req","id":98,"method":"GET","type":"fetch","url":"https://rr5---sn-q4flrnes.googlevideo.com/videoplayback?expire=0361883000&ei=IqgBQz6pojdoZZpVtT2ORqv&ip=28.1.18.68&id=o-AFoU02MAFwY9qktaohWI1RENbnE3PC8yTUSPG63bwYS7O&itag=18&source=youtube&requiressl=yes&mh=X6&mm=382%2C53289%2C36874&mn=Gs0xz%2CYpGsR%2CwMZ8M&ms=Gs0xz%2CYpGsR%2CwMZ8M&mv=u&mvi=3&pl=21&","sw":false}
+{"t":6.6,"kind":"req","id":99,"method":"GET","type":"fetch","url":"data:application/json;base64,eyJyZXNwb25zZUNvbnRleHQiOnsic2VydmljZVRyYWNraW5nUGFyYW1zIjpbeyJzZXJ2aWNlIjoiR0ZFRURCQUNLIiwicGFyYW1zIjpbeyJrZXkiOiJrYyIsInZhbHVlIjoiNjYifSx7ImtleSI6ImN3IiwidmFsdWUiOiJzdCJ9LHsia2V5IjoiemIiLCJ2YWx1ZSI6Inh6In0seyJrZXkiOiJ6bCIsInZhbHVlIjoiMTYifSx7ImtleSI6InBmIiwidmFsdWUiOiJ","sw":false}
+{"t":6.6,"kind":"done","id":54,"status":200,"size":-372}
+{"t":6.7,"kind":"mem","mb":[145,635,169,104]}
+{"t":6.7,"kind":"console","type":"debug","text":"bare-mux: got localStorage bare-mux-path: /baremux/worker.js"}
+{"t":6.7,"kind":"failed","id":84,"url":"https://www.youtube.com/ptracking?html5=1&video_id=dQw4w9WgXcQ&cpn=J-pg9ui9dP5Z03_N&ei=myndao23NNLtir4Pw9CukQw&ptk=youtube_single&oid=QuEoptyF_C_7jHTEUMsRjA&ptchn=uAXFkgsw1L7xaCfnd5JJOw&pltype=content&m=A6CTVib-lVqsyFf72bIVRHjBLKieFmRK2Kv4ru1iYo4MfMlsxFFCaa1MUFFeRkxLz4V6Pp1R1DxMMfF4wc92JFcn","error":"net::ERR_ABORTED"}
+{"t":6.7,"kind":"console","type":"error","text":"Failed to load resource: the server responded with a status of 403 (Forbidden)"}
+{"t":6.7,"kind":"req","id":100,"method":"GET","type":"fetch","url":"https://rr5---sn-q4flrnes.googlevideo.com/videoplayback?expire=0361883000&ei=IqgBQz6pojdoZZpVtT2ORqv&ip=28.1.18.68&id=o-AFoU02MAFwY9qktaohWI1RENbnE3PC8yTUSPG63bwYS7O&itag=18&source=youtube&requiressl=yes&mh=X6&mm=382%2C53289%2C36874&mn=Gs0xz%2CYpGsR%2CwMZ8M&ms=Gs0xz%2CYpGsR%2CwMZ8M&mv=u&mvi=3&pl=21&","sw":false}
+{"t":6.7,"kind":"req","id":101,"method":"GET","type":"script","url":"https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0CAFBFAAE/d=1/exm=CMcBD,DqMihc,EFQ78c,EN3i8d,Fndnac,GwYlN,IZT63,K0PMbc,K1ZKnb,KUM7Z,L1AAkb,L9O","sw":false}
+{"t":6.7,"kind":"failed","id":82,"url":"https://rr5---sn-q4flrnes.googlevideo.com/videoplayback?expire=0361883000&ei=IqgBQz6pojdoZZpVtT2ORqv&ip=28.1.18.68&id=o-AFoU02MAFwY9qktaohWI1RENbnE3PC8yTUSPG63bwYS7O&itag=18&source=youtube&requiressl=yes&mh=X6&mm=382%2C53289%2C36874&mn=Gs0xz%2CYpGsR%2CwMZ8M&ms=Gs0xz%2CYpGsR%2CwMZ8M&mv=u&mvi=3&pl=21&","error":"net::ERR_ABORTED"}
+{"t":6.7,"kind":"req","id":102,"method":"POST","type":"fetch","url":"https://rr4---sn-vgqsrnld.googlevideo.com/videoplayback?expire=1792900603&ei=myndao23NNLtir4Pw9CukQw&ip=52.176.124.178&id=o-AEEWYYaGm5a79FTGm1rBNUMasNFgfujw86Sqfvoqjf9w&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=1218&met=1792879003%2C&mh=7c&mm=18%2C26&mn=sn-vgqsrnld%2Csn-aj2im9-5j&ms=aub","sw":false}
+{"t":6.7,"kind":"failed","id":81,"url":"https://rr5---sn-q4flrnes.googlevideo.com/videoplayback?expire=0361883000&ei=IqgBQz6pojdoZZpVtT2ORqv&ip=28.1.18.68&id=o-AFoU02MAFwY9qktaohWI1RENbnE3PC8yTUSPG63bwYS7O&itag=18&source=youtube&requiressl=yes&mh=X6&mm=382%2C53289%2C36874&mn=Gs0xz%2CYpGsR%2CwMZ8M&ms=Gs0xz%2CYpGsR%2CwMZ8M&mv=u&mvi=3&pl=21&","error":"net::ERR_ABORTED"}
+{"t":6.7,"kind":"done","id":99,"status":200,"size":-136}
+{"t":6.7,"kind":"done","id":94,"status":200,"size":-712}
+{"t":6.7,"kind":"req","id":103,"method":"GET","type":"fetch","url":"data:application/json;base64,eyJwbGF5ZXJSZXNwb25zZSI6eyJyZXNwb25zZUNvbnRleHQiOnsic2VydmljZVRyYWNraW5nUGFyYW1zIjpbeyJzZXJ2aWNlIjoiR0ZFRURCQUNLIiwicGFyYW1zIjpbeyJrZXkiOiJrYyIsInZhbHVlIjoiNjYifSx7ImtleSI6ImN3IiwidmFsdWUiOiJzdCJ9LHsia2V5IjoiemIiLCJ2YWx1ZSI6Inh6In0seyJrZXkiOiJ6bCIsInZhbHVlIjoiMTYifSx7Imt","sw":false}
+{"t":6.7,"kind":"done","id":95,"status":200,"size":-679}
+{"t":6.7,"kind":"done","id":103,"status":200,"size":-136}
+{"t":6.8,"kind":"req","id":104,"method":"GET","type":"fetch","url":"data:application/json;base64,eyJyZXNwb25zZUNvbnRleHQiOnsic2VydmljZVRyYWNraW5nUGFyYW1zIjpbeyJzZXJ2aWNlIjoiR0ZFRURCQUNLIiwicGFyYW1zIjpbeyJrZXkiOiJpcGNjIiwidmFsdWUiOiIwIn0seyJrZXkiOiJpc192aWV3ZWRfbGl2ZSIsInZhbHVlIjoiRmFsc2UifSx7ImtleSI6ImlzX2FsY19zdXJmYWNlIiwidmFsdWUiOiJmYWxzZSJ9LHsia2V5IjoicHJlbWl1bV9","sw":false}
+{"t":6.8,"kind":"mem","mb":[145,651,165,104]}
+{"t":6.9,"kind":"console","type":"error","text":"Failed to load resource: the server responded with a status of 403 (Forbidden)"}
+{"t":6.9,"kind":"req","id":105,"method":"GET","type":"fetch","url":"https://rr5---sn-q4flrnes.googlevideo.com/videoplayback?expire=0361883000&ei=IqgBQz6pojdoZZpVtT2ORqv&ip=28.1.18.68&id=o-AFoU02MAFwY9qktaohWI1RENbnE3PC8yTUSPG63bwYS7O&itag=18&source=youtube&requiressl=yes&mh=X6&mm=382%2C53289%2C36874&mn=Gs0xz%2CYpGsR%2CwMZ8M&ms=Gs0xz%2CYpGsR%2CwMZ8M&mv=u&mvi=3&pl=21&","sw":false}
+{"t":6.9,"kind":"console","type":"error","text":"Failed to load resource: the server responded with a status of 403 (Forbidden)"}
+{"t":6.9,"kind":"req","id":106,"method":"GET","type":"fetch","url":"https://rr5---sn-q4flrnes.googlevideo.com/videoplayback?expire=0361883000&ei=IqgBQz6pojdoZZpVtT2ORqv&ip=28.1.18.68&id=o-AFoU02MAFwY9qktaohWI1RENbnE3PC8yTUSPG63bwYS7O&itag=18&source=youtube&requiressl=yes&mh=X6&mm=382%2C53289%2C36874&mn=Gs0xz%2CYpGsR%2CwMZ8M&ms=Gs0xz%2CYpGsR%2CwMZ8M&mv=u&mvi=3&pl=21&","sw":false}
+{"t":6.9,"kind":"done","id":101,"status":200,"size":-678}
+{"t":6.9,"kind":"failed","id":98,"url":"https://rr5---sn-q4flrnes.googlevideo.com/videoplayback?expire=0361883000&ei=IqgBQz6pojdoZZpVtT2ORqv&ip=28.1.18.68&id=o-AFoU02MAFwY9qktaohWI1RENbnE3PC8yTUSPG63bwYS7O&itag=18&source=youtube&requiressl=yes&mh=X6&mm=382%2C53289%2C36874&mn=Gs0xz%2CYpGsR%2CwMZ8M&ms=Gs0xz%2CYpGsR%2CwMZ8M&mv=u&mvi=3&pl=21&","error":"net::ERR_ABORTED"}
+{"t":6.9,"kind":"done","id":104,"status":200,"size":-136}
+{"t":6.9,"kind":"failed","id":100,"url":"https://rr5---sn-q4flrnes.googlevideo.com/videoplayback?expire=0361883000&ei=IqgBQz6pojdoZZpVtT2ORqv&ip=28.1.18.68&id=o-AFoU02MAFwY9qktaohWI1RENbnE3PC8yTUSPG63bwYS7O&itag=18&source=youtube&requiressl=yes&mh=X6&mm=382%2C53289%2C36874&mn=Gs0xz%2CYpGsR%2CwMZ8M&ms=Gs0xz%2CYpGsR%2CwMZ8M&mv=u&mvi=3&pl=21&","error":"net::ERR_ABORTED"}
+{"t":6.9,"kind":"req","id":107,"method":"GET","type":"fetch","url":"https://www.google.com/pagead/1p-user-list/962985656/?backend=innertube&cname=1&cver=2_20261023&data=backend%3Dinnertube%3Bcname%3D1%3Bcver%3D2_20261023%3Bm%3D1%3Bptype%3Df_view%3Btype%3Dview%3Butuid%3DuAXFkgsw1L7xaCfnd5JJOw%3Butvid%3DdQw4w9WgXcQ%3Bw%3D1&foc_id=uAXFkgsw1L7xaCfnd5JJOw&label=followon_","sw":false}
+{"t":6.9,"kind":"done","id":97,"status":302,"size":42}
+{"t":7,"kind":"done","id":96,"status":200,"size":-680}
+{"t":7,"kind":"mem","mb":[145,644,166,104]}
+{"t":7.1,"kind":"req","id":108,"method":"GET","type":"script","url":"https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0CAFBFAAE/d=1/exm=CMcBD,DqMihc,E87wgc,EFQ78c,EN3i8d,Fndnac,GwYlN,IZT63,K0PMbc,K1ZKnb,KUM7Z,L1A","sw":false}
+{"t":7.1,"kind":"req","id":109,"method":"GET","type":"script","url":"https://www.gstatic.com/feedback/js/help/prod/service/lazy.min.js","sw":false}
+{"t":7.1,"kind":"req","id":110,"method":"GET","type":"script","url":"https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0CAFBFAAE/d=1/exm=CMcBD,DqMihc,E87wgc,EFQ78c,EN3i8d,Fndnac,GwYlN,IZT63,K0PMbc,K1ZKnb,KUM7Z,L1A","sw":false}
+{"t":7.1,"kind":"req","id":111,"method":"GET","type":"script","url":"https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0CAFBFAAE/d=1/exm=CMcBD,DqMihc,E87wgc,EFQ78c,EN3i8d,Fndnac,GwYlN,IZT63,K0PMbc,K1ZKnb,KUM7Z,L1A","sw":false}
+{"t":7.1,"kind":"req","id":112,"method":"GET","type":"script","url":"https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0CAFBFAAE/d=1/exm=A7fCU,CMcBD,DqMihc,E87wgc,EFQ78c,EN3i8d,Fndnac,GwYlN,IZT63,K0PMbc,K1ZKnb,KUM","sw":false}
+{"t":7.1,"kind":"console","type":"error","text":"Failed to load resource: the server responded with a status of 403 (Forbidden)"}
+{"t":7.1,"kind":"tick","memory":[{"pid":5859,"mb":145},{"pid":5868,"mb":649},{"pid":5902,"mb":166},{"pid":5939,"mb":104}],"heap":{"usedMB":63,"totalMB":85,"nodes":4284,"docs":16,"frames":9},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":0.91,"paused":false,"ready":4,"net":2,"error":null,"buffered":20.7,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1649,"player":true,"flexy":false,"botcheck":false}},"answerMs":85}
+{"t":7.1,"kind":"console","type":"error","text":"Failed to load resource: the server responded with a status of 403 (Forbidden)"}
+{"t":7.1,"kind":"req","id":113,"method":"GET","type":"script","url":"https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0CAFBFAAE/d=1/exm=A7fCU,CMcBD,DqMihc,E87wgc,EFQ78c,EN3i8d,Fndnac,GwYlN,IZT63,K0PMbc,K1ZKnb,KUM","sw":false}
+{"t":7.2,"kind":"done","id":108,"status":200,"size":-679}
+{"t":7.2,"kind":"done","id":109,"status":200,"size":-635}
+{"t":7.2,"kind":"done","id":110,"status":200,"size":-678}
+{"t":7.2,"kind":"failed","id":106,"url":"https://rr5---sn-q4flrnes.googlevideo.com/videoplayback?expire=0361883000&ei=IqgBQz6pojdoZZpVtT2ORqv&ip=28.1.18.68&id=o-AFoU02MAFwY9qktaohWI1RENbnE3PC8yTUSPG63bwYS7O&itag=18&source=youtube&requiressl=yes&mh=X6&mm=382%2C53289%2C36874&mn=Gs0xz%2CYpGsR%2CwMZ8M&ms=Gs0xz%2CYpGsR%2CwMZ8M&mv=u&mvi=3&pl=21&","error":"net::ERR_ABORTED"}
+{"t":7.2,"kind":"failed","id":105,"url":"https://rr5---sn-q4flrnes.googlevideo.com/videoplayback?expire=0361883000&ei=IqgBQz6pojdoZZpVtT2ORqv&ip=28.1.18.68&id=o-AFoU02MAFwY9qktaohWI1RENbnE3PC8yTUSPG63bwYS7O&itag=18&source=youtube&requiressl=yes&mh=X6&mm=382%2C53289%2C36874&mn=Gs0xz%2CYpGsR%2CwMZ8M&ms=Gs0xz%2CYpGsR%2CwMZ8M&mv=u&mvi=3&pl=21&","error":"net::ERR_ABORTED"}
+{"t":7.2,"kind":"done","id":102,"status":200,"size":-372}
+{"t":7.2,"kind":"done","id":111,"status":200,"size":-677}
+{"t":7.2,"kind":"req","id":114,"method":"GET","type":"document","url":"https://accounts.youtube.com/accounts/CheckConnection?pmpo=https%3A%2F%2Faccounts.google.com&v=1675671179&timestamp=1792879008742","sw":false}
+{"t":7.2,"kind":"done","id":112,"status":200,"size":-678}
+{"t":7.2,"kind":"req","id":115,"method":"POST","type":"fetch","url":"https://rr4---sn-vgqsrnld.googlevideo.com/videoplayback?expire=1792900603&ei=myndao23NNLtir4Pw9CukQw&ip=52.176.124.178&id=o-AEEWYYaGm5a79FTGm1rBNUMasNFgfujw86Sqfvoqjf9w&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=1218&met=1792879003%2C&mh=7c&mm=18%2C26&mn=sn-vgqsrnld%2Csn-aj2im9-5j&ms=aub","sw":false}
+{"t":7.2,"kind":"req","id":116,"method":"GET","type":"document","url":"https://accounts.google.com/_/bscframe","sw":false}
+{"t":7.2,"kind":"req","id":117,"method":"POST","type":"fetch","url":"https://accounts.google.com/v3/signin/_/AccountsSignInUi/data/batchexecute?rpcids=UEkKwb&source-path=%2Fv3%2Fsignin%2Fidentifier&f.sid=-4714123213326438955&bl=boq_identityfrontendauthuiserver_20261020.03_p0&hl=en&dsh=S723490612%3A1792879006831354&_reqid=79009&rt=c","sw":false}
+{"t":7.2,"kind":"done","id":113,"status":200,"size":-678}
+{"t":7.2,"kind":"mem","mb":[145,650,167,104]}
+{"t":7.3,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 362]"}
+{"t":7.3,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 457]"}
+{"t":7.3,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 224]"}
+{"t":7.3,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 36]"}
+{"t":7.3,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 41]"}
+{"t":7.3,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 141]"}
+{"t":7.3,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 439]"}
+{"t":7.3,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 503]"}
+{"t":7.3,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 106]"}
+{"t":7.3,"kind":"done","id":115,"status":200,"size":-372}
+{"t":7.3,"kind":"req","id":118,"method":"POST","type":"xhr","url":"https://www.youtube.com/api/jnn/v1/GenerateIT","sw":false}
+{"t":7.3,"kind":"req","id":119,"method":"GET","type":"script","url":"http://localhost:8781/scram/scramjet.wasm.wasm","sw":false}
+{"t":7.3,"kind":"req","id":120,"method":"GET","type":"script","url":"http://localhost:8781/scram/scramjet.all.js","sw":false}
+{"t":7.3,"kind":"req","id":121,"method":"GET","type":"fetch","url":"http://localhost:8781/scram/scramjet.all.js","sw":true}
+{"t":7.3,"kind":"req","id":122,"method":"GET","type":"fetch","url":"http://localhost:8781/scram/scramjet.wasm.wasm","sw":true}
+{"t":7.3,"kind":"done","id":116,"status":200,"size":-843}
+{"t":7.3,"kind":"done","id":121,"status":200,"size":180333}
+{"t":7.3,"kind":"req","id":123,"method":"GET","type":"script","url":"https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0CAFBFAAE/d=1/exm=A7fCU,CMcBD,DqMihc,E87wgc,EFQ78c,EN3i8d,Fndnac,GwYlN,IZT63,K0PMbc,K1ZKnb,KUM","sw":false}
+{"t":7.3,"kind":"done","id":117,"status":200,"size":-890}
+{"t":7.3,"kind":"done","id":122,"status":200,"size":537008}
+{"t":7.3,"kind":"done","id":120,"status":200,"size":-272}
+{"t":7.3,"kind":"done","id":119,"status":200,"size":-48}
+{"t":7.4,"kind":"console","type":"debug","text":"bare-mux: running v2.1.9 (build dc9dc6e)"}
+{"t":7.4,"kind":"console","type":"log","text":"%cg%c initializing scramjet client \n  \tbackground-color: #000;\n  \tcolor: #fff;\n  \tpadding: 2px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n   "}
+{"t":7.4,"kind":"console","type":"debug","text":"bare-mux: got localStorage bare-mux-path: /baremux/worker.js"}
+{"t":7.4,"kind":"req","id":124,"method":"GET","type":"xhr","url":"https://www.youtube.com/api/timedtext?v=dQw4w9WgXcQ&ei=myndao23NNLtir4Pw9CukQw&caps=asr&opi=112496729&exp=xpe&xoaf=5&xowf=1&hl=en&ip=0.0.0.0&ipbits=0&expire=1792904203&sparams=ip%2Cipbits%2Cexpire%2Cv%2Cei%2Ccaps%2Copi%2Cexp%2Cxoaf&signature=C7E62FF8829313F05EAE36E52FB20FBF5974B185.40246E23F4A2CAC35","sw":false}
+{"t":7.4,"kind":"done","id":118,"status":200,"size":-241}
+{"t":7.4,"kind":"done","id":123,"status":200,"size":-678}
+{"t":7.4,"kind":"req","id":125,"method":"POST","type":"xhr","url":"https://www.youtube.com/api/stats/atr?ns=yt&el=detailpage&cpn=J-pg9ui9dP5Z03_N&ver=2&cmt=1.179&fmt=397&fs=0&rt=2.512&euri&lact=2547&cl=1003072181&mos=0&volume=100&cbr=Chrome&cbrver=155.0.0.0&c=WEB&cver=2.20261023.01.00&cplayer=UNIPLAYER&cos=X11&cplatform=DESKTOP&hl=en_US&cr=US&len=213.061&fexp=v1%2C","sw":false}
+{"t":7.4,"kind":"console","type":"debug","text":"bare-mux: got localStorage bare-mux-path: /baremux/worker.js"}
+{"t":7.4,"kind":"mem","mb":[145,677,167,104]}
+{"t":7.4,"kind":"console","type":"debug","text":"bare-mux: got localStorage bare-mux-path: /baremux/worker.js"}
+{"t":7.5,"kind":"req","id":126,"method":"POST","type":"ping","url":"https://play.google.com/log?hasfast=true&authuser=0&format=json","sw":false}
+{"t":7.5,"kind":"req","id":127,"method":"POST","type":"ping","url":"https://play.google.com/log?hasfast=true&authuser=0&format=json","sw":false}
+{"t":7.5,"kind":"done","id":124,"status":200,"size":-297}
+{"t":7.5,"kind":"done","id":125,"status":204,"size":-289}
+{"t":7.6,"kind":"done","id":126,"status":200,"size":-487}
+{"t":7.6,"kind":"done","id":127,"status":200,"size":-487}
+{"t":7.6,"kind":"req","id":128,"method":"GET","type":"script","url":"http://localhost:8781/scram/scramjet.wasm.wasm","sw":false}
+{"t":7.6,"kind":"req","id":129,"method":"GET","type":"script","url":"http://localhost:8781/scram/scramjet.all.js","sw":false}
+{"t":7.6,"kind":"req","id":130,"method":"GET","type":"fetch","url":"http://localhost:8781/scram/scramjet.all.js","sw":true}
+{"t":7.6,"kind":"req","id":131,"method":"GET","type":"fetch","url":"http://localhost:8781/scram/scramjet.wasm.wasm","sw":true}
+{"t":7.6,"kind":"mem","mb":[145,687,167,104]}
+{"t":7.6,"kind":"done","id":114,"status":200,"size":-893}
+{"t":7.6,"kind":"done","id":130,"status":200,"size":180333}
+{"t":7.6,"kind":"done","id":131,"status":200,"size":537008}
+{"t":7.6,"kind":"done","id":129,"status":200,"size":-272}
+{"t":7.7,"kind":"done","id":128,"status":200,"size":-48}
+{"t":7.7,"kind":"console","type":"debug","text":"bare-mux: running v2.1.9 (build dc9dc6e)"}
+{"t":7.7,"kind":"console","type":"log","text":"%cg%c initializing scramjet client \n  \tbackground-color: #000;\n  \tcolor: #fff;\n  \tpadding: 2px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n   "}
+{"t":7.7,"kind":"console","type":"debug","text":"bare-mux: got localStorage bare-mux-path: /baremux/worker.js"}
+{"t":7.7,"kind":"req","id":132,"method":"GET","type":"script","url":"https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0CAFBFAAE/d=1/exm=A7fCU,CMcBD,DqMihc,E87wgc,EFQ78c,EN3i8d,Fndnac,GwYlN,IZT63,K0PMbc,K1ZKnb,KUM","sw":false}
+{"t":7.8,"kind":"done","id":132,"status":200,"size":-678}
+{"t":7.8,"kind":"mem","mb":[145,697,167,104]}
+{"t":8,"kind":"mem","mb":[145,697,167,104]}
+{"t":8.1,"kind":"tick","memory":[{"pid":5859,"mb":145},{"pid":5868,"mb":696},{"pid":5902,"mb":167},{"pid":5939,"mb":104}],"heap":{"usedMB":82,"totalMB":117,"nodes":4405,"docs":24,"frames":13},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":1.93,"paused":false,"ready":4,"net":2,"error":null,"buffered":20.7,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":8.2,"kind":"mem","mb":[145,696,167,104]}
+{"t":8.4,"kind":"mem","mb":[145,697,167,104]}
+{"t":8.6,"kind":"mem","mb":[145,697,167,104]}
+{"t":8.8,"kind":"mem","mb":[145,697,167,104]}
+{"t":9,"kind":"mem","mb":[145,698,167,104]}
+{"t":9.2,"kind":"tick","memory":[{"pid":5859,"mb":145},{"pid":5868,"mb":698},{"pid":5902,"mb":167},{"pid":5939,"mb":104}],"heap":{"usedMB":85,"totalMB":118,"nodes":4406,"docs":24,"frames":13},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":2.95,"paused":false,"ready":4,"net":2,"error":null,"buffered":20.7,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":9.2,"kind":"mem","mb":[145,698,167,104]}
+{"t":9.4,"kind":"mem","mb":[145,685,167,104]}
+{"t":9.6,"kind":"mem","mb":[145,685,167,104]}
+{"t":9.8,"kind":"mem","mb":[145,685,167,104]}
+{"t":9.9,"kind":"req","id":133,"method":"POST","type":"xhr","url":"https://www.youtube.com/api/stats/watchtime?ns=yt&el=detailpage&cpn=J-pg9ui9dP5Z03_N&ver=2&cmt=3.667&fmt=397&fs=0&rt=5.001&euri&lact=5036&cl=1003072181&state=playing&volume=100%2C100&cbr=Chrome&cbrver=155.0.0.0&c=WEB&cver=2.20261023.01.00&cplayer=UNIPLAYER&cos=X11&cplatform=DESKTOP&hl=en_US&cr=US&le","sw":false}
+{"t":9.9,"kind":"done","id":133,"status":204,"size":-289}
+{"t":10,"kind":"mem","mb":[145,685,167,104]}
+{"t":10.2,"kind":"tick","memory":[{"pid":5859,"mb":145},{"pid":5868,"mb":682},{"pid":5902,"mb":167},{"pid":5939,"mb":104}],"heap":{"usedMB":52,"totalMB":105,"nodes":4021,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":3.96,"paused":false,"ready":4,"net":2,"error":null,"buffered":20.7,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":10.2,"kind":"mem","mb":[145,682,167,104]}
+{"t":10.3,"kind":"req","id":134,"method":"POST","type":"fetch","url":"https://rr4---sn-vgqsrnld.googlevideo.com/videoplayback?expire=1792900603&ei=myndao23NNLtir4Pw9CukQw&ip=52.176.124.178&id=o-AEEWYYaGm5a79FTGm1rBNUMasNFgfujw86Sqfvoqjf9w&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=1218&met=1792879003%2C&mh=7c&mm=18%2C26&mn=sn-vgqsrnld%2Csn-aj2im9-5j&ms=aub","sw":false}
+{"t":10.3,"kind":"done","id":134,"status":200,"size":-372}
+{"t":10.4,"kind":"mem","mb":[144,681,169,104]}
+{"t":10.6,"kind":"mem","mb":[144,681,168,104]}
+{"t":10.8,"kind":"mem","mb":[144,680,168,103]}
+{"t":11,"kind":"mem","mb":[144,678,168,103]}
+{"t":11.2,"kind":"tick","memory":[{"pid":5859,"mb":144},{"pid":5868,"mb":677},{"pid":5902,"mb":168},{"pid":5939,"mb":103}],"heap":{"usedMB":52,"totalMB":105,"nodes":4021,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":4.98,"paused":false,"ready":4,"net":2,"error":null,"buffered":31.6,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":11.2,"kind":"mem","mb":[144,677,168,103]}
+{"t":11.4,"kind":"mem","mb":[144,674,168,103]}
+{"t":11.6,"kind":"mem","mb":[144,673,168,103]}
+{"t":11.8,"kind":"mem","mb":[144,673,168,103]}
+{"t":12,"kind":"mem","mb":[144,673,168,103]}
+{"t":12.2,"kind":"tick","memory":[{"pid":5859,"mb":144},{"pid":5868,"mb":673},{"pid":5902,"mb":168},{"pid":5939,"mb":103}],"heap":{"usedMB":52,"totalMB":105,"nodes":4021,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":5.99,"paused":false,"ready":4,"net":2,"error":null,"buffered":31.6,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":12.2,"kind":"mem","mb":[144,673,168,103]}
+{"t":12.4,"kind":"mem","mb":[144,673,168,103]}
+{"t":12.6,"kind":"mem","mb":[144,673,168,103]}
+{"t":12.8,"kind":"mem","mb":[144,672,168,103]}
+{"t":13,"kind":"mem","mb":[144,672,168,103]}
+{"t":13.2,"kind":"tick","memory":[{"pid":5859,"mb":144},{"pid":5868,"mb":672},{"pid":5902,"mb":168},{"pid":5939,"mb":103}],"heap":{"usedMB":59,"totalMB":106,"nodes":4021,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":7.01,"paused":false,"ready":4,"net":2,"error":null,"buffered":31.6,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":13.2,"kind":"mem","mb":[144,673,168,103]}
+{"t":13.3,"kind":"console","type":"warning","text":"The resource http://localhost:8781/scramjet/https%3A%2F%2Frr4---sn-vgqsrnld.c.youtube.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":13.3,"kind":"console","type":"warning","text":"The resource http://localhost:8781/scramjet/https%3A%2F%2Fi.ytimg.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":13.3,"kind":"console","type":"warning","text":"The resource http://localhost:8781/scramjet/https%3A%2F%2Frr4---sn-vgqsrnld.googlevideo.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":13.4,"kind":"mem","mb":[144,673,168,103]}
+{"t":13.6,"kind":"mem","mb":[144,673,168,103]}
+{"t":13.8,"kind":"mem","mb":[144,673,168,103]}
+{"t":14,"kind":"mem","mb":[144,673,168,103]}
+{"t":14.3,"kind":"mem","mb":[144,673,168,103]}
+{"t":14.3,"kind":"tick","memory":[{"pid":5859,"mb":144},{"pid":5868,"mb":673},{"pid":5902,"mb":168},{"pid":5939,"mb":103}],"heap":{"usedMB":59,"totalMB":106,"nodes":4021,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":8.04,"paused":false,"ready":4,"net":2,"error":null,"buffered":31.6,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":14.5,"kind":"mem","mb":[144,672,168,103]}
+{"t":14.6,"kind":"req","id":135,"method":"GET","type":"xhr","url":"https://r7---sn-bvvbaxivnuxq5uu-q4fz.googlevideo.com/videogoodput?id=o-AJ4X3Th4xMShathqKWQ5soBpxdPsE-KQi2PuZFjife4R&source=goodput&range=0-4999&expire=1792882603&ip=52.176.124.178&ms=pm&mm=35&pl=24&sparams=id,source,range,expire,ip,ms,mm,pl&signature=785BD3EECFE5BC8FD5568CF4D7DA7BF4AFA9BD0B.8364E610","sw":false}
+{"t":14.7,"kind":"mem","mb":[144,672,167,103]}
+{"t":14.7,"kind":"done","id":135,"status":200,"size":-452}
+{"t":14.9,"kind":"mem","mb":[144,672,167,103]}
+{"t":14.9,"kind":"req","id":136,"method":"POST","type":"fetch","url":"https://www.youtube.com/api/stats/qoe?fmt=397&afmt=251&cpn=J-pg9ui9dP5Z03_N&el=detailpage&ns=yt&fexp=v1%2C100673025%2C-76668381%2C15321210%2C11737789%2C31835%2C2821%2C124674%2C77203%2C65%2C13917%2C26504%2C9252%2C16509%2C23206%2C10365%2C59431%2C45%2C8206%2C2625%2C1904%2C18126%2C15105%2C25059%2C4174%2","sw":false}
+{"t":14.9,"kind":"failed","id":136,"url":"https://www.youtube.com/api/stats/qoe?fmt=397&afmt=251&cpn=J-pg9ui9dP5Z03_N&el=detailpage&ns=yt&fexp=v1%2C100673025%2C-76668381%2C15321210%2C11737789%2C31835%2C2821%2C124674%2C77203%2C65%2C13917%2C26504%2C9252%2C16509%2C23206%2C10365%2C59431%2C45%2C8206%2C2625%2C1904%2C18126%2C15105%2C25059%2C4174%2","error":"net::ERR_ABORTED"}
+{"t":15.1,"kind":"mem","mb":[144,672,167,103]}
+{"t":15.3,"kind":"mem","mb":[144,672,167,103]}
+{"t":15.3,"kind":"tick","memory":[{"pid":5859,"mb":144},{"pid":5868,"mb":672},{"pid":5902,"mb":167},{"pid":5939,"mb":103}],"heap":{"usedMB":59,"totalMB":106,"nodes":4021,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":9.05,"paused":false,"ready":4,"net":2,"error":null,"buffered":31.6,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":15.5,"kind":"mem","mb":[144,672,167,103]}
+{"t":15.7,"kind":"mem","mb":[144,672,167,103]}
+{"t":15.9,"kind":"mem","mb":[144,672,167,103]}
+{"t":16.1,"kind":"mem","mb":[144,672,167,103]}
+{"t":16.3,"kind":"mem","mb":[144,672,167,103]}
+{"t":16.3,"kind":"tick","memory":[{"pid":5859,"mb":144},{"pid":5868,"mb":672},{"pid":5902,"mb":167},{"pid":5939,"mb":103}],"heap":{"usedMB":59,"totalMB":106,"nodes":4021,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":10.07,"paused":false,"ready":4,"net":2,"error":null,"buffered":31.6,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":16.5,"kind":"mem","mb":[144,672,167,103]}
+{"t":16.7,"kind":"mem","mb":[144,672,167,103]}
+{"t":16.9,"kind":"mem","mb":[144,672,167,103]}
+{"t":17.1,"kind":"mem","mb":[144,672,167,103]}
+{"t":17.1,"kind":"req","id":137,"method":"POST","type":"fetch","url":"https://play.google.com/log?format=json&hasfast=true&authuser=0","sw":false}
+{"t":17.2,"kind":"done","id":137,"status":200,"size":-487}
+{"t":17.3,"kind":"mem","mb":[144,673,167,103]}
+{"t":17.3,"kind":"tick","memory":[{"pid":5859,"mb":144},{"pid":5868,"mb":674},{"pid":5902,"mb":167},{"pid":5939,"mb":103}],"heap":{"usedMB":65,"totalMB":108,"nodes":4021,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":11.09,"paused":false,"ready":4,"net":2,"error":null,"buffered":31.6,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":17.5,"kind":"mem","mb":[144,674,167,103]}
+{"t":17.7,"kind":"mem","mb":[144,674,167,103]}
+{"t":17.8,"kind":"req","id":138,"method":"POST","type":"fetch","url":"https://rr4---sn-vgqsrnld.googlevideo.com/videoplayback?expire=1792900603&ei=myndao23NNLtir4Pw9CukQw&ip=52.176.124.178&id=o-AEEWYYaGm5a79FTGm1rBNUMasNFgfujw86Sqfvoqjf9w&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=1218&met=1792879003%2C&mh=7c&mm=18%2C26&mn=sn-vgqsrnld%2Csn-aj2im9-5j&ms=aub","sw":false}
+{"t":17.9,"kind":"mem","mb":[144,678,162,103]}
+{"t":17.9,"kind":"req","id":139,"method":"POST","type":"fetch","url":"https://rr4---sn-vgqsrnld.googlevideo.com/videoplayback?expire=1792900603&ei=myndao23NNLtir4Pw9CukQw&ip=52.176.124.178&id=o-AEEWYYaGm5a79FTGm1rBNUMasNFgfujw86Sqfvoqjf9w&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=1218&met=1792879003%2C&mh=7c&mm=18%2C26&mn=sn-vgqsrnld%2Csn-aj2im9-5j&ms=aub","sw":false}
+{"t":17.9,"kind":"done","id":138,"status":200,"size":-372}
+{"t":17.9,"kind":"done","id":139,"status":200,"size":-372}
+{"t":18.1,"kind":"mem","mb":[144,679,162,103]}
+{"t":18.3,"kind":"mem","mb":[144,679,162,103]}
+{"t":18.3,"kind":"tick","memory":[{"pid":5859,"mb":144},{"pid":5868,"mb":679},{"pid":5902,"mb":162},{"pid":5939,"mb":103}],"heap":{"usedMB":66,"totalMB":108,"nodes":4021,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":12.1,"paused":false,"ready":4,"net":2,"error":null,"buffered":42.3,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":18.5,"kind":"mem","mb":[144,679,162,103]}
+{"t":18.7,"kind":"mem","mb":[144,679,162,103]}
+{"t":18.9,"kind":"mem","mb":[144,679,162,103]}
+{"t":19.1,"kind":"mem","mb":[144,679,162,103]}
+{"t":19.3,"kind":"mem","mb":[144,679,162,103]}
+{"t":19.3,"kind":"tick","memory":[{"pid":5859,"mb":144},{"pid":5868,"mb":679},{"pid":5902,"mb":162},{"pid":5939,"mb":103}],"heap":{"usedMB":66,"totalMB":108,"nodes":4021,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":13.12,"paused":false,"ready":4,"net":2,"error":null,"buffered":42.3,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":19.5,"kind":"mem","mb":[144,679,162,103]}
+{"t":19.7,"kind":"mem","mb":[144,679,162,103]}
+{"t":19.9,"kind":"mem","mb":[144,679,162,103]}
+{"t":19.9,"kind":"req","id":140,"method":"POST","type":"xhr","url":"https://www.youtube.com/api/stats/watchtime?ns=yt&el=detailpage&cpn=J-pg9ui9dP5Z03_N&ver=2&cmt=13.666&fmt=397&fs=0&rt=15&euri&lact=15035&cl=1003072181&state=playing&volume=100&cbr=Chrome&cbrver=155.0.0.0&c=WEB&cver=2.20261023.01.00&cplayer=UNIPLAYER&cos=X11&cplatform=DESKTOP&hl=en_US&cr=US&len=213.0","sw":false}
+{"t":19.9,"kind":"done","id":140,"status":204,"size":-289}
+{"t":20.1,"kind":"mem","mb":[144,679,162,103]}
+{"t":20.3,"kind":"mem","mb":[144,679,162,103]}
+{"t":20.3,"kind":"tick","memory":[{"pid":5859,"mb":144},{"pid":5868,"mb":679},{"pid":5902,"mb":162},{"pid":5939,"mb":103}],"heap":{"usedMB":66,"totalMB":108,"nodes":4022,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":14.14,"paused":false,"ready":4,"net":2,"error":null,"buffered":42.3,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":20.5,"kind":"mem","mb":[144,679,162,103]}
+{"t":20.7,"kind":"mem","mb":[144,679,162,103]}
+{"t":20.9,"kind":"mem","mb":[144,679,162,103]}
+{"t":20.9,"kind":"req","id":141,"method":"POST","type":"fetch","url":"https://rr4---sn-vgqsrnld.googlevideo.com/videoplayback?expire=1792900603&ei=myndao23NNLtir4Pw9CukQw&ip=52.176.124.178&id=o-AEEWYYaGm5a79FTGm1rBNUMasNFgfujw86Sqfvoqjf9w&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=1218&met=1792879003%2C&mh=7c&mm=18%2C26&mn=sn-vgqsrnld%2Csn-aj2im9-5j&ms=aub","sw":false}
+{"t":20.9,"kind":"done","id":141,"status":200,"size":-372}
+{"t":21.1,"kind":"mem","mb":[144,683,163,103]}
+{"t":21.3,"kind":"mem","mb":[144,683,163,103]}
+{"t":21.4,"kind":"tick","memory":[{"pid":5859,"mb":144},{"pid":5868,"mb":683},{"pid":5902,"mb":163},{"pid":5939,"mb":103}],"heap":{"usedMB":67,"totalMB":108,"nodes":4022,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":15.15,"paused":false,"ready":4,"net":2,"error":null,"buffered":48.8,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":21.5,"kind":"mem","mb":[144,683,163,103]}
+{"t":21.7,"kind":"mem","mb":[144,683,163,103]}
+{"t":21.9,"kind":"mem","mb":[144,683,163,103]}
+{"t":22.1,"kind":"mem","mb":[144,683,163,103]}
+{"t":22.3,"kind":"mem","mb":[144,683,163,103]}
+{"t":22.4,"kind":"tick","memory":[{"pid":5859,"mb":144},{"pid":5868,"mb":684},{"pid":5902,"mb":163},{"pid":5939,"mb":103}],"heap":{"usedMB":73,"totalMB":112,"nodes":4022,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":16.17,"paused":false,"ready":4,"net":2,"error":null,"buffered":48.8,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":22.5,"kind":"mem","mb":[144,684,163,103]}
+{"t":22.7,"kind":"mem","mb":[144,684,163,103]}
+{"t":22.9,"kind":"mem","mb":[144,684,163,103]}
+{"t":23.1,"kind":"mem","mb":[144,684,163,103]}
+{"t":23.3,"kind":"mem","mb":[144,684,163,103]}
+{"t":23.4,"kind":"tick","memory":[{"pid":5859,"mb":144},{"pid":5868,"mb":684},{"pid":5902,"mb":163},{"pid":5939,"mb":103}],"heap":{"usedMB":73,"totalMB":112,"nodes":4022,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":17.18,"paused":false,"ready":4,"net":2,"error":null,"buffered":48.8,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":23.5,"kind":"mem","mb":[144,684,163,103]}
+{"t":23.7,"kind":"mem","mb":[144,684,163,103]}
+{"t":23.9,"kind":"mem","mb":[144,684,163,103]}
+{"t":23.9,"kind":"console","type":"warning","text":"The resource http://localhost:8781/scramjet/https%3A%2F%2Frr4---sn-vgqsrnld.c.youtube.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":23.9,"kind":"console","type":"warning","text":"The resource http://localhost:8781/scramjet/https%3A%2F%2Fi.ytimg.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":23.9,"kind":"console","type":"warning","text":"The resource http://localhost:8781/scramjet/https%3A%2F%2Frr4---sn-vgqsrnld.googlevideo.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":24.1,"kind":"mem","mb":[144,684,163,103]}
+{"t":24.3,"kind":"mem","mb":[144,684,163,103]}
+{"t":24.4,"kind":"tick","memory":[{"pid":5859,"mb":144},{"pid":5868,"mb":684},{"pid":5902,"mb":163},{"pid":5939,"mb":103}],"heap":{"usedMB":73,"totalMB":112,"nodes":4022,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":18.2,"paused":false,"ready":4,"net":2,"error":null,"buffered":48.8,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":24.5,"kind":"mem","mb":[144,684,163,103]}
+{"t":24.7,"kind":"mem","mb":[144,684,163,103]}
+{"t":24.9,"kind":"mem","mb":[144,684,163,103]}
+{"t":25,"kind":"req","id":142,"method":"POST","type":"fetch","url":"https://rr4---sn-vgqsrnld.googlevideo.com/videoplayback?expire=1792900603&ei=myndao23NNLtir4Pw9CukQw&ip=52.176.124.178&id=o-AEEWYYaGm5a79FTGm1rBNUMasNFgfujw86Sqfvoqjf9w&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=1218&met=1792879003%2C&mh=7c&mm=18%2C26&mn=sn-vgqsrnld%2Csn-aj2im9-5j&ms=aub","sw":false}
+{"t":25.1,"kind":"mem","mb":[144,668,165,103]}
+{"t":25.1,"kind":"done","id":142,"status":200,"size":-372}
+{"t":25.3,"kind":"mem","mb":[144,668,165,103]}
+{"t":25.4,"kind":"tick","memory":[{"pid":5859,"mb":144},{"pid":5868,"mb":668},{"pid":5902,"mb":165},{"pid":5939,"mb":103}],"heap":{"usedMB":73,"totalMB":112,"nodes":4022,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":19.22,"paused":false,"ready":4,"net":2,"error":null,"buffered":61.9,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":25.5,"kind":"mem","mb":[144,668,165,103]}
+{"t":25.7,"kind":"mem","mb":[144,669,165,103]}
+{"t":25.9,"kind":"mem","mb":[144,669,165,103]}
+{"t":26.1,"kind":"mem","mb":[144,669,165,103]}
+{"t":26.3,"kind":"mem","mb":[144,669,165,103]}
+{"t":26.5,"kind":"mem","mb":[144,669,165,103]}
+{"t":26.5,"kind":"tick","memory":[{"pid":5859,"mb":144},{"pid":5868,"mb":669},{"pid":5902,"mb":165},{"pid":5939,"mb":103}],"heap":{"usedMB":73,"totalMB":112,"nodes":4022,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":20.25,"paused":false,"ready":4,"net":2,"error":null,"buffered":61.9,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":26.7,"kind":"mem","mb":[144,669,165,103]}
+{"t":26.9,"kind":"mem","mb":[144,669,165,103]}
+{"t":27.1,"kind":"mem","mb":[144,669,165,103]}
+{"t":27.3,"kind":"mem","mb":[144,669,165,103]}
+{"t":27.5,"kind":"mem","mb":[144,670,165,103]}
+{"t":27.5,"kind":"tick","memory":[{"pid":5859,"mb":144},{"pid":5868,"mb":670},{"pid":5902,"mb":165},{"pid":5939,"mb":103}],"heap":{"usedMB":80,"totalMB":112,"nodes":4022,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":21.26,"paused":false,"ready":4,"net":2,"error":null,"buffered":61.9,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":27.7,"kind":"mem","mb":[144,670,165,103]}
+{"t":27.9,"kind":"mem","mb":[144,670,165,103]}
+{"t":28.1,"kind":"mem","mb":[144,670,165,103]}
+{"t":28.1,"kind":"console","type":"warning","text":"The resource http://localhost:8781/scramjet/https%3A%2F%2Frr4---sn-vgqsrnld.c.youtube.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":28.1,"kind":"console","type":"warning","text":"The resource http://localhost:8781/scramjet/https%3A%2F%2Fi.ytimg.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":28.1,"kind":"console","type":"warning","text":"The resource http://localhost:8781/scramjet/https%3A%2F%2Frr4---sn-vgqsrnld.googlevideo.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":28.3,"kind":"mem","mb":[144,670,165,103]}
+{"t":28.5,"kind":"mem","mb":[144,670,165,103]}
+{"t":28.5,"kind":"tick","memory":[{"pid":5859,"mb":144},{"pid":5868,"mb":670},{"pid":5902,"mb":165},{"pid":5939,"mb":103}],"heap":{"usedMB":80,"totalMB":112,"nodes":4022,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":22.28,"paused":false,"ready":4,"net":2,"error":null,"buffered":61.9,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":28.7,"kind":"mem","mb":[144,670,165,103]}
+{"t":28.9,"kind":"mem","mb":[144,670,165,103]}
+{"t":29.1,"kind":"mem","mb":[144,670,165,103]}
+{"t":29.3,"kind":"mem","mb":[144,670,165,103]}
+{"t":29.5,"kind":"mem","mb":[144,670,165,103]}
+{"t":29.5,"kind":"tick","memory":[{"pid":5859,"mb":144},{"pid":5868,"mb":670},{"pid":5902,"mb":165},{"pid":5939,"mb":103}],"heap":{"usedMB":80,"totalMB":112,"nodes":4022,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":23.29,"paused":false,"ready":4,"net":2,"error":null,"buffered":61.9,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":29.7,"kind":"mem","mb":[144,670,165,103]}
+{"t":29.9,"kind":"mem","mb":[144,670,165,103]}
+{"t":29.9,"kind":"req","id":143,"method":"POST","type":"xhr","url":"https://www.youtube.com/api/stats/watchtime?ns=yt&el=detailpage&cpn=J-pg9ui9dP5Z03_N&ver=2&cmt=23.667&fmt=397&fs=0&rt=25&euri&lact=25035&cl=1003072181&state=playing&volume=100&cbr=Chrome&cbrver=155.0.0.0&c=WEB&cver=2.20261023.01.00&cplayer=UNIPLAYER&cos=X11&cplatform=DESKTOP&hl=en_US&cr=US&len=213.0","sw":false}
+{"t":29.9,"kind":"done","id":143,"status":204,"size":-289}
+{"t":30.1,"kind":"mem","mb":[144,670,165,103]}
+{"t":30.3,"kind":"mem","mb":[144,670,165,103]}
+{"t":30.5,"kind":"mem","mb":[144,670,165,103]}
+{"t":30.5,"kind":"tick","memory":[{"pid":5859,"mb":144},{"pid":5868,"mb":670},{"pid":5902,"mb":165},{"pid":5939,"mb":103}],"heap":{"usedMB":53,"totalMB":106,"nodes":4023,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":24.31,"paused":false,"ready":4,"net":2,"error":null,"buffered":61.9,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":30.7,"kind":"mem","mb":[143,670,165,103]}
+{"t":30.9,"kind":"mem","mb":[143,670,165,103]}
+{"t":31.1,"kind":"mem","mb":[143,670,156,103]}
+{"t":31.3,"kind":"mem","mb":[141,670,156,103]}
+{"t":31.5,"kind":"mem","mb":[141,670,156,103]}
+{"t":31.5,"kind":"tick","memory":[{"pid":5859,"mb":141},{"pid":5868,"mb":670},{"pid":5902,"mb":155},{"pid":5939,"mb":103}],"heap":{"usedMB":53,"totalMB":106,"nodes":4023,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":25.32,"paused":false,"ready":4,"net":2,"error":null,"buffered":61.9,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":31.7,"kind":"mem","mb":[141,670,155,103]}
+{"t":31.9,"kind":"mem","mb":[141,670,155,103]}
+{"t":32.1,"kind":"mem","mb":[141,670,155,103]}
+{"t":32.3,"kind":"mem","mb":[141,670,155,103]}
+{"t":32.5,"kind":"mem","mb":[141,671,155,103]}
+{"t":32.6,"kind":"tick","memory":[{"pid":5859,"mb":141},{"pid":5868,"mb":671},{"pid":5902,"mb":155},{"pid":5939,"mb":103}],"heap":{"usedMB":59,"totalMB":106,"nodes":4023,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":26.34,"paused":false,"ready":4,"net":2,"error":null,"buffered":61.9,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":32.7,"kind":"mem","mb":[141,671,155,103]}
+{"t":32.9,"kind":"mem","mb":[141,671,155,103]}
+{"t":32.9,"kind":"console","type":"warning","text":"The resource http://localhost:8781/scramjet/https%3A%2F%2Frr4---sn-vgqsrnld.c.youtube.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":32.9,"kind":"console","type":"warning","text":"The resource http://localhost:8781/scramjet/https%3A%2F%2Fi.ytimg.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":32.9,"kind":"console","type":"warning","text":"The resource http://localhost:8781/scramjet/https%3A%2F%2Frr4---sn-vgqsrnld.googlevideo.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":33.1,"kind":"mem","mb":[141,590,155,103]}
+{"t":33.3,"kind":"mem","mb":[141,590,155,103]}
+{"t":33.5,"kind":"mem","mb":[141,520,155,103]}
+{"t":33.6,"kind":"tick","memory":[{"pid":5859,"mb":141},{"pid":5868,"mb":519},{"pid":5902,"mb":155},{"pid":5939,"mb":103}],"heap":{"usedMB":51,"totalMB":54,"nodes":4018,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":27.36,"paused":false,"ready":4,"net":2,"error":null,"buffered":61.9,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":33.7,"kind":"mem","mb":[141,519,155,103]}
+{"t":33.7,"kind":"req","id":144,"method":"POST","type":"fetch","url":"https://rr4---sn-vgqsrnld.googlevideo.com/videoplayback?expire=1792900603&ei=myndao23NNLtir4Pw9CukQw&ip=52.176.124.178&id=o-AEEWYYaGm5a79FTGm1rBNUMasNFgfujw86Sqfvoqjf9w&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=1218&met=1792879003%2C&mh=7c&mm=18%2C26&mn=sn-vgqsrnld%2Csn-aj2im9-5j&ms=aub","sw":false}
+{"t":33.8,"kind":"req","id":145,"method":"POST","type":"fetch","url":"https://rr4---sn-vgqsrnld.googlevideo.com/videoplayback?expire=1792900603&ei=myndao23NNLtir4Pw9CukQw&ip=52.176.124.178&id=o-AEEWYYaGm5a79FTGm1rBNUMasNFgfujw86Sqfvoqjf9w&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=1218&met=1792879003%2C&mh=7c&mm=18%2C26&mn=sn-vgqsrnld%2Csn-aj2im9-5j&ms=aub","sw":false}
+{"t":33.8,"kind":"done","id":144,"status":200,"size":-372}
+{"t":33.9,"kind":"mem","mb":[141,530,158,103]}
+{"t":33.9,"kind":"done","id":145,"status":200,"size":-372}
+{"t":34.1,"kind":"mem","mb":[141,528,158,103]}
+{"t":34.3,"kind":"mem","mb":[141,528,158,103]}
+{"t":34.5,"kind":"mem","mb":[141,528,158,103]}
+{"t":34.6,"kind":"tick","memory":[{"pid":5859,"mb":141},{"pid":5868,"mb":528},{"pid":5902,"mb":158},{"pid":5939,"mb":103}],"heap":{"usedMB":52,"totalMB":53,"nodes":4018,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":28.37,"paused":false,"ready":4,"net":2,"error":null,"buffered":76.2,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":34.7,"kind":"mem","mb":[141,528,158,103]}
+{"t":34.9,"kind":"mem","mb":[141,528,158,103]}
+{"t":35.1,"kind":"mem","mb":[141,528,158,103]}
+{"t":35.3,"kind":"mem","mb":[141,528,158,103]}
+{"t":35.5,"kind":"mem","mb":[141,528,158,103]}
+{"t":35.6,"kind":"tick","memory":[{"pid":5859,"mb":141},{"pid":5868,"mb":528},{"pid":5902,"mb":158},{"pid":5939,"mb":103}],"heap":{"usedMB":52,"totalMB":53,"nodes":4018,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":29.39,"paused":false,"ready":4,"net":2,"error":null,"buffered":76.2,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":35.7,"kind":"mem","mb":[141,528,158,103]}
+{"t":35.9,"kind":"mem","mb":[141,528,158,103]}
+{"t":36.1,"kind":"mem","mb":[141,528,158,103]}
+{"t":36.3,"kind":"mem","mb":[141,528,158,103]}
+{"t":36.5,"kind":"mem","mb":[141,528,158,103]}
+{"t":36.6,"kind":"tick","memory":[{"pid":5859,"mb":141},{"pid":5868,"mb":528},{"pid":5902,"mb":158},{"pid":5939,"mb":103}],"heap":{"usedMB":52,"totalMB":53,"nodes":4018,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":30.41,"paused":false,"ready":4,"net":2,"error":null,"buffered":76.2,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":36.7,"kind":"mem","mb":[141,528,158,103]}
+{"t":36.9,"kind":"mem","mb":[141,528,158,103]}
+{"t":36.9,"kind":"console","type":"warning","text":"The resource http://localhost:8781/scramjet/https%3A%2F%2Frr4---sn-vgqsrnld.c.youtube.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":36.9,"kind":"console","type":"warning","text":"The resource http://localhost:8781/scramjet/https%3A%2F%2Fi.ytimg.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":36.9,"kind":"console","type":"warning","text":"The resource http://localhost:8781/scramjet/https%3A%2F%2Frr4---sn-vgqsrnld.googlevideo.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":37.1,"kind":"mem","mb":[141,528,158,103]}
+{"t":37.3,"kind":"mem","mb":[141,528,158,103]}
+{"t":37.5,"kind":"mem","mb":[141,531,158,103]}
+{"t":37.6,"kind":"tick","memory":[{"pid":5859,"mb":141},{"pid":5868,"mb":532},{"pid":5902,"mb":158},{"pid":5939,"mb":103}],"heap":{"usedMB":54,"totalMB":57,"nodes":4018,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":31.42,"paused":false,"ready":4,"net":2,"error":null,"buffered":76.2,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":37.7,"kind":"mem","mb":[141,532,158,103]}
+{"t":37.7,"kind":"req","id":146,"method":"POST","type":"ping","url":"https://play.google.com/log?hasfast=true&authuser=0&format=json","sw":false}
+{"t":37.8,"kind":"done","id":146,"status":200,"size":-354}
+{"t":37.9,"kind":"mem","mb":[141,532,158,103]}
+{"t":38.1,"kind":"mem","mb":[141,532,158,103]}
+{"t":38.3,"kind":"mem","mb":[141,532,158,103]}
+{"t":38.5,"kind":"mem","mb":[141,532,158,103]}
+{"t":38.7,"kind":"mem","mb":[141,532,158,103]}
+{"t":38.7,"kind":"tick","memory":[{"pid":5859,"mb":141},{"pid":5868,"mb":532},{"pid":5902,"mb":158},{"pid":5939,"mb":103}],"heap":{"usedMB":54,"totalMB":57,"nodes":4018,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":32.46,"paused":false,"ready":4,"net":2,"error":null,"buffered":76.2,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":38.9,"kind":"mem","mb":[141,532,158,103]}
+{"t":39,"kind":"req","id":147,"method":"POST","type":"fetch","url":"https://rr4---sn-vgqsrnld.googlevideo.com/videoplayback?expire=1792900603&ei=myndao23NNLtir4Pw9CukQw&ip=52.176.124.178&id=o-AEEWYYaGm5a79FTGm1rBNUMasNFgfujw86Sqfvoqjf9w&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=1218&met=1792879003%2C&mh=7c&mm=18%2C26&mn=sn-vgqsrnld%2Csn-aj2im9-5j&ms=aub","sw":false}
+{"t":39.1,"kind":"mem","mb":[141,534,158,103]}
+{"t":39.1,"kind":"done","id":147,"status":200,"size":-372}
+{"t":39.3,"kind":"mem","mb":[141,538,160,103]}
+{"t":39.5,"kind":"mem","mb":[141,538,160,103]}
+{"t":39.7,"kind":"mem","mb":[141,538,160,103]}
+{"t":39.7,"kind":"tick","memory":[{"pid":5859,"mb":141},{"pid":5868,"mb":538},{"pid":5902,"mb":160},{"pid":5939,"mb":103}],"heap":{"usedMB":53,"totalMB":58,"nodes":4018,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":33.47,"paused":false,"ready":4,"net":2,"error":null,"buffered":87.3,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":39.9,"kind":"mem","mb":[141,538,160,103]}
+{"t":40.1,"kind":"mem","mb":[141,538,160,103]}
+{"t":40.3,"kind":"mem","mb":[141,538,160,103]}
+{"t":40.5,"kind":"mem","mb":[141,538,160,103]}
+{"t":40.7,"kind":"mem","mb":[141,538,160,103]}
+{"t":40.7,"kind":"tick","memory":[{"pid":5859,"mb":141},{"pid":5868,"mb":538},{"pid":5902,"mb":160},{"pid":5939,"mb":103}],"heap":{"usedMB":53,"totalMB":58,"nodes":4018,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":34.49,"paused":false,"ready":4,"net":2,"error":null,"buffered":87.3,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":40.9,"kind":"mem","mb":[141,538,160,103]}
+{"t":41.1,"kind":"mem","mb":[141,538,160,103]}
+{"t":41.3,"kind":"mem","mb":[141,538,160,103]}
+{"t":41.5,"kind":"mem","mb":[141,538,160,103]}
+{"t":41.7,"kind":"mem","mb":[141,538,160,103]}
+{"t":41.7,"kind":"tick","memory":[{"pid":5859,"mb":141},{"pid":5868,"mb":538},{"pid":5902,"mb":160},{"pid":5939,"mb":103}],"heap":{"usedMB":53,"totalMB":58,"nodes":4018,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":35.5,"paused":false,"ready":4,"net":2,"error":null,"buffered":87.3,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":41.9,"kind":"mem","mb":[141,538,160,103]}
+{"t":42.1,"kind":"mem","mb":[141,538,160,103]}
+{"t":42.1,"kind":"console","type":"warning","text":"The resource http://localhost:8781/scramjet/https%3A%2F%2Frr4---sn-vgqsrnld.c.youtube.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":42.1,"kind":"console","type":"warning","text":"The resource http://localhost:8781/scramjet/https%3A%2F%2Fi.ytimg.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":42.1,"kind":"console","type":"warning","text":"The resource http://localhost:8781/scramjet/https%3A%2F%2Frr4---sn-vgqsrnld.googlevideo.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":42.3,"kind":"mem","mb":[141,538,160,103]}
+{"t":42.5,"kind":"mem","mb":[141,540,160,103]}
+{"t":42.7,"kind":"mem","mb":[141,540,160,103]}
+{"t":42.7,"kind":"tick","memory":[{"pid":5859,"mb":141},{"pid":5868,"mb":540},{"pid":5902,"mb":160},{"pid":5939,"mb":103}],"heap":{"usedMB":54,"totalMB":59,"nodes":4018,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":36.52,"paused":false,"ready":4,"net":2,"error":null,"buffered":87.3,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":42.9,"kind":"mem","mb":[141,540,160,103]}
+{"t":43.1,"kind":"mem","mb":[141,540,160,103]}
+{"t":43.3,"kind":"mem","mb":[141,540,160,103]}
+{"t":43.5,"kind":"mem","mb":[141,540,160,103]}
+{"t":43.7,"kind":"mem","mb":[141,540,160,103]}
+{"t":43.8,"kind":"tick","memory":[{"pid":5859,"mb":141},{"pid":5868,"mb":540},{"pid":5902,"mb":160},{"pid":5939,"mb":103}],"heap":{"usedMB":54,"totalMB":59,"nodes":4018,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":37.54,"paused":false,"ready":4,"net":2,"error":null,"buffered":87.3,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":43.9,"kind":"mem","mb":[141,540,160,103]}
+{"t":44.1,"kind":"mem","mb":[141,540,160,103]}
+{"t":44.3,"kind":"mem","mb":[141,540,160,103]}
+{"t":44.5,"kind":"mem","mb":[141,540,160,103]}
+{"t":44.7,"kind":"mem","mb":[141,540,160,103]}
+{"t":44.8,"kind":"tick","memory":[{"pid":5859,"mb":141},{"pid":5868,"mb":540},{"pid":5902,"mb":160},{"pid":5939,"mb":103}],"heap":{"usedMB":54,"totalMB":59,"nodes":4018,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":38.55,"paused":false,"ready":4,"net":2,"error":null,"buffered":87.3,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":44.9,"kind":"mem","mb":[141,540,160,103]}
+{"t":44.9,"kind":"req","id":148,"method":"POST","type":"fetch","url":"https://www.youtube.com/api/stats/qoe?fmt=397&afmt=251&cpn=J-pg9ui9dP5Z03_N&el=detailpage&ns=yt&fexp=v1%2C100673025%2C-76668381%2C15321210%2C11737789%2C31835%2C2821%2C124674%2C77203%2C65%2C13917%2C26504%2C9252%2C16509%2C23206%2C10365%2C59431%2C45%2C8206%2C2625%2C1904%2C18126%2C15105%2C25059%2C4174%2","sw":false}
+{"t":44.9,"kind":"failed","id":148,"url":"https://www.youtube.com/api/stats/qoe?fmt=397&afmt=251&cpn=J-pg9ui9dP5Z03_N&el=detailpage&ns=yt&fexp=v1%2C100673025%2C-76668381%2C15321210%2C11737789%2C31835%2C2821%2C124674%2C77203%2C65%2C13917%2C26504%2C9252%2C16509%2C23206%2C10365%2C59431%2C45%2C8206%2C2625%2C1904%2C18126%2C15105%2C25059%2C4174%2","error":"net::ERR_ABORTED"}
+{"t":45,"kind":"req","id":149,"method":"POST","type":"fetch","url":"https://rr4---sn-vgqsrnld.googlevideo.com/videoplayback?expire=1792900603&ei=myndao23NNLtir4Pw9CukQw&ip=52.176.124.178&id=o-AEEWYYaGm5a79FTGm1rBNUMasNFgfujw86Sqfvoqjf9w&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=1218&met=1792879003%2C&mh=7c&mm=18%2C26&mn=sn-vgqsrnld%2Csn-aj2im9-5j&ms=aub","sw":false}
+{"t":45.1,"kind":"mem","mb":[141,547,158,103]}
+{"t":45.1,"kind":"done","id":149,"status":200,"size":-372}
+{"t":45.3,"kind":"mem","mb":[141,547,158,103]}
+{"t":45.5,"kind":"mem","mb":[141,547,158,103]}
+{"t":45.7,"kind":"mem","mb":[141,547,158,103]}
+{"t":45.8,"kind":"tick","memory":[{"pid":5859,"mb":141},{"pid":5868,"mb":547},{"pid":5902,"mb":158},{"pid":5939,"mb":103}],"heap":{"usedMB":54,"totalMB":59,"nodes":4018,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":39.57,"paused":false,"ready":4,"net":2,"error":null,"buffered":96.3,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":45.9,"kind":"mem","mb":[141,547,158,103]}
+{"t":45.9,"kind":"req","id":150,"method":"POST","type":"xhr","url":"https://www.youtube.com/api/stats/watchtime?ns=yt&el=detailpage&cpn=J-pg9ui9dP5Z03_N&ver=2&cmt=39.667&fmt=397&fs=0&rt=41.001&euri&lact=41036&cl=1003072181&state=playing&volume=100&cbr=Chrome&cbrver=155.0.0.0&c=WEB&cver=2.20261023.01.00&cplayer=UNIPLAYER&cos=X11&cplatform=DESKTOP&hl=en_US&cr=US&len=2","sw":false}
+{"t":45.9,"kind":"done","id":150,"status":204,"size":-289}
+{"t":46.1,"kind":"mem","mb":[141,548,158,103]}
+{"t":46.3,"kind":"mem","mb":[141,548,158,103]}
+{"t":46.5,"kind":"mem","mb":[141,548,158,103]}
+{"t":46.7,"kind":"mem","mb":[141,548,158,103]}
+{"t":46.8,"kind":"tick","memory":[{"pid":5859,"mb":141},{"pid":5868,"mb":548},{"pid":5902,"mb":158},{"pid":5939,"mb":103}],"heap":{"usedMB":54,"totalMB":59,"nodes":4019,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":40.58,"paused":false,"ready":4,"net":2,"error":null,"buffered":96.3,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":46.9,"kind":"mem","mb":[141,548,158,103]}
+{"t":47.1,"kind":"mem","mb":[141,548,158,103]}
+{"t":47.3,"kind":"mem","mb":[141,548,158,103]}
+{"t":47.5,"kind":"mem","mb":[141,549,158,103]}
+{"t":47.7,"kind":"mem","mb":[141,549,158,103]}
+{"t":47.8,"kind":"tick","memory":[{"pid":5859,"mb":141},{"pid":5868,"mb":549},{"pid":5902,"mb":158},{"pid":5939,"mb":103}],"heap":{"usedMB":56,"totalMB":62,"nodes":4019,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":41.6,"paused":false,"ready":4,"net":2,"error":null,"buffered":96.3,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":47.9,"kind":"mem","mb":[141,549,158,103]}
+{"t":48.1,"kind":"mem","mb":[141,549,158,103]}
+{"t":48.3,"kind":"mem","mb":[141,549,158,103]}
+{"t":48.5,"kind":"mem","mb":[141,549,158,103]}
+{"t":48.6,"kind":"req","id":151,"method":"POST","type":"fetch","url":"https://rr4---sn-vgqsrnld.googlevideo.com/videoplayback?expire=1792900603&ei=myndao23NNLtir4Pw9CukQw&ip=52.176.124.178&id=o-AEEWYYaGm5a79FTGm1rBNUMasNFgfujw86Sqfvoqjf9w&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=1218&met=1792879003%2C&mh=7c&mm=18%2C26&mn=sn-vgqsrnld%2Csn-aj2im9-5j&ms=aub","sw":false}
+{"t":48.7,"kind":"mem","mb":[141,553,160,103]}
+{"t":48.7,"kind":"done","id":151,"status":200,"size":-372}
+{"t":48.8,"kind":"tick","memory":[{"pid":5859,"mb":141},{"pid":5868,"mb":553},{"pid":5902,"mb":160},{"pid":5939,"mb":103}],"heap":{"usedMB":56,"totalMB":62,"nodes":4019,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":42.62,"paused":false,"ready":4,"net":2,"error":null,"buffered":108.3,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":48.9,"kind":"mem","mb":[141,553,160,103]}
+{"t":49.1,"kind":"mem","mb":[141,553,160,103]}
+{"t":49.3,"kind":"mem","mb":[141,553,160,103]}
+{"t":49.5,"kind":"mem","mb":[141,553,160,103]}
+{"t":49.7,"kind":"mem","mb":[141,553,160,103]}
+{"t":49.8,"kind":"tick","memory":[{"pid":5859,"mb":141},{"pid":5868,"mb":553},{"pid":5902,"mb":160},{"pid":5939,"mb":103}],"heap":{"usedMB":57,"totalMB":62,"nodes":4019,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":43.63,"paused":false,"ready":4,"net":2,"error":null,"buffered":108.3,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":49.9,"kind":"mem","mb":[141,553,160,103]}
+{"t":50.1,"kind":"mem","mb":[141,553,160,103]}
+{"t":50.3,"kind":"mem","mb":[141,553,160,103]}
+{"t":50.5,"kind":"mem","mb":[141,549,160,103]}
+{"t":50.7,"kind":"mem","mb":[141,549,160,103]}
+{"t":50.9,"kind":"mem","mb":[141,549,160,103]}
+{"t":50.9,"kind":"tick","memory":[{"pid":5859,"mb":141},{"pid":5868,"mb":549},{"pid":5902,"mb":160},{"pid":5939,"mb":103}],"heap":{"usedMB":52,"totalMB":61,"nodes":4018,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":44.66,"paused":false,"ready":4,"net":2,"error":null,"buffered":108.3,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":51.1,"kind":"mem","mb":[141,549,160,103]}
+{"t":51.3,"kind":"mem","mb":[141,549,160,103]}
+{"t":51.5,"kind":"mem","mb":[141,549,160,103]}
+{"t":51.7,"kind":"mem","mb":[141,549,160,103]}
+{"t":51.7,"kind":"console","type":"warning","text":"The resource http://localhost:8781/scramjet/https%3A%2F%2Frr4---sn-vgqsrnld.c.youtube.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":51.7,"kind":"console","type":"warning","text":"The resource http://localhost:8781/scramjet/https%3A%2F%2Fi.ytimg.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":51.7,"kind":"console","type":"warning","text":"The resource http://localhost:8781/scramjet/https%3A%2F%2Frr4---sn-vgqsrnld.googlevideo.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":51.9,"kind":"mem","mb":[141,549,160,103]}
+{"t":51.9,"kind":"tick","memory":[{"pid":5859,"mb":141},{"pid":5868,"mb":549},{"pid":5902,"mb":160},{"pid":5939,"mb":103}],"heap":{"usedMB":52,"totalMB":61,"nodes":4018,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":45.68,"paused":false,"ready":4,"net":2,"error":null,"buffered":108.3,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":52.1,"kind":"mem","mb":[141,549,160,103]}
+{"t":52.3,"kind":"mem","mb":[141,549,160,103]}
+{"t":52.5,"kind":"mem","mb":[141,550,160,103]}
+{"t":52.7,"kind":"mem","mb":[141,550,160,103]}
+{"t":52.9,"kind":"mem","mb":[141,550,160,103]}
+{"t":52.9,"kind":"tick","memory":[{"pid":5859,"mb":141},{"pid":5868,"mb":550},{"pid":5902,"mb":160},{"pid":5939,"mb":103}],"heap":{"usedMB":54,"totalMB":61,"nodes":4018,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":46.69,"paused":false,"ready":4,"net":2,"error":null,"buffered":108.3,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":53.1,"kind":"mem","mb":[141,550,160,103]}
+{"t":53.3,"kind":"mem","mb":[141,550,160,103]}
+{"t":53.5,"kind":"mem","mb":[141,550,160,103]}
+{"t":53.7,"kind":"mem","mb":[141,550,160,103]}
+{"t":53.9,"kind":"mem","mb":[141,550,160,103]}
+{"t":53.9,"kind":"tick","memory":[{"pid":5859,"mb":141},{"pid":5868,"mb":550},{"pid":5902,"mb":160},{"pid":5939,"mb":103}],"heap":{"usedMB":54,"totalMB":61,"nodes":4018,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":47.71,"paused":false,"ready":4,"net":2,"error":null,"buffered":108.3,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":54.1,"kind":"mem","mb":[141,550,160,103]}
+{"t":54.3,"kind":"mem","mb":[141,550,160,103]}
+{"t":54.5,"kind":"mem","mb":[141,550,160,103]}
+{"t":54.7,"kind":"mem","mb":[141,550,160,103]}
+{"t":54.9,"kind":"mem","mb":[141,550,160,103]}
+{"t":54.9,"kind":"tick","memory":[{"pid":5859,"mb":141},{"pid":5868,"mb":550},{"pid":5902,"mb":160},{"pid":5939,"mb":103}],"heap":{"usedMB":54,"totalMB":61,"nodes":4018,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":48.73,"paused":false,"ready":4,"net":2,"error":null,"buffered":108.3,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":55.1,"kind":"mem","mb":[141,550,160,103]}
+{"t":55.3,"kind":"mem","mb":[141,550,160,103]}
+{"t":55.5,"kind":"mem","mb":[141,550,160,103]}
+{"t":55.7,"kind":"mem","mb":[141,550,160,103]}
+{"t":55.9,"kind":"mem","mb":[141,550,160,103]}
+{"t":56,"kind":"tick","memory":[{"pid":5859,"mb":141},{"pid":5868,"mb":550},{"pid":5902,"mb":160},{"pid":5939,"mb":103}],"heap":{"usedMB":55,"totalMB":61,"nodes":4018,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":49.74,"paused":false,"ready":4,"net":2,"error":null,"buffered":108.3,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":56.1,"kind":"mem","mb":[141,550,160,103]}
+{"t":56.2,"kind":"req","id":152,"method":"POST","type":"fetch","url":"https://rr4---sn-vgqsrnld.googlevideo.com/videoplayback?expire=1792900603&ei=myndao23NNLtir4Pw9CukQw&ip=52.176.124.178&id=o-AEEWYYaGm5a79FTGm1rBNUMasNFgfujw86Sqfvoqjf9w&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=1218&met=1792879003%2C&mh=7c&mm=18%2C26&mn=sn-vgqsrnld%2Csn-aj2im9-5j&ms=aub","sw":false}
+{"t":56.3,"kind":"mem","mb":[141,557,163,103]}
+{"t":56.3,"kind":"done","id":152,"status":200,"size":-372}
+{"t":56.5,"kind":"mem","mb":[141,557,163,103]}
+{"t":56.7,"kind":"mem","mb":[141,557,163,103]}
+{"t":56.9,"kind":"mem","mb":[141,557,163,103]}
+{"t":57,"kind":"tick","memory":[{"pid":5859,"mb":141},{"pid":5868,"mb":557},{"pid":5902,"mb":163},{"pid":5939,"mb":103}],"heap":{"usedMB":55,"totalMB":61,"nodes":4018,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":50.76,"paused":false,"ready":4,"net":2,"error":null,"buffered":121.7,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":57.1,"kind":"mem","mb":[141,557,163,103]}
+{"t":57.3,"kind":"mem","mb":[141,557,163,103]}
+{"t":57.5,"kind":"mem","mb":[141,558,163,103]}
+{"t":57.7,"kind":"mem","mb":[141,558,163,103]}
+{"t":57.9,"kind":"mem","mb":[141,558,163,103]}
+{"t":58,"kind":"tick","memory":[{"pid":5859,"mb":141},{"pid":5868,"mb":558},{"pid":5902,"mb":163},{"pid":5939,"mb":103}],"heap":{"usedMB":53,"totalMB":59,"nodes":4018,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":51.77,"paused":false,"ready":4,"net":2,"error":null,"buffered":121.7,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":58.1,"kind":"mem","mb":[141,558,163,103]}
+{"t":58.3,"kind":"mem","mb":[141,558,163,103]}
+{"t":58.5,"kind":"mem","mb":[141,558,163,103]}
+{"t":58.7,"kind":"mem","mb":[141,558,163,103]}
+{"t":58.9,"kind":"mem","mb":[141,558,163,103]}
+{"t":59,"kind":"tick","memory":[{"pid":5859,"mb":141},{"pid":5868,"mb":558},{"pid":5902,"mb":163},{"pid":5939,"mb":103}],"heap":{"usedMB":53,"totalMB":59,"nodes":4018,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":52.79,"paused":false,"ready":4,"net":2,"error":null,"buffered":121.7,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":59.1,"kind":"mem","mb":[141,558,163,103]}
+{"t":59.3,"kind":"mem","mb":[141,558,163,103]}
+{"t":59.3,"kind":"console","type":"warning","text":"The resource http://localhost:8781/scramjet/https%3A%2F%2Frr4---sn-vgqsrnld.c.youtube.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":59.3,"kind":"console","type":"warning","text":"The resource http://localhost:8781/scramjet/https%3A%2F%2Fi.ytimg.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":59.3,"kind":"console","type":"warning","text":"The resource http://localhost:8781/scramjet/https%3A%2F%2Frr4---sn-vgqsrnld.googlevideo.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":59.5,"kind":"mem","mb":[141,558,163,103]}
+{"t":59.7,"kind":"mem","mb":[141,558,163,103]}
+{"t":59.9,"kind":"mem","mb":[141,558,163,103]}
+{"t":60,"kind":"tick","memory":[{"pid":5859,"mb":141},{"pid":5868,"mb":558},{"pid":5902,"mb":163},{"pid":5939,"mb":103}],"heap":{"usedMB":53,"totalMB":59,"nodes":4018,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":53.81,"paused":false,"ready":4,"net":2,"error":null,"buffered":121.7,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":60.1,"kind":"mem","mb":[141,558,163,103]}
+{"t":60.3,"kind":"mem","mb":[141,558,163,103]}
+{"t":60.5,"kind":"mem","mb":[141,557,163,103]}
+{"t":60.7,"kind":"mem","mb":[141,556,163,103]}
+{"t":60.9,"kind":"mem","mb":[141,556,163,103]}
+{"t":61,"kind":"tick","memory":[{"pid":5859,"mb":141},{"pid":5868,"mb":556},{"pid":5902,"mb":163},{"pid":5939,"mb":103}],"heap":{"usedMB":53,"totalMB":59,"nodes":4018,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":54.82,"paused":false,"ready":4,"net":2,"error":null,"buffered":121.7,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":61.1,"kind":"mem","mb":[141,556,163,103]}
+{"t":61.3,"kind":"mem","mb":[141,556,163,103]}
+{"t":61.5,"kind":"mem","mb":[141,556,163,103]}
+{"t":61.7,"kind":"mem","mb":[141,556,163,103]}
+{"t":61.9,"kind":"mem","mb":[141,556,163,103]}
+{"t":62.1,"kind":"tick","memory":[{"pid":5859,"mb":141},{"pid":5868,"mb":556},{"pid":5902,"mb":163},{"pid":5939,"mb":103}],"heap":{"usedMB":53,"totalMB":59,"nodes":4018,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":55.84,"paused":false,"ready":4,"net":2,"error":null,"buffered":121.7,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":62.1,"kind":"mem","mb":[141,556,163,103]}
+{"t":62.2,"kind":"req","id":153,"method":"POST","type":"fetch","url":"https://rr4---sn-vgqsrnld.googlevideo.com/videoplayback?expire=1792900603&ei=myndao23NNLtir4Pw9CukQw&ip=52.176.124.178&id=o-AEEWYYaGm5a79FTGm1rBNUMasNFgfujw86Sqfvoqjf9w&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&cps=1218&met=1792879003%2C&mh=7c&mm=18%2C26&mn=sn-vgqsrnld%2Csn-aj2im9-5j&ms=aub","sw":false}
+{"t":62.3,"kind":"mem","mb":[141,561,165,103]}
+{"t":62.3,"kind":"done","id":153,"status":200,"size":-372}
+{"t":62.5,"kind":"mem","mb":[141,562,165,103]}
+{"t":62.7,"kind":"mem","mb":[141,562,165,103]}
+{"t":62.9,"kind":"mem","mb":[141,562,165,103]}
+{"t":63.1,"kind":"mem","mb":[141,562,165,103]}
+{"t":63.1,"kind":"tick","memory":[{"pid":5859,"mb":141},{"pid":5868,"mb":562},{"pid":5902,"mb":165},{"pid":5939,"mb":103}],"heap":{"usedMB":53,"totalMB":61,"nodes":4018,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube","time":56.87,"paused":false,"ready":4,"net":2,"error":null,"buffered":132.2,"src":"blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2","app":{"elements":1620,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}

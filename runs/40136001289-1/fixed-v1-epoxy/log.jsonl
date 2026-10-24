@@ -1,0 +1,751 @@
+{"t":0.4,"kind":"req","id":1,"method":"GET","type":"document","url":"http://localhost:8781/","sw":false}
+{"t":0.5,"kind":"req","id":2,"method":"GET","type":"script","url":"http://localhost:8781/scram/scramjet.all.js","sw":false}
+{"t":0.5,"kind":"req","id":3,"method":"GET","type":"script","url":"http://localhost:8781/baremux/index.js","sw":false}
+{"t":0.5,"kind":"req","id":4,"method":"GET","type":"stylesheet","url":"http://localhost:8781/index.css","sw":false}
+{"t":0.5,"kind":"req","id":5,"method":"GET","type":"script","url":"http://localhost:8781/register-sw.js","sw":false}
+{"t":0.5,"kind":"req","id":6,"method":"GET","type":"script","url":"http://localhost:8781/search.js","sw":false}
+{"t":0.5,"kind":"req","id":7,"method":"GET","type":"script","url":"http://localhost:8781/config.js","sw":false}
+{"t":0.5,"kind":"req","id":8,"method":"GET","type":"script","url":"http://localhost:8781/blocked.js","sw":false}
+{"t":0.5,"kind":"req","id":9,"method":"GET","type":"script","url":"http://localhost:8781/sitefixes.js","sw":false}
+{"t":0.5,"kind":"req","id":10,"method":"GET","type":"script","url":"http://localhost:8781/index.js","sw":false}
+{"t":0.5,"kind":"req","id":11,"method":"GET","type":"script","url":"http://localhost:8781/sessions.js","sw":false}
+{"t":0.5,"kind":"done","id":1,"status":200,"size":9649}
+{"t":0.5,"kind":"done","id":4,"status":200,"size":20762}
+{"t":0.5,"kind":"console","type":"debug","text":"bare-mux: running v2.1.9 (build dc9dc6e)"}
+{"t":0.5,"kind":"done","id":3,"status":200,"size":8689}
+{"t":0.5,"kind":"done","id":2,"status":200,"size":180333}
+{"t":0.5,"kind":"done","id":5,"status":200,"size":609}
+{"t":0.5,"kind":"done","id":6,"status":200,"size":940}
+{"t":0.5,"kind":"done","id":7,"status":200,"size":68}
+{"t":0.5,"kind":"done","id":8,"status":200,"size":4972}
+{"t":0.5,"kind":"done","id":9,"status":200,"size":1686}
+{"t":0.5,"kind":"done","id":11,"status":200,"size":16207}
+{"t":0.5,"kind":"done","id":10,"status":200,"size":61339}
+{"t":0.6,"kind":"done","id":12,"status":200,"size":915}
+{"t":0.7,"kind":"mem","mb":[137,143,72]}
+{"t":0.7,"kind":"console","type":"warning","text":"you are using the last version of scramjet v1, if possible, please upgrade to v2 for better performance and more features"}
+{"t":0.7,"kind":"console","type":"log","text":"%cinit%c config loaded \n  \tbackground-color: #000;\n  \tcolor: #fff;\n  \tpadding: 2px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n   "}
+{"t":0.7,"kind":"req","id":14,"method":"GET","type":"script","url":"http://localhost:8781/sw.js","sw":true}
+{"t":0.7,"kind":"done","id":13,"status":200,"size":915}
+{"t":0.7,"kind":"req","id":15,"method":"GET","type":"other","url":"http://localhost:8781/scram/scramjet.all.js","sw":true}
+{"t":0.7,"kind":"req","id":16,"method":"GET","type":"other","url":"http://localhost:8781/baremux/index.js","sw":true}
+{"t":0.7,"kind":"done","id":15,"status":200,"size":-272}
+{"t":0.7,"kind":"console","type":"debug","text":"bare-mux: running v2.1.9 (build dc9dc6e)"}
+{"t":0.7,"kind":"req","id":17,"method":"GET","type":"other","url":"http://localhost:8781/config.js","sw":true}
+{"t":0.7,"kind":"done","id":16,"status":200,"size":-272}
+{"t":0.7,"kind":"req","id":18,"method":"GET","type":"other","url":"http://localhost:8781/blocked.js","sw":true}
+{"t":0.7,"kind":"done","id":17,"status":200,"size":-272}
+{"t":0.7,"kind":"req","id":19,"method":"GET","type":"other","url":"http://localhost:8781/sitefixes.js","sw":true}
+{"t":0.7,"kind":"done","id":18,"status":200,"size":-272}
+{"t":0.7,"kind":"console","type":"debug","text":"bare-mux: running v2.1.9 (build dc9dc6e)"}
+{"t":0.7,"kind":"done","id":19,"status":200,"size":-272}
+{"t":0.7,"kind":"done","id":14,"status":200,"size":0}
+{"t":0.7,"kind":"req","id":20,"method":"GET","type":"script","url":"http://localhost:8781/baremux/worker.js","sw":false}
+{"t":0.7,"kind":"console","type":"debug","text":"bare-mux: setting localStorage bare-mux-path to /baremux/worker.js"}
+{"t":0.8,"kind":"req","id":21,"method":"GET","type":"fetch","url":"http://localhost:8781/scram/scramjet.wasm.wasm","sw":true}
+{"t":0.8,"kind":"done","id":21,"status":200,"size":537008}
+{"t":0.8,"kind":"req","id":22,"method":"GET","type":"fetch","url":"http://localhost:8781/baremux/worker.js","sw":true}
+{"t":0.8,"kind":"done","id":22,"status":200,"size":2915}
+{"t":0.8,"kind":"console","type":"debug","text":"bare-mux: recieved request for port from sw"}
+{"t":0.8,"kind":"req","id":23,"method":"GET","type":"fetch","url":"http://localhost:8781/epoxy/index.mjs","sw":true}
+{"t":0.8,"kind":"done","id":23,"status":200,"size":1716561}
+{"t":0.8,"kind":"console","type":"debug","text":"bare-mux: got localStorage bare-mux-path: /baremux/worker.js"}
+{"t":0.8,"kind":"mem","mb":[145,155,109,73]}
+{"t":1,"kind":"mem","mb":[145,159,137,73]}
+{"t":1.2,"kind":"mem","mb":[145,159,138,103]}
+{"t":1.4,"kind":"mem","mb":[145,159,138,103]}
+{"t":1.6,"kind":"mem","mb":[145,159,138,103]}
+{"t":1.7,"kind":"console","type":"warning","text":"bare-mux: failed to get a bare-mux SharedWorker MessagePort within 1s, retrying"}
+{"t":1.7,"kind":"console","type":"debug","text":"bare-mux: recieved request for port from sw"}
+{"t":1.7,"kind":"console","type":"debug","text":"bare-mux: recieved request for port from sw"}
+{"t":1.8,"kind":"mem","mb":[145,159,138,103]}
+{"t":2,"kind":"mem","mb":[145,159,138,103]}
+{"t":2.1,"kind":"req","id":24,"method":"GET","type":"fetch","url":"http://localhost:8781/version.json","sw":false}
+{"t":2.1,"kind":"req","id":25,"method":"GET","type":"fetch","url":"http://localhost:8781/version.json","sw":true}
+{"t":2.1,"kind":"version","version":{"engine":1,"commit":"0f321661c022398f0b6f377a8776801e02bec86c","branch":"diag-verify","message":"diag: verify the ShadyDOM fix on real YouTube (no overrides)","committedAt":"2026-10-24T21:50:42Z","builtAt":"2026-10-24T21:51:03.804Z"}}
+{"t":2.1,"kind":"done","id":25,"status":200,"size":272}
+{"t":2.1,"kind":"done","id":24,"status":200,"size":-273}
+{"t":2.1,"kind":"console","type":"debug","text":"bare-mux: setting localStorage bare-mux-path to /baremux/worker.js"}
+{"t":2.1,"kind":"opened","video":"https://www.youtube.com/watch?v=jNQXAC9IVRw"}
+{"t":2.1,"kind":"console","type":"log","text":"%copenUrl -> go%c navigated to \n  \tbackground-color: #000;\n  \tcolor: #fff;\n  \tpadding: 2px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n    https://www.youtube.com/watch?v=jNQXAC9IVRw"}
+{"t":2.2,"kind":"req","id":26,"method":"GET","type":"document","url":"https://www.youtube.com/watch?v=jNQXAC9IVRw","sw":false}
+{"t":2.2,"kind":"console","type":"debug","text":"bare-mux: recieved request for port from sw"}
+{"t":2.2,"kind":"console","type":"debug","text":"bare-mux: recieved request for port from sw"}
+{"t":2.2,"kind":"console","type":"debug","text":"bare-mux: recieved request for port from sw"}
+{"t":2.2,"kind":"mem","mb":[145,171,140,103]}
+{"t":2.4,"kind":"mem","mb":[145,174,144,103]}
+{"t":2.6,"kind":"mem","mb":[145,174,144,103]}
+{"t":2.8,"kind":"mem","mb":[145,175,144,103]}
+{"t":3,"kind":"mem","mb":[145,186,145,103]}
+{"t":3.2,"kind":"tick","memory":[{"pid":4605,"mb":145},{"pid":4614,"mb":226},{"pid":4648,"mb":145},{"pid":4687,"mb":103}],"heap":{"usedMB":3,"totalMB":4,"nodes":580,"docs":9,"frames":6},"video":{"status":"Loading website…","title":"","app":{"elements":3,"player":false,"flexy":false,"botcheck":false}},"answerMs":7}
+{"t":3.2,"kind":"mem","mb":[145,230,145,103]}
+{"t":3.3,"kind":"req","id":27,"method":"GET","type":"fetch","url":"http://localhost:8781/scram/scramjet.all.js","sw":true}
+{"t":3.3,"kind":"req","id":28,"method":"GET","type":"fetch","url":"http://localhost:8781/scram/scramjet.wasm.wasm","sw":true}
+{"t":3.3,"kind":"req","id":29,"method":"GET","type":"script","url":"http://localhost:8781/scram/scramjet.wasm.wasm","sw":false}
+{"t":3.3,"kind":"req","id":30,"method":"GET","type":"script","url":"http://localhost:8781/scram/scramjet.all.js","sw":false}
+{"t":3.3,"kind":"req","id":31,"method":"GET","type":"other","url":"https://i.ytimg.com/generate_204","sw":false}
+{"t":3.3,"kind":"req","id":32,"method":"GET","type":"script","url":"https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/base.js","sw":false}
+{"t":3.3,"kind":"req","id":33,"method":"GET","type":"image","url":"https://i.ytimg.com/vi/jNQXAC9IVRw/hqdefault.jpg","sw":false}
+{"t":3.3,"kind":"req","id":34,"method":"GET","type":"script","url":"https://www.youtube.com/s/_/ytmainappweb/_/js/k=ytmainappweb.kevlar_base.en_US.EzC3lbfP0yU.2021.O/am=AAAAACAAEICU/d=1/br=1/rs=AGKMywH9iL-0IOaAfgVRgQpNGd01i7e07Q/m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk","sw":false}
+{"t":3.3,"kind":"req","id":35,"method":"GET","type":"script","url":"https://www.youtube.com/s/desktop/dc0b62b0/jsbin/web-animations-next-lite.min.vflset/web-animations-next-lite.min.js","sw":false}
+{"t":3.3,"kind":"req","id":36,"method":"GET","type":"script","url":"https://www.youtube.com/s/desktop/dc0b62b0/jsbin/webcomponents-sd.vflset/webcomponents-sd.js","sw":false}
+{"t":3.3,"kind":"req","id":37,"method":"GET","type":"script","url":"https://www.youtube.com/s/desktop/dc0b62b0/jsbin/intersection-observer.min.vflset/intersection-observer.min.js","sw":false}
+{"t":3.3,"kind":"done","id":27,"status":200,"size":180333}
+{"t":3.3,"kind":"done","id":28,"status":200,"size":537008}
+{"t":3.3,"kind":"req","id":38,"method":"GET","type":"script","url":"https://www.youtube.com/s/desktop/dc0b62b0/jsbin/scheduler.vflset/scheduler.js","sw":false}
+{"t":3.3,"kind":"req","id":39,"method":"GET","type":"script","url":"https://www.youtube.com/s/desktop/dc0b62b0/jsbin/www-i18n-constants-en_US.vflset/www-i18n-constants.js","sw":false}
+{"t":3.3,"kind":"req","id":40,"method":"GET","type":"stylesheet","url":"https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=YouTube+Sans:wght@300..900&display=swap","sw":false}
+{"t":3.3,"kind":"req","id":41,"method":"GET","type":"stylesheet","url":"https://www.youtube.com/s/player/cbcfbf2f/www-player.css","sw":false}
+{"t":3.3,"kind":"req","id":42,"method":"GET","type":"stylesheet","url":"https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-main-desktop-watch-page-skeleton.css","sw":false}
+{"t":3.3,"kind":"req","id":43,"method":"GET","type":"stylesheet","url":"https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-main-desktop-player-skeleton.css","sw":false}
+{"t":3.3,"kind":"req","id":44,"method":"GET","type":"stylesheet","url":"https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-onepick.css","sw":false}
+{"t":3.3,"kind":"req","id":45,"method":"GET","type":"stylesheet","url":"https://www.youtube.com/s/_/ytmainappweb/_/ss/k=ytmainappweb.kevlar_base.NZ7X3F12ieY.L.B1.O/am=AAAAACDAEMCe/d=0/br=1/rs=AGKMywFr1ZpGZ6SSlxxMYidtoLDGcgzMzQ","sw":false}
+{"t":3.3,"kind":"req","id":46,"method":"GET","type":"other","url":"https://rr3---sn-ojvgq5-51.googlevideo.com/generate_204","sw":false}
+{"t":3.3,"kind":"req","id":47,"method":"GET","type":"other","url":"https://rr3---sn-ojvgq5-51.c.youtube.com/generate_204","sw":false}
+{"t":3.3,"kind":"req","id":48,"method":"GET","type":"script","url":"https://www.youtube.com/s/desktop/dc0b62b0/jsbin/spf.vflset/spf.js","sw":false}
+{"t":3.3,"kind":"req","id":49,"method":"GET","type":"script","url":"https://www.youtube.com/s/desktop/dc0b62b0/jsbin/network.vflset/network.js","sw":false}
+{"t":3.3,"kind":"done","id":30,"status":200,"size":-272}
+{"t":3.4,"kind":"done","id":26,"status":200,"size":-10201}
+{"t":3.4,"kind":"done","id":29,"status":200,"size":-48}
+{"t":3.4,"kind":"mem","mb":[145,287,152,103]}
+{"t":3.4,"kind":"console","type":"debug","text":"bare-mux: running v2.1.9 (build dc9dc6e)"}
+{"t":3.4,"kind":"console","type":"log","text":"%cg%c initializing scramjet client \n  \tbackground-color: #000;\n  \tcolor: #fff;\n  \tpadding: 2px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n   "}
+{"t":3.4,"kind":"console","type":"warning","text":"%cg -> g%c Creating SingletonBox \n  \tbackground-color: #f80;\n  \tcolor: #fff;\n  \tpadding: 4px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n   "}
+{"t":3.4,"kind":"console","type":"debug","text":"bare-mux: got localStorage bare-mux-path: /baremux/worker.js"}
+{"t":3.5,"kind":"req","id":50,"method":"GET","type":"fetch","url":"http://localhost:8781/icon?d=youtube.com","sw":true}
+{"t":3.5,"kind":"req","id":51,"method":"GET","type":"image","url":"http://localhost:8781/icon?d=youtube.com","sw":false}
+{"t":3.5,"kind":"console","type":"error","text":"Failed to load resource: the server responded with a status of 404 (Not Found)"}
+{"t":3.5,"kind":"done","id":51,"status":404,"size":-248}
+{"t":3.5,"kind":"done","id":50,"status":404,"size":19}
+{"t":3.5,"kind":"done","id":38,"status":200,"size":-676}
+{"t":3.5,"kind":"done","id":37,"status":200,"size":-676}
+{"t":3.5,"kind":"done","id":39,"status":200,"size":-676}
+{"t":3.5,"kind":"done","id":43,"status":200,"size":-668}
+{"t":3.5,"kind":"done","id":42,"status":200,"size":-669}
+{"t":3.5,"kind":"done","id":44,"status":200,"size":-668}
+{"t":3.6,"kind":"done","id":49,"status":200,"size":-676}
+{"t":3.6,"kind":"done","id":36,"status":200,"size":-677}
+{"t":3.6,"kind":"done","id":35,"status":200,"size":-677}
+{"t":3.6,"kind":"mem","mb":[145,300,169,103]}
+{"t":3.6,"kind":"done","id":48,"status":200,"size":-677}
+{"t":3.8,"kind":"mem","mb":[145,288,185,103]}
+{"t":3.9,"kind":"done","id":41,"status":200,"size":-670}
+{"t":4,"kind":"mem","mb":[145,350,190,103]}
+{"t":4.1,"kind":"done","id":32,"status":200,"size":-678}
+{"t":4.2,"kind":"tick","memory":[{"pid":4605,"mb":145},{"pid":4614,"mb":359},{"pid":4648,"mb":190},{"pid":4687,"mb":103}],"heap":{"usedMB":15,"totalMB":22,"nodes":675,"docs":14,"frames":7},"video":{"status":"Website responded (HTTP 200)","title":"","app":{"elements":36,"player":false,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":4.2,"kind":"mem","mb":[145,369,190,103]}
+{"t":4.4,"kind":"mem","mb":[145,418,191,103]}
+{"t":4.6,"kind":"mem","mb":[145,469,191,103]}
+{"t":4.6,"kind":"done","id":45,"status":200,"size":-681}
+{"t":4.7,"kind":"done","id":31,"status":204,"size":-140}
+{"t":4.7,"kind":"done","id":33,"status":200,"size":-559}
+{"t":4.7,"kind":"done","id":40,"status":200,"size":-686}
+{"t":4.8,"kind":"done","id":46,"status":204,"size":-716}
+{"t":4.8,"kind":"done","id":47,"status":204,"size":-716}
+{"t":4.8,"kind":"mem","mb":[145,501,192,103]}
+{"t":4.8,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_cfg' cannot have a negative start time.\n    at hy (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2034:492)\n    at http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:1307:139\n    at Object.oy [as tick] (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2060:66)\n    at playerBootstrap (http://localhost:878"}
+{"t":4.9,"kind":"req","id":52,"method":"GET","type":"script","url":"https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/offline.js","sw":false}
+{"t":4.9,"kind":"req","id":54,"method":"GET","type":"script","url":"https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/remote.js","sw":false}
+{"t":4.9,"kind":"req","id":55,"method":"GET","type":"script","url":"https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/miniplayer.js","sw":false}
+{"t":4.9,"kind":"done","id":52,"status":200,"size":-677}
+{"t":5,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_bs' cannot have a negative start time.\n    at hy (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2034:492)\n    at http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:1307:139\n    at Object.oy [as tick] (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2060:66)\n    at http://localhost:8781/scramjet/https%3"}
+{"t":5,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_ai' cannot have a negative start time.\n    at hy (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2034:492)\n    at http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:1307:139\n    at Object.oy [as tick] (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2060:66)\n    at http://localhost:8781/scramjet/https%3"}
+{"t":5,"kind":"req","id":56,"method":"GET","type":"document","url":"https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3D%252Fsignin_passive%26feature%3Dpassive&hl=en","sw":false}
+{"t":5,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_nc_pj' cannot have a negative start time.\n    at hy (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2034:492)\n    at http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:1307:139\n    at Object.oy [as tick] (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2060:66)\n    at http://localhost:8781/scramjet/http"}
+{"t":5,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_rsbe_dpj' cannot have a negative start time.\n    at hy (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2034:492)\n    at http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:1307:139\n    at Object.oy [as tick] (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2060:66)\n    at http://localhost:8781/scramjet/h"}
+{"t":5,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_js_ld' cannot have a negative start time.\n    at hy (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2034:492)\n    at http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:1307:139\n    at Object.oy [as tick] (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2060:66)\n    at http://localhost:8781/scramjet/http"}
+{"t":5,"kind":"req","id":57,"method":"GET","type":"script","url":"https://static.doubleclick.net/instream/ad_status.js","sw":false}
+{"t":5,"kind":"mem","mb":[145,441,192,103]}
+{"t":5,"kind":"done","id":55,"status":200,"size":-676}
+{"t":5.1,"kind":"done","id":53,"status":200,"size":-525}
+{"t":5.1,"kind":"done","id":34,"status":200,"size":-689}
+{"t":5.1,"kind":"req","id":58,"method":"GET","type":"document","url":"https://accounts.google.com/v3/signin/identifier?continue=https://www.youtube.com/signin?action_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3D%252Fsignin_passive%26feature%3Dpassive&hl=en&passive=true&service=youtube&uilel=3&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S439603589:1792","sw":false}
+{"t":5.2,"kind":"done","id":56,"status":302,"size":0}
+{"t":5.2,"kind":"mem","mb":[145,478,195,103]}
+{"t":5.4,"kind":"mem","mb":[145,467,194,103]}
+{"t":5.6,"kind":"mem","mb":[145,523,194,103]}
+{"t":5.6,"kind":"console","type":"info","text":"LegacyDataMixin will be applied to all legacy elements.\nSet `_legacyUndefinedCheck: true` on element class to enable."}
+{"t":5.8,"kind":"req","id":59,"method":"GET","type":"fetch","url":"data:application/json;base64,eyJhZFBsYWNlbWVudHMiOnRydWUsInBsYXllckFkcyI6dHJ1ZSwicGxheWVyUmVzcG9uc2UiOnsiYWRQbGFjZW1lbnRzIjp0cnVlLCJwbGF5ZXJBZHMiOnRydWUsInBsYXllckNvbmZpZyI6IHsiYXVkaW9Db25maWciOiB7fSwgInN0cmVhbVNlbGVjdGlvbkNvbmZpZyI6IHt9LCAid2ViUGxheWVyQ29uZmlnIjogeyJ3ZWJQbGF5ZXJBY3Rpb25zUG9ydGluZyI","sw":false}
+{"t":5.8,"kind":"req","id":60,"method":"GET","type":"fetch","url":"https://rr4---sn-q4flrnel.googlevideo.com/videoplayback?expire=0369546775&ei=YCXKZ9dsz1EkwJxVeEAx3L4&ip=58.73.59.28&id=o-AFVWlfhZjqP9qDrw8BvH10FylV1zVBBfU8yfjUmBri8OT&itag=18&source=youtube&requiressl=yes&mh=X6&mm=521%2C25160%2C94659&mn=Zu6nv%2C6UPF5%2Cj7mgl&ms=Zu6nv%2C6UPF5%2Cj7mgl&mv=9&mvi=8&pl=06","sw":false}
+{"t":5.8,"kind":"req","id":61,"method":"GET","type":"fetch","url":"https://rr4---sn-q4flrnel.googlevideo.com/videoplayback?expire=0369546775&ei=YCXKZ9dsz1EkwJxVeEAx3L4&ip=58.73.59.28&id=o-AFVWlfhZjqP9qDrw8BvH10FylV1zVBBfU8yfjUmBri8OT&itag=18&source=youtube&requiressl=yes&mh=X6&mm=521%2C25160%2C94659&mn=Zu6nv%2C6UPF5%2Cj7mgl&ms=Zu6nv%2C6UPF5%2Cj7mgl&mv=9&mvi=8&pl=06","sw":false}
+{"t":5.8,"kind":"done","id":54,"status":200,"size":-677}
+{"t":5.8,"kind":"done","id":57,"status":200,"size":-712}
+{"t":5.8,"kind":"mem","mb":[145,477,194,103]}
+{"t":5.8,"kind":"req","id":62,"method":"GET","type":"script","url":"http://localhost:8781/scram/scramjet.wasm.wasm","sw":false}
+{"t":5.8,"kind":"req","id":63,"method":"GET","type":"script","url":"http://localhost:8781/scram/scramjet.all.js","sw":false}
+{"t":5.8,"kind":"req","id":64,"method":"GET","type":"script","url":"https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0DAFBFAAE/d=1/excm=_b,_tp,identifierview/ed=1/dg=0/wt=2/ujg=1/rs=AOaEmlG79WC_S2S7QXPDdOVhSmRjRFCw2A/dti=1/m=_b,_tp","sw":false}
+{"t":5.8,"kind":"tick","memory":[{"pid":4605,"mb":145},{"pid":4614,"mb":472},{"pid":4648,"mb":192},{"pid":4687,"mb":103}],"heap":{"usedMB":29,"totalMB":34,"nodes":1395,"docs":8,"frames":6},"video":{"status":"Website responded (HTTP 200)","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":197}
+{"t":5.8,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_rsef_dpj' cannot have a negative start time.\n    at q5K (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.EzC3lbfP0yU.2021.O%2Fam%3DAAAAACAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywH9iL-0IOaAfgVRgQpNGd01i7e07Q%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk:2655:510)\n    at _.l5 (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.EzC3lbfP0yU.20"}
+{"t":5.8,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_rsae_dpj' cannot have a negative start time.\n    at q5K (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.EzC3lbfP0yU.2021.O%2Fam%3DAAAAACAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywH9iL-0IOaAfgVRgQpNGd01i7e07Q%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk:2655:510)\n    at _.l5 (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.EzC3lbfP0yU.20"}
+{"t":5.8,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_js_r' cannot have a negative start time.\n    at q5K (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.EzC3lbfP0yU.2021.O%2Fam%3DAAAAACAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywH9iL-0IOaAfgVRgQpNGd01i7e07Q%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk:2655:510)\n    at _.l5 (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.EzC3lbfP0yU.2021.O"}
+{"t":5.8,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_ac' cannot have a negative start time.\n    at q5K (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.EzC3lbfP0yU.2021.O%2Fam%3DAAAAACAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywH9iL-0IOaAfgVRgQpNGd01i7e07Q%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk:2655:510)\n    at _.l5 (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.EzC3lbfP0yU.2021.O%2"}
+{"t":5.8,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_apr' cannot have a negative start time.\n    at q5K (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.EzC3lbfP0yU.2021.O%2Fam%3DAAAAACAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywH9iL-0IOaAfgVRgQpNGd01i7e07Q%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk:2655:510)\n    at _.l5 (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.EzC3lbfP0yU.2021.O%"}
+{"t":5.8,"kind":"req","id":66,"method":"GET","type":"fetch","url":"http://localhost:8781/scram/scramjet.all.js","sw":true}
+{"t":5.8,"kind":"req","id":67,"method":"GET","type":"fetch","url":"http://localhost:8781/scram/scramjet.wasm.wasm","sw":true}
+{"t":5.8,"kind":"req","id":68,"method":"GET","type":"script","url":"https://www.google.com/js/th/pxwG18Euy-n6Uq6PY9vb4Ohp58yKH_56NpBvs6fBnH8.js","sw":false}
+{"t":5.8,"kind":"req","id":69,"method":"GET","type":"image","url":"http://localhost:8781/icon?d=youtube.com","sw":false}
+{"t":5.8,"kind":"done","id":66,"status":200,"size":180333}
+{"t":5.8,"kind":"req","id":70,"method":"GET","type":"fetch","url":"http://localhost:8781/icon?d=youtube.com","sw":true}
+{"t":5.9,"kind":"console","type":"warning","text":"CAUGHT ERROR SyntaxError: Unexpected token 'Y', \"YOUTUBE_LOGO\" is not valid JSON\n    at JSON.parse (<anonymous>)\n    at U._deserializeValue (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.EzC3lbfP0yU.2021.O%2Fam%3DAAAAACAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywH9iL-0IOaAfgVRgQpNGd01i7e07Q%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk:7070:348)\n    at U._attributeToProperty (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kev"}
+{"t":5.9,"kind":"done","id":67,"status":200,"size":537008}
+{"t":5.9,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: b.Aa is not a function\n    at Q.attachShadow [as __shady_attachShadow] (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js:97:252)\n    at k.attachShadow (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js:125:184)\n    at U._attachDom (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.EzC3lbfP0yU.2021.O%2Fam%3DAAA"}
+{"t":5.9,"kind":"console","type":"error","text":"Failed to load resource: the server responded with a status of 404 (Not Found)"}
+{"t":5.9,"kind":"done","id":69,"status":404,"size":-248}
+{"t":5.9,"kind":"done","id":70,"status":404,"size":19}
+{"t":5.9,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_pdc' cannot have a negative start time.\n    at q5K (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.EzC3lbfP0yU.2021.O%2Fam%3DAAAAACAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywH9iL-0IOaAfgVRgQpNGd01i7e07Q%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk:2655:510)\n    at _.l5 (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.EzC3lbfP0yU.2021.O%"}
+{"t":5.9,"kind":"done","id":58,"status":200,"size":-2045}
+{"t":5.9,"kind":"done","id":59,"status":200,"size":-136}
+{"t":5.9,"kind":"done","id":63,"status":200,"size":-272}
+{"t":5.9,"kind":"req","id":71,"method":"GET","type":"script","url":"https://www.gstatic.com/cv/js/sender/v1/cast_sender.js","sw":false}
+{"t":5.9,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_pdr' cannot have a negative start time.\n    at q5K (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.EzC3lbfP0yU.2021.O%2Fam%3DAAAAACAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywH9iL-0IOaAfgVRgQpNGd01i7e07Q%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk:2655:510)\n    at _.l5 (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.EzC3lbfP0yU.2021.O%"}
+{"t":5.9,"kind":"req","id":72,"method":"GET","type":"fetch","url":"data:application/json;base64,W3siYWRQbGFjZW1lbnRzIjp0cnVlLCJwbGF5ZXJBZHMiOnRydWUsInBsYXllclJlc3BvbnNlIjp7ImFkUGxhY2VtZW50cyI6dHJ1ZSwicGxheWVyQWRzIjp0cnVlfX1d","sw":false}
+{"t":5.9,"kind":"done","id":62,"status":200,"size":-48}
+{"t":6,"kind":"console","type":"debug","text":"bare-mux: running v2.1.9 (build dc9dc6e)"}
+{"t":6,"kind":"console","type":"log","text":"%cg%c initializing scramjet client \n  \tbackground-color: #000;\n  \tcolor: #fff;\n  \tpadding: 2px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n   "}
+{"t":6,"kind":"console","type":"debug","text":"bare-mux: got localStorage bare-mux-path: /baremux/worker.js"}
+{"t":6,"kind":"mem","mb":[145,523,195,103]}
+{"t":6,"kind":"console","type":"error","text":"Failed to load resource: the server responded with a status of 403 (Forbidden)"}
+{"t":6,"kind":"req","id":73,"method":"GET","type":"fetch","url":"https://rr4---sn-q4flrnel.googlevideo.com/videoplayback?expire=0369546775&ei=YCXKZ9dsz1EkwJxVeEAx3L4&ip=58.73.59.28&id=o-AFVWlfhZjqP9qDrw8BvH10FylV1zVBBfU8yfjUmBri8OT&itag=18&source=youtube&requiressl=yes&mh=X6&mm=521%2C25160%2C94659&mn=Zu6nv%2C6UPF5%2Cj7mgl&ms=Zu6nv%2C6UPF5%2Cj7mgl&mv=9&mvi=8&pl=06","sw":false}
+{"t":6,"kind":"console","type":"error","text":"Failed to load resource: the server responded with a status of 403 (Forbidden)"}
+{"t":6,"kind":"req","id":74,"method":"GET","type":"fetch","url":"https://rr4---sn-q4flrnel.googlevideo.com/videoplayback?expire=0369546775&ei=YCXKZ9dsz1EkwJxVeEAx3L4&ip=58.73.59.28&id=o-AFVWlfhZjqP9qDrw8BvH10FylV1zVBBfU8yfjUmBri8OT&itag=18&source=youtube&requiressl=yes&mh=X6&mm=521%2C25160%2C94659&mn=Zu6nv%2C6UPF5%2Cj7mgl&ms=Zu6nv%2C6UPF5%2Cj7mgl&mv=9&mvi=8&pl=06","sw":false}
+{"t":6,"kind":"done","id":68,"status":200,"size":-606}
+{"t":6,"kind":"failed","id":60,"url":"https://rr4---sn-q4flrnel.googlevideo.com/videoplayback?expire=0369546775&ei=YCXKZ9dsz1EkwJxVeEAx3L4&ip=58.73.59.28&id=o-AFVWlfhZjqP9qDrw8BvH10FylV1zVBBfU8yfjUmBri8OT&itag=18&source=youtube&requiressl=yes&mh=X6&mm=521%2C25160%2C94659&mn=Zu6nv%2C6UPF5%2Cj7mgl&ms=Zu6nv%2C6UPF5%2Cj7mgl&mv=9&mvi=8&pl=06","error":"net::ERR_ABORTED"}
+{"t":6,"kind":"failed","id":61,"url":"https://rr4---sn-q4flrnel.googlevideo.com/videoplayback?expire=0369546775&ei=YCXKZ9dsz1EkwJxVeEAx3L4&ip=58.73.59.28&id=o-AFVWlfhZjqP9qDrw8BvH10FylV1zVBBfU8yfjUmBri8OT&itag=18&source=youtube&requiressl=yes&mh=X6&mm=521%2C25160%2C94659&mn=Zu6nv%2C6UPF5%2Cj7mgl&ms=Zu6nv%2C6UPF5%2Cj7mgl&mv=9&mvi=8&pl=06","error":"net::ERR_ABORTED"}
+{"t":6,"kind":"done","id":72,"status":200,"size":-136}
+{"t":6.1,"kind":"req","id":75,"method":"GET","type":"fetch","url":"data:application/json;base64,eyJyZXNwb25zZUNvbnRleHQiOnsic2VydmljZVRyYWNraW5nUGFyYW1zIjpbeyJzZXJ2aWNlIjoiR0ZFRURCQUNLIiwicGFyYW1zIjpbeyJrZXkiOiJrYyIsInZhbHVlIjoiNjYifSx7ImtleSI6ImN3IiwidmFsdWUiOiJzdCJ9LHsia2V5IjoiemIiLCJ2YWx1ZSI6Inh6In0seyJrZXkiOiJ6bCIsInZhbHVlIjoiMTYifSx7ImtleSI6InBmIiwidmFsdWUiOiJ","sw":false}
+{"t":6.1,"kind":"console","type":"debug","text":"bare-mux: got localStorage bare-mux-path: /baremux/worker.js"}
+{"t":6.1,"kind":"done","id":65,"status":200,"size":-602}
+{"t":6.1,"kind":"done","id":71,"status":200,"size":-585}
+{"t":6.2,"kind":"done","id":75,"status":200,"size":-136}
+{"t":6.2,"kind":"req","id":76,"method":"GET","type":"fetch","url":"data:application/json;base64,eyJwbGF5ZXJSZXNwb25zZSI6eyJyZXNwb25zZUNvbnRleHQiOnsic2VydmljZVRyYWNraW5nUGFyYW1zIjpbeyJzZXJ2aWNlIjoiR0ZFRURCQUNLIiwicGFyYW1zIjpbeyJrZXkiOiJrYyIsInZhbHVlIjoiNjYifSx7ImtleSI6ImN3IiwidmFsdWUiOiJzdCJ9LHsia2V5IjoiemIiLCJ2YWx1ZSI6Inh6In0seyJrZXkiOiJ6bCIsInZhbHVlIjoiMTYifSx7Imt","sw":false}
+{"t":6.2,"kind":"done","id":76,"status":200,"size":-136}
+{"t":6.2,"kind":"req","id":77,"method":"GET","type":"fetch","url":"data:application/json;base64,eyJyZXNwb25zZUNvbnRleHQiOnsic2VydmljZVRyYWNraW5nUGFyYW1zIjpbeyJzZXJ2aWNlIjoiR0ZFRURCQUNLIiwicGFyYW1zIjpbeyJrZXkiOiJpcGNjIiwidmFsdWUiOiIwIn0seyJrZXkiOiJpc192aWV3ZWRfbGl2ZSIsInZhbHVlIjoiRmFsc2UifSx7ImtleSI6ImlzX2FsY19zdXJmYWNlIiwidmFsdWUiOiJmYWxzZSJ9LHsia2V5IjoicHJlbWl1bV9","sw":false}
+{"t":6.2,"kind":"done","id":64,"status":200,"size":-680}
+{"t":6.2,"kind":"mem","mb":[145,558,196,103]}
+{"t":6.3,"kind":"req","id":78,"method":"GET","type":"script","url":"https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0DAFBFAAE/d=1/exm=_b,_tp/excm=_b,_tp,identifierview/ed=1/wt=2/ujg=1/rs=AOaEmlHjXcpMHZ1MEnBeHD2","sw":false}
+{"t":6.3,"kind":"console","type":"verbose","text":"[DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o"}
+{"t":6.3,"kind":"req","id":79,"method":"GET","type":"script","url":"https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0DAFBFAAE/d=1/exm=LEikZe,_b,_tp,byfTOb,lsjVmc/excm=_b,_tp,identifierview/ed=1/wt=2/ujg=1/rs=AO","sw":false}
+{"t":6.3,"kind":"console","type":"error","text":"Failed to load resource: the server responded with a status of 403 (Forbidden)"}
+{"t":6.3,"kind":"req","id":80,"method":"GET","type":"fetch","url":"https://rr4---sn-q4flrnel.googlevideo.com/videoplayback?expire=0369546775&ei=YCXKZ9dsz1EkwJxVeEAx3L4&ip=58.73.59.28&id=o-AFVWlfhZjqP9qDrw8BvH10FylV1zVBBfU8yfjUmBri8OT&itag=18&source=youtube&requiressl=yes&mh=X6&mm=521%2C25160%2C94659&mn=Zu6nv%2C6UPF5%2Cj7mgl&ms=Zu6nv%2C6UPF5%2Cj7mgl&mv=9&mvi=8&pl=06","sw":false}
+{"t":6.3,"kind":"console","type":"error","text":"Failed to load resource: the server responded with a status of 403 (Forbidden)"}
+{"t":6.3,"kind":"req","id":81,"method":"GET","type":"fetch","url":"https://rr4---sn-q4flrnel.googlevideo.com/videoplayback?expire=0369546775&ei=YCXKZ9dsz1EkwJxVeEAx3L4&ip=58.73.59.28&id=o-AFVWlfhZjqP9qDrw8BvH10FylV1zVBBfU8yfjUmBri8OT&itag=18&source=youtube&requiressl=yes&mh=X6&mm=521%2C25160%2C94659&mn=Zu6nv%2C6UPF5%2Cj7mgl&ms=Zu6nv%2C6UPF5%2Cj7mgl&mv=9&mvi=8&pl=06","sw":false}
+{"t":6.3,"kind":"req","id":82,"method":"GET","type":"script","url":"https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0DAFBFAAE/d=1/exm=CMcBD,DqMihc,EFQ78c,EN3i8d,Fndnac,GwYlN,IZT63,K0PMbc,K1ZKnb,KUM7Z,L1AAkb,L9O","sw":false}
+{"t":6.3,"kind":"failed","id":73,"url":"https://rr4---sn-q4flrnel.googlevideo.com/videoplayback?expire=0369546775&ei=YCXKZ9dsz1EkwJxVeEAx3L4&ip=58.73.59.28&id=o-AFVWlfhZjqP9qDrw8BvH10FylV1zVBBfU8yfjUmBri8OT&itag=18&source=youtube&requiressl=yes&mh=X6&mm=521%2C25160%2C94659&mn=Zu6nv%2C6UPF5%2Cj7mgl&ms=Zu6nv%2C6UPF5%2Cj7mgl&mv=9&mvi=8&pl=06","error":"net::ERR_ABORTED"}
+{"t":6.3,"kind":"failed","id":74,"url":"https://rr4---sn-q4flrnel.googlevideo.com/videoplayback?expire=0369546775&ei=YCXKZ9dsz1EkwJxVeEAx3L4&ip=58.73.59.28&id=o-AFVWlfhZjqP9qDrw8BvH10FylV1zVBBfU8yfjUmBri8OT&itag=18&source=youtube&requiressl=yes&mh=X6&mm=521%2C25160%2C94659&mn=Zu6nv%2C6UPF5%2Cj7mgl&ms=Zu6nv%2C6UPF5%2Cj7mgl&mv=9&mvi=8&pl=06","error":"net::ERR_ABORTED"}
+{"t":6.3,"kind":"done","id":77,"status":200,"size":-136}
+{"t":6.3,"kind":"done","id":78,"status":200,"size":-679}
+{"t":6.4,"kind":"done","id":82,"status":200,"size":-678}
+{"t":6.4,"kind":"mem","mb":[145,570,198,103]}
+{"t":6.4,"kind":"console","type":"error","text":"Failed to load resource: the server responded with a status of 403 (Forbidden)"}
+{"t":6.4,"kind":"console","type":"error","text":"Failed to load resource: the server responded with a status of 403 (Forbidden)"}
+{"t":6.5,"kind":"failed","id":81,"url":"https://rr4---sn-q4flrnel.googlevideo.com/videoplayback?expire=0369546775&ei=YCXKZ9dsz1EkwJxVeEAx3L4&ip=58.73.59.28&id=o-AFVWlfhZjqP9qDrw8BvH10FylV1zVBBfU8yfjUmBri8OT&itag=18&source=youtube&requiressl=yes&mh=X6&mm=521%2C25160%2C94659&mn=Zu6nv%2C6UPF5%2Cj7mgl&ms=Zu6nv%2C6UPF5%2Cj7mgl&mv=9&mvi=8&pl=06","error":"net::ERR_ABORTED"}
+{"t":6.5,"kind":"failed","id":80,"url":"https://rr4---sn-q4flrnel.googlevideo.com/videoplayback?expire=0369546775&ei=YCXKZ9dsz1EkwJxVeEAx3L4&ip=58.73.59.28&id=o-AFVWlfhZjqP9qDrw8BvH10FylV1zVBBfU8yfjUmBri8OT&itag=18&source=youtube&requiressl=yes&mh=X6&mm=521%2C25160%2C94659&mn=Zu6nv%2C6UPF5%2Cj7mgl&ms=Zu6nv%2C6UPF5%2Cj7mgl&mv=9&mvi=8&pl=06","error":"net::ERR_ABORTED"}
+{"t":6.5,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 271]"}
+{"t":6.5,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 349]"}
+{"t":6.5,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 461]"}
+{"t":6.5,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 127]"}
+{"t":6.5,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 172]"}
+{"t":6.5,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 56]"}
+{"t":6.5,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 99]"}
+{"t":6.5,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 158]"}
+{"t":6.5,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 510]"}
+{"t":6.5,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 139]"}
+{"t":6.5,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 31]"}
+{"t":6.5,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 154]"}
+{"t":6.5,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 199]"}
+{"t":6.5,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 283]"}
+{"t":6.5,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 125]"}
+{"t":6.5,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 89]"}
+{"t":6.5,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 106]"}
+{"t":6.5,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 384]"}
+{"t":6.5,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 285]"}
+{"t":6.5,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 79]"}
+{"t":6.5,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 66]"}
+{"t":6.5,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 29]"}
+{"t":6.5,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 413]"}
+{"t":6.5,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 71]"}
+{"t":6.5,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 469]"}
+{"t":6.5,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 227]"}
+{"t":6.5,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 327]"}
+{"t":6.5,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 334]"}
+{"t":6.5,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 319]"}
+{"t":6.5,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 103]"}
+{"t":6.5,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 52]"}
+{"t":6.5,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 379]"}
+{"t":6.5,"kind":"done","id":79,"status":200,"size":-680}
+{"t":6.6,"kind":"mem","mb":[145,545,198,103]}
+{"t":6.6,"kind":"req","id":83,"method":"GET","type":"script","url":"https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0DAFBFAAE/d=1/exm=CMcBD,DqMihc,E87wgc,EFQ78c,EN3i8d,Fndnac,GwYlN,IZT63,K0PMbc,K1ZKnb,KUM7Z,L1A","sw":false}
+{"t":6.6,"kind":"req","id":84,"method":"GET","type":"script","url":"https://www.gstatic.com/feedback/js/help/prod/service/lazy.min.js","sw":false}
+{"t":6.6,"kind":"req","id":85,"method":"GET","type":"script","url":"https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0DAFBFAAE/d=1/exm=CMcBD,DqMihc,E87wgc,EFQ78c,EN3i8d,Fndnac,GwYlN,IZT63,K0PMbc,K1ZKnb,KUM7Z,L1A","sw":false}
+{"t":6.6,"kind":"req","id":86,"method":"GET","type":"script","url":"https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0DAFBFAAE/d=1/exm=CMcBD,DqMihc,E87wgc,EFQ78c,EN3i8d,Fndnac,GwYlN,IZT63,K0PMbc,K1ZKnb,KUM7Z,L1A","sw":false}
+{"t":6.6,"kind":"req","id":87,"method":"GET","type":"script","url":"https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0DAFBFAAE/d=1/exm=A7fCU,CMcBD,DqMihc,E87wgc,EFQ78c,EN3i8d,Fndnac,GwYlN,IZT63,K0PMbc,K1ZKnb,KUM","sw":false}
+{"t":6.7,"kind":"req","id":88,"method":"GET","type":"script","url":"https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0DAFBFAAE/d=1/exm=A7fCU,CMcBD,DqMihc,E87wgc,EFQ78c,EN3i8d,Fndnac,GwYlN,IZT63,K0PMbc,K1ZKnb,KUM","sw":false}
+{"t":6.7,"kind":"done","id":83,"status":200,"size":-679}
+{"t":6.7,"kind":"done","id":85,"status":200,"size":-678}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 138]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 56]"}
+{"t":6.7,"kind":"done","id":84,"status":200,"size":-627}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 125]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 510]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 247]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 390]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 10]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 283]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 109]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 26]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 406]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 350]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 111]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 11]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 205]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 169]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 464]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 135]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 117]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 11]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 327]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 172]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 149]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 74]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 101]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 42]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 96]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 346]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 266]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 257]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 203]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 72]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 251]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 287]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 41]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 354]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 1]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 99]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 281]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 102]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 315]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 298]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 42]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 138]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 420]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 435]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 505]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 56]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 106]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 190]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 349]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 411]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 357]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 272]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 42]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 111]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 456]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 172]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 56]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 202]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 41]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 109]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 207]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 60]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 325]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 46]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 461]"}
+{"t":6.7,"kind":"req","id":89,"method":"GET","type":"document","url":"https://accounts.youtube.com/accounts/CheckConnection?pmpo=https%3A%2F%2Faccounts.google.com&v=1077962129&timestamp=1792878881318","sw":false}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 14]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 151]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 145]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 152]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 295]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 89]"}
+{"t":6.7,"kind":"console","type":"warning","text":"CAUGHT ERROR [Object, 30, 341]"}
+{"t":6.7,"kind":"done","id":86,"status":200,"size":-677}
+{"t":6.7,"kind":"done","id":87,"status":200,"size":-678}
+{"t":6.7,"kind":"req","id":90,"method":"GET","type":"document","url":"https://accounts.google.com/_/bscframe","sw":false}
+{"t":6.7,"kind":"req","id":91,"method":"POST","type":"fetch","url":"https://accounts.google.com/v3/signin/_/AccountsSignInUi/data/batchexecute?rpcids=UEkKwb&source-path=%2Fv3%2Fsignin%2Fidentifier&f.sid=735469923523612506&bl=boq_identityfrontendauthuiserver_20261020.03_p0&hl=en&dsh=S439603589%3A1792878879769894&_reqid=78882&rt=c","sw":false}
+{"t":6.7,"kind":"req","id":92,"method":"POST","type":"xhr","url":"https://www.youtube.com/api/jnn/v1/GenerateIT","sw":false}
+{"t":6.7,"kind":"done","id":88,"status":200,"size":-678}
+{"t":6.8,"kind":"req","id":93,"method":"GET","type":"script","url":"http://localhost:8781/scram/scramjet.wasm.wasm","sw":false}
+{"t":6.8,"kind":"req","id":94,"method":"GET","type":"script","url":"http://localhost:8781/scram/scramjet.all.js","sw":false}
+{"t":6.8,"kind":"req","id":95,"method":"GET","type":"fetch","url":"http://localhost:8781/scram/scramjet.all.js","sw":true}
+{"t":6.8,"kind":"req","id":96,"method":"GET","type":"fetch","url":"http://localhost:8781/scram/scramjet.wasm.wasm","sw":true}
+{"t":6.8,"kind":"done","id":90,"status":200,"size":-843}
+{"t":6.8,"kind":"done","id":95,"status":200,"size":180333}
+{"t":6.8,"kind":"done","id":96,"status":200,"size":537008}
+{"t":6.8,"kind":"req","id":97,"method":"GET","type":"script","url":"https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0DAFBFAAE/d=1/exm=A7fCU,CMcBD,DqMihc,E87wgc,EFQ78c,EN3i8d,Fndnac,GwYlN,IZT63,K0PMbc,K1ZKnb,KUM","sw":false}
+{"t":6.8,"kind":"failed","id":91,"url":"https://accounts.google.com/v3/signin/_/AccountsSignInUi/data/batchexecute?rpcids=UEkKwb&source-path=%2Fv3%2Fsignin%2Fidentifier&f.sid=735469923523612506&bl=boq_identityfrontendauthuiserver_20261020.03_p0&hl=en&dsh=S439603589%3A1792878879769894&_reqid=78882&rt=c","error":"net::ERR_ABORTED"}
+{"t":6.8,"kind":"done","id":92,"status":200,"size":-241}
+{"t":6.8,"kind":"done","id":94,"status":200,"size":-272}
+{"t":6.8,"kind":"mem","mb":[145,558,199,103]}
+{"t":6.8,"kind":"done","id":93,"status":200,"size":-48}
+{"t":6.9,"kind":"console","type":"debug","text":"bare-mux: running v2.1.9 (build dc9dc6e)"}
+{"t":6.9,"kind":"console","type":"log","text":"%cg%c initializing scramjet client \n  \tbackground-color: #000;\n  \tcolor: #fff;\n  \tpadding: 2px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n   "}
+{"t":6.9,"kind":"console","type":"debug","text":"bare-mux: got localStorage bare-mux-path: /baremux/worker.js"}
+{"t":6.9,"kind":"req","id":98,"method":"GET","type":"script","url":"http://localhost:8781/scram/scramjet.wasm.wasm","sw":false}
+{"t":6.9,"kind":"req","id":99,"method":"GET","type":"script","url":"http://localhost:8781/scram/scramjet.all.js","sw":false}
+{"t":6.9,"kind":"req","id":100,"method":"GET","type":"fetch","url":"http://localhost:8781/scram/scramjet.all.js","sw":true}
+{"t":6.9,"kind":"tick","memory":[{"pid":4605,"mb":145},{"pid":4614,"mb":563},{"pid":4648,"mb":199},{"pid":4687,"mb":103}],"heap":{"usedMB":63,"totalMB":94,"nodes":3828,"docs":14,"frames":10},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1454,"player":true,"flexy":false,"botcheck":false}},"answerMs":26}
+{"t":6.9,"kind":"req","id":101,"method":"GET","type":"fetch","url":"http://localhost:8781/scram/scramjet.wasm.wasm","sw":true}
+{"t":6.9,"kind":"done","id":97,"status":200,"size":-678}
+{"t":6.9,"kind":"done","id":89,"status":200,"size":-894}
+{"t":6.9,"kind":"done","id":100,"status":200,"size":180333}
+{"t":6.9,"kind":"done","id":101,"status":200,"size":537008}
+{"t":6.9,"kind":"console","type":"debug","text":"bare-mux: got localStorage bare-mux-path: /baremux/worker.js"}
+{"t":6.9,"kind":"console","type":"debug","text":"bare-mux: got localStorage bare-mux-path: /baremux/worker.js"}
+{"t":6.9,"kind":"done","id":99,"status":200,"size":-272}
+{"t":6.9,"kind":"req","id":102,"method":"POST","type":"ping","url":"https://play.google.com/log?hasfast=true&authuser=0&format=json","sw":false}
+{"t":6.9,"kind":"done","id":98,"status":200,"size":-48}
+{"t":6.9,"kind":"req","id":103,"method":"POST","type":"ping","url":"https://play.google.com/log?hasfast=true&authuser=0&format=json","sw":false}
+{"t":7,"kind":"console","type":"debug","text":"bare-mux: running v2.1.9 (build dc9dc6e)"}
+{"t":7,"kind":"console","type":"log","text":"%cg%c initializing scramjet client \n  \tbackground-color: #000;\n  \tcolor: #fff;\n  \tpadding: 2px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n   "}
+{"t":7,"kind":"console","type":"debug","text":"bare-mux: got localStorage bare-mux-path: /baremux/worker.js"}
+{"t":7,"kind":"mem","mb":[145,589,199,103]}
+{"t":7,"kind":"req","id":104,"method":"GET","type":"script","url":"https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0DAFBFAAE/d=1/exm=A7fCU,CMcBD,DqMihc,E87wgc,EFQ78c,EN3i8d,Fndnac,GwYlN,IZT63,K0PMbc,K1ZKnb,KUM","sw":false}
+{"t":7,"kind":"done","id":104,"status":200,"size":-678}
+{"t":7.2,"kind":"mem","mb":[145,589,199,103]}
+{"t":7.2,"kind":"done","id":103,"status":200,"size":-487}
+{"t":7.2,"kind":"done","id":102,"status":200,"size":-487}
+{"t":7.4,"kind":"mem","mb":[145,589,199,103]}
+{"t":7.6,"kind":"mem","mb":[145,589,199,103]}
+{"t":7.8,"kind":"mem","mb":[145,589,199,103]}
+{"t":7.9,"kind":"tick","memory":[{"pid":4605,"mb":145},{"pid":4614,"mb":589},{"pid":4648,"mb":199},{"pid":4687,"mb":103}],"heap":{"usedMB":49,"totalMB":96,"nodes":3861,"docs":19,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":8,"kind":"mem","mb":[145,589,199,103]}
+{"t":8.2,"kind":"mem","mb":[145,589,199,103]}
+{"t":8.4,"kind":"mem","mb":[145,589,199,103]}
+{"t":8.6,"kind":"mem","mb":[145,589,199,103]}
+{"t":8.8,"kind":"mem","mb":[145,589,199,103]}
+{"t":8.9,"kind":"tick","memory":[{"pid":4605,"mb":145},{"pid":4614,"mb":589},{"pid":4648,"mb":199},{"pid":4687,"mb":103}],"heap":{"usedMB":49,"totalMB":96,"nodes":3861,"docs":19,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":9,"kind":"mem","mb":[145,589,199,103]}
+{"t":9.2,"kind":"mem","mb":[145,589,199,103]}
+{"t":9.4,"kind":"mem","mb":[145,589,199,103]}
+{"t":9.6,"kind":"mem","mb":[145,589,199,103]}
+{"t":9.8,"kind":"mem","mb":[145,589,199,103]}
+{"t":9.9,"kind":"tick","memory":[{"pid":4605,"mb":145},{"pid":4614,"mb":589},{"pid":4648,"mb":199},{"pid":4687,"mb":103}],"heap":{"usedMB":49,"totalMB":96,"nodes":3861,"docs":19,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":10,"kind":"mem","mb":[145,589,199,103]}
+{"t":10.2,"kind":"mem","mb":[145,589,199,103]}
+{"t":10.2,"kind":"console","type":"warning","text":"The resource http://localhost:8781/scramjet/https%3A%2F%2Frr3---sn-ojvgq5-51.c.youtube.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":10.2,"kind":"console","type":"warning","text":"The resource http://localhost:8781/scramjet/https%3A%2F%2Frr3---sn-ojvgq5-51.googlevideo.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":10.2,"kind":"console","type":"warning","text":"The resource http://localhost:8781/scramjet/https%3A%2F%2Fi.ytimg.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":10.4,"kind":"mem","mb":[144,585,199,103]}
+{"t":10.6,"kind":"mem","mb":[144,585,198,103]}
+{"t":10.8,"kind":"mem","mb":[144,583,198,102]}
+{"t":10.9,"kind":"tick","memory":[{"pid":4605,"mb":144},{"pid":4614,"mb":582},{"pid":4648,"mb":198},{"pid":4687,"mb":102}],"heap":{"usedMB":49,"totalMB":96,"nodes":3861,"docs":19,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":11,"kind":"mem","mb":[144,582,198,102]}
+{"t":11.2,"kind":"mem","mb":[144,582,198,102]}
+{"t":11.4,"kind":"mem","mb":[144,582,198,102]}
+{"t":11.6,"kind":"mem","mb":[144,582,198,102]}
+{"t":11.8,"kind":"mem","mb":[144,582,198,102]}
+{"t":12,"kind":"tick","memory":[{"pid":4605,"mb":144},{"pid":4614,"mb":582},{"pid":4648,"mb":198},{"pid":4687,"mb":102}],"heap":{"usedMB":55,"totalMB":96,"nodes":3861,"docs":19,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":12,"kind":"mem","mb":[144,579,198,102]}
+{"t":12.2,"kind":"mem","mb":[144,579,198,102]}
+{"t":12.4,"kind":"mem","mb":[144,579,198,102]}
+{"t":12.6,"kind":"mem","mb":[144,579,198,102]}
+{"t":12.8,"kind":"mem","mb":[144,579,198,102]}
+{"t":13,"kind":"tick","memory":[{"pid":4605,"mb":144},{"pid":4614,"mb":579},{"pid":4648,"mb":198},{"pid":4687,"mb":102}],"heap":{"usedMB":55,"totalMB":96,"nodes":3861,"docs":19,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":13,"kind":"mem","mb":[144,579,198,102]}
+{"t":13.2,"kind":"mem","mb":[144,579,198,102]}
+{"t":13.4,"kind":"mem","mb":[144,579,198,102]}
+{"t":13.6,"kind":"mem","mb":[144,579,198,102]}
+{"t":13.8,"kind":"mem","mb":[144,579,198,102]}
+{"t":14,"kind":"tick","memory":[{"pid":4605,"mb":144},{"pid":4614,"mb":579},{"pid":4648,"mb":198},{"pid":4687,"mb":102}],"heap":{"usedMB":55,"totalMB":96,"nodes":3861,"docs":19,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":14,"kind":"mem","mb":[144,579,198,102]}
+{"t":14.2,"kind":"mem","mb":[144,579,198,102]}
+{"t":14.4,"kind":"mem","mb":[144,579,198,102]}
+{"t":14.6,"kind":"mem","mb":[144,579,198,102]}
+{"t":14.8,"kind":"mem","mb":[144,579,198,102]}
+{"t":15,"kind":"tick","memory":[{"pid":4605,"mb":144},{"pid":4614,"mb":579},{"pid":4648,"mb":198},{"pid":4687,"mb":102}],"heap":{"usedMB":55,"totalMB":96,"nodes":3861,"docs":19,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":15,"kind":"mem","mb":[144,579,198,102]}
+{"t":15.2,"kind":"mem","mb":[144,579,198,102]}
+{"t":15.4,"kind":"mem","mb":[144,579,198,102]}
+{"t":15.6,"kind":"mem","mb":[144,579,198,102]}
+{"t":15.8,"kind":"mem","mb":[144,579,198,102]}
+{"t":16,"kind":"tick","memory":[{"pid":4605,"mb":144},{"pid":4614,"mb":579},{"pid":4648,"mb":198},{"pid":4687,"mb":102}],"heap":{"usedMB":55,"totalMB":96,"nodes":3861,"docs":19,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":16,"kind":"mem","mb":[144,579,198,102]}
+{"t":16.2,"kind":"mem","mb":[144,579,198,102]}
+{"t":16.4,"kind":"mem","mb":[144,579,198,102]}
+{"t":16.6,"kind":"mem","mb":[144,580,198,102]}
+{"t":16.7,"kind":"req","id":105,"method":"POST","type":"fetch","url":"https://play.google.com/log?format=json&hasfast=true&authuser=0","sw":false}
+{"t":16.8,"kind":"mem","mb":[144,581,198,102]}
+{"t":16.9,"kind":"done","id":105,"status":200,"size":-487}
+{"t":17,"kind":"mem","mb":[144,581,198,102]}
+{"t":17,"kind":"tick","memory":[{"pid":4605,"mb":144},{"pid":4614,"mb":581},{"pid":4648,"mb":198},{"pid":4687,"mb":102}],"heap":{"usedMB":62,"totalMB":98,"nodes":3861,"docs":19,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":17.2,"kind":"mem","mb":[144,581,198,102]}
+{"t":17.4,"kind":"mem","mb":[144,581,198,102]}
+{"t":17.6,"kind":"mem","mb":[144,581,198,102]}
+{"t":17.8,"kind":"mem","mb":[144,581,198,102]}
+{"t":18,"kind":"mem","mb":[144,581,198,102]}
+{"t":18.1,"kind":"tick","memory":[{"pid":4605,"mb":144},{"pid":4614,"mb":581},{"pid":4648,"mb":198},{"pid":4687,"mb":102}],"heap":{"usedMB":62,"totalMB":98,"nodes":3861,"docs":19,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":18.2,"kind":"mem","mb":[144,581,198,102]}
+{"t":18.4,"kind":"mem","mb":[144,581,198,102]}
+{"t":18.6,"kind":"mem","mb":[144,581,198,102]}
+{"t":18.8,"kind":"mem","mb":[144,581,198,102]}
+{"t":19,"kind":"mem","mb":[144,581,198,102]}
+{"t":19.1,"kind":"tick","memory":[{"pid":4605,"mb":144},{"pid":4614,"mb":581},{"pid":4648,"mb":198},{"pid":4687,"mb":102}],"heap":{"usedMB":62,"totalMB":98,"nodes":3861,"docs":19,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":19.2,"kind":"mem","mb":[144,581,198,102]}
+{"t":19.4,"kind":"mem","mb":[144,581,198,102]}
+{"t":19.6,"kind":"mem","mb":[144,581,198,102]}
+{"t":19.8,"kind":"mem","mb":[144,581,198,102]}
+{"t":19.9,"kind":"console","type":"warning","text":"The resource http://localhost:8781/scramjet/https%3A%2F%2Frr3---sn-ojvgq5-51.c.youtube.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":19.9,"kind":"console","type":"warning","text":"The resource http://localhost:8781/scramjet/https%3A%2F%2Frr3---sn-ojvgq5-51.googlevideo.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":19.9,"kind":"console","type":"warning","text":"The resource http://localhost:8781/scramjet/https%3A%2F%2Fi.ytimg.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":20,"kind":"mem","mb":[144,581,198,102]}
+{"t":20.1,"kind":"tick","memory":[{"pid":4605,"mb":144},{"pid":4614,"mb":581},{"pid":4648,"mb":198},{"pid":4687,"mb":102}],"heap":{"usedMB":62,"totalMB":98,"nodes":3861,"docs":19,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":20.2,"kind":"mem","mb":[144,581,198,102]}
+{"t":20.4,"kind":"mem","mb":[144,581,198,102]}
+{"t":20.6,"kind":"mem","mb":[144,581,198,102]}
+{"t":20.8,"kind":"mem","mb":[144,581,198,102]}
+{"t":21,"kind":"mem","mb":[144,581,198,102]}
+{"t":21.1,"kind":"tick","memory":[{"pid":4605,"mb":144},{"pid":4614,"mb":581},{"pid":4648,"mb":198},{"pid":4687,"mb":102}],"heap":{"usedMB":62,"totalMB":98,"nodes":3861,"docs":19,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":21.2,"kind":"mem","mb":[144,581,198,102]}
+{"t":21.4,"kind":"mem","mb":[144,581,198,102]}
+{"t":21.6,"kind":"mem","mb":[144,585,198,102]}
+{"t":21.8,"kind":"mem","mb":[144,585,198,102]}
+{"t":22,"kind":"mem","mb":[144,585,198,102]}
+{"t":22.1,"kind":"tick","memory":[{"pid":4605,"mb":144},{"pid":4614,"mb":585},{"pid":4648,"mb":198},{"pid":4687,"mb":102}],"heap":{"usedMB":68,"totalMB":104,"nodes":3861,"docs":19,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":22.2,"kind":"mem","mb":[144,585,198,102]}
+{"t":22.4,"kind":"mem","mb":[144,585,198,102]}
+{"t":22.6,"kind":"mem","mb":[144,585,198,102]}
+{"t":22.8,"kind":"mem","mb":[144,585,198,102]}
+{"t":23,"kind":"mem","mb":[144,585,198,102]}
+{"t":23.1,"kind":"tick","memory":[{"pid":4605,"mb":144},{"pid":4614,"mb":585},{"pid":4648,"mb":198},{"pid":4687,"mb":102}],"heap":{"usedMB":68,"totalMB":104,"nodes":3861,"docs":19,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":23.2,"kind":"mem","mb":[144,585,198,102]}
+{"t":23.4,"kind":"mem","mb":[144,585,198,102]}
+{"t":23.6,"kind":"mem","mb":[144,585,198,102]}
+{"t":23.8,"kind":"mem","mb":[144,585,198,102]}
+{"t":24,"kind":"mem","mb":[144,585,198,102]}
+{"t":24.1,"kind":"tick","memory":[{"pid":4605,"mb":144},{"pid":4614,"mb":585},{"pid":4648,"mb":198},{"pid":4687,"mb":102}],"heap":{"usedMB":68,"totalMB":104,"nodes":3861,"docs":19,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":24.2,"kind":"mem","mb":[144,585,198,102]}
+{"t":24.4,"kind":"mem","mb":[144,585,198,102]}
+{"t":24.6,"kind":"mem","mb":[144,585,198,102]}
+{"t":24.8,"kind":"mem","mb":[144,585,198,102]}
+{"t":25,"kind":"mem","mb":[144,585,198,102]}
+{"t":25.2,"kind":"tick","memory":[{"pid":4605,"mb":144},{"pid":4614,"mb":585},{"pid":4648,"mb":198},{"pid":4687,"mb":102}],"heap":{"usedMB":68,"totalMB":104,"nodes":3861,"docs":19,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":25.2,"kind":"mem","mb":[144,586,198,102]}
+{"t":25.4,"kind":"mem","mb":[144,586,198,102]}
+{"t":25.6,"kind":"mem","mb":[144,586,198,102]}
+{"t":25.8,"kind":"mem","mb":[144,586,198,102]}
+{"t":26,"kind":"mem","mb":[144,586,198,102]}
+{"t":26.2,"kind":"tick","memory":[{"pid":4605,"mb":144},{"pid":4614,"mb":586},{"pid":4648,"mb":198},{"pid":4687,"mb":102}],"heap":{"usedMB":68,"totalMB":104,"nodes":3861,"docs":19,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":26.2,"kind":"mem","mb":[144,586,198,102]}
+{"t":26.4,"kind":"mem","mb":[144,586,198,102]}
+{"t":26.6,"kind":"mem","mb":[144,591,198,102]}
+{"t":26.8,"kind":"mem","mb":[144,591,198,102]}
+{"t":27,"kind":"mem","mb":[144,591,198,102]}
+{"t":27.2,"kind":"tick","memory":[{"pid":4605,"mb":144},{"pid":4614,"mb":591},{"pid":4648,"mb":198},{"pid":4687,"mb":102}],"heap":{"usedMB":74,"totalMB":113,"nodes":3861,"docs":19,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":27.2,"kind":"mem","mb":[144,591,198,102]}
+{"t":27.4,"kind":"mem","mb":[144,591,198,102]}
+{"t":27.6,"kind":"mem","mb":[144,591,198,102]}
+{"t":27.8,"kind":"mem","mb":[144,591,198,102]}
+{"t":28,"kind":"mem","mb":[144,591,198,102]}
+{"t":28.2,"kind":"tick","memory":[{"pid":4605,"mb":144},{"pid":4614,"mb":591},{"pid":4648,"mb":198},{"pid":4687,"mb":102}],"heap":{"usedMB":74,"totalMB":113,"nodes":3861,"docs":19,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":28.2,"kind":"mem","mb":[144,591,198,102]}
+{"t":28.4,"kind":"mem","mb":[144,591,198,102]}
+{"t":28.6,"kind":"mem","mb":[144,591,198,102]}
+{"t":28.8,"kind":"mem","mb":[144,591,198,102]}
+{"t":29,"kind":"mem","mb":[144,591,198,102]}
+{"t":29.2,"kind":"tick","memory":[{"pid":4605,"mb":144},{"pid":4614,"mb":591},{"pid":4648,"mb":198},{"pid":4687,"mb":102}],"heap":{"usedMB":74,"totalMB":113,"nodes":3861,"docs":19,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":29.2,"kind":"mem","mb":[144,591,198,102]}
+{"t":29.4,"kind":"mem","mb":[144,591,198,102]}
+{"t":29.6,"kind":"mem","mb":[144,591,198,102]}
+{"t":29.8,"kind":"mem","mb":[144,591,198,102]}
+{"t":30,"kind":"mem","mb":[144,591,198,102]}
+{"t":30.3,"kind":"mem","mb":[144,591,198,102]}
+{"t":30.3,"kind":"tick","memory":[{"pid":4605,"mb":144},{"pid":4614,"mb":591},{"pid":4648,"mb":198},{"pid":4687,"mb":102}],"heap":{"usedMB":74,"totalMB":113,"nodes":3861,"docs":19,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":30.5,"kind":"mem","mb":[144,591,198,102]}
+{"t":30.7,"kind":"mem","mb":[143,591,198,102]}
+{"t":30.9,"kind":"mem","mb":[143,591,198,102]}
+{"t":31.1,"kind":"mem","mb":[143,591,166,102]}
+{"t":31.3,"kind":"mem","mb":[141,591,166,102]}
+{"t":31.3,"kind":"tick","memory":[{"pid":4605,"mb":141},{"pid":4614,"mb":591},{"pid":4648,"mb":166},{"pid":4687,"mb":102}],"heap":{"usedMB":74,"totalMB":113,"nodes":3861,"docs":19,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":31.5,"kind":"mem","mb":[141,591,166,102]}
+{"t":31.7,"kind":"mem","mb":[141,571,164,102]}
+{"t":31.9,"kind":"mem","mb":[141,571,164,102]}
+{"t":32.1,"kind":"mem","mb":[141,571,164,102]}
+{"t":32.3,"kind":"mem","mb":[141,571,164,102]}
+{"t":32.3,"kind":"tick","memory":[{"pid":4605,"mb":141},{"pid":4614,"mb":571},{"pid":4648,"mb":164},{"pid":4687,"mb":102}],"heap":{"usedMB":47,"totalMB":112,"nodes":3793,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":32.5,"kind":"mem","mb":[141,571,164,102]}
+{"t":32.7,"kind":"mem","mb":[141,571,164,102]}
+{"t":32.9,"kind":"mem","mb":[141,571,164,102]}
+{"t":33.1,"kind":"mem","mb":[141,571,164,102]}
+{"t":33.3,"kind":"mem","mb":[141,508,164,102]}
+{"t":33.3,"kind":"tick","memory":[{"pid":4605,"mb":141},{"pid":4614,"mb":508},{"pid":4648,"mb":164},{"pid":4687,"mb":102}],"heap":{"usedMB":47,"totalMB":112,"nodes":3793,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":33.5,"kind":"mem","mb":[141,508,164,102]}
+{"t":33.7,"kind":"mem","mb":[141,508,164,102]}
+{"t":33.9,"kind":"mem","mb":[141,507,164,102]}
+{"t":34.1,"kind":"mem","mb":[141,507,164,102]}
+{"t":34.3,"kind":"mem","mb":[141,507,164,102]}
+{"t":34.3,"kind":"tick","memory":[{"pid":4605,"mb":141},{"pid":4614,"mb":507},{"pid":4648,"mb":164},{"pid":4687,"mb":102}],"heap":{"usedMB":47,"totalMB":112,"nodes":3793,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":34.5,"kind":"mem","mb":[141,507,164,102]}
+{"t":34.7,"kind":"mem","mb":[141,507,164,102]}
+{"t":34.9,"kind":"mem","mb":[141,507,164,102]}
+{"t":35.1,"kind":"mem","mb":[141,507,164,102]}
+{"t":35.3,"kind":"mem","mb":[141,507,164,102]}
+{"t":35.3,"kind":"tick","memory":[{"pid":4605,"mb":141},{"pid":4614,"mb":507},{"pid":4648,"mb":164},{"pid":4687,"mb":102}],"heap":{"usedMB":47,"totalMB":112,"nodes":3793,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":35.5,"kind":"mem","mb":[141,507,164,102]}
+{"t":35.7,"kind":"mem","mb":[141,507,164,102]}
+{"t":35.9,"kind":"mem","mb":[141,507,164,102]}
+{"t":36.1,"kind":"mem","mb":[141,507,164,102]}
+{"t":36.3,"kind":"mem","mb":[141,507,164,102]}
+{"t":36.3,"kind":"tick","memory":[{"pid":4605,"mb":141},{"pid":4614,"mb":507},{"pid":4648,"mb":164},{"pid":4687,"mb":102}],"heap":{"usedMB":47,"totalMB":112,"nodes":3793,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":36.5,"kind":"mem","mb":[141,507,164,102]}
+{"t":36.7,"kind":"mem","mb":[141,508,164,102]}
+{"t":36.9,"kind":"mem","mb":[141,508,164,102]}
+{"t":37,"kind":"req","id":106,"method":"POST","type":"ping","url":"https://play.google.com/log?hasfast=true&authuser=0&format=json","sw":false}
+{"t":37.1,"kind":"mem","mb":[141,508,164,102]}
+{"t":37.1,"kind":"done","id":106,"status":200,"size":-354}
+{"t":37.3,"kind":"mem","mb":[141,509,164,102]}
+{"t":37.4,"kind":"tick","memory":[{"pid":4605,"mb":141},{"pid":4614,"mb":509},{"pid":4648,"mb":164},{"pid":4687,"mb":102}],"heap":{"usedMB":53,"totalMB":112,"nodes":3793,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":37.5,"kind":"mem","mb":[141,509,164,102]}
+{"t":37.7,"kind":"mem","mb":[141,509,164,102]}
+{"t":37.9,"kind":"mem","mb":[141,509,164,102]}
+{"t":38.1,"kind":"mem","mb":[141,509,164,102]}
+{"t":38.3,"kind":"mem","mb":[141,509,164,102]}
+{"t":38.4,"kind":"tick","memory":[{"pid":4605,"mb":141},{"pid":4614,"mb":509},{"pid":4648,"mb":164},{"pid":4687,"mb":102}],"heap":{"usedMB":53,"totalMB":112,"nodes":3793,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":38.5,"kind":"mem","mb":[141,509,164,102]}
+{"t":38.7,"kind":"mem","mb":[141,509,164,102]}
+{"t":38.9,"kind":"mem","mb":[141,509,164,102]}
+{"t":39.1,"kind":"mem","mb":[141,509,164,102]}
+{"t":39.3,"kind":"mem","mb":[141,509,164,102]}
+{"t":39.4,"kind":"tick","memory":[{"pid":4605,"mb":141},{"pid":4614,"mb":509},{"pid":4648,"mb":164},{"pid":4687,"mb":102}],"heap":{"usedMB":53,"totalMB":112,"nodes":3793,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":39.5,"kind":"mem","mb":[141,509,164,102]}
+{"t":39.7,"kind":"mem","mb":[141,509,164,102]}
+{"t":39.9,"kind":"mem","mb":[141,442,164,102]}
+{"t":40.1,"kind":"mem","mb":[141,442,164,102]}
+{"t":40.1,"kind":"console","type":"warning","text":"The resource http://localhost:8781/scramjet/https%3A%2F%2Frr3---sn-ojvgq5-51.c.youtube.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":40.1,"kind":"console","type":"warning","text":"The resource http://localhost:8781/scramjet/https%3A%2F%2Frr3---sn-ojvgq5-51.googlevideo.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":40.1,"kind":"console","type":"warning","text":"The resource http://localhost:8781/scramjet/https%3A%2F%2Fi.ytimg.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":40.3,"kind":"mem","mb":[141,442,164,102]}
+{"t":40.4,"kind":"tick","memory":[{"pid":4605,"mb":141},{"pid":4614,"mb":441},{"pid":4648,"mb":164},{"pid":4687,"mb":102}],"heap":{"usedMB":46,"totalMB":48,"nodes":3793,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":40.5,"kind":"mem","mb":[141,441,164,102]}
+{"t":40.7,"kind":"mem","mb":[141,441,164,102]}
+{"t":40.9,"kind":"mem","mb":[141,441,164,102]}
+{"t":41.1,"kind":"mem","mb":[141,441,164,102]}
+{"t":41.3,"kind":"mem","mb":[141,441,164,102]}
+{"t":41.4,"kind":"tick","memory":[{"pid":4605,"mb":141},{"pid":4614,"mb":441},{"pid":4648,"mb":164},{"pid":4687,"mb":102}],"heap":{"usedMB":46,"totalMB":48,"nodes":3793,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":41.5,"kind":"mem","mb":[141,441,164,102]}
+{"t":41.7,"kind":"mem","mb":[141,445,164,102]}
+{"t":41.9,"kind":"mem","mb":[141,445,164,102]}
+{"t":42.1,"kind":"mem","mb":[141,445,164,102]}
+{"t":42.3,"kind":"mem","mb":[141,445,164,102]}
+{"t":42.5,"kind":"mem","mb":[141,445,164,102]}
+{"t":42.5,"kind":"tick","memory":[{"pid":4605,"mb":141},{"pid":4614,"mb":445},{"pid":4648,"mb":164},{"pid":4687,"mb":102}],"heap":{"usedMB":47,"totalMB":52,"nodes":3793,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":42.7,"kind":"mem","mb":[141,445,164,102]}
+{"t":42.9,"kind":"mem","mb":[141,445,164,102]}
+{"t":43.1,"kind":"mem","mb":[141,445,164,102]}
+{"t":43.3,"kind":"mem","mb":[141,445,164,102]}
+{"t":43.5,"kind":"mem","mb":[141,445,164,102]}
+{"t":43.5,"kind":"tick","memory":[{"pid":4605,"mb":141},{"pid":4614,"mb":445},{"pid":4648,"mb":164},{"pid":4687,"mb":102}],"heap":{"usedMB":47,"totalMB":52,"nodes":3793,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":43.7,"kind":"mem","mb":[141,445,164,102]}
+{"t":43.9,"kind":"mem","mb":[141,445,164,102]}
+{"t":44.1,"kind":"mem","mb":[141,445,164,102]}
+{"t":44.3,"kind":"mem","mb":[141,445,164,102]}
+{"t":44.5,"kind":"mem","mb":[141,445,164,102]}
+{"t":44.5,"kind":"tick","memory":[{"pid":4605,"mb":141},{"pid":4614,"mb":445},{"pid":4648,"mb":164},{"pid":4687,"mb":102}],"heap":{"usedMB":47,"totalMB":52,"nodes":3793,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":44.7,"kind":"mem","mb":[141,445,164,102]}
+{"t":44.9,"kind":"mem","mb":[141,445,164,102]}
+{"t":45.1,"kind":"mem","mb":[141,445,164,102]}
+{"t":45.3,"kind":"mem","mb":[141,445,164,102]}
+{"t":45.5,"kind":"mem","mb":[141,445,164,102]}
+{"t":45.5,"kind":"tick","memory":[{"pid":4605,"mb":141},{"pid":4614,"mb":445},{"pid":4648,"mb":164},{"pid":4687,"mb":102}],"heap":{"usedMB":47,"totalMB":52,"nodes":3793,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":45.7,"kind":"mem","mb":[141,445,164,102]}
+{"t":45.9,"kind":"mem","mb":[141,445,164,102]}
+{"t":46.1,"kind":"mem","mb":[141,445,164,102]}
+{"t":46.3,"kind":"mem","mb":[141,445,164,102]}
+{"t":46.5,"kind":"mem","mb":[141,445,164,102]}
+{"t":46.5,"kind":"tick","memory":[{"pid":4605,"mb":141},{"pid":4614,"mb":445},{"pid":4648,"mb":164},{"pid":4687,"mb":102}],"heap":{"usedMB":47,"totalMB":52,"nodes":3793,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":46.7,"kind":"mem","mb":[141,447,164,102]}
+{"t":46.9,"kind":"mem","mb":[141,447,164,102]}
+{"t":47.1,"kind":"mem","mb":[141,447,164,102]}
+{"t":47.3,"kind":"mem","mb":[141,447,164,102]}
+{"t":47.5,"kind":"mem","mb":[141,447,164,102]}
+{"t":47.5,"kind":"tick","memory":[{"pid":4605,"mb":141},{"pid":4614,"mb":447},{"pid":4648,"mb":164},{"pid":4687,"mb":102}],"heap":{"usedMB":48,"totalMB":53,"nodes":3793,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":47.7,"kind":"mem","mb":[141,447,164,102]}
+{"t":47.9,"kind":"mem","mb":[141,447,164,102]}
+{"t":48.1,"kind":"mem","mb":[141,447,164,102]}
+{"t":48.3,"kind":"mem","mb":[141,447,164,102]}
+{"t":48.5,"kind":"mem","mb":[141,447,164,102]}
+{"t":48.5,"kind":"tick","memory":[{"pid":4605,"mb":141},{"pid":4614,"mb":447},{"pid":4648,"mb":164},{"pid":4687,"mb":102}],"heap":{"usedMB":48,"totalMB":53,"nodes":3793,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":48.7,"kind":"mem","mb":[141,447,164,102]}
+{"t":48.9,"kind":"mem","mb":[141,447,164,102]}
+{"t":49.1,"kind":"mem","mb":[141,447,164,102]}
+{"t":49.3,"kind":"mem","mb":[141,447,164,102]}
+{"t":49.5,"kind":"mem","mb":[141,447,164,102]}
+{"t":49.6,"kind":"tick","memory":[{"pid":4605,"mb":141},{"pid":4614,"mb":447},{"pid":4648,"mb":164},{"pid":4687,"mb":102}],"heap":{"usedMB":48,"totalMB":53,"nodes":3793,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":49.7,"kind":"mem","mb":[141,447,164,102]}
+{"t":49.9,"kind":"mem","mb":[141,447,164,102]}
+{"t":50.1,"kind":"mem","mb":[141,447,164,102]}
+{"t":50.3,"kind":"mem","mb":[141,447,164,102]}
+{"t":50.5,"kind":"mem","mb":[141,447,164,102]}
+{"t":50.6,"kind":"tick","memory":[{"pid":4605,"mb":141},{"pid":4614,"mb":447},{"pid":4648,"mb":164},{"pid":4687,"mb":102}],"heap":{"usedMB":48,"totalMB":53,"nodes":3793,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":50.7,"kind":"mem","mb":[141,447,164,102]}
+{"t":50.9,"kind":"mem","mb":[141,447,164,102]}
+{"t":51.1,"kind":"mem","mb":[141,447,164,102]}
+{"t":51.3,"kind":"mem","mb":[141,447,164,102]}
+{"t":51.5,"kind":"mem","mb":[141,447,164,102]}
+{"t":51.6,"kind":"tick","memory":[{"pid":4605,"mb":141},{"pid":4614,"mb":447},{"pid":4648,"mb":164},{"pid":4687,"mb":102}],"heap":{"usedMB":48,"totalMB":53,"nodes":3793,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":51.7,"kind":"mem","mb":[141,447,164,102]}
+{"t":51.9,"kind":"mem","mb":[141,447,164,102]}
+{"t":52.1,"kind":"mem","mb":[141,447,164,102]}
+{"t":52.3,"kind":"mem","mb":[141,447,164,102]}
+{"t":52.5,"kind":"mem","mb":[141,447,164,102]}
+{"t":52.6,"kind":"tick","memory":[{"pid":4605,"mb":141},{"pid":4614,"mb":447},{"pid":4648,"mb":164},{"pid":4687,"mb":102}],"heap":{"usedMB":50,"totalMB":54,"nodes":3793,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":52.7,"kind":"mem","mb":[141,447,164,102]}
+{"t":52.9,"kind":"mem","mb":[141,447,164,102]}
+{"t":53.1,"kind":"mem","mb":[141,447,164,102]}
+{"t":53.3,"kind":"mem","mb":[141,447,164,102]}
+{"t":53.5,"kind":"mem","mb":[141,447,164,102]}
+{"t":53.6,"kind":"tick","memory":[{"pid":4605,"mb":141},{"pid":4614,"mb":447},{"pid":4648,"mb":164},{"pid":4687,"mb":102}],"heap":{"usedMB":50,"totalMB":54,"nodes":3793,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":53.7,"kind":"mem","mb":[141,447,164,102]}
+{"t":53.9,"kind":"mem","mb":[141,447,164,102]}
+{"t":54.1,"kind":"mem","mb":[141,447,164,102]}
+{"t":54.3,"kind":"mem","mb":[141,447,164,102]}
+{"t":54.5,"kind":"mem","mb":[141,447,164,102]}
+{"t":54.6,"kind":"tick","memory":[{"pid":4605,"mb":141},{"pid":4614,"mb":447},{"pid":4648,"mb":164},{"pid":4687,"mb":102}],"heap":{"usedMB":50,"totalMB":54,"nodes":3793,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":54.7,"kind":"mem","mb":[141,447,164,102]}
+{"t":54.9,"kind":"mem","mb":[141,447,164,102]}
+{"t":55.1,"kind":"mem","mb":[141,447,164,102]}
+{"t":55.3,"kind":"mem","mb":[141,447,164,102]}
+{"t":55.5,"kind":"mem","mb":[141,447,164,102]}
+{"t":55.7,"kind":"mem","mb":[141,447,164,102]}
+{"t":55.7,"kind":"tick","memory":[{"pid":4605,"mb":141},{"pid":4614,"mb":447},{"pid":4648,"mb":164},{"pid":4687,"mb":102}],"heap":{"usedMB":50,"totalMB":54,"nodes":3793,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":55.9,"kind":"mem","mb":[141,447,164,102]}
+{"t":56.1,"kind":"mem","mb":[141,447,164,102]}
+{"t":56.3,"kind":"mem","mb":[141,447,164,102]}
+{"t":56.5,"kind":"mem","mb":[141,447,164,102]}
+{"t":56.7,"kind":"mem","mb":[141,450,164,102]}
+{"t":56.7,"kind":"tick","memory":[{"pid":4605,"mb":141},{"pid":4614,"mb":450},{"pid":4648,"mb":164},{"pid":4687,"mb":102}],"heap":{"usedMB":48,"totalMB":58,"nodes":3793,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":56.9,"kind":"mem","mb":[141,450,164,102]}
+{"t":57.1,"kind":"mem","mb":[141,450,164,102]}
+{"t":57.3,"kind":"mem","mb":[141,450,164,102]}
+{"t":57.5,"kind":"mem","mb":[141,450,164,102]}
+{"t":57.7,"kind":"mem","mb":[141,450,164,102]}
+{"t":57.7,"kind":"tick","memory":[{"pid":4605,"mb":141},{"pid":4614,"mb":450},{"pid":4648,"mb":164},{"pid":4687,"mb":102}],"heap":{"usedMB":48,"totalMB":58,"nodes":3793,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":57.9,"kind":"mem","mb":[141,450,164,102]}
+{"t":58.1,"kind":"mem","mb":[141,450,164,102]}
+{"t":58.3,"kind":"mem","mb":[141,450,164,102]}
+{"t":58.5,"kind":"mem","mb":[141,450,164,102]}
+{"t":58.7,"kind":"mem","mb":[141,450,164,102]}
+{"t":58.7,"kind":"tick","memory":[{"pid":4605,"mb":141},{"pid":4614,"mb":450},{"pid":4648,"mb":164},{"pid":4687,"mb":102}],"heap":{"usedMB":48,"totalMB":58,"nodes":3793,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":58.9,"kind":"mem","mb":[141,450,164,102]}
+{"t":59.1,"kind":"mem","mb":[141,450,164,102]}
+{"t":59.3,"kind":"mem","mb":[141,450,164,102]}
+{"t":59.5,"kind":"mem","mb":[141,450,164,102]}
+{"t":59.7,"kind":"mem","mb":[141,450,164,102]}
+{"t":59.7,"kind":"tick","memory":[{"pid":4605,"mb":141},{"pid":4614,"mb":450},{"pid":4648,"mb":164},{"pid":4687,"mb":102}],"heap":{"usedMB":48,"totalMB":58,"nodes":3793,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":59.9,"kind":"mem","mb":[141,450,164,102]}
+{"t":60.1,"kind":"mem","mb":[141,450,164,102]}
+{"t":60.3,"kind":"mem","mb":[141,450,164,102]}
+{"t":60.5,"kind":"mem","mb":[141,449,164,102]}
+{"t":60.7,"kind":"mem","mb":[141,449,164,102]}
+{"t":60.7,"kind":"tick","memory":[{"pid":4605,"mb":141},{"pid":4614,"mb":449},{"pid":4648,"mb":164},{"pid":4687,"mb":102}],"heap":{"usedMB":48,"totalMB":58,"nodes":3793,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":60.9,"kind":"mem","mb":[141,449,164,102]}
+{"t":61.1,"kind":"mem","mb":[141,449,164,102]}
+{"t":61.3,"kind":"mem","mb":[141,449,164,102]}
+{"t":61.5,"kind":"mem","mb":[141,449,164,102]}
+{"t":61.7,"kind":"mem","mb":[141,446,164,102]}
+{"t":61.8,"kind":"tick","memory":[{"pid":4605,"mb":141},{"pid":4614,"mb":446},{"pid":4648,"mb":164},{"pid":4687,"mb":102}],"heap":{"usedMB":51,"totalMB":58,"nodes":3793,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":61.9,"kind":"mem","mb":[141,446,164,102]}
+{"t":62.1,"kind":"mem","mb":[141,446,164,102]}
+{"t":62.3,"kind":"mem","mb":[141,446,164,102]}
+{"t":62.5,"kind":"mem","mb":[141,446,164,102]}
+{"t":62.7,"kind":"mem","mb":[141,447,164,102]}
+{"t":62.8,"kind":"tick","memory":[{"pid":4605,"mb":141},{"pid":4614,"mb":447},{"pid":4648,"mb":164},{"pid":4687,"mb":102}],"heap":{"usedMB":51,"totalMB":58,"nodes":3793,"docs":15,"frames":12},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1426,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}

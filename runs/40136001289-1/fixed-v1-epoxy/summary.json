@@ -1,0 +1,99 @@
+{
+  "target": "http://localhost:8781",
+  "transport": "epoxy",
+  "block": "",
+  "shots": false,
+  "sjconfig": "",
+  "fix": "",
+  "noprobe": false,
+  "crashed": false,
+  "lastTick": {
+    "t": 62.8,
+    "kind": "tick",
+    "memory": [
+      {
+        "pid": 4605,
+        "mb": 141
+      },
+      {
+        "pid": 4614,
+        "mb": 447
+      },
+      {
+        "pid": 4648,
+        "mb": 164
+      },
+      {
+        "pid": 4687,
+        "mb": 102
+      }
+    ],
+    "heap": {
+      "usedMB": 51,
+      "totalMB": 58,
+      "nodes": 3793,
+      "docs": 15,
+      "frames": 12
+    },
+    "video": {
+      "status": "Website content detected",
+      "title": "- YouTube",
+      "time": 0,
+      "paused": true,
+      "ready": 0,
+      "net": 0,
+      "error": null,
+      "buffered": 0,
+      "src": "",
+      "app": {
+        "elements": 1426,
+        "player": true,
+        "flexy": false,
+        "botcheck": false
+      }
+    },
+    "answerMs": 1
+  },
+  "peakRendererMB": 591,
+  "peakHeapMB": 74,
+  "requests": 102,
+  "failed": 7,
+  "byHost": {
+    "localhost:8781 script": 19,
+    "localhost:8781 fetch": 15,
+    "www.gstatic.com script": 13,
+    "www.youtube.com script": 12,
+    "rr4---sn-q4flrnel.googlevideo.com fetch": 6,
+    "localhost:8781 other": 5,
+    "www.youtube.com stylesheet": 5,
+    " fetch": 5,
+    "accounts.google.com document": 3,
+    "play.google.com ping": 3,
+    "localhost:8781 image": 2,
+    "localhost:8781 document": 1,
+    "localhost:8781 stylesheet": 1,
+    "www.youtube.com document": 1,
+    "i.ytimg.com other": 1,
+    "i.ytimg.com image": 1,
+    "fonts.googleapis.com stylesheet": 1,
+    "rr3---sn-ojvgq5-51.googlevideo.com other": 1,
+    "rr3---sn-ojvgq5-51.c.youtube.com other": 1,
+    "static.doubleclick.net script": 1,
+    "www.google.com script": 1,
+    "accounts.youtube.com document": 1,
+    "accounts.google.com fetch": 1,
+    "www.youtube.com xhr": 1,
+    "play.google.com fetch": 1
+  },
+  "pageErrors": [],
+  "consoleErrors": [
+    "3.5s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "5.9s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "6s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "6s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "6.3s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "6.3s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "6.4s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "6.4s Failed to load resource: the server responded with a status of 403 (Forbidden)"
+  ]
+}

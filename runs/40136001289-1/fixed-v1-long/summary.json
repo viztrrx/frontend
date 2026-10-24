@@ -1,0 +1,99 @@
+{
+  "target": "http://localhost:8781",
+  "transport": "libcurl",
+  "block": "",
+  "shots": false,
+  "sjconfig": "",
+  "fix": "",
+  "noprobe": false,
+  "crashed": false,
+  "lastTick": {
+    "t": 63.1,
+    "kind": "tick",
+    "memory": [
+      {
+        "pid": 5859,
+        "mb": 141
+      },
+      {
+        "pid": 5868,
+        "mb": 562
+      },
+      {
+        "pid": 5902,
+        "mb": 165
+      },
+      {
+        "pid": 5939,
+        "mb": 103
+      }
+    ],
+    "heap": {
+      "usedMB": 53,
+      "totalMB": 61,
+      "nodes": 4018,
+      "docs": 15,
+      "frames": 12
+    },
+    "video": {
+      "status": "Website content detected",
+      "title": "Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube",
+      "time": 56.87,
+      "paused": false,
+      "ready": 4,
+      "net": 2,
+      "error": null,
+      "buffered": 132.2,
+      "src": "blob:http://localhost:8781/8a401b48-2dd5-44de-a35a-53d5ec9a2",
+      "app": {
+        "elements": 1620,
+        "player": true,
+        "flexy": false,
+        "botcheck": false
+      }
+    },
+    "answerMs": 1
+  },
+  "peakRendererMB": 698,
+  "peakHeapMB": 85,
+  "requests": 146,
+  "failed": 10,
+  "byHost": {
+    "localhost:8781 script": 19,
+    "localhost:8781 fetch": 15,
+    "www.youtube.com script": 15,
+    "rr4---sn-vgqsrnld.googlevideo.com fetch": 15,
+    "www.gstatic.com script": 13,
+    "www.youtube.com xhr": 8,
+    "rr5---sn-q4flrnes.googlevideo.com fetch": 6,
+    "localhost:8781 other": 5,
+    "i.ytimg.com image": 5,
+    "www.youtube.com stylesheet": 5,
+    "www.youtube.com fetch": 5,
+    " fetch": 5,
+    "i.ytimg.com other": 3,
+    "accounts.google.com document": 3,
+    "play.google.com ping": 3,
+    "localhost:8781 image": 2,
+    "i.ytimg.com fetch": 2,
+    "localhost:8781 document": 1,
+    "localhost:8781 stylesheet": 1,
+    "www.youtube.com document": 1,
+    "fonts.googleapis.com stylesheet": 1,
+    "rr4---sn-vgqsrnld.googlevideo.com other": 1,
+    "rr4---sn-vgqsrnld.c.youtube.com other": 1,
+    "yt3.ggpht.com image": 1,
+    " image": 1
+  },
+  "pageErrors": [],
+  "consoleErrors": [
+    "3.3s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "6.1s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "6.6s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "6.7s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "6.9s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "6.9s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "7.1s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "7.1s Failed to load resource: the server responded with a status of 403 (Forbidden)"
+  ]
+}

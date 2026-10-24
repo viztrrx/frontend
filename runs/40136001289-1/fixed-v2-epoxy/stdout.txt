@@ -1,0 +1,88 @@
+{
+  "target": "http://localhost:8782",
+  "transport": "epoxy",
+  "block": "",
+  "shots": false,
+  "sjconfig": "",
+  "fix": "",
+  "noprobe": false,
+  "crashed": false,
+  "lastTick": {
+    "t": 68,
+    "kind": "tick",
+    "memory": [
+      {
+        "pid": 2730,
+        "mb": 168
+      },
+      {
+        "pid": 2737,
+        "mb": 475
+      },
+      {
+        "pid": 2845,
+        "mb": 108
+      }
+    ],
+    "heap": {
+      "usedMB": 47,
+      "totalMB": 56,
+      "nodes": 2886,
+      "docs": 10,
+      "frames": 7
+    },
+    "video": {
+      "status": "Website content detected",
+      "title": "- YouTube",
+      "time": 0,
+      "paused": true,
+      "ready": 0,
+      "net": 0,
+      "error": null,
+      "buffered": 0,
+      "src": "",
+      "app": {
+        "elements": 1424,
+        "player": true,
+        "flexy": false,
+        "botcheck": false
+      }
+    },
+    "answerMs": 1
+  },
+  "peakRendererMB": 559,
+  "peakHeapMB": 76,
+  "requests": 61,
+  "failed": 0,
+  "byHost": {
+    "localhost:8782 script": 16,
+    "www.youtube.com script": 13,
+    "www.youtube.com stylesheet": 5,
+    " fetch": 5,
+    "localhost:8782 fetch": 3,
+    "scramjet.wasm.js script": 2,
+    "localhost:8782 image": 2,
+    "localhost:8782 document": 1,
+    "localhost:8782 stylesheet": 1,
+    "localhost:8782 other": 1,
+    "www.youtube.com document": 1,
+    "i.ytimg.com other": 1,
+    "i.ytimg.com image": 1,
+    "fonts.googleapis.com stylesheet": 1,
+    "rr3---sn-ojvgq5-51.googlevideo.com other": 1,
+    "rr3---sn-ojvgq5-51.c.youtube.com other": 1,
+    "accounts.google.com document": 1,
+    "www.google.com script": 1,
+    "www.gstatic.com script": 1,
+    "static.doubleclick.net script": 1,
+    "www.youtube.com image": 1,
+    "www.youtube.com xhr": 1
+  },
+  "pageErrors": [],
+  "consoleErrors": [
+    "6.9s Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: InvalidData, error: InvalidCertificate(Other(OtherError(CaUsedAsEndEntity))) })) (client error (IO: Custom { kind: InvalidData, error: InvalidCertificate(Other(OtherError(CaUsedAsEndEntity))) } (invalid peer certificat",
+    "9.4s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "11.3s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "12.2s Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ]
+}

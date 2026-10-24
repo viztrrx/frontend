@@ -1,0 +1,91 @@
+{
+  "target": "http://localhost:8782",
+  "transport": "epoxy",
+  "block": "",
+  "shots": false,
+  "sjconfig": "",
+  "fix": "",
+  "noprobe": false,
+  "crashed": false,
+  "lastTick": {
+    "t": 63,
+    "kind": "tick",
+    "memory": [
+      {
+        "pid": 5220,
+        "mb": 142
+      },
+      {
+        "pid": 5229,
+        "mb": 542
+      },
+      {
+        "pid": 5254,
+        "mb": 104
+      }
+    ],
+    "heap": {
+      "usedMB": 51,
+      "totalMB": 61,
+      "nodes": 3116,
+      "docs": 10,
+      "frames": 7
+    },
+    "video": {
+      "status": "Website content detected",
+      "title": "Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube",
+      "time": 56.73,
+      "paused": false,
+      "ready": 4,
+      "net": 2,
+      "error": null,
+      "buffered": 125.8,
+      "src": "blob:http://localhost:8782/93e0d5c5-23d1-42ce-ae77-eee60e521",
+      "app": {
+        "elements": 1620,
+        "player": true,
+        "flexy": false,
+        "botcheck": false
+      }
+    },
+    "answerMs": 1
+  },
+  "peakRendererMB": 618,
+  "peakHeapMB": 81,
+  "requests": 109,
+  "failed": 4,
+  "byHost": {
+    "rr4---sn-vgqsrnld.googlevideo.com fetch": 22,
+    "localhost:8782 script": 16,
+    "www.youtube.com script": 16,
+    "www.youtube.com xhr": 7,
+    "i.ytimg.com image": 5,
+    "www.youtube.com stylesheet": 5,
+    " fetch": 5,
+    "www.youtube.com fetch": 5,
+    "localhost:8782 fetch": 3,
+    "i.ytimg.com other": 3,
+    "scramjet.wasm.js script": 2,
+    "localhost:8782 image": 2,
+    "localhost:8782 document": 1,
+    "localhost:8782 stylesheet": 1,
+    "localhost:8782 other": 1,
+    "www.youtube.com document": 1,
+    "fonts.googleapis.com stylesheet": 1,
+    "rr4---sn-vgqsrnld.googlevideo.com other": 1,
+    "rr4---sn-vgqsrnld.c.youtube.com other": 1,
+    "accounts.google.com document": 1,
+    "www.gstatic.com script": 1,
+    "yt3.ggpht.com image": 1,
+    " image": 1,
+    "www.google.com script": 1,
+    "www.google.com image": 1
+  },
+  "pageErrors": [],
+  "consoleErrors": [
+    "0.9s Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: InvalidData, error: InvalidCertificate(Other(OtherError(CaUsedAsEndEntity))) })) (client error (IO: Custom { kind: InvalidData, error: InvalidCertificate(Other(OtherError(CaUsedAsEndEntity))) } (invalid peer certificat",
+    "3.7s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "5.2s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "6.3s Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ]
+}
