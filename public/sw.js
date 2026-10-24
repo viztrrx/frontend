@@ -1,4 +1,4 @@
-importScripts("/scram/scramjet.all.js", "/baremux/index.js", "/config.js", "/blocked.js");
+importScripts("/scram/scramjet.all.js", "/baremux/index.js", "/config.js", "/blocked.js", "/sitefixes.js");
 
 const { ScramjetServiceWorker } = $scramjetLoadWorker();
 const scramjet = new ScramjetServiceWorker();
@@ -242,6 +242,17 @@ function blockedResponse(event, site, block) {
   );
 }
 
+// Site-specific script fixes (sitefixes.js), on scripts Scramjet has rewritten.
+async function fixScriptResponse(response) {
+  if (!self.saintsSiteFixes || !response.ok || !/javascript|ecmascript/i.test(response.headers.get("content-type") || "")) return response;
+  const text = await response.text();
+  return new Response(self.saintsSiteFixes.fixScript(text), {
+    status: response.status,
+    statusText: response.statusText,
+    headers: response.headers,
+  });
+}
+
 // Scramjet error messages that come from the browser's storage, not the site.
 const TRANSIENT = /AbortError|InvalidStateError|UnknownError|Indexed Database|transaction/i;
 
@@ -279,6 +290,7 @@ async function handleRequest(event) {
       response = await scramjet.fetch(event);
     }
     event.waitUntil(saveJarSoon());
+    if (event.request.destination === "script") response = await fixScriptResponse(response);
     if (isDocumentNavigation) {
       const message = response.status === 500 ? await scramjetErrorMessage(response) : "";
       event.waitUntil(reportNavigation(pathname, response.status, message));
