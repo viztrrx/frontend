@@ -32,6 +32,25 @@ test("instanceof ShadowRoot is true for the browser's and the polyfill's roots",
   assert.equal({} instanceof window.ShadowRoot, false);
 });
 
+test("inside the polyfill, its own reads of ShadowRoot get its class", () => {
+  const polyfill = 'function y(a){return a instanceof ShadowRoot}var z={attachShadow:function(a){b.__proto__=ShadowRoot.prototype}};' +
+    'var names=["ShadowRoot"],o={ShadowRoot:1},p=window.ShadowRoot;var w=window.ShadyDOM;if(w){window.ShadowRoot=zc}';
+  const fixed = fixScript(polyfill);
+  assert.match(fixed, /return a instanceof \(window\.__saintsShadyRoot\|\|ShadowRoot\)\}/);
+  assert.match(fixed, /b\.__proto__=\(window\.__saintsShadyRoot\|\|ShadowRoot\)\.prototype/);
+  assert.match(fixed, /names=\["ShadowRoot"\]/, "strings are left alone");
+  assert.match(fixed, /o=\{ShadowRoot:1\}/, "object keys are left alone");
+  assert.match(fixed, /p=window\.ShadowRoot;/, "window.ShadowRoot reads are left alone");
+
+  class NativeShadowRoot {}
+  class ShadyRoot { Aa() { return "polyfill method"; } }
+  const window = { ShadowRoot: NativeShadowRoot, ShadyDOM: {} };
+  const b = {};
+  vm.runInNewContext(fixed + ";z.attachShadow(1);", { window, zc: ShadyRoot, b, Object, Symbol, Function });
+  assert.equal(b.Aa(), "polyfill method", "a shady root built by the polyfill has its methods");
+  assert.equal(window.ShadowRoot, NativeShadowRoot);
+});
+
 test("other scripts are returned unchanged", () => {
   for (const text of ["window.ShadowRoot=x;", "var ShadyDOM={};", "console.log(1)", ""]) {
     assert.equal(fixScript(text), text);
