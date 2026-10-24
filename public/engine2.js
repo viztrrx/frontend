@@ -122,6 +122,15 @@
         props.response = { body: "/* webcomponents-sd skipped */", headers, status: 200, statusText: "OK" };
         return;
       }
+      // DIAGNOSTIC BRANCH ONLY: fix "V:<name>" serves diag/wc/<name>.js as YouTube's webcomponents-sd.js.
+      if (typeof self.__saintsDiagFix === "string" && self.__saintsDiagFix.startsWith("V:") && /\/webcomponents-sd\.js$/.test(context.parsed.url.pathname)) {
+        return fetch("/diag-wc/" + self.__saintsDiagFix.slice(2) + ".js").then((r) => r.text()).then((body) => {
+          const headers = new $scramjet.ScramjetHeaders();
+          headers.set("content-type", "text/javascript");
+          props.response = { body, headers, status: 200, statusText: "OK" };
+          console.log("diag variant served:", self.__saintsDiagFix, body.length);
+        });
+      }
       // DIAGNOSTIC BRANCH ONLY: diag/youtube.mjs --block refuses matching requests.
       if (self.__saintsDiagBlock && self.__saintsDiagBlock.test(site)) {
         props.response = ownPage("diag-blocked", "diag-blocked", 403);

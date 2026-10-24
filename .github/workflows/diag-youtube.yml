@@ -27,7 +27,7 @@ jobs:
         run: |
           pnpm install --frozen-lockfile
           pnpm build && cp -r dist /tmp/dist1
-          pnpm build:beta && cp -r dist /tmp/dist2
+          pnpm build:beta && cp -r dist /tmp/dist2 && cp -r diag/wc /tmp/dist2/diag-wc
       - name: Install Playwright and wisp-js
         run: |
           npm install --prefix /tmp/pw --no-audit --no-fund playwright@1.63.0
@@ -61,11 +61,14 @@ jobs:
             echo "== $name crashed=$(grep -o '"crashed": [a-z]*' "out/$name/stdout.txt")"
             grep -iE "fatal|check failed|out of memory|oom|v8|renderer|crash" "out/$name/browser.log" | grep -viE "crashpad|cpufreq" | head -15 || true
           done <<'RUNS'
-          direct;8782;libcurl;;--direct
-          v2-base;8782;epoxy;;
-          v2-fixA;8782;epoxy;;--fix A
-          v2-fixB;8782;epoxy;;--fix B
-          v2-fixA-libcurl;8782;libcurl;;--fix A
+          V-orig;8782;epoxy;;--fix V:orig
+          V-no-bb;8782;epoxy;;--fix V:no-bb
+          V-no-pc;8782;epoxy;;--fix V:no-pc
+          V-no-active;8782;epoxy;;--fix V:no-active
+          V-no-window;8782;epoxy;;--fix V:no-window
+          V-no-gb;8782;epoxy;;--fix V:no-gb
+          V-no-ctors;8782;epoxy;;--fix V:no-ctors
+          V-none;8782;epoxy;;--fix V:none
           RUNS
           cp /tmp/lab-server.log out/
       - name: Save results to the diag-results branch
