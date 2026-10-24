@@ -1,0 +1,93 @@
+{
+  "target": "direct",
+  "transport": "libcurl",
+  "block": "",
+  "shots": false,
+  "sjconfig": "",
+  "fix": "",
+  "crashed": false,
+  "lastTick": {
+    "t": 40.1,
+    "kind": "tick",
+    "memory": [
+      {
+        "pid": 2759,
+        "mb": 167
+      },
+      {
+        "pid": 2766,
+        "mb": 380
+      },
+      {
+        "pid": 2841,
+        "mb": 136
+      },
+      {
+        "pid": 2860,
+        "mb": 108
+      }
+    ],
+    "heap": {
+      "usedMB": 51,
+      "totalMB": 52,
+      "nodes": 14059,
+      "docs": 6,
+      "frames": 4
+    },
+    "video": {
+      "title": "Me at the zoo - YouTube",
+      "time": 0,
+      "paused": true,
+      "ready": 0,
+      "net": 0,
+      "error": null,
+      "buffered": 0,
+      "src": "",
+      "app": {
+        "elements": 4982,
+        "player": true,
+        "flexy": true,
+        "botcheck": true
+      }
+    },
+    "answerMs": 2
+  },
+  "peakRendererMB": 591,
+  "peakHeapMB": 83,
+  "requests": 87,
+  "failed": 7,
+  "byHost": {
+    "www.youtube.com fetch": 25,
+    "www.youtube.com script": 17,
+    "i.ytimg.com image": 8,
+    "rr1---sn-aigzrnz7.googlevideo.com fetch": 6,
+    "www.youtube.com stylesheet": 5,
+    "googleads.g.doubleclick.net xhr": 4,
+    "fonts.googleapis.com stylesheet": 3,
+    "www.youtube.com xhr": 3,
+    "www.gstatic.com script": 2,
+    "www.gstatic.com xhr": 2,
+    "www.youtube.com document": 1,
+    "i.ytimg.com other": 1,
+    "rr2---sn-2op5q5-5f.googlevideo.com other": 1,
+    "rr4---sn-p5qlsn6z.c.youtube.com other": 1,
+    "accounts.google.com document": 1,
+    "www.google.com script": 1,
+    "static.doubleclick.net script": 1,
+    "www.youtube.com other": 1,
+    "www.google.com image": 1,
+    "yt3.ggpht.com image": 1,
+    "www.youtube.com image": 1,
+    "youtube.com fetch": 1
+  },
+  "pageErrors": [],
+  "consoleErrors": [
+    "8.5s Failed to load resource: the server responded with a status of 401 ()",
+    "9.5s Failed to load resource: the server responded with a status of 403 ()",
+    "9.5s Failed to load resource: the server responded with a status of 403 ()",
+    "9.7s Failed to load resource: the server responded with a status of 403 ()",
+    "9.7s Failed to load resource: the server responded with a status of 403 ()",
+    "10.3s Failed to load resource: the server responded with a status of 403 ()",
+    "10.3s Failed to load resource: the server responded with a status of 403 ()"
+  ]
+}

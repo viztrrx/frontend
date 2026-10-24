@@ -1,0 +1,1646 @@
+[
+ {
+  "t": 0.6,
+  "kind": "req",
+  "id": 1,
+  "method": "GET",
+  "type": "document",
+  "url": "http://localhost:8782/",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 2,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/scram/scramjet.js",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 3,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/controller/controller.api.js",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 4,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/engine2.js",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 5,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "http://localhost:8782/index.css",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 6,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/register-sw.js",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 7,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/search.js",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 8,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/config.js",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 9,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/blocked.js",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 10,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/index.js",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 11,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/sessions.js",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "done",
+  "id": 1,
+  "status": 200,
+  "size": 9650
+ },
+ {
+  "t": 0.7,
+  "kind": "done",
+  "id": 5,
+  "status": 200,
+  "size": 20762
+ },
+ {
+  "t": 0.7,
+  "kind": "done",
+  "id": 3,
+  "status": 200,
+  "size": 17099
+ },
+ {
+  "t": 0.7,
+  "kind": "done",
+  "id": 4,
+  "status": 200,
+  "size": 9892
+ },
+ {
+  "t": 0.7,
+  "kind": "done",
+  "id": 6,
+  "status": 200,
+  "size": 609
+ },
+ {
+  "t": 0.7,
+  "kind": "done",
+  "id": 2,
+  "status": 200,
+  "size": 227123
+ },
+ {
+  "t": 0.7,
+  "kind": "done",
+  "id": 7,
+  "status": 200,
+  "size": 940
+ },
+ {
+  "t": 0.7,
+  "kind": "done",
+  "id": 8,
+  "status": 200,
+  "size": 68
+ },
+ {
+  "t": 0.7,
+  "kind": "done",
+  "id": 9,
+  "status": 200,
+  "size": 4972
+ },
+ {
+  "t": 0.7,
+  "kind": "done",
+  "id": 10,
+  "status": 200,
+  "size": 61339
+ },
+ {
+  "t": 0.8,
+  "kind": "done",
+  "id": 12,
+  "status": 200,
+  "size": 915
+ },
+ {
+  "t": 0.8,
+  "kind": "done",
+  "id": 11,
+  "status": 200,
+  "size": 16207
+ },
+ {
+  "t": 0.8,
+  "kind": "mem",
+  "mb": [
+   131,
+   138,
+   74
+  ]
+ },
+ {
+  "t": 0.8,
+  "kind": "done",
+  "id": 13,
+  "status": 200,
+  "size": 915
+ },
+ {
+  "t": 0.8,
+  "kind": "req",
+  "id": 14,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/sw.js",
+  "sw": true
+ },
+ {
+  "t": 0.8,
+  "kind": "req",
+  "id": 15,
+  "method": "GET",
+  "type": "other",
+  "url": "http://localhost:8782/controller/controller.sw.js",
+  "sw": true
+ },
+ {
+  "t": 0.9,
+  "kind": "done",
+  "id": 15,
+  "status": 200,
+  "size": -272
+ },
+ {
+  "t": 0.9,
+  "kind": "req",
+  "id": 16,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/epoxy/index.mjs",
+  "sw": false
+ },
+ {
+  "t": 0.9,
+  "kind": "done",
+  "id": 16,
+  "status": 200,
+  "size": 1717636
+ },
+ {
+  "t": 1,
+  "kind": "console",
+  "type": "log",
+  "text": "service worker activated, notifying clients to revive"
+ },
+ {
+  "t": 1,
+  "kind": "mem",
+  "mb": [
+   144,
+   201,
+   74
+  ]
+ },
+ {
+  "t": 1.1,
+  "kind": "req",
+  "id": 17,
+  "method": "GET",
+  "type": "fetch",
+  "url": "http://localhost:8782/scram/scramjet.wasm",
+  "sw": false
+ },
+ {
+  "t": 1.1,
+  "kind": "done",
+  "id": 17,
+  "status": 200,
+  "size": 586293
+ },
+ {
+  "t": 1.1,
+  "kind": "console",
+  "type": "error",
+  "text": "Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: UnexpectedEof, error: \"tls handshake eof\" })) (client error (IO: Custom { kind: UnexpectedEof, error: \"tls handshake eof\" } (tls handshake eof)))\n    at imports.wbg.__wbindgen_error_new (http://localhost:8782/epoxy/index.mjs:1366:17)\n    at wasm://wasm/004c6846:wasm-function[2742]:0xde850\n    at wasm://wasm/004c6846:wasm-function[1833]:0xd177a\n    at wasm://wasm/004c6846:wasm-function[123]:0xc060\n    at wasm://wasm/004c6846:wasm-function[542]:0x9d36a\n    at wasm://wasm/004c6846:wasm-function[2584]:0xdc9d1\n    at "
+ },
+ {
+  "t": 1.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   210,
+   94
+  ]
+ },
+ {
+  "t": 1.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   210,
+   104
+  ]
+ },
+ {
+  "t": 1.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   210,
+   104
+  ]
+ },
+ {
+  "t": 1.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   190,
+   104
+  ]
+ },
+ {
+  "t": 2,
+  "kind": "mem",
+  "mb": [
+   145,
+   190,
+   104
+  ]
+ },
+ {
+  "t": 2.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   190,
+   104
+  ]
+ },
+ {
+  "t": 2.3,
+  "kind": "req",
+  "id": 18,
+  "method": "GET",
+  "type": "fetch",
+  "url": "http://localhost:8782/version.json",
+  "sw": false
+ },
+ {
+  "t": 2.3,
+  "kind": "version",
+  "version": {
+   "engine": 2,
+   "commit": "cf9e2d3516f0b0aa5a15a429e494485afeee37fe",
+   "branch": "diag-youtube",
+   "message": "diag: test fixes A (skip webcomponents-sd) and B (ShadyDOM force off)",
+   "committedAt": "2026-10-24T21:17:12Z",
+   "builtAt": "2026-10-24T21:17:34.835Z"
+  }
+ },
+ {
+  "t": 2.3,
+  "kind": "done",
+  "id": 18,
+  "status": 200,
+  "size": 282
+ },
+ {
+  "t": 2.3,
+  "kind": "req",
+  "id": 19,
+  "method": "GET",
+  "type": "document",
+  "url": "https://www.youtube.com/watch?v=jNQXAC9IVRw",
+  "sw": false
+ },
+ {
+  "t": 2.3,
+  "kind": "opened",
+  "video": "https://www.youtube.com/watch?v=jNQXAC9IVRw"
+ },
+ {
+  "t": 2.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   200,
+   104
+  ]
+ },
+ {
+  "t": 2.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   203,
+   104
+  ]
+ },
+ {
+  "t": 2.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   227,
+   104
+  ]
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 20,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/scram/scramjet.js",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 21,
+  "method": "GET",
+  "type": "script",
+  "url": "scramjet.wasm.js",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 22,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/controller/controller.inject.js",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 23,
+  "method": "GET",
+  "type": "other",
+  "url": "https://i.ytimg.com/generate_204",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 24,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/base.js",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 25,
+  "method": "GET",
+  "type": "image",
+  "url": "https://i.ytimg.com/vi/jNQXAC9IVRw/hqdefault.jpg",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 26,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/_/ytmainappweb/_/js/k=ytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O/am=AAAAAAIAEICU/d=1/br=1/rs=AGKMywF-Wk0PyFZguN2MlsgW9E9wRJ1RoA/m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 27,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/web-animations-next-lite.min.vflset/web-animations-next-lite.min.js",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 28,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/custom-elements-es5-adapter.vflset/custom-elements-es5-adapter.js",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 29,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/webcomponents-sd.vflset/webcomponents-sd.js",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 30,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/intersection-observer.min.vflset/intersection-observer.min.js",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 31,
+  "method": "GET",
+  "type": "fetch",
+  "url": "http://localhost:8782/scram/scramjet.wasm",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 32,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/scheduler.vflset/scheduler.js",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 33,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/www-i18n-constants-en_US.vflset/www-i18n-constants.js",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 34,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=YouTube+Sans:wght@300..900&display=swap",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 35,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/www-player.css",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 36,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-main-desktop-watch-page-skeleton.css",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 37,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-main-desktop-player-skeleton.css",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 38,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-onepick.css",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 39,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/_/ytmainappweb/_/ss/k=ytmainappweb.kevlar_base.NZ7X3F12ieY.L.B1.O/am=AAAAAALAEMCe/d=0/br=1/rs=AGKMywG1ZrGUMzn_SEel2HjBo0S7VO4L5w",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 40,
+  "method": "GET",
+  "type": "other",
+  "url": "https://rr2---sn-2op5q5-5f.googlevideo.com/generate_204",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 41,
+  "method": "GET",
+  "type": "other",
+  "url": "https://rr4---sn-p5qlsn6z.c.youtube.com/generate_204",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 42,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/spf.vflset/spf.js",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 43,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/network.vflset/network.js",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "done",
+  "id": 22,
+  "status": 200,
+  "size": 6449
+ },
+ {
+  "t": 2.9,
+  "kind": "done",
+  "id": 20,
+  "status": 200,
+  "size": 227123
+ },
+ {
+  "t": 3,
+  "kind": "done",
+  "id": 19,
+  "status": 200,
+  "size": -10216
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 44,
+  "method": "GET",
+  "type": "image",
+  "url": "http://localhost:8782/icon?d=youtube.com",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+ },
+ {
+  "t": 3,
+  "kind": "done",
+  "id": 31,
+  "status": 200,
+  "size": 586293
+ },
+ {
+  "t": 3,
+  "kind": "done",
+  "id": 44,
+  "status": 404,
+  "size": 19
+ },
+ {
+  "t": 3,
+  "kind": "mem",
+  "mb": [
+   145,
+   259,
+   104
+  ]
+ },
+ {
+  "t": 3,
+  "kind": "done",
+  "id": 21,
+  "status": 200,
+  "size": -57
+ },
+ {
+  "t": 3.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   301,
+   104
+  ]
+ },
+ {
+  "t": 3.4,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3241,
+    "mb": 145
+   },
+   {
+    "pid": 3259,
+    "mb": 325
+   },
+   {
+    "pid": 3296,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 6,
+   "totalMB": 28,
+   "nodes": 552,
+   "docs": 7,
+   "frames": 5
+  },
+  "video": {
+   "status": "Website responded (HTTP 200)",
+   "title": "",
+   "app": {
+    "elements": 24,
+    "player": false,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 31
+ },
+ {
+  "t": 3.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   352,
+   104
+  ]
+ },
+ {
+  "t": 3.5,
+  "kind": "done",
+  "id": 24,
+  "status": 200,
+  "size": -733
+ },
+ {
+  "t": 3.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   369,
+   104
+  ]
+ },
+ {
+  "t": 3.6,
+  "kind": "done",
+  "id": 35,
+  "status": 200,
+  "size": -722
+ },
+ {
+  "t": 3.6,
+  "kind": "done",
+  "id": 36,
+  "status": 200,
+  "size": -723
+ },
+ {
+  "t": 3.6,
+  "kind": "done",
+  "id": 28,
+  "status": 200,
+  "size": -730
+ },
+ {
+  "t": 3.6,
+  "kind": "done",
+  "id": 30,
+  "status": 200,
+  "size": -731
+ },
+ {
+  "t": 3.6,
+  "kind": "done",
+  "id": 32,
+  "status": 200,
+  "size": -731
+ },
+ {
+  "t": 3.6,
+  "kind": "done",
+  "id": 33,
+  "status": 200,
+  "size": -731
+ },
+ {
+  "t": 3.6,
+  "kind": "done",
+  "id": 27,
+  "status": 200,
+  "size": -732
+ },
+ {
+  "t": 3.6,
+  "kind": "done",
+  "id": 37,
+  "status": 200,
+  "size": -723
+ },
+ {
+  "t": 3.6,
+  "kind": "done",
+  "id": 38,
+  "status": 200,
+  "size": -723
+ },
+ {
+  "t": 3.6,
+  "kind": "done",
+  "id": 29,
+  "status": 200,
+  "size": -732
+ },
+ {
+  "t": 3.7,
+  "kind": "done",
+  "id": 42,
+  "status": 200,
+  "size": -732
+ },
+ {
+  "t": 3.7,
+  "kind": "done",
+  "id": 43,
+  "status": 200,
+  "size": -731
+ },
+ {
+  "t": 3.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   421,
+   104
+  ]
+ },
+ {
+  "t": 4,
+  "kind": "mem",
+  "mb": [
+   145,
+   476,
+   104
+  ]
+ },
+ {
+  "t": 4.2,
+  "kind": "done",
+  "id": 39,
+  "status": 200,
+  "size": -682
+ },
+ {
+  "t": 4.2,
+  "kind": "done",
+  "id": 23,
+  "status": 204,
+  "size": -140
+ },
+ {
+  "t": 4.2,
+  "kind": "done",
+  "id": 40,
+  "status": 204,
+  "size": -720
+ },
+ {
+  "t": 4.2,
+  "kind": "done",
+  "id": 41,
+  "status": 204,
+  "size": -720
+ },
+ {
+  "t": 4.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   538,
+   104
+  ]
+ },
+ {
+  "t": 4.2,
+  "kind": "done",
+  "id": 25,
+  "status": 200,
+  "size": -558
+ },
+ {
+  "t": 4.2,
+  "kind": "done",
+  "id": 34,
+  "status": 200,
+  "size": -699
+ },
+ {
+  "t": 4.4,
+  "kind": "req",
+  "id": 45,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/offline.js",
+  "sw": false
+ },
+ {
+  "t": 4.4,
+  "kind": "req",
+  "id": 47,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/remote.js",
+  "sw": false
+ },
+ {
+  "t": 4.4,
+  "kind": "req",
+  "id": 48,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/miniplayer.js",
+  "sw": false
+ },
+ {
+  "t": 4.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   558,
+   104
+  ]
+ },
+ {
+  "t": 4.4,
+  "kind": "req",
+  "id": 49,
+  "method": "GET",
+  "type": "document",
+  "url": "https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3D%252Fsignin_passive%26feature%3Dpassive&hl=en",
+  "sw": false
+ },
+ {
+  "t": 4.4,
+  "kind": "req",
+  "id": 50,
+  "method": "GET",
+  "type": "image",
+  "url": "http://localhost:8782/icon?d=youtube.com",
+  "sw": false
+ },
+ {
+  "t": 4.4,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+ },
+ {
+  "t": 4.5,
+  "kind": "done",
+  "id": 50,
+  "status": 404,
+  "size": 19
+ },
+ {
+  "t": 4.5,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3241,
+    "mb": 145
+   },
+   {
+    "pid": 3259,
+    "mb": 619
+   },
+   {
+    "pid": 3296,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 33,
+   "totalMB": 51,
+   "nodes": 1411,
+   "docs": 8,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 607,
+    "player": true,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 20
+ },
+ {
+  "t": 4.5,
+  "kind": "done",
+  "id": 45,
+  "status": 200,
+  "size": -732
+ },
+ {
+  "t": 4.5,
+  "kind": "done",
+  "id": 48,
+  "status": 200,
+  "size": -731
+ },
+ {
+  "t": 4.5,
+  "kind": "done",
+  "id": 47,
+  "status": 200,
+  "size": -732
+ },
+ {
+  "t": 4.5,
+  "kind": "req",
+  "id": 51,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.gstatic.com/cv/js/sender/v1/cast_sender.js",
+  "sw": false
+ },
+ {
+  "t": 4.5,
+  "kind": "done",
+  "id": 46,
+  "status": 200,
+  "size": -525
+ },
+ {
+  "t": 4.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "%cI -> b%c detected quirky document structure parsing @ https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3D%252Fsignin_passive%26feature%3Dpassive&hl=en! \n  \tbackground-color: #f80;\n  \tcolor: #fff;\n  \tpadding: 4px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n   "
+ },
+ {
+  "t": 4.5,
+  "kind": "req",
+  "id": 52,
+  "method": "GET",
+  "type": "script",
+  "url": "https://static.doubleclick.net/instream/ad_status.js",
+  "sw": false
+ },
+ {
+  "t": 4.5,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+ },
+ {
+  "t": 4.5,
+  "kind": "req",
+  "id": 53,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/scram/scramjet.js",
+  "sw": false
+ },
+ {
+  "t": 4.5,
+  "kind": "req",
+  "id": 54,
+  "method": "GET",
+  "type": "script",
+  "url": "scramjet.wasm.js",
+  "sw": false
+ },
+ {
+  "t": 4.5,
+  "kind": "req",
+  "id": 55,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/controller/controller.inject.js",
+  "sw": false
+ },
+ {
+  "t": 4.5,
+  "kind": "done",
+  "id": 49,
+  "status": 401,
+  "size": -640
+ },
+ {
+  "t": 4.6,
+  "kind": "done",
+  "id": 55,
+  "status": 200,
+  "size": 6449
+ },
+ {
+  "t": 4.6,
+  "kind": "done",
+  "id": 53,
+  "status": 200,
+  "size": 227123
+ },
+ {
+  "t": 4.6,
+  "kind": "done",
+  "id": 54,
+  "status": 200,
+  "size": -57
+ },
+ {
+  "t": 4.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   618,
+   104
+  ]
+ },
+ {
+  "t": 4.7,
+  "kind": "done",
+  "id": 51,
+  "status": 200,
+  "size": -585
+ },
+ {
+  "t": 4.7,
+  "kind": "done",
+  "id": 52,
+  "status": 200,
+  "size": -711
+ },
+ {
+  "t": 4.7,
+  "kind": "done",
+  "id": 26,
+  "status": 200,
+  "size": -690
+ },
+ {
+  "t": 4.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   559,
+   104
+  ]
+ },
+ {
+  "t": 5,
+  "kind": "mem",
+  "mb": [
+   145,
+   557,
+   104
+  ]
+ },
+ {
+  "t": 5.2,
+  "kind": "console",
+  "type": "info",
+  "text": "LegacyDataMixin will be applied to all legacy elements.\nSet `_legacyUndefinedCheck: true` on element class to enable."
+ },
+ {
+  "t": 5.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   513,
+   104
+  ]
+ },
+ {
+  "t": 5.4,
+  "kind": "req",
+  "id": 56,
+  "method": "GET",
+  "type": "fetch",
+  "url": "data:application/json;base64,eyJhZFBsYWNlbWVudHMiOnRydWUsInBsYXllckFkcyI6dHJ1ZSwicGxheWVyUmVzcG9uc2UiOnsiYWRQbGFjZW1lbnRzIjp0cnVlLCJwbGF5ZXJBZHMiOnRydWUsInBsYXllckNvbmZpZyI6IHsiYXVkaW9Db25maWciOiB7fSwgInN0cmVhbVNlbGVjdGlvbkNvbmZpZyI6IHt9LCAid2ViUGxheWVyQ29uZmlnIjogeyJ3ZWJQbGF5ZXJBY3Rpb25zUG9ydGluZyI",
+  "sw": false
+ },
+ {
+  "t": 5.4,
+  "kind": "req",
+  "id": 57,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.google.com/js/th/YI2XvVwvdBJTNOg4tmE81lkRxYCcxVDASxYzC3ult3w.js",
+  "sw": false
+ },
+ {
+  "t": 5.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   502,
+   104
+  ]
+ },
+ {
+  "t": 5.5,
+  "kind": "req",
+  "id": 58,
+  "method": "GET",
+  "type": "xhr",
+  "url": "https://googleads.g.doubleclick.net/pagead/id",
+  "sw": false
+ },
+ {
+  "t": 5.5,
+  "kind": "req",
+  "id": 59,
+  "method": "GET",
+  "type": "image",
+  "url": "https://www.youtube.com/watch?v=jNQXAC9IVRw",
+  "sw": false
+ },
+ {
+  "t": 5.5,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3241,
+    "mb": 145
+   },
+   {
+    "pid": 3259,
+    "mb": 506
+   },
+   {
+    "pid": 3296,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 68,
+   "totalMB": 82,
+   "nodes": 3831,
+   "docs": 11,
+   "frames": 7
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 1538,
+    "player": true,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 41
+ },
+ {
+  "t": 5.5,
+  "kind": "done",
+  "id": 56,
+  "status": 200,
+  "size": -136
+ },
+ {
+  "t": 5.5,
+  "kind": "req",
+  "id": 60,
+  "method": "GET",
+  "type": "fetch",
+  "url": "data:application/json;base64,W3siYWRQbGFjZW1lbnRzIjp0cnVlLCJwbGF5ZXJBZHMiOnRydWUsInBsYXllclJlc3BvbnNlIjp7ImFkUGxhY2VtZW50cyI6dHJ1ZSwicGxheWVyQWRzIjp0cnVlfX1d",
+  "sw": false
+ },
+ {
+  "t": 5.6,
+  "kind": "done",
+  "id": 60,
+  "status": 200,
+  "size": -136
+ },
+ {
+  "t": 5.6,
+  "kind": "req",
+  "id": 61,
+  "method": "GET",
+  "type": "fetch",
+  "url": "data:application/json;base64,eyJyZXNwb25zZUNvbnRleHQiOnsic2VydmljZVRyYWNraW5nUGFyYW1zIjpbeyJzZXJ2aWNlIjoiR0ZFRURCQUNLIiwicGFyYW1zIjpbeyJrZXkiOiJrYyIsInZhbHVlIjoiNjYifSx7ImtleSI6ImN3IiwidmFsdWUiOiJzdCJ9LHsia2V5IjoiemIiLCJ2YWx1ZSI6Inh6In0seyJrZXkiOiJ6bCIsInZhbHVlIjoiMTYifSx7ImtleSI6InBmIiwidmFsdWUiOiJ",
+  "sw": false
+ },
+ {
+  "t": 5.6,
+  "kind": "done",
+  "id": 57,
+  "status": 200,
+  "size": -606
+ },
+ {
+  "t": 5.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   517,
+   104
+  ]
+ },
+ {
+  "t": 5.6,
+  "kind": "req",
+  "id": 62,
+  "method": "GET",
+  "type": "xhr",
+  "url": "https://googleads.g.doubleclick.net/pagead/id?slf_rd=1",
+  "sw": false
+ },
+ {
+  "t": 5.6,
+  "kind": "done",
+  "id": 58,
+  "status": 302,
+  "size": 0
+ },
+ {
+  "t": 5.7,
+  "kind": "done",
+  "id": 61,
+  "status": 200,
+  "size": -136
+ },
+ {
+  "t": 5.7,
+  "kind": "req",
+  "id": 63,
+  "method": "GET",
+  "type": "fetch",
+  "url": "data:application/json;base64,eyJwbGF5ZXJSZXNwb25zZSI6eyJyZXNwb25zZUNvbnRleHQiOnsic2VydmljZVRyYWNraW5nUGFyYW1zIjpbeyJzZXJ2aWNlIjoiR0ZFRURCQUNLIiwicGFyYW1zIjpbeyJrZXkiOiJrYyIsInZhbHVlIjoiNjYifSx7ImtleSI6ImN3IiwidmFsdWUiOiJzdCJ9LHsia2V5IjoiemIiLCJ2YWx1ZSI6Inh6In0seyJrZXkiOiJ6bCIsInZhbHVlIjoiMTYifSx7Imt",
+  "sw": false
+ },
+ {
+  "t": 5.7,
+  "kind": "done",
+  "id": 62,
+  "status": 200,
+  "size": -610
+ },
+ {
+  "t": 5.7,
+  "kind": "done",
+  "id": 63,
+  "status": 200,
+  "size": -136
+ },
+ {
+  "t": 5.7,
+  "kind": "req",
+  "id": 64,
+  "method": "GET",
+  "type": "fetch",
+  "url": "data:application/json;base64,eyJyZXNwb25zZUNvbnRleHQiOnsic2VydmljZVRyYWNraW5nUGFyYW1zIjpbeyJzZXJ2aWNlIjoiR0ZFRURCQUNLIiwicGFyYW1zIjpbeyJrZXkiOiJpcGNjIiwidmFsdWUiOiIwIn0seyJrZXkiOiJpc192aWV3ZWRfbGl2ZSIsInZhbHVlIjoiRmFsc2UifSx7ImtleSI6ImlzX2FsY19zdXJmYWNlIiwidmFsdWUiOiJmYWxzZSJ9LHsia2V5IjoicHJlbWl1bV9",
+  "sw": false
+ },
+ {
+  "t": 5.7,
+  "kind": "done",
+  "id": 64,
+  "status": 200,
+  "size": -136
+ },
+ {
+  "t": 5.8,
+  "kind": "done",
+  "id": 59,
+  "status": 200,
+  "size": 38950
+ },
+ {
+  "t": 5.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   536,
+   104
+  ]
+ },
+ {
+  "t": 6,
+  "kind": "mem",
+  "mb": [
+   145,
+   544,
+   104
+  ]
+ },
+ {
+  "t": 6.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   553,
+   104
+  ]
+ },
+ {
+  "t": 6.3,
+  "kind": "req",
+  "id": 65,
+  "method": "GET",
+  "type": "image",
+  "url": "https://www.youtube.com/generate_204?3TexXg",
+  "sw": false
+ },
+ {
+  "t": 6.3,
+  "kind": "done",
+  "id": 65,
+  "status": 204,
+  "size": -140
+ },
+ {
+  "t": 6.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   554,
+   104
+  ]
+ },
+ {
+  "t": 6.6,
+  "kind": "req",
+  "id": 66,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/www-player.css",
+  "sw": false
+ },
+ {
+  "t": 6.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   558,
+   104
+  ]
+ },
+ {
+  "t": 6.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   561,
+   104
+  ]
+ },
+ {
+  "t": 7,
+  "kind": "mem",
+  "mb": [
+   145,
+   561,
+   104
+  ]
+ },
+ {
+  "t": 7.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   561,
+   104
+  ]
+ },
+ {
+  "t": 7.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   561,
+   104
+  ]
+ },
+ {
+  "t": 7.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   566,
+   104
+  ]
+ },
+ {
+  "t": 7.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   567,
+   104
+  ]
+ },
+ {
+  "t": 8,
+  "kind": "mem",
+  "mb": [
+   145,
+   567,
+   104
+  ]
+ },
+ {
+  "t": 8.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   567,
+   104
+  ]
+ },
+ {
+  "t": 8.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   567,
+   104
+  ]
+ },
+ {
+  "t": 8.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   567,
+   104
+  ]
+ },
+ {
+  "t": 8.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   567,
+   104
+  ]
+ },
+ {
+  "t": 9,
+  "kind": "mem",
+  "mb": [
+   145,
+   567,
+   104
+  ]
+ },
+ {
+  "t": 9.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   567,
+   104
+  ]
+ },
+ {
+  "t": 9.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   567,
+   104
+  ]
+ },
+ {
+  "t": 9.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   567,
+   104
+  ]
+ },
+ {
+  "t": 9.8,
+  "kind": "CRASH",
+  "memory": [
+   {
+    "pid": 3241,
+    "mb": 145
+   },
+   {
+    "pid": 3296,
+    "mb": 104
+   }
+  ]
+ },
+ {
+  "t": 9.8,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3241,
+    "mb": 145
+   },
+   {
+    "pid": 3259,
+    "mb": 555
+   },
+   {
+    "pid": 3296,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 66,
+   "totalMB": 120,
+   "nodes": 4900,
+   "docs": 13,
+   "frames": 8
+  },
+  "video": {
+   "evalError": "page.evaluate: Target crashed "
+  },
+  "answerMs": 3288
+ }
+]

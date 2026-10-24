@@ -1,0 +1,73 @@
+{
+  "target": "http://localhost:8782",
+  "transport": "epoxy",
+  "block": "",
+  "shots": false,
+  "sjconfig": "",
+  "fix": "",
+  "crashed": true,
+  "lastTick": {
+    "t": 9.8,
+    "kind": "tick",
+    "memory": [
+      {
+        "pid": 3241,
+        "mb": 145
+      },
+      {
+        "pid": 3259,
+        "mb": 555
+      },
+      {
+        "pid": 3296,
+        "mb": 104
+      }
+    ],
+    "heap": {
+      "usedMB": 66,
+      "totalMB": 120,
+      "nodes": 4900,
+      "docs": 13,
+      "frames": 8
+    },
+    "video": {
+      "evalError": "page.evaluate: Target crashed "
+    },
+    "answerMs": 3288
+  },
+  "peakRendererMB": 619,
+  "peakHeapMB": 68,
+  "requests": 63,
+  "failed": 0,
+  "byHost": {
+    "localhost:8782 script": 15,
+    "www.youtube.com script": 13,
+    "www.youtube.com stylesheet": 6,
+    " fetch": 5,
+    "localhost:8782 fetch": 3,
+    "scramjet.wasm.js script": 2,
+    "localhost:8782 image": 2,
+    "googleads.g.doubleclick.net xhr": 2,
+    "www.youtube.com image": 2,
+    "localhost:8782 document": 1,
+    "localhost:8782 stylesheet": 1,
+    "localhost:8782 other": 1,
+    "www.youtube.com document": 1,
+    "i.ytimg.com other": 1,
+    "i.ytimg.com image": 1,
+    "fonts.googleapis.com stylesheet": 1,
+    "rr2---sn-2op5q5-5f.googlevideo.com other": 1,
+    "rr4---sn-p5qlsn6z.c.youtube.com other": 1,
+    "accounts.google.com document": 1,
+    "www.gstatic.com script": 1,
+    "static.doubleclick.net script": 1,
+    "www.google.com script": 1
+  },
+  "pageErrors": [],
+  "consoleErrors": [
+    "1.1s Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: UnexpectedEof, error: \"tls handshake eof\" })) (client error (IO: Custom { kind: UnexpectedEof, error: \"tls handshake eof\" } (tls handshake eof)))\n    at imports.wbg.__wbindgen_error_new (http://localhost:8782/epoxy/ind",
+    "3s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "4.4s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "4.5s Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ]
+}
