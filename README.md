@@ -81,6 +81,18 @@ Storage: the `SESSIONS` binding in `wrangler.jsonc` points at the R2 bucket **`d
 - **One connection per visit.** The backend check, Scramjet, the service worker and the transport are set up once, when Saints Search finishes loading (with one small request to the backend's `/health` to start the TLS engine). Every site opened after that uses the same connection.
 - **Backend region.** For Florida, the backend should be in Render's **Virginia** region. Render can't move a service, so create a new one there, then set its address in `public/config.js`.
 
+## Site check (which sites work, and how fast)
+
+`.github/workflows/site-check.yml` opens about 30 popular sites (`site-check/sites.json`) through the live proxy in headless Chrome every 6 hours, and records for each one whether it showed content, how long that took, and a screenshot.
+
+- **Results:** each run's summary page under **Actions → Site check**, the `site-report-*` artifact (results and screenshots), and the **`site-reports`** branch: `reports/<target>/summary.md` is the latest run, and `history.csv` is every run, for trends.
+- **Targets:** `production` (`https://frontend.viztrrx.workers.dev`) and `beta` (`https://frontend-beta.viztrrx.workers.dev`, or the `BETA_URL` repository variable). A target that isn't deployed is skipped.
+- **On demand:** **Actions → Site check → Run workflow**. Fill in "only" (for example `youtube,spotify`) to check just those sites; partial runs aren't saved to `site-reports`.
+- ✅ shows content (and the expected text, and a playing video for video pages); ⚠️ loaded, but the expected text is missing (consent page, captcha) or the site answered HTTP 4xx/5xx; ❌ error, Scramjet's error page, or nothing after 45 s; ⛔ blocked on purpose (`public/blocked.js`).
+- **Run it yourself:** `npm i --prefix /tmp/pw playwright && npx --prefix /tmp/pw playwright install chromium`, then `PLAYWRIGHT_PATH=/tmp/pw/node_modules/playwright/index.mjs node site-check/run.mjs --url https://frontend.viztrrx.workers.dev`. `--only`, `--timeout` and `--previous` are described at the top of `site-check/run.mjs`.
+
+To test another site, add it to `site-check/sites.json`: `name`, `url`, `expect` (text that only shows when the real page loaded, or `""`), and `"media": true` for pages whose video should start.
+
 ## Games (`saints://games`)
 
 The **Games** button on `saints://home` (or typing `saints://games`) opens the games library. A game plays in the page area under the toolbar, at `saints://games/<slug>`, like a site in a tab: Back returns to the library, Reload restarts the game, Home goes to `saints://home`. The three online games (LittleBigSnake, Paper.io at paperio.site, ZombsRoyale.io) open their real site through the proxy instead.

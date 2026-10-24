@@ -1,0 +1,112 @@
+name: Site check
+
+# Opens popular sites through the live proxy (site-check/sites.json) and
+# records which ones work and how fast. Results: the run's summary page, the
+# site-report-* artifacts (with screenshots), and the site-reports branch
+# (reports/<target>/summary.md and history.csv) for trends over time.
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+    inputs:
+      only:
+        description: "Only sites whose name contains one of these words (comma-separated); empty for all"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: site-check
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    strategy:
+      fail-fast: false
+      # One at a time: both proxies share the small Render backend.
+      max-parallel: 1
+      matrix:
+        target: [production, beta]
+    env:
+      TARGET: ${{ matrix.target }}
+      FRONTEND_URL: ${{ matrix.target == 'production' && 'https://frontend.viztrrx.workers.dev' || (vars.BETA_URL || 'https://frontend-beta.viztrrx.workers.dev') }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Is this proxy deployed?
+        id: up
+        run: |
+          if curl -sf -m 30 "$FRONTEND_URL/version.json" > /dev/null; then
+            echo "up=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "up=false" >> "$GITHUB_OUTPUT"
+            echo "$FRONTEND_URL isn't answering; skipping $TARGET." >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - name: Set up Node.js
+        if: steps.up.outputs.up == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install Playwright and Chromium
+        if: steps.up.outputs.up == 'true'
+        run: |
+          npm install --prefix /tmp/pw --no-audit --no-fund playwright@1.63.0
+          npx --prefix /tmp/pw playwright install --with-deps chromium
+
+      - name: Get the previous results
+        if: steps.up.outputs.up == 'true'
+        run: |
+          git fetch --depth 1 origin site-reports 2>/dev/null \
+            && git show "origin/site-reports:reports/$TARGET/results.json" > /tmp/previous.json 2>/dev/null \
+            || rm -f /tmp/previous.json
+
+      - name: Open the sites through the proxy
+        if: steps.up.outputs.up == 'true'
+        env:
+          PLAYWRIGHT_PATH: /tmp/pw/node_modules/playwright/index.mjs
+          ONLY: ${{ github.event.inputs.only }}
+        run: |
+          prev=""; [ -f /tmp/previous.json ] && prev="--previous /tmp/previous.json"
+          node site-check/run.mjs --url "$FRONTEND_URL" --label "$TARGET" --out site-report --only "$ONLY" $prev
+          cat site-report/summary.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Keep the report and screenshots
+        if: steps.up.outputs.up == 'true' && always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: site-report-${{ matrix.target }}
+          path: site-report/
+          retention-days: 30
+
+      - name: Save to the site-reports branch
+        # Partial runs (only some sites) aren't saved, so trends compare like with like.
+        if: steps.up.outputs.up == 'true' && github.event.inputs.only == ''
+        run: |
+          git config user.name "site-check"
+          git config user.email "site-check@users.noreply.github.com"
+          git worktree add --no-checkout --detach /tmp/reports
+          cd /tmp/reports
+          if git fetch --depth 1 origin site-reports 2>/dev/null; then
+            git checkout -q -B site-reports FETCH_HEAD
+          else
+            git switch -q --orphan site-reports && echo "Site check reports, written by .github/workflows/site-check.yml." > README.md
+          fi
+          mkdir -p "reports/$TARGET"
+          cp "$GITHUB_WORKSPACE/site-report/results.json" "$GITHUB_WORKSPACE/site-report/summary.md" "reports/$TARGET/"
+          [ -f "reports/$TARGET/history.csv" ] || echo "tested_at,commit,passed,partial,failed,total,median_ms" > "reports/$TARGET/history.csv"
+          node -e 'const r=require(process.argv[1]); console.log([r.testedAt,(r.version.commit||"").slice(0,7),r.passed,r.partial,r.failed,r.total,r.medianMs??""].join(","))' \
+            "$GITHUB_WORKSPACE/site-report/results.json" >> "reports/$TARGET/history.csv"
+          git add -A
+          git commit -qm "Site check: $TARGET $(date -u +%F' '%H:%M)"
+          for i in 1 2 3; do
+            git push -q origin HEAD:site-reports && break
+            sleep $((i * 5)); git fetch -q --depth 1 origin site-reports && git rebase -q FETCH_HEAD
+          done
