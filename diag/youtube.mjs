@@ -20,6 +20,7 @@ const { values: args } = parseArgs({
     insecure: { type: "boolean", default: false },
     block: { type: "string", default: "" },
     shots: { type: "boolean", default: false },
+    sjconfig: { type: "string", default: "" },
     direct: { type: "boolean", default: false },
   },
 });
@@ -68,6 +69,7 @@ const browser = await chromium.launch({
 });
 const context = await browser.newContext({ viewport: { width: 1280, height: 800 }, ignoreHTTPSErrors: args.insecure });
 await context.addInitScript((name) => { try { localStorage.setItem("sj-transport", name); } catch {} }, args.transport);
+if (args.sjconfig) await context.addInitScript((json) => { self.__saintsDiagSjConfig = JSON.parse(json); }, args.sjconfig);
 if (args.block) await context.addInitScript((source) => { self.__saintsDiagBlock = new RegExp(source); }, args.block);
 const page = await context.newPage();
 
@@ -94,6 +96,8 @@ context.on("requestfinished", async (r) => {
 });
 context.on("requestfailed", (r) => note("failed", { id: requests.get(r), url: decode(r.url()).slice(0, 300), error: r.failure()?.errorText }));
 
+// Renderer memory 5 times a second, to catch a spike between ticks.
+const fast = setInterval(() => { const m = rendererMemory(); note("mem", { mb: m.map((x) => x.mb) }); }, 200);
 const cdp = await context.newCDPSession(page);
 await cdp.send("Performance.enable").catch(() => {});
 
@@ -162,7 +166,7 @@ for (const e of log.filter((e) => e.kind === "req")) {
 }
 const ticks = log.filter((e) => e.kind === "tick");
 const summary = {
-  target: args.direct ? "direct" : args.url, transport: args.transport, block: args.block, shots: args.shots, crashed,
+  target: args.direct ? "direct" : args.url, transport: args.transport, block: args.block, shots: args.shots, sjconfig: args.sjconfig, crashed,
   lastTick: ticks.at(-1),
   peakRendererMB: Math.max(0, ...ticks.flatMap((e) => e.memory.map((m) => m.mb))),
   peakHeapMB: Math.max(0, ...ticks.map((e) => e.heap?.usedMB || 0)),
@@ -176,5 +180,6 @@ await writeFile(`${args.out}/log.json`, JSON.stringify(log, null, 1));
 await writeFile(`${args.out}/summary.json`, JSON.stringify(summary, null, 2));
 console.log(JSON.stringify(summary, null, 2));
 clearTimeout(watchdog);
+clearInterval(fast);
 await timed(browser.close(), 15000, "close").catch(() => {});
 process.exit(0);

@@ -53,12 +53,10 @@ jobs:
             echo "== $name crashed=$(grep -o '"crashed": [a-z]*' "out/$name/stdout.txt")"
             grep -iE "fatal|check failed|out of memory|oom|v8|renderer|crash" "out/$name/browser.log" | grep -viE "crashpad|cpufreq" | head -15 || true
           done <<'RUNS'
-          direct;8782;libcurl;;--direct
-          direct-shots;8782;libcurl;;--direct --shots
-          v2-epoxy;8782;epoxy;;
-          v2-libcurl;8782;libcurl;;
-          v1-libcurl;8781;libcurl;;
-          v2-epoxy-shots;8782;epoxy;;--shots
+          v2-base;8782;epoxy;;
+          v2-no-sourcemaps;8782;epoxy;;--sjconfig {"flags":{"sourcemaps":false}}
+          v2-no-desktop-js;8782;epoxy;youtube\.com/s/desktop/;
+          v2-no-yt-scripts;8782;epoxy;youtube\.com/s/;
           RUNS
           cp /tmp/lab-server.log out/
       - name: Save results to the diag-results branch

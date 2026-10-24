@@ -57,6 +57,8 @@
         serviceworker: await serviceWorker(),
         transport: next,
         config: CONFIG,
+        // DIAGNOSTIC BRANCH ONLY: diag/youtube.mjs --sjconfig
+        ...(self.__saintsDiagSjConfig ? { scramjetConfig: self.__saintsDiagSjConfig } : {}),
       });
       await controller.wait();
     }
