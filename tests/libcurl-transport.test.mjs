@@ -29,7 +29,7 @@ function loadClient(code = source) {
     context
   );
   assert.equal(typeof context.LibcurlClient, "function");
-  return new context.LibcurlClient({ wisp: "wss://backend-ivvq.onrender.com/wisp/" });
+  return new context.LibcurlClient({ wisp: "wss://backend-rust-qr67.onrender.com/wisp/" });
 }
 
 test("first transport init waits for libcurl WASM instead of throwing", async () => {
