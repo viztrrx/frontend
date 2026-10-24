@@ -48,7 +48,7 @@ jobs:
           for run in "v2-libcurl 8782 libcurl" "v2-epoxy 8782 epoxy" "v1-libcurl 8781 libcurl"; do
             set -- $run
             mkdir -p "out/$1"
-            xvfb-run -a node diag/youtube.mjs --headed --insecure --url "http://localhost:$2" --transport "$3" --video "$VIDEO" --out "out/$1" 2> "out/$1/browser.log" > "out/$1/stdout.txt" || true
+            timeout 240 xvfb-run -a node diag/youtube.mjs --headed --insecure --url "http://localhost:$2" --transport "$3" --video "$VIDEO" --out "out/$1" 2> "out/$1/browser.log" > "out/$1/stdout.txt" || true
             echo "== $1"; head -c 1500 "out/$1/stdout.txt"; echo
             grep -iE "fatal|check failed|out of memory|signal=[a-z0-9]|crash" "out/$1/browser.log" | head -20 || true
           done

@@ -4,6 +4,7 @@
 //
 //   node diag/youtube.mjs --url https://frontend-beta.viztrrx.workers.dev --transport libcurl --out out/beta-libcurl
 import { mkdir, writeFile } from "node:fs/promises";
+import { appendFileSync, writeFileSync } from "node:fs";
 import { execFileSync } from "node:child_process";
 import { parseArgs } from "node:util";
 
@@ -25,7 +26,19 @@ await mkdir(args.out, { recursive: true });
 const started = Date.now();
 const t = () => ((Date.now() - started) / 1000).toFixed(1);
 const log = [];
-const note = (kind, data) => { log.push({ t: Number(t()), kind, ...data }); };
+// Written as it happens (log.jsonl), so a hang still leaves a record.
+const note = (kind, data) => {
+  const e = { t: Number(t()), kind, ...data };
+  log.push(e);
+  try { appendFileSync(`${args.out}/log.jsonl`, JSON.stringify(e) + "\n"); } catch {}
+};
+// A page that stops answering must not stall the whole run.
+const timed = (promise, ms, what) => Promise.race([promise, new Promise((_, reject) => setTimeout(() => reject(new Error(what + " timed out after " + ms + " ms")), ms))]);
+const watchdog = setTimeout(() => {
+  note("WATCHDOG", { memory: rendererMemory() });
+  writeFileSync(`${args.out}/summary.json`, JSON.stringify({ target: args.url, transport: args.transport, watchdog: true, lastEvents: log.slice(-15) }, null, 2));
+  process.exit(3);
+}, (Number(args.seconds) + 90) * 1000);
 
 // Renderer processes' memory (RSS, MB) from ps, as the browser sees it.
 function rendererMemory() {
@@ -80,11 +93,11 @@ context.on("requestfailed", (r) => note("failed", { id: requests.get(r), url: de
 const cdp = await context.newCDPSession(page);
 await cdp.send("Performance.enable").catch(() => {});
 
-await page.goto(args.url, { waitUntil: "load" });
+await page.goto(args.url, { waitUntil: "load", timeout: 30000 });
 await page.waitForTimeout(1500);
-note("version", { version: await page.evaluate(() => fetch("/version.json").then((r) => r.json()).catch(() => null)) });
-await page.fill("#sj-home-q", args.video);
-await page.press("#sj-home-q", "Enter");
+note("version", { version: await timed(page.evaluate(() => fetch("/version.json").then((r) => r.json()).catch(() => null)), 10000, "version").catch((e) => e.message) });
+await page.fill("#sj-home-q", args.video, { timeout: 10000 });
+await page.press("#sj-home-q", "Enter", { timeout: 10000 });
 note("opened", { video: args.video });
 
 const deadline = Date.now() + Number(args.seconds) * 1000;
@@ -94,13 +107,14 @@ while (Date.now() < deadline && !crashed) {
   const memory = rendererMemory();
   let heap = null;
   try {
-    const { metrics } = await cdp.send("Performance.getMetrics");
+    const { metrics } = await timed(cdp.send("Performance.getMetrics"), 5000, "metrics");
     const get = (n) => metrics.find((m) => m.name === n)?.value;
     heap = { usedMB: Math.round(get("JSHeapUsedSize") / 1048576), totalMB: Math.round(get("JSHeapTotalSize") / 1048576), nodes: get("Nodes"), docs: get("Documents"), frames: get("Frames") };
   } catch {}
   let video = null;
+  const asked = Date.now();
   try {
-    video = await page.evaluate(() => {
+    video = await timed(page.evaluate(() => {
       const f = document.querySelector("iframe.sj-frame");
       const d = f && f.contentDocument;
       const v = d && d.querySelector("video");
@@ -114,19 +128,20 @@ while (Date.now() < deadline && !crashed) {
         buffered: b.length ? Number(b.end(b.length - 1).toFixed(1)) : 0,
         src: (v.currentSrc || "").slice(0, 60),
       };
-    });
+    }), 8000, "page.evaluate");
   } catch (e) { video = { evalError: String(e.message).slice(0, 200) }; }
-  note("tick", { memory, heap, video });
+  // How long the page's main thread took to answer (a hung page doesn't).
+  note("tick", { memory, heap, video, answerMs: Date.now() - asked });
   if (Number(t()) > 5 && shot < 6 && Math.floor(Number(t())) % 10 === 0) {
-    await page.screenshot({ path: `${args.out}/t${Math.floor(Number(t()))}.jpg`, type: "jpeg", quality: 50 }).catch(() => {});
+    await page.screenshot({ path: `${args.out}/t${Math.floor(Number(t()))}.jpg`, type: "jpeg", quality: 50, timeout: 8000 }).catch(() => {});
     shot++;
   }
   // Start playback if YouTube is waiting for a click.
   if (video && video.paused && video.ready >= 2 && Number(t()) > 8) {
-    await page.evaluate(() => { const v = document.querySelector("iframe.sj-frame")?.contentDocument?.querySelector("video"); v && v.play().catch(() => {}); }).catch(() => {});
+    await timed(page.evaluate(() => { const v = document.querySelector("iframe.sj-frame")?.contentDocument?.querySelector("video"); v && v.play().catch(() => {}); }), 5000, "play").catch(() => {});
   }
 }
-await page.screenshot({ path: `${args.out}/final.jpg`, type: "jpeg", quality: 50 }).catch(() => {});
+await page.screenshot({ path: `${args.out}/final.jpg`, type: "jpeg", quality: 50, timeout: 8000 }).catch(() => {});
 
 // Summary: requests by host/type, the slowest growth, the end state.
 const byHost = {};
@@ -151,4 +166,6 @@ const summary = {
 await writeFile(`${args.out}/log.json`, JSON.stringify(log, null, 1));
 await writeFile(`${args.out}/summary.json`, JSON.stringify(summary, null, 2));
 console.log(JSON.stringify(summary, null, 2));
-await browser.close().catch(() => {});
+clearTimeout(watchdog);
+await timed(browser.close(), 15000, "close").catch(() => {});
+process.exit(0);
