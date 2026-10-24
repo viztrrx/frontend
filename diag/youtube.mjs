@@ -136,7 +136,15 @@ while (Date.now() < deadline && !crashed) {
       const v = d && d.querySelector("video");
       const status = document.getElementById("sj-toolbar-status")?.textContent;
       // How much of YouTube's app has been built.
-      const app = d ? { elements: d.getElementsByTagName("*").length, player: !!d.querySelector("#movie_player"), flexy: !!d.querySelector("ytd-watch-flexy"), botcheck: /confirm you.re not a bot/i.test(d.body?.innerText || "") } : null;
+      const w = direct ? window : f && f.contentWindow;
+      const app = d ? {
+        elements: d.getElementsByTagName("*").length, player: !!d.querySelector("#movie_player"), flexy: !!d.querySelector("ytd-watch-flexy"),
+        botcheck: /confirm you.re not a bot/i.test(d.body?.innerText || ""),
+        videos: d.querySelectorAll("ytd-video-renderer").length, tiles: d.querySelectorAll("ytd-rich-item-renderer").length,
+        thumbs: [...d.querySelectorAll("img")].filter((i) => i.complete && i.naturalWidth > 0 && /ytimg/.test(i.currentSrc || i.src)).length,
+        initialData: (() => { try { return typeof w.ytInitialData === "object" && w.ytInitialData ? JSON.stringify(w.ytInitialData).length : String(typeof w.ytInitialData); } catch (e) { return "err " + e.message; } })(),
+        pageReady: (() => { try { return !!(w.yt && w.yt.config_ && w.ytcsi) && d.readyState; } catch (e) { return "err"; } })(),
+      } : null;
       if (!v) return { status, title: d?.title, app };
       const b = v.buffered;
       return {

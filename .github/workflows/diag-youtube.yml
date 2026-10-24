@@ -59,17 +59,15 @@ jobs:
           while IFS=';' read -r name port transport block extra; do
             [ -z "$name" ] && continue
             mkdir -p "out/$name"
-            timeout 240 xvfb-run -a node diag/youtube.mjs --headed --insecure --url "http://localhost:$port" --transport "$transport" --video "$VIDEO" --block "$block" $extra --seconds 60 --out "out/$name" 2> "out/$name/browser.log" > "out/$name/stdout.txt" || true
+            timeout 240 xvfb-run -a node diag/youtube.mjs --headed --insecure --url "http://localhost:$port" --transport "$transport" --video "$VIDEO" --block "$block" $extra --seconds 45 --out "out/$name" 2> "out/$name/browser.log" > "out/$name/stdout.txt" || true
             echo "== $name crashed=$(grep -o '"crashed": [a-z]*' "out/$name/stdout.txt")"
             grep -iE "fatal|check failed|out of memory|oom|v8|renderer|crash" "out/$name/browser.log" | grep -viE "crashpad|cpufreq" | head -15 || true
           done <<'RUNS'
-          fixed-v2-home;8782;epoxy;;--video https://www.youtube.com/
-          fixed-v1-home;8781;libcurl;;--video https://www.youtube.com/
-          fixed-v2-video;8782;epoxy;;
-          fixed-v1-video;8781;libcurl;;
-          fixed-v2-long;8782;libcurl;;--video https://www.youtube.com/watch?v=dQw4w9WgXcQ
-          fixed-v2-search;8782;epoxy;;--video https://www.youtube.com/results?search_query=lofi
-          fixed-v2-shorts;8782;epoxy;;--video https://www.youtube.com/shorts
+          search-direct;8782;epoxy;;--direct --shots --video https://www.youtube.com/results?search_query=dom+tracy+f150
+          search-v2;8782;epoxy;;--shots --video https://www.youtube.com/results?search_query=dom+tracy+f150
+          search-v1;8781;libcurl;;--shots --video https://www.youtube.com/results?search_query=dom+tracy+f150
+          home-direct;8782;epoxy;;--direct --shots --video https://www.youtube.com/
+          home-v2;8782;epoxy;;--shots --video https://www.youtube.com/
           RUNS
           cp /tmp/lab-server.log out/
       - name: Save results to the diag-results branch
