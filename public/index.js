@@ -1040,6 +1040,12 @@ async function warmUp() {
 
 async function openUrl(url, { retry = false } = {}) {
   if (busy) return;
+  // Signed in from the Saints console, sites open inside a session
+  // (sessions.js): start or resume one first, then this site opens.
+  if (!retry && globalThis.saintsSessions?.required?.()) {
+    globalThis.saintsSessions.ask(() => openUrl(url));
+    return;
+  }
   if (!retry) {
     transportRetried = false;
     // A new site starts on this device's usual transport again.
