@@ -1,0 +1,43 @@
+frontend /tmp/dist1 on http://localhost:8781
+frontend /tmp/dist2 on http://localhost:8782
+wisp on wss://localhost:4443/wisp/
+[2026/10/24 - 21:10:51] warn: (de6a2441) refusing to create a stream to localhost:4443
+[2026/10/24 - 21:10:51] warn: (de6a2441) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 21:10:57] warn: tcp stream to rr5---sn-q4flrnes.googlevideo.com ended with error - Error: read ECONNRESET
+[2026/10/24 - 21:10:57] warn: tcp stream to rr5---sn-q4flrnes.googlevideo.com ended with error - Error: read ECONNRESET
+[2026/10/24 - 21:10:57] warn: tcp stream to rr5---sn-q4flrnes.googlevideo.com ended with error - Error: read ECONNRESET
+[2026/10/24 - 21:10:57] warn: tcp stream to rr5---sn-q4flrnes.googlevideo.com ended with error - Error: read ECONNRESET
+[2026/10/24 - 21:11:04] warn: (ee0e8fda) refusing to create a stream to localhost:4443
+[2026/10/24 - 21:11:04] warn: (ee0e8fda) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 21:11:09] warn: (ee0e8fda) creating a stream to rr3---sn-aigl6nsd.googlevideo.com:443 failed - Error: getaddrinfo ENOTFOUND rr3---sn-aigl6nsd.googlevideo.com
+[2026/10/24 - 21:11:09] warn: (ee0e8fda) creating a stream to rr3---sn-aigl6nsd.googlevideo.com:443 failed - Error: getaddrinfo ENOTFOUND rr3---sn-aigl6nsd.googlevideo.com
+[2026/10/24 - 21:11:09] warn: (ee0e8fda) creating a stream to rr3---sn-aigl6nsd.googlevideo.com:443 failed - Error: getaddrinfo ENOTFOUND rr3---sn-aigl6nsd.googlevideo.com
+[2026/10/24 - 21:11:09] warn: (ee0e8fda) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 21:11:09] warn: (ee0e8fda) creating a stream to rr3---sn-aigl6nsd.googlevideo.com:443 failed - Error: getaddrinfo ENOTFOUND rr3---sn-aigl6nsd.googlevideo.com
+[2026/10/24 - 21:11:09] warn: (ee0e8fda) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 21:11:09] warn: (ee0e8fda) creating a stream to rr3---sn-aigl6nsd.googlevideo.com:443 failed - Error: getaddrinfo ENOTFOUND rr3---sn-aigl6nsd.googlevideo.com
+[2026/10/24 - 21:11:09] warn: (ee0e8fda) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 21:11:09] warn: (ee0e8fda) creating a stream to rr3---sn-aigl6nsd.googlevideo.com:443 failed - Error: getaddrinfo ENOTFOUND rr3---sn-aigl6nsd.googlevideo.com
+[2026/10/24 - 21:11:09] warn: (ee0e8fda) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 21:11:16] warn: (32e7d87d) refusing to create a stream to localhost:4443
+[2026/10/24 - 21:11:16] warn: (32e7d87d) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 21:11:49] warn: (3a550cb0) refusing to create a stream to localhost:4443
+[2026/10/24 - 21:11:49] warn: (3a550cb0) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 21:11:57] warn: (efc3fe10) refusing to create a stream to localhost:4443
+[2026/10/24 - 21:11:57] warn: (efc3fe10) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 21:12:09] warn: (89002a44) refusing to create a stream to localhost:4443
+[2026/10/24 - 21:12:09] warn: (89002a44) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 21:12:20] warn: (f6c70c39) refusing to create a stream to localhost:4443
+[2026/10/24 - 21:12:20] warn: (f6c70c39) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 21:12:32] warn: (95786ce9) refusing to create a stream to localhost:4443
+[2026/10/24 - 21:12:32] warn: (95786ce9) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 21:12:36] warn: (95786ce9) creating a stream to rr4---sn-5hnekn7k.googlevideo.com:443 failed - Error: getaddrinfo ENOTFOUND rr4---sn-5hnekn7k.googlevideo.com
+[2026/10/24 - 21:12:36] warn: (95786ce9) creating a stream to rr4---sn-5hnekn7k.googlevideo.com:443 failed - Error: getaddrinfo ENOTFOUND rr4---sn-5hnekn7k.googlevideo.com
+[2026/10/24 - 21:12:36] warn: (95786ce9) creating a stream to rr4---sn-5hnekn7k.googlevideo.com:443 failed - Error: getaddrinfo ENOTFOUND rr4---sn-5hnekn7k.googlevideo.com
+[2026/10/24 - 21:12:36] warn: (95786ce9) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 21:12:36] warn: (95786ce9) creating a stream to rr4---sn-5hnekn7k.googlevideo.com:443 failed - Error: getaddrinfo ENOTFOUND rr4---sn-5hnekn7k.googlevideo.com
+[2026/10/24 - 21:12:36] warn: (95786ce9) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 21:12:36] warn: (95786ce9) creating a stream to rr4---sn-5hnekn7k.googlevideo.com:443 failed - Error: getaddrinfo ENOTFOUND rr4---sn-5hnekn7k.googlevideo.com
+[2026/10/24 - 21:12:36] warn: (95786ce9) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 21:12:36] warn: (95786ce9) creating a stream to rr4---sn-5hnekn7k.googlevideo.com:443 failed - Error: getaddrinfo ENOTFOUND rr4---sn-5hnekn7k.googlevideo.com
+[2026/10/24 - 21:12:36] warn: (95786ce9) received a DATA packet for a stream which doesn't exist
