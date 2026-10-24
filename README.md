@@ -77,7 +77,7 @@ Storage: the `SESSIONS` binding in `wrangler.jsonc` points at the R2 bucket **`d
 ## Speed
 
 - **The backend stays awake.** A cron trigger (`wrangler.jsonc`, every 10 minutes) calls the backend's `/health` (`src/index.js`), so Render's free plan never puts it to sleep and nobody waits for it to wake. The address is read from `wispUrl` in `public/config.js`, so moving the backend only means changing that line. Each ping is logged under **Workers & Pages → frontend → Logs**.
-- **Transports.** Pages go through libcurl (`/libcurl/`), the transport proven on iPhone Safari. A browser that can't set libcurl up uses Epoxy (`/epoxy/`, `@mercuryworkshop/epoxy-transport` 2.1.28) instead and keeps it on that device (`sj-transport` in localStorage). When a page fails with a connection error (for example Epoxy's "tls handshake eof" or libcurl's "error code 52"), it's retried once with the other transport before the error is shown.
+- **Transports.** Pages go through libcurl (`/libcurl/`), the transport proven on iPhone Safari. A browser that can't set libcurl up uses Epoxy (`/epoxy/`, `@mercuryworkshop/epoxy-transport` 2.1.29) instead and keeps it on that device (`sj-transport` in localStorage). When a page fails with a connection error (for example Epoxy's "tls handshake eof" or libcurl's "error code 52"), it's retried once with the other transport before the error is shown.
 - **One connection per visit.** The backend check, Scramjet, the service worker and the transport are set up once, when Saints Search finishes loading (with one small request to the backend's `/health` to start the TLS engine). Every site opened after that uses the same connection.
 - **Backend region.** For Florida, the backend should be in Render's **Virginia** region. Render can't move a service, so create a new one there, then set its address in `public/config.js`.
 
@@ -89,7 +89,7 @@ Storage: the `SESSIONS` binding in `wrangler.jsonc` points at the R2 bucket **`d
 - **Targets:** `production` (`https://frontend.viztrrx.workers.dev`) and `beta` (`https://frontend-beta.viztrrx.workers.dev`, or the `BETA_URL` repository variable). A target that isn't deployed is skipped.
 - **On demand:** **Actions → Site check → Run workflow**. Fill in "only" (for example `youtube,spotify`) to check just those sites; partial runs aren't saved to `site-reports`.
 - ✅ shows content (and the expected text, and a playing video for video pages); ⚠️ loaded, but the expected text is missing (consent page, captcha) or the site answered HTTP 4xx/5xx; ❌ error, Scramjet's error page, or nothing after 45 s; ⛔ blocked on purpose (`public/blocked.js`).
-- **Run it yourself:** `npm i --prefix /tmp/pw playwright && npx --prefix /tmp/pw playwright install chromium`, then `PLAYWRIGHT_PATH=/tmp/pw/node_modules/playwright/index.mjs node site-check/run.mjs --url https://frontend.viztrrx.workers.dev`. `--only`, `--timeout` and `--previous` are described at the top of `site-check/run.mjs`.
+- **Run it yourself:** `npm i --prefix /tmp/pw playwright && npx --prefix /tmp/pw playwright install chromium`, then `PLAYWRIGHT_PATH=/tmp/pw/node_modules/playwright/index.mjs node site-check/run.mjs --url https://frontend.viztrrx.workers.dev`. `--only`, `--transport libcurl|epoxy`, `--timeout` and `--previous` are described at the top of `site-check/run.mjs`.
 
 To test another site, add it to `site-check/sites.json`: `name`, `url`, `expect` (text that only shows when the real page loaded, or `""`), and `"media": true` for pages whose video should start.
 

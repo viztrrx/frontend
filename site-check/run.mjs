@@ -12,6 +12,7 @@
 //   --previous <file>     an earlier results.json, to show what changed
 //   --timeout <seconds>   per site (default 45)
 //   --label <text>        name of this proxy in the report (default: its host)
+//   --transport <name>    use this transport (libcurl or epoxy) instead of the page's default
 //   --insecure            accept self-signed certificates (local testing)
 //
 // Playwright isn't a dependency of the Worker; set PLAYWRIGHT_PATH to its
@@ -28,12 +29,13 @@ const { values: args } = parseArgs({
     previous: { type: "string", default: "" },
     timeout: { type: "string", default: "45" },
     label: { type: "string", default: "" },
+    transport: { type: "string", default: "" },
     insecure: { type: "boolean", default: false },
   },
 });
 if (!args.url) throw new Error("--url is required");
 const FRONTEND = new URL(args.url).origin + "/";
-const LABEL = args.label || new URL(FRONTEND).host;
+const LABEL = args.label || new URL(FRONTEND).host + (args.transport ? " (" + args.transport + ")" : "");
 const TIMEOUT_MS = Number(args.timeout) * 1000;
 const { chromium } = await import(process.env.PLAYWRIGHT_PATH || "playwright");
 
@@ -164,6 +166,10 @@ const context = await browser.newContext({
   ignoreHTTPSErrors: args.insecure,
   viewport: { width: 1280, height: 800 },
 });
+// The page keeps the chosen transport in localStorage (sj-transport).
+if (args.transport) {
+  await context.addInitScript((name) => { try { localStorage.setItem("sj-transport", name); } catch {} }, args.transport);
+}
 const results = [];
 for (const site of sites) {
   const r = await checkSite(context, site);
