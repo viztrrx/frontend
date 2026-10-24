@@ -1,0 +1,52 @@
+name: Diagnose YouTube
+
+# Temporary: plays a YouTube video through the proxy in Google Chrome and
+# records memory, video state, requests and crashes (diag/youtube.mjs).
+on:
+  push:
+    branches: [diag-youtube]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  diag:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        include:
+          - name: beta-libcurl
+            url: https://frontend-beta.viztrrx.workers.dev
+            transport: libcurl
+          - name: beta-epoxy
+            url: https://frontend-beta.viztrrx.workers.dev
+            transport: epoxy
+          - name: production-libcurl
+            url: https://frontend.viztrrx.workers.dev
+            transport: libcurl
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install Playwright
+        run: npm install --prefix /tmp/pw --no-audit --no-fund playwright@1.63.0
+      - name: Play the video
+        env:
+          PLAYWRIGHT_PATH: /tmp/pw/node_modules/playwright/index.mjs
+          DEBUG: pw:browser
+        run: |
+          google-chrome --version
+          node diag/youtube.mjs --url "${{ matrix.url }}" --transport "${{ matrix.transport }}" --out "out/${{ matrix.name }}" 2> "out-${{ matrix.name }}-browser.log" || true
+          mkdir -p "out/${{ matrix.name }}" && mv "out-${{ matrix.name }}-browser.log" "out/${{ matrix.name }}/browser.log"
+          grep -iE "fatal|check failed|oom|out of memory|crash|trap|signal" "out/${{ matrix.name }}/browser.log" | head -40 || true
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: diag-${{ matrix.name }}
+          path: out/
+          retention-days: 7
