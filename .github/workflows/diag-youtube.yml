@@ -45,20 +45,20 @@ jobs:
         run: |
           google-chrome --version
           VIDEO="${{ vars.DIAG_VIDEO || 'https://www.youtube.com/watch?v=jNQXAC9IVRw' }}"
-          # name;port;transport;block regex: which request kinds trigger the crash.
-          while IFS=';' read -r name port transport block; do
+          # name;port;transport;block regex;extra flags
+          while IFS=';' read -r name port transport block extra; do
             [ -z "$name" ] && continue
             mkdir -p "out/$name"
-            timeout 240 xvfb-run -a node diag/youtube.mjs --headed --insecure --url "http://localhost:$port" --transport "$transport" --block "$block" --video "$VIDEO" --seconds 45 --out "out/$name" 2> "out/$name/browser.log" > "out/$name/stdout.txt" || true
+            timeout 240 xvfb-run -a node diag/youtube.mjs --headed --insecure --url "http://localhost:$port" --transport "$transport" --block "$block" $extra --video "$VIDEO" --seconds 45 --out "out/$name" 2> "out/$name/browser.log" > "out/$name/stdout.txt" || true
             echo "== $name crashed=$(grep -o '"crashed": [a-z]*' "out/$name/stdout.txt")"
             grep -iE "fatal|check failed|out of memory|oom|v8|renderer|crash" "out/$name/browser.log" | grep -viE "crashpad|cpufreq" | head -15 || true
           done <<'RUNS'
-          base;8782;epoxy;
-          no-botguard;8782;epoxy;www\.google\.com/js/th/
-          no-accounts;8782;epoxy;accounts\.google\.com
-          no-videodata;8782;epoxy;googlevideo\.com
-          no-player-js;8782;epoxy;youtube\.com/s/player/
-          no-ads;8782;epoxy;doubleclick|googleads|googlesyndication
+          direct;8782;libcurl;;--direct
+          direct-shots;8782;libcurl;;--direct --shots
+          v2-epoxy;8782;epoxy;;
+          v2-libcurl;8782;libcurl;;
+          v1-libcurl;8781;libcurl;;
+          v2-epoxy-shots;8782;epoxy;;--shots
           RUNS
           cp /tmp/lab-server.log out/
       - name: Save results to the diag-results branch

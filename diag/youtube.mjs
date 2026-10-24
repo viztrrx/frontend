@@ -19,6 +19,8 @@ const { values: args } = parseArgs({
     headed: { type: "boolean", default: false },
     insecure: { type: "boolean", default: false },
     block: { type: "string", default: "" },
+    shots: { type: "boolean", default: false },
+    direct: { type: "boolean", default: false },
   },
 });
 const { chromium } = await import(process.env.PLAYWRIGHT_PATH || "playwright");
@@ -95,11 +97,16 @@ context.on("requestfailed", (r) => note("failed", { id: requests.get(r), url: de
 const cdp = await context.newCDPSession(page);
 await cdp.send("Performance.enable").catch(() => {});
 
-await page.goto(args.url, { waitUntil: "load", timeout: 30000 });
-await page.waitForTimeout(1500);
-note("version", { version: await timed(page.evaluate(() => fetch("/version.json").then((r) => r.json()).catch(() => null)), 10000, "version").catch((e) => e.message) });
-await page.fill("#sj-home-q", args.video, { timeout: 10000 });
-await page.press("#sj-home-q", "Enter", { timeout: 10000 });
+if (args.direct) {
+  // Control: the video without any proxy.
+  await page.goto(args.video, { waitUntil: "domcontentloaded", timeout: 30000 });
+} else {
+  await page.goto(args.url, { waitUntil: "load", timeout: 30000 });
+  await page.waitForTimeout(1500);
+  note("version", { version: await timed(page.evaluate(() => fetch("/version.json").then((r) => r.json()).catch(() => null)), 10000, "version").catch((e) => e.message) });
+  await page.fill("#sj-home-q", args.video, { timeout: 10000 });
+  await page.press("#sj-home-q", "Enter", { timeout: 10000 });
+}
 note("opened", { video: args.video });
 
 const deadline = Date.now() + Number(args.seconds) * 1000;
@@ -116,9 +123,9 @@ while (Date.now() < deadline && !crashed) {
   let video = null;
   const asked = Date.now();
   try {
-    video = await timed(page.evaluate(() => {
+    video = await timed(page.evaluate((direct) => {
       const f = document.querySelector("iframe.sj-frame");
-      const d = f && f.contentDocument;
+      const d = direct ? document : f && f.contentDocument;
       const v = d && d.querySelector("video");
       const status = document.getElementById("sj-toolbar-status")?.textContent;
       if (!v) return { status, title: d?.title };
@@ -130,20 +137,20 @@ while (Date.now() < deadline && !crashed) {
         buffered: b.length ? Number(b.end(b.length - 1).toFixed(1)) : 0,
         src: (v.currentSrc || "").slice(0, 60),
       };
-    }), 8000, "page.evaluate");
+    }, args.direct), 8000, "page.evaluate");
   } catch (e) { video = { evalError: String(e.message).slice(0, 200) }; }
   // How long the page's main thread took to answer (a hung page doesn't).
   note("tick", { memory, heap, video, answerMs: Date.now() - asked });
-  if (Number(t()) > 5 && shot < 6 && Math.floor(Number(t())) % 10 === 0) {
+  if (args.shots && Number(t()) > 5 && shot < 6 && Math.floor(Number(t())) % 10 === 0) {
     await page.screenshot({ path: `${args.out}/t${Math.floor(Number(t()))}.jpg`, type: "jpeg", quality: 50, timeout: 8000 }).catch(() => {});
     shot++;
   }
   // Start playback if YouTube is waiting for a click.
   if (video && video.paused && video.ready >= 2 && Number(t()) > 8) {
-    await timed(page.evaluate(() => { const v = document.querySelector("iframe.sj-frame")?.contentDocument?.querySelector("video"); v && v.play().catch(() => {}); }), 5000, "play").catch(() => {});
+    await timed(page.evaluate((direct) => { const v = (direct ? document : document.querySelector("iframe.sj-frame")?.contentDocument)?.querySelector("video"); v && v.play().catch(() => {}); }, args.direct), 5000, "play").catch(() => {});
   }
 }
-await page.screenshot({ path: `${args.out}/final.jpg`, type: "jpeg", quality: 50, timeout: 8000 }).catch(() => {});
+if (args.shots) await page.screenshot({ path: `${args.out}/final.jpg`, type: "jpeg", quality: 50, timeout: 8000 }).catch(() => {});
 
 // Summary: requests by host/type, the slowest growth, the end state.
 const byHost = {};
@@ -155,7 +162,7 @@ for (const e of log.filter((e) => e.kind === "req")) {
 }
 const ticks = log.filter((e) => e.kind === "tick");
 const summary = {
-  target: args.url, transport: args.transport, block: args.block, crashed,
+  target: args.direct ? "direct" : args.url, transport: args.transport, block: args.block, shots: args.shots, crashed,
   lastTick: ticks.at(-1),
   peakRendererMB: Math.max(0, ...ticks.flatMap((e) => e.memory.map((m) => m.mb))),
   peakHeapMB: Math.max(0, ...ticks.map((e) => e.heap?.usedMB || 0)),
