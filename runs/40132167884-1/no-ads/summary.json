@@ -1,0 +1,69 @@
+{
+  "target": "http://localhost:8782",
+  "transport": "epoxy",
+  "block": "doubleclick|googleads|googlesyndication",
+  "crashed": true,
+  "lastTick": {
+    "t": 12.6,
+    "kind": "tick",
+    "memory": [
+      {
+        "pid": 4206,
+        "mb": 145
+      },
+      {
+        "pid": 4215,
+        "mb": 569
+      },
+      {
+        "pid": 4254,
+        "mb": 104
+      }
+    ],
+    "heap": null,
+    "video": {
+      "evalError": "page.evaluate: Target crashed "
+    },
+    "answerMs": 2
+  },
+  "peakRendererMB": 587,
+  "peakHeapMB": 67,
+  "requests": 66,
+  "failed": 3,
+  "byHost": {
+    "localhost:8782 script": 15,
+    "www.youtube.com script": 14,
+    "www.youtube.com stylesheet": 6,
+    " fetch": 5,
+    "rr1---sn-q4fl6nsk.googlevideo.com fetch": 4,
+    "localhost:8782 fetch": 3,
+    "scramjet.wasm.js script": 2,
+    "localhost:8782 image": 2,
+    "localhost:8782 document": 1,
+    "localhost:8782 stylesheet": 1,
+    "localhost:8782 other": 1,
+    "www.youtube.com document": 1,
+    "i.ytimg.com other": 1,
+    "i.ytimg.com image": 1,
+    "fonts.googleapis.com stylesheet": 1,
+    "rr4---sn-p5qlsn6z.googlevideo.com other": 1,
+    "rr2---sn-2op5q5-5f.c.youtube.com other": 1,
+    "accounts.google.com document": 1,
+    "www.gstatic.com script": 1,
+    "static.doubleclick.net script": 1,
+    "www.google.com script": 1,
+    "googleads.g.doubleclick.net xhr": 1,
+    "www.youtube.com image": 1
+  },
+  "pageErrors": [],
+  "consoleErrors": [
+    "0.9s Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: UnexpectedEof, error: \"tls handshake eof\" })) (client error (IO: Custom { kind: UnexpectedEof, error: \"tls handshake eof\" } (tls handshake eof)))\n    at imports.wbg.__wbindgen_error_new (http://localhost:8782/epoxy/ind",
+    "3.7s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "4.6s Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "4.6s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "5.6s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "6.6s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "6.8s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "6.8s Failed to load resource: the server responded with a status of 403 (Forbidden)"
+  ]
+}

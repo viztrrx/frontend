@@ -1,0 +1,18 @@
+frontend /tmp/dist1 on http://localhost:8781
+frontend /tmp/dist2 on http://localhost:8782
+wisp on wss://localhost:4443/wisp/
+[2026/10/24 - 20:59:07] warn: (f02e8651) refusing to create a stream to localhost:4443
+[2026/10/24 - 20:59:19] warn: (d54ffb54) refusing to create a stream to localhost:4443
+[2026/10/24 - 20:59:19] warn: (d54ffb54) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 20:59:32] warn: (d0fa4c36) refusing to create a stream to localhost:4443
+[2026/10/24 - 20:59:32] warn: (d0fa4c36) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 20:59:37] warn: tcp stream to rr5---sn-q4flrnl6.googlevideo.com ended with error - Error: read ECONNRESET
+[2026/10/24 - 20:59:37] warn: tcp stream to rr5---sn-q4flrnl6.googlevideo.com ended with error - Error: read ECONNRESET
+[2026/10/24 - 20:59:44] warn: (014908ff) refusing to create a stream to localhost:4443
+[2026/10/24 - 20:59:44] warn: (014908ff) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 20:59:57] warn: (c7678d4f) refusing to create a stream to localhost:4443
+[2026/10/24 - 20:59:57] warn: (c7678d4f) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 21:00:09] warn: (4017d553) refusing to create a stream to localhost:4443
+[2026/10/24 - 21:00:09] warn: (4017d553) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 21:00:15] warn: tcp stream to rr1---sn-q4fl6nsk.googlevideo.com ended with error - Error: read ECONNRESET
+[2026/10/24 - 21:00:15] warn: tcp stream to rr1---sn-q4fl6nsk.googlevideo.com ended with error - Error: read ECONNRESET
