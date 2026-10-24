@@ -16,6 +16,7 @@ const { values: args } = parseArgs({
     seconds: { type: "string", default: "75" },
     channel: { type: "string", default: "chrome" },
     headed: { type: "boolean", default: false },
+    insecure: { type: "boolean", default: false },
   },
 });
 const { chromium } = await import(process.env.PLAYWRIGHT_PATH || "playwright");
@@ -47,9 +48,9 @@ const browser = await chromium.launch({
   channel: args.channel === "chromium" ? undefined : args.channel,
   // Headed (under xvfb in CI): YouTube asks headless Chrome to sign in.
   headless: !args.headed,
-  args: ["--autoplay-policy=no-user-gesture-required", "--enable-precise-memory-info"],
+  args: ["--autoplay-policy=no-user-gesture-required", "--enable-precise-memory-info", ...(args.insecure ? ["--ignore-certificate-errors"] : [])],
 });
-const context = await browser.newContext({ viewport: { width: 1280, height: 800 } });
+const context = await browser.newContext({ viewport: { width: 1280, height: 800 }, ignoreHTTPSErrors: args.insecure });
 await context.addInitScript((name) => { try { localStorage.setItem("sj-transport", name); } catch {} }, args.transport);
 const page = await context.newPage();
 

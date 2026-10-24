@@ -1,7 +1,10 @@
 name: Diagnose YouTube
 
-# Temporary: plays a YouTube video through the proxy in Google Chrome and
-# records memory, video state, requests and crashes (diag/youtube.mjs).
+# Temporary: builds this branch with both engines, serves them with a local
+# Wisp server (diag/lab-server.mjs, so nothing goes through the Render
+# backend), plays a YouTube video in headed Google Chrome and records memory,
+# video state, requests and crashes (diag/youtube.mjs). Results go to the
+# diag-results branch.
 on:
   push:
     branches: [diag-youtube]
@@ -13,45 +16,51 @@ permissions:
 jobs:
   diag:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
-    strategy:
-      fail-fast: false
-      max-parallel: 1
-      matrix:
-        include:
-          - name: beta-libcurl
-            url: https://frontend-beta.viztrrx.workers.dev
-            transport: libcurl
-          - name: beta-epoxy
-            url: https://frontend-beta.viztrrx.workers.dev
-            transport: epoxy
-          - name: production-libcurl
-            url: https://frontend.viztrrx.workers.dev
-            transport: libcurl
+    timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Install Playwright
-        run: npm install --prefix /tmp/pw --no-audit --no-fund playwright@1.63.0
+      - name: Build both engines
+        run: |
+          pnpm install --frozen-lockfile
+          pnpm build && cp -r dist /tmp/dist1
+          pnpm build:beta && cp -r dist /tmp/dist2
+      - name: Install Playwright and wisp-js
+        run: |
+          npm install --prefix /tmp/pw --no-audit --no-fund playwright@1.63.0
+          npm install --prefix /tmp/wisp --no-audit --no-fund @mercuryworkshop/wisp-js@0.4.1
+      - name: Start the local proxy
+        run: |
+          openssl req -x509 -newkey rsa:2048 -nodes -keyout /tmp/key.pem -out /tmp/cert.pem -days 2 -subj "/CN=localhost" -addext "subjectAltName=DNS:localhost" 2>/dev/null
+          WISP_JS_PATH=/tmp/wisp/node_modules/@mercuryworkshop/wisp-js/src/entrypoints/server.mjs \
+            nohup node diag/lab-server.mjs /tmp/dist1 /tmp/dist2 /tmp/cert.pem /tmp/key.pem > /tmp/lab-server.log 2>&1 &
+          sleep 3; cat /tmp/lab-server.log
       - name: Play the video
         env:
           PLAYWRIGHT_PATH: /tmp/pw/node_modules/playwright/index.mjs
           DEBUG: pw:browser
         run: |
           google-chrome --version
-          xvfb-run -a node diag/youtube.mjs --headed --url "${{ matrix.url }}" --transport "${{ matrix.transport }}" --out "out/${{ matrix.name }}" 2> "out-${{ matrix.name }}-browser.log" || true
-          mkdir -p "out/${{ matrix.name }}" && mv "out-${{ matrix.name }}-browser.log" "out/${{ matrix.name }}/browser.log"
-          grep -iE "fatal|check failed|oom|out of memory|crash|trap|signal" "out/${{ matrix.name }}/browser.log" | head -40 || true
+          VIDEO="${{ vars.DIAG_VIDEO || 'https://www.youtube.com/watch?v=jNQXAC9IVRw' }}"
+          for run in "v2-libcurl 8782 libcurl" "v2-epoxy 8782 epoxy" "v1-libcurl 8781 libcurl"; do
+            set -- $run
+            mkdir -p "out/$1"
+            xvfb-run -a node diag/youtube.mjs --headed --insecure --url "http://localhost:$2" --transport "$3" --video "$VIDEO" --out "out/$1" 2> "out/$1/browser.log" > "out/$1/stdout.txt" || true
+            echo "== $1"; head -c 1500 "out/$1/stdout.txt"; echo
+            grep -iE "fatal|check failed|out of memory|signal=[a-z0-9]|crash" "out/$1/browser.log" | head -20 || true
+          done
+          cp /tmp/lab-server.log out/
       - name: Save results to the diag-results branch
         if: always()
         run: |
           git config user.name "diag"; git config user.email "diag@users.noreply.github.com"
-          dest="runs/${{ github.run_id }}-${{ github.run_attempt }}/${{ matrix.name }}"
+          dest="runs/${{ github.run_id }}-${{ github.run_attempt }}"
           git worktree add --no-checkout --detach /tmp/res
           cd /tmp/res
           if git fetch -q --depth 1 origin diag-results 2>/dev/null; then git checkout -q -B diag-results FETCH_HEAD; else git switch -q --orphan diag-results; fi
-          mkdir -p "$dest" && cp -r "$GITHUB_WORKSPACE/out/${{ matrix.name }}/." "$dest/"
-          git add -A && git commit -qm "diag ${{ matrix.name }} ${{ github.run_id }}"
+          mkdir -p "$dest" && cp -r "$GITHUB_WORKSPACE/out/." "$dest/"
+          git add -A && git commit -qm "diag ${{ github.run_id }}"
           for i in 1 2 3 4; do git push -q origin HEAD:diag-results && break; sleep $((i*5)); git fetch -q --depth 1 origin diag-results && git rebase -q FETCH_HEAD; done
