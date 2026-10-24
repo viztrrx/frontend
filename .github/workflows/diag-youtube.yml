@@ -8,7 +8,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   diag:
@@ -44,9 +44,14 @@ jobs:
           node diag/youtube.mjs --url "${{ matrix.url }}" --transport "${{ matrix.transport }}" --out "out/${{ matrix.name }}" 2> "out-${{ matrix.name }}-browser.log" || true
           mkdir -p "out/${{ matrix.name }}" && mv "out-${{ matrix.name }}-browser.log" "out/${{ matrix.name }}/browser.log"
           grep -iE "fatal|check failed|oom|out of memory|crash|trap|signal" "out/${{ matrix.name }}/browser.log" | head -40 || true
-      - uses: actions/upload-artifact@v4
+      - name: Save results to the diag-results branch
         if: always()
-        with:
-          name: diag-${{ matrix.name }}
-          path: out/
-          retention-days: 7
+        run: |
+          git config user.name "diag"; git config user.email "diag@users.noreply.github.com"
+          dest="runs/${{ github.run_id }}-${{ github.run_attempt }}/${{ matrix.name }}"
+          git worktree add --no-checkout --detach /tmp/res
+          cd /tmp/res
+          if git fetch -q --depth 1 origin diag-results 2>/dev/null; then git checkout -q -B diag-results FETCH_HEAD; else git switch -q --orphan diag-results; fi
+          mkdir -p "$dest" && cp -r "$GITHUB_WORKSPACE/out/${{ matrix.name }}/." "$dest/"
+          git add -A && git commit -qm "diag ${{ matrix.name }} ${{ github.run_id }}"
+          for i in 1 2 3 4; do git push -q origin HEAD:diag-results && break; sleep $((i*5)); git fetch -q --depth 1 origin diag-results && git rebase -q FETCH_HEAD; done
