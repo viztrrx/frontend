@@ -1,0 +1,88 @@
+{
+  "target": "http://localhost:8782",
+  "transport": "libcurl",
+  "block": "",
+  "shots": false,
+  "sjconfig": "",
+  "fix": "V:hasinstance",
+  "noprobe": false,
+  "crashed": false,
+  "lastTick": {
+    "t": 63.2,
+    "kind": "tick",
+    "memory": [
+      {
+        "pid": 3722,
+        "mb": 138
+      },
+      {
+        "pid": 3731,
+        "mb": 453
+      },
+      {
+        "pid": 3794,
+        "mb": 101
+      }
+    ],
+    "heap": {
+      "usedMB": 47,
+      "totalMB": 56,
+      "nodes": 2884,
+      "docs": 10,
+      "frames": 7
+    },
+    "video": {
+      "status": "Website content detected",
+      "title": "- YouTube",
+      "time": 0,
+      "paused": true,
+      "ready": 0,
+      "net": 0,
+      "error": null,
+      "buffered": 0,
+      "src": "",
+      "app": {
+        "elements": 1424,
+        "player": true,
+        "flexy": false,
+        "botcheck": false
+      }
+    },
+    "answerMs": 2
+  },
+  "peakRendererMB": 533,
+  "peakHeapMB": 73,
+  "requests": 61,
+  "failed": 0,
+  "byHost": {
+    "localhost:8782 script": 15,
+    "www.youtube.com script": 13,
+    "www.youtube.com stylesheet": 5,
+    " fetch": 5,
+    "localhost:8782 fetch": 4,
+    "scramjet.wasm.js script": 2,
+    "localhost:8782 image": 2,
+    "localhost:8782 document": 1,
+    "localhost:8782 stylesheet": 1,
+    "localhost:8782 other": 1,
+    "www.youtube.com document": 1,
+    "i.ytimg.com other": 1,
+    "i.ytimg.com image": 1,
+    "fonts.googleapis.com stylesheet": 1,
+    "rr3---sn-nx5e6nl7.googlevideo.com other": 1,
+    "rr5---sn-nx57ynz7.c.youtube.com other": 1,
+    "accounts.google.com document": 1,
+    "www.gstatic.com script": 1,
+    "static.doubleclick.net script": 1,
+    "www.google.com script": 1,
+    "www.youtube.com image": 1,
+    "www.youtube.com xhr": 1
+  },
+  "pageErrors": [],
+  "consoleErrors": [
+    "1.1s Request \"https://localhost:4443/health\" failed with error code 7: Could not connect to server",
+    "4s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "5.3s Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "6.3s Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ]
+}

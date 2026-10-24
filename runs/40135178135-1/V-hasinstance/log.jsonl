@@ -1,0 +1,514 @@
+{"t":13.5,"kind":"req","id":1,"method":"GET","type":"document","url":"http://localhost:8782/","sw":false}
+{"t":13.7,"kind":"mem","mb":[142,127,108]}
+{"t":13.7,"kind":"req","id":2,"method":"GET","type":"script","url":"http://localhost:8782/scram/scramjet.js","sw":false}
+{"t":13.7,"kind":"req","id":3,"method":"GET","type":"script","url":"http://localhost:8782/controller/controller.api.js","sw":false}
+{"t":13.7,"kind":"req","id":4,"method":"GET","type":"script","url":"http://localhost:8782/engine2.js","sw":false}
+{"t":13.7,"kind":"req","id":5,"method":"GET","type":"stylesheet","url":"http://localhost:8782/index.css","sw":false}
+{"t":13.7,"kind":"req","id":6,"method":"GET","type":"script","url":"http://localhost:8782/register-sw.js","sw":false}
+{"t":13.7,"kind":"req","id":7,"method":"GET","type":"script","url":"http://localhost:8782/search.js","sw":false}
+{"t":13.7,"kind":"req","id":8,"method":"GET","type":"script","url":"http://localhost:8782/config.js","sw":false}
+{"t":13.7,"kind":"req","id":9,"method":"GET","type":"script","url":"http://localhost:8782/blocked.js","sw":false}
+{"t":13.7,"kind":"req","id":10,"method":"GET","type":"script","url":"http://localhost:8782/index.js","sw":false}
+{"t":13.7,"kind":"req","id":11,"method":"GET","type":"script","url":"http://localhost:8782/sessions.js","sw":false}
+{"t":13.7,"kind":"done","id":5,"status":200,"size":20762}
+{"t":13.7,"kind":"done","id":1,"status":200,"size":9650}
+{"t":13.7,"kind":"done","id":3,"status":200,"size":17099}
+{"t":13.7,"kind":"done","id":4,"status":200,"size":10566}
+{"t":13.7,"kind":"done","id":2,"status":200,"size":227123}
+{"t":13.7,"kind":"done","id":6,"status":200,"size":609}
+{"t":13.7,"kind":"done","id":7,"status":200,"size":940}
+{"t":13.8,"kind":"mem","mb":[149,139,108]}
+{"t":13.9,"kind":"done","id":8,"status":200,"size":68}
+{"t":13.9,"kind":"done","id":9,"status":200,"size":4972}
+{"t":13.9,"kind":"done","id":10,"status":200,"size":61339}
+{"t":13.9,"kind":"done","id":11,"status":200,"size":16207}
+{"t":14,"kind":"mem","mb":[160,159,108]}
+{"t":14,"kind":"done","id":12,"status":200,"size":915}
+{"t":14.2,"kind":"done","id":13,"status":200,"size":915}
+{"t":14.2,"kind":"mem","mb":[170,170,108]}
+{"t":14.4,"kind":"mem","mb":[171,171,108]}
+{"t":14.5,"kind":"req","id":14,"method":"GET","type":"script","url":"http://localhost:8782/sw.js","sw":true}
+{"t":14.6,"kind":"req","id":15,"method":"GET","type":"other","url":"http://localhost:8782/controller/controller.sw.js","sw":true}
+{"t":14.6,"kind":"done","id":15,"status":200,"size":-272}
+{"t":14.6,"kind":"done","id":14,"status":200,"size":0}
+{"t":14.6,"kind":"mem","mb":[171,176,108]}
+{"t":14.7,"kind":"req","id":16,"method":"GET","type":"script","url":"http://localhost:8782/epoxy/index.mjs","sw":false}
+{"t":14.7,"kind":"console","type":"log","text":"service worker activated, notifying clients to revive"}
+{"t":14.7,"kind":"done","id":16,"status":200,"size":1717636}
+{"t":14.8,"kind":"mem","mb":[171,227,108]}
+{"t":15,"kind":"req","id":17,"method":"GET","type":"fetch","url":"http://localhost:8782/scram/scramjet.wasm","sw":false}
+{"t":15,"kind":"done","id":17,"status":200,"size":586293}
+{"t":15,"kind":"mem","mb":[171,214,108]}
+{"t":15.1,"kind":"console","type":"error","text":"Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: UnexpectedEof, error: \"tls handshake eof\" })) (client error (IO: Custom { kind: UnexpectedEof, error: \"tls handshake eof\" } (tls handshake eof)))\n    at imports.wbg.__wbindgen_error_new (http://localhost:8782/epoxy/index.mjs:1366:17)\n    at wasm://wasm/004c6846:wasm-function[2742]:0xde850\n    at wasm://wasm/004c6846:wasm-function[1833]:0xd177a\n    at wasm://wasm/004c6846:wasm-function[123]:0xc060\n    at wasm://wasm/004c6846:wasm-function[542]:0x9d36a\n    at wasm://wasm/004c6846:wasm-function[2584]:0xdc9d1\n    at "}
+{"t":15.2,"kind":"mem","mb":[171,216,108]}
+{"t":15.4,"kind":"mem","mb":[171,216,108]}
+{"t":15.6,"kind":"req","id":18,"method":"GET","type":"fetch","url":"http://localhost:8782/version.json","sw":false}
+{"t":15.6,"kind":"version","version":{"engine":2,"commit":"3895ed0db57ced0fc7afa754377496a6e7a0b95d","branch":"diag-youtube","message":"diag: hasInstance variant; download ShadowRoot readers","committedAt":"2026-10-24T21:39:21Z","builtAt":"2026-10-24T21:39:47.630Z"}}
+{"t":15.6,"kind":"done","id":18,"status":200,"size":266}
+{"t":15.6,"kind":"mem","mb":[171,219,108]}
+{"t":15.8,"kind":"mem","mb":[171,221,108]}
+{"t":15.9,"kind":"req","id":19,"method":"GET","type":"document","url":"https://www.youtube.com/watch?v=jNQXAC9IVRw","sw":false}
+{"t":16,"kind":"opened","video":"https://www.youtube.com/watch?v=jNQXAC9IVRw"}
+{"t":16,"kind":"mem","mb":[171,221,108]}
+{"t":16.2,"kind":"mem","mb":[171,225,108]}
+{"t":16.4,"kind":"mem","mb":[171,225,108]}
+{"t":16.6,"kind":"mem","mb":[171,225,108]}
+{"t":16.8,"kind":"mem","mb":[171,230,108]}
+{"t":17,"kind":"mem","mb":[171,246,108]}
+{"t":17.1,"kind":"tick","memory":[{"pid":3076,"mb":171},{"pid":3083,"mb":241},{"pid":3157,"mb":108}],"heap":{"usedMB":5,"totalMB":21,"nodes":513,"docs":4,"frames":4},"video":{"status":"Website responded (HTTP 200)","title":"","app":{"elements":3,"player":false,"flexy":false,"botcheck":false}},"answerMs":144}
+{"t":17.2,"kind":"req","id":20,"method":"GET","type":"script","url":"http://localhost:8782/scram/scramjet.js","sw":false}
+{"t":17.2,"kind":"req","id":21,"method":"GET","type":"script","url":"scramjet.wasm.js","sw":false}
+{"t":17.2,"kind":"req","id":22,"method":"GET","type":"script","url":"http://localhost:8782/controller/controller.inject.js","sw":false}
+{"t":17.2,"kind":"req","id":23,"method":"GET","type":"other","url":"https://i.ytimg.com/generate_204","sw":false}
+{"t":17.2,"kind":"req","id":24,"method":"GET","type":"script","url":"https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/base.js","sw":false}
+{"t":17.2,"kind":"req","id":25,"method":"GET","type":"image","url":"https://i.ytimg.com/vi/jNQXAC9IVRw/hqdefault.jpg","sw":false}
+{"t":17.2,"kind":"req","id":26,"method":"GET","type":"script","url":"https://www.youtube.com/s/_/ytmainappweb/_/js/k=ytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O/am=AAAAIAAAEICU/d=1/br=1/rs=AGKMywFE8F3YM8ibRUUCCROvvbqWKnrzSQ/m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk","sw":false}
+{"t":17.2,"kind":"req","id":27,"method":"GET","type":"script","url":"https://www.youtube.com/s/desktop/dc0b62b0/jsbin/web-animations-next-lite.min.vflset/web-animations-next-lite.min.js","sw":false}
+{"t":17.2,"kind":"req","id":28,"method":"GET","type":"script","url":"https://www.youtube.com/s/desktop/dc0b62b0/jsbin/custom-elements-es5-adapter.vflset/custom-elements-es5-adapter.js","sw":false}
+{"t":17.2,"kind":"req","id":29,"method":"GET","type":"script","url":"https://www.youtube.com/s/desktop/dc0b62b0/jsbin/webcomponents-sd.vflset/webcomponents-sd.js","sw":false}
+{"t":17.2,"kind":"req","id":30,"method":"GET","type":"script","url":"https://www.youtube.com/s/desktop/dc0b62b0/jsbin/intersection-observer.min.vflset/intersection-observer.min.js","sw":false}
+{"t":17.2,"kind":"req","id":31,"method":"GET","type":"script","url":"https://www.youtube.com/s/desktop/dc0b62b0/jsbin/scheduler.vflset/scheduler.js","sw":false}
+{"t":17.2,"kind":"req","id":32,"method":"GET","type":"script","url":"https://www.youtube.com/s/desktop/dc0b62b0/jsbin/www-i18n-constants-en_US.vflset/www-i18n-constants.js","sw":false}
+{"t":17.2,"kind":"req","id":33,"method":"GET","type":"stylesheet","url":"https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=YouTube+Sans:wght@300..900&display=swap","sw":false}
+{"t":17.2,"kind":"req","id":34,"method":"GET","type":"stylesheet","url":"https://www.youtube.com/s/player/cbcfbf2f/www-player.css","sw":false}
+{"t":17.2,"kind":"req","id":35,"method":"GET","type":"stylesheet","url":"https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-main-desktop-watch-page-skeleton.css","sw":false}
+{"t":17.2,"kind":"req","id":36,"method":"GET","type":"stylesheet","url":"https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-main-desktop-player-skeleton.css","sw":false}
+{"t":17.2,"kind":"req","id":37,"method":"GET","type":"stylesheet","url":"https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-onepick.css","sw":false}
+{"t":17.2,"kind":"req","id":38,"method":"GET","type":"stylesheet","url":"https://www.youtube.com/s/_/ytmainappweb/_/ss/k=ytmainappweb.kevlar_base.NZ7X3F12ieY.L.B1.O/am=AAAAIADAEMCe/d=0/br=1/rs=AGKMywFsrmIWbf-sEzR9ZzMTHYrjySDpeg","sw":false}
+{"t":17.2,"kind":"req","id":39,"method":"GET","type":"other","url":"https://rr3---sn-nx5e6nl7.googlevideo.com/generate_204","sw":false}
+{"t":17.2,"kind":"req","id":40,"method":"GET","type":"other","url":"https://rr3---sn-nx5e6nl7.c.youtube.com/generate_204","sw":false}
+{"t":17.2,"kind":"req","id":41,"method":"GET","type":"script","url":"https://www.youtube.com/s/desktop/dc0b62b0/jsbin/spf.vflset/spf.js","sw":false}
+{"t":17.2,"kind":"req","id":42,"method":"GET","type":"script","url":"https://www.youtube.com/s/desktop/dc0b62b0/jsbin/network.vflset/network.js","sw":false}
+{"t":17.2,"kind":"req","id":43,"method":"GET","type":"fetch","url":"http://localhost:8782/scram/scramjet.wasm","sw":false}
+{"t":17.2,"kind":"done","id":22,"status":200,"size":6449}
+{"t":17.2,"kind":"done","id":20,"status":200,"size":227123}
+{"t":17.2,"kind":"done","id":19,"status":200,"size":-10241}
+{"t":17.2,"kind":"req","id":44,"method":"GET","type":"fetch","url":"http://localhost:8782/diag-wc/hasinstance.js","sw":false}
+{"t":17.2,"kind":"mem","mb":[171,274,108]}
+{"t":17.3,"kind":"done","id":43,"status":200,"size":586293}
+{"t":17.3,"kind":"done","id":44,"status":200,"size":79140}
+{"t":17.3,"kind":"console","type":"log","text":"diag variant served: V:hasinstance 79126"}
+{"t":17.4,"kind":"done","id":29,"status":200,"size":-50}
+{"t":17.4,"kind":"done","id":21,"status":200,"size":-57}
+{"t":17.4,"kind":"mem","mb":[171,313,108]}
+{"t":17.6,"kind":"done","id":30,"status":200,"size":-731}
+{"t":17.6,"kind":"done","id":28,"status":200,"size":-730}
+{"t":17.6,"kind":"done","id":27,"status":200,"size":-732}
+{"t":17.6,"kind":"mem","mb":[171,324,108]}
+{"t":17.6,"kind":"req","id":45,"method":"GET","type":"image","url":"http://localhost:8782/icon?d=youtube.com","sw":false}
+{"t":17.7,"kind":"console","type":"error","text":"Failed to load resource: the server responded with a status of 404 (Not Found)"}
+{"t":17.7,"kind":"done","id":45,"status":404,"size":19}
+{"t":17.7,"kind":"done","id":31,"status":200,"size":-731}
+{"t":17.7,"kind":"done","id":32,"status":200,"size":-731}
+{"t":17.7,"kind":"done","id":35,"status":200,"size":-724}
+{"t":17.7,"kind":"done","id":34,"status":200,"size":-724}
+{"t":17.8,"kind":"mem","mb":[171,354,108]}
+{"t":17.9,"kind":"done","id":37,"status":200,"size":-723}
+{"t":18,"kind":"done","id":36,"status":200,"size":-723}
+{"t":18,"kind":"done","id":42,"status":200,"size":-731}
+{"t":18,"kind":"done","id":41,"status":200,"size":-732}
+{"t":18,"kind":"mem","mb":[171,413,108]}
+{"t":18.1,"kind":"done","id":38,"status":200,"size":-682}
+{"t":18.1,"kind":"done","id":24,"status":200,"size":-733}
+{"t":18.1,"kind":"tick","memory":[{"pid":3076,"mb":171},{"pid":3083,"mb":418},{"pid":3157,"mb":108}],"heap":{"usedMB":23,"totalMB":44,"nodes":561,"docs":7,"frames":5},"video":{"status":"Website responded (HTTP 200)","title":"","app":{"elements":34,"player":false,"flexy":false,"botcheck":false}},"answerMs":11}
+{"t":18.2,"kind":"mem","mb":[171,425,108]}
+{"t":18.3,"kind":"done","id":23,"status":204,"size":-140}
+{"t":18.3,"kind":"done","id":25,"status":200,"size":-559}
+{"t":18.4,"kind":"mem","mb":[171,454,108]}
+{"t":18.6,"kind":"mem","mb":[171,501,108]}
+{"t":18.8,"kind":"done","id":40,"status":204,"size":-720}
+{"t":18.8,"kind":"done","id":39,"status":204,"size":-720}
+{"t":18.8,"kind":"mem","mb":[171,548,108]}
+{"t":18.9,"kind":"done","id":33,"status":200,"size":-699}
+{"t":19,"kind":"mem","mb":[171,636,108]}
+{"t":19.2,"kind":"mem","mb":[171,589,108]}
+{"t":19.3,"kind":"req","id":46,"method":"GET","type":"script","url":"https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/offline.js","sw":false}
+{"t":19.3,"kind":"req","id":48,"method":"GET","type":"script","url":"https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/remote.js","sw":false}
+{"t":19.3,"kind":"req","id":49,"method":"GET","type":"script","url":"https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/miniplayer.js","sw":false}
+{"t":19.3,"kind":"req","id":50,"method":"GET","type":"image","url":"http://localhost:8782/icon?d=youtube.com","sw":false}
+{"t":19.3,"kind":"tick","memory":[{"pid":3076,"mb":171},{"pid":3083,"mb":666},{"pid":3157,"mb":108}],"heap":{"usedMB":33,"totalMB":56,"nodes":698,"docs":7,"frames":5},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":3,"error":null,"buffered":0,"src":"","app":{"elements":539,"player":true,"flexy":false,"botcheck":false}},"answerMs":133}
+{"t":19.3,"kind":"console","type":"error","text":"Failed to load resource: the server responded with a status of 404 (Not Found)"}
+{"t":19.3,"kind":"done","id":26,"status":200,"size":-690}
+{"t":19.3,"kind":"done","id":50,"status":404,"size":19}
+{"t":19.4,"kind":"req","id":51,"method":"GET","type":"document","url":"https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3D%252Fsignin_passive%26feature%3Dpassive&hl=en","sw":false}
+{"t":19.4,"kind":"mem","mb":[171,596,108]}
+{"t":19.6,"kind":"mem","mb":[171,589,108]}
+{"t":19.8,"kind":"mem","mb":[171,643,108]}
+{"t":19.9,"kind":"console","type":"info","text":"LegacyDataMixin will be applied to all legacy elements.\nSet `_legacyUndefinedCheck: true` on element class to enable."}
+{"t":20,"kind":"mem","mb":[171,604,108]}
+{"t":20.1,"kind":"req","id":52,"method":"GET","type":"script","url":"https://www.google.com/js/th/WqKOXfWIFxB-XN3hBm5zepers2HYXoMPp6sS78jI_4Y.js","sw":false}
+{"t":20.2,"kind":"req","id":53,"method":"GET","type":"fetch","url":"data:application/json;base64,eyJhZFBsYWNlbWVudHMiOnRydWUsInBsYXllckFkcyI6dHJ1ZSwicGxheWVyUmVzcG9uc2UiOnsiYWRQbGFjZW1lbnRzIjp0cnVlLCJwbGF5ZXJBZHMiOnRydWUsInBsYXllckNvbmZpZyI6IHsiYXVkaW9Db25maWciOiB7fSwgInN0cmVhbVNlbGVjdGlvbkNvbmZpZyI6IHt9LCAid2ViUGxheWVyQ29uZmlnIjogeyJ3ZWJQbGF5ZXJBY3Rpb25zUG9ydGluZyI","sw":false}
+{"t":20.3,"kind":"mem","mb":[171,551,108]}
+{"t":20.3,"kind":"done","id":46,"status":200,"size":-732}
+{"t":20.3,"kind":"done","id":49,"status":200,"size":-731}
+{"t":20.3,"kind":"done","id":48,"status":200,"size":-732}
+{"t":20.3,"kind":"console","type":"warning","text":"%cI -> b%c detected quirky document structure parsing @ https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3D%252Fsignin_passive%26feature%3Dpassive&hl=en! \n  \tbackground-color: #f80;\n  \tcolor: #fff;\n  \tpadding: 4px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n   "}
+{"t":20.3,"kind":"done","id":53,"status":200,"size":-136}
+{"t":20.3,"kind":"req","id":54,"method":"GET","type":"fetch","url":"data:application/json;base64,W3siYWRQbGFjZW1lbnRzIjp0cnVlLCJwbGF5ZXJBZHMiOnRydWUsInBsYXllclJlc3BvbnNlIjp7ImFkUGxhY2VtZW50cyI6dHJ1ZSwicGxheWVyQWRzIjp0cnVlfX1d","sw":false}
+{"t":20.3,"kind":"req","id":55,"method":"GET","type":"script","url":"https://www.gstatic.com/cv/js/sender/v1/cast_sender.js","sw":false}
+{"t":20.3,"kind":"console","type":"error","text":"Failed to load resource: the server responded with a status of 401 (Unauthorized)"}
+{"t":20.3,"kind":"req","id":56,"method":"GET","type":"script","url":"http://localhost:8782/scram/scramjet.js","sw":false}
+{"t":20.3,"kind":"req","id":57,"method":"GET","type":"script","url":"scramjet.wasm.js","sw":false}
+{"t":20.3,"kind":"req","id":58,"method":"GET","type":"script","url":"http://localhost:8782/controller/controller.inject.js","sw":false}
+{"t":20.3,"kind":"done","id":47,"status":200,"size":-525}
+{"t":20.3,"kind":"done","id":52,"status":200,"size":-606}
+{"t":20.4,"kind":"done","id":51,"status":401,"size":-640}
+{"t":20.4,"kind":"tick","memory":[{"pid":3076,"mb":171},{"pid":3083,"mb":556},{"pid":3157,"mb":108}],"heap":{"usedMB":72,"totalMB":100,"nodes":3074,"docs":10,"frames":6},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1451,"player":true,"flexy":false,"botcheck":false}},"answerMs":40}
+{"t":20.4,"kind":"done","id":58,"status":200,"size":6449}
+{"t":20.4,"kind":"done","id":56,"status":200,"size":227123}
+{"t":20.4,"kind":"done","id":57,"status":200,"size":-57}
+{"t":20.4,"kind":"done","id":54,"status":200,"size":-136}
+{"t":20.4,"kind":"mem","mb":[171,538,108]}
+{"t":20.5,"kind":"req","id":59,"method":"GET","type":"fetch","url":"data:application/json;base64,eyJyZXNwb25zZUNvbnRleHQiOnsic2VydmljZVRyYWNraW5nUGFyYW1zIjpbeyJzZXJ2aWNlIjoiR0ZFRURCQUNLIiwicGFyYW1zIjpbeyJrZXkiOiJrYyIsInZhbHVlIjoiNjYifSx7ImtleSI6ImN3IiwidmFsdWUiOiJzdCJ9LHsia2V5IjoiemIiLCJ2YWx1ZSI6Inh6In0seyJrZXkiOiJ6bCIsInZhbHVlIjoiMTYifSx7ImtleSI6InBmIiwidmFsdWUiOiJ","sw":false}
+{"t":20.5,"kind":"done","id":59,"status":200,"size":-136}
+{"t":20.6,"kind":"req","id":60,"method":"GET","type":"fetch","url":"data:application/json;base64,eyJwbGF5ZXJSZXNwb25zZSI6eyJyZXNwb25zZUNvbnRleHQiOnsic2VydmljZVRyYWNraW5nUGFyYW1zIjpbeyJzZXJ2aWNlIjoiR0ZFRURCQUNLIiwicGFyYW1zIjpbeyJrZXkiOiJrYyIsInZhbHVlIjoiNjYifSx7ImtleSI6ImN3IiwidmFsdWUiOiJzdCJ9LHsia2V5IjoiemIiLCJ2YWx1ZSI6Inh6In0seyJrZXkiOiJ6bCIsInZhbHVlIjoiMTYifSx7Imt","sw":false}
+{"t":20.6,"kind":"done","id":55,"status":200,"size":-585}
+{"t":20.6,"kind":"done","id":60,"status":200,"size":-136}
+{"t":20.6,"kind":"req","id":61,"method":"GET","type":"fetch","url":"data:application/json;base64,eyJyZXNwb25zZUNvbnRleHQiOnsic2VydmljZVRyYWNraW5nUGFyYW1zIjpbeyJzZXJ2aWNlIjoiR0ZFRURCQUNLIiwicGFyYW1zIjpbeyJrZXkiOiJpcGNjIiwidmFsdWUiOiIwIn0seyJrZXkiOiJpc192aWV3ZWRfbGl2ZSIsInZhbHVlIjoiRmFsc2UifSx7ImtleSI6ImlzX2FsY19zdXJmYWNlIiwidmFsdWUiOiJmYWxzZSJ9LHsia2V5IjoicHJlbWl1bV9","sw":false}
+{"t":20.6,"kind":"mem","mb":[171,545,108]}
+{"t":20.6,"kind":"done","id":61,"status":200,"size":-136}
+{"t":20.7,"kind":"req","id":62,"method":"GET","type":"script","url":"https://static.doubleclick.net/instream/ad_status.js","sw":false}
+{"t":20.8,"kind":"done","id":62,"status":200,"size":-712}
+{"t":20.9,"kind":"mem","mb":[171,550,108]}
+{"t":21,"kind":"mem","mb":[171,551,108]}
+{"t":21.1,"kind":"req","id":63,"method":"GET","type":"image","url":"https://www.youtube.com/generate_204?ThUtkg","sw":false}
+{"t":21.1,"kind":"done","id":63,"status":204,"size":-140}
+{"t":21.3,"kind":"mem","mb":[171,552,108]}
+{"t":21.4,"kind":"mem","mb":[171,553,108]}
+{"t":21.5,"kind":"tick","memory":[{"pid":3076,"mb":171},{"pid":3083,"mb":553},{"pid":3157,"mb":108}],"heap":{"usedMB":53,"totalMB":93,"nodes":2937,"docs":11,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1425,"player":true,"flexy":false,"botcheck":false}},"answerMs":10}
+{"t":21.5,"kind":"console","type":"warning","text":"%cI -> b%c detected quirky document structure parsing @ https://www.youtube.com/! \n  \tbackground-color: #f80;\n  \tcolor: #fff;\n  \tpadding: 4px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n   "}
+{"t":21.5,"kind":"console","type":"warning","text":"%cvalue -> A%c failed rewriting js for \n  \tbackground-color: #f80;\n  \tcolor: #fff;\n  \tpadding: 4px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n    (direct eval proxy) JS Rewriter: oxc panicked in parser: Unterminated string\n x='"}
+{"t":21.6,"kind":"req","id":64,"method":"POST","type":"xhr","url":"https://www.youtube.com/api/jnn/v1/GenerateIT","sw":false}
+{"t":21.6,"kind":"console","type":"warning","text":"No available adapters."}
+{"t":21.6,"kind":"done","id":64,"status":200,"size":-242}
+{"t":21.6,"kind":"mem","mb":[171,557,108]}
+{"t":21.8,"kind":"mem","mb":[171,557,108]}
+{"t":22,"kind":"mem","mb":[171,557,108]}
+{"t":22.2,"kind":"mem","mb":[171,557,108]}
+{"t":22.4,"kind":"mem","mb":[171,557,108]}
+{"t":22.5,"kind":"tick","memory":[{"pid":3076,"mb":171},{"pid":3083,"mb":557},{"pid":3157,"mb":108}],"heap":{"usedMB":50,"totalMB":96,"nodes":2945,"docs":11,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":22.6,"kind":"mem","mb":[171,558,108]}
+{"t":22.8,"kind":"mem","mb":[171,554,108]}
+{"t":23,"kind":"mem","mb":[171,554,108]}
+{"t":23.2,"kind":"mem","mb":[170,554,108]}
+{"t":23.4,"kind":"mem","mb":[170,554,108]}
+{"t":23.5,"kind":"tick","memory":[{"pid":3076,"mb":170},{"pid":3083,"mb":554},{"pid":3157,"mb":108}],"heap":{"usedMB":51,"totalMB":96,"nodes":2945,"docs":11,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":23.6,"kind":"mem","mb":[170,553,108]}
+{"t":23.8,"kind":"mem","mb":[170,553,108]}
+{"t":24,"kind":"mem","mb":[170,553,108]}
+{"t":24.2,"kind":"mem","mb":[170,553,108]}
+{"t":24.4,"kind":"mem","mb":[170,553,108]}
+{"t":24.5,"kind":"tick","memory":[{"pid":3076,"mb":170},{"pid":3083,"mb":553},{"pid":3157,"mb":108}],"heap":{"usedMB":51,"totalMB":96,"nodes":2945,"docs":11,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":24.6,"kind":"console","type":"warning","text":"The resource http://localhost:8782/~/sj/mu5clph3/6gd3l69g/https%3A%2F%2Frr3---sn-nx5e6nl7.googlevideo.com%2Fgenerate_204?%24io=https%3A%2F%2Fwww.youtube.com was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":24.6,"kind":"console","type":"warning","text":"The resource http://localhost:8782/~/sj/mu5clph3/6gd3l69g/https%3A%2F%2Frr3---sn-nx5e6nl7.c.youtube.com%2Fgenerate_204?%24io=https%3A%2F%2Fwww.youtube.com was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":24.6,"kind":"console","type":"warning","text":"The resource http://localhost:8782/~/sj/mu5clph3/6gd3l69g/https%3A%2F%2Fi.ytimg.com%2Fgenerate_204?%24io=https%3A%2F%2Fwww.youtube.com was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."}
+{"t":24.6,"kind":"mem","mb":[170,552,108]}
+{"t":24.8,"kind":"mem","mb":[170,552,108]}
+{"t":25,"kind":"mem","mb":[170,552,108]}
+{"t":25.2,"kind":"mem","mb":[170,552,108]}
+{"t":25.4,"kind":"mem","mb":[170,551,108]}
+{"t":25.5,"kind":"tick","memory":[{"pid":3076,"mb":170},{"pid":3083,"mb":551},{"pid":3157,"mb":108}],"heap":{"usedMB":51,"totalMB":96,"nodes":2945,"docs":11,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":25.6,"kind":"mem","mb":[170,548,108]}
+{"t":25.8,"kind":"mem","mb":[170,550,108]}
+{"t":26,"kind":"mem","mb":[170,550,108]}
+{"t":26.2,"kind":"mem","mb":[170,550,108]}
+{"t":26.4,"kind":"mem","mb":[170,550,108]}
+{"t":26.5,"kind":"tick","memory":[{"pid":3076,"mb":170},{"pid":3083,"mb":550},{"pid":3157,"mb":108}],"heap":{"usedMB":57,"totalMB":96,"nodes":2945,"docs":11,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":26.6,"kind":"mem","mb":[170,550,108]}
+{"t":26.8,"kind":"mem","mb":[170,550,108]}
+{"t":27,"kind":"mem","mb":[170,550,108]}
+{"t":27.2,"kind":"mem","mb":[170,550,108]}
+{"t":27.4,"kind":"mem","mb":[170,550,108]}
+{"t":27.6,"kind":"tick","memory":[{"pid":3076,"mb":170},{"pid":3083,"mb":550},{"pid":3157,"mb":108}],"heap":{"usedMB":57,"totalMB":96,"nodes":2945,"docs":11,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":27.6,"kind":"mem","mb":[170,550,108]}
+{"t":27.8,"kind":"mem","mb":[170,550,108]}
+{"t":28,"kind":"mem","mb":[170,550,108]}
+{"t":28.2,"kind":"mem","mb":[170,550,108]}
+{"t":28.4,"kind":"mem","mb":[170,550,108]}
+{"t":28.6,"kind":"tick","memory":[{"pid":3076,"mb":170},{"pid":3083,"mb":550},{"pid":3157,"mb":108}],"heap":{"usedMB":57,"totalMB":96,"nodes":2945,"docs":11,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":28.6,"kind":"mem","mb":[170,550,108]}
+{"t":28.8,"kind":"mem","mb":[170,550,108]}
+{"t":29,"kind":"mem","mb":[170,550,108]}
+{"t":29.2,"kind":"mem","mb":[170,550,108]}
+{"t":29.4,"kind":"mem","mb":[170,550,108]}
+{"t":29.6,"kind":"tick","memory":[{"pid":3076,"mb":170},{"pid":3083,"mb":550},{"pid":3157,"mb":108}],"heap":{"usedMB":57,"totalMB":96,"nodes":2945,"docs":11,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":29.6,"kind":"mem","mb":[170,550,108]}
+{"t":29.8,"kind":"mem","mb":[170,550,108]}
+{"t":30,"kind":"mem","mb":[170,550,108]}
+{"t":30.2,"kind":"mem","mb":[170,550,108]}
+{"t":30.4,"kind":"mem","mb":[170,550,108]}
+{"t":30.6,"kind":"tick","memory":[{"pid":3076,"mb":170},{"pid":3083,"mb":550},{"pid":3157,"mb":108}],"heap":{"usedMB":57,"totalMB":96,"nodes":2945,"docs":11,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":30.6,"kind":"mem","mb":[170,550,108]}
+{"t":30.8,"kind":"mem","mb":[170,550,108]}
+{"t":31,"kind":"mem","mb":[170,550,108]}
+{"t":31.2,"kind":"mem","mb":[170,550,108]}
+{"t":31.4,"kind":"mem","mb":[170,550,108]}
+{"t":31.6,"kind":"tick","memory":[{"pid":3076,"mb":170},{"pid":3083,"mb":550},{"pid":3157,"mb":108}],"heap":{"usedMB":63,"totalMB":97,"nodes":2945,"docs":11,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":31.6,"kind":"mem","mb":[170,550,108]}
+{"t":31.8,"kind":"mem","mb":[170,550,108]}
+{"t":32,"kind":"mem","mb":[170,550,108]}
+{"t":32.2,"kind":"mem","mb":[170,550,108]}
+{"t":32.4,"kind":"mem","mb":[170,550,108]}
+{"t":32.6,"kind":"mem","mb":[170,550,108]}
+{"t":32.6,"kind":"tick","memory":[{"pid":3076,"mb":170},{"pid":3083,"mb":550},{"pid":3157,"mb":108}],"heap":{"usedMB":63,"totalMB":97,"nodes":2945,"docs":11,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":32.8,"kind":"mem","mb":[170,550,108]}
+{"t":33,"kind":"mem","mb":[170,550,108]}
+{"t":33.2,"kind":"mem","mb":[170,550,108]}
+{"t":33.4,"kind":"mem","mb":[170,549,108]}
+{"t":33.6,"kind":"mem","mb":[170,549,108]}
+{"t":33.7,"kind":"tick","memory":[{"pid":3076,"mb":170},{"pid":3083,"mb":549},{"pid":3157,"mb":108}],"heap":{"usedMB":63,"totalMB":97,"nodes":2945,"docs":11,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":33.8,"kind":"mem","mb":[170,549,108]}
+{"t":34,"kind":"mem","mb":[170,549,108]}
+{"t":34.2,"kind":"mem","mb":[170,549,108]}
+{"t":34.4,"kind":"mem","mb":[170,549,108]}
+{"t":34.6,"kind":"mem","mb":[170,549,108]}
+{"t":34.7,"kind":"tick","memory":[{"pid":3076,"mb":170},{"pid":3083,"mb":549},{"pid":3157,"mb":108}],"heap":{"usedMB":63,"totalMB":97,"nodes":2945,"docs":11,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":34.8,"kind":"mem","mb":[170,549,108]}
+{"t":35,"kind":"mem","mb":[170,549,108]}
+{"t":35.2,"kind":"mem","mb":[170,549,108]}
+{"t":35.4,"kind":"mem","mb":[170,549,108]}
+{"t":35.6,"kind":"mem","mb":[170,549,108]}
+{"t":35.7,"kind":"tick","memory":[{"pid":3076,"mb":170},{"pid":3083,"mb":549},{"pid":3157,"mb":108}],"heap":{"usedMB":63,"totalMB":97,"nodes":2945,"docs":11,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":35.8,"kind":"mem","mb":[170,550,108]}
+{"t":36,"kind":"mem","mb":[170,550,108]}
+{"t":36.2,"kind":"mem","mb":[170,550,108]}
+{"t":36.4,"kind":"mem","mb":[170,550,108]}
+{"t":36.6,"kind":"mem","mb":[170,550,108]}
+{"t":36.7,"kind":"tick","memory":[{"pid":3076,"mb":170},{"pid":3083,"mb":550},{"pid":3157,"mb":108}],"heap":{"usedMB":70,"totalMB":98,"nodes":2945,"docs":11,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":36.8,"kind":"mem","mb":[170,550,108]}
+{"t":37,"kind":"mem","mb":[170,550,108]}
+{"t":37.2,"kind":"mem","mb":[170,550,108]}
+{"t":37.4,"kind":"mem","mb":[170,550,108]}
+{"t":37.6,"kind":"mem","mb":[170,550,108]}
+{"t":37.7,"kind":"tick","memory":[{"pid":3076,"mb":170},{"pid":3083,"mb":550},{"pid":3157,"mb":108}],"heap":{"usedMB":70,"totalMB":98,"nodes":2945,"docs":11,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":37.8,"kind":"mem","mb":[170,550,108]}
+{"t":38,"kind":"mem","mb":[170,550,108]}
+{"t":38.2,"kind":"mem","mb":[170,550,108]}
+{"t":38.4,"kind":"mem","mb":[170,550,108]}
+{"t":38.6,"kind":"mem","mb":[170,550,108]}
+{"t":38.7,"kind":"tick","memory":[{"pid":3076,"mb":170},{"pid":3083,"mb":550},{"pid":3157,"mb":108}],"heap":{"usedMB":70,"totalMB":98,"nodes":2945,"docs":11,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":38.8,"kind":"mem","mb":[170,550,108]}
+{"t":39,"kind":"mem","mb":[170,550,108]}
+{"t":39.2,"kind":"mem","mb":[170,550,108]}
+{"t":39.4,"kind":"mem","mb":[170,550,108]}
+{"t":39.6,"kind":"mem","mb":[170,550,108]}
+{"t":39.8,"kind":"tick","memory":[{"pid":3076,"mb":170},{"pid":3083,"mb":550},{"pid":3157,"mb":108}],"heap":{"usedMB":70,"totalMB":98,"nodes":2945,"docs":11,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":39.8,"kind":"mem","mb":[170,550,108]}
+{"t":40,"kind":"mem","mb":[170,550,108]}
+{"t":40.2,"kind":"mem","mb":[170,550,108]}
+{"t":40.4,"kind":"mem","mb":[170,550,108]}
+{"t":40.6,"kind":"mem","mb":[170,550,108]}
+{"t":40.8,"kind":"tick","memory":[{"pid":3076,"mb":170},{"pid":3083,"mb":550},{"pid":3157,"mb":108}],"heap":{"usedMB":76,"totalMB":101,"nodes":2945,"docs":11,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":40.8,"kind":"mem","mb":[170,550,108]}
+{"t":41,"kind":"mem","mb":[170,550,108]}
+{"t":41.2,"kind":"mem","mb":[170,550,108]}
+{"t":41.4,"kind":"mem","mb":[170,550,108]}
+{"t":41.6,"kind":"mem","mb":[170,550,108]}
+{"t":41.8,"kind":"tick","memory":[{"pid":3076,"mb":170},{"pid":3083,"mb":550},{"pid":3157,"mb":108}],"heap":{"usedMB":76,"totalMB":101,"nodes":2945,"docs":11,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":3}
+{"t":41.8,"kind":"mem","mb":[170,550,108]}
+{"t":42,"kind":"mem","mb":[170,550,108]}
+{"t":42.2,"kind":"mem","mb":[170,550,108]}
+{"t":42.4,"kind":"mem","mb":[170,550,108]}
+{"t":42.6,"kind":"mem","mb":[170,550,108]}
+{"t":42.8,"kind":"tick","memory":[{"pid":3076,"mb":170},{"pid":3083,"mb":550},{"pid":3157,"mb":108}],"heap":{"usedMB":76,"totalMB":101,"nodes":2945,"docs":11,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":42.8,"kind":"mem","mb":[170,550,108]}
+{"t":43,"kind":"mem","mb":[170,550,108]}
+{"t":43.2,"kind":"mem","mb":[170,550,108]}
+{"t":43.4,"kind":"mem","mb":[170,550,108]}
+{"t":43.6,"kind":"mem","mb":[170,550,108]}
+{"t":43.8,"kind":"tick","memory":[{"pid":3076,"mb":169},{"pid":3083,"mb":550},{"pid":3157,"mb":108}],"heap":{"usedMB":76,"totalMB":101,"nodes":2945,"docs":11,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":43.8,"kind":"mem","mb":[169,550,108]}
+{"t":44,"kind":"mem","mb":[169,550,108]}
+{"t":44.2,"kind":"mem","mb":[169,550,108]}
+{"t":44.4,"kind":"mem","mb":[167,550,108]}
+{"t":44.6,"kind":"mem","mb":[167,550,108]}
+{"t":44.9,"kind":"mem","mb":[167,486,108]}
+{"t":44.9,"kind":"tick","memory":[{"pid":3076,"mb":167},{"pid":3083,"mb":550},{"pid":3157,"mb":108}],"heap":{"usedMB":44,"totalMB":50,"nodes":2945,"docs":11,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":6}
+{"t":45.1,"kind":"mem","mb":[167,480,108]}
+{"t":45.3,"kind":"mem","mb":[167,480,108]}
+{"t":45.5,"kind":"mem","mb":[167,480,108]}
+{"t":45.7,"kind":"mem","mb":[167,477,108]}
+{"t":45.9,"kind":"mem","mb":[167,482,108]}
+{"t":45.9,"kind":"tick","memory":[{"pid":3076,"mb":167},{"pid":3083,"mb":482},{"pid":3157,"mb":108}],"heap":{"usedMB":45,"totalMB":50,"nodes":2884,"docs":10,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":46.1,"kind":"mem","mb":[167,482,108]}
+{"t":46.3,"kind":"mem","mb":[167,482,108]}
+{"t":46.5,"kind":"mem","mb":[167,482,108]}
+{"t":46.7,"kind":"mem","mb":[167,482,108]}
+{"t":46.9,"kind":"mem","mb":[167,482,108]}
+{"t":46.9,"kind":"tick","memory":[{"pid":3076,"mb":167},{"pid":3083,"mb":482},{"pid":3157,"mb":108}],"heap":{"usedMB":45,"totalMB":50,"nodes":2884,"docs":10,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":47.1,"kind":"mem","mb":[167,482,108]}
+{"t":47.3,"kind":"mem","mb":[167,482,108]}
+{"t":47.5,"kind":"mem","mb":[167,472,108]}
+{"t":47.7,"kind":"mem","mb":[167,472,108]}
+{"t":47.9,"kind":"mem","mb":[167,472,108]}
+{"t":47.9,"kind":"tick","memory":[{"pid":3076,"mb":167},{"pid":3083,"mb":472},{"pid":3157,"mb":108}],"heap":{"usedMB":45,"totalMB":50,"nodes":2884,"docs":10,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":48.1,"kind":"mem","mb":[167,472,108]}
+{"t":48.3,"kind":"mem","mb":[167,472,108]}
+{"t":48.5,"kind":"mem","mb":[167,472,108]}
+{"t":48.7,"kind":"mem","mb":[167,472,108]}
+{"t":48.9,"kind":"mem","mb":[167,472,108]}
+{"t":48.9,"kind":"tick","memory":[{"pid":3076,"mb":167},{"pid":3083,"mb":472},{"pid":3157,"mb":108}],"heap":{"usedMB":45,"totalMB":50,"nodes":2884,"docs":10,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":49.1,"kind":"mem","mb":[167,472,108]}
+{"t":49.3,"kind":"mem","mb":[167,472,108]}
+{"t":49.5,"kind":"mem","mb":[167,472,108]}
+{"t":49.7,"kind":"mem","mb":[167,472,108]}
+{"t":49.9,"kind":"mem","mb":[167,472,108]}
+{"t":50,"kind":"tick","memory":[{"pid":3076,"mb":167},{"pid":3083,"mb":472},{"pid":3157,"mb":108}],"heap":{"usedMB":45,"totalMB":50,"nodes":2884,"docs":10,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":50.1,"kind":"mem","mb":[167,472,108]}
+{"t":50.3,"kind":"mem","mb":[167,472,108]}
+{"t":50.5,"kind":"mem","mb":[167,472,108]}
+{"t":50.7,"kind":"mem","mb":[167,472,108]}
+{"t":50.9,"kind":"mem","mb":[167,474,108]}
+{"t":51,"kind":"tick","memory":[{"pid":3076,"mb":167},{"pid":3083,"mb":475},{"pid":3157,"mb":108}],"heap":{"usedMB":48,"totalMB":52,"nodes":2884,"docs":10,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":51.1,"kind":"mem","mb":[167,475,108]}
+{"t":51.3,"kind":"mem","mb":[167,475,108]}
+{"t":51.5,"kind":"mem","mb":[167,475,108]}
+{"t":51.7,"kind":"mem","mb":[167,475,108]}
+{"t":51.9,"kind":"mem","mb":[167,475,108]}
+{"t":52,"kind":"tick","memory":[{"pid":3076,"mb":167},{"pid":3083,"mb":475},{"pid":3157,"mb":108}],"heap":{"usedMB":48,"totalMB":52,"nodes":2884,"docs":10,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":52.1,"kind":"mem","mb":[167,475,108]}
+{"t":52.3,"kind":"mem","mb":[167,475,108]}
+{"t":52.5,"kind":"mem","mb":[167,475,108]}
+{"t":52.7,"kind":"mem","mb":[167,475,108]}
+{"t":52.9,"kind":"mem","mb":[167,475,108]}
+{"t":53,"kind":"tick","memory":[{"pid":3076,"mb":167},{"pid":3083,"mb":475},{"pid":3157,"mb":108}],"heap":{"usedMB":48,"totalMB":52,"nodes":2884,"docs":10,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":53.1,"kind":"mem","mb":[167,475,108]}
+{"t":53.3,"kind":"mem","mb":[167,475,108]}
+{"t":53.5,"kind":"mem","mb":[167,475,108]}
+{"t":53.7,"kind":"mem","mb":[167,475,108]}
+{"t":53.9,"kind":"mem","mb":[167,475,108]}
+{"t":54,"kind":"tick","memory":[{"pid":3076,"mb":167},{"pid":3083,"mb":475},{"pid":3157,"mb":108}],"heap":{"usedMB":48,"totalMB":52,"nodes":2884,"docs":10,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":54.1,"kind":"mem","mb":[167,475,108]}
+{"t":54.3,"kind":"mem","mb":[167,475,108]}
+{"t":54.5,"kind":"mem","mb":[167,475,108]}
+{"t":54.7,"kind":"mem","mb":[167,475,108]}
+{"t":54.9,"kind":"mem","mb":[167,475,108]}
+{"t":55,"kind":"tick","memory":[{"pid":3076,"mb":167},{"pid":3083,"mb":475},{"pid":3157,"mb":108}],"heap":{"usedMB":48,"totalMB":52,"nodes":2884,"docs":10,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":55.1,"kind":"mem","mb":[167,475,108]}
+{"t":55.3,"kind":"mem","mb":[167,475,108]}
+{"t":55.5,"kind":"mem","mb":[167,475,108]}
+{"t":55.7,"kind":"mem","mb":[167,475,108]}
+{"t":55.9,"kind":"mem","mb":[167,478,108]}
+{"t":56.1,"kind":"mem","mb":[167,478,108]}
+{"t":56.1,"kind":"tick","memory":[{"pid":3076,"mb":167},{"pid":3083,"mb":478},{"pid":3157,"mb":108}],"heap":{"usedMB":47,"totalMB":55,"nodes":2884,"docs":10,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":15}
+{"t":56.3,"kind":"mem","mb":[167,478,108]}
+{"t":56.5,"kind":"mem","mb":[167,478,108]}
+{"t":56.7,"kind":"mem","mb":[167,478,108]}
+{"t":56.9,"kind":"mem","mb":[167,478,108]}
+{"t":57.1,"kind":"mem","mb":[167,478,108]}
+{"t":57.1,"kind":"tick","memory":[{"pid":3076,"mb":167},{"pid":3083,"mb":478},{"pid":3157,"mb":108}],"heap":{"usedMB":47,"totalMB":55,"nodes":2884,"docs":10,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":57.3,"kind":"mem","mb":[167,478,108]}
+{"t":57.5,"kind":"mem","mb":[167,478,108]}
+{"t":57.7,"kind":"mem","mb":[167,478,108]}
+{"t":57.9,"kind":"mem","mb":[167,478,108]}
+{"t":58.1,"kind":"mem","mb":[167,478,108]}
+{"t":58.1,"kind":"tick","memory":[{"pid":3076,"mb":167},{"pid":3083,"mb":478},{"pid":3157,"mb":108}],"heap":{"usedMB":47,"totalMB":55,"nodes":2884,"docs":10,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":58.3,"kind":"mem","mb":[167,478,108]}
+{"t":58.5,"kind":"mem","mb":[167,478,108]}
+{"t":58.7,"kind":"mem","mb":[167,478,108]}
+{"t":58.9,"kind":"mem","mb":[167,478,108]}
+{"t":59.1,"kind":"mem","mb":[167,478,108]}
+{"t":59.1,"kind":"tick","memory":[{"pid":3076,"mb":167},{"pid":3083,"mb":478},{"pid":3157,"mb":108}],"heap":{"usedMB":47,"totalMB":55,"nodes":2884,"docs":10,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":59.3,"kind":"mem","mb":[167,478,108]}
+{"t":59.5,"kind":"mem","mb":[167,478,108]}
+{"t":59.7,"kind":"mem","mb":[167,478,108]}
+{"t":59.9,"kind":"mem","mb":[167,478,108]}
+{"t":60.1,"kind":"mem","mb":[167,478,108]}
+{"t":60.1,"kind":"tick","memory":[{"pid":3076,"mb":167},{"pid":3083,"mb":478},{"pid":3157,"mb":108}],"heap":{"usedMB":47,"totalMB":55,"nodes":2884,"docs":10,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":60.3,"kind":"mem","mb":[167,478,108]}
+{"t":60.5,"kind":"mem","mb":[167,478,108]}
+{"t":60.7,"kind":"mem","mb":[167,478,108]}
+{"t":60.9,"kind":"mem","mb":[167,479,108]}
+{"t":61.1,"kind":"mem","mb":[167,479,108]}
+{"t":61.1,"kind":"tick","memory":[{"pid":3076,"mb":167},{"pid":3083,"mb":479},{"pid":3157,"mb":108}],"heap":{"usedMB":46,"totalMB":55,"nodes":2884,"docs":10,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":61.3,"kind":"mem","mb":[167,479,108]}
+{"t":61.5,"kind":"mem","mb":[167,479,108]}
+{"t":61.7,"kind":"mem","mb":[167,479,108]}
+{"t":61.9,"kind":"mem","mb":[167,479,108]}
+{"t":62.1,"kind":"mem","mb":[167,479,108]}
+{"t":62.2,"kind":"tick","memory":[{"pid":3076,"mb":167},{"pid":3083,"mb":479},{"pid":3157,"mb":108}],"heap":{"usedMB":46,"totalMB":55,"nodes":2884,"docs":10,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":62.3,"kind":"mem","mb":[167,479,108]}
+{"t":62.5,"kind":"mem","mb":[167,479,108]}
+{"t":62.7,"kind":"mem","mb":[167,479,108]}
+{"t":62.9,"kind":"mem","mb":[167,479,108]}
+{"t":63.1,"kind":"mem","mb":[167,479,108]}
+{"t":63.2,"kind":"tick","memory":[{"pid":3076,"mb":167},{"pid":3083,"mb":479},{"pid":3157,"mb":108}],"heap":{"usedMB":46,"totalMB":55,"nodes":2884,"docs":10,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":63.3,"kind":"mem","mb":[167,479,108]}
+{"t":63.5,"kind":"mem","mb":[167,479,108]}
+{"t":63.7,"kind":"mem","mb":[167,479,108]}
+{"t":63.9,"kind":"mem","mb":[167,479,108]}
+{"t":64.1,"kind":"mem","mb":[167,479,108]}
+{"t":64.2,"kind":"tick","memory":[{"pid":3076,"mb":167},{"pid":3083,"mb":479},{"pid":3157,"mb":108}],"heap":{"usedMB":46,"totalMB":55,"nodes":2884,"docs":10,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":64.3,"kind":"mem","mb":[167,478,108]}
+{"t":64.5,"kind":"mem","mb":[167,478,108]}
+{"t":64.7,"kind":"mem","mb":[167,478,108]}
+{"t":64.9,"kind":"mem","mb":[167,478,108]}
+{"t":65.1,"kind":"mem","mb":[167,478,108]}
+{"t":65.2,"kind":"tick","memory":[{"pid":3076,"mb":167},{"pid":3083,"mb":478},{"pid":3157,"mb":108}],"heap":{"usedMB":46,"totalMB":55,"nodes":2884,"docs":10,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":65.3,"kind":"mem","mb":[167,478,108]}
+{"t":65.5,"kind":"mem","mb":[167,478,108]}
+{"t":65.7,"kind":"mem","mb":[167,478,108]}
+{"t":65.9,"kind":"mem","mb":[167,478,108]}
+{"t":66.1,"kind":"mem","mb":[167,478,108]}
+{"t":66.2,"kind":"tick","memory":[{"pid":3076,"mb":167},{"pid":3083,"mb":478},{"pid":3157,"mb":108}],"heap":{"usedMB":48,"totalMB":55,"nodes":2884,"docs":10,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":66.3,"kind":"mem","mb":[167,478,108]}
+{"t":66.5,"kind":"mem","mb":[167,478,108]}
+{"t":66.7,"kind":"mem","mb":[167,478,108]}
+{"t":66.9,"kind":"mem","mb":[167,478,108]}
+{"t":67.1,"kind":"mem","mb":[167,478,108]}
+{"t":67.2,"kind":"tick","memory":[{"pid":3076,"mb":167},{"pid":3083,"mb":478},{"pid":3157,"mb":108}],"heap":{"usedMB":48,"totalMB":55,"nodes":2884,"docs":10,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":67.3,"kind":"mem","mb":[167,478,108]}
+{"t":67.5,"kind":"mem","mb":[167,478,108]}
+{"t":67.7,"kind":"mem","mb":[167,478,108]}
+{"t":67.9,"kind":"mem","mb":[167,478,108]}
+{"t":68.1,"kind":"mem","mb":[167,478,108]}
+{"t":68.3,"kind":"tick","memory":[{"pid":3076,"mb":167},{"pid":3083,"mb":478},{"pid":3157,"mb":108}],"heap":{"usedMB":48,"totalMB":55,"nodes":2884,"docs":10,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":68.3,"kind":"mem","mb":[167,478,108]}
+{"t":68.5,"kind":"mem","mb":[167,478,108]}
+{"t":68.7,"kind":"mem","mb":[167,478,108]}
+{"t":68.9,"kind":"mem","mb":[167,478,108]}
+{"t":69.1,"kind":"mem","mb":[167,478,108]}
+{"t":69.3,"kind":"mem","mb":[167,478,108]}
+{"t":69.3,"kind":"tick","memory":[{"pid":3076,"mb":167},{"pid":3083,"mb":478},{"pid":3157,"mb":108}],"heap":{"usedMB":48,"totalMB":55,"nodes":2884,"docs":10,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":69.5,"kind":"mem","mb":[167,478,108]}
+{"t":69.7,"kind":"mem","mb":[167,478,108]}
+{"t":69.9,"kind":"mem","mb":[167,478,108]}
+{"t":70.1,"kind":"mem","mb":[167,478,108]}
+{"t":70.3,"kind":"mem","mb":[167,478,108]}
+{"t":70.3,"kind":"tick","memory":[{"pid":3076,"mb":167},{"pid":3083,"mb":478},{"pid":3157,"mb":108}],"heap":{"usedMB":48,"totalMB":55,"nodes":2884,"docs":10,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":70.5,"kind":"mem","mb":[167,478,108]}
+{"t":70.7,"kind":"mem","mb":[167,478,108]}
+{"t":70.9,"kind":"mem","mb":[167,478,108]}
+{"t":71.1,"kind":"mem","mb":[167,478,108]}
+{"t":71.3,"kind":"mem","mb":[167,478,108]}
+{"t":71.3,"kind":"tick","memory":[{"pid":3076,"mb":167},{"pid":3083,"mb":478},{"pid":3157,"mb":108}],"heap":{"usedMB":46,"totalMB":52,"nodes":2884,"docs":10,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":71.5,"kind":"mem","mb":[167,478,108]}
+{"t":71.7,"kind":"mem","mb":[167,478,108]}
+{"t":71.9,"kind":"mem","mb":[167,478,108]}
+{"t":72.1,"kind":"mem","mb":[167,478,108]}
+{"t":72.3,"kind":"mem","mb":[167,478,108]}
+{"t":72.3,"kind":"tick","memory":[{"pid":3076,"mb":167},{"pid":3083,"mb":478},{"pid":3157,"mb":108}],"heap":{"usedMB":46,"totalMB":52,"nodes":2884,"docs":10,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":72.5,"kind":"mem","mb":[167,478,108]}
+{"t":72.7,"kind":"mem","mb":[167,478,108]}
+{"t":72.9,"kind":"mem","mb":[167,478,108]}
+{"t":73.1,"kind":"mem","mb":[167,478,108]}
+{"t":73.3,"kind":"mem","mb":[167,478,108]}
+{"t":73.4,"kind":"tick","memory":[{"pid":3076,"mb":167},{"pid":3083,"mb":478},{"pid":3157,"mb":108}],"heap":{"usedMB":46,"totalMB":52,"nodes":2884,"docs":10,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":73.5,"kind":"mem","mb":[167,478,108]}
+{"t":73.7,"kind":"mem","mb":[167,478,108]}
+{"t":73.9,"kind":"mem","mb":[167,478,108]}
+{"t":74.1,"kind":"mem","mb":[167,478,108]}
+{"t":74.3,"kind":"mem","mb":[167,478,108]}
+{"t":74.4,"kind":"tick","memory":[{"pid":3076,"mb":167},{"pid":3083,"mb":478},{"pid":3157,"mb":108}],"heap":{"usedMB":46,"totalMB":52,"nodes":2884,"docs":10,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":74.5,"kind":"mem","mb":[167,478,108]}
+{"t":74.7,"kind":"mem","mb":[167,478,108]}
+{"t":74.9,"kind":"mem","mb":[167,478,108]}
+{"t":75.1,"kind":"mem","mb":[167,478,108]}
+{"t":75.3,"kind":"mem","mb":[167,478,108]}
+{"t":75.4,"kind":"tick","memory":[{"pid":3076,"mb":167},{"pid":3083,"mb":478},{"pid":3157,"mb":108}],"heap":{"usedMB":47,"totalMB":52,"nodes":2884,"docs":10,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":75.5,"kind":"mem","mb":[167,478,108]}
+{"t":75.7,"kind":"mem","mb":[167,478,108]}
+{"t":75.9,"kind":"mem","mb":[167,471,108]}
+{"t":76.1,"kind":"mem","mb":[167,471,108]}
+{"t":76.3,"kind":"mem","mb":[167,471,108]}
+{"t":76.4,"kind":"tick","memory":[{"pid":3076,"mb":167},{"pid":3083,"mb":471},{"pid":3157,"mb":108}],"heap":{"usedMB":47,"totalMB":52,"nodes":2884,"docs":10,"frames":7},"video":{"status":"Website content detected","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":"","app":{"elements":1424,"player":true,"flexy":false,"botcheck":false}},"answerMs":2}
