@@ -49,14 +49,18 @@ jobs:
           while IFS=';' read -r name port transport block extra; do
             [ -z "$name" ] && continue
             mkdir -p "out/$name"
-            timeout 240 xvfb-run -a node diag/youtube.mjs --headed --insecure --url "http://localhost:$port" --transport "$transport" --block "$block" $extra --video "$VIDEO" --seconds 45 --out "out/$name" 2> "out/$name/browser.log" > "out/$name/stdout.txt" || true
+            timeout 240 xvfb-run -a node diag/youtube.mjs --headed --insecure --url "http://localhost:$port" --transport "$transport" --block "$block" $extra --video "$VIDEO" --seconds 30 --out "out/$name" 2> "out/$name/browser.log" > "out/$name/stdout.txt" || true
             echo "== $name crashed=$(grep -o '"crashed": [a-z]*' "out/$name/stdout.txt")"
             grep -iE "fatal|check failed|out of memory|oom|v8|renderer|crash" "out/$name/browser.log" | grep -viE "crashpad|cpufreq" | head -15 || true
           done <<'RUNS'
-          v2-base;8782;epoxy;;
-          v2-no-sourcemaps;8782;epoxy;;--sjconfig {"flags":{"sourcemaps":false}}
-          v2-no-desktop-js;8782;epoxy;youtube\.com/s/desktop/;
-          v2-no-yt-scripts;8782;epoxy;youtube\.com/s/;
+          no-webanim;8782;epoxy;web-animations-next-lite;
+          no-ce-adapter;8782;epoxy;custom-elements-es5-adapter;
+          no-webcomponents;8782;epoxy;webcomponents-sd;
+          no-intersection;8782;epoxy;intersection-observer;
+          no-scheduler;8782;epoxy;jsbin/scheduler\.vflset;
+          no-spf;8782;epoxy;jsbin/spf\.vflset;
+          no-network;8782;epoxy;jsbin/network\.vflset;
+          no-polymer;8782;epoxy;desktop_polymer|polymer;
           RUNS
           cp /tmp/lab-server.log out/
       - name: Save results to the diag-results branch
