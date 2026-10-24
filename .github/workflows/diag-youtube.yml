@@ -57,12 +57,14 @@ jobs:
           while IFS=';' read -r name port transport block extra; do
             [ -z "$name" ] && continue
             mkdir -p "out/$name"
-            timeout 240 xvfb-run -a node diag/youtube.mjs --headed --insecure --url "http://localhost:$port" --transport "$transport" --block "$block" $extra --video "$VIDEO" --seconds 40 --out "out/$name" 2> "out/$name/browser.log" > "out/$name/stdout.txt" || true
+            timeout 240 xvfb-run -a node diag/youtube.mjs --headed --insecure --url "http://localhost:$port" --transport "$transport" --block "$block" $extra --video "$VIDEO" --seconds 60 --out "out/$name" 2> "out/$name/browser.log" > "out/$name/stdout.txt" || true
             echo "== $name crashed=$(grep -o '"crashed": [a-z]*' "out/$name/stdout.txt")"
             grep -iE "fatal|check failed|out of memory|oom|v8|renderer|crash" "out/$name/browser.log" | grep -viE "crashpad|cpufreq" | head -15 || true
           done <<'RUNS'
-          V-trace;8782;epoxy;;--fix V:trace
-          V-trace-libcurl;8782;libcurl;;--fix V:trace
+          v2-noprobe;8782;epoxy;;--noprobe
+          v2-noprobe-libcurl;8782;libcurl;;--noprobe
+          v1-noprobe;8781;libcurl;;--noprobe
+          v2-probe;8782;epoxy;;
           RUNS
           cp /tmp/lab-server.log out/
       - name: Save results to the diag-results branch

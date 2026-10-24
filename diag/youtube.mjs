@@ -22,6 +22,7 @@ const { values: args } = parseArgs({
     shots: { type: "boolean", default: false },
     sjconfig: { type: "string", default: "" },
     fix: { type: "string", default: "" },
+    noprobe: { type: "boolean", default: false },
     direct: { type: "boolean", default: false },
   },
 });
@@ -129,7 +130,7 @@ while (Date.now() < deadline && !crashed) {
   let video = null;
   const asked = Date.now();
   try {
-    video = await timed(page.evaluate((direct) => {
+    video = args.noprobe ? await timed(page.evaluate(() => ({ status: document.getElementById("sj-toolbar-status")?.textContent, top: document.title })), 8000, "page.evaluate") : await timed(page.evaluate((direct) => {
       const f = document.querySelector("iframe.sj-frame");
       const d = direct ? document : f && f.contentDocument;
       const v = d && d.querySelector("video");
@@ -155,7 +156,7 @@ while (Date.now() < deadline && !crashed) {
     shot++;
   }
   // Start playback if YouTube is waiting for a click.
-  if (video && video.paused && video.ready >= 2 && Number(t()) > 8) {
+  if (!args.noprobe && video && video.paused && video.ready >= 2 && Number(t()) > 8) {
     await timed(page.evaluate((direct) => { const v = (direct ? document : document.querySelector("iframe.sj-frame")?.contentDocument)?.querySelector("video"); v && v.play().catch(() => {}); }, args.direct), 5000, "play").catch(() => {});
   }
 }
@@ -171,7 +172,7 @@ for (const e of log.filter((e) => e.kind === "req")) {
 }
 const ticks = log.filter((e) => e.kind === "tick");
 const summary = {
-  target: args.direct ? "direct" : args.url, transport: args.transport, block: args.block, shots: args.shots, sjconfig: args.sjconfig, fix: args.fix, crashed,
+  target: args.direct ? "direct" : args.url, transport: args.transport, block: args.block, shots: args.shots, sjconfig: args.sjconfig, fix: args.fix, noprobe: args.noprobe, crashed,
   lastTick: ticks.at(-1),
   peakRendererMB: Math.max(0, ...ticks.flatMap((e) => e.memory.map((m) => m.mb))),
   peakHeapMB: Math.max(0, ...ticks.map((e) => e.heap?.usedMB || 0)),
