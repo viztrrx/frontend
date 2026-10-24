@@ -11,7 +11,7 @@
     "build": "node scripts/build.mjs",
     "dev": "npx wrangler dev",
     "deploy": "npx wrangler deploy",
-    "test": "node --test tests/frontend.test.mjs tests/service-worker.test.mjs tests/libcurl-transport.test.mjs tests/build.test.mjs tests/sessions-api.test.mjs tests/blocked.test.mjs tests/keepalive.test.mjs tests/games.test.mjs",
+    "test": "node --test tests/frontend.test.mjs tests/service-worker.test.mjs tests/libcurl-transport.test.mjs tests/build.test.mjs tests/sessions-api.test.mjs tests/blocked.test.mjs tests/keepalive.test.mjs tests/games.test.mjs tests/sitefixes.test.mjs",
     "build:beta": "SCRAMJET_ENGINE=2 node scripts/build.mjs",
     "deploy:beta": "npx wrangler deploy --config wrangler.beta.jsonc"
   },

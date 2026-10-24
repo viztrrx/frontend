@@ -108,6 +108,17 @@
     };
   }
 
+  // Site-specific script fixes (sitefixes.js) on rewritten scripts. Scramjet 2
+  // hands them over as text or bytes; streams are scripts it didn't rewrite.
+  function fixScriptBody(response) {
+    const body = response.body;
+    const bytes = body instanceof ArrayBuffer ? new Uint8Array(body) : body instanceof Uint8Array ? body : null;
+    if (typeof body !== "string" && !bytes) return;
+    const text = typeof body === "string" ? body : new TextDecoder().decode(bytes);
+    const fixed = self.saintsSiteFixes.fixScript(text);
+    if (fixed !== text) response.body = fixed;
+  }
+
   const plugin = new $scramjet.Plugin("saints");
   function watchFrame(inner) {
     // Blocked sites (blocked.js): pages, pop-ups, frames and requests alike.
@@ -121,6 +132,7 @@
         escapeHtml(block.message) + '</p><p style="margin:0;color:#9c9c9c;font-size:.8em">' + escapeHtml(context.parsed.url.hostname) + "</p>", 403);
     });
     plugin.tap(inner.hooks.fetch.response, (context, props) => {
+      if (context.parsed.destination === "script" && self.saintsSiteFixes) fixScriptBody(props.response);
       if (context.request.mode === "navigate") reportNavigation(context.request.rawUrl.pathname, props.response.status, "");
     });
     // The site couldn't be reached: index.js retries with the other transport,

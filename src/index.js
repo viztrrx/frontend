@@ -125,7 +125,7 @@ export default {
     headers.set("Cross-Origin-Opener-Policy", "same-origin");
     headers.set("Cross-Origin-Embedder-Policy", "require-corp");
     // Avoid stale configuration, boot scripts and service worker code after deployment.
-    if (["/config.js", "/index.js", "/sessions.js", "/blocked.js", "/register-sw.js", "/sw.js", "/version.json"].includes(url.pathname)) {
+    if (["/config.js", "/index.js", "/sessions.js", "/blocked.js", "/sitefixes.js", "/register-sw.js", "/sw.js", "/version.json"].includes(url.pathname)) {
       headers.set("Cache-Control", "no-store");
     }
     return new Response(response.body, { status: response.status, headers });
