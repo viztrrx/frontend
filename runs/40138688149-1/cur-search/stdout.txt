@@ -1,0 +1,86 @@
+{
+  "target": "http://localhost:8782",
+  "transport": "epoxy",
+  "block": "",
+  "shots": false,
+  "sjconfig": "",
+  "fix": "",
+  "noprobe": false,
+  "crashed": false,
+  "lastTick": {
+    "t": 55.9,
+    "kind": "tick",
+    "memory": [
+      {
+        "pid": 2988,
+        "mb": 168
+      },
+      {
+        "pid": 2995,
+        "mb": 456
+      },
+      {
+        "pid": 3027,
+        "mb": 101
+      }
+    ],
+    "heap": {
+      "usedMB": 44,
+      "totalMB": 50,
+      "nodes": 4337,
+      "docs": 11,
+      "frames": 8
+    },
+    "video": {
+      "status": "Website content detected",
+      "title": "",
+      "app": {
+        "elements": 1182,
+        "player": false,
+        "flexy": false,
+        "botcheck": false,
+        "videos": 0,
+        "tiles": 0,
+        "thumbs": 0,
+        "initialData": 496697,
+        "pageReady": "complete"
+      }
+    },
+    "answerMs": 3
+  },
+  "peakRendererMB": 552,
+  "peakHeapMB": 82,
+  "requests": 65,
+  "failed": 1,
+  "byHost": {
+    "localhost:8782 script": 16,
+    "www.youtube.com script": 11,
+    " fetch": 5,
+    "www.youtube.com media": 4,
+    "localhost:8782 fetch": 3,
+    "fonts.googleapis.com stylesheet": 3,
+    "www.youtube.com stylesheet": 3,
+    "scramjet.wasm.js script": 2,
+    "googleads.g.doubleclick.net xhr": 2,
+    "www.youtube.com xhr": 2,
+    "www.youtube.com image": 2,
+    "www.youtube.com fetch": 2,
+    "localhost:8782 document": 1,
+    "localhost:8782 stylesheet": 1,
+    "localhost:8782 other": 1,
+    "www.youtube.com document": 1,
+    "i.ytimg.com other": 1,
+    "localhost:8782 image": 1,
+    "accounts.google.com document": 1,
+    "www.google.com script": 1,
+    "www.google.com image": 1,
+    "youtube.com fetch": 1
+  },
+  "pageErrors": [],
+  "consoleErrors": [
+    "10.4s Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: InvalidData, error: InvalidCertificate(Other(OtherError(CaUsedAsEndEntity))) })) (client error (IO: Custom { kind: InvalidData, error: InvalidCertificate(Other(OtherError(CaUsedAsEndEntity))) } (invalid peer certificat",
+    "11.9s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "13.5s Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "15.3s Failed to load resource: the server responded with a status of 403 (Forbidden)"
+  ]
+}

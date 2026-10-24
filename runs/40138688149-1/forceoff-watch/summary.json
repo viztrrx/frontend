@@ -1,0 +1,93 @@
+{
+  "target": "http://localhost:8782",
+  "transport": "epoxy",
+  "block": "",
+  "shots": false,
+  "sjconfig": "",
+  "fix": "forceoff",
+  "noprobe": false,
+  "crashed": false,
+  "lastTick": {
+    "t": 47.3,
+    "kind": "tick",
+    "memory": [
+      {
+        "pid": 5066,
+        "mb": 142
+      },
+      {
+        "pid": 5075,
+        "mb": 431
+      },
+      {
+        "pid": 5113,
+        "mb": 103
+      }
+    ],
+    "heap": {
+      "usedMB": 35,
+      "totalMB": 37,
+      "nodes": 1495,
+      "docs": 9,
+      "frames": 6
+    },
+    "video": {
+      "status": "Website content detected",
+      "title": "- YouTube",
+      "time": 0,
+      "paused": true,
+      "ready": 0,
+      "net": 0,
+      "error": null,
+      "buffered": 0,
+      "src": "",
+      "app": {
+        "elements": 646,
+        "player": true,
+        "flexy": false,
+        "botcheck": false,
+        "videos": 0,
+        "tiles": 0,
+        "thumbs": 0,
+        "initialData": 437115,
+        "pageReady": "complete"
+      }
+    },
+    "answerMs": 3
+  },
+  "peakRendererMB": 617,
+  "peakHeapMB": 85,
+  "requests": 55,
+  "failed": 0,
+  "byHost": {
+    "localhost:8782 script": 16,
+    "www.youtube.com script": 13,
+    "www.youtube.com stylesheet": 5,
+    "localhost:8782 fetch": 3,
+    "scramjet.wasm.js script": 2,
+    "localhost:8782 image": 2,
+    "www.youtube.com image": 2,
+    "localhost:8782 document": 1,
+    "localhost:8782 stylesheet": 1,
+    "localhost:8782 other": 1,
+    "www.youtube.com document": 1,
+    "i.ytimg.com other": 1,
+    "i.ytimg.com image": 1,
+    "fonts.googleapis.com stylesheet": 1,
+    "rr8---sn-ojq4f5-51.googlevideo.com other": 1,
+    "rr4---sn-q4flrne7.c.youtube.com other": 1,
+    "accounts.google.com document": 1,
+    "www.gstatic.com script": 1,
+    "static.doubleclick.net script": 1
+  },
+  "pageErrors": [
+    "TypeError: Cannot read properties of undefined (reading 'prototype')\n    at mWN (http://localhost:8782/~/sj/2gnezv7j/pix2jm91/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAACAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEpqwFUt",
+    "TypeError: ShadyDOM.patch is not a function\n    at _.Sl (http://localhost:8782/~/sj/2gnezv7j/pix2jm91/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAACAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEpqwFUt3vSV9kEOJjpvJ-fIlbNzw%2F"
+  ],
+  "consoleErrors": [
+    "0.9s Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: InvalidData, error: InvalidCertificate(Other(OtherError(CaUsedAsEndEntity))) })) (client error (IO: Custom { kind: InvalidData, error: InvalidCertificate(Other(OtherError(CaUsedAsEndEntity))) } (invalid peer certificat",
+    "4.3s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "5.8s Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "6.6s Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ]
+}

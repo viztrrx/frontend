@@ -1,0 +1,4744 @@
+[
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 1,
+  "method": "GET",
+  "type": "document",
+  "url": "http://localhost:8782/?sjfix=forceoff",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 2,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/scram/scramjet.js",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 3,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/controller/controller.api.js",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 4,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/engine2.js",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 5,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "http://localhost:8782/index.css",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 6,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/register-sw.js",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 7,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/search.js",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 8,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/config.js",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 9,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/blocked.js",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 10,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/sitefixes.js",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 11,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/index.js",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 12,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/sessions.js",
+  "sw": false
+ },
+ {
+  "t": 0.8,
+  "kind": "done",
+  "id": 1,
+  "status": 200,
+  "size": 9695
+ },
+ {
+  "t": 0.8,
+  "kind": "done",
+  "id": 5,
+  "status": 200,
+  "size": 20762
+ },
+ {
+  "t": 0.8,
+  "kind": "done",
+  "id": 4,
+  "status": 200,
+  "size": 9754
+ },
+ {
+  "t": 0.8,
+  "kind": "done",
+  "id": 3,
+  "status": 200,
+  "size": 17099
+ },
+ {
+  "t": 0.8,
+  "kind": "done",
+  "id": 2,
+  "status": 200,
+  "size": 227123
+ },
+ {
+  "t": 0.8,
+  "kind": "done",
+  "id": 6,
+  "status": 200,
+  "size": 609
+ },
+ {
+  "t": 0.8,
+  "kind": "done",
+  "id": 7,
+  "status": 200,
+  "size": 940
+ },
+ {
+  "t": 0.8,
+  "kind": "done",
+  "id": 8,
+  "status": 200,
+  "size": 68
+ },
+ {
+  "t": 0.8,
+  "kind": "done",
+  "id": 9,
+  "status": 200,
+  "size": 4972
+ },
+ {
+  "t": 0.8,
+  "kind": "done",
+  "id": 10,
+  "status": 200,
+  "size": 2343
+ },
+ {
+  "t": 0.8,
+  "kind": "done",
+  "id": 11,
+  "status": 200,
+  "size": 61339
+ },
+ {
+  "t": 0.8,
+  "kind": "done",
+  "id": 13,
+  "status": 200,
+  "size": 915
+ },
+ {
+  "t": 0.8,
+  "kind": "done",
+  "id": 12,
+  "status": 200,
+  "size": 16207
+ },
+ {
+  "t": 0.9,
+  "kind": "mem",
+  "mb": [
+   140,
+   145,
+   73
+  ]
+ },
+ {
+  "t": 0.9,
+  "kind": "done",
+  "id": 14,
+  "status": 200,
+  "size": 915
+ },
+ {
+  "t": 0.9,
+  "kind": "req",
+  "id": 15,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/sw.js",
+  "sw": true
+ },
+ {
+  "t": 0.9,
+  "kind": "req",
+  "id": 16,
+  "method": "GET",
+  "type": "other",
+  "url": "http://localhost:8782/controller/controller.sw.js",
+  "sw": true
+ },
+ {
+  "t": 0.9,
+  "kind": "done",
+  "id": 16,
+  "status": 200,
+  "size": -272
+ },
+ {
+  "t": 0.9,
+  "kind": "done",
+  "id": 15,
+  "status": 200,
+  "size": 0
+ },
+ {
+  "t": 0.9,
+  "kind": "req",
+  "id": 17,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/epoxy/index.mjs",
+  "sw": false
+ },
+ {
+  "t": 0.9,
+  "kind": "done",
+  "id": 17,
+  "status": 200,
+  "size": 1717636
+ },
+ {
+  "t": 1,
+  "kind": "console",
+  "type": "log",
+  "text": "service worker activated, notifying clients to revive"
+ },
+ {
+  "t": 1.1,
+  "kind": "mem",
+  "mb": [
+   144,
+   203,
+   73
+  ]
+ },
+ {
+  "t": 1.1,
+  "kind": "req",
+  "id": 18,
+  "method": "GET",
+  "type": "fetch",
+  "url": "http://localhost:8782/scram/scramjet.wasm",
+  "sw": false
+ },
+ {
+  "t": 1.1,
+  "kind": "done",
+  "id": 18,
+  "status": 200,
+  "size": 586293
+ },
+ {
+  "t": 1.1,
+  "kind": "console",
+  "type": "error",
+  "text": "Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: InvalidData, error: InvalidCertificate(Other(OtherError(CaUsedAsEndEntity))) })) (client error (IO: Custom { kind: InvalidData, error: InvalidCertificate(Other(OtherError(CaUsedAsEndEntity))) } (invalid peer certificate: Other(OtherError(CaUsedAsEndEntity)))))\n    at imports.wbg.__wbindgen_error_new (http://localhost:8782/epoxy/index.mjs:1366:17)\n    at wasm://wasm/004c6846:wasm-function[2742]:0xde850\n    at wasm://wasm/004c6846:wasm-function[1833]:0xd177a\n    at wasm://wasm/004c6846:wasm-function[123]:0xc060\n   "
+ },
+ {
+  "t": 1.3,
+  "kind": "mem",
+  "mb": [
+   145,
+   210,
+   92
+  ]
+ },
+ {
+  "t": 1.5,
+  "kind": "mem",
+  "mb": [
+   145,
+   210,
+   103
+  ]
+ },
+ {
+  "t": 1.7,
+  "kind": "mem",
+  "mb": [
+   145,
+   210,
+   103
+  ]
+ },
+ {
+  "t": 1.9,
+  "kind": "mem",
+  "mb": [
+   145,
+   190,
+   103
+  ]
+ },
+ {
+  "t": 2.1,
+  "kind": "mem",
+  "mb": [
+   145,
+   190,
+   103
+  ]
+ },
+ {
+  "t": 2.3,
+  "kind": "mem",
+  "mb": [
+   145,
+   190,
+   103
+  ]
+ },
+ {
+  "t": 2.3,
+  "kind": "req",
+  "id": 19,
+  "method": "GET",
+  "type": "fetch",
+  "url": "http://localhost:8782/version.json",
+  "sw": false
+ },
+ {
+  "t": 2.3,
+  "kind": "version",
+  "version": {
+   "engine": 2,
+   "commit": "6a8cb7b4576ec1601fc6ac27343f98c11877bc44",
+   "branch": "diag-verify",
+   "message": "diag: does native shadow DOM render YouTube content?",
+   "committedAt": "2026-10-24T22:28:07Z",
+   "builtAt": "2026-10-24T22:28:36.971Z"
+  }
+ },
+ {
+  "t": 2.3,
+  "kind": "done",
+  "id": 19,
+  "status": 200,
+  "size": 263
+ },
+ {
+  "t": 2.4,
+  "kind": "req",
+  "id": 20,
+  "method": "GET",
+  "type": "document",
+  "url": "https://www.youtube.com/results?search_query=dom+tracy+f150",
+  "sw": false
+ },
+ {
+  "t": 2.4,
+  "kind": "opened",
+  "video": "https://www.youtube.com/results?search_query=dom+tracy+f150"
+ },
+ {
+  "t": 2.5,
+  "kind": "mem",
+  "mb": [
+   145,
+   199,
+   103
+  ]
+ },
+ {
+  "t": 2.7,
+  "kind": "mem",
+  "mb": [
+   145,
+   203,
+   103
+  ]
+ },
+ {
+  "t": 2.9,
+  "kind": "mem",
+  "mb": [
+   145,
+   203,
+   103
+  ]
+ },
+ {
+  "t": 3.1,
+  "kind": "mem",
+  "mb": [
+   145,
+   203,
+   103
+  ]
+ },
+ {
+  "t": 3.3,
+  "kind": "mem",
+  "mb": [
+   145,
+   219,
+   103
+  ]
+ },
+ {
+  "t": 3.4,
+  "kind": "req",
+  "id": 21,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/scram/scramjet.js",
+  "sw": false
+ },
+ {
+  "t": 3.4,
+  "kind": "req",
+  "id": 22,
+  "method": "GET",
+  "type": "script",
+  "url": "scramjet.wasm.js",
+  "sw": false
+ },
+ {
+  "t": 3.4,
+  "kind": "req",
+  "id": 23,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/controller/controller.inject.js",
+  "sw": false
+ },
+ {
+  "t": 3.4,
+  "kind": "req",
+  "id": 24,
+  "method": "GET",
+  "type": "other",
+  "url": "https://i.ytimg.com/generate_204",
+  "sw": false
+ },
+ {
+  "t": 3.4,
+  "kind": "req",
+  "id": 25,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/_/ytmainappweb/_/js/k=ytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O/am=AAAAAAIAEICU/d=1/br=1/rs=AGKMywF-Wk0PyFZguN2MlsgW9E9wRJ1RoA/m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk",
+  "sw": false
+ },
+ {
+  "t": 3.4,
+  "kind": "req",
+  "id": 26,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/web-animations-next-lite.min.vflset/web-animations-next-lite.min.js",
+  "sw": false
+ },
+ {
+  "t": 3.4,
+  "kind": "req",
+  "id": 27,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/custom-elements-es5-adapter.vflset/custom-elements-es5-adapter.js",
+  "sw": false
+ },
+ {
+  "t": 3.4,
+  "kind": "req",
+  "id": 28,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/webcomponents-sd.vflset/webcomponents-sd.js",
+  "sw": false
+ },
+ {
+  "t": 3.4,
+  "kind": "req",
+  "id": 29,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/scheduler.vflset/scheduler.js",
+  "sw": false
+ },
+ {
+  "t": 3.4,
+  "kind": "req",
+  "id": 30,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/www-i18n-constants-en_US.vflset/www-i18n-constants.js",
+  "sw": false
+ },
+ {
+  "t": 3.4,
+  "kind": "req",
+  "id": 31,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/spf.vflset/spf.js",
+  "sw": false
+ },
+ {
+  "t": 3.4,
+  "kind": "req",
+  "id": 32,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/network.vflset/network.js",
+  "sw": false
+ },
+ {
+  "t": 3.4,
+  "kind": "req",
+  "id": 33,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=YouTube+Sans:wght@300..900&display=swap",
+  "sw": false
+ },
+ {
+  "t": 3.4,
+  "kind": "req",
+  "id": 34,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-onepick.css",
+  "sw": false
+ },
+ {
+  "t": 3.4,
+  "kind": "req",
+  "id": 35,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/_/ytmainappweb/_/ss/k=ytmainappweb.kevlar_base.NZ7X3F12ieY.L.B1.O/am=AAAAAALAEMCe/d=0/br=1/rs=AGKMywG1ZrGUMzn_SEel2HjBo0S7VO4L5w",
+  "sw": false
+ },
+ {
+  "t": 3.4,
+  "kind": "req",
+  "id": 36,
+  "method": "GET",
+  "type": "fetch",
+  "url": "http://localhost:8782/scram/scramjet.wasm",
+  "sw": false
+ },
+ {
+  "t": 3.4,
+  "kind": "done",
+  "id": 23,
+  "status": 200,
+  "size": 6449
+ },
+ {
+  "t": 3.4,
+  "kind": "done",
+  "id": 21,
+  "status": 200,
+  "size": 227123
+ },
+ {
+  "t": 3.4,
+  "kind": "req",
+  "id": 37,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-main-desktop-watch-page-skeleton.css",
+  "sw": false
+ },
+ {
+  "t": 3.4,
+  "kind": "done",
+  "id": 20,
+  "status": 200,
+  "size": -10256
+ },
+ {
+  "t": 3.4,
+  "kind": "done",
+  "id": 36,
+  "status": 200,
+  "size": 586293
+ },
+ {
+  "t": 3.5,
+  "kind": "mem",
+  "mb": [
+   145,
+   281,
+   103
+  ]
+ },
+ {
+  "t": 3.5,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 145
+   },
+   {
+    "pid": 3550,
+    "mb": 251
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 17,
+   "totalMB": 32,
+   "nodes": 504,
+   "docs": 5,
+   "frames": 4
+  },
+  "video": {
+   "status": "Website responded (HTTP 200)",
+   "title": "",
+   "app": {
+    "elements": 4,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": "undefined",
+    "pageReady": false
+   }
+  },
+  "answerMs": 50
+ },
+ {
+  "t": 3.5,
+  "kind": "done",
+  "id": 22,
+  "status": 200,
+  "size": -57
+ },
+ {
+  "t": 3.6,
+  "kind": "done",
+  "id": 26,
+  "status": 200,
+  "size": -732
+ },
+ {
+  "t": 3.6,
+  "kind": "req",
+  "id": 38,
+  "method": "GET",
+  "type": "image",
+  "url": "http://localhost:8782/icon?d=youtube.com",
+  "sw": false
+ },
+ {
+  "t": 3.6,
+  "kind": "done",
+  "id": 27,
+  "status": 200,
+  "size": -730
+ },
+ {
+  "t": 3.6,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+ },
+ {
+  "t": 3.6,
+  "kind": "done",
+  "id": 38,
+  "status": 404,
+  "size": 19
+ },
+ {
+  "t": 3.7,
+  "kind": "mem",
+  "mb": [
+   145,
+   305,
+   104
+  ]
+ },
+ {
+  "t": 3.7,
+  "kind": "done",
+  "id": 30,
+  "status": 200,
+  "size": -731
+ },
+ {
+  "t": 3.7,
+  "kind": "done",
+  "id": 28,
+  "status": 200,
+  "size": -732
+ },
+ {
+  "t": 3.7,
+  "kind": "done",
+  "id": 29,
+  "status": 200,
+  "size": -731
+ },
+ {
+  "t": 3.9,
+  "kind": "mem",
+  "mb": [
+   145,
+   336,
+   104
+  ]
+ },
+ {
+  "t": 3.9,
+  "kind": "done",
+  "id": 34,
+  "status": 200,
+  "size": -723
+ },
+ {
+  "t": 3.9,
+  "kind": "done",
+  "id": 37,
+  "status": 200,
+  "size": -724
+ },
+ {
+  "t": 3.9,
+  "kind": "done",
+  "id": 32,
+  "status": 200,
+  "size": -731
+ },
+ {
+  "t": 3.9,
+  "kind": "done",
+  "id": 31,
+  "status": 200,
+  "size": -732
+ },
+ {
+  "t": 3.9,
+  "kind": "done",
+  "id": 24,
+  "status": 204,
+  "size": -140
+ },
+ {
+  "t": 4.1,
+  "kind": "mem",
+  "mb": [
+   145,
+   383,
+   104
+  ]
+ },
+ {
+  "t": 4.3,
+  "kind": "mem",
+  "mb": [
+   145,
+   429,
+   104
+  ]
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 35,
+  "status": 200,
+  "size": -682
+ },
+ {
+  "t": 4.5,
+  "kind": "mem",
+  "mb": [
+   145,
+   515,
+   104
+  ]
+ },
+ {
+  "t": 4.5,
+  "kind": "done",
+  "id": 33,
+  "status": 200,
+  "size": -699
+ },
+ {
+  "t": 4.5,
+  "kind": "req",
+  "id": 39,
+  "method": "GET",
+  "type": "document",
+  "url": "https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3D%252Fsignin_passive%26feature%3Dpassive&hl=en",
+  "sw": false
+ },
+ {
+  "t": 4.5,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 145
+   },
+   {
+    "pid": 3550,
+    "mb": 503
+   },
+   {
+    "pid": 3584,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 25,
+   "totalMB": 49,
+   "nodes": 582,
+   "docs": 7,
+   "frames": 5
+  },
+  "video": {
+   "status": "Website responded (HTTP 200)",
+   "title": "",
+   "app": {
+    "elements": 108,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": "undefined",
+    "pageReady": "loading"
+   }
+  },
+  "answerMs": 7
+ },
+ {
+  "t": 4.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "%cI -> b%c detected quirky document structure parsing @ https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3D%252Fsignin_passive%26feature%3Dpassive&hl=en! \n  \tbackground-color: #f80;\n  \tcolor: #fff;\n  \tpadding: 4px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n   "
+ },
+ {
+  "t": 4.6,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+ },
+ {
+  "t": 4.6,
+  "kind": "req",
+  "id": 40,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/scram/scramjet.js",
+  "sw": false
+ },
+ {
+  "t": 4.6,
+  "kind": "req",
+  "id": 41,
+  "method": "GET",
+  "type": "script",
+  "url": "scramjet.wasm.js",
+  "sw": false
+ },
+ {
+  "t": 4.6,
+  "kind": "req",
+  "id": 42,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/controller/controller.inject.js",
+  "sw": false
+ },
+ {
+  "t": 4.6,
+  "kind": "done",
+  "id": 39,
+  "status": 401,
+  "size": -640
+ },
+ {
+  "t": 4.6,
+  "kind": "done",
+  "id": 42,
+  "status": 200,
+  "size": 6449
+ },
+ {
+  "t": 4.7,
+  "kind": "mem",
+  "mb": [
+   145,
+   528,
+   104
+  ]
+ },
+ {
+  "t": 4.7,
+  "kind": "done",
+  "id": 40,
+  "status": 200,
+  "size": 227123
+ },
+ {
+  "t": 4.7,
+  "kind": "done",
+  "id": 41,
+  "status": 200,
+  "size": -57
+ },
+ {
+  "t": 4.9,
+  "kind": "mem",
+  "mb": [
+   145,
+   502,
+   104
+  ]
+ },
+ {
+  "t": 4.9,
+  "kind": "done",
+  "id": 25,
+  "status": 200,
+  "size": -690
+ },
+ {
+  "t": 5.1,
+  "kind": "mem",
+  "mb": [
+   145,
+   532,
+   104
+  ]
+ },
+ {
+  "t": 5.3,
+  "kind": "mem",
+  "mb": [
+   145,
+   529,
+   104
+  ]
+ },
+ {
+  "t": 5.4,
+  "kind": "console",
+  "type": "info",
+  "text": "LegacyDataMixin will be applied to all legacy elements.\nSet `_legacyUndefinedCheck: true` on element class to enable."
+ },
+ {
+  "t": 5.4,
+  "kind": "pageerror",
+  "text": "TypeError: Cannot read properties of undefined (reading 'prototype')\n    at mWN (http://localhost:8782/~/sj/rjegb20g/8nq9h4ha/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAAAIAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywF-Wk0PyFZguN2MlsgW9E9wRJ1RoA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk?%24io=https%3A%2F%2Fwww.youtube.com:3725:366)\n    at KxR (http://localhost:8782/~/sj/rjegb20g/8nq9h4ha/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAAAIAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywF-Wk0PyFZguN2MlsgW9E9wRJ1RoA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk?%24io=https%3A%2F%2Fwww.youtube.com:3772:56)\n    at s8n (http://localhost:8782/~/sj/rjegb20g/8nq9h4ha/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAAAIAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywF-Wk0PyFZguN2MlsgW9E9wRJ1RoA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk?%24io=https%3A%2F%2Fwww.youtube.com:3771:95)\n    at _.Ta (http://localhost:8782/~/sj/rjegb20g/8nq9h4ha/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAAAIAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywF-Wk0PyFZguN2MlsgW9E9wRJ1RoA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_ba"
+ },
+ {
+  "t": 5.4,
+  "kind": "req",
+  "id": 43,
+  "method": "GET",
+  "type": "image",
+  "url": "https://www.youtube.com/error_204?t=jserror&level=WARNING&client.name=1&client.version=2.20261023.01.00&msg=Cannot%20read%20properties%20of%20undefined%20(reading%20%27prototype%27)&type=TypeError&client.params=unhandled%20window%20error&stack=TypeError%3A%20Cannot%20read%20properties%20of%20undefin",
+  "sw": false
+ },
+ {
+  "t": 5.4,
+  "kind": "pageerror",
+  "text": "TypeError: ShadyDOM.patch is not a function\n    at _.Sl (http://localhost:8782/~/sj/rjegb20g/8nq9h4ha/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAAAIAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywF-Wk0PyFZguN2MlsgW9E9wRJ1RoA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk?%24io=https%3A%2F%2Fwww.youtube.com:8704:702)\n    at S.fire (http://localhost:8782/~/sj/rjegb20g/8nq9h4ha/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAAAIAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywF-Wk0PyFZguN2MlsgW9E9wRJ1RoA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk?%24io=https%3A%2F%2Fwww.youtube.com:9189:249)\n    at U.<anonymous> (http://localhost:8782/~/sj/rjegb20g/8nq9h4ha/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAAAIAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywF-Wk0PyFZguN2MlsgW9E9wRJ1RoA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk?%24io=https%3A%2F%2Fwww.youtube.com:13033:185)\n    at MutationObserver.J2b (http://localhost:8782/~/sj/rjegb20g/8nq9h4ha/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAAAIAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywF-Wk0PyFZguN2MlsgW9E9wRJ1RoA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ck"
+ },
+ {
+  "t": 5.4,
+  "kind": "req",
+  "id": 44,
+  "method": "GET",
+  "type": "image",
+  "url": "https://www.youtube.com/error_204?t=jserror&level=WARNING&client.name=1&client.version=2.20261023.01.00&msg=ShadyDOM.patch%20is%20not%20a%20function&type=TypeError&client.params=unhandled%20window%20error&stack=TypeError%3A%20ShadyDOM.patch%20is%20not%20a%20function%0A%20%20%20%20at%20_.Sl%20(http%3",
+  "sw": false
+ },
+ {
+  "t": 5.5,
+  "kind": "mem",
+  "mb": [
+   145,
+   493,
+   104
+  ]
+ },
+ {
+  "t": 5.5,
+  "kind": "done",
+  "id": 44,
+  "status": 204,
+  "size": -402
+ },
+ {
+  "t": 5.5,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 145
+   },
+   {
+    "pid": 3550,
+    "mb": 493
+   },
+   {
+    "pid": 3584,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 73,
+   "totalMB": 95,
+   "nodes": 853,
+   "docs": 10,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "interactive"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 5.6,
+  "kind": "done",
+  "id": 43,
+  "status": 204,
+  "size": -402
+ },
+ {
+  "t": 5.7,
+  "kind": "mem",
+  "mb": [
+   145,
+   494,
+   104
+  ]
+ },
+ {
+  "t": 5.9,
+  "kind": "mem",
+  "mb": [
+   145,
+   494,
+   104
+  ]
+ },
+ {
+  "t": 6.1,
+  "kind": "mem",
+  "mb": [
+   145,
+   494,
+   104
+  ]
+ },
+ {
+  "t": 6.3,
+  "kind": "mem",
+  "mb": [
+   145,
+   494,
+   104
+  ]
+ },
+ {
+  "t": 6.5,
+  "kind": "mem",
+  "mb": [
+   145,
+   494,
+   104
+  ]
+ },
+ {
+  "t": 6.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 145
+   },
+   {
+    "pid": 3550,
+    "mb": 494
+   },
+   {
+    "pid": 3584,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 74,
+   "totalMB": 96,
+   "nodes": 860,
+   "docs": 10,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 6.7,
+  "kind": "mem",
+  "mb": [
+   145,
+   495,
+   104
+  ]
+ },
+ {
+  "t": 6.9,
+  "kind": "mem",
+  "mb": [
+   145,
+   495,
+   104
+  ]
+ },
+ {
+  "t": 7.1,
+  "kind": "mem",
+  "mb": [
+   145,
+   495,
+   104
+  ]
+ },
+ {
+  "t": 7.3,
+  "kind": "mem",
+  "mb": [
+   145,
+   495,
+   104
+  ]
+ },
+ {
+  "t": 7.5,
+  "kind": "mem",
+  "mb": [
+   145,
+   495,
+   104
+  ]
+ },
+ {
+  "t": 7.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 145
+   },
+   {
+    "pid": 3550,
+    "mb": 495
+   },
+   {
+    "pid": 3584,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 75,
+   "totalMB": 97,
+   "nodes": 860,
+   "docs": 10,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 7.7,
+  "kind": "mem",
+  "mb": [
+   145,
+   496,
+   104
+  ]
+ },
+ {
+  "t": 7.9,
+  "kind": "mem",
+  "mb": [
+   145,
+   496,
+   104
+  ]
+ },
+ {
+  "t": 8.1,
+  "kind": "mem",
+  "mb": [
+   145,
+   496,
+   104
+  ]
+ },
+ {
+  "t": 8.3,
+  "kind": "mem",
+  "mb": [
+   145,
+   496,
+   104
+  ]
+ },
+ {
+  "t": 8.5,
+  "kind": "mem",
+  "mb": [
+   145,
+   496,
+   104
+  ]
+ },
+ {
+  "t": 8.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 145
+   },
+   {
+    "pid": 3550,
+    "mb": 496
+   },
+   {
+    "pid": 3584,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 76,
+   "totalMB": 98,
+   "nodes": 860,
+   "docs": 10,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 8.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "The resource http://localhost:8782/~/sj/rjegb20g/8nq9h4ha/https%3A%2F%2Fi.ytimg.com%2Fgenerate_204?%24io=https%3A%2F%2Fwww.youtube.com was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+ },
+ {
+  "t": 8.7,
+  "kind": "mem",
+  "mb": [
+   145,
+   497,
+   104
+  ]
+ },
+ {
+  "t": 8.9,
+  "kind": "mem",
+  "mb": [
+   145,
+   497,
+   104
+  ]
+ },
+ {
+  "t": 9.1,
+  "kind": "mem",
+  "mb": [
+   145,
+   497,
+   104
+  ]
+ },
+ {
+  "t": 9.3,
+  "kind": "mem",
+  "mb": [
+   145,
+   497,
+   104
+  ]
+ },
+ {
+  "t": 9.5,
+  "kind": "mem",
+  "mb": [
+   145,
+   497,
+   104
+  ]
+ },
+ {
+  "t": 9.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 145
+   },
+   {
+    "pid": 3550,
+    "mb": 496
+   },
+   {
+    "pid": 3584,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 77,
+   "totalMB": 99,
+   "nodes": 860,
+   "docs": 10,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 4
+ },
+ {
+  "t": 9.7,
+  "kind": "mem",
+  "mb": [
+   145,
+   497,
+   104
+  ]
+ },
+ {
+  "t": 9.9,
+  "kind": "mem",
+  "mb": [
+   145,
+   497,
+   104
+  ]
+ },
+ {
+  "t": 10.1,
+  "kind": "mem",
+  "mb": [
+   145,
+   497,
+   104
+  ]
+ },
+ {
+  "t": 10.3,
+  "kind": "mem",
+  "mb": [
+   145,
+   497,
+   104
+  ]
+ },
+ {
+  "t": 10.5,
+  "kind": "mem",
+  "mb": [
+   145,
+   496,
+   104
+  ]
+ },
+ {
+  "t": 10.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 144
+   },
+   {
+    "pid": 3550,
+    "mb": 490
+   },
+   {
+    "pid": 3584,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 78,
+   "totalMB": 100,
+   "nodes": 860,
+   "docs": 10,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 7
+ },
+ {
+  "t": 10.7,
+  "kind": "mem",
+  "mb": [
+   144,
+   434,
+   104
+  ]
+ },
+ {
+  "t": 10.9,
+  "kind": "mem",
+  "mb": [
+   144,
+   434,
+   103
+  ]
+ },
+ {
+  "t": 11.1,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 11.3,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 11.5,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 11.7,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 144
+   },
+   {
+    "pid": 3550,
+    "mb": 433
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 26,
+   "totalMB": 59,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 11.7,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 11.9,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 12.1,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 12.3,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 12.5,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 12.7,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 12.7,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 144
+   },
+   {
+    "pid": 3550,
+    "mb": 433
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 27,
+   "totalMB": 60,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 12.9,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 13.1,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 13.3,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 13.5,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 13.7,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 13.7,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 144
+   },
+   {
+    "pid": 3550,
+    "mb": 433
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 28,
+   "totalMB": 61,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 13.9,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 14.1,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 14.3,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 14.5,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 14.7,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 14.7,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 144
+   },
+   {
+    "pid": 3550,
+    "mb": 433
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 29,
+   "totalMB": 62,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 14.9,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 15.1,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 15.3,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 15.5,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 15.7,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 15.7,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 144
+   },
+   {
+    "pid": 3550,
+    "mb": 433
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 30,
+   "totalMB": 63,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 15.9,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 16.1,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 16.3,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 16.5,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 16.7,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 16.7,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 144
+   },
+   {
+    "pid": 3550,
+    "mb": 433
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 31,
+   "totalMB": 64,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 16.9,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 17.1,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 17.3,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 17.5,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 17.7,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 17.8,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 144
+   },
+   {
+    "pid": 3550,
+    "mb": 433
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 32,
+   "totalMB": 65,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 17.9,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 18.1,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 18.3,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 18.5,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 18.7,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 18.8,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 144
+   },
+   {
+    "pid": 3550,
+    "mb": 433
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 33,
+   "totalMB": 66,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 18.9,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 19.1,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 19.3,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 19.5,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 19.7,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 19.8,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 144
+   },
+   {
+    "pid": 3550,
+    "mb": 433
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 34,
+   "totalMB": 68,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 19.9,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 20.1,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 20.3,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 20.5,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 20.7,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 20.8,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 144
+   },
+   {
+    "pid": 3550,
+    "mb": 433
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 35,
+   "totalMB": 71,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 20.9,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 21.1,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 21.3,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 21.5,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 21.7,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 21.8,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 144
+   },
+   {
+    "pid": 3550,
+    "mb": 433
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 36,
+   "totalMB": 74,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 21.9,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 22.1,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 22.3,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 22.5,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 22.7,
+  "kind": "mem",
+  "mb": [
+   144,
+   433,
+   103
+  ]
+ },
+ {
+  "t": 22.8,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 144
+   },
+   {
+    "pid": 3550,
+    "mb": 433
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 37,
+   "totalMB": 80,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 22.9,
+  "kind": "mem",
+  "mb": [
+   144,
+   434,
+   103
+  ]
+ },
+ {
+  "t": 23.1,
+  "kind": "mem",
+  "mb": [
+   144,
+   434,
+   103
+  ]
+ },
+ {
+  "t": 23.3,
+  "kind": "mem",
+  "mb": [
+   144,
+   434,
+   103
+  ]
+ },
+ {
+  "t": 23.5,
+  "kind": "mem",
+  "mb": [
+   144,
+   434,
+   103
+  ]
+ },
+ {
+  "t": 23.7,
+  "kind": "mem",
+  "mb": [
+   144,
+   434,
+   103
+  ]
+ },
+ {
+  "t": 23.9,
+  "kind": "mem",
+  "mb": [
+   144,
+   435,
+   103
+  ]
+ },
+ {
+  "t": 23.9,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 144
+   },
+   {
+    "pid": 3550,
+    "mb": 434
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 38,
+   "totalMB": 81,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 15
+ },
+ {
+  "t": 24.1,
+  "kind": "mem",
+  "mb": [
+   144,
+   435,
+   103
+  ]
+ },
+ {
+  "t": 24.3,
+  "kind": "mem",
+  "mb": [
+   144,
+   435,
+   103
+  ]
+ },
+ {
+  "t": 24.5,
+  "kind": "mem",
+  "mb": [
+   144,
+   435,
+   103
+  ]
+ },
+ {
+  "t": 24.7,
+  "kind": "mem",
+  "mb": [
+   144,
+   435,
+   103
+  ]
+ },
+ {
+  "t": 24.9,
+  "kind": "mem",
+  "mb": [
+   144,
+   435,
+   103
+  ]
+ },
+ {
+  "t": 24.9,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 144
+   },
+   {
+    "pid": 3550,
+    "mb": 435
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 39,
+   "totalMB": 82,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 25.1,
+  "kind": "mem",
+  "mb": [
+   144,
+   436,
+   103
+  ]
+ },
+ {
+  "t": 25.3,
+  "kind": "mem",
+  "mb": [
+   144,
+   436,
+   103
+  ]
+ },
+ {
+  "t": 25.5,
+  "kind": "mem",
+  "mb": [
+   144,
+   436,
+   103
+  ]
+ },
+ {
+  "t": 25.7,
+  "kind": "mem",
+  "mb": [
+   144,
+   436,
+   103
+  ]
+ },
+ {
+  "t": 25.9,
+  "kind": "mem",
+  "mb": [
+   144,
+   436,
+   103
+  ]
+ },
+ {
+  "t": 25.9,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 144
+   },
+   {
+    "pid": 3550,
+    "mb": 436
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 40,
+   "totalMB": 83,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 26.1,
+  "kind": "mem",
+  "mb": [
+   144,
+   437,
+   103
+  ]
+ },
+ {
+  "t": 26.3,
+  "kind": "mem",
+  "mb": [
+   144,
+   437,
+   103
+  ]
+ },
+ {
+  "t": 26.5,
+  "kind": "mem",
+  "mb": [
+   144,
+   437,
+   103
+  ]
+ },
+ {
+  "t": 26.7,
+  "kind": "mem",
+  "mb": [
+   144,
+   437,
+   103
+  ]
+ },
+ {
+  "t": 26.9,
+  "kind": "mem",
+  "mb": [
+   144,
+   437,
+   103
+  ]
+ },
+ {
+  "t": 26.9,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 144
+   },
+   {
+    "pid": 3550,
+    "mb": 437
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 41,
+   "totalMB": 84,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 27.1,
+  "kind": "mem",
+  "mb": [
+   144,
+   438,
+   103
+  ]
+ },
+ {
+  "t": 27.3,
+  "kind": "mem",
+  "mb": [
+   144,
+   438,
+   103
+  ]
+ },
+ {
+  "t": 27.5,
+  "kind": "mem",
+  "mb": [
+   144,
+   438,
+   103
+  ]
+ },
+ {
+  "t": 27.7,
+  "kind": "mem",
+  "mb": [
+   144,
+   438,
+   103
+  ]
+ },
+ {
+  "t": 27.9,
+  "kind": "mem",
+  "mb": [
+   144,
+   438,
+   103
+  ]
+ },
+ {
+  "t": 27.9,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 144
+   },
+   {
+    "pid": 3550,
+    "mb": 438
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 42,
+   "totalMB": 85,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 28.1,
+  "kind": "mem",
+  "mb": [
+   144,
+   439,
+   103
+  ]
+ },
+ {
+  "t": 28.3,
+  "kind": "mem",
+  "mb": [
+   144,
+   439,
+   103
+  ]
+ },
+ {
+  "t": 28.5,
+  "kind": "mem",
+  "mb": [
+   144,
+   439,
+   103
+  ]
+ },
+ {
+  "t": 28.7,
+  "kind": "mem",
+  "mb": [
+   144,
+   439,
+   103
+  ]
+ },
+ {
+  "t": 28.9,
+  "kind": "mem",
+  "mb": [
+   144,
+   439,
+   103
+  ]
+ },
+ {
+  "t": 29,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 144
+   },
+   {
+    "pid": 3550,
+    "mb": 439
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 43,
+   "totalMB": 86,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 29.1,
+  "kind": "mem",
+  "mb": [
+   144,
+   440,
+   103
+  ]
+ },
+ {
+  "t": 29.3,
+  "kind": "mem",
+  "mb": [
+   144,
+   440,
+   103
+  ]
+ },
+ {
+  "t": 29.5,
+  "kind": "mem",
+  "mb": [
+   144,
+   440,
+   103
+  ]
+ },
+ {
+  "t": 29.7,
+  "kind": "mem",
+  "mb": [
+   144,
+   440,
+   103
+  ]
+ },
+ {
+  "t": 29.9,
+  "kind": "mem",
+  "mb": [
+   144,
+   440,
+   103
+  ]
+ },
+ {
+  "t": 30,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 144
+   },
+   {
+    "pid": 3550,
+    "mb": 440
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 44,
+   "totalMB": 87,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 30.1,
+  "kind": "mem",
+  "mb": [
+   144,
+   441,
+   103
+  ]
+ },
+ {
+  "t": 30.3,
+  "kind": "mem",
+  "mb": [
+   144,
+   441,
+   103
+  ]
+ },
+ {
+  "t": 30.5,
+  "kind": "mem",
+  "mb": [
+   144,
+   441,
+   103
+  ]
+ },
+ {
+  "t": 30.7,
+  "kind": "mem",
+  "mb": [
+   144,
+   441,
+   103
+  ]
+ },
+ {
+  "t": 30.9,
+  "kind": "mem",
+  "mb": [
+   142,
+   441,
+   103
+  ]
+ },
+ {
+  "t": 31,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 142
+   },
+   {
+    "pid": 3550,
+    "mb": 441
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 45,
+   "totalMB": 88,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 31.1,
+  "kind": "mem",
+  "mb": [
+   142,
+   422,
+   103
+  ]
+ },
+ {
+  "t": 31.3,
+  "kind": "mem",
+  "mb": [
+   142,
+   378,
+   103
+  ]
+ },
+ {
+  "t": 31.5,
+  "kind": "mem",
+  "mb": [
+   141,
+   378,
+   103
+  ]
+ },
+ {
+  "t": 31.7,
+  "kind": "mem",
+  "mb": [
+   141,
+   378,
+   103
+  ]
+ },
+ {
+  "t": 31.9,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 32,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 141
+   },
+   {
+    "pid": 3550,
+    "mb": 377
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 26,
+   "totalMB": 27,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 4
+ },
+ {
+  "t": 32.1,
+  "kind": "mem",
+  "mb": [
+   141,
+   378,
+   103
+  ]
+ },
+ {
+  "t": 32.3,
+  "kind": "mem",
+  "mb": [
+   141,
+   378,
+   103
+  ]
+ },
+ {
+  "t": 32.5,
+  "kind": "mem",
+  "mb": [
+   141,
+   378,
+   103
+  ]
+ },
+ {
+  "t": 32.7,
+  "kind": "mem",
+  "mb": [
+   141,
+   378,
+   103
+  ]
+ },
+ {
+  "t": 32.9,
+  "kind": "mem",
+  "mb": [
+   141,
+   378,
+   103
+  ]
+ },
+ {
+  "t": 33,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 141
+   },
+   {
+    "pid": 3550,
+    "mb": 378
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 27,
+   "totalMB": 28,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 33.1,
+  "kind": "mem",
+  "mb": [
+   141,
+   378,
+   103
+  ]
+ },
+ {
+  "t": 33.3,
+  "kind": "mem",
+  "mb": [
+   141,
+   378,
+   103
+  ]
+ },
+ {
+  "t": 33.5,
+  "kind": "mem",
+  "mb": [
+   141,
+   378,
+   103
+  ]
+ },
+ {
+  "t": 33.7,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 33.9,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 34.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 141
+   },
+   {
+    "pid": 3550,
+    "mb": 377
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 27,
+   "totalMB": 28,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 34.1,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 34.3,
+  "kind": "mem",
+  "mb": [
+   141,
+   376,
+   103
+  ]
+ },
+ {
+  "t": 34.5,
+  "kind": "mem",
+  "mb": [
+   141,
+   376,
+   103
+  ]
+ },
+ {
+  "t": 34.7,
+  "kind": "mem",
+  "mb": [
+   141,
+   376,
+   103
+  ]
+ },
+ {
+  "t": 34.9,
+  "kind": "mem",
+  "mb": [
+   141,
+   376,
+   103
+  ]
+ },
+ {
+  "t": 35.1,
+  "kind": "mem",
+  "mb": [
+   141,
+   376,
+   103
+  ]
+ },
+ {
+  "t": 35.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 141
+   },
+   {
+    "pid": 3550,
+    "mb": 376
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 27,
+   "totalMB": 28,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 35.3,
+  "kind": "mem",
+  "mb": [
+   141,
+   376,
+   103
+  ]
+ },
+ {
+  "t": 35.5,
+  "kind": "mem",
+  "mb": [
+   141,
+   376,
+   103
+  ]
+ },
+ {
+  "t": 35.7,
+  "kind": "mem",
+  "mb": [
+   141,
+   376,
+   103
+  ]
+ },
+ {
+  "t": 35.9,
+  "kind": "mem",
+  "mb": [
+   141,
+   376,
+   103
+  ]
+ },
+ {
+  "t": 36.1,
+  "kind": "mem",
+  "mb": [
+   141,
+   376,
+   103
+  ]
+ },
+ {
+  "t": 36.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 141
+   },
+   {
+    "pid": 3550,
+    "mb": 376
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 27,
+   "totalMB": 28,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 36.3,
+  "kind": "mem",
+  "mb": [
+   141,
+   376,
+   103
+  ]
+ },
+ {
+  "t": 36.5,
+  "kind": "mem",
+  "mb": [
+   141,
+   376,
+   103
+  ]
+ },
+ {
+  "t": 36.7,
+  "kind": "mem",
+  "mb": [
+   141,
+   376,
+   103
+  ]
+ },
+ {
+  "t": 36.9,
+  "kind": "mem",
+  "mb": [
+   141,
+   376,
+   103
+  ]
+ },
+ {
+  "t": 37.1,
+  "kind": "mem",
+  "mb": [
+   141,
+   376,
+   103
+  ]
+ },
+ {
+  "t": 37.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 141
+   },
+   {
+    "pid": 3550,
+    "mb": 376
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 27,
+   "totalMB": 28,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 37.3,
+  "kind": "mem",
+  "mb": [
+   141,
+   376,
+   103
+  ]
+ },
+ {
+  "t": 37.5,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 37.7,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 37.9,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 38.1,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 38.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 141
+   },
+   {
+    "pid": 3550,
+    "mb": 377
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 27,
+   "totalMB": 28,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 38.3,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 38.5,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 38.7,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 38.9,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 39.1,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 39.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 141
+   },
+   {
+    "pid": 3550,
+    "mb": 377
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 27,
+   "totalMB": 28,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 39.3,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 39.5,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 39.7,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 39.9,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 40.1,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 40.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 141
+   },
+   {
+    "pid": 3550,
+    "mb": 377
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 27,
+   "totalMB": 28,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 40.3,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 40.5,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 40.7,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 40.9,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 41.1,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 41.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 141
+   },
+   {
+    "pid": 3550,
+    "mb": 377
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 27,
+   "totalMB": 28,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 41.3,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 41.5,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 41.7,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 41.9,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 42.1,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 42.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 141
+   },
+   {
+    "pid": 3550,
+    "mb": 377
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 27,
+   "totalMB": 28,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 42.3,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 42.5,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 42.7,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 42.9,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 43.1,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 43.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 141
+   },
+   {
+    "pid": 3550,
+    "mb": 377
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 27,
+   "totalMB": 28,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 43.3,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 43.5,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 43.7,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 43.9,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 44.1,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 44.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 141
+   },
+   {
+    "pid": 3550,
+    "mb": 377
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 27,
+   "totalMB": 28,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 44.3,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 44.5,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 44.7,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 44.9,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 45.1,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 45.3,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 141
+   },
+   {
+    "pid": 3550,
+    "mb": 377
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 27,
+   "totalMB": 28,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 45.3,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 45.5,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 45.7,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 45.9,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 46.1,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 46.3,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 46.3,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 141
+   },
+   {
+    "pid": 3550,
+    "mb": 377
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 27,
+   "totalMB": 28,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 46.5,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 46.7,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 46.9,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 47.1,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 47.3,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 47.3,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 141
+   },
+   {
+    "pid": 3550,
+    "mb": 377
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 27,
+   "totalMB": 28,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 47.5,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 47.7,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 47.9,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 48.1,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 48.3,
+  "kind": "mem",
+  "mb": [
+   141,
+   377,
+   103
+  ]
+ },
+ {
+  "t": 48.3,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3537,
+    "mb": 141
+   },
+   {
+    "pid": 3550,
+    "mb": 377
+   },
+   {
+    "pid": 3584,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 27,
+   "totalMB": 28,
+   "nodes": 822,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 218,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 503463,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ }
+]
