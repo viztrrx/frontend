@@ -45,13 +45,21 @@ jobs:
         run: |
           google-chrome --version
           VIDEO="${{ vars.DIAG_VIDEO || 'https://www.youtube.com/watch?v=jNQXAC9IVRw' }}"
-          for run in "v2-libcurl 8782 libcurl" "v2-epoxy 8782 epoxy" "v1-libcurl 8781 libcurl"; do
-            set -- $run
-            mkdir -p "out/$1"
-            timeout 240 xvfb-run -a node diag/youtube.mjs --headed --insecure --url "http://localhost:$2" --transport "$3" --video "$VIDEO" --out "out/$1" 2> "out/$1/browser.log" > "out/$1/stdout.txt" || true
-            echo "== $1"; head -c 1500 "out/$1/stdout.txt"; echo
-            grep -iE "fatal|check failed|out of memory|signal=[a-z0-9]|crash" "out/$1/browser.log" | head -20 || true
-          done
+          # name;port;transport;block regex: which request kinds trigger the crash.
+          while IFS=';' read -r name port transport block; do
+            [ -z "$name" ] && continue
+            mkdir -p "out/$name"
+            timeout 240 xvfb-run -a node diag/youtube.mjs --headed --insecure --url "http://localhost:$port" --transport "$transport" --block "$block" --video "$VIDEO" --seconds 45 --out "out/$name" 2> "out/$name/browser.log" > "out/$name/stdout.txt" || true
+            echo "== $name crashed=$(grep -o '"crashed": [a-z]*' "out/$name/stdout.txt")"
+            grep -iE "fatal|check failed|out of memory|oom|v8|renderer|crash" "out/$name/browser.log" | grep -viE "crashpad|cpufreq" | head -15 || true
+          done <<'RUNS'
+          base;8782;epoxy;
+          no-botguard;8782;epoxy;www\.google\.com/js/th/
+          no-accounts;8782;epoxy;accounts\.google\.com
+          no-videodata;8782;epoxy;googlevideo\.com
+          no-player-js;8782;epoxy;youtube\.com/s/player/
+          no-ads;8782;epoxy;doubleclick|googleads|googlesyndication
+          RUNS
           cp /tmp/lab-server.log out/
       - name: Save results to the diag-results branch
         if: always()

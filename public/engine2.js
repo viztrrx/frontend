@@ -113,6 +113,11 @@
     // Blocked sites (blocked.js): pages, pop-ups, frames and requests alike.
     plugin.tap(inner.hooks.fetch.intercept, (context, props) => {
       const site = context.parsed.url.href;
+      // DIAGNOSTIC BRANCH ONLY: diag/youtube.mjs --block refuses matching requests.
+      if (self.__saintsDiagBlock && self.__saintsDiagBlock.test(site)) {
+        props.response = ownPage("diag-blocked", "diag-blocked", 403);
+        return;
+      }
       const block = self.saintsBlock ? self.saintsBlock.check(site) : null;
       if (!block) return;
       if (context.request.mode === "navigate") reportNavigation(context.request.rawUrl.pathname, 403, block.title);

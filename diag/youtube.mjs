@@ -18,6 +18,7 @@ const { values: args } = parseArgs({
     channel: { type: "string", default: "chrome" },
     headed: { type: "boolean", default: false },
     insecure: { type: "boolean", default: false },
+    block: { type: "string", default: "" },
   },
 });
 const { chromium } = await import(process.env.PLAYWRIGHT_PATH || "playwright");
@@ -61,10 +62,11 @@ const browser = await chromium.launch({
   channel: args.channel === "chromium" ? undefined : args.channel,
   // Headed (under xvfb in CI): YouTube asks headless Chrome to sign in.
   headless: !args.headed,
-  args: ["--autoplay-policy=no-user-gesture-required", "--enable-precise-memory-info", ...(args.insecure ? ["--ignore-certificate-errors"] : [])],
+  args: ["--autoplay-policy=no-user-gesture-required", "--enable-precise-memory-info", "--enable-logging=stderr", "--v=0", ...(args.insecure ? ["--ignore-certificate-errors"] : [])],
 });
 const context = await browser.newContext({ viewport: { width: 1280, height: 800 }, ignoreHTTPSErrors: args.insecure });
 await context.addInitScript((name) => { try { localStorage.setItem("sj-transport", name); } catch {} }, args.transport);
+if (args.block) await context.addInitScript((source) => { self.__saintsDiagBlock = new RegExp(source); }, args.block);
 const page = await context.newPage();
 
 let crashed = false;
@@ -153,7 +155,7 @@ for (const e of log.filter((e) => e.kind === "req")) {
 }
 const ticks = log.filter((e) => e.kind === "tick");
 const summary = {
-  target: args.url, transport: args.transport, crashed,
+  target: args.url, transport: args.transport, block: args.block, crashed,
   lastTick: ticks.at(-1),
   peakRendererMB: Math.max(0, ...ticks.flatMap((e) => e.memory.map((m) => m.mb))),
   peakHeapMB: Math.max(0, ...ticks.map((e) => e.heap?.usedMB || 0)),
