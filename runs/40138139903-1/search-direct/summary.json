@@ -1,0 +1,90 @@
+{
+  "target": "direct",
+  "transport": "epoxy",
+  "block": "",
+  "shots": true,
+  "sjconfig": "",
+  "fix": "",
+  "noprobe": false,
+  "crashed": false,
+  "lastTick": {
+    "t": 52.3,
+    "kind": "tick",
+    "memory": [
+      {
+        "pid": 2505,
+        "mb": 168
+      },
+      {
+        "pid": 2512,
+        "mb": 388
+      },
+      {
+        "pid": 2588,
+        "mb": 140
+      },
+      {
+        "pid": 2603,
+        "mb": 109
+      }
+    ],
+    "heap": {
+      "usedMB": 51,
+      "totalMB": 60,
+      "nodes": 17114,
+      "docs": 6,
+      "frames": 4
+    },
+    "video": {
+      "title": "dom tracy f150 - YouTube",
+      "time": 0,
+      "paused": true,
+      "ready": 0,
+      "net": 0,
+      "error": null,
+      "buffered": 0,
+      "src": "",
+      "app": {
+        "elements": 5406,
+        "player": true,
+        "flexy": true,
+        "botcheck": false,
+        "videos": 18,
+        "tiles": 0,
+        "thumbs": 3,
+        "initialData": 496102,
+        "pageReady": "complete"
+      }
+    },
+    "answerMs": 3
+  },
+  "peakRendererMB": 462,
+  "peakHeapMB": 90,
+  "requests": 73,
+  "failed": 1,
+  "byHost": {
+    "www.youtube.com fetch": 27,
+    "www.youtube.com script": 16,
+    "www.youtube.com stylesheet": 4,
+    "www.youtube.com media": 4,
+    "fonts.googleapis.com stylesheet": 3,
+    "i.ytimg.com image": 3,
+    "googleads.g.doubleclick.net xhr": 2,
+    "www.youtube.com xhr": 2,
+    "www.gstatic.com script": 2,
+    "www.youtube.com document": 1,
+    "i.ytimg.com other": 1,
+    "accounts.google.com document": 1,
+    "www.google.com script": 1,
+    "yt3.ggpht.com image": 1,
+    "www.youtube.com other": 1,
+    "www.google.com image": 1,
+    "www.youtube.com image": 1,
+    "youtube.com fetch": 1,
+    "static.doubleclick.net script": 1
+  },
+  "pageErrors": [],
+  "consoleErrors": [
+    "6.4s Failed to load resource: the server responded with a status of 401 ()"
+  ]
+}

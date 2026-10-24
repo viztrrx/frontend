@@ -1,0 +1,95 @@
+{
+  "target": "direct",
+  "transport": "epoxy",
+  "block": "",
+  "shots": true,
+  "sjconfig": "",
+  "fix": "",
+  "noprobe": false,
+  "crashed": false,
+  "lastTick": {
+    "t": 47.4,
+    "kind": "tick",
+    "memory": [
+      {
+        "pid": 4130,
+        "mb": 142
+      },
+      {
+        "pid": 4137,
+        "mb": 347
+      },
+      {
+        "pid": 4162,
+        "mb": 137
+      },
+      {
+        "pid": 4177,
+        "mb": 110
+      }
+    ],
+    "heap": {
+      "usedMB": 38,
+      "totalMB": 43,
+      "nodes": 6299,
+      "docs": 6,
+      "frames": 4
+    },
+    "video": {
+      "title": "YouTube",
+      "time": 0,
+      "paused": true,
+      "ready": 0,
+      "net": 0,
+      "error": null,
+      "buffered": 0,
+      "src": "",
+      "app": {
+        "elements": 2013,
+        "player": true,
+        "flexy": true,
+        "botcheck": false,
+        "videos": 0,
+        "tiles": 0,
+        "thumbs": 0,
+        "initialData": 116977,
+        "pageReady": "complete"
+      }
+    },
+    "answerMs": 2
+  },
+  "peakRendererMB": 509,
+  "peakHeapMB": 67,
+  "requests": 75,
+  "failed": 7,
+  "byHost": {
+    "www.youtube.com fetch": 27,
+    "www.youtube.com script": 16,
+    "rr1---sn-ntqe6n7r.googlevideo.com fetch": 6,
+    "www.youtube.com stylesheet": 5,
+    "www.youtube.com media": 4,
+    "fonts.googleapis.com stylesheet": 3,
+    "googleads.g.doubleclick.net xhr": 2,
+    "www.gstatic.com script": 2,
+    "www.youtube.com document": 1,
+    "i.ytimg.com other": 1,
+    "accounts.google.com document": 1,
+    "www.google.com script": 1,
+    "www.google.com image": 1,
+    "www.youtube.com image": 1,
+    "www.youtube.com other": 1,
+    "youtube.com fetch": 1,
+    "www.youtube.com xhr": 1,
+    "static.doubleclick.net script": 1
+  },
+  "pageErrors": [],
+  "consoleErrors": [
+    "0.9s Failed to load resource: the server responded with a status of 401 ()",
+    "2s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "2s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "2.5s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "2.5s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "2.9s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "3s Failed to load resource: the server responded with a status of 403 (Forbidden)"
+  ]
+}

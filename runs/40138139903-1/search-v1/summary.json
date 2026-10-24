@@ -1,0 +1,91 @@
+{
+  "target": "http://localhost:8781",
+  "transport": "libcurl",
+  "block": "",
+  "shots": true,
+  "sjconfig": "",
+  "fix": "",
+  "noprobe": false,
+  "crashed": false,
+  "lastTick": {
+    "t": 47.7,
+    "kind": "tick",
+    "memory": [
+      {
+        "pid": 3600,
+        "mb": 138
+      },
+      {
+        "pid": 3609,
+        "mb": 436
+      },
+      {
+        "pid": 3632,
+        "mb": 147
+      },
+      {
+        "pid": 3647,
+        "mb": 102
+      }
+    ],
+    "heap": {
+      "usedMB": 49,
+      "totalMB": 55,
+      "nodes": 4629,
+      "docs": 19,
+      "frames": 16
+    },
+    "video": {
+      "status": "Website content detected",
+      "title": "",
+      "app": {
+        "elements": 1176,
+        "player": false,
+        "flexy": false,
+        "botcheck": false,
+        "videos": 0,
+        "tiles": 0,
+        "thumbs": 0,
+        "initialData": 641516,
+        "pageReady": "complete"
+      }
+    },
+    "answerMs": 3
+  },
+  "peakRendererMB": 710,
+  "peakHeapMB": 99,
+  "requests": 102,
+  "failed": 2,
+  "byHost": {
+    "localhost:8781 script": 19,
+    "localhost:8781 fetch": 14,
+    "www.youtube.com script": 13,
+    "www.gstatic.com script": 12,
+    "localhost:8781 other": 5,
+    " fetch": 5,
+    "www.youtube.com media": 4,
+    "fonts.googleapis.com stylesheet": 3,
+    "www.youtube.com stylesheet": 3,
+    "accounts.google.com document": 3,
+    "play.google.com ping": 3,
+    "googleads.g.doubleclick.net xhr": 2,
+    "www.youtube.com xhr": 2,
+    "www.youtube.com fetch": 2,
+    "localhost:8781 document": 1,
+    "localhost:8781 stylesheet": 1,
+    "www.youtube.com document": 1,
+    "i.ytimg.com other": 1,
+    "localhost:8781 image": 1,
+    "www.youtube.com image": 1,
+    "www.google.com script": 1,
+    "www.google.com image": 1,
+    "youtube.com fetch": 1,
+    "accounts.youtube.com document": 1,
+    "accounts.google.com fetch": 1
+  },
+  "pageErrors": [],
+  "consoleErrors": [
+    "3.1s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "5s Failed to load resource: the server responded with a status of 403 (Forbidden)"
+  ]
+}

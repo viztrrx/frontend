@@ -1,0 +1,108 @@
+{
+  "target": "http://localhost:8782",
+  "transport": "epoxy",
+  "block": "",
+  "shots": true,
+  "sjconfig": "",
+  "fix": "",
+  "noprobe": false,
+  "crashed": false,
+  "lastTick": {
+    "t": 47.5,
+    "kind": "tick",
+    "memory": [
+      {
+        "pid": 4627,
+        "mb": 141
+      },
+      {
+        "pid": 4636,
+        "mb": 437
+      },
+      {
+        "pid": 4675,
+        "mb": 103
+      }
+    ],
+    "heap": {
+      "usedMB": 43,
+      "totalMB": 49,
+      "nodes": 4525,
+      "docs": 11,
+      "frames": 8
+    },
+    "video": {
+      "status": "Website content detected",
+      "title": "YouTube",
+      "app": {
+        "elements": 1382,
+        "player": false,
+        "flexy": false,
+        "botcheck": false,
+        "videos": 0,
+        "tiles": 0,
+        "thumbs": 0,
+        "initialData": 117058,
+        "pageReady": "complete"
+      }
+    },
+    "answerMs": 2
+  },
+  "peakRendererMB": 579,
+  "peakHeapMB": 71,
+  "requests": 73,
+  "failed": 1,
+  "byHost": {
+    "localhost:8782 script": 16,
+    "www.youtube.com script": 11,
+    "rr3---sn-aigl6nsd.googlevideo.com fetch": 6,
+    " fetch": 5,
+    "www.youtube.com stylesheet": 4,
+    "www.youtube.com media": 4,
+    "localhost:8782 fetch": 3,
+    "fonts.googleapis.com stylesheet": 3,
+    "scramjet.wasm.js script": 2,
+    "localhost:8782 image": 2,
+    "googleads.g.doubleclick.net xhr": 2,
+    "www.youtube.com xhr": 2,
+    "www.youtube.com image": 2,
+    "www.youtube.com fetch": 2,
+    "localhost:8782 document": 1,
+    "localhost:8782 stylesheet": 1,
+    "localhost:8782 other": 1,
+    "www.youtube.com document": 1,
+    "i.ytimg.com other": 1,
+    "accounts.google.com document": 1,
+    "www.google.com script": 1,
+    "www.google.com image": 1,
+    "youtube.com fetch": 1
+  },
+  "pageErrors": [],
+  "consoleErrors": [
+    "0.7s Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: InvalidData, error: InvalidCertificate(Other(OtherError(CaUsedAsEndEntity))) })) (client error (IO: Custom { kind: InvalidData, error: InvalidCertificate(Other(OtherError(CaUsedAsEndEntity))) } (invalid peer certificat",
+    "2.8s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "3s Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "3.1s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "4.7s Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: UnexpectedEof, error: \"tls handshake eof\" })) (client error (IO: Custom { kind: UnexpectedEof, error: \"tls handshake eof\" } (tls handshake eof)))\n    at imports.wbg.__wbindgen_error_new (http://localhost:8782/epoxy/ind",
+    "4.7s Error in controller request handler: Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: UnexpectedEof, error: \"tls handshake eof\" })) (client error (IO: Custom { kind: UnexpectedEof, error: \"tls handshake eof\" } (tls handshake eof)))\n    at imports.wbg.__wbindgen_error",
+    "4.7s Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: UnexpectedEof, error: \"tls handshake eof\" })) (client error (IO: Custom { kind: UnexpectedEof, error: \"tls handshake eof\" } (tls handshake eof)))\n    at imports.wbg.__wbindgen_error_new (http://localhost:8782/epoxy/ind",
+    "4.7s Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: UnexpectedEof, error: \"tls handshake eof\" })) (client error (IO: Custom { kind: UnexpectedEof, error: \"tls handshake eof\" } (tls handshake eof)))\n    at imports.wbg.__wbindgen_error_new (http://localhost:8782/epoxy/ind",
+    "4.7s Error in controller request handler: Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: UnexpectedEof, error: \"tls handshake eof\" })) (client error (IO: Custom { kind: UnexpectedEof, error: \"tls handshake eof\" } (tls handshake eof)))\n    at imports.wbg.__wbindgen_error",
+    "4.7s Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: UnexpectedEof, error: \"tls handshake eof\" })) (client error (IO: Custom { kind: UnexpectedEof, error: \"tls handshake eof\" } (tls handshake eof)))\n    at imports.wbg.__wbindgen_error_new (http://localhost:8782/epoxy/ind",
+    "4.7s Service Worker error: Error: Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: UnexpectedEof, error: \"tls handshake eof\" })) (client error (IO: Custom { kind: UnexpectedEof, error: \"tls handshake eof\" } (tls handshake eof)))\n    at o.recieve (http://localhost:8782/con",
+    "4.7s Service Worker error: Error: Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: UnexpectedEof, error: \"tls handshake eof\" })) (client error (IO: Custom { kind: UnexpectedEof, error: \"tls handshake eof\" } (tls handshake eof)))\n    at o.recieve (http://localhost:8782/con",
+    "4.7s Failed to load resource: the server responded with a status of 500 ()",
+    "4.7s Failed to load resource: the server responded with a status of 500 ()",
+    "4.7s Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: UnexpectedEof, error: \"tls handshake eof\" })) (client error (IO: Custom { kind: UnexpectedEof, error: \"tls handshake eof\" } (tls handshake eof)))\n    at imports.wbg.__wbindgen_error_new (http://localhost:8782/epoxy/ind",
+    "4.7s Error in controller request handler: Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: UnexpectedEof, error: \"tls handshake eof\" })) (client error (IO: Custom { kind: UnexpectedEof, error: \"tls handshake eof\" } (tls handshake eof)))\n    at imports.wbg.__wbindgen_error",
+    "4.7s Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: UnexpectedEof, error: \"tls handshake eof\" })) (client error (IO: Custom { kind: UnexpectedEof, error: \"tls handshake eof\" } (tls handshake eof)))\n    at imports.wbg.__wbindgen_error_new (http://localhost:8782/epoxy/ind",
+    "4.7s Service Worker error: Error: Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: UnexpectedEof, error: \"tls handshake eof\" })) (client error (IO: Custom { kind: UnexpectedEof, error: \"tls handshake eof\" } (tls handshake eof)))\n    at o.recieve (http://localhost:8782/con",
+    "4.7s Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: UnexpectedEof, error: \"tls handshake eof\" })) (client error (IO: Custom { kind: UnexpectedEof, error: \"tls handshake eof\" } (tls handshake eof)))\n    at imports.wbg.__wbindgen_error_new (http://localhost:8782/epoxy/ind",
+    "4.7s Error in controller request handler: Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: UnexpectedEof, error: \"tls handshake eof\" })) (client error (IO: Custom { kind: UnexpectedEof, error: \"tls handshake eof\" } (tls handshake eof)))\n    at imports.wbg.__wbindgen_error",
+    "4.7s Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: UnexpectedEof, error: \"tls handshake eof\" })) (client error (IO: Custom { kind: UnexpectedEof, error: \"tls handshake eof\" } (tls handshake eof)))\n    at imports.wbg.__wbindgen_error_new (http://localhost:8782/epoxy/ind",
+    "4.7s Service Worker error: Error: Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: UnexpectedEof, error: \"tls handshake eof\" })) (client error (IO: Custom { kind: UnexpectedEof, error: \"tls handshake eof\" } (tls handshake eof)))\n    at o.recieve (http://localhost:8782/con",
+    "4.7s Failed to load resource: the server responded with a status of 500 ()",
+    "4.7s Failed to load resource: the server responded with a status of 500 ()",
+    "4.8s Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: UnexpectedEof, error: \"tls handshake eof\" })) (client error (IO: Custom { kind: UnexpectedEof, error: \"tls handshake eof\" } (tls handshake eof)))\n    at imports.wbg.__wbindgen_error_new (http://localhost:8782/epoxy/ind"
+  ]
+}

@@ -1,0 +1,6540 @@
+[
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 1,
+  "method": "GET",
+  "type": "document",
+  "url": "https://www.youtube.com/",
+  "sw": false
+ },
+ {
+  "t": 0.5,
+  "kind": "mem",
+  "mb": [
+   146,
+   73,
+   102
+  ]
+ },
+ {
+  "t": 0.6,
+  "kind": "req",
+  "id": 2,
+  "method": "GET",
+  "type": "other",
+  "url": "https://i.ytimg.com/generate_204",
+  "sw": false
+ },
+ {
+  "t": 0.6,
+  "kind": "req",
+  "id": 3,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/_/ytmainappweb/_/js/k=ytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O/am=AAAAEAAAEICU/d=1/br=1/rs=AGKMywEymXHB80m60_9V4p8T8EDMf-ZwZA/m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk",
+  "sw": false
+ },
+ {
+  "t": 0.6,
+  "kind": "req",
+  "id": 4,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/web-animations-next-lite.min.vflset/web-animations-next-lite.min.js",
+  "sw": false
+ },
+ {
+  "t": 0.6,
+  "kind": "req",
+  "id": 5,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/custom-elements-es5-adapter.vflset/custom-elements-es5-adapter.js",
+  "sw": false
+ },
+ {
+  "t": 0.6,
+  "kind": "req",
+  "id": 6,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/webcomponents-sd.vflset/webcomponents-sd.js",
+  "sw": false
+ },
+ {
+  "t": 0.6,
+  "kind": "req",
+  "id": 7,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/intersection-observer.min.vflset/intersection-observer.min.js",
+  "sw": false
+ },
+ {
+  "t": 0.6,
+  "kind": "done",
+  "id": 4,
+  "status": 200,
+  "size": 14325
+ },
+ {
+  "t": 0.6,
+  "kind": "done",
+  "id": 7,
+  "status": 200,
+  "size": 2017
+ },
+ {
+  "t": 0.6,
+  "kind": "done",
+  "id": 5,
+  "status": 200,
+  "size": 784
+ },
+ {
+  "t": 0.6,
+  "kind": "done",
+  "id": 6,
+  "status": 200,
+  "size": 21537
+ },
+ {
+  "t": 0.6,
+  "kind": "done",
+  "id": 2,
+  "status": 204,
+  "size": 117
+ },
+ {
+  "t": 0.6,
+  "kind": "req",
+  "id": 8,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/scheduler.vflset/scheduler.js",
+  "sw": false
+ },
+ {
+  "t": 0.6,
+  "kind": "req",
+  "id": 9,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/www-i18n-constants-en_US.vflset/www-i18n-constants.js",
+  "sw": false
+ },
+ {
+  "t": 0.6,
+  "kind": "req",
+  "id": 10,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/spf.vflset/spf.js",
+  "sw": false
+ },
+ {
+  "t": 0.6,
+  "kind": "req",
+  "id": 11,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/network.vflset/network.js",
+  "sw": false
+ },
+ {
+  "t": 0.6,
+  "kind": "req",
+  "id": 12,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=YouTube+Sans:wght@300..900&display=swap",
+  "sw": false
+ },
+ {
+  "t": 0.6,
+  "kind": "req",
+  "id": 13,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-main-desktop-home-page-skeleton.css",
+  "sw": false
+ },
+ {
+  "t": 0.6,
+  "kind": "req",
+  "id": 14,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-onepick.css",
+  "sw": false
+ },
+ {
+  "t": 0.6,
+  "kind": "req",
+  "id": 15,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/_/ytmainappweb/_/ss/k=ytmainappweb.kevlar_base.NZ7X3F12ieY.L.B1.O/am=AAAAEADAEMCe/d=0/br=1/rs=AGKMywEsar3z3PzLb3vovjlDdC0SLIvlqA",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "done",
+  "id": 10,
+  "status": 200,
+  "size": 12211
+ },
+ {
+  "t": 0.7,
+  "kind": "done",
+  "id": 11,
+  "status": 200,
+  "size": 5046
+ },
+ {
+  "t": 0.7,
+  "kind": "done",
+  "id": 9,
+  "status": 200,
+  "size": 1544
+ },
+ {
+  "t": 0.7,
+  "kind": "done",
+  "id": 8,
+  "status": 200,
+  "size": 2947
+ },
+ {
+  "t": 0.7,
+  "kind": "done",
+  "id": 13,
+  "status": 200,
+  "size": 924
+ },
+ {
+  "t": 0.7,
+  "kind": "done",
+  "id": 14,
+  "status": 200,
+  "size": 290
+ },
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 16,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-main-desktop-watch-page-skeleton.css",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "done",
+  "id": 15,
+  "status": 200,
+  "size": 305970
+ },
+ {
+  "t": 0.7,
+  "kind": "done",
+  "id": 16,
+  "status": 200,
+  "size": 1408
+ },
+ {
+  "t": 0.7,
+  "kind": "done",
+  "id": 1,
+  "status": 200,
+  "size": 110022
+ },
+ {
+  "t": 0.7,
+  "kind": "done",
+  "id": 12,
+  "status": 200,
+  "size": 15674
+ },
+ {
+  "t": 0.8,
+  "kind": "mem",
+  "mb": [
+   146,
+   220,
+   94
+  ]
+ },
+ {
+  "t": 0.8,
+  "kind": "req",
+  "id": 17,
+  "method": "GET",
+  "type": "document",
+  "url": "https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3D%252Fsignin_passive%26feature%3Dpassive&hl=en",
+  "sw": false
+ },
+ {
+  "t": 0.8,
+  "kind": "done",
+  "id": 18,
+  "status": 200,
+  "size": 43168
+ },
+ {
+  "t": 0.9,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 401 ()"
+ },
+ {
+  "t": 0.9,
+  "kind": "done",
+  "id": 17,
+  "status": 401,
+  "size": 1915
+ },
+ {
+  "t": 0.9,
+  "kind": "done",
+  "id": 3,
+  "status": 200,
+  "size": 2189781
+ },
+ {
+  "t": 0.9,
+  "kind": "mem",
+  "mb": [
+   146,
+   224,
+   133,
+   110
+  ]
+ },
+ {
+  "t": 1.1,
+  "kind": "mem",
+  "mb": [
+   146,
+   233,
+   133,
+   110
+  ]
+ },
+ {
+  "t": 1.3,
+  "kind": "console",
+  "type": "info",
+  "text": "LegacyDataMixin will be applied to all legacy elements.\nSet `_legacyUndefinedCheck: true` on element class to enable."
+ },
+ {
+  "t": 1.3,
+  "kind": "mem",
+  "mb": [
+   146,
+   245,
+   133,
+   110
+  ]
+ },
+ {
+  "t": 1.4,
+  "kind": "req",
+  "id": 19,
+  "method": "GET",
+  "type": "xhr",
+  "url": "https://googleads.g.doubleclick.net/pagead/id",
+  "sw": false
+ },
+ {
+  "t": 1.5,
+  "kind": "req",
+  "id": 20,
+  "method": "GET",
+  "type": "xhr",
+  "url": "https://googleads.g.doubleclick.net/pagead/id?slf_rd=1",
+  "sw": false
+ },
+ {
+  "t": 1.5,
+  "kind": "done",
+  "id": 19,
+  "status": 302,
+  "size": 0
+ },
+ {
+  "t": 1.5,
+  "kind": "req",
+  "id": 21,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.google.com/js/th/pxwG18Euy-n6Uq6PY9vb4Ohp58yKH_56NpBvs6fBnH8.js",
+  "sw": false
+ },
+ {
+  "t": 1.5,
+  "kind": "req",
+  "id": 22,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://rr1---sn-ntqe6n7r.googlevideo.com/videoplayback?expire=5694100560&ei=I4ggTzEQzRpyShf9bFm_cEZ&ip=15.60.49.59&id=o-AFlKtdTHBEBNNzrVNDeWnoQ2vBFIAbPOZkUFIgPk7xCIW&itag=18&source=youtube&requiressl=yes&mh=X6&mm=902%2C17533%2C53012&mn=YojNU%2CdA5kB%2C82RFt&ms=YojNU%2CdA5kB%2C82RFt&mv=A&mvi=2&pl=20",
+  "sw": false
+ },
+ {
+  "t": 1.5,
+  "kind": "req",
+  "id": 23,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://rr1---sn-ntqe6n7r.googlevideo.com/videoplayback?expire=5694100560&ei=I4ggTzEQzRpyShf9bFm_cEZ&ip=15.60.49.59&id=o-AFlKtdTHBEBNNzrVNDeWnoQ2vBFIAbPOZkUFIgPk7xCIW&itag=18&source=youtube&requiressl=yes&mh=X6&mm=902%2C17533%2C53012&mn=YojNU%2CdA5kB%2C82RFt&ms=YojNU%2CdA5kB%2C82RFt&mv=A&mvi=2&pl=20",
+  "sw": false
+ },
+ {
+  "t": 1.5,
+  "kind": "opened",
+  "video": "https://www.youtube.com/"
+ },
+ {
+  "t": 1.5,
+  "kind": "done",
+  "id": 21,
+  "status": 200,
+  "size": 24659
+ },
+ {
+  "t": 1.5,
+  "kind": "done",
+  "id": 20,
+  "status": 200,
+  "size": 146
+ },
+ {
+  "t": 1.5,
+  "kind": "req",
+  "id": 24,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/sw.js",
+  "sw": true
+ },
+ {
+  "t": 1.5,
+  "kind": "mem",
+  "mb": [
+   146,
+   282,
+   133,
+   110
+  ]
+ },
+ {
+  "t": 1.6,
+  "kind": "req",
+  "id": 25,
+  "method": "POST",
+  "type": "fetch",
+  "url": "https://www.youtube.com/youtubei/v1/guide?prettyPrint=false",
+  "sw": false
+ },
+ {
+  "t": 1.6,
+  "kind": "req",
+  "id": 26,
+  "method": "GET",
+  "type": "image",
+  "url": "https://www.google.com/pagead/lvz?evtid=ACd6KtxwsgQaTSaMZZc2Arlc6k1HPDz4oSSjM14N-x0i88JbOZweYDD-QREcW23jfzBRq9z3EEPYXBlZVOmpepfQFYDGenoDVg&req_ts=1792880615&pg=MainAppBootstrap%3AHome&az=1&sigh=AB9vU42h5H1qGUVuIOQTJKZ2uJm6IaarUg",
+  "sw": false
+ },
+ {
+  "t": 1.6,
+  "kind": "done",
+  "id": 26,
+  "status": 200,
+  "size": 65
+ },
+ {
+  "t": 1.6,
+  "kind": "req",
+  "id": 27,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://fonts.googleapis.com/css?family=Roboto:300italic,400italic,500italic,700italic",
+  "sw": false
+ },
+ {
+  "t": 1.6,
+  "kind": "req",
+  "id": 28,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://fonts.googleapis.com/css?family=Roboto+Mono:400",
+  "sw": false
+ },
+ {
+  "t": 1.6,
+  "kind": "req",
+  "id": 29,
+  "method": "POST",
+  "type": "fetch",
+  "url": "https://www.youtube.com/youtubei/v1/feedback?prettyPrint=false",
+  "sw": false
+ },
+ {
+  "t": 1.6,
+  "kind": "req",
+  "id": 30,
+  "method": "GET",
+  "type": "media",
+  "url": "https://www.youtube.com/s/search/audio/failure.mp3",
+  "sw": false
+ },
+ {
+  "t": 1.6,
+  "kind": "req",
+  "id": 31,
+  "method": "GET",
+  "type": "media",
+  "url": "https://www.youtube.com/s/search/audio/no_input.mp3",
+  "sw": false
+ },
+ {
+  "t": 1.6,
+  "kind": "req",
+  "id": 32,
+  "method": "GET",
+  "type": "media",
+  "url": "https://www.youtube.com/s/search/audio/open.mp3",
+  "sw": false
+ },
+ {
+  "t": 1.6,
+  "kind": "req",
+  "id": 33,
+  "method": "GET",
+  "type": "media",
+  "url": "https://www.youtube.com/s/search/audio/success.mp3",
+  "sw": false
+ },
+ {
+  "t": 1.6,
+  "kind": "done",
+  "id": 25,
+  "status": 200,
+  "size": 2949
+ },
+ {
+  "t": 1.7,
+  "kind": "done",
+  "id": 31,
+  "status": 206,
+  "size": 6977
+ },
+ {
+  "t": 1.7,
+  "kind": "done",
+  "id": 28,
+  "status": 200,
+  "size": 730
+ },
+ {
+  "t": 1.7,
+  "kind": "done",
+  "id": 27,
+  "status": 200,
+  "size": 1836
+ },
+ {
+  "t": 1.7,
+  "kind": "done",
+  "id": 30,
+  "status": 206,
+  "size": 6553
+ },
+ {
+  "t": 1.7,
+  "kind": "done",
+  "id": 33,
+  "status": 206,
+  "size": 6660
+ },
+ {
+  "t": 1.7,
+  "kind": "done",
+  "id": 32,
+  "status": 206,
+  "size": 6191
+ },
+ {
+  "t": 1.7,
+  "kind": "req",
+  "id": 34,
+  "method": "GET",
+  "type": "image",
+  "url": "https://www.youtube.com/generate_204?yzXcXA",
+  "sw": false
+ },
+ {
+  "t": 1.7,
+  "kind": "req",
+  "id": 35,
+  "method": "GET",
+  "type": "other",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/serviceworker-kevlar-appshell.vflset/serviceworker-kevlar-appshell.js",
+  "sw": true
+ },
+ {
+  "t": 1.8,
+  "kind": "mem",
+  "mb": [
+   146,
+   317,
+   133,
+   110
+  ]
+ },
+ {
+  "t": 1.8,
+  "kind": "done",
+  "id": 35,
+  "status": 200,
+  "size": 0
+ },
+ {
+  "t": 1.8,
+  "kind": "done",
+  "id": 24,
+  "status": 200,
+  "size": -11885
+ },
+ {
+  "t": 1.8,
+  "kind": "req",
+  "id": 36,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/sw.js_data",
+  "sw": true
+ },
+ {
+  "t": 1.8,
+  "kind": "req",
+  "id": 37,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/base.js",
+  "sw": false
+ },
+ {
+  "t": 1.8,
+  "kind": "req",
+  "id": 38,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/www-player.css",
+  "sw": false
+ },
+ {
+  "t": 1.8,
+  "kind": "done",
+  "id": 34,
+  "status": 204,
+  "size": 10
+ },
+ {
+  "t": 1.8,
+  "kind": "done",
+  "id": 38,
+  "status": 200,
+  "size": 59050
+ },
+ {
+  "t": 1.8,
+  "kind": "done",
+  "id": 29,
+  "status": 200,
+  "size": 796
+ },
+ {
+  "t": 1.8,
+  "kind": "done",
+  "id": 36,
+  "status": 200,
+  "size": 1471
+ },
+ {
+  "t": 1.8,
+  "kind": "req",
+  "id": 42,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/app_shell",
+  "sw": true
+ },
+ {
+  "t": 1.8,
+  "kind": "done",
+  "id": 39,
+  "status": 200,
+  "size": 247
+ },
+ {
+  "t": 1.8,
+  "kind": "done",
+  "id": 40,
+  "status": 200,
+  "size": 188
+ },
+ {
+  "t": 1.8,
+  "kind": "done",
+  "id": 41,
+  "status": 200,
+  "size": 1647
+ },
+ {
+  "t": 1.9,
+  "kind": "req",
+  "id": 43,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://youtube.com/",
+  "sw": false
+ },
+ {
+  "t": 1.9,
+  "kind": "req",
+  "id": 44,
+  "method": "POST",
+  "type": "xhr",
+  "url": "https://www.youtube.com/api/jnn/v1/GenerateIT",
+  "sw": false
+ },
+ {
+  "t": 1.9,
+  "kind": "console",
+  "type": "warning",
+  "text": "No available adapters."
+ },
+ {
+  "t": 1.9,
+  "kind": "done",
+  "id": 44,
+  "status": 200,
+  "size": 148
+ },
+ {
+  "t": 1.9,
+  "kind": "done",
+  "id": 37,
+  "status": 200,
+  "size": 687404
+ },
+ {
+  "t": 1.9,
+  "kind": "done",
+  "id": 45,
+  "status": 200,
+  "size": 333
+ },
+ {
+  "t": 1.9,
+  "kind": "req",
+  "id": 55,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/web-animations-next-lite.min.vflset/web-animations-next-lite.min.js",
+  "sw": true
+ },
+ {
+  "t": 1.9,
+  "kind": "req",
+  "id": 56,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/custom-elements-es5-adapter.vflset/custom-elements-es5-adapter.js",
+  "sw": true
+ },
+ {
+  "t": 1.9,
+  "kind": "req",
+  "id": 57,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/webcomponents-sd.vflset/webcomponents-sd.js",
+  "sw": true
+ },
+ {
+  "t": 1.9,
+  "kind": "req",
+  "id": 58,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/intersection-observer.min.vflset/intersection-observer.min.js",
+  "sw": true
+ },
+ {
+  "t": 1.9,
+  "kind": "req",
+  "id": 59,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/scheduler.vflset/scheduler.js",
+  "sw": true
+ },
+ {
+  "t": 1.9,
+  "kind": "req",
+  "id": 60,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/www-i18n-constants-en_US.vflset/www-i18n-constants.js",
+  "sw": true
+ },
+ {
+  "t": 1.9,
+  "kind": "req",
+  "id": 61,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-main-desktop-home-page-skeleton.css",
+  "sw": true
+ },
+ {
+  "t": 1.9,
+  "kind": "req",
+  "id": 62,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-onepick.css",
+  "sw": true
+ },
+ {
+  "t": 1.9,
+  "kind": "req",
+  "id": 63,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/_/ytmainappweb/_/ss/k=ytmainappweb.kevlar_base.NZ7X3F12ieY.L.B1.O/am=AAAAEADAEMCe/d=0/br=1/rs=AGKMywEsar3z3PzLb3vovjlDdC0SLIvlqA",
+  "sw": true
+ },
+ {
+  "t": 1.9,
+  "kind": "req",
+  "id": 64,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/base.js",
+  "sw": true
+ },
+ {
+  "t": 1.9,
+  "kind": "req",
+  "id": 65,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/_/ytmainappweb/_/js/k=ytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O/am=AAAAEAAAEICU/d=1/br=1/rs=AGKMywEymXHB80m60_9V4p8T8EDMf-ZwZA/m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk",
+  "sw": true
+ },
+ {
+  "t": 1.9,
+  "kind": "req",
+  "id": 66,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-main-desktop-watch-page-skeleton.css",
+  "sw": true
+ },
+ {
+  "t": 1.9,
+  "kind": "req",
+  "id": 67,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/captions.js",
+  "sw": true
+ },
+ {
+  "t": 1.9,
+  "kind": "req",
+  "id": 68,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/endscreen.js",
+  "sw": true
+ },
+ {
+  "t": 1.9,
+  "kind": "req",
+  "id": 69,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/offline.js",
+  "sw": true
+ },
+ {
+  "t": 1.9,
+  "kind": "req",
+  "id": 70,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/miniplayer.js",
+  "sw": true
+ },
+ {
+  "t": 1.9,
+  "kind": "req",
+  "id": 71,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/remote.js",
+  "sw": true
+ },
+ {
+  "t": 1.9,
+  "kind": "req",
+  "id": 72,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/www-player.css",
+  "sw": true
+ },
+ {
+  "t": 1.9,
+  "kind": "req",
+  "id": 74,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/spf.vflset/spf.js",
+  "sw": true
+ },
+ {
+  "t": 1.9,
+  "kind": "req",
+  "id": 75,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/network.vflset/network.js",
+  "sw": true
+ },
+ {
+  "t": 1.9,
+  "kind": "done",
+  "id": 55,
+  "status": 200,
+  "size": -689
+ },
+ {
+  "t": 1.9,
+  "kind": "done",
+  "id": 56,
+  "status": 200,
+  "size": -687
+ },
+ {
+  "t": 2,
+  "kind": "mem",
+  "mb": [
+   146,
+   353,
+   133,
+   110
+  ]
+ },
+ {
+  "t": 2,
+  "kind": "done",
+  "id": 57,
+  "status": 200,
+  "size": -689
+ },
+ {
+  "t": 2,
+  "kind": "done",
+  "id": 58,
+  "status": 200,
+  "size": -688
+ },
+ {
+  "t": 2,
+  "kind": "done",
+  "id": 59,
+  "status": 200,
+  "size": -688
+ },
+ {
+  "t": 2,
+  "kind": "done",
+  "id": 60,
+  "status": 200,
+  "size": -688
+ },
+ {
+  "t": 2,
+  "kind": "done",
+  "id": 61,
+  "status": 200,
+  "size": -680
+ },
+ {
+  "t": 2,
+  "kind": "done",
+  "id": 62,
+  "status": 200,
+  "size": -679
+ },
+ {
+  "t": 2,
+  "kind": "done",
+  "id": 63,
+  "status": 200,
+  "size": -909
+ },
+ {
+  "t": 2,
+  "kind": "done",
+  "id": 64,
+  "status": 200,
+  "size": 687404
+ },
+ {
+  "t": 2,
+  "kind": "req",
+  "id": 76,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/",
+  "sw": false
+ },
+ {
+  "t": 2,
+  "kind": "failed",
+  "id": 76,
+  "url": "https://www.youtube.com/",
+  "error": "net::ERR_ABORTED"
+ },
+ {
+  "t": 2,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+ },
+ {
+  "t": 2,
+  "kind": "req",
+  "id": 77,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://rr1---sn-ntqe6n7r.googlevideo.com/videoplayback?expire=5694100560&ei=I4ggTzEQzRpyShf9bFm_cEZ&ip=15.60.49.59&id=o-AFlKtdTHBEBNNzrVNDeWnoQ2vBFIAbPOZkUFIgPk7xCIW&itag=18&source=youtube&requiressl=yes&mh=X6&mm=902%2C17533%2C53012&mn=YojNU%2CdA5kB%2C82RFt&ms=YojNU%2CdA5kB%2C82RFt&mv=A&mvi=2&pl=20",
+  "sw": false
+ },
+ {
+  "t": 2,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+ },
+ {
+  "t": 2,
+  "kind": "done",
+  "id": 43,
+  "status": 301,
+  "size": 0
+ },
+ {
+  "t": 2,
+  "kind": "req",
+  "id": 78,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://rr1---sn-ntqe6n7r.googlevideo.com/videoplayback?expire=5694100560&ei=I4ggTzEQzRpyShf9bFm_cEZ&ip=15.60.49.59&id=o-AFlKtdTHBEBNNzrVNDeWnoQ2vBFIAbPOZkUFIgPk7xCIW&itag=18&source=youtube&requiressl=yes&mh=X6&mm=902%2C17533%2C53012&mn=YojNU%2CdA5kB%2C82RFt&ms=YojNU%2CdA5kB%2C82RFt&mv=A&mvi=2&pl=20",
+  "sw": false
+ },
+ {
+  "t": 2,
+  "kind": "failed",
+  "id": 23,
+  "url": "https://rr1---sn-ntqe6n7r.googlevideo.com/videoplayback?expire=5694100560&ei=I4ggTzEQzRpyShf9bFm_cEZ&ip=15.60.49.59&id=o-AFlKtdTHBEBNNzrVNDeWnoQ2vBFIAbPOZkUFIgPk7xCIW&itag=18&source=youtube&requiressl=yes&mh=X6&mm=902%2C17533%2C53012&mn=YojNU%2CdA5kB%2C82RFt&ms=YojNU%2CdA5kB%2C82RFt&mv=A&mvi=2&pl=20",
+  "error": "net::ERR_ABORTED"
+ },
+ {
+  "t": 2,
+  "kind": "failed",
+  "id": 22,
+  "url": "https://rr1---sn-ntqe6n7r.googlevideo.com/videoplayback?expire=5694100560&ei=I4ggTzEQzRpyShf9bFm_cEZ&ip=15.60.49.59&id=o-AFlKtdTHBEBNNzrVNDeWnoQ2vBFIAbPOZkUFIgPk7xCIW&itag=18&source=youtube&requiressl=yes&mh=X6&mm=902%2C17533%2C53012&mn=YojNU%2CdA5kB%2C82RFt&ms=YojNU%2CdA5kB%2C82RFt&mv=A&mvi=2&pl=20",
+  "error": "net::ERR_ABORTED"
+ },
+ {
+  "t": 2,
+  "kind": "done",
+  "id": 46,
+  "status": 200,
+  "size": 206
+ },
+ {
+  "t": 2,
+  "kind": "done",
+  "id": 47,
+  "status": 200,
+  "size": 305
+ },
+ {
+  "t": 2,
+  "kind": "done",
+  "id": 48,
+  "status": 200,
+  "size": 301
+ },
+ {
+  "t": 2,
+  "kind": "done",
+  "id": 49,
+  "status": 200,
+  "size": 179
+ },
+ {
+  "t": 2,
+  "kind": "done",
+  "id": 50,
+  "status": 200,
+  "size": 240
+ },
+ {
+  "t": 2,
+  "kind": "done",
+  "id": 51,
+  "status": 200,
+  "size": 330
+ },
+ {
+  "t": 2,
+  "kind": "done",
+  "id": 54,
+  "status": 200,
+  "size": 329
+ },
+ {
+  "t": 2,
+  "kind": "done",
+  "id": 53,
+  "status": 200,
+  "size": 226
+ },
+ {
+  "t": 2,
+  "kind": "done",
+  "id": 52,
+  "status": 200,
+  "size": 224
+ },
+ {
+  "t": 2.1,
+  "kind": "req",
+  "id": 79,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/_/ytmainappweb/_/js/k=ytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O/am=AAAAEAAAEICU/d=1/exm=kevlar_base_module,kevlar_base_sync_mod_chunk,kevlar_main_module/ed=1/br=1/rs=AGKMywEymXHB80m60_9V4p8T8EDMf-ZwZA/m=QlbBce,De8mUc",
+  "sw": false
+ },
+ {
+  "t": 2.1,
+  "kind": "req",
+  "id": 80,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/offline.js",
+  "sw": false
+ },
+ {
+  "t": 2.1,
+  "kind": "req",
+  "id": 81,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/remote.js",
+  "sw": false
+ },
+ {
+  "t": 2.1,
+  "kind": "req",
+  "id": 82,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/miniplayer.js",
+  "sw": false
+ },
+ {
+  "t": 2.1,
+  "kind": "done",
+  "id": 79,
+  "status": 200,
+  "size": 1606
+ },
+ {
+  "t": 2.1,
+  "kind": "done",
+  "id": 80,
+  "status": 200,
+  "size": 22783
+ },
+ {
+  "t": 2.1,
+  "kind": "done",
+  "id": 82,
+  "status": 200,
+  "size": 2552
+ },
+ {
+  "t": 2.1,
+  "kind": "done",
+  "id": 81,
+  "status": 200,
+  "size": 34683
+ },
+ {
+  "t": 2.1,
+  "kind": "req",
+  "id": 83,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/_/ytmainappweb/_/js/k=ytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O/am=AAAAEAAAEICU/d=1/exm=De8mUc,QlbBce,kevlar_base_module,kevlar_base_sync_mod_chunk,kevlar_main_module/ed=1/br=1/rs=AGKMywEymXHB80m60_9V4p8T8EDMf-ZwZA/m=yTIahe",
+  "sw": false
+ },
+ {
+  "t": 2.1,
+  "kind": "req",
+  "id": 84,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.gstatic.com/cv/js/sender/v1/cast_sender.js",
+  "sw": false
+ },
+ {
+  "t": 2.1,
+  "kind": "done",
+  "id": 83,
+  "status": 200,
+  "size": 213
+ },
+ {
+  "t": 2.1,
+  "kind": "req",
+  "id": 85,
+  "method": "GET",
+  "type": "script",
+  "url": "https://static.doubleclick.net/instream/ad_status.js",
+  "sw": false
+ },
+ {
+  "t": 2.1,
+  "kind": "mem",
+  "mb": [
+   146,
+   405,
+   133,
+   110
+  ]
+ },
+ {
+  "t": 2.2,
+  "kind": "req",
+  "id": 86,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.gstatic.com/eureka/clank/155/cast_sender.js",
+  "sw": false
+ },
+ {
+  "t": 2.2,
+  "kind": "done",
+  "id": 84,
+  "status": 200,
+  "size": 2038
+ },
+ {
+  "t": 2.2,
+  "kind": "done",
+  "id": 86,
+  "status": 200,
+  "size": 13521
+ },
+ {
+  "t": 2.2,
+  "kind": "done",
+  "id": 85,
+  "status": 200,
+  "size": 495
+ },
+ {
+  "t": 2.3,
+  "kind": "done",
+  "id": 65,
+  "status": 200,
+  "size": -917
+ },
+ {
+  "t": 2.3,
+  "kind": "done",
+  "id": 66,
+  "status": 200,
+  "size": -680
+ },
+ {
+  "t": 2.3,
+  "kind": "done",
+  "id": 68,
+  "status": 200,
+  "size": 7071
+ },
+ {
+  "t": 2.3,
+  "kind": "done",
+  "id": 67,
+  "status": 200,
+  "size": 23342
+ },
+ {
+  "t": 2.3,
+  "kind": "done",
+  "id": 70,
+  "status": 200,
+  "size": -687
+ },
+ {
+  "t": 2.3,
+  "kind": "done",
+  "id": 69,
+  "status": 200,
+  "size": -688
+ },
+ {
+  "t": 2.3,
+  "kind": "done",
+  "id": 71,
+  "status": 200,
+  "size": -689
+ },
+ {
+  "t": 2.3,
+  "kind": "done",
+  "id": 72,
+  "status": 200,
+  "size": 59050
+ },
+ {
+  "t": 2.3,
+  "kind": "mem",
+  "mb": [
+   146,
+   412,
+   133,
+   110
+  ]
+ },
+ {
+  "t": 2.4,
+  "kind": "done",
+  "id": 101,
+  "status": 200,
+  "size": 550
+ },
+ {
+  "t": 2.4,
+  "kind": "done",
+  "id": 87,
+  "status": 200,
+  "size": 236
+ },
+ {
+  "t": 2.4,
+  "kind": "done",
+  "id": 120,
+  "status": 200,
+  "size": 4515
+ },
+ {
+  "t": 2.4,
+  "kind": "done",
+  "id": 137,
+  "status": 200,
+  "size": 335
+ },
+ {
+  "t": 2.4,
+  "kind": "done",
+  "id": 143,
+  "status": 200,
+  "size": 352
+ },
+ {
+  "t": 2.4,
+  "kind": "done",
+  "id": 141,
+  "status": 200,
+  "size": 1137
+ },
+ {
+  "t": 2.4,
+  "kind": "done",
+  "id": 142,
+  "status": 200,
+  "size": 334
+ },
+ {
+  "t": 2.4,
+  "kind": "done",
+  "id": 161,
+  "status": 200,
+  "size": 171
+ },
+ {
+  "t": 2.5,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+ },
+ {
+  "t": 2.5,
+  "kind": "req",
+  "id": 162,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://rr1---sn-ntqe6n7r.googlevideo.com/videoplayback?expire=5694100560&ei=I4ggTzEQzRpyShf9bFm_cEZ&ip=15.60.49.59&id=o-AFlKtdTHBEBNNzrVNDeWnoQ2vBFIAbPOZkUFIgPk7xCIW&itag=18&source=youtube&requiressl=yes&mh=X6&mm=902%2C17533%2C53012&mn=YojNU%2CdA5kB%2C82RFt&ms=YojNU%2CdA5kB%2C82RFt&mv=A&mvi=2&pl=20",
+  "sw": false
+ },
+ {
+  "t": 2.5,
+  "kind": "failed",
+  "id": 77,
+  "url": "https://rr1---sn-ntqe6n7r.googlevideo.com/videoplayback?expire=5694100560&ei=I4ggTzEQzRpyShf9bFm_cEZ&ip=15.60.49.59&id=o-AFlKtdTHBEBNNzrVNDeWnoQ2vBFIAbPOZkUFIgPk7xCIW&itag=18&source=youtube&requiressl=yes&mh=X6&mm=902%2C17533%2C53012&mn=YojNU%2CdA5kB%2C82RFt&ms=YojNU%2CdA5kB%2C82RFt&mv=A&mvi=2&pl=20",
+  "error": "net::ERR_ABORTED"
+ },
+ {
+  "t": 2.5,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+ },
+ {
+  "t": 2.5,
+  "kind": "req",
+  "id": 163,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://rr1---sn-ntqe6n7r.googlevideo.com/videoplayback?expire=5694100560&ei=I4ggTzEQzRpyShf9bFm_cEZ&ip=15.60.49.59&id=o-AFlKtdTHBEBNNzrVNDeWnoQ2vBFIAbPOZkUFIgPk7xCIW&itag=18&source=youtube&requiressl=yes&mh=X6&mm=902%2C17533%2C53012&mn=YojNU%2CdA5kB%2C82RFt&ms=YojNU%2CdA5kB%2C82RFt&mv=A&mvi=2&pl=20",
+  "sw": false
+ },
+ {
+  "t": 2.5,
+  "kind": "done",
+  "id": 91,
+  "status": 200,
+  "size": 276
+ },
+ {
+  "t": 2.5,
+  "kind": "done",
+  "id": 88,
+  "status": 200,
+  "size": 250
+ },
+ {
+  "t": 2.5,
+  "kind": "done",
+  "id": 90,
+  "status": 200,
+  "size": 239
+ },
+ {
+  "t": 2.5,
+  "kind": "done",
+  "id": 89,
+  "status": 200,
+  "size": 306
+ },
+ {
+  "t": 2.5,
+  "kind": "failed",
+  "id": 78,
+  "url": "https://rr1---sn-ntqe6n7r.googlevideo.com/videoplayback?expire=5694100560&ei=I4ggTzEQzRpyShf9bFm_cEZ&ip=15.60.49.59&id=o-AFlKtdTHBEBNNzrVNDeWnoQ2vBFIAbPOZkUFIgPk7xCIW&itag=18&source=youtube&requiressl=yes&mh=X6&mm=902%2C17533%2C53012&mn=YojNU%2CdA5kB%2C82RFt&ms=YojNU%2CdA5kB%2C82RFt&mv=A&mvi=2&pl=20",
+  "error": "net::ERR_ABORTED"
+ },
+ {
+  "t": 2.5,
+  "kind": "done",
+  "id": 158,
+  "status": 200,
+  "size": 376
+ },
+ {
+  "t": 2.5,
+  "kind": "done",
+  "id": 144,
+  "status": 200,
+  "size": 310
+ },
+ {
+  "t": 2.5,
+  "kind": "done",
+  "id": 157,
+  "status": 200,
+  "size": 319
+ },
+ {
+  "t": 2.5,
+  "kind": "done",
+  "id": 155,
+  "status": 200,
+  "size": 407
+ },
+ {
+  "t": 2.5,
+  "kind": "done",
+  "id": 154,
+  "status": 200,
+  "size": 301
+ },
+ {
+  "t": 2.5,
+  "kind": "done",
+  "id": 153,
+  "status": 200,
+  "size": 259
+ },
+ {
+  "t": 2.5,
+  "kind": "done",
+  "id": 152,
+  "status": 200,
+  "size": 426
+ },
+ {
+  "t": 2.5,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 146
+   },
+   {
+    "pid": 4137,
+    "mb": 509
+   },
+   {
+    "pid": 4162,
+    "mb": 133
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 53,
+   "totalMB": 74,
+   "nodes": 7768,
+   "docs": 10,
+   "frames": 6
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 25
+ },
+ {
+  "t": 2.5,
+  "kind": "done",
+  "id": 151,
+  "status": 200,
+  "size": 267
+ },
+ {
+  "t": 2.5,
+  "kind": "done",
+  "id": 150,
+  "status": 200,
+  "size": 244
+ },
+ {
+  "t": 2.5,
+  "kind": "done",
+  "id": 149,
+  "status": 200,
+  "size": 208
+ },
+ {
+  "t": 2.5,
+  "kind": "done",
+  "id": 148,
+  "status": 200,
+  "size": 226
+ },
+ {
+  "t": 2.5,
+  "kind": "done",
+  "id": 145,
+  "status": 200,
+  "size": 453
+ },
+ {
+  "t": 2.5,
+  "kind": "done",
+  "id": 147,
+  "status": 200,
+  "size": 227
+ },
+ {
+  "t": 2.5,
+  "kind": "done",
+  "id": 146,
+  "status": 200,
+  "size": 229
+ },
+ {
+  "t": 2.6,
+  "kind": "mem",
+  "mb": [
+   146,
+   529,
+   133,
+   110
+  ]
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 140,
+  "status": 200,
+  "size": 321
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 136,
+  "status": 200,
+  "size": 382
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 135,
+  "status": 200,
+  "size": 343
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 133,
+  "status": 200,
+  "size": 277
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 134,
+  "status": 200,
+  "size": 311
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 132,
+  "status": 200,
+  "size": 262
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 130,
+  "status": 200,
+  "size": 572
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 131,
+  "status": 200,
+  "size": 255
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 124,
+  "status": 200,
+  "size": 250
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 127,
+  "status": 200,
+  "size": 272
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 126,
+  "status": 200,
+  "size": 280
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 123,
+  "status": 200,
+  "size": 232
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 125,
+  "status": 200,
+  "size": 268
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 121,
+  "status": 200,
+  "size": 189
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 119,
+  "status": 200,
+  "size": 279
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 118,
+  "status": 200,
+  "size": 251
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 115,
+  "status": 200,
+  "size": 260
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 113,
+  "status": 200,
+  "size": 297
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 108,
+  "status": 200,
+  "size": 360
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 111,
+  "status": 200,
+  "size": 347
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 112,
+  "status": 200,
+  "size": 300
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 106,
+  "status": 200,
+  "size": 358
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 109,
+  "status": 200,
+  "size": 492
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 110,
+  "status": 200,
+  "size": 490
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 104,
+  "status": 200,
+  "size": 361
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 103,
+  "status": 200,
+  "size": 372
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 102,
+  "status": 200,
+  "size": 243
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 98,
+  "status": 200,
+  "size": 254
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 99,
+  "status": 200,
+  "size": 268
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 97,
+  "status": 200,
+  "size": 353
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 93,
+  "status": 200,
+  "size": 382
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 96,
+  "status": 200,
+  "size": 273
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 95,
+  "status": 200,
+  "size": 338
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 94,
+  "status": 200,
+  "size": 287
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 92,
+  "status": 200,
+  "size": 365
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 139,
+  "status": 200,
+  "size": 225
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 128,
+  "status": 200,
+  "size": 221
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 114,
+  "status": 200,
+  "size": 213
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 156,
+  "status": 200,
+  "size": 601
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 138,
+  "status": 200,
+  "size": 214
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 117,
+  "status": 200,
+  "size": 295
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 107,
+  "status": 200,
+  "size": 339
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 116,
+  "status": 200,
+  "size": 396
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 129,
+  "status": 200,
+  "size": 422
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 105,
+  "status": 200,
+  "size": 296
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 100,
+  "status": 200,
+  "size": 226
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 122,
+  "status": 200,
+  "size": 232
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 159,
+  "status": 200,
+  "size": 308
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 160,
+  "status": 200,
+  "size": 354
+ },
+ {
+  "t": 2.7,
+  "kind": "mem",
+  "mb": [
+   146,
+   547,
+   133,
+   110
+  ]
+ },
+ {
+  "t": 2.9,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+ },
+ {
+  "t": 2.9,
+  "kind": "failed",
+  "id": 162,
+  "url": "https://rr1---sn-ntqe6n7r.googlevideo.com/videoplayback?expire=5694100560&ei=I4ggTzEQzRpyShf9bFm_cEZ&ip=15.60.49.59&id=o-AFlKtdTHBEBNNzrVNDeWnoQ2vBFIAbPOZkUFIgPk7xCIW&itag=18&source=youtube&requiressl=yes&mh=X6&mm=902%2C17533%2C53012&mn=YojNU%2CdA5kB%2C82RFt&ms=YojNU%2CdA5kB%2C82RFt&mv=A&mvi=2&pl=20",
+  "error": "net::ERR_ABORTED"
+ },
+ {
+  "t": 2.9,
+  "kind": "mem",
+  "mb": [
+   146,
+   442,
+   133,
+   110
+  ]
+ },
+ {
+  "t": 3,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+ },
+ {
+  "t": 3,
+  "kind": "failed",
+  "id": 163,
+  "url": "https://rr1---sn-ntqe6n7r.googlevideo.com/videoplayback?expire=5694100560&ei=I4ggTzEQzRpyShf9bFm_cEZ&ip=15.60.49.59&id=o-AFlKtdTHBEBNNzrVNDeWnoQ2vBFIAbPOZkUFIgPk7xCIW&itag=18&source=youtube&requiressl=yes&mh=X6&mm=902%2C17533%2C53012&mn=YojNU%2CdA5kB%2C82RFt&ms=YojNU%2CdA5kB%2C82RFt&mv=A&mvi=2&pl=20",
+  "error": "net::ERR_ABORTED"
+ },
+ {
+  "t": 3,
+  "kind": "done",
+  "id": 73,
+  "status": 200,
+  "size": -675
+ },
+ {
+  "t": 3,
+  "kind": "done",
+  "id": 74,
+  "status": 200,
+  "size": -689
+ },
+ {
+  "t": 3,
+  "kind": "done",
+  "id": 75,
+  "status": 200,
+  "size": -688
+ },
+ {
+  "t": 3.1,
+  "kind": "done",
+  "id": 42,
+  "status": 200,
+  "size": 79391
+ },
+ {
+  "t": 3.1,
+  "kind": "mem",
+  "mb": [
+   146,
+   407,
+   133,
+   110
+  ]
+ },
+ {
+  "t": 3.2,
+  "kind": "req",
+  "id": 164,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/sw.js_data",
+  "sw": true
+ },
+ {
+  "t": 3.2,
+  "kind": "req",
+  "id": 165,
+  "method": "POST",
+  "type": "fetch",
+  "url": "https://www.youtube.com/youtubei/v1/notification_registration/set_registration?prettyPrint=false",
+  "sw": true
+ },
+ {
+  "t": 3.2,
+  "kind": "done",
+  "id": 164,
+  "status": 200,
+  "size": 1478
+ },
+ {
+  "t": 3.3,
+  "kind": "mem",
+  "mb": [
+   146,
+   404,
+   133,
+   110
+  ]
+ },
+ {
+  "t": 3.4,
+  "kind": "done",
+  "id": 165,
+  "status": 200,
+  "size": 694
+ },
+ {
+  "t": 3.6,
+  "kind": "mem",
+  "mb": [
+   146,
+   404,
+   133,
+   110
+  ]
+ },
+ {
+  "t": 3.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 146
+   },
+   {
+    "pid": 4137,
+    "mb": 404
+   },
+   {
+    "pid": 4162,
+    "mb": 133
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 35,
+   "totalMB": 78,
+   "nodes": 6300,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 3.8,
+  "kind": "mem",
+  "mb": [
+   146,
+   404,
+   133,
+   110
+  ]
+ },
+ {
+  "t": 4,
+  "kind": "mem",
+  "mb": [
+   146,
+   404,
+   133,
+   110
+  ]
+ },
+ {
+  "t": 4.2,
+  "kind": "mem",
+  "mb": [
+   146,
+   404,
+   133,
+   110
+  ]
+ },
+ {
+  "t": 4.4,
+  "kind": "mem",
+  "mb": [
+   147,
+   404,
+   133,
+   111
+  ]
+ },
+ {
+  "t": 4.6,
+  "kind": "mem",
+  "mb": [
+   147,
+   404,
+   133,
+   111
+  ]
+ },
+ {
+  "t": 4.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 147
+   },
+   {
+    "pid": 4137,
+    "mb": 404
+   },
+   {
+    "pid": 4162,
+    "mb": 133
+   },
+   {
+    "pid": 4177,
+    "mb": 111
+   }
+  ],
+  "heap": {
+   "usedMB": 35,
+   "totalMB": 78,
+   "nodes": 6300,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 4.8,
+  "kind": "mem",
+  "mb": [
+   147,
+   404,
+   133,
+   111
+  ]
+ },
+ {
+  "t": 5,
+  "kind": "mem",
+  "mb": [
+   147,
+   404,
+   133,
+   111
+  ]
+ },
+ {
+  "t": 5.2,
+  "kind": "mem",
+  "mb": [
+   147,
+   404,
+   133,
+   111
+  ]
+ },
+ {
+  "t": 5.4,
+  "kind": "mem",
+  "mb": [
+   147,
+   404,
+   133,
+   111
+  ]
+ },
+ {
+  "t": 5.6,
+  "kind": "mem",
+  "mb": [
+   147,
+   404,
+   133,
+   111
+  ]
+ },
+ {
+  "t": 5.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 147
+   },
+   {
+    "pid": 4137,
+    "mb": 404
+   },
+   {
+    "pid": 4162,
+    "mb": 133
+   },
+   {
+    "pid": 4177,
+    "mb": 111
+   }
+  ],
+  "heap": {
+   "usedMB": 36,
+   "totalMB": 79,
+   "nodes": 6300,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 5.8,
+  "kind": "mem",
+  "mb": [
+   147,
+   404,
+   133,
+   111
+  ]
+ },
+ {
+  "t": 6,
+  "kind": "mem",
+  "mb": [
+   147,
+   403,
+   133,
+   111
+  ]
+ },
+ {
+  "t": 6,
+  "kind": "console",
+  "type": "warning",
+  "text": "The resource https://i.ytimg.com/generate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+ },
+ {
+  "t": 6.2,
+  "kind": "mem",
+  "mb": [
+   147,
+   403,
+   133,
+   111
+  ]
+ },
+ {
+  "t": 6.4,
+  "kind": "mem",
+  "mb": [
+   147,
+   403,
+   133,
+   111
+  ]
+ },
+ {
+  "t": 6.6,
+  "kind": "mem",
+  "mb": [
+   147,
+   396,
+   133,
+   111
+  ]
+ },
+ {
+  "t": 6.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 147
+   },
+   {
+    "pid": 4137,
+    "mb": 393
+   },
+   {
+    "pid": 4162,
+    "mb": 133
+   },
+   {
+    "pid": 4177,
+    "mb": 111
+   }
+  ],
+  "heap": {
+   "usedMB": 36,
+   "totalMB": 79,
+   "nodes": 6300,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 6.8,
+  "kind": "mem",
+  "mb": [
+   147,
+   392,
+   133,
+   111
+  ]
+ },
+ {
+  "t": 7,
+  "kind": "mem",
+  "mb": [
+   147,
+   392,
+   133,
+   111
+  ]
+ },
+ {
+  "t": 7.2,
+  "kind": "mem",
+  "mb": [
+   147,
+   392,
+   133,
+   111
+  ]
+ },
+ {
+  "t": 7.4,
+  "kind": "mem",
+  "mb": [
+   147,
+   392,
+   133,
+   111
+  ]
+ },
+ {
+  "t": 7.6,
+  "kind": "mem",
+  "mb": [
+   147,
+   392,
+   133,
+   111
+  ]
+ },
+ {
+  "t": 7.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 147
+   },
+   {
+    "pid": 4137,
+    "mb": 392
+   },
+   {
+    "pid": 4162,
+    "mb": 133
+   },
+   {
+    "pid": 4177,
+    "mb": 111
+   }
+  ],
+  "heap": {
+   "usedMB": 36,
+   "totalMB": 79,
+   "nodes": 6300,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 7.8,
+  "kind": "mem",
+  "mb": [
+   147,
+   392,
+   133,
+   111
+  ]
+ },
+ {
+  "t": 8,
+  "kind": "mem",
+  "mb": [
+   147,
+   392,
+   133,
+   111
+  ]
+ },
+ {
+  "t": 8.2,
+  "kind": "mem",
+  "mb": [
+   147,
+   393,
+   133,
+   111
+  ]
+ },
+ {
+  "t": 8.4,
+  "kind": "mem",
+  "mb": [
+   147,
+   393,
+   133,
+   111
+  ]
+ },
+ {
+  "t": 8.6,
+  "kind": "mem",
+  "mb": [
+   147,
+   393,
+   133,
+   111
+  ]
+ },
+ {
+  "t": 8.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 147
+   },
+   {
+    "pid": 4137,
+    "mb": 393
+   },
+   {
+    "pid": 4162,
+    "mb": 133
+   },
+   {
+    "pid": 4177,
+    "mb": 111
+   }
+  ],
+  "heap": {
+   "usedMB": 43,
+   "totalMB": 80,
+   "nodes": 6300,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 8.8,
+  "kind": "mem",
+  "mb": [
+   147,
+   393,
+   133,
+   111
+  ]
+ },
+ {
+  "t": 9,
+  "kind": "mem",
+  "mb": [
+   147,
+   393,
+   133,
+   111
+  ]
+ },
+ {
+  "t": 9.2,
+  "kind": "mem",
+  "mb": [
+   147,
+   393,
+   133,
+   111
+  ]
+ },
+ {
+  "t": 9.4,
+  "kind": "mem",
+  "mb": [
+   147,
+   393,
+   133,
+   111
+  ]
+ },
+ {
+  "t": 9.6,
+  "kind": "mem",
+  "mb": [
+   147,
+   393,
+   133,
+   111
+  ]
+ },
+ {
+  "t": 9.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 147
+   },
+   {
+    "pid": 4137,
+    "mb": 393
+   },
+   {
+    "pid": 4162,
+    "mb": 133
+   },
+   {
+    "pid": 4177,
+    "mb": 111
+   }
+  ],
+  "heap": {
+   "usedMB": 43,
+   "totalMB": 80,
+   "nodes": 6300,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 9.8,
+  "kind": "mem",
+  "mb": [
+   147,
+   393,
+   133,
+   111
+  ]
+ },
+ {
+  "t": 10,
+  "kind": "mem",
+  "mb": [
+   147,
+   393,
+   133,
+   111
+  ]
+ },
+ {
+  "t": 10.2,
+  "kind": "mem",
+  "mb": [
+   147,
+   393,
+   133,
+   111
+  ]
+ },
+ {
+  "t": 10.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   390,
+   133,
+   111
+  ]
+ },
+ {
+  "t": 10.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   390,
+   133,
+   111
+  ]
+ },
+ {
+  "t": 10.7,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 145
+   },
+   {
+    "pid": 4137,
+    "mb": 390
+   },
+   {
+    "pid": 4162,
+    "mb": 133
+   },
+   {
+    "pid": 4177,
+    "mb": 111
+   }
+  ],
+  "heap": {
+   "usedMB": 43,
+   "totalMB": 80,
+   "nodes": 6300,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 10.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   390,
+   137,
+   111
+  ]
+ },
+ {
+  "t": 11,
+  "kind": "mem",
+  "mb": [
+   145,
+   390,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 11.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   390,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 11.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   390,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 11.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   390,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 11.7,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 145
+   },
+   {
+    "pid": 4137,
+    "mb": 390
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 44,
+   "totalMB": 80,
+   "nodes": 6300,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 11.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   390,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 12,
+  "kind": "mem",
+  "mb": [
+   145,
+   390,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 12.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   390,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 12.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   390,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 12.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   390,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 12.7,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 145
+   },
+   {
+    "pid": 4137,
+    "mb": 390
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 44,
+   "totalMB": 81,
+   "nodes": 6300,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 12.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   390,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 13,
+  "kind": "mem",
+  "mb": [
+   145,
+   390,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 13.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   392,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 13.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   392,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 13.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   392,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 13.7,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 145
+   },
+   {
+    "pid": 4137,
+    "mb": 392
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 51,
+   "totalMB": 82,
+   "nodes": 6300,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 13.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   392,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 14,
+  "kind": "mem",
+  "mb": [
+   145,
+   392,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 14.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   392,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 14.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   392,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 14.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   392,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 14.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   392,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 14.8,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 145
+   },
+   {
+    "pid": 4137,
+    "mb": 392
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 51,
+   "totalMB": 82,
+   "nodes": 6300,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 15,
+  "kind": "mem",
+  "mb": [
+   145,
+   392,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 15.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   392,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 15.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   392,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 15.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   392,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 15.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   392,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 15.8,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 145
+   },
+   {
+    "pid": 4137,
+    "mb": 392
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 51,
+   "totalMB": 82,
+   "nodes": 6300,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 16,
+  "kind": "mem",
+  "mb": [
+   145,
+   392,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 16.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   392,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 16.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   392,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 16.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   392,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 16.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   392,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 16.8,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 145
+   },
+   {
+    "pid": 4137,
+    "mb": 392
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 51,
+   "totalMB": 82,
+   "nodes": 6300,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 17,
+  "kind": "mem",
+  "mb": [
+   145,
+   389,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 17.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   389,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 17.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   389,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 17.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   389,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 17.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   389,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 17.8,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 145
+   },
+   {
+    "pid": 4137,
+    "mb": 389
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 52,
+   "totalMB": 82,
+   "nodes": 6300,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 18,
+  "kind": "mem",
+  "mb": [
+   145,
+   389,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 18.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   393,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 18.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   393,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 18.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   393,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 18.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   393,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 18.8,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 145
+   },
+   {
+    "pid": 4137,
+    "mb": 393
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 58,
+   "totalMB": 86,
+   "nodes": 6300,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 19,
+  "kind": "mem",
+  "mb": [
+   145,
+   393,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 19.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   393,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 19.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   393,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 19.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   393,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 19.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   393,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 19.8,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 145
+   },
+   {
+    "pid": 4137,
+    "mb": 393
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 58,
+   "totalMB": 86,
+   "nodes": 6300,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 20,
+  "kind": "mem",
+  "mb": [
+   145,
+   394,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 20.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   394,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 20.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   394,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 20.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   394,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 20.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   394,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 20.8,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 145
+   },
+   {
+    "pid": 4137,
+    "mb": 394
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 59,
+   "totalMB": 86,
+   "nodes": 6300,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 21,
+  "kind": "mem",
+  "mb": [
+   145,
+   394,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 21.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   394,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 21.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   394,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 21.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   394,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 21.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   394,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 21.9,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 145
+   },
+   {
+    "pid": 4137,
+    "mb": 394
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 59,
+   "totalMB": 86,
+   "nodes": 6300,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 22,
+  "kind": "mem",
+  "mb": [
+   145,
+   394,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 22.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   394,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 22.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   394,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 22.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   394,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 22.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   394,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 22.9,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 145
+   },
+   {
+    "pid": 4137,
+    "mb": 394
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 59,
+   "totalMB": 87,
+   "nodes": 6300,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 23,
+  "kind": "mem",
+  "mb": [
+   145,
+   394,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 23.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   401,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 23.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   401,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 23.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   401,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 23.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   401,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 23.9,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 145
+   },
+   {
+    "pid": 4137,
+    "mb": 401
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 66,
+   "totalMB": 93,
+   "nodes": 6300,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 4
+ },
+ {
+  "t": 24,
+  "kind": "mem",
+  "mb": [
+   145,
+   401,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 24.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   401,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 24.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   401,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 24.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   401,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 24.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   401,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 24.9,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 145
+   },
+   {
+    "pid": 4137,
+    "mb": 401
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 66,
+   "totalMB": 93,
+   "nodes": 6300,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 25,
+  "kind": "mem",
+  "mb": [
+   145,
+   401,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 25.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   401,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 25.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   401,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 25.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   401,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 25.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   401,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 26,
+  "kind": "mem",
+  "mb": [
+   145,
+   401,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 26,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 145
+   },
+   {
+    "pid": 4137,
+    "mb": 401
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 66,
+   "totalMB": 94,
+   "nodes": 6300,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 26.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   402,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 26.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   402,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 26.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   402,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 26.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   402,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 27,
+  "kind": "mem",
+  "mb": [
+   145,
+   402,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 27,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 145
+   },
+   {
+    "pid": 4137,
+    "mb": 402
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 66,
+   "totalMB": 94,
+   "nodes": 6300,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 27.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   402,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 27.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   402,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 27.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   402,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 27.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   402,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 28,
+  "kind": "mem",
+  "mb": [
+   145,
+   402,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 28,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 145
+   },
+   {
+    "pid": 4137,
+    "mb": 402
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 67,
+   "totalMB": 94,
+   "nodes": 6300,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 28.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   399,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 28.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   399,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 28.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   399,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 28.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   399,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 29,
+  "kind": "mem",
+  "mb": [
+   145,
+   399,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 29,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 145
+   },
+   {
+    "pid": 4137,
+    "mb": 399
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 36,
+   "totalMB": 92,
+   "nodes": 6300,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 29.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   400,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 29.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   400,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 29.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   400,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 29.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   400,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 30,
+  "kind": "mem",
+  "mb": [
+   145,
+   400,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 30,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 145
+   },
+   {
+    "pid": 4137,
+    "mb": 400
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 37,
+   "totalMB": 92,
+   "nodes": 6300,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 30.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   400,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 30.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   400,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 30.6,
+  "kind": "mem",
+  "mb": [
+   144,
+   400,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 30.8,
+  "kind": "mem",
+  "mb": [
+   144,
+   342,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 31,
+  "kind": "mem",
+  "mb": [
+   144,
+   342,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 31.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 144
+   },
+   {
+    "pid": 4137,
+    "mb": 342
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 36,
+   "totalMB": 38,
+   "nodes": 6299,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 31.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   343,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 31.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   343,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 31.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   341,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 31.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   341,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 32,
+  "kind": "mem",
+  "mb": [
+   142,
+   341,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 32.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 142
+   },
+   {
+    "pid": 4137,
+    "mb": 341
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 36,
+   "totalMB": 37,
+   "nodes": 6299,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 32.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   341,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 32.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   341,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 32.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   341,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 32.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   341,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 33,
+  "kind": "mem",
+  "mb": [
+   142,
+   341,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 33.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 142
+   },
+   {
+    "pid": 4137,
+    "mb": 345
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 36,
+   "totalMB": 40,
+   "nodes": 6299,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 33.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   345,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 33.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   345,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 33.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   345,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 33.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   345,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 34,
+  "kind": "mem",
+  "mb": [
+   142,
+   345,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 34.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 142
+   },
+   {
+    "pid": 4137,
+    "mb": 345
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 37,
+   "totalMB": 40,
+   "nodes": 6299,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 34.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   345,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 34.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   345,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 34.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   345,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 34.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   345,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 35,
+  "kind": "mem",
+  "mb": [
+   142,
+   345,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 35.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 142
+   },
+   {
+    "pid": 4137,
+    "mb": 345
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 37,
+   "totalMB": 41,
+   "nodes": 6299,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 35.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   345,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 35.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   345,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 35.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   345,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 35.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   345,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 36,
+  "kind": "mem",
+  "mb": [
+   142,
+   345,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 36.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 142
+   },
+   {
+    "pid": 4137,
+    "mb": 344
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 37,
+   "totalMB": 41,
+   "nodes": 6299,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 36.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   345,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 36.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   345,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 36.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   345,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 36.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   345,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 37,
+  "kind": "mem",
+  "mb": [
+   142,
+   345,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 37.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   345,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 37.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 142
+   },
+   {
+    "pid": 4137,
+    "mb": 345
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 37,
+   "totalMB": 41,
+   "nodes": 6299,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 37.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   345,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 37.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   345,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 37.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   345,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 38,
+  "kind": "mem",
+  "mb": [
+   142,
+   345,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 38.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 38.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 142
+   },
+   {
+    "pid": 4137,
+    "mb": 347
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 37,
+   "totalMB": 42,
+   "nodes": 6299,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 38.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 38.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 38.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 39,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 39.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 39.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 142
+   },
+   {
+    "pid": 4137,
+    "mb": 347
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 37,
+   "totalMB": 42,
+   "nodes": 6299,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 39.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 39.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 39.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 40,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 40.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 40.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 142
+   },
+   {
+    "pid": 4137,
+    "mb": 347
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 37,
+   "totalMB": 42,
+   "nodes": 6299,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 40.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 40.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 40.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 41,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 41.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 41.3,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 142
+   },
+   {
+    "pid": 4137,
+    "mb": 347
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 38,
+   "totalMB": 43,
+   "nodes": 6299,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 41.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 41.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 41.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 42,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 42.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 42.3,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 142
+   },
+   {
+    "pid": 4137,
+    "mb": 347
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 38,
+   "totalMB": 43,
+   "nodes": 6299,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 4
+ },
+ {
+  "t": 42.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 42.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 42.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 43,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 43.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   346,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 43.3,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 142
+   },
+   {
+    "pid": 4137,
+    "mb": 346
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 37,
+   "totalMB": 42,
+   "nodes": 6299,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 4
+ },
+ {
+  "t": 43.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   346,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 43.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   346,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 43.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   346,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 44,
+  "kind": "mem",
+  "mb": [
+   142,
+   346,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 44.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   346,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 44.3,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 142
+   },
+   {
+    "pid": 4137,
+    "mb": 346
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 38,
+   "totalMB": 43,
+   "nodes": 6299,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 44.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   346,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 44.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   346,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 44.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   346,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 45,
+  "kind": "mem",
+  "mb": [
+   142,
+   346,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 45.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   346,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 45.3,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 142
+   },
+   {
+    "pid": 4137,
+    "mb": 346
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 38,
+   "totalMB": 43,
+   "nodes": 6299,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 45.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 45.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 45.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 46,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 46.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 46.4,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 142
+   },
+   {
+    "pid": 4137,
+    "mb": 347
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 38,
+   "totalMB": 43,
+   "nodes": 6299,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 46.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 46.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 46.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 47,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 47.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 47.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   347,
+   137,
+   110
+  ]
+ },
+ {
+  "t": 47.4,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4130,
+    "mb": 142
+   },
+   {
+    "pid": 4137,
+    "mb": 347
+   },
+   {
+    "pid": 4162,
+    "mb": 137
+   },
+   {
+    "pid": 4177,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 38,
+   "totalMB": 43,
+   "nodes": 6299,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 2013,
+    "player": true,
+    "flexy": true,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 116977,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ }
+]

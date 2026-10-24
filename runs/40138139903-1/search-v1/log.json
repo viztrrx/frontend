@@ -1,0 +1,8163 @@
+[
+ {
+  "t": 0.3,
+  "kind": "req",
+  "id": 1,
+  "method": "GET",
+  "type": "document",
+  "url": "http://localhost:8781/",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 2,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8781/scram/scramjet.all.js",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 3,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8781/baremux/index.js",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 4,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "http://localhost:8781/index.css",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 5,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8781/register-sw.js",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 6,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8781/search.js",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 7,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8781/config.js",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 8,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8781/blocked.js",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 9,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8781/sitefixes.js",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 10,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8781/index.js",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 11,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8781/sessions.js",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "console",
+  "type": "debug",
+  "text": "bare-mux: running v2.1.9 (build dc9dc6e)"
+ },
+ {
+  "t": 0.4,
+  "kind": "done",
+  "id": 1,
+  "status": 200,
+  "size": 9649
+ },
+ {
+  "t": 0.4,
+  "kind": "done",
+  "id": 4,
+  "status": 200,
+  "size": 20762
+ },
+ {
+  "t": 0.4,
+  "kind": "done",
+  "id": 3,
+  "status": 200,
+  "size": 8689
+ },
+ {
+  "t": 0.4,
+  "kind": "done",
+  "id": 2,
+  "status": 200,
+  "size": 180333
+ },
+ {
+  "t": 0.4,
+  "kind": "done",
+  "id": 5,
+  "status": 200,
+  "size": 609
+ },
+ {
+  "t": 0.4,
+  "kind": "done",
+  "id": 6,
+  "status": 200,
+  "size": 940
+ },
+ {
+  "t": 0.4,
+  "kind": "done",
+  "id": 7,
+  "status": 200,
+  "size": 68
+ },
+ {
+  "t": 0.4,
+  "kind": "done",
+  "id": 9,
+  "status": 200,
+  "size": 2343
+ },
+ {
+  "t": 0.4,
+  "kind": "done",
+  "id": 8,
+  "status": 200,
+  "size": 4972
+ },
+ {
+  "t": 0.4,
+  "kind": "done",
+  "id": 10,
+  "status": 200,
+  "size": 61339
+ },
+ {
+  "t": 0.4,
+  "kind": "done",
+  "id": 12,
+  "status": 200,
+  "size": 915
+ },
+ {
+  "t": 0.4,
+  "kind": "done",
+  "id": 11,
+  "status": 200,
+  "size": 16207
+ },
+ {
+  "t": 0.5,
+  "kind": "done",
+  "id": 13,
+  "status": 200,
+  "size": 915
+ },
+ {
+  "t": 0.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "you are using the last version of scramjet v1, if possible, please upgrade to v2 for better performance and more features"
+ },
+ {
+  "t": 0.5,
+  "kind": "console",
+  "type": "log",
+  "text": "%cinit%c config loaded \n  \tbackground-color: #000;\n  \tcolor: #fff;\n  \tpadding: 2px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n   "
+ },
+ {
+  "t": 0.5,
+  "kind": "mem",
+  "mb": [
+   142,
+   147,
+   72
+  ]
+ },
+ {
+  "t": 0.5,
+  "kind": "req",
+  "id": 14,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8781/sw.js",
+  "sw": true
+ },
+ {
+  "t": 0.5,
+  "kind": "req",
+  "id": 15,
+  "method": "GET",
+  "type": "other",
+  "url": "http://localhost:8781/scram/scramjet.all.js",
+  "sw": true
+ },
+ {
+  "t": 0.5,
+  "kind": "req",
+  "id": 16,
+  "method": "GET",
+  "type": "other",
+  "url": "http://localhost:8781/baremux/index.js",
+  "sw": true
+ },
+ {
+  "t": 0.5,
+  "kind": "done",
+  "id": 15,
+  "status": 200,
+  "size": -272
+ },
+ {
+  "t": 0.6,
+  "kind": "console",
+  "type": "debug",
+  "text": "bare-mux: running v2.1.9 (build dc9dc6e)"
+ },
+ {
+  "t": 0.6,
+  "kind": "req",
+  "id": 17,
+  "method": "GET",
+  "type": "other",
+  "url": "http://localhost:8781/config.js",
+  "sw": true
+ },
+ {
+  "t": 0.6,
+  "kind": "done",
+  "id": 16,
+  "status": 200,
+  "size": -272
+ },
+ {
+  "t": 0.6,
+  "kind": "req",
+  "id": 18,
+  "method": "GET",
+  "type": "other",
+  "url": "http://localhost:8781/blocked.js",
+  "sw": true
+ },
+ {
+  "t": 0.6,
+  "kind": "done",
+  "id": 17,
+  "status": 200,
+  "size": -272
+ },
+ {
+  "t": 0.6,
+  "kind": "req",
+  "id": 19,
+  "method": "GET",
+  "type": "other",
+  "url": "http://localhost:8781/sitefixes.js",
+  "sw": true
+ },
+ {
+  "t": 0.6,
+  "kind": "done",
+  "id": 18,
+  "status": 200,
+  "size": -272
+ },
+ {
+  "t": 0.6,
+  "kind": "console",
+  "type": "debug",
+  "text": "bare-mux: running v2.1.9 (build dc9dc6e)"
+ },
+ {
+  "t": 0.6,
+  "kind": "done",
+  "id": 19,
+  "status": 200,
+  "size": -272
+ },
+ {
+  "t": 0.6,
+  "kind": "done",
+  "id": 14,
+  "status": 200,
+  "size": 0
+ },
+ {
+  "t": 0.6,
+  "kind": "req",
+  "id": 20,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8781/baremux/worker.js",
+  "sw": false
+ },
+ {
+  "t": 0.6,
+  "kind": "console",
+  "type": "debug",
+  "text": "bare-mux: setting localStorage bare-mux-path to /baremux/worker.js"
+ },
+ {
+  "t": 0.6,
+  "kind": "req",
+  "id": 21,
+  "method": "GET",
+  "type": "fetch",
+  "url": "http://localhost:8781/scram/scramjet.wasm.wasm",
+  "sw": true
+ },
+ {
+  "t": 0.6,
+  "kind": "req",
+  "id": 22,
+  "method": "GET",
+  "type": "fetch",
+  "url": "http://localhost:8781/baremux/worker.js",
+  "sw": true
+ },
+ {
+  "t": 0.6,
+  "kind": "done",
+  "id": 21,
+  "status": 200,
+  "size": 537008
+ },
+ {
+  "t": 0.6,
+  "kind": "done",
+  "id": 22,
+  "status": 200,
+  "size": 2915
+ },
+ {
+  "t": 0.6,
+  "kind": "console",
+  "type": "debug",
+  "text": "bare-mux: recieved request for port from sw"
+ },
+ {
+  "t": 0.6,
+  "kind": "req",
+  "id": 23,
+  "method": "GET",
+  "type": "fetch",
+  "url": "http://localhost:8781/libcurl/index.mjs",
+  "sw": true
+ },
+ {
+  "t": 0.6,
+  "kind": "done",
+  "id": 23,
+  "status": 200,
+  "size": 2111122
+ },
+ {
+  "t": 0.6,
+  "kind": "console",
+  "type": "debug",
+  "text": "bare-mux: got localStorage bare-mux-path: /baremux/worker.js"
+ },
+ {
+  "t": 0.7,
+  "kind": "mem",
+  "mb": [
+   143,
+   162,
+   122,
+   77
+  ]
+ },
+ {
+  "t": 0.9,
+  "kind": "mem",
+  "mb": [
+   143,
+   162,
+   122,
+   103
+  ]
+ },
+ {
+  "t": 1.1,
+  "kind": "mem",
+  "mb": [
+   143,
+   162,
+   122,
+   103
+  ]
+ },
+ {
+  "t": 1.3,
+  "kind": "mem",
+  "mb": [
+   143,
+   162,
+   122,
+   103
+  ]
+ },
+ {
+  "t": 1.5,
+  "kind": "mem",
+  "mb": [
+   143,
+   162,
+   122,
+   103
+  ]
+ },
+ {
+  "t": 1.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "bare-mux: failed to get a bare-mux SharedWorker MessagePort within 1s, retrying"
+ },
+ {
+  "t": 1.6,
+  "kind": "console",
+  "type": "debug",
+  "text": "bare-mux: recieved request for port from sw"
+ },
+ {
+  "t": 1.6,
+  "kind": "console",
+  "type": "debug",
+  "text": "bare-mux: recieved request for port from sw"
+ },
+ {
+  "t": 1.7,
+  "kind": "mem",
+  "mb": [
+   143,
+   162,
+   122,
+   103
+  ]
+ },
+ {
+  "t": 1.9,
+  "kind": "mem",
+  "mb": [
+   143,
+   162,
+   122,
+   103
+  ]
+ },
+ {
+  "t": 2,
+  "kind": "req",
+  "id": 24,
+  "method": "GET",
+  "type": "fetch",
+  "url": "http://localhost:8781/version.json",
+  "sw": false
+ },
+ {
+  "t": 2,
+  "kind": "req",
+  "id": 25,
+  "method": "GET",
+  "type": "fetch",
+  "url": "http://localhost:8781/version.json",
+  "sw": true
+ },
+ {
+  "t": 2,
+  "kind": "version",
+  "version": {
+   "engine": 1,
+   "commit": "83302da483645597d5f701e86c2a5fab5f804130",
+   "branch": "diag-verify",
+   "message": "diag: why YouTube results stay as placeholders",
+   "committedAt": "2026-10-24T22:20:30Z",
+   "builtAt": "2026-10-24T22:20:52.335Z"
+  }
+ },
+ {
+  "t": 2,
+  "kind": "done",
+  "id": 25,
+  "status": 200,
+  "size": 257
+ },
+ {
+  "t": 2,
+  "kind": "done",
+  "id": 24,
+  "status": 200,
+  "size": -273
+ },
+ {
+  "t": 2,
+  "kind": "console",
+  "type": "debug",
+  "text": "bare-mux: setting localStorage bare-mux-path to /baremux/worker.js"
+ },
+ {
+  "t": 2,
+  "kind": "opened",
+  "video": "https://www.youtube.com/results?search_query=dom+tracy+f150"
+ },
+ {
+  "t": 2,
+  "kind": "console",
+  "type": "log",
+  "text": "%copenUrl -> go%c navigated to \n  \tbackground-color: #000;\n  \tcolor: #fff;\n  \tpadding: 2px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n    https://www.youtube.com/results?search_query=dom+tracy+f150"
+ },
+ {
+  "t": 2,
+  "kind": "req",
+  "id": 26,
+  "method": "GET",
+  "type": "document",
+  "url": "https://www.youtube.com/results?search_query=dom+tracy+f150",
+  "sw": false
+ },
+ {
+  "t": 2,
+  "kind": "console",
+  "type": "debug",
+  "text": "bare-mux: recieved request for port from sw"
+ },
+ {
+  "t": 2,
+  "kind": "console",
+  "type": "debug",
+  "text": "bare-mux: recieved request for port from sw"
+ },
+ {
+  "t": 2,
+  "kind": "console",
+  "type": "debug",
+  "text": "bare-mux: recieved request for port from sw"
+ },
+ {
+  "t": 2.1,
+  "kind": "mem",
+  "mb": [
+   143,
+   169,
+   126,
+   103
+  ]
+ },
+ {
+  "t": 2.3,
+  "kind": "mem",
+  "mb": [
+   143,
+   172,
+   129,
+   103
+  ]
+ },
+ {
+  "t": 2.5,
+  "kind": "mem",
+  "mb": [
+   143,
+   172,
+   129,
+   103
+  ]
+ },
+ {
+  "t": 2.7,
+  "kind": "mem",
+  "mb": [
+   143,
+   172,
+   130,
+   103
+  ]
+ },
+ {
+  "t": 2.9,
+  "kind": "mem",
+  "mb": [
+   143,
+   254,
+   132,
+   103
+  ]
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 27,
+  "method": "GET",
+  "type": "fetch",
+  "url": "http://localhost:8781/scram/scramjet.all.js",
+  "sw": true
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 28,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8781/scram/scramjet.wasm.wasm",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 29,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8781/scram/scramjet.all.js",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 30,
+  "method": "GET",
+  "type": "other",
+  "url": "https://i.ytimg.com/generate_204",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 31,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/_/ytmainappweb/_/js/k=ytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O/am=AAAAQAAAEICU/d=1/br=1/rs=AGKMywFA1Su73J0pVaHJKf9FNtnfOFzTYw/m=base",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 32,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/_/ytmainappweb/_/js/k=ytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O/am=AAAAQAAAEICU/d=1/exm=base/ed=1/br=1/rs=AGKMywFA1Su73J0pVaHJKf9FNtnfOFzTYw/m=late,app",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 33,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/web-animations-next-lite.min.vflset/web-animations-next-lite.min.js",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 34,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/custom-elements-es5-adapter.vflset/custom-elements-es5-adapter.js",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 35,
+  "method": "GET",
+  "type": "fetch",
+  "url": "http://localhost:8781/scram/scramjet.wasm.wasm",
+  "sw": true
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 36,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/webcomponents-sd.vflset/webcomponents-sd.js",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 37,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/intersection-observer.min.vflset/intersection-observer.min.js",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "done",
+  "id": 27,
+  "status": 200,
+  "size": 180333
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 38,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/scheduler.vflset/scheduler.js",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 39,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/www-i18n-constants-en_US.vflset/www-i18n-constants.js",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 40,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/spf.vflset/spf.js",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 41,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/network.vflset/network.js",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 42,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=YouTube+Sans:wght@300..900&display=swap",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 43,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-onepick.css",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 44,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/_/ytmainappweb/_/ss/k=ytmainappweb.base_module_set.sj0b8y4Z2RA.L.B1.O/am=AAAAQADAEMCe/d=0/br=1/rs=AGKMywEg4yQYHw_fXK5CMWR1EYsCc-tiLw",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "done",
+  "id": 35,
+  "status": 200,
+  "size": 537008
+ },
+ {
+  "t": 3,
+  "kind": "done",
+  "id": 29,
+  "status": 200,
+  "size": -272
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 45,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-main-desktop-watch-page-skeleton.css",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "done",
+  "id": 26,
+  "status": 200,
+  "size": -10261
+ },
+ {
+  "t": 3,
+  "kind": "done",
+  "id": 28,
+  "status": 200,
+  "size": -48
+ },
+ {
+  "t": 3.1,
+  "kind": "console",
+  "type": "debug",
+  "text": "bare-mux: running v2.1.9 (build dc9dc6e)"
+ },
+ {
+  "t": 3.1,
+  "kind": "console",
+  "type": "log",
+  "text": "%cg%c initializing scramjet client \n  \tbackground-color: #000;\n  \tcolor: #fff;\n  \tpadding: 2px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n   "
+ },
+ {
+  "t": 3.1,
+  "kind": "console",
+  "type": "warning",
+  "text": "%cg -> g%c Creating SingletonBox \n  \tbackground-color: #f80;\n  \tcolor: #fff;\n  \tpadding: 4px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n   "
+ },
+ {
+  "t": 3.1,
+  "kind": "console",
+  "type": "debug",
+  "text": "bare-mux: got localStorage bare-mux-path: /baremux/worker.js"
+ },
+ {
+  "t": 3.1,
+  "kind": "req",
+  "id": 46,
+  "method": "GET",
+  "type": "fetch",
+  "url": "http://localhost:8781/icon?d=youtube.com",
+  "sw": true
+ },
+ {
+  "t": 3.1,
+  "kind": "req",
+  "id": 47,
+  "method": "GET",
+  "type": "image",
+  "url": "http://localhost:8781/icon?d=youtube.com",
+  "sw": false
+ },
+ {
+  "t": 3.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 143
+   },
+   {
+    "pid": 3609,
+    "mb": 249
+   },
+   {
+    "pid": 3632,
+    "mb": 132
+   },
+   {
+    "pid": 3647,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 5,
+   "totalMB": 10,
+   "nodes": 589,
+   "docs": 10,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website responded (HTTP 200)",
+   "title": "",
+   "app": {
+    "elements": 22,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": "undefined",
+    "pageReady": false
+   }
+  },
+  "answerMs": 52
+ },
+ {
+  "t": 3.1,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+ },
+ {
+  "t": 3.1,
+  "kind": "done",
+  "id": 47,
+  "status": 404,
+  "size": -248
+ },
+ {
+  "t": 3.1,
+  "kind": "done",
+  "id": 46,
+  "status": 404,
+  "size": 19
+ },
+ {
+  "t": 3.1,
+  "kind": "done",
+  "id": 34,
+  "status": 200,
+  "size": -674
+ },
+ {
+  "t": 3.1,
+  "kind": "mem",
+  "mb": [
+   143,
+   247,
+   146,
+   103
+  ]
+ },
+ {
+  "t": 3.1,
+  "kind": "done",
+  "id": 37,
+  "status": 200,
+  "size": -673
+ },
+ {
+  "t": 3.1,
+  "kind": "done",
+  "id": 39,
+  "status": 200,
+  "size": -674
+ },
+ {
+  "t": 3.1,
+  "kind": "done",
+  "id": 38,
+  "status": 200,
+  "size": -674
+ },
+ {
+  "t": 3.2,
+  "kind": "done",
+  "id": 41,
+  "status": 200,
+  "size": -674
+ },
+ {
+  "t": 3.2,
+  "kind": "done",
+  "id": 43,
+  "status": 200,
+  "size": -666
+ },
+ {
+  "t": 3.2,
+  "kind": "done",
+  "id": 33,
+  "status": 200,
+  "size": -675
+ },
+ {
+  "t": 3.2,
+  "kind": "done",
+  "id": 40,
+  "status": 200,
+  "size": -675
+ },
+ {
+  "t": 3.2,
+  "kind": "done",
+  "id": 45,
+  "status": 200,
+  "size": -668
+ },
+ {
+  "t": 3.2,
+  "kind": "done",
+  "id": 36,
+  "status": 200,
+  "size": -675
+ },
+ {
+  "t": 3.3,
+  "kind": "mem",
+  "mb": [
+   143,
+   311,
+   175,
+   103
+  ]
+ },
+ {
+  "t": 3.4,
+  "kind": "done",
+  "id": 31,
+  "status": 200,
+  "size": -676
+ },
+ {
+  "t": 3.5,
+  "kind": "mem",
+  "mb": [
+   143,
+   379,
+   175,
+   103
+  ]
+ },
+ {
+  "t": 3.7,
+  "kind": "done",
+  "id": 44,
+  "status": 200,
+  "size": -669
+ },
+ {
+  "t": 3.7,
+  "kind": "mem",
+  "mb": [
+   143,
+   451,
+   176,
+   103
+  ]
+ },
+ {
+  "t": 3.8,
+  "kind": "done",
+  "id": 30,
+  "status": 204,
+  "size": -121
+ },
+ {
+  "t": 3.9,
+  "kind": "done",
+  "id": 42,
+  "status": 200,
+  "size": -686
+ },
+ {
+  "t": 3.9,
+  "kind": "req",
+  "id": 48,
+  "method": "GET",
+  "type": "document",
+  "url": "https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3D%252Fsignin_passive%26feature%3Dpassive&hl=en",
+  "sw": false
+ },
+ {
+  "t": 3.9,
+  "kind": "mem",
+  "mb": [
+   143,
+   521,
+   176,
+   103
+  ]
+ },
+ {
+  "t": 3.9,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_rsef_dpj' cannot have a negative start time.\n    at _.UyG (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywFA1Su73J0pVaHJKf9FNtnfOFzTYw%2Fm%3Dbase:1429:501)\n    at _.$s (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywF"
+ },
+ {
+  "t": 3.9,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_rsae_dpj' cannot have a negative start time.\n    at _.UyG (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywFA1Su73J0pVaHJKf9FNtnfOFzTYw%2Fm%3Dbase:1429:501)\n    at _.$s (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywF"
+ },
+ {
+  "t": 3.9,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_js_r' cannot have a negative start time.\n    at _.UyG (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywFA1Su73J0pVaHJKf9FNtnfOFzTYw%2Fm%3Dbase:1429:501)\n    at _.$s (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywFA1Su"
+ },
+ {
+  "t": 3.9,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_ac' cannot have a negative start time.\n    at _.UyG (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywFA1Su73J0pVaHJKf9FNtnfOFzTYw%2Fm%3Dbase:1429:501)\n    at _.$s (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywFA1Su73"
+ },
+ {
+  "t": 3.9,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_pdc' cannot have a negative start time.\n    at _.UyG (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywFA1Su73J0pVaHJKf9FNtnfOFzTYw%2Fm%3Dbase:1429:501)\n    at _.$s (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywFA1Su7"
+ },
+ {
+  "t": 4,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_pdr' cannot have a negative start time.\n    at _.UyG (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywFA1Su73J0pVaHJKf9FNtnfOFzTYw%2Fm%3Dbase:1429:501)\n    at _.$s (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywFA1Su7"
+ },
+ {
+  "t": 4,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_gcc' cannot have a negative start time.\n    at _.UyG (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywFA1Su73J0pVaHJKf9FNtnfOFzTYw%2Fm%3Dbase:1429:501)\n    at _.$s (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywFA1Su7"
+ },
+ {
+  "t": 4,
+  "kind": "done",
+  "id": 32,
+  "status": 200,
+  "size": -677
+ },
+ {
+  "t": 4,
+  "kind": "req",
+  "id": 49,
+  "method": "GET",
+  "type": "document",
+  "url": "https://accounts.google.com/v3/signin/identifier?continue=https://www.youtube.com/signin?action_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3D%252Fsignin_passive%26feature%3Dpassive&hl=en&passive=true&service=youtube&uilel=3&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S-82456521:1792",
+  "sw": false
+ },
+ {
+  "t": 4,
+  "kind": "done",
+  "id": 48,
+  "status": 302,
+  "size": 0
+ },
+ {
+  "t": 4.1,
+  "kind": "mem",
+  "mb": [
+   143,
+   483,
+   178,
+   103
+  ]
+ },
+ {
+  "t": 4.3,
+  "kind": "mem",
+  "mb": [
+   143,
+   455,
+   152,
+   103
+  ]
+ },
+ {
+  "t": 4.4,
+  "kind": "console",
+  "type": "info",
+  "text": "LegacyDataMixin will be applied to all legacy elements.\nSet `_legacyUndefinedCheck: true` on element class to enable."
+ },
+ {
+  "t": 4.5,
+  "kind": "mem",
+  "mb": [
+   143,
+   429,
+   152,
+   103
+  ]
+ },
+ {
+  "t": 4.6,
+  "kind": "req",
+  "id": 50,
+  "method": "GET",
+  "type": "xhr",
+  "url": "https://googleads.g.doubleclick.net/pagead/id",
+  "sw": false
+ },
+ {
+  "t": 4.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR SyntaxError: Unexpected token 'Y', \"YOUTUBE_LOGO\" is not valid JSON\n    at JSON.parse (<anonymous>)\n    at S._deserializeValue (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fexm%3Dbase%2Fed%3D1%2Fbr%3D1%2Frs%3DAGKMywFA1Su73J0pVaHJKf9FNtnfOFzTYw%2Fm%3Dlate%2Capp:714:113)\n    at H._attributeToProperty (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5"
+ },
+ {
+  "t": 4.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR TypeError: Illegal invocation\n    at _.RaP.querySelector (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fexm%3Dbase%2Fed%3D1%2Fbr%3D1%2Frs%3DAGKMywFA1Su73J0pVaHJKf9FNtnfOFzTYw%2Fm%3Dlate%2Capp:408:529)\n    at G._.onPressedChanged_ (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fexm%3Dbase%2Fed%3D1%2Fbr%3D1%2Frs%3DAG"
+ },
+ {
+  "t": 4.6,
+  "kind": "req",
+  "id": 52,
+  "method": "POST",
+  "type": "xhr",
+  "url": "https://www.youtube.com/youtubei/v1/log_event?alt=json",
+  "sw": false
+ },
+ {
+  "t": 4.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR TypeError: Cannot read properties of null (reading 'addEventListener')\n    at G._.ready (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fexm%3Dbase%2Fed%3D1%2Fbr%3D1%2Frs%3DAGKMywFA1Su73J0pVaHJKf9FNtnfOFzTYw%2Fm%3Dlate%2Capp:6677:140)\n    at U.ready (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fexm%3Dbase%2Fed%3D1%"
+ },
+ {
+  "t": 4.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR TypeError: Cannot read properties of null (reading 'addEventListener')\n    at G._.ready (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fexm%3Dbase%2Fed%3D1%2Fbr%3D1%2Frs%3DAGKMywFA1Su73J0pVaHJKf9FNtnfOFzTYw%2Fm%3Dlate%2Capp:6677:140)\n    at U.ready (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fexm%3Dbase%2Fed%3D1%"
+ },
+ {
+  "t": 4.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR TypeError: Cannot read properties of null (reading 'addEventListener')\n    at G._.ready (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fexm%3Dbase%2Fed%3D1%2Fbr%3D1%2Frs%3DAGKMywFA1Su73J0pVaHJKf9FNtnfOFzTYw%2Fm%3Dlate%2Capp:6677:140)\n    at U.ready (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fexm%3Dbase%2Fed%3D1%"
+ },
+ {
+  "t": 4.7,
+  "kind": "console",
+  "type": "debug",
+  "text": "bare-mux: got localStorage bare-mux-path: /baremux/worker.js"
+ },
+ {
+  "t": 4.7,
+  "kind": "req",
+  "id": 53,
+  "method": "GET",
+  "type": "image",
+  "url": "https://www.youtube.com/results?search_query=dom+tracy+f150",
+  "sw": false
+ },
+ {
+  "t": 4.7,
+  "kind": "req",
+  "id": 54,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.google.com/js/th/pxwG18Euy-n6Uq6PY9vb4Ohp58yKH_56NpBvs6fBnH8.js",
+  "sw": false
+ },
+ {
+  "t": 4.7,
+  "kind": "mem",
+  "mb": [
+   143,
+   457,
+   152,
+   103
+  ]
+ },
+ {
+  "t": 4.7,
+  "kind": "req",
+  "id": 55,
+  "method": "GET",
+  "type": "fetch",
+  "url": "data:application/json;base64,eyJhZFBsYWNlbWVudHMiOnRydWUsInBsYXllckFkcyI6dHJ1ZSwicGxheWVyUmVzcG9uc2UiOnsiYWRQbGFjZW1lbnRzIjp0cnVlLCJwbGF5ZXJBZHMiOnRydWUsInBsYXllckNvbmZpZyI6IHsiYXVkaW9Db25maWciOiB7fSwgInN0cmVhbVNlbGVjdGlvbkNvbmZpZyI6IHt9LCAid2ViUGxheWVyQ29uZmlnIjogeyJ3ZWJQbGF5ZXJBY3Rpb25zUG9ydGluZyI",
+  "sw": false
+ },
+ {
+  "t": 4.7,
+  "kind": "req",
+  "id": 56,
+  "method": "GET",
+  "type": "fetch",
+  "url": "http://localhost:8781/scram/scramjet.wasm.wasm",
+  "sw": true
+ },
+ {
+  "t": 4.7,
+  "kind": "req",
+  "id": 57,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8781/scram/scramjet.wasm.wasm",
+  "sw": false
+ },
+ {
+  "t": 4.7,
+  "kind": "req",
+  "id": 58,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8781/scram/scramjet.all.js",
+  "sw": false
+ },
+ {
+  "t": 4.7,
+  "kind": "req",
+  "id": 59,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0BAFBFAAE/d=1/excm=_b,_tp,identifierview/ed=1/dg=0/wt=2/ujg=1/rs=AOaEmlGaX03bAasRe4_qyTkyocOyp6guOg/dti=1/m=_b,_tp",
+  "sw": false
+ },
+ {
+  "t": 4.7,
+  "kind": "req",
+  "id": 61,
+  "method": "GET",
+  "type": "fetch",
+  "url": "http://localhost:8781/scram/scramjet.all.js",
+  "sw": true
+ },
+ {
+  "t": 4.7,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 143
+   },
+   {
+    "pid": 3609,
+    "mb": 471
+   },
+   {
+    "pid": 3632,
+    "mb": 176
+   },
+   {
+    "pid": 3647,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 27,
+   "totalMB": 33,
+   "nodes": 897,
+   "docs": 15,
+   "frames": 8
+  },
+  "video": {
+   "status": "Website responded (HTTP 200)",
+   "title": "",
+   "app": {
+    "elements": 1099,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "interactive"
+   }
+  },
+  "answerMs": 335
+ },
+ {
+  "t": 4.7,
+  "kind": "req",
+  "id": 62,
+  "method": "GET",
+  "type": "xhr",
+  "url": "https://googleads.g.doubleclick.net/pagead/id?slf_rd=1",
+  "sw": false
+ },
+ {
+  "t": 4.7,
+  "kind": "done",
+  "id": 51,
+  "status": 200,
+  "size": -525
+ },
+ {
+  "t": 4.7,
+  "kind": "done",
+  "id": 50,
+  "status": 302,
+  "size": 0
+ },
+ {
+  "t": 4.7,
+  "kind": "done",
+  "id": 52,
+  "status": 200,
+  "size": -252
+ },
+ {
+  "t": 4.7,
+  "kind": "done",
+  "id": 56,
+  "status": 200,
+  "size": 537008
+ },
+ {
+  "t": 4.7,
+  "kind": "done",
+  "id": 61,
+  "status": 200,
+  "size": 180333
+ },
+ {
+  "t": 4.8,
+  "kind": "done",
+  "id": 49,
+  "status": 200,
+  "size": -2042
+ },
+ {
+  "t": 4.8,
+  "kind": "req",
+  "id": 63,
+  "method": "GET",
+  "type": "fetch",
+  "url": "data:application/json;base64,W3siYWRQbGFjZW1lbnRzIjp0cnVlLCJwbGF5ZXJBZHMiOnRydWUsInBsYXllclJlc3BvbnNlIjp7ImFkUGxhY2VtZW50cyI6dHJ1ZSwicGxheWVyQWRzIjp0cnVlfX1d",
+  "sw": false
+ },
+ {
+  "t": 4.8,
+  "kind": "done",
+  "id": 58,
+  "status": 200,
+  "size": -272
+ },
+ {
+  "t": 4.8,
+  "kind": "done",
+  "id": 55,
+  "status": 200,
+  "size": -136
+ },
+ {
+  "t": 4.8,
+  "kind": "done",
+  "id": 57,
+  "status": 200,
+  "size": -48
+ },
+ {
+  "t": 4.8,
+  "kind": "console",
+  "type": "debug",
+  "text": "bare-mux: running v2.1.9 (build dc9dc6e)"
+ },
+ {
+  "t": 4.8,
+  "kind": "console",
+  "type": "log",
+  "text": "%cg%c initializing scramjet client \n  \tbackground-color: #000;\n  \tcolor: #fff;\n  \tpadding: 2px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n   "
+ },
+ {
+  "t": 4.8,
+  "kind": "console",
+  "type": "debug",
+  "text": "bare-mux: got localStorage bare-mux-path: /baremux/worker.js"
+ },
+ {
+  "t": 4.8,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR o8E"
+ },
+ {
+  "t": 4.8,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR n8W"
+ },
+ {
+  "t": 4.8,
+  "kind": "done",
+  "id": 54,
+  "status": 200,
+  "size": -593
+ },
+ {
+  "t": 4.8,
+  "kind": "done",
+  "id": 62,
+  "status": 200,
+  "size": -610
+ },
+ {
+  "t": 4.8,
+  "kind": "done",
+  "id": 63,
+  "status": 200,
+  "size": -136
+ },
+ {
+  "t": 4.9,
+  "kind": "req",
+  "id": 64,
+  "method": "GET",
+  "type": "fetch",
+  "url": "data:application/json;base64,eyJyZXNwb25zZUNvbnRleHQiOnsic2VydmljZVRyYWNraW5nUGFyYW1zIjpbeyJzZXJ2aWNlIjoiR0ZFRURCQUNLIiwicGFyYW1zIjpbeyJrZXkiOiJrYyIsInZhbHVlIjoiNjYifSx7ImtleSI6ImN3IiwidmFsdWUiOiJzdCJ9LHsia2V5IjoiemIiLCJ2YWx1ZSI6Inh6In0seyJrZXkiOiJ6bCIsInZhbHVlIjoiMTYifSx7ImtleSI6InBmIiwidmFsdWUiOiJ",
+  "sw": false
+ },
+ {
+  "t": 4.9,
+  "kind": "done",
+  "id": 60,
+  "status": 200,
+  "size": -602
+ },
+ {
+  "t": 4.9,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR TypeError: Cannot read properties of null (reading '$$')\n    at new pF (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fexm%3Dbase%2Fed%3D1%2Fbr%3D1%2Frs%3DAGKMywFA1Su73J0pVaHJKf9FNtnfOFzTYw%2Fm%3Dlate%2Capp:1412:449)\n    at _.XF (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fexm%3Dbase%2Fed%3D1%2Fbr%3D1%2Frs%3DAGKM"
+ },
+ {
+  "t": 4.9,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_pr' cannot have a negative start time.\n    at _.UyG (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywFA1Su73J0pVaHJKf9FNtnfOFzTYw%2Fm%3Dbase:1429:501)\n    at _.$s (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywFA1Su73"
+ },
+ {
+  "t": 4.9,
+  "kind": "mem",
+  "mb": [
+   143,
+   523,
+   157,
+   103
+  ]
+ },
+ {
+  "t": 4.9,
+  "kind": "req",
+  "id": 65,
+  "method": "POST",
+  "type": "fetch",
+  "url": "https://www.youtube.com/youtubei/v1/guide?prettyPrint=false",
+  "sw": false
+ },
+ {
+  "t": 4.9,
+  "kind": "req",
+  "id": 66,
+  "method": "GET",
+  "type": "image",
+  "url": "https://www.google.com/pagead/lvz?evtid=ACd6KtydH65apHgrXgKSDp9XUCoIM9FOojYBYx8CB1e7jS5TUCh47n5VEjLfadowzI1WKhJ-x70Wb3lb_twkF-GJB3d5mhvrVg&req_ts=1792880568&pg=MainAppBootstrap%3AResults&az=1&sigh=AB9vU416gXolCj22VUdnlmW6_lkY3TUlVg",
+  "sw": false
+ },
+ {
+  "t": 4.9,
+  "kind": "console",
+  "type": "debug",
+  "text": "bare-mux: got localStorage bare-mux-path: /baremux/worker.js"
+ },
+ {
+  "t": 5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR TypeError: Cannot read properties of null (reading 'hostElement')\n    at g.emptyContainer_ (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fexm%3Dbase%2Fed%3D1%2Fbr%3D1%2Frs%3DAGKMywFA1Su73J0pVaHJKf9FNtnfOFzTYw%2Fm%3Dlate%2Capp:6720:93)\n    at g.stampTypeChanged_ (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fexm%3D"
+ },
+ {
+  "t": 5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR TypeError: Cannot read properties of null (reading 'hostElement')\n    at g.emptyContainer_ (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fexm%3Dbase%2Fed%3D1%2Fbr%3D1%2Frs%3DAGKMywFA1Su73J0pVaHJKf9FNtnfOFzTYw%2Fm%3Dlate%2Capp:6720:93)\n    at g.stampTypeChanged_ (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fexm%3D"
+ },
+ {
+  "t": 5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR TypeError: Cannot read properties of null (reading 'hostElement')\n    at g.emptyContainer_ (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fexm%3Dbase%2Fed%3D1%2Fbr%3D1%2Frs%3DAGKMywFA1Su73J0pVaHJKf9FNtnfOFzTYw%2Fm%3Dlate%2Capp:6720:93)\n    at g.stampTypeChanged_ (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fexm%3D"
+ },
+ {
+  "t": 5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR TypeError: Cannot read properties of null (reading 'hostElement')\n    at g.emptyContainer_ (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fexm%3Dbase%2Fed%3D1%2Fbr%3D1%2Frs%3DAGKMywFA1Su73J0pVaHJKf9FNtnfOFzTYw%2Fm%3Dlate%2Capp:6720:93)\n    at g.stampTypeChanged_ (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fexm%3D"
+ },
+ {
+  "t": 5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR TypeError: Cannot read properties of null (reading 'hostElement')\n    at g.emptyContainer_ (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fexm%3Dbase%2Fed%3D1%2Fbr%3D1%2Frs%3DAGKMywFA1Su73J0pVaHJKf9FNtnfOFzTYw%2Fm%3Dlate%2Capp:6720:93)\n    at g.stampTypeChanged_ (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fexm%3D"
+ },
+ {
+  "t": 5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR TypeError: Cannot read properties of null (reading 'hostElement')\n    at g.emptyContainer_ (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fexm%3Dbase%2Fed%3D1%2Fbr%3D1%2Frs%3DAGKMywFA1Su73J0pVaHJKf9FNtnfOFzTYw%2Fm%3Dlate%2Capp:6720:93)\n    at g.stampTypeChanged_ (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fexm%3D"
+ },
+ {
+  "t": 5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR TypeError: Cannot read properties of null (reading 'hostElement')\n    at g.emptyContainer_ (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fexm%3Dbase%2Fed%3D1%2Fbr%3D1%2Frs%3DAGKMywFA1Su73J0pVaHJKf9FNtnfOFzTYw%2Fm%3Dlate%2Capp:6720:93)\n    at g.stampTypeChanged_ (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fexm%3D"
+ },
+ {
+  "t": 5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR TypeError: Cannot read properties of null (reading 'hostElement')\n    at g.emptyContainer_ (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fexm%3Dbase%2Fed%3D1%2Fbr%3D1%2Frs%3DAGKMywFA1Su73J0pVaHJKf9FNtnfOFzTYw%2Fm%3Dlate%2Capp:6720:93)\n    at g.stampTypeChanged_ (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O%2Fam%3DAAAAQAAAEICU%2Fd%3D1%2Fexm%3D"
+ },
+ {
+  "t": 5,
+  "kind": "req",
+  "id": 67,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://fonts.googleapis.com/css?family=Roboto:300italic,400italic,500italic,700italic",
+  "sw": false
+ },
+ {
+  "t": 5,
+  "kind": "req",
+  "id": 68,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://fonts.googleapis.com/css?family=Roboto+Mono:400",
+  "sw": false
+ },
+ {
+  "t": 5,
+  "kind": "done",
+  "id": 64,
+  "status": 200,
+  "size": -136
+ },
+ {
+  "t": 5,
+  "kind": "req",
+  "id": 69,
+  "method": "GET",
+  "type": "media",
+  "url": "https://www.youtube.com/s/search/audio/failure.mp3",
+  "sw": false
+ },
+ {
+  "t": 5,
+  "kind": "req",
+  "id": 70,
+  "method": "GET",
+  "type": "media",
+  "url": "https://www.youtube.com/s/search/audio/no_input.mp3",
+  "sw": false
+ },
+ {
+  "t": 5,
+  "kind": "req",
+  "id": 71,
+  "method": "GET",
+  "type": "media",
+  "url": "https://www.youtube.com/s/search/audio/open.mp3",
+  "sw": false
+ },
+ {
+  "t": 5,
+  "kind": "req",
+  "id": 72,
+  "method": "GET",
+  "type": "media",
+  "url": "https://www.youtube.com/s/search/audio/success.mp3",
+  "sw": false
+ },
+ {
+  "t": 5,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+ },
+ {
+  "t": 5,
+  "kind": "done",
+  "id": 53,
+  "status": 403,
+  "size": 921
+ },
+ {
+  "t": 5,
+  "kind": "done",
+  "id": 59,
+  "status": 200,
+  "size": -680
+ },
+ {
+  "t": 5,
+  "kind": "req",
+  "id": 73,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0BAFBFAAE/d=1/exm=_b,_tp/excm=_b,_tp,identifierview/ed=1/wt=2/ujg=1/rs=AOaEmlFgO8oknP4pn62iFdb",
+  "sw": false
+ },
+ {
+  "t": 5,
+  "kind": "console",
+  "type": "verbose",
+  "text": "[DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o"
+ },
+ {
+  "t": 5.1,
+  "kind": "req",
+  "id": 74,
+  "method": "GET",
+  "type": "fetch",
+  "url": "data:application/json;base64,eyJwbGF5ZXJSZXNwb25zZSI6eyJyZXNwb25zZUNvbnRleHQiOnsic2VydmljZVRyYWNraW5nUGFyYW1zIjpbeyJzZXJ2aWNlIjoiR0ZFRURCQUNLIiwicGFyYW1zIjpbeyJrZXkiOiJrYyIsInZhbHVlIjoiNjYifSx7ImtleSI6ImN3IiwidmFsdWUiOiJzdCJ9LHsia2V5IjoiemIiLCJ2YWx1ZSI6Inh6In0seyJrZXkiOiJ6bCIsInZhbHVlIjoiMTYifSx7Imt",
+  "sw": false
+ },
+ {
+  "t": 5.1,
+  "kind": "done",
+  "id": 67,
+  "status": 200,
+  "size": -686
+ },
+ {
+  "t": 5.1,
+  "kind": "done",
+  "id": 68,
+  "status": 200,
+  "size": -686
+ },
+ {
+  "t": 5.1,
+  "kind": "req",
+  "id": 75,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0BAFBFAAE/d=1/exm=LEikZe,_b,_tp,byfTOb,lsjVmc/excm=_b,_tp,identifierview/ed=1/wt=2/ujg=1/rs=AO",
+  "sw": false
+ },
+ {
+  "t": 5.1,
+  "kind": "done",
+  "id": 71,
+  "status": 206,
+  "size": -591
+ },
+ {
+  "t": 5.1,
+  "kind": "done",
+  "id": 69,
+  "status": 206,
+  "size": -591
+ },
+ {
+  "t": 5.1,
+  "kind": "done",
+  "id": 70,
+  "status": 206,
+  "size": -591
+ },
+ {
+  "t": 5.1,
+  "kind": "done",
+  "id": 72,
+  "status": 206,
+  "size": -591
+ },
+ {
+  "t": 5.1,
+  "kind": "req",
+  "id": 76,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0BAFBFAAE/d=1/exm=CMcBD,DqMihc,EFQ78c,EN3i8d,Fndnac,GwYlN,IZT63,K0PMbc,K1ZKnb,KUM7Z,L9OGUe,LDQ",
+  "sw": false
+ },
+ {
+  "t": 5.1,
+  "kind": "done",
+  "id": 65,
+  "status": 200,
+  "size": -254
+ },
+ {
+  "t": 5.1,
+  "kind": "done",
+  "id": 74,
+  "status": 200,
+  "size": -136
+ },
+ {
+  "t": 5.1,
+  "kind": "done",
+  "id": 66,
+  "status": 200,
+  "size": -412
+ },
+ {
+  "t": 5.1,
+  "kind": "req",
+  "id": 77,
+  "method": "GET",
+  "type": "fetch",
+  "url": "data:application/json;base64,eyJyZXNwb25zZUNvbnRleHQiOnsic2VydmljZVRyYWNraW5nUGFyYW1zIjpbeyJzZXJ2aWNlIjoiR0ZFRURCQUNLIiwicGFyYW1zIjpbeyJrZXkiOiJpcGNjIiwidmFsdWUiOiIwIn0seyJrZXkiOiJpc192aWV3ZWRfbGl2ZSIsInZhbHVlIjoiRmFsc2UifSx7ImtleSI6ImlzX2FsY19zdXJmYWNlIiwidmFsdWUiOiJmYWxzZSJ9LHsia2V5IjoicHJlbWl1bV9",
+  "sw": false
+ },
+ {
+  "t": 5.1,
+  "kind": "mem",
+  "mb": [
+   143,
+   555,
+   158,
+   103
+  ]
+ },
+ {
+  "t": 5.1,
+  "kind": "done",
+  "id": 73,
+  "status": 200,
+  "size": -679
+ },
+ {
+  "t": 5.2,
+  "kind": "done",
+  "id": 77,
+  "status": 200,
+  "size": -136
+ },
+ {
+  "t": 5.2,
+  "kind": "done",
+  "id": 76,
+  "status": 200,
+  "size": -678
+ },
+ {
+  "t": 5.3,
+  "kind": "req",
+  "id": 84,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://youtube.com/",
+  "sw": false
+ },
+ {
+  "t": 5.3,
+  "kind": "done",
+  "id": 75,
+  "status": 200,
+  "size": -680
+ },
+ {
+  "t": 5.3,
+  "kind": "mem",
+  "mb": [
+   143,
+   588,
+   160,
+   103
+  ]
+ },
+ {
+  "t": 5.4,
+  "kind": "req",
+  "id": 85,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0BAFBFAAE/d=1/exm=CMcBD,DqMihc,E87wgc,EFQ78c,EN3i8d,Fndnac,GwYlN,IZT63,K0PMbc,K1ZKnb,KUM7Z,L9O",
+  "sw": false
+ },
+ {
+  "t": 5.4,
+  "kind": "req",
+  "id": 86,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.gstatic.com/feedback/js/help/prod/service/lazy.min.js",
+  "sw": false
+ },
+ {
+  "t": 5.4,
+  "kind": "req",
+  "id": 87,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0BAFBFAAE/d=1/exm=CMcBD,DqMihc,E87wgc,EFQ78c,EN3i8d,Fndnac,GwYlN,IZT63,K0PMbc,K1ZKnb,KUM7Z,L9O",
+  "sw": false
+ },
+ {
+  "t": 5.4,
+  "kind": "req",
+  "id": 88,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0BAFBFAAE/d=1/exm=CMcBD,DqMihc,E87wgc,EFQ78c,EN3i8d,Fndnac,GwYlN,IZT63,K0PMbc,K1ZKnb,KUM7Z,L9O",
+  "sw": false
+ },
+ {
+  "t": 5.4,
+  "kind": "req",
+  "id": 89,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0BAFBFAAE/d=1/exm=A7fCU,CMcBD,DqMihc,E87wgc,EFQ78c,EN3i8d,Fndnac,GwYlN,IZT63,K0PMbc,K1ZKnb,KUM",
+  "sw": false
+ },
+ {
+  "t": 5.4,
+  "kind": "done",
+  "id": 83,
+  "status": 200,
+  "size": -548
+ },
+ {
+  "t": 5.4,
+  "kind": "done",
+  "id": 82,
+  "status": 200,
+  "size": -548
+ },
+ {
+  "t": 5.4,
+  "kind": "req",
+  "id": 90,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0BAFBFAAE/d=1/exm=A7fCU,CMcBD,DqMihc,E87wgc,EFQ78c,EN3i8d,Fndnac,GwYlN,IZT63,K0PMbc,K1ZKnb,KUM",
+  "sw": false
+ },
+ {
+  "t": 5.4,
+  "kind": "done",
+  "id": 85,
+  "status": 200,
+  "size": -679
+ },
+ {
+  "t": 5.4,
+  "kind": "done",
+  "id": 87,
+  "status": 200,
+  "size": -678
+ },
+ {
+  "t": 5.4,
+  "kind": "done",
+  "id": 86,
+  "status": 200,
+  "size": -627
+ },
+ {
+  "t": 5.4,
+  "kind": "req",
+  "id": 91,
+  "method": "GET",
+  "type": "document",
+  "url": "https://accounts.youtube.com/accounts/CheckConnection?pmpo=https%3A%2F%2Faccounts.google.com&v=685162953&timestamp=1792880571582",
+  "sw": false
+ },
+ {
+  "t": 5.5,
+  "kind": "req",
+  "id": 92,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/_/ytmainappweb/_/js/k=ytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O/am=AAAAQAAAEICU/d=1/exm=app,base,late/ed=1/br=1/rs=AGKMywFA1Su73J0pVaHJKf9FNtnfOFzTYw/m=QlbBce",
+  "sw": false
+ },
+ {
+  "t": 5.5,
+  "kind": "req",
+  "id": 98,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/",
+  "sw": false
+ },
+ {
+  "t": 5.5,
+  "kind": "failed",
+  "id": 98,
+  "url": "https://www.youtube.com/",
+  "error": "net::ERR_ABORTED"
+ },
+ {
+  "t": 5.5,
+  "kind": "done",
+  "id": 84,
+  "status": 301,
+  "size": 0
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 299]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 427]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 248]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 227]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 205]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 54]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 231]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 47]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 403]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 297]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 380]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 393]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 18]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 219]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 52]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 69]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 66]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 96]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 455]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 90]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 124]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 69]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 18]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 397]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 341]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 128]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 239]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 356]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 279]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 363]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 288]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 361]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 69]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 427]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 13]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 318]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 222]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 294]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 21]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 192]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 72]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 248]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 388]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 202]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 53]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 90]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 151]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 58]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 74]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 124]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 367]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 63]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 419]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 324]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 410]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 459]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 215]"
+ },
+ {
+  "t": 5.5,
+  "kind": "mem",
+  "mb": [
+   143,
+   564,
+   155,
+   103
+  ]
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 43]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 96]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 318]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 253]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 18]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 92]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 399]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 18]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 238]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 276]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 369]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 380]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 502]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 41]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 413]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 174]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 306]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 19]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 14]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 88]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 175]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 476]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 296]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 215]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 208]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 117]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 200]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 267]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 508]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 454]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 106]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 114]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 92]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 40]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 169]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 95]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 438]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 2]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 34]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 158]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 114]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 459]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 54]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 95]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 83]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 119]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 74]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 376]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 34]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 63]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 420]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 377]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 333]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 391]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 195]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 170]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 492]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 113]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 192]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 123]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 124]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 178]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 418]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 443]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 447]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 262]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 284]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 457]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 324]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 176]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 39]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 270]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 175]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 492]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 214]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 506]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 174]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 397]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 73]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 110]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 357]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 14]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 491]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 240]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 507]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 92]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 276]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 338]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 43]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 500]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 134]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 53]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 113]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 459]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 90]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 439]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 106]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 176]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 288]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 147]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 252]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 39]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 47]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 303]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 270]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 281]"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 311]"
+ },
+ {
+  "t": 5.5,
+  "kind": "done",
+  "id": 88,
+  "status": 200,
+  "size": -677
+ },
+ {
+  "t": 5.6,
+  "kind": "req",
+  "id": 100,
+  "method": "GET",
+  "type": "document",
+  "url": "https://accounts.google.com/_/bscframe",
+  "sw": false
+ },
+ {
+  "t": 5.6,
+  "kind": "req",
+  "id": 101,
+  "method": "POST",
+  "type": "fetch",
+  "url": "https://accounts.google.com/v3/signin/_/AccountsSignInUi/data/batchexecute?rpcids=UEkKwb&source-path=%2Fv3%2Fsignin%2Fidentifier&f.sid=-5260348706251350809&bl=boq_identityfrontendauthuiserver_20261020.03_p0&hl=en&dsh=S-82456521%3A1792880570131981&_reqid=80572&rt=c",
+  "sw": false
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR TypeError: Cannot read properties of undefined (reading '2')\n    at H (eval at <anonymous> (eval at <anonymous> (eval at s (http://localhost:8781/scram/scramjet.all.js:4:26))), <anonymous>:1:51)\n    at eval (eval at <anonymous> (eval at s (http://localhost:8781/scram/scramjet.all.js:4:26)), <anonymous>:1:231)\n    at Ia (eval at s (http://localhost:8781/scram/scramjet.all.js:4:26), <anonymous>:4249:46673)\n    at W8 (eval at s (http://localhost:8781/scram/scramjet.all.js:4:26), <anonymous>:4249:42798)\n    at P8.eval [as i] (eval at s (http://localhost:8781/scram/scramjet.all.js:4:26"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR TypeError: Cannot read properties of undefined (reading '6')\n    at H (eval at <anonymous> (eval at <anonymous> (eval at s (http://localhost:8781/scram/scramjet.all.js:4:26))), <anonymous>:1:51)\n    at GS.J.GU.J.JM (eval at s (http://localhost:8781/scram/scramjet.all.js:4:26), <anonymous>:4249:28376)\n    at Ia (eval at s (http://localhost:8781/scram/scramjet.all.js:4:26), <anonymous>:4249:46673)\n    at W8 (eval at s (http://localhost:8781/scram/scramjet.all.js:4:26), <anonymous>:4249:42798)\n    at P8.eval [as i] (eval at s (http://localhost:8781/scram/scramjet.all.js:4:26), <anony"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 132]"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 110]"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 83]"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 72]"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 341]"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 423]"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 74]"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 167]"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 174]"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 39]"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 2]"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 206]"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 334]"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 336]"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 40]"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 124]"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 129]"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 362]"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 88]"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 227]"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 5]"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 43]"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 421]"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 373]"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 30, 88]"
+ },
+ {
+  "t": 5.6,
+  "kind": "done",
+  "id": 78,
+  "status": 200,
+  "size": -548
+ },
+ {
+  "t": 5.6,
+  "kind": "done",
+  "id": 79,
+  "status": 200,
+  "size": -548
+ },
+ {
+  "t": 5.6,
+  "kind": "done",
+  "id": 80,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 5.6,
+  "kind": "done",
+  "id": 81,
+  "status": 200,
+  "size": -503
+ },
+ {
+  "t": 5.6,
+  "kind": "done",
+  "id": 90,
+  "status": 200,
+  "size": -678
+ },
+ {
+  "t": 5.6,
+  "kind": "done",
+  "id": 89,
+  "status": 200,
+  "size": -678
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "CAUGHT ERROR [Object, 31]"
+ },
+ {
+  "t": 5.6,
+  "kind": "req",
+  "id": 102,
+  "method": "POST",
+  "type": "xhr",
+  "url": "https://www.youtube.com/api/jnn/v1/GenerateIT",
+  "sw": false
+ },
+ {
+  "t": 5.6,
+  "kind": "req",
+  "id": 103,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/_/ytmainappweb/_/js/k=ytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O/am=AAAAQAAAEICU/d=1/exm=QlbBce,app,base,late/ed=1/br=1/rs=AGKMywFA1Su73J0pVaHJKf9FNtnfOFzTYw/m=De8mUc",
+  "sw": false
+ },
+ {
+  "t": 5.6,
+  "kind": "req",
+  "id": 104,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/_/ytmainappweb/_/js/k=ytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O/am=AAAAQAAAEICU/d=1/exm=De8mUc,QlbBce,app,base,late/ed=1/br=1/rs=AGKMywFA1Su73J0pVaHJKf9FNtnfOFzTYw/m=yTIahe",
+  "sw": false
+ },
+ {
+  "t": 5.6,
+  "kind": "done",
+  "id": 92,
+  "status": 200,
+  "size": -674
+ },
+ {
+  "t": 5.6,
+  "kind": "done",
+  "id": 99,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 5.6,
+  "kind": "done",
+  "id": 93,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 5.6,
+  "kind": "done",
+  "id": 94,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 5.6,
+  "kind": "done",
+  "id": 96,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 5.6,
+  "kind": "done",
+  "id": 97,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 5.6,
+  "kind": "done",
+  "id": 95,
+  "status": 200,
+  "size": -548
+ },
+ {
+  "t": 5.7,
+  "kind": "mem",
+  "mb": [
+   143,
+   595,
+   155,
+   103
+  ]
+ },
+ {
+  "t": 5.7,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 143
+   },
+   {
+    "pid": 3609,
+    "mb": 606
+   },
+   {
+    "pid": 3632,
+    "mb": 155
+   },
+   {
+    "pid": 3647,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 65,
+   "totalMB": 86,
+   "nodes": 5049,
+   "docs": 24,
+   "frames": 14
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1178,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "interactive"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 5.8,
+  "kind": "done",
+  "id": 103,
+  "status": 200,
+  "size": -673
+ },
+ {
+  "t": 5.8,
+  "kind": "done",
+  "id": 102,
+  "status": 200,
+  "size": -241
+ },
+ {
+  "t": 5.8,
+  "kind": "done",
+  "id": 104,
+  "status": 200,
+  "size": -673
+ },
+ {
+  "t": 5.9,
+  "kind": "mem",
+  "mb": [
+   143,
+   637,
+   155,
+   103
+  ]
+ },
+ {
+  "t": 5.9,
+  "kind": "req",
+  "id": 181,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0BAFBFAAE/d=1/exm=A7fCU,CMcBD,DqMihc,E87wgc,EFQ78c,EN3i8d,Fndnac,GwYlN,IZT63,K0PMbc,K1ZKnb,KUM",
+  "sw": false
+ },
+ {
+  "t": 5.9,
+  "kind": "failed",
+  "id": 101,
+  "url": "https://accounts.google.com/v3/signin/_/AccountsSignInUi/data/batchexecute?rpcids=UEkKwb&source-path=%2Fv3%2Fsignin%2Fidentifier&f.sid=-5260348706251350809&bl=boq_identityfrontendauthuiserver_20261020.03_p0&hl=en&dsh=S-82456521%3A1792880570131981&_reqid=80572&rt=c",
+  "error": "net::ERR_ABORTED"
+ },
+ {
+  "t": 5.9,
+  "kind": "req",
+  "id": 182,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8781/scram/scramjet.wasm.wasm",
+  "sw": false
+ },
+ {
+  "t": 5.9,
+  "kind": "req",
+  "id": 183,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8781/scram/scramjet.all.js",
+  "sw": false
+ },
+ {
+  "t": 5.9,
+  "kind": "req",
+  "id": 184,
+  "method": "GET",
+  "type": "fetch",
+  "url": "http://localhost:8781/scram/scramjet.all.js",
+  "sw": true
+ },
+ {
+  "t": 5.9,
+  "kind": "req",
+  "id": 185,
+  "method": "GET",
+  "type": "fetch",
+  "url": "http://localhost:8781/scram/scramjet.wasm.wasm",
+  "sw": true
+ },
+ {
+  "t": 5.9,
+  "kind": "done",
+  "id": 184,
+  "status": 200,
+  "size": 180333
+ },
+ {
+  "t": 6,
+  "kind": "req",
+  "id": 186,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8781/scram/scramjet.wasm.wasm",
+  "sw": false
+ },
+ {
+  "t": 6,
+  "kind": "req",
+  "id": 187,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8781/scram/scramjet.all.js",
+  "sw": false
+ },
+ {
+  "t": 6,
+  "kind": "done",
+  "id": 100,
+  "status": 200,
+  "size": -912
+ },
+ {
+  "t": 6,
+  "kind": "req",
+  "id": 188,
+  "method": "GET",
+  "type": "fetch",
+  "url": "http://localhost:8781/scram/scramjet.all.js",
+  "sw": true
+ },
+ {
+  "t": 6,
+  "kind": "done",
+  "id": 91,
+  "status": 200,
+  "size": -902
+ },
+ {
+  "t": 6,
+  "kind": "done",
+  "id": 183,
+  "status": 200,
+  "size": -272
+ },
+ {
+  "t": 6,
+  "kind": "req",
+  "id": 189,
+  "method": "GET",
+  "type": "fetch",
+  "url": "http://localhost:8781/scram/scramjet.wasm.wasm",
+  "sw": true
+ },
+ {
+  "t": 6,
+  "kind": "done",
+  "id": 185,
+  "status": 200,
+  "size": 537008
+ },
+ {
+  "t": 6,
+  "kind": "done",
+  "id": 188,
+  "status": 200,
+  "size": 180333
+ },
+ {
+  "t": 6,
+  "kind": "done",
+  "id": 189,
+  "status": 200,
+  "size": 537008
+ },
+ {
+  "t": 6,
+  "kind": "done",
+  "id": 187,
+  "status": 200,
+  "size": -272
+ },
+ {
+  "t": 6,
+  "kind": "done",
+  "id": 182,
+  "status": 200,
+  "size": -48
+ },
+ {
+  "t": 6,
+  "kind": "console",
+  "type": "debug",
+  "text": "bare-mux: running v2.1.9 (build dc9dc6e)"
+ },
+ {
+  "t": 6,
+  "kind": "console",
+  "type": "log",
+  "text": "%cg%c initializing scramjet client \n  \tbackground-color: #000;\n  \tcolor: #fff;\n  \tpadding: 2px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n   "
+ },
+ {
+  "t": 6,
+  "kind": "console",
+  "type": "debug",
+  "text": "bare-mux: got localStorage bare-mux-path: /baremux/worker.js"
+ },
+ {
+  "t": 6,
+  "kind": "done",
+  "id": 186,
+  "status": 200,
+  "size": -48
+ },
+ {
+  "t": 6.1,
+  "kind": "console",
+  "type": "debug",
+  "text": "bare-mux: running v2.1.9 (build dc9dc6e)"
+ },
+ {
+  "t": 6.1,
+  "kind": "console",
+  "type": "log",
+  "text": "%cg%c initializing scramjet client \n  \tbackground-color: #000;\n  \tcolor: #fff;\n  \tpadding: 2px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n   "
+ },
+ {
+  "t": 6.1,
+  "kind": "console",
+  "type": "debug",
+  "text": "bare-mux: got localStorage bare-mux-path: /baremux/worker.js"
+ },
+ {
+  "t": 6.1,
+  "kind": "console",
+  "type": "debug",
+  "text": "bare-mux: got localStorage bare-mux-path: /baremux/worker.js"
+ },
+ {
+  "t": 6.1,
+  "kind": "mem",
+  "mb": [
+   143,
+   697,
+   156,
+   103
+  ]
+ },
+ {
+  "t": 6.2,
+  "kind": "console",
+  "type": "debug",
+  "text": "bare-mux: got localStorage bare-mux-path: /baremux/worker.js"
+ },
+ {
+  "t": 6.3,
+  "kind": "mem",
+  "mb": [
+   143,
+   718,
+   156,
+   103
+  ]
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 181,
+  "status": 200,
+  "size": -678
+ },
+ {
+  "t": 6.4,
+  "kind": "req",
+  "id": 190,
+  "method": "POST",
+  "type": "ping",
+  "url": "https://play.google.com/log?hasfast=true&authuser=0&format=json",
+  "sw": false
+ },
+ {
+  "t": 6.4,
+  "kind": "req",
+  "id": 191,
+  "method": "POST",
+  "type": "ping",
+  "url": "https://play.google.com/log?hasfast=true&authuser=0&format=json",
+  "sw": false
+ },
+ {
+  "t": 6.4,
+  "kind": "req",
+  "id": 192,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0BAFBFAAE/d=1/exm=A7fCU,CMcBD,DqMihc,E87wgc,EFQ78c,EN3i8d,Fndnac,GwYlN,IZT63,K0PMbc,K1ZKnb,KUM",
+  "sw": false
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 105,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 106,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 109,
+  "status": 200,
+  "size": -548
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 108,
+  "status": 200,
+  "size": -548
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 107,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 114,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 111,
+  "status": 200,
+  "size": -548
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 113,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 112,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 110,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 119,
+  "status": 200,
+  "size": -502
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 116,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 138,
+  "status": 200,
+  "size": -503
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 117,
+  "status": 200,
+  "size": -548
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 115,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 160,
+  "status": 200,
+  "size": -503
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 156,
+  "status": 200,
+  "size": -502
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 161,
+  "status": 200,
+  "size": -502
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 162,
+  "status": 200,
+  "size": -502
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 180,
+  "status": 200,
+  "size": -502
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 145,
+  "status": 200,
+  "size": -548
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 143,
+  "status": 200,
+  "size": -548
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 144,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 133,
+  "status": 200,
+  "size": -548
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 140,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 142,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 141,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 139,
+  "status": 200,
+  "size": -548
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 137,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 131,
+  "status": 200,
+  "size": -548
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 136,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 134,
+  "status": 200,
+  "size": -548
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 130,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 128,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 129,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 127,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 124,
+  "status": 200,
+  "size": -548
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 126,
+  "status": 200,
+  "size": -548
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 125,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 123,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 122,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 120,
+  "status": 200,
+  "size": -548
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 118,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 121,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 148,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 147,
+  "status": 200,
+  "size": -548
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 135,
+  "status": 200,
+  "size": -548
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 132,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 177,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 179,
+  "status": 200,
+  "size": -548
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 178,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 174,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 176,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 172,
+  "status": 200,
+  "size": -548
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 173,
+  "status": 200,
+  "size": -548
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 171,
+  "status": 200,
+  "size": -548
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 170,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 169,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 168,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 167,
+  "status": 200,
+  "size": -548
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 165,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 166,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 159,
+  "status": 200,
+  "size": -548
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 164,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 163,
+  "status": 200,
+  "size": -548
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 155,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 157,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 154,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 153,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 152,
+  "status": 200,
+  "size": -548
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 150,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 151,
+  "status": 200,
+  "size": -548
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 149,
+  "status": 200,
+  "size": -548
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 146,
+  "status": 200,
+  "size": -549
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 175,
+  "status": 200,
+  "size": -548
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 158,
+  "status": 200,
+  "size": -548
+ },
+ {
+  "t": 6.5,
+  "kind": "done",
+  "id": 192,
+  "status": 200,
+  "size": -678
+ },
+ {
+  "t": 6.5,
+  "kind": "done",
+  "id": 190,
+  "status": 200,
+  "size": -354
+ },
+ {
+  "t": 6.5,
+  "kind": "done",
+  "id": 191,
+  "status": 200,
+  "size": -354
+ },
+ {
+  "t": 6.5,
+  "kind": "mem",
+  "mb": [
+   143,
+   701,
+   156,
+   103
+  ]
+ },
+ {
+  "t": 6.7,
+  "kind": "mem",
+  "mb": [
+   143,
+   701,
+   156,
+   103
+  ]
+ },
+ {
+  "t": 6.8,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 143
+   },
+   {
+    "pid": 3609,
+    "mb": 701
+   },
+   {
+    "pid": 3632,
+    "mb": 156
+   },
+   {
+    "pid": 3647,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 45,
+   "totalMB": 125,
+   "nodes": 4630,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 4
+ },
+ {
+  "t": 6.9,
+  "kind": "mem",
+  "mb": [
+   143,
+   700,
+   156,
+   103
+  ]
+ },
+ {
+  "t": 7.1,
+  "kind": "mem",
+  "mb": [
+   143,
+   700,
+   156,
+   103
+  ]
+ },
+ {
+  "t": 7.3,
+  "kind": "mem",
+  "mb": [
+   143,
+   700,
+   156,
+   103
+  ]
+ },
+ {
+  "t": 7.5,
+  "kind": "mem",
+  "mb": [
+   143,
+   700,
+   156,
+   103
+  ]
+ },
+ {
+  "t": 7.7,
+  "kind": "mem",
+  "mb": [
+   143,
+   700,
+   156,
+   103
+  ]
+ },
+ {
+  "t": 7.8,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 143
+   },
+   {
+    "pid": 3609,
+    "mb": 700
+   },
+   {
+    "pid": 3632,
+    "mb": 156
+   },
+   {
+    "pid": 3647,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 47,
+   "totalMB": 126,
+   "nodes": 4630,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 7.9,
+  "kind": "mem",
+  "mb": [
+   143,
+   700,
+   156,
+   103
+  ]
+ },
+ {
+  "t": 8.1,
+  "kind": "mem",
+  "mb": [
+   143,
+   700,
+   156,
+   103
+  ]
+ },
+ {
+  "t": 8.3,
+  "kind": "mem",
+  "mb": [
+   143,
+   700,
+   156,
+   103
+  ]
+ },
+ {
+  "t": 8.5,
+  "kind": "mem",
+  "mb": [
+   143,
+   700,
+   156,
+   103
+  ]
+ },
+ {
+  "t": 8.7,
+  "kind": "mem",
+  "mb": [
+   143,
+   700,
+   156,
+   103
+  ]
+ },
+ {
+  "t": 8.8,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 143
+   },
+   {
+    "pid": 3609,
+    "mb": 700
+   },
+   {
+    "pid": 3632,
+    "mb": 156
+   },
+   {
+    "pid": 3647,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 48,
+   "totalMB": 128,
+   "nodes": 4630,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 8.9,
+  "kind": "mem",
+  "mb": [
+   143,
+   700,
+   156,
+   103
+  ]
+ },
+ {
+  "t": 9.1,
+  "kind": "mem",
+  "mb": [
+   143,
+   700,
+   156,
+   103
+  ]
+ },
+ {
+  "t": 9.3,
+  "kind": "mem",
+  "mb": [
+   143,
+   700,
+   156,
+   103
+  ]
+ },
+ {
+  "t": 9.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "The resource http://localhost:8781/scramjet/https%3A%2F%2Fi.ytimg.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+ },
+ {
+  "t": 9.5,
+  "kind": "mem",
+  "mb": [
+   143,
+   700,
+   156,
+   103
+  ]
+ },
+ {
+  "t": 9.7,
+  "kind": "mem",
+  "mb": [
+   143,
+   699,
+   156,
+   103
+  ]
+ },
+ {
+  "t": 9.8,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 143
+   },
+   {
+    "pid": 3609,
+    "mb": 699
+   },
+   {
+    "pid": 3632,
+    "mb": 156
+   },
+   {
+    "pid": 3647,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 49,
+   "totalMB": 130,
+   "nodes": 4630,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 9.9,
+  "kind": "mem",
+  "mb": [
+   143,
+   698,
+   156,
+   103
+  ]
+ },
+ {
+  "t": 10.1,
+  "kind": "mem",
+  "mb": [
+   143,
+   698,
+   156,
+   103
+  ]
+ },
+ {
+  "t": 10.3,
+  "kind": "mem",
+  "mb": [
+   142,
+   694,
+   156,
+   103
+  ]
+ },
+ {
+  "t": 10.5,
+  "kind": "mem",
+  "mb": [
+   142,
+   691,
+   156,
+   103
+  ]
+ },
+ {
+  "t": 10.7,
+  "kind": "mem",
+  "mb": [
+   142,
+   690,
+   156,
+   102
+  ]
+ },
+ {
+  "t": 10.8,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 142
+   },
+   {
+    "pid": 3609,
+    "mb": 690
+   },
+   {
+    "pid": 3632,
+    "mb": 156
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 57,
+   "totalMB": 132,
+   "nodes": 4630,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 4
+ },
+ {
+  "t": 10.9,
+  "kind": "mem",
+  "mb": [
+   142,
+   691,
+   156,
+   102
+  ]
+ },
+ {
+  "t": 11.1,
+  "kind": "mem",
+  "mb": [
+   142,
+   691,
+   156,
+   102
+  ]
+ },
+ {
+  "t": 11.3,
+  "kind": "mem",
+  "mb": [
+   142,
+   691,
+   156,
+   102
+  ]
+ },
+ {
+  "t": 11.5,
+  "kind": "mem",
+  "mb": [
+   142,
+   691,
+   156,
+   102
+  ]
+ },
+ {
+  "t": 11.7,
+  "kind": "mem",
+  "mb": [
+   142,
+   691,
+   156,
+   102
+  ]
+ },
+ {
+  "t": 11.9,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 142
+   },
+   {
+    "pid": 3609,
+    "mb": 691
+   },
+   {
+    "pid": 3632,
+    "mb": 156
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 59,
+   "totalMB": 133,
+   "nodes": 4630,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 7
+ },
+ {
+  "t": 11.9,
+  "kind": "mem",
+  "mb": [
+   142,
+   692,
+   156,
+   102
+  ]
+ },
+ {
+  "t": 12.1,
+  "kind": "mem",
+  "mb": [
+   142,
+   692,
+   156,
+   102
+  ]
+ },
+ {
+  "t": 12.3,
+  "kind": "mem",
+  "mb": [
+   142,
+   692,
+   156,
+   102
+  ]
+ },
+ {
+  "t": 12.5,
+  "kind": "mem",
+  "mb": [
+   142,
+   692,
+   156,
+   102
+  ]
+ },
+ {
+  "t": 12.7,
+  "kind": "mem",
+  "mb": [
+   142,
+   692,
+   156,
+   102
+  ]
+ },
+ {
+  "t": 12.9,
+  "kind": "mem",
+  "mb": [
+   142,
+   692,
+   156,
+   102
+  ]
+ },
+ {
+  "t": 12.9,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 142
+   },
+   {
+    "pid": 3609,
+    "mb": 692
+   },
+   {
+    "pid": 3632,
+    "mb": 156
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 60,
+   "totalMB": 135,
+   "nodes": 4630,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 4
+ },
+ {
+  "t": 13.1,
+  "kind": "mem",
+  "mb": [
+   142,
+   693,
+   156,
+   102
+  ]
+ },
+ {
+  "t": 13.3,
+  "kind": "mem",
+  "mb": [
+   142,
+   693,
+   156,
+   102
+  ]
+ },
+ {
+  "t": 13.5,
+  "kind": "mem",
+  "mb": [
+   142,
+   693,
+   156,
+   102
+  ]
+ },
+ {
+  "t": 13.7,
+  "kind": "mem",
+  "mb": [
+   142,
+   693,
+   156,
+   102
+  ]
+ },
+ {
+  "t": 13.9,
+  "kind": "mem",
+  "mb": [
+   142,
+   693,
+   156,
+   102
+  ]
+ },
+ {
+  "t": 13.9,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 142
+   },
+   {
+    "pid": 3609,
+    "mb": 693
+   },
+   {
+    "pid": 3632,
+    "mb": 156
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 61,
+   "totalMB": 136,
+   "nodes": 4630,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 14.1,
+  "kind": "mem",
+  "mb": [
+   142,
+   694,
+   156,
+   102
+  ]
+ },
+ {
+  "t": 14.3,
+  "kind": "mem",
+  "mb": [
+   142,
+   694,
+   156,
+   102
+  ]
+ },
+ {
+  "t": 14.5,
+  "kind": "mem",
+  "mb": [
+   142,
+   694,
+   156,
+   102
+  ]
+ },
+ {
+  "t": 14.7,
+  "kind": "mem",
+  "mb": [
+   142,
+   694,
+   156,
+   102
+  ]
+ },
+ {
+  "t": 14.9,
+  "kind": "mem",
+  "mb": [
+   142,
+   694,
+   156,
+   102
+  ]
+ },
+ {
+  "t": 15,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 142
+   },
+   {
+    "pid": 3609,
+    "mb": 694
+   },
+   {
+    "pid": 3632,
+    "mb": 156
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 62,
+   "totalMB": 137,
+   "nodes": 4630,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 15.1,
+  "kind": "mem",
+  "mb": [
+   142,
+   696,
+   156,
+   102
+  ]
+ },
+ {
+  "t": 15.3,
+  "kind": "mem",
+  "mb": [
+   142,
+   697,
+   156,
+   102
+  ]
+ },
+ {
+  "t": 15.4,
+  "kind": "req",
+  "id": 193,
+  "method": "POST",
+  "type": "fetch",
+  "url": "https://play.google.com/log?format=json&hasfast=true&authuser=0",
+  "sw": false
+ },
+ {
+  "t": 15.5,
+  "kind": "done",
+  "id": 193,
+  "status": 200,
+  "size": -354
+ },
+ {
+  "t": 15.5,
+  "kind": "mem",
+  "mb": [
+   142,
+   697,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 15.7,
+  "kind": "mem",
+  "mb": [
+   142,
+   697,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 15.9,
+  "kind": "mem",
+  "mb": [
+   142,
+   697,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 16,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 142
+   },
+   {
+    "pid": 3609,
+    "mb": 697
+   },
+   {
+    "pid": 3632,
+    "mb": 155
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 70,
+   "totalMB": 139,
+   "nodes": 4630,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 16.1,
+  "kind": "mem",
+  "mb": [
+   142,
+   697,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 16.3,
+  "kind": "mem",
+  "mb": [
+   142,
+   697,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 16.5,
+  "kind": "mem",
+  "mb": [
+   142,
+   697,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 16.7,
+  "kind": "mem",
+  "mb": [
+   142,
+   697,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 16.9,
+  "kind": "mem",
+  "mb": [
+   142,
+   697,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 17,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 142
+   },
+   {
+    "pid": 3609,
+    "mb": 697
+   },
+   {
+    "pid": 3632,
+    "mb": 155
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 71,
+   "totalMB": 140,
+   "nodes": 4630,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 17.1,
+  "kind": "mem",
+  "mb": [
+   142,
+   699,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 17.3,
+  "kind": "mem",
+  "mb": [
+   142,
+   699,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 17.5,
+  "kind": "mem",
+  "mb": [
+   142,
+   699,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 17.7,
+  "kind": "mem",
+  "mb": [
+   142,
+   699,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 17.9,
+  "kind": "mem",
+  "mb": [
+   142,
+   699,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 18,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 142
+   },
+   {
+    "pid": 3609,
+    "mb": 699
+   },
+   {
+    "pid": 3632,
+    "mb": 155
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 72,
+   "totalMB": 142,
+   "nodes": 4630,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 18.1,
+  "kind": "mem",
+  "mb": [
+   142,
+   700,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 18.3,
+  "kind": "mem",
+  "mb": [
+   142,
+   700,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 18.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "The resource http://localhost:8781/scramjet/https%3A%2F%2Fi.ytimg.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+ },
+ {
+  "t": 18.5,
+  "kind": "mem",
+  "mb": [
+   142,
+   700,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 18.7,
+  "kind": "mem",
+  "mb": [
+   142,
+   700,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 18.9,
+  "kind": "mem",
+  "mb": [
+   142,
+   700,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 19,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 142
+   },
+   {
+    "pid": 3609,
+    "mb": 700
+   },
+   {
+    "pid": 3632,
+    "mb": 155
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 73,
+   "totalMB": 143,
+   "nodes": 4630,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 19.1,
+  "kind": "mem",
+  "mb": [
+   142,
+   701,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 19.3,
+  "kind": "mem",
+  "mb": [
+   142,
+   701,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 19.5,
+  "kind": "mem",
+  "mb": [
+   142,
+   701,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 19.7,
+  "kind": "mem",
+  "mb": [
+   142,
+   701,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 19.9,
+  "kind": "mem",
+  "mb": [
+   142,
+   701,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 20,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 142
+   },
+   {
+    "pid": 3609,
+    "mb": 701
+   },
+   {
+    "pid": 3632,
+    "mb": 155
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 75,
+   "totalMB": 144,
+   "nodes": 4630,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 20.1,
+  "kind": "mem",
+  "mb": [
+   142,
+   703,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 20.3,
+  "kind": "mem",
+  "mb": [
+   142,
+   701,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 20.5,
+  "kind": "mem",
+  "mb": [
+   142,
+   701,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 20.7,
+  "kind": "mem",
+  "mb": [
+   142,
+   701,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 20.9,
+  "kind": "mem",
+  "mb": [
+   142,
+   701,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 21.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 142
+   },
+   {
+    "pid": 3609,
+    "mb": 701
+   },
+   {
+    "pid": 3632,
+    "mb": 155
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 82,
+   "totalMB": 147,
+   "nodes": 4630,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 21.1,
+  "kind": "mem",
+  "mb": [
+   142,
+   702,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 21.3,
+  "kind": "mem",
+  "mb": [
+   142,
+   702,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 21.5,
+  "kind": "mem",
+  "mb": [
+   142,
+   702,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 21.7,
+  "kind": "mem",
+  "mb": [
+   142,
+   702,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 21.9,
+  "kind": "mem",
+  "mb": [
+   142,
+   702,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 22.1,
+  "kind": "mem",
+  "mb": [
+   142,
+   702,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 22.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 142
+   },
+   {
+    "pid": 3609,
+    "mb": 702
+   },
+   {
+    "pid": 3632,
+    "mb": 155
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 84,
+   "totalMB": 148,
+   "nodes": 4630,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 4
+ },
+ {
+  "t": 22.3,
+  "kind": "mem",
+  "mb": [
+   142,
+   703,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 22.5,
+  "kind": "mem",
+  "mb": [
+   142,
+   703,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 22.7,
+  "kind": "mem",
+  "mb": [
+   142,
+   703,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 22.9,
+  "kind": "mem",
+  "mb": [
+   142,
+   703,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 23.1,
+  "kind": "mem",
+  "mb": [
+   142,
+   703,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 23.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 142
+   },
+   {
+    "pid": 3609,
+    "mb": 703
+   },
+   {
+    "pid": 3632,
+    "mb": 155
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 85,
+   "totalMB": 149,
+   "nodes": 4630,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 23.3,
+  "kind": "mem",
+  "mb": [
+   142,
+   705,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 23.5,
+  "kind": "mem",
+  "mb": [
+   142,
+   705,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 23.7,
+  "kind": "mem",
+  "mb": [
+   142,
+   705,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 23.9,
+  "kind": "mem",
+  "mb": [
+   142,
+   705,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 24.1,
+  "kind": "mem",
+  "mb": [
+   142,
+   705,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 24.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 142
+   },
+   {
+    "pid": 3609,
+    "mb": 705
+   },
+   {
+    "pid": 3632,
+    "mb": 155
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 86,
+   "totalMB": 150,
+   "nodes": 4630,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 4
+ },
+ {
+  "t": 24.3,
+  "kind": "mem",
+  "mb": [
+   142,
+   706,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 24.5,
+  "kind": "mem",
+  "mb": [
+   142,
+   706,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 24.7,
+  "kind": "mem",
+  "mb": [
+   142,
+   706,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 24.9,
+  "kind": "mem",
+  "mb": [
+   142,
+   706,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 25.1,
+  "kind": "mem",
+  "mb": [
+   142,
+   705,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 25.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 142
+   },
+   {
+    "pid": 3609,
+    "mb": 705
+   },
+   {
+    "pid": 3632,
+    "mb": 155
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 87,
+   "totalMB": 152,
+   "nodes": 4630,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 25.3,
+  "kind": "mem",
+  "mb": [
+   142,
+   707,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 25.5,
+  "kind": "mem",
+  "mb": [
+   142,
+   707,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 25.7,
+  "kind": "mem",
+  "mb": [
+   142,
+   707,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 25.9,
+  "kind": "mem",
+  "mb": [
+   142,
+   707,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 26.1,
+  "kind": "mem",
+  "mb": [
+   142,
+   707,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 26.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 142
+   },
+   {
+    "pid": 3609,
+    "mb": 707
+   },
+   {
+    "pid": 3632,
+    "mb": 155
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 95,
+   "totalMB": 155,
+   "nodes": 4630,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 26.3,
+  "kind": "mem",
+  "mb": [
+   142,
+   708,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 26.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   708,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 26.7,
+  "kind": "mem",
+  "mb": [
+   142,
+   708,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 26.9,
+  "kind": "mem",
+  "mb": [
+   142,
+   708,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 27.1,
+  "kind": "mem",
+  "mb": [
+   142,
+   708,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 27.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 142
+   },
+   {
+    "pid": 3609,
+    "mb": 708
+   },
+   {
+    "pid": 3632,
+    "mb": 155
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 96,
+   "totalMB": 156,
+   "nodes": 4630,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 9
+ },
+ {
+  "t": 27.3,
+  "kind": "mem",
+  "mb": [
+   142,
+   709,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 27.5,
+  "kind": "mem",
+  "mb": [
+   142,
+   709,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 27.7,
+  "kind": "mem",
+  "mb": [
+   142,
+   709,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 28,
+  "kind": "mem",
+  "mb": [
+   142,
+   709,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 28.1,
+  "kind": "mem",
+  "mb": [
+   142,
+   709,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 28.3,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 142
+   },
+   {
+    "pid": 3609,
+    "mb": 709
+   },
+   {
+    "pid": 3632,
+    "mb": 155
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 97,
+   "totalMB": 157,
+   "nodes": 4630,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 4
+ },
+ {
+  "t": 28.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   710,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 28.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   710,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 28.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   710,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 29,
+  "kind": "mem",
+  "mb": [
+   142,
+   710,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 29.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   710,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 29.3,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 142
+   },
+   {
+    "pid": 3609,
+    "mb": 710
+   },
+   {
+    "pid": 3632,
+    "mb": 155
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 99,
+   "totalMB": 158,
+   "nodes": 4630,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 29.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   711,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 29.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   711,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 29.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   711,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 30,
+  "kind": "mem",
+  "mb": [
+   142,
+   711,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 30.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   711,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 30.3,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 142
+   },
+   {
+    "pid": 3609,
+    "mb": 676
+   },
+   {
+    "pid": 3632,
+    "mb": 155
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 46,
+   "totalMB": 125,
+   "nodes": 4630,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 4
+ },
+ {
+  "t": 30.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   678,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 30.6,
+  "kind": "mem",
+  "mb": [
+   140,
+   678,
+   155,
+   102
+  ]
+ },
+ {
+  "t": 30.8,
+  "kind": "mem",
+  "mb": [
+   140,
+   678,
+   148,
+   102
+  ]
+ },
+ {
+  "t": 31,
+  "kind": "mem",
+  "mb": [
+   140,
+   678,
+   148,
+   102
+  ]
+ },
+ {
+  "t": 31.2,
+  "kind": "mem",
+  "mb": [
+   138,
+   678,
+   148,
+   102
+  ]
+ },
+ {
+  "t": 31.4,
+  "kind": "mem",
+  "mb": [
+   138,
+   678,
+   146,
+   102
+  ]
+ },
+ {
+  "t": 31.4,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 138
+   },
+   {
+    "pid": 3609,
+    "mb": 678
+   },
+   {
+    "pid": 3632,
+    "mb": 146
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 48,
+   "totalMB": 126,
+   "nodes": 4630,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 4
+ },
+ {
+  "t": 31.6,
+  "kind": "mem",
+  "mb": [
+   138,
+   680,
+   146,
+   102
+  ]
+ },
+ {
+  "t": 31.8,
+  "kind": "mem",
+  "mb": [
+   138,
+   680,
+   146,
+   102
+  ]
+ },
+ {
+  "t": 32,
+  "kind": "mem",
+  "mb": [
+   138,
+   680,
+   146,
+   102
+  ]
+ },
+ {
+  "t": 32.2,
+  "kind": "mem",
+  "mb": [
+   138,
+   680,
+   146,
+   102
+  ]
+ },
+ {
+  "t": 32.4,
+  "kind": "mem",
+  "mb": [
+   138,
+   680,
+   146,
+   102
+  ]
+ },
+ {
+  "t": 32.4,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 138
+   },
+   {
+    "pid": 3609,
+    "mb": 680
+   },
+   {
+    "pid": 3632,
+    "mb": 146
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 49,
+   "totalMB": 128,
+   "nodes": 4630,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 32.6,
+  "kind": "mem",
+  "mb": [
+   138,
+   681,
+   146,
+   102
+  ]
+ },
+ {
+  "t": 32.8,
+  "kind": "mem",
+  "mb": [
+   138,
+   681,
+   146,
+   102
+  ]
+ },
+ {
+  "t": 33,
+  "kind": "mem",
+  "mb": [
+   138,
+   521,
+   146,
+   102
+  ]
+ },
+ {
+  "t": 33.2,
+  "kind": "mem",
+  "mb": [
+   138,
+   437,
+   146,
+   102
+  ]
+ },
+ {
+  "t": 33.4,
+  "kind": "mem",
+  "mb": [
+   138,
+   432,
+   146,
+   102
+  ]
+ },
+ {
+  "t": 33.4,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 138
+   },
+   {
+    "pid": 3609,
+    "mb": 432
+   },
+   {
+    "pid": 3632,
+    "mb": 146
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 45,
+   "totalMB": 48,
+   "nodes": 4629,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 33.6,
+  "kind": "mem",
+  "mb": [
+   138,
+   431,
+   146,
+   102
+  ]
+ },
+ {
+  "t": 33.8,
+  "kind": "mem",
+  "mb": [
+   138,
+   431,
+   146,
+   102
+  ]
+ },
+ {
+  "t": 34,
+  "kind": "mem",
+  "mb": [
+   138,
+   429,
+   146,
+   102
+  ]
+ },
+ {
+  "t": 34.2,
+  "kind": "mem",
+  "mb": [
+   138,
+   429,
+   146,
+   102
+  ]
+ },
+ {
+  "t": 34.4,
+  "kind": "mem",
+  "mb": [
+   138,
+   429,
+   146,
+   102
+  ]
+ },
+ {
+  "t": 34.4,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 138
+   },
+   {
+    "pid": 3609,
+    "mb": 429
+   },
+   {
+    "pid": 3632,
+    "mb": 146
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 45,
+   "totalMB": 47,
+   "nodes": 4629,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 34.6,
+  "kind": "mem",
+  "mb": [
+   138,
+   430,
+   146,
+   102
+  ]
+ },
+ {
+  "t": 34.8,
+  "kind": "mem",
+  "mb": [
+   138,
+   430,
+   146,
+   102
+  ]
+ },
+ {
+  "t": 35,
+  "kind": "mem",
+  "mb": [
+   138,
+   430,
+   146,
+   102
+  ]
+ },
+ {
+  "t": 35.2,
+  "kind": "mem",
+  "mb": [
+   138,
+   430,
+   146,
+   102
+  ]
+ },
+ {
+  "t": 35.4,
+  "kind": "mem",
+  "mb": [
+   138,
+   433,
+   146,
+   102
+  ]
+ },
+ {
+  "t": 35.4,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 138
+   },
+   {
+    "pid": 3609,
+    "mb": 433
+   },
+   {
+    "pid": 3632,
+    "mb": 146
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 47,
+   "totalMB": 51,
+   "nodes": 4629,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 35.6,
+  "kind": "mem",
+  "mb": [
+   138,
+   434,
+   146,
+   102
+  ]
+ },
+ {
+  "t": 35.8,
+  "kind": "mem",
+  "mb": [
+   138,
+   434,
+   146,
+   102
+  ]
+ },
+ {
+  "t": 36,
+  "kind": "mem",
+  "mb": [
+   138,
+   434,
+   146,
+   102
+  ]
+ },
+ {
+  "t": 36.2,
+  "kind": "mem",
+  "mb": [
+   138,
+   434,
+   146,
+   102
+  ]
+ },
+ {
+  "t": 36.4,
+  "kind": "mem",
+  "mb": [
+   138,
+   434,
+   146,
+   102
+  ]
+ },
+ {
+  "t": 36.4,
+  "kind": "req",
+  "id": 194,
+  "method": "POST",
+  "type": "ping",
+  "url": "https://play.google.com/log?hasfast=true&authuser=0&format=json",
+  "sw": false
+ },
+ {
+  "t": 36.4,
+  "kind": "done",
+  "id": 194,
+  "status": 200,
+  "size": -354
+ },
+ {
+  "t": 36.4,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 138
+   },
+   {
+    "pid": 3609,
+    "mb": 434
+   },
+   {
+    "pid": 3632,
+    "mb": 147
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 48,
+   "totalMB": 52,
+   "nodes": 4629,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 4
+ },
+ {
+  "t": 36.6,
+  "kind": "mem",
+  "mb": [
+   138,
+   434,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 36.8,
+  "kind": "mem",
+  "mb": [
+   138,
+   434,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 37,
+  "kind": "mem",
+  "mb": [
+   138,
+   434,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 37.2,
+  "kind": "mem",
+  "mb": [
+   138,
+   434,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 37.4,
+  "kind": "mem",
+  "mb": [
+   138,
+   434,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 37.5,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 138
+   },
+   {
+    "pid": 3609,
+    "mb": 434
+   },
+   {
+    "pid": 3632,
+    "mb": 147
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 47,
+   "totalMB": 53,
+   "nodes": 4629,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 37.6,
+  "kind": "mem",
+  "mb": [
+   138,
+   434,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 37.8,
+  "kind": "mem",
+  "mb": [
+   138,
+   434,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 38,
+  "kind": "mem",
+  "mb": [
+   138,
+   434,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 38.2,
+  "kind": "mem",
+  "mb": [
+   138,
+   434,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 38.4,
+  "kind": "mem",
+  "mb": [
+   138,
+   434,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 38.5,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 138
+   },
+   {
+    "pid": 3609,
+    "mb": 434
+   },
+   {
+    "pid": 3632,
+    "mb": 147
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 47,
+   "totalMB": 53,
+   "nodes": 4629,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 38.6,
+  "kind": "mem",
+  "mb": [
+   138,
+   434,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 38.8,
+  "kind": "mem",
+  "mb": [
+   138,
+   434,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 39,
+  "kind": "mem",
+  "mb": [
+   138,
+   434,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 39.2,
+  "kind": "mem",
+  "mb": [
+   138,
+   434,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 39.4,
+  "kind": "mem",
+  "mb": [
+   138,
+   434,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 39.4,
+  "kind": "console",
+  "type": "warning",
+  "text": "The resource http://localhost:8781/scramjet/https%3A%2F%2Fi.ytimg.com%2Fgenerate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+ },
+ {
+  "t": 39.5,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 138
+   },
+   {
+    "pid": 3609,
+    "mb": 434
+   },
+   {
+    "pid": 3632,
+    "mb": 147
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 47,
+   "totalMB": 53,
+   "nodes": 4629,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 39.6,
+  "kind": "mem",
+  "mb": [
+   138,
+   434,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 39.8,
+  "kind": "mem",
+  "mb": [
+   138,
+   434,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 40,
+  "kind": "mem",
+  "mb": [
+   138,
+   434,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 40.2,
+  "kind": "mem",
+  "mb": [
+   138,
+   434,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 40.4,
+  "kind": "mem",
+  "mb": [
+   138,
+   435,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 40.5,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 138
+   },
+   {
+    "pid": 3609,
+    "mb": 435
+   },
+   {
+    "pid": 3632,
+    "mb": 147
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 46,
+   "totalMB": 53,
+   "nodes": 4629,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 40.6,
+  "kind": "mem",
+  "mb": [
+   138,
+   436,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 40.8,
+  "kind": "mem",
+  "mb": [
+   138,
+   436,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 41,
+  "kind": "mem",
+  "mb": [
+   138,
+   436,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 41.2,
+  "kind": "mem",
+  "mb": [
+   138,
+   436,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 41.4,
+  "kind": "mem",
+  "mb": [
+   138,
+   436,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 41.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 138
+   },
+   {
+    "pid": 3609,
+    "mb": 436
+   },
+   {
+    "pid": 3632,
+    "mb": 147
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 48,
+   "totalMB": 54,
+   "nodes": 4629,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 41.6,
+  "kind": "mem",
+  "mb": [
+   138,
+   436,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 41.8,
+  "kind": "mem",
+  "mb": [
+   138,
+   436,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 42,
+  "kind": "mem",
+  "mb": [
+   138,
+   436,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 42.2,
+  "kind": "mem",
+  "mb": [
+   138,
+   436,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 42.4,
+  "kind": "mem",
+  "mb": [
+   138,
+   436,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 42.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 138
+   },
+   {
+    "pid": 3609,
+    "mb": 436
+   },
+   {
+    "pid": 3632,
+    "mb": 147
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 47,
+   "totalMB": 54,
+   "nodes": 4629,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 42.6,
+  "kind": "mem",
+  "mb": [
+   138,
+   436,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 42.8,
+  "kind": "mem",
+  "mb": [
+   138,
+   436,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 43,
+  "kind": "mem",
+  "mb": [
+   138,
+   436,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 43.2,
+  "kind": "mem",
+  "mb": [
+   138,
+   436,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 43.4,
+  "kind": "mem",
+  "mb": [
+   138,
+   436,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 43.6,
+  "kind": "mem",
+  "mb": [
+   138,
+   436,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 43.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 138
+   },
+   {
+    "pid": 3609,
+    "mb": 436
+   },
+   {
+    "pid": 3632,
+    "mb": 147
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 47,
+   "totalMB": 54,
+   "nodes": 4629,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 43.8,
+  "kind": "mem",
+  "mb": [
+   138,
+   436,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 44,
+  "kind": "mem",
+  "mb": [
+   138,
+   436,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 44.2,
+  "kind": "mem",
+  "mb": [
+   138,
+   436,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 44.4,
+  "kind": "mem",
+  "mb": [
+   138,
+   436,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 44.6,
+  "kind": "mem",
+  "mb": [
+   138,
+   436,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 44.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 138
+   },
+   {
+    "pid": 3609,
+    "mb": 436
+   },
+   {
+    "pid": 3632,
+    "mb": 147
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 47,
+   "totalMB": 54,
+   "nodes": 4629,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 44.8,
+  "kind": "mem",
+  "mb": [
+   138,
+   436,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 45,
+  "kind": "mem",
+  "mb": [
+   138,
+   436,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 45.2,
+  "kind": "mem",
+  "mb": [
+   138,
+   436,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 45.4,
+  "kind": "mem",
+  "mb": [
+   138,
+   437,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 45.6,
+  "kind": "mem",
+  "mb": [
+   138,
+   436,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 45.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 138
+   },
+   {
+    "pid": 3609,
+    "mb": 436
+   },
+   {
+    "pid": 3632,
+    "mb": 147
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 47,
+   "totalMB": 53,
+   "nodes": 4629,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 45.8,
+  "kind": "mem",
+  "mb": [
+   138,
+   435,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 46,
+  "kind": "mem",
+  "mb": [
+   138,
+   435,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 46.2,
+  "kind": "mem",
+  "mb": [
+   138,
+   435,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 46.4,
+  "kind": "mem",
+  "mb": [
+   138,
+   435,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 46.6,
+  "kind": "mem",
+  "mb": [
+   138,
+   435,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 46.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 138
+   },
+   {
+    "pid": 3609,
+    "mb": 435
+   },
+   {
+    "pid": 3632,
+    "mb": 147
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 48,
+   "totalMB": 54,
+   "nodes": 4629,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 46.8,
+  "kind": "mem",
+  "mb": [
+   138,
+   436,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 47,
+  "kind": "mem",
+  "mb": [
+   138,
+   436,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 47.2,
+  "kind": "mem",
+  "mb": [
+   138,
+   436,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 47.4,
+  "kind": "mem",
+  "mb": [
+   138,
+   436,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 47.6,
+  "kind": "mem",
+  "mb": [
+   138,
+   436,
+   147,
+   102
+  ]
+ },
+ {
+  "t": 47.7,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3600,
+    "mb": 138
+   },
+   {
+    "pid": 3609,
+    "mb": 436
+   },
+   {
+    "pid": 3632,
+    "mb": 147
+   },
+   {
+    "pid": 3647,
+    "mb": 102
+   }
+  ],
+  "heap": {
+   "usedMB": 49,
+   "totalMB": 55,
+   "nodes": 4629,
+   "docs": 19,
+   "frames": 16
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "",
+   "app": {
+    "elements": 1176,
+    "player": false,
+    "flexy": false,
+    "botcheck": false,
+    "videos": 0,
+    "tiles": 0,
+    "thumbs": 0,
+    "initialData": 641516,
+    "pageReady": "complete"
+   }
+  },
+  "answerMs": 3
+ }
+]
