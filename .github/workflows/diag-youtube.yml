@@ -63,11 +63,11 @@ jobs:
             echo "== $name crashed=$(grep -o '"crashed": [a-z]*' "out/$name/stdout.txt")"
             grep -iE "fatal|check failed|out of memory|oom|v8|renderer|crash" "out/$name/browser.log" | grep -viE "crashpad|cpufreq" | head -15 || true
           done <<'RUNS'
-          search-direct;8782;epoxy;;--direct --shots --video https://www.youtube.com/results?search_query=dom+tracy+f150
-          search-v2;8782;epoxy;;--shots --video https://www.youtube.com/results?search_query=dom+tracy+f150
-          search-v1;8781;libcurl;;--shots --video https://www.youtube.com/results?search_query=dom+tracy+f150
-          home-direct;8782;epoxy;;--direct --shots --video https://www.youtube.com/
-          home-v2;8782;epoxy;;--shots --video https://www.youtube.com/
+          cur-search;8782;epoxy;;--video https://www.youtube.com/results?search_query=dom+tracy+f150
+          forceoff-search;8782;epoxy;;--fix forceoff --video https://www.youtube.com/results?search_query=dom+tracy+f150
+          cur-home;8782;epoxy;;--video https://www.youtube.com/
+          forceoff-home;8782;epoxy;;--fix forceoff --video https://www.youtube.com/
+          forceoff-watch;8782;epoxy;;--fix forceoff --video https://www.youtube.com/watch?v=jNQXAC9IVRw
           RUNS
           cp /tmp/lab-server.log out/
       - name: Save results to the diag-results branch

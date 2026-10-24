@@ -108,7 +108,7 @@ if (args.direct) {
   // Control: the video without any proxy.
   await page.goto(args.video, { waitUntil: "domcontentloaded", timeout: 30000 });
 } else {
-  await page.goto(args.url, { waitUntil: "load", timeout: 30000 });
+  await page.goto(args.url + (args.fix ? "?sjfix=" + encodeURIComponent(args.fix) : ""), { waitUntil: "load", timeout: 30000 });
   await page.waitForTimeout(1500);
   note("version", { version: await timed(page.evaluate(() => fetch("/version.json").then((r) => r.json()).catch(() => null)), 10000, "version").catch((e) => e.message) });
   await page.fill("#sj-home-q", args.video, { timeout: 10000 });

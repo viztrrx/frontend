@@ -46,6 +46,9 @@
     return worker;
   }
 
+  // DIAGNOSTIC BRANCH ONLY.
+  try { const u = new URLSearchParams(location.search); if (u.get("sjfix")) self.__saintsDiagFix = u.get("sjfix"); } catch (e) {}
+
   async function setTransport(path, args) {
     const { default: Transport } = await import(path);
     const next = new Transport(...args);
@@ -132,7 +135,12 @@
         escapeHtml(block.message) + '</p><p style="margin:0;color:#9c9c9c;font-size:.8em">' + escapeHtml(context.parsed.url.hostname) + "</p>", 403);
     });
     plugin.tap(inner.hooks.fetch.response, (context, props) => {
-      if (context.parsed.destination === "script" && self.saintsSiteFixes) fixScriptBody(props.response);
+      // DIAGNOSTIC BRANCH ONLY: --fix forceoff turns YouTube's forced ShadyDOM off.
+      if (self.__saintsDiagFix === "forceoff" && /(^|\.)youtube\.com$/.test(context.parsed.url.hostname)) {
+        const b = props.response.body;
+        if (typeof b === "string") props.response.body = b.replace(/ShadyDOM\s*=\s*\{\s*force\s*:\s*(?:true|!0)/g, "ShadyDOM={force:!1");
+      }
+      if (context.parsed.destination === "script" && self.saintsSiteFixes && self.__saintsDiagFix !== "forceoff") fixScriptBody(props.response);
       if (context.request.mode === "navigate") reportNavigation(context.request.rawUrl.pathname, props.response.status, "");
     });
     // The site couldn't be reached: index.js retries with the other transport,
