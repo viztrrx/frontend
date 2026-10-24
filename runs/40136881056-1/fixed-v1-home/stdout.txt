@@ -1,0 +1,86 @@
+{
+  "target": "http://localhost:8781",
+  "transport": "libcurl",
+  "block": "",
+  "shots": false,
+  "sjconfig": "",
+  "fix": "",
+  "noprobe": false,
+  "crashed": false,
+  "lastTick": {
+    "t": 62.9,
+    "kind": "tick",
+    "memory": [
+      {
+        "pid": 3320,
+        "mb": 141
+      },
+      {
+        "pid": 3333,
+        "mb": 440
+      },
+      {
+        "pid": 3367,
+        "mb": 150
+      },
+      {
+        "pid": 3403,
+        "mb": 103
+      }
+    ],
+    "heap": {
+      "usedMB": 47,
+      "totalMB": 52,
+      "nodes": 4827,
+      "docs": 18,
+      "frames": 15
+    },
+    "video": {
+      "status": "Website content detected",
+      "title": "YouTube",
+      "app": {
+        "elements": 1380,
+        "player": false,
+        "flexy": false,
+        "botcheck": false
+      }
+    },
+    "answerMs": 2
+  },
+  "peakRendererMB": 681,
+  "peakHeapMB": 96,
+  "requests": 104,
+  "failed": 1,
+  "byHost": {
+    "localhost:8781 script": 19,
+    "localhost:8781 fetch": 15,
+    "www.youtube.com script": 12,
+    "www.gstatic.com script": 12,
+    "localhost:8781 other": 5,
+    " fetch": 5,
+    "www.youtube.com stylesheet": 4,
+    "www.youtube.com media": 4,
+    "fonts.googleapis.com stylesheet": 3,
+    "accounts.google.com document": 3,
+    "play.google.com ping": 3,
+    "localhost:8781 image": 2,
+    "googleads.g.doubleclick.net xhr": 2,
+    "www.youtube.com xhr": 2,
+    "www.youtube.com fetch": 2,
+    "localhost:8781 document": 1,
+    "localhost:8781 stylesheet": 1,
+    "www.youtube.com document": 1,
+    "i.ytimg.com other": 1,
+    "www.youtube.com image": 1,
+    "www.google.com script": 1,
+    "www.google.com image": 1,
+    "accounts.youtube.com document": 1,
+    "accounts.google.com fetch": 1,
+    "youtube.com fetch": 1
+  },
+  "pageErrors": [],
+  "consoleErrors": [
+    "3.3s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "4.7s Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ]
+}

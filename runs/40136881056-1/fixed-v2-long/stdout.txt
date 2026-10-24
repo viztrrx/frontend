@@ -1,0 +1,91 @@
+{
+  "target": "http://localhost:8782",
+  "transport": "libcurl",
+  "block": "",
+  "shots": false,
+  "sjconfig": "",
+  "fix": "",
+  "noprobe": false,
+  "crashed": false,
+  "lastTick": {
+    "t": 62.7,
+    "kind": "tick",
+    "memory": [
+      {
+        "pid": 5131,
+        "mb": 140
+      },
+      {
+        "pid": 5140,
+        "mb": 555
+      },
+      {
+        "pid": 5162,
+        "mb": 103
+      }
+    ],
+    "heap": {
+      "usedMB": 53,
+      "totalMB": 66,
+      "nodes": 4834,
+      "docs": 11,
+      "frames": 8
+    },
+    "video": {
+      "status": "Website content detected",
+      "title": "Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster) - YouTube",
+      "time": 56.41,
+      "paused": false,
+      "ready": 4,
+      "net": 2,
+      "error": null,
+      "buffered": 132.2,
+      "src": "blob:http://localhost:8782/c77b0a4d-5386-4f17-a7d8-c9b8972bd",
+      "app": {
+        "elements": 1749,
+        "player": true,
+        "flexy": false,
+        "botcheck": false
+      }
+    },
+    "answerMs": 2
+  },
+  "peakRendererMB": 662,
+  "peakHeapMB": 84,
+  "requests": 122,
+  "failed": 5,
+  "byHost": {
+    "www.youtube.com script": 18,
+    "rr1---sn-ojq4f5-51.googlevideo.com fetch": 17,
+    "localhost:8782 script": 16,
+    "www.youtube.com xhr": 10,
+    "www.youtube.com fetch": 6,
+    "i.ytimg.com image": 5,
+    "www.youtube.com stylesheet": 5,
+    " fetch": 5,
+    "googleads.g.doubleclick.net xhr": 4,
+    "www.youtube.com media": 4,
+    "localhost:8782 fetch": 3,
+    "i.ytimg.com other": 3,
+    "fonts.googleapis.com stylesheet": 3,
+    "scramjet.wasm.js script": 2,
+    "localhost:8782 image": 2,
+    "www.youtube.com image": 2,
+    "www.google.com image": 2,
+    "localhost:8782 document": 1,
+    "localhost:8782 stylesheet": 1,
+    "localhost:8782 other": 1,
+    "www.youtube.com document": 1,
+    "rr1---sn-ojq4f5-51.googlevideo.com other": 1,
+    "rr5---sn-q4fzened.c.youtube.com other": 1,
+    "accounts.google.com document": 1,
+    "www.google.com script": 1
+  },
+  "pageErrors": [],
+  "consoleErrors": [
+    "0.9s Request \"https://localhost:4443/health\" failed with error code 60: SSL peer certificate or SSH remote key was not OK",
+    "3.4s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "5.9s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "6.2s Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ]
+}

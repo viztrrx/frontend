@@ -1,0 +1,29 @@
+frontend /tmp/dist1 on http://localhost:8781
+frontend /tmp/dist2 on http://localhost:8782
+wisp on wss://localhost:4443/wisp/
+[2026/10/24 - 22:03:43] warn: (b66f17d6) creating a stream to rr4---sn-5hnekn7k.googlevideo.com:443 failed - Error: getaddrinfo ENOTFOUND rr4---sn-5hnekn7k.googlevideo.com
+[2026/10/24 - 22:03:43] warn: (b66f17d6) creating a stream to rr4---sn-5hnekn7k.googlevideo.com:443 failed - Error: getaddrinfo ENOTFOUND rr4---sn-5hnekn7k.googlevideo.com
+[2026/10/24 - 22:03:43] warn: (b66f17d6) creating a stream to rr4---sn-5hnekn7k.googlevideo.com:443 failed - Error: getaddrinfo ENOTFOUND rr4---sn-5hnekn7k.googlevideo.com
+[2026/10/24 - 22:03:43] warn: (b66f17d6) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 22:03:43] warn: (b66f17d6) creating a stream to rr4---sn-5hnekn7k.googlevideo.com:443 failed - Error: getaddrinfo ENOTFOUND rr4---sn-5hnekn7k.googlevideo.com
+[2026/10/24 - 22:03:43] warn: (b66f17d6) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 22:03:43] warn: (b66f17d6) creating a stream to rr4---sn-5hnekn7k.googlevideo.com:443 failed - Error: getaddrinfo ENOTFOUND rr4---sn-5hnekn7k.googlevideo.com
+[2026/10/24 - 22:03:43] warn: (b66f17d6) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 22:03:43] warn: (b66f17d6) creating a stream to rr4---sn-5hnekn7k.googlevideo.com:443 failed - Error: getaddrinfo ENOTFOUND rr4---sn-5hnekn7k.googlevideo.com
+[2026/10/24 - 22:03:43] warn: (b66f17d6) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 22:09:00] warn: tcp stream to rr4---sn-q4fzen7s.googlevideo.com ended with error - Error: read ECONNRESET
+[2026/10/24 - 22:09:00] warn: tcp stream to rr4---sn-q4fzen7s.googlevideo.com ended with error - Error: read ECONNRESET
+[2026/10/24 - 22:09:00] warn: tcp stream to rr4---sn-q4fzen7s.googlevideo.com ended with error - Error: read ECONNRESET
+[2026/10/24 - 22:09:00] warn: tcp stream to rr4---sn-q4fzen7s.googlevideo.com ended with error - Error: read ECONNRESET
+[2026/10/24 - 22:09:00] warn: tcp stream to rr4---sn-q4fzen7s.googlevideo.com ended with error - Error: read ECONNRESET
+[2026/10/24 - 22:09:00] warn: tcp stream to rr4---sn-q4fzen7s.googlevideo.com ended with error - Error: read ECONNRESET
+[2026/10/24 - 22:10:04] warn: (083881f5) creating a stream to rr3---sn-aigl6nsd.googlevideo.com:443 failed - Error: getaddrinfo ENOTFOUND rr3---sn-aigl6nsd.googlevideo.com
+[2026/10/24 - 22:10:04] warn: (083881f5) creating a stream to rr3---sn-aigl6nsd.googlevideo.com:443 failed - Error: getaddrinfo ENOTFOUND rr3---sn-aigl6nsd.googlevideo.com
+[2026/10/24 - 22:10:04] warn: (083881f5) creating a stream to rr3---sn-aigl6nsd.googlevideo.com:443 failed - Error: getaddrinfo ENOTFOUND rr3---sn-aigl6nsd.googlevideo.com
+[2026/10/24 - 22:10:04] warn: (083881f5) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 22:10:04] warn: (083881f5) creating a stream to rr3---sn-aigl6nsd.googlevideo.com:443 failed - Error: getaddrinfo ENOTFOUND rr3---sn-aigl6nsd.googlevideo.com
+[2026/10/24 - 22:10:04] warn: (083881f5) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 22:10:04] warn: (083881f5) creating a stream to rr3---sn-aigl6nsd.googlevideo.com:443 failed - Error: getaddrinfo ENOTFOUND rr3---sn-aigl6nsd.googlevideo.com
+[2026/10/24 - 22:10:04] warn: (083881f5) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 22:10:04] warn: (083881f5) creating a stream to rr3---sn-aigl6nsd.googlevideo.com:443 failed - Error: getaddrinfo ENOTFOUND rr3---sn-aigl6nsd.googlevideo.com
+[2026/10/24 - 22:10:04] warn: (083881f5) received a DATA packet for a stream which doesn't exist

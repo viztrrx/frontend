@@ -1,0 +1,91 @@
+{
+  "target": "http://localhost:8782",
+  "transport": "epoxy",
+  "block": "",
+  "shots": false,
+  "sjconfig": "",
+  "fix": "",
+  "noprobe": false,
+  "crashed": false,
+  "lastTick": {
+    "t": 62.9,
+    "kind": "tick",
+    "memory": [
+      {
+        "pid": 3951,
+        "mb": 140
+      },
+      {
+        "pid": 3960,
+        "mb": 483
+      },
+      {
+        "pid": 3982,
+        "mb": 103
+      }
+    ],
+    "heap": {
+      "usedMB": 51,
+      "totalMB": 56,
+      "nodes": 4601,
+      "docs": 11,
+      "frames": 8
+    },
+    "video": {
+      "status": "Website content detected",
+      "title": "- YouTube",
+      "time": 0,
+      "paused": true,
+      "ready": 0,
+      "net": 0,
+      "error": null,
+      "buffered": 0,
+      "src": "",
+      "app": {
+        "elements": 1555,
+        "player": true,
+        "flexy": false,
+        "botcheck": false
+      }
+    },
+    "answerMs": 1
+  },
+  "peakRendererMB": 593,
+  "peakHeapMB": 84,
+  "requests": 78,
+  "failed": 1,
+  "byHost": {
+    "localhost:8782 script": 16,
+    "www.youtube.com script": 15,
+    "www.youtube.com stylesheet": 5,
+    " fetch": 5,
+    "googleads.g.doubleclick.net xhr": 4,
+    "www.youtube.com media": 4,
+    "localhost:8782 fetch": 3,
+    "fonts.googleapis.com stylesheet": 3,
+    "scramjet.wasm.js script": 2,
+    "localhost:8782 image": 2,
+    "www.youtube.com xhr": 2,
+    "www.youtube.com image": 2,
+    "localhost:8782 document": 1,
+    "localhost:8782 stylesheet": 1,
+    "localhost:8782 other": 1,
+    "www.youtube.com document": 1,
+    "i.ytimg.com other": 1,
+    "i.ytimg.com image": 1,
+    "rr8---sn-ojq4f5-51.googlevideo.com other": 1,
+    "rr4---sn-q4flrne7.c.youtube.com other": 1,
+    "accounts.google.com document": 1,
+    "www.gstatic.com script": 1,
+    "static.doubleclick.net script": 1,
+    "www.google.com script": 1,
+    "www.google.com image": 1
+  },
+  "pageErrors": [],
+  "consoleErrors": [
+    "1s Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: InvalidData, error: InvalidCertificate(Other(OtherError(CaUsedAsEndEntity))) })) (client error (IO: Custom { kind: InvalidData, error: InvalidCertificate(Other(OtherError(CaUsedAsEndEntity))) } (invalid peer certificat",
+    "3.5s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "5s Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "6.1s Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ]
+}
