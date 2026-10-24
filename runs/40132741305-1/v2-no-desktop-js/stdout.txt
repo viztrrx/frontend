@@ -1,0 +1,89 @@
+{
+  "target": "http://localhost:8782",
+  "transport": "epoxy",
+  "block": "youtube\\.com/s/desktop/",
+  "shots": false,
+  "sjconfig": "",
+  "crashed": false,
+  "lastTick": {
+    "t": 47,
+    "kind": "tick",
+    "memory": [
+      {
+        "pid": 3113,
+        "mb": 140
+      },
+      {
+        "pid": 3122,
+        "mb": 403
+      },
+      {
+        "pid": 3147,
+        "mb": 103
+      }
+    ],
+    "heap": {
+      "usedMB": 34,
+      "totalMB": 35,
+      "nodes": 1476,
+      "docs": 7,
+      "frames": 6
+    },
+    "video": {
+      "status": "Website content detected",
+      "title": "- YouTube",
+      "time": 0,
+      "paused": true,
+      "ready": 0,
+      "net": 0,
+      "error": null,
+      "buffered": 0,
+      "src": ""
+    },
+    "answerMs": 1
+  },
+  "peakRendererMB": 580,
+  "peakHeapMB": 38,
+  "requests": 52,
+  "failed": 9,
+  "byHost": {
+    "localhost:8782 script": 15,
+    "www.youtube.com script": 11,
+    "www.youtube.com stylesheet": 5,
+    "localhost:8782 fetch": 3,
+    "scramjet.wasm.js script": 2,
+    "localhost:8782 image": 2,
+    "www.youtube.com image": 2,
+    "localhost:8782 document": 1,
+    "localhost:8782 stylesheet": 1,
+    "localhost:8782 other": 1,
+    "www.youtube.com document": 1,
+    "i.ytimg.com other": 1,
+    "i.ytimg.com image": 1,
+    "fonts.googleapis.com stylesheet": 1,
+    "rr2---sn-2imeyn7r.googlevideo.com other": 1,
+    "rr2---sn-2imeyn7r.c.youtube.com other": 1,
+    "static.doubleclick.net script": 1,
+    "accounts.google.com document": 1,
+    "www.gstatic.com script": 1
+  },
+  "pageErrors": [
+    "TypeError: Cannot read properties of undefined (reading 'prototype')\n    at VNI (http://localhost:8782/~/sj/b3otizn5/4ahd8m9i/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.EzC3lbfP0yU.2021.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywHA3jxY",
+    "TypeError: ShadyDOM.patch is not a function\n    at _.vU (http://localhost:8782/~/sj/b3otizn5/4ahd8m9i/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.EzC3lbfP0yU.2021.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywHA3jxYDuLI6Pz_1ZfnNfdGZbHrcg%2"
+  ],
+  "consoleErrors": [
+    "0.7s Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: UnexpectedEof, error: \"tls handshake eof\" })) (client error (IO: Custom { kind: UnexpectedEof, error: \"tls handshake eof\" } (tls handshake eof)))\n    at imports.wbg.__wbindgen_error_new (http://localhost:8782/epoxy/ind",
+    "2.6s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "2.6s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "2.6s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "2.6s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "2.6s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "2.6s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "2.6s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "2.6s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "2.6s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "2.6s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "3.8s Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "4.5s Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ]
+}

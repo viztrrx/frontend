@@ -1,0 +1,4410 @@
+[
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 1,
+  "method": "GET",
+  "type": "document",
+  "url": "http://localhost:8782/",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 2,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/scram/scramjet.js",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 3,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/controller/controller.api.js",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 4,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/engine2.js",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 5,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "http://localhost:8782/index.css",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 6,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/register-sw.js",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 7,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/search.js",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 8,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/config.js",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 9,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/blocked.js",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 10,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/index.js",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 11,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/sessions.js",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "done",
+  "id": 1,
+  "status": 200,
+  "size": 9650
+ },
+ {
+  "t": 0.4,
+  "kind": "done",
+  "id": 5,
+  "status": 200,
+  "size": 20762
+ },
+ {
+  "t": 0.4,
+  "kind": "done",
+  "id": 3,
+  "status": 200,
+  "size": 17099
+ },
+ {
+  "t": 0.4,
+  "kind": "done",
+  "id": 4,
+  "status": 200,
+  "size": 8896
+ },
+ {
+  "t": 0.4,
+  "kind": "done",
+  "id": 6,
+  "status": 200,
+  "size": 609
+ },
+ {
+  "t": 0.4,
+  "kind": "done",
+  "id": 7,
+  "status": 200,
+  "size": 940
+ },
+ {
+  "t": 0.4,
+  "kind": "done",
+  "id": 2,
+  "status": 200,
+  "size": 227123
+ },
+ {
+  "t": 0.5,
+  "kind": "done",
+  "id": 8,
+  "status": 200,
+  "size": 68
+ },
+ {
+  "t": 0.5,
+  "kind": "done",
+  "id": 9,
+  "status": 200,
+  "size": 4972
+ },
+ {
+  "t": 0.5,
+  "kind": "done",
+  "id": 11,
+  "status": 200,
+  "size": 16207
+ },
+ {
+  "t": 0.5,
+  "kind": "done",
+  "id": 10,
+  "status": 200,
+  "size": 61339
+ },
+ {
+  "t": 0.5,
+  "kind": "done",
+  "id": 12,
+  "status": 200,
+  "size": 915
+ },
+ {
+  "t": 0.5,
+  "kind": "done",
+  "id": 13,
+  "status": 200,
+  "size": 915
+ },
+ {
+  "t": 0.5,
+  "kind": "req",
+  "id": 14,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/sw.js",
+  "sw": true
+ },
+ {
+  "t": 0.6,
+  "kind": "mem",
+  "mb": [
+   139,
+   159,
+   73
+  ]
+ },
+ {
+  "t": 0.6,
+  "kind": "req",
+  "id": 15,
+  "method": "GET",
+  "type": "other",
+  "url": "http://localhost:8782/controller/controller.sw.js",
+  "sw": true
+ },
+ {
+  "t": 0.6,
+  "kind": "done",
+  "id": 15,
+  "status": 200,
+  "size": -272
+ },
+ {
+  "t": 0.6,
+  "kind": "done",
+  "id": 14,
+  "status": 200,
+  "size": 0
+ },
+ {
+  "t": 0.6,
+  "kind": "req",
+  "id": 16,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/epoxy/index.mjs",
+  "sw": false
+ },
+ {
+  "t": 0.6,
+  "kind": "done",
+  "id": 16,
+  "status": 200,
+  "size": 1717636
+ },
+ {
+  "t": 0.7,
+  "kind": "console",
+  "type": "log",
+  "text": "service worker activated, notifying clients to revive"
+ },
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 17,
+  "method": "GET",
+  "type": "fetch",
+  "url": "http://localhost:8782/scram/scramjet.wasm",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "done",
+  "id": 17,
+  "status": 200,
+  "size": 586293
+ },
+ {
+  "t": 0.7,
+  "kind": "console",
+  "type": "error",
+  "text": "Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: UnexpectedEof, error: \"tls handshake eof\" })) (client error (IO: Custom { kind: UnexpectedEof, error: \"tls handshake eof\" } (tls handshake eof)))\n    at imports.wbg.__wbindgen_error_new (http://localhost:8782/epoxy/index.mjs:1366:17)\n    at wasm://wasm/004c6846:wasm-function[2742]:0xde850\n    at wasm://wasm/004c6846:wasm-function[1833]:0xd177a\n    at wasm://wasm/004c6846:wasm-function[123]:0xc060\n    at wasm://wasm/004c6846:wasm-function[542]:0x9d36a\n    at wasm://wasm/004c6846:wasm-function[2584]:0xdc9d1\n    at "
+ },
+ {
+  "t": 0.7,
+  "kind": "mem",
+  "mb": [
+   147,
+   216,
+   73
+  ]
+ },
+ {
+  "t": 0.9,
+  "kind": "mem",
+  "mb": [
+   147,
+   216,
+   103
+  ]
+ },
+ {
+  "t": 1.1,
+  "kind": "mem",
+  "mb": [
+   147,
+   216,
+   103
+  ]
+ },
+ {
+  "t": 1.3,
+  "kind": "mem",
+  "mb": [
+   147,
+   216,
+   103
+  ]
+ },
+ {
+  "t": 1.5,
+  "kind": "mem",
+  "mb": [
+   147,
+   195,
+   103
+  ]
+ },
+ {
+  "t": 1.7,
+  "kind": "mem",
+  "mb": [
+   147,
+   195,
+   103
+  ]
+ },
+ {
+  "t": 1.9,
+  "kind": "mem",
+  "mb": [
+   147,
+   195,
+   103
+  ]
+ },
+ {
+  "t": 2,
+  "kind": "req",
+  "id": 18,
+  "method": "GET",
+  "type": "fetch",
+  "url": "http://localhost:8782/version.json",
+  "sw": false
+ },
+ {
+  "t": 2,
+  "kind": "version",
+  "version": {
+   "engine": 2,
+   "commit": "a3a4a75661ffcffa6a61b0093eb318313b300785",
+   "branch": "diag-youtube",
+   "message": "diag: sourcemaps off, script blocking, fast memory sampling",
+   "committedAt": "2026-10-24T21:06:18Z",
+   "builtAt": "2026-10-24T21:06:52.113Z"
+  }
+ },
+ {
+  "t": 2,
+  "kind": "done",
+  "id": 18,
+  "status": 200,
+  "size": 272
+ },
+ {
+  "t": 2,
+  "kind": "req",
+  "id": 19,
+  "method": "GET",
+  "type": "document",
+  "url": "https://www.youtube.com/watch?v=jNQXAC9IVRw",
+  "sw": false
+ },
+ {
+  "t": 2,
+  "kind": "opened",
+  "video": "https://www.youtube.com/watch?v=jNQXAC9IVRw"
+ },
+ {
+  "t": 2.1,
+  "kind": "mem",
+  "mb": [
+   147,
+   200,
+   103
+  ]
+ },
+ {
+  "t": 2.3,
+  "kind": "mem",
+  "mb": [
+   147,
+   203,
+   103
+  ]
+ },
+ {
+  "t": 2.5,
+  "kind": "mem",
+  "mb": [
+   147,
+   204,
+   103
+  ]
+ },
+ {
+  "t": 2.8,
+  "kind": "mem",
+  "mb": [
+   147,
+   216,
+   103
+  ]
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 20,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/scram/scramjet.js",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 21,
+  "method": "GET",
+  "type": "script",
+  "url": "scramjet.wasm.js",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 22,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/controller/controller.inject.js",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 23,
+  "method": "GET",
+  "type": "other",
+  "url": "https://i.ytimg.com/generate_204",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 24,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/base.js",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 25,
+  "method": "GET",
+  "type": "image",
+  "url": "https://i.ytimg.com/vi/jNQXAC9IVRw/hqdefault.jpg",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 26,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/_/ytmainappweb/_/js/k=ytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O/am=AAAAEAAAEICU/d=1/br=1/rs=AGKMywGsKFm8sCO8kI6zSTaihyApZW2zAA/m=base",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 27,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/web-animations-next-lite.min.vflset/web-animations-next-lite.min.js",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 28,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/custom-elements-es5-adapter.vflset/custom-elements-es5-adapter.js",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 29,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/webcomponents-sd.vflset/webcomponents-sd.js",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 30,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/intersection-observer.min.vflset/intersection-observer.min.js",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 31,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/scheduler.vflset/scheduler.js",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 32,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/www-i18n-constants-en_US.vflset/www-i18n-constants.js",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 33,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=YouTube+Sans:wght@300..900&display=swap",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 34,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/www-player.css",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 35,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-main-desktop-watch-page-skeleton.css",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 36,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-main-desktop-player-skeleton.css",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 37,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-onepick.css",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 38,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/_/ytmainappweb/_/ss/k=ytmainappweb.base_module_set.sj0b8y4Z2RA.L.B1.O/am=AAAAEADAEMCe/d=0/br=1/rs=AGKMywGitKBzNwpIbppJbI5kB3EhMiu3ZQ",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 39,
+  "method": "GET",
+  "type": "other",
+  "url": "https://rr2---sn-2imeyn7r.googlevideo.com/generate_204",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 40,
+  "method": "GET",
+  "type": "other",
+  "url": "https://rr2---sn-2imeyn7r.c.youtube.com/generate_204",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 41,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/spf.vflset/spf.js",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 42,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/network.vflset/network.js",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "req",
+  "id": 43,
+  "method": "GET",
+  "type": "fetch",
+  "url": "http://localhost:8782/scram/scramjet.wasm",
+  "sw": false
+ },
+ {
+  "t": 2.9,
+  "kind": "done",
+  "id": 22,
+  "status": 200,
+  "size": 6449
+ },
+ {
+  "t": 2.9,
+  "kind": "done",
+  "id": 20,
+  "status": 200,
+  "size": 227123
+ },
+ {
+  "t": 2.9,
+  "kind": "done",
+  "id": 19,
+  "status": 200,
+  "size": -10273
+ },
+ {
+  "t": 3,
+  "kind": "mem",
+  "mb": [
+   146,
+   253,
+   103
+  ]
+ },
+ {
+  "t": 3,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+ },
+ {
+  "t": 3,
+  "kind": "failed",
+  "id": 34,
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/www-player.css",
+  "error": "net::ERR_ABORTED"
+ },
+ {
+  "t": 3,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+ },
+ {
+  "t": 3,
+  "kind": "failed",
+  "id": 35,
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-main-desktop-watch-page-skeleton.css",
+  "error": "net::ERR_ABORTED"
+ },
+ {
+  "t": 3,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+ },
+ {
+  "t": 3,
+  "kind": "failed",
+  "id": 36,
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-main-desktop-player-skeleton.css",
+  "error": "net::ERR_ABORTED"
+ },
+ {
+  "t": 3,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+ },
+ {
+  "t": 3,
+  "kind": "failed",
+  "id": 24,
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/base.js",
+  "error": "net::ERR_ABORTED"
+ },
+ {
+  "t": 3,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+ },
+ {
+  "t": 3,
+  "kind": "failed",
+  "id": 29,
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/webcomponents-sd.vflset/webcomponents-sd.js",
+  "error": "net::ERR_ABORTED"
+ },
+ {
+  "t": 3,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+ },
+ {
+  "t": 3,
+  "kind": "failed",
+  "id": 26,
+  "url": "https://www.youtube.com/s/_/ytmainappweb/_/js/k=ytmainappweb.base_module_set.en_US.e12Ijmwr7n8.es5.O/am=AAAAEAAAEICU/d=1/br=1/rs=AGKMywGsKFm8sCO8kI6zSTaihyApZW2zAA/m=base",
+  "error": "net::ERR_ABORTED"
+ },
+ {
+  "t": 3,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+ },
+ {
+  "t": 3,
+  "kind": "failed",
+  "id": 37,
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-onepick.css",
+  "error": "net::ERR_ABORTED"
+ },
+ {
+  "t": 3,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+ },
+ {
+  "t": 3,
+  "kind": "failed",
+  "id": 38,
+  "url": "https://www.youtube.com/s/_/ytmainappweb/_/ss/k=ytmainappweb.base_module_set.sj0b8y4Z2RA.L.B1.O/am=AAAAEADAEMCe/d=0/br=1/rs=AGKMywGitKBzNwpIbppJbI5kB3EhMiu3ZQ",
+  "error": "net::ERR_ABORTED"
+ },
+ {
+  "t": 3,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+ },
+ {
+  "t": 3,
+  "kind": "failed",
+  "id": 27,
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/web-animations-next-lite.min.vflset/web-animations-next-lite.min.js",
+  "error": "net::ERR_ABORTED"
+ },
+ {
+  "t": 3,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+ },
+ {
+  "t": 3,
+  "kind": "failed",
+  "id": 28,
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/custom-elements-es5-adapter.vflset/custom-elements-es5-adapter.js",
+  "error": "net::ERR_ABORTED"
+ },
+ {
+  "t": 3,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+ },
+ {
+  "t": 3,
+  "kind": "failed",
+  "id": 30,
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/intersection-observer.min.vflset/intersection-observer.min.js",
+  "error": "net::ERR_ABORTED"
+ },
+ {
+  "t": 3,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+ },
+ {
+  "t": 3,
+  "kind": "failed",
+  "id": 31,
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/scheduler.vflset/scheduler.js",
+  "error": "net::ERR_ABORTED"
+ },
+ {
+  "t": 3,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+ },
+ {
+  "t": 3,
+  "kind": "failed",
+  "id": 32,
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/www-i18n-constants-en_US.vflset/www-i18n-constants.js",
+  "error": "net::ERR_ABORTED"
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 44,
+  "method": "GET",
+  "type": "image",
+  "url": "http://localhost:8782/icon?d=youtube.com",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "done",
+  "id": 43,
+  "status": 200,
+  "size": 586293
+ },
+ {
+  "t": 3,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+ },
+ {
+  "t": 3,
+  "kind": "done",
+  "id": 44,
+  "status": 404,
+  "size": 19
+ },
+ {
+  "t": 3,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+ },
+ {
+  "t": 3,
+  "kind": "failed",
+  "id": 41,
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/spf.vflset/spf.js",
+  "error": "net::ERR_ABORTED"
+ },
+ {
+  "t": 3,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+ },
+ {
+  "t": 3,
+  "kind": "failed",
+  "id": 42,
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/network.vflset/network.js",
+  "error": "net::ERR_ABORTED"
+ },
+ {
+  "t": 3,
+  "kind": "done",
+  "id": 21,
+  "status": 200,
+  "size": -57
+ },
+ {
+  "t": 3.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 146
+   },
+   {
+    "pid": 3634,
+    "mb": 282
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 22,
+   "totalMB": 38,
+   "nodes": 557,
+   "docs": 7,
+   "frames": 5
+  },
+  "video": {
+   "status": "Website responded (HTTP 200)",
+   "title": ""
+  },
+  "answerMs": 6
+ },
+ {
+  "t": 3.1,
+  "kind": "done",
+  "id": 39,
+  "status": 204,
+  "size": -720
+ },
+ {
+  "t": 3.1,
+  "kind": "done",
+  "id": 40,
+  "status": 204,
+  "size": -720
+ },
+ {
+  "t": 3.1,
+  "kind": "done",
+  "id": 23,
+  "status": 204,
+  "size": -140
+ },
+ {
+  "t": 3.1,
+  "kind": "done",
+  "id": 33,
+  "status": 200,
+  "size": -699
+ },
+ {
+  "t": 3.1,
+  "kind": "done",
+  "id": 25,
+  "status": 200,
+  "size": -559
+ },
+ {
+  "t": 3.1,
+  "kind": "req",
+  "id": 45,
+  "method": "GET",
+  "type": "document",
+  "url": "https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3D%252Fsignin_passive%26feature%3Dpassive&hl=en",
+  "sw": false
+ },
+ {
+  "t": 3.1,
+  "kind": "mem",
+  "mb": [
+   146,
+   289,
+   103
+  ]
+ },
+ {
+  "t": 3.2,
+  "kind": "done",
+  "id": 46,
+  "status": 200,
+  "size": -525
+ },
+ {
+  "t": 3.2,
+  "kind": "console",
+  "type": "warning",
+  "text": "%cI -> b%c detected quirky document structure parsing @ https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3D%252Fsignin_passive%26feature%3Dpassive&hl=en! \n  \tbackground-color: #f80;\n  \tcolor: #fff;\n  \tpadding: 4px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n   "
+ },
+ {
+  "t": 3.2,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+ },
+ {
+  "t": 3.2,
+  "kind": "req",
+  "id": 47,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/scram/scramjet.js",
+  "sw": false
+ },
+ {
+  "t": 3.2,
+  "kind": "req",
+  "id": 48,
+  "method": "GET",
+  "type": "script",
+  "url": "scramjet.wasm.js",
+  "sw": false
+ },
+ {
+  "t": 3.2,
+  "kind": "req",
+  "id": 49,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/controller/controller.inject.js",
+  "sw": false
+ },
+ {
+  "t": 3.2,
+  "kind": "done",
+  "id": 45,
+  "status": 401,
+  "size": -640
+ },
+ {
+  "t": 3.2,
+  "kind": "done",
+  "id": 49,
+  "status": 200,
+  "size": 6449
+ },
+ {
+  "t": 3.2,
+  "kind": "done",
+  "id": 47,
+  "status": 200,
+  "size": 227123
+ },
+ {
+  "t": 3.2,
+  "kind": "done",
+  "id": 48,
+  "status": 200,
+  "size": -57
+ },
+ {
+  "t": 3.3,
+  "kind": "req",
+  "id": 50,
+  "method": "GET",
+  "type": "image",
+  "url": "http://localhost:8782/icon?d=youtube.com",
+  "sw": false
+ },
+ {
+  "t": 3.3,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+ },
+ {
+  "t": 3.3,
+  "kind": "done",
+  "id": 50,
+  "status": 404,
+  "size": 19
+ },
+ {
+  "t": 3.4,
+  "kind": "mem",
+  "mb": [
+   146,
+   290,
+   103
+  ]
+ },
+ {
+  "t": 3.5,
+  "kind": "mem",
+  "mb": [
+   146,
+   290,
+   103
+  ]
+ },
+ {
+  "t": 3.8,
+  "kind": "mem",
+  "mb": [
+   146,
+   290,
+   103
+  ]
+ },
+ {
+  "t": 4,
+  "kind": "mem",
+  "mb": [
+   146,
+   290,
+   103
+  ]
+ },
+ {
+  "t": 4.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 146
+   },
+   {
+    "pid": 3634,
+    "mb": 290
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 9,
+   "totalMB": 30,
+   "nodes": 844,
+   "docs": 7,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 4.2,
+  "kind": "mem",
+  "mb": [
+   146,
+   290,
+   103
+  ]
+ },
+ {
+  "t": 4.3,
+  "kind": "mem",
+  "mb": [
+   146,
+   290,
+   103
+  ]
+ },
+ {
+  "t": 4.5,
+  "kind": "mem",
+  "mb": [
+   146,
+   290,
+   103
+  ]
+ },
+ {
+  "t": 4.8,
+  "kind": "mem",
+  "mb": [
+   146,
+   290,
+   103
+  ]
+ },
+ {
+  "t": 5,
+  "kind": "mem",
+  "mb": [
+   146,
+   290,
+   103
+  ]
+ },
+ {
+  "t": 5.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 146
+   },
+   {
+    "pid": 3634,
+    "mb": 290
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 9,
+   "totalMB": 30,
+   "nodes": 844,
+   "docs": 7,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 5.2,
+  "kind": "mem",
+  "mb": [
+   146,
+   290,
+   103
+  ]
+ },
+ {
+  "t": 5.3,
+  "kind": "mem",
+  "mb": [
+   146,
+   290,
+   103
+  ]
+ },
+ {
+  "t": 5.5,
+  "kind": "mem",
+  "mb": [
+   146,
+   290,
+   103
+  ]
+ },
+ {
+  "t": 5.8,
+  "kind": "mem",
+  "mb": [
+   146,
+   290,
+   103
+  ]
+ },
+ {
+  "t": 6,
+  "kind": "mem",
+  "mb": [
+   146,
+   290,
+   103
+  ]
+ },
+ {
+  "t": 6.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 146
+   },
+   {
+    "pid": 3634,
+    "mb": 290
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 9,
+   "totalMB": 30,
+   "nodes": 844,
+   "docs": 7,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 6.2,
+  "kind": "mem",
+  "mb": [
+   146,
+   290,
+   103
+  ]
+ },
+ {
+  "t": 6.3,
+  "kind": "console",
+  "type": "warning",
+  "text": "The resource http://localhost:8782/~/sj/rwl1tcek/toyjobq1/https%3A%2F%2Frr2---sn-2imeyn7r.c.youtube.com%2Fgenerate_204?%24io=https%3A%2F%2Fwww.youtube.com was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+ },
+ {
+  "t": 6.3,
+  "kind": "console",
+  "type": "warning",
+  "text": "The resource http://localhost:8782/~/sj/rwl1tcek/toyjobq1/https%3A%2F%2Fi.ytimg.com%2Fgenerate_204?%24io=https%3A%2F%2Fwww.youtube.com was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+ },
+ {
+  "t": 6.3,
+  "kind": "console",
+  "type": "warning",
+  "text": "The resource http://localhost:8782/~/sj/rwl1tcek/toyjobq1/https%3A%2F%2Frr2---sn-2imeyn7r.googlevideo.com%2Fgenerate_204?%24io=https%3A%2F%2Fwww.youtube.com was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+ },
+ {
+  "t": 6.4,
+  "kind": "mem",
+  "mb": [
+   146,
+   290,
+   103
+  ]
+ },
+ {
+  "t": 6.6,
+  "kind": "mem",
+  "mb": [
+   146,
+   290,
+   103
+  ]
+ },
+ {
+  "t": 6.8,
+  "kind": "mem",
+  "mb": [
+   146,
+   290,
+   103
+  ]
+ },
+ {
+  "t": 7,
+  "kind": "mem",
+  "mb": [
+   146,
+   290,
+   103
+  ]
+ },
+ {
+  "t": 7.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 146
+   },
+   {
+    "pid": 3634,
+    "mb": 290
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 9,
+   "totalMB": 30,
+   "nodes": 844,
+   "docs": 7,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 7.2,
+  "kind": "mem",
+  "mb": [
+   146,
+   290,
+   103
+  ]
+ },
+ {
+  "t": 7.4,
+  "kind": "mem",
+  "mb": [
+   146,
+   290,
+   103
+  ]
+ },
+ {
+  "t": 7.6,
+  "kind": "mem",
+  "mb": [
+   146,
+   290,
+   103
+  ]
+ },
+ {
+  "t": 7.8,
+  "kind": "mem",
+  "mb": [
+   146,
+   290,
+   103
+  ]
+ },
+ {
+  "t": 8,
+  "kind": "mem",
+  "mb": [
+   146,
+   290,
+   103
+  ]
+ },
+ {
+  "t": 8.2,
+  "kind": "mem",
+  "mb": [
+   146,
+   290,
+   103
+  ]
+ },
+ {
+  "t": 8.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 146
+   },
+   {
+    "pid": 3634,
+    "mb": 290
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 9,
+   "totalMB": 30,
+   "nodes": 844,
+   "docs": 7,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 8.4,
+  "kind": "mem",
+  "mb": [
+   146,
+   289,
+   103
+  ]
+ },
+ {
+  "t": 8.6,
+  "kind": "mem",
+  "mb": [
+   146,
+   286,
+   103
+  ]
+ },
+ {
+  "t": 8.8,
+  "kind": "mem",
+  "mb": [
+   146,
+   286,
+   103
+  ]
+ },
+ {
+  "t": 9,
+  "kind": "mem",
+  "mb": [
+   146,
+   286,
+   103
+  ]
+ },
+ {
+  "t": 9.2,
+  "kind": "mem",
+  "mb": [
+   146,
+   286,
+   103
+  ]
+ },
+ {
+  "t": 9.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 146
+   },
+   {
+    "pid": 3634,
+    "mb": 286
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 9,
+   "totalMB": 30,
+   "nodes": 844,
+   "docs": 7,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 9.4,
+  "kind": "mem",
+  "mb": [
+   146,
+   286,
+   103
+  ]
+ },
+ {
+  "t": 9.6,
+  "kind": "mem",
+  "mb": [
+   146,
+   286,
+   103
+  ]
+ },
+ {
+  "t": 9.8,
+  "kind": "mem",
+  "mb": [
+   146,
+   286,
+   103
+  ]
+ },
+ {
+  "t": 10,
+  "kind": "mem",
+  "mb": [
+   146,
+   286,
+   103
+  ]
+ },
+ {
+  "t": 10.2,
+  "kind": "mem",
+  "mb": [
+   146,
+   286,
+   103
+  ]
+ },
+ {
+  "t": 10.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 146
+   },
+   {
+    "pid": 3634,
+    "mb": 286
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 9,
+   "totalMB": 30,
+   "nodes": 844,
+   "docs": 7,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 10.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 10.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 10.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 11,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 11.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 11.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 145
+   },
+   {
+    "pid": 3634,
+    "mb": 283
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 9,
+   "totalMB": 30,
+   "nodes": 844,
+   "docs": 7,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 11.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 11.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 11.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 12,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 12.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 12.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 145
+   },
+   {
+    "pid": 3634,
+    "mb": 283
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 9,
+   "totalMB": 30,
+   "nodes": 844,
+   "docs": 7,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 12.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 12.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 12.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 13,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 13.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 13.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 145
+   },
+   {
+    "pid": 3634,
+    "mb": 283
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 9,
+   "totalMB": 30,
+   "nodes": 844,
+   "docs": 7,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 13.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 13.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 13.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 14,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 14.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 14.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 145
+   },
+   {
+    "pid": 3634,
+    "mb": 283
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 9,
+   "totalMB": 30,
+   "nodes": 844,
+   "docs": 7,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 14.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 14.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 14.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 15,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 15.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 15.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 145
+   },
+   {
+    "pid": 3634,
+    "mb": 283
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 9,
+   "totalMB": 30,
+   "nodes": 844,
+   "docs": 7,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 0
+ },
+ {
+  "t": 15.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 15.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 15.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 16,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 16.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 16.3,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 145
+   },
+   {
+    "pid": 3634,
+    "mb": 283
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 9,
+   "totalMB": 30,
+   "nodes": 844,
+   "docs": 7,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 16.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 16.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 16.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 17,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 17.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 17.3,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 145
+   },
+   {
+    "pid": 3634,
+    "mb": 283
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 9,
+   "totalMB": 30,
+   "nodes": 844,
+   "docs": 7,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 0
+ },
+ {
+  "t": 17.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 17.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 17.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 18,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 18.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 18.3,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 145
+   },
+   {
+    "pid": 3634,
+    "mb": 283
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 9,
+   "totalMB": 30,
+   "nodes": 844,
+   "docs": 7,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 18.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 18.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 18.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 19,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 19.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 19.3,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 145
+   },
+   {
+    "pid": 3634,
+    "mb": 283
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 9,
+   "totalMB": 30,
+   "nodes": 844,
+   "docs": 7,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 19.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 19.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 19.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 20,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 20.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 20.3,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 145
+   },
+   {
+    "pid": 3634,
+    "mb": 283
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 9,
+   "totalMB": 30,
+   "nodes": 844,
+   "docs": 7,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 20.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 20.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 20.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 21,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 21.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 21.3,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 145
+   },
+   {
+    "pid": 3634,
+    "mb": 283
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 9,
+   "totalMB": 30,
+   "nodes": 844,
+   "docs": 7,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 21.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 21.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 21.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 22,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 22.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 22.3,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 145
+   },
+   {
+    "pid": 3634,
+    "mb": 283
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 9,
+   "totalMB": 30,
+   "nodes": 844,
+   "docs": 7,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 0
+ },
+ {
+  "t": 22.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 22.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 22.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 23,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 23.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 23.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 23.4,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 145
+   },
+   {
+    "pid": 3634,
+    "mb": 283
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 9,
+   "totalMB": 30,
+   "nodes": 844,
+   "docs": 7,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 23.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 23.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 24,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 24.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 24.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 24.4,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 145
+   },
+   {
+    "pid": 3634,
+    "mb": 283
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 9,
+   "totalMB": 30,
+   "nodes": 844,
+   "docs": 7,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 24.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 24.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 25,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 25.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 25.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 25.4,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 145
+   },
+   {
+    "pid": 3634,
+    "mb": 283
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 9,
+   "totalMB": 30,
+   "nodes": 844,
+   "docs": 7,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 0
+ },
+ {
+  "t": 25.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 25.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 26,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 26.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 26.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 26.4,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 145
+   },
+   {
+    "pid": 3634,
+    "mb": 283
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 9,
+   "totalMB": 30,
+   "nodes": 844,
+   "docs": 7,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 26.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 26.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 27,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 27.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 27.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 27.4,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 145
+   },
+   {
+    "pid": 3634,
+    "mb": 283
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 9,
+   "totalMB": 30,
+   "nodes": 844,
+   "docs": 7,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 0
+ },
+ {
+  "t": 27.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 27.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 28,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 28.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 28.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 28.4,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 145
+   },
+   {
+    "pid": 3634,
+    "mb": 283
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 9,
+   "totalMB": 30,
+   "nodes": 844,
+   "docs": 7,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 0
+ },
+ {
+  "t": 28.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 28.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 29,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 29.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 29.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 29.4,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 145
+   },
+   {
+    "pid": 3634,
+    "mb": 283
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 9,
+   "totalMB": 30,
+   "nodes": 844,
+   "docs": 7,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 29.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 29.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 30,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 30.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 30.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 30.4,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 145
+   },
+   {
+    "pid": 3634,
+    "mb": 283
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 9,
+   "totalMB": 30,
+   "nodes": 844,
+   "docs": 7,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 30.6,
+  "kind": "mem",
+  "mb": [
+   144,
+   283,
+   103
+  ]
+ },
+ {
+  "t": 30.8,
+  "kind": "mem",
+  "mb": [
+   144,
+   236,
+   103
+  ]
+ },
+ {
+  "t": 31,
+  "kind": "mem",
+  "mb": [
+   144,
+   236,
+   103
+  ]
+ },
+ {
+  "t": 31.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   236,
+   103
+  ]
+ },
+ {
+  "t": 31.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   235,
+   103
+  ]
+ },
+ {
+  "t": 31.5,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 142
+   },
+   {
+    "pid": 3634,
+    "mb": 235
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 8,
+   "totalMB": 9,
+   "nodes": 821,
+   "docs": 6,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 31.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   235,
+   103
+  ]
+ },
+ {
+  "t": 31.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   235,
+   103
+  ]
+ },
+ {
+  "t": 32,
+  "kind": "mem",
+  "mb": [
+   142,
+   235,
+   103
+  ]
+ },
+ {
+  "t": 32.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   235,
+   103
+  ]
+ },
+ {
+  "t": 32.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   235,
+   103
+  ]
+ },
+ {
+  "t": 32.5,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 142
+   },
+   {
+    "pid": 3634,
+    "mb": 235
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 8,
+   "totalMB": 9,
+   "nodes": 821,
+   "docs": 6,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 32.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   235,
+   103
+  ]
+ },
+ {
+  "t": 32.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   235,
+   103
+  ]
+ },
+ {
+  "t": 33,
+  "kind": "mem",
+  "mb": [
+   142,
+   235,
+   103
+  ]
+ },
+ {
+  "t": 33.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   220,
+   103
+  ]
+ },
+ {
+  "t": 33.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   220,
+   103
+  ]
+ },
+ {
+  "t": 33.5,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 142
+   },
+   {
+    "pid": 3634,
+    "mb": 220
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 8,
+   "totalMB": 9,
+   "nodes": 821,
+   "docs": 6,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 33.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   220,
+   103
+  ]
+ },
+ {
+  "t": 33.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   220,
+   103
+  ]
+ },
+ {
+  "t": 34,
+  "kind": "mem",
+  "mb": [
+   142,
+   220,
+   103
+  ]
+ },
+ {
+  "t": 34.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   220,
+   103
+  ]
+ },
+ {
+  "t": 34.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   220,
+   103
+  ]
+ },
+ {
+  "t": 34.5,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 142
+   },
+   {
+    "pid": 3634,
+    "mb": 220
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 8,
+   "totalMB": 9,
+   "nodes": 821,
+   "docs": 6,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 34.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   220,
+   103
+  ]
+ },
+ {
+  "t": 34.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   220,
+   103
+  ]
+ },
+ {
+  "t": 35,
+  "kind": "mem",
+  "mb": [
+   142,
+   220,
+   103
+  ]
+ },
+ {
+  "t": 35.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   220,
+   103
+  ]
+ },
+ {
+  "t": 35.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   220,
+   103
+  ]
+ },
+ {
+  "t": 35.5,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 142
+   },
+   {
+    "pid": 3634,
+    "mb": 220
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 8,
+   "totalMB": 9,
+   "nodes": 821,
+   "docs": 6,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 35.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   220,
+   103
+  ]
+ },
+ {
+  "t": 35.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   220,
+   103
+  ]
+ },
+ {
+  "t": 36,
+  "kind": "mem",
+  "mb": [
+   142,
+   220,
+   103
+  ]
+ },
+ {
+  "t": 36.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   220,
+   103
+  ]
+ },
+ {
+  "t": 36.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   220,
+   103
+  ]
+ },
+ {
+  "t": 36.5,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 142
+   },
+   {
+    "pid": 3634,
+    "mb": 220
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 8,
+   "totalMB": 9,
+   "nodes": 821,
+   "docs": 6,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 36.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   220,
+   103
+  ]
+ },
+ {
+  "t": 36.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   220,
+   103
+  ]
+ },
+ {
+  "t": 37,
+  "kind": "mem",
+  "mb": [
+   142,
+   220,
+   103
+  ]
+ },
+ {
+  "t": 37.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 37.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 37.5,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 142
+   },
+   {
+    "pid": 3634,
+    "mb": 221
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 8,
+   "totalMB": 9,
+   "nodes": 821,
+   "docs": 6,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 37.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 37.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 38,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 38.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 38.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 38.5,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 142
+   },
+   {
+    "pid": 3634,
+    "mb": 221
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 8,
+   "totalMB": 9,
+   "nodes": 821,
+   "docs": 6,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 38.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 38.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 39,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 39.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 39.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 39.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 142
+   },
+   {
+    "pid": 3634,
+    "mb": 221
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 8,
+   "totalMB": 9,
+   "nodes": 821,
+   "docs": 6,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 39.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 39.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 40,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 40.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 40.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 40.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 142
+   },
+   {
+    "pid": 3634,
+    "mb": 221
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 8,
+   "totalMB": 9,
+   "nodes": 821,
+   "docs": 6,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 40.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 40.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 41,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 41.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 41.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 41.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 41.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 142
+   },
+   {
+    "pid": 3634,
+    "mb": 221
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 8,
+   "totalMB": 9,
+   "nodes": 821,
+   "docs": 6,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 41.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 42,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 42.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 42.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 42.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 42.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 142
+   },
+   {
+    "pid": 3634,
+    "mb": 221
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 8,
+   "totalMB": 9,
+   "nodes": 821,
+   "docs": 6,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 0
+ },
+ {
+  "t": 42.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 43,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 43.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 43.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 43.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 43.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 142
+   },
+   {
+    "pid": 3634,
+    "mb": 221
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 8,
+   "totalMB": 9,
+   "nodes": 821,
+   "docs": 6,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 43.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 44,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 44.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 44.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 44.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 44.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 142
+   },
+   {
+    "pid": 3634,
+    "mb": 221
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 8,
+   "totalMB": 9,
+   "nodes": 821,
+   "docs": 6,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 0
+ },
+ {
+  "t": 44.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 45,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 45.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 45.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 45.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 45.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 142
+   },
+   {
+    "pid": 3634,
+    "mb": 221
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 8,
+   "totalMB": 9,
+   "nodes": 821,
+   "docs": 6,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 45.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 46,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 46.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 46.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 46.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 46.7,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 142
+   },
+   {
+    "pid": 3634,
+    "mb": 221
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 8,
+   "totalMB": 9,
+   "nodes": 821,
+   "docs": 6,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 46.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 47,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 47.2,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 47.4,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 47.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   221,
+   103
+  ]
+ },
+ {
+  "t": 47.7,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3625,
+    "mb": 142
+   },
+   {
+    "pid": 3634,
+    "mb": 221
+   },
+   {
+    "pid": 3656,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 8,
+   "totalMB": 9,
+   "nodes": 821,
+   "docs": 6,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube"
+  },
+  "answerMs": 1
+ }
+]

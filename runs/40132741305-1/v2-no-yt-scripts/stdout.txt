@@ -1,0 +1,82 @@
+{
+  "target": "http://localhost:8782",
+  "transport": "epoxy",
+  "block": "youtube\\.com/s/",
+  "shots": false,
+  "sjconfig": "",
+  "crashed": false,
+  "lastTick": {
+    "t": 47.7,
+    "kind": "tick",
+    "memory": [
+      {
+        "pid": 3625,
+        "mb": 142
+      },
+      {
+        "pid": 3634,
+        "mb": 221
+      },
+      {
+        "pid": 3656,
+        "mb": 103
+      }
+    ],
+    "heap": {
+      "usedMB": 8,
+      "totalMB": 9,
+      "nodes": 821,
+      "docs": 6,
+      "frames": 6
+    },
+    "video": {
+      "status": "Website content detected",
+      "title": "- YouTube"
+    },
+    "answerMs": 1
+  },
+  "peakRendererMB": 290,
+  "peakHeapMB": 22,
+  "requests": 47,
+  "failed": 15,
+  "byHost": {
+    "localhost:8782 script": 15,
+    "www.youtube.com script": 10,
+    "www.youtube.com stylesheet": 5,
+    "localhost:8782 fetch": 3,
+    "scramjet.wasm.js script": 2,
+    "localhost:8782 image": 2,
+    "localhost:8782 document": 1,
+    "localhost:8782 stylesheet": 1,
+    "localhost:8782 other": 1,
+    "www.youtube.com document": 1,
+    "i.ytimg.com other": 1,
+    "i.ytimg.com image": 1,
+    "fonts.googleapis.com stylesheet": 1,
+    "rr2---sn-2imeyn7r.googlevideo.com other": 1,
+    "rr2---sn-2imeyn7r.c.youtube.com other": 1,
+    "accounts.google.com document": 1
+  },
+  "pageErrors": [],
+  "consoleErrors": [
+    "0.7s Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: UnexpectedEof, error: \"tls handshake eof\" })) (client error (IO: Custom { kind: UnexpectedEof, error: \"tls handshake eof\" } (tls handshake eof)))\n    at imports.wbg.__wbindgen_error_new (http://localhost:8782/epoxy/ind",
+    "3s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "3s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "3s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "3s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "3s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "3s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "3s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "3s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "3s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "3s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "3s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "3s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "3s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "3s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "3s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "3s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "3.2s Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "3.3s Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ]
+}
