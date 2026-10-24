@@ -1,0 +1,109 @@
+{
+  "target": "http://localhost:8782",
+  "transport": "libcurl",
+  "block": "",
+  "shots": false,
+  "sjconfig": "",
+  "fix": "V:no-ctors",
+  "crashed": false,
+  "lastTick": {
+    "t": 42.8,
+    "kind": "tick",
+    "memory": [
+      {
+        "pid": 4406,
+        "mb": 141
+      },
+      {
+        "pid": 4415,
+        "mb": 455
+      },
+      {
+        "pid": 4440,
+        "mb": 103
+      }
+    ],
+    "heap": {
+      "usedMB": 45,
+      "totalMB": 50,
+      "nodes": 2883,
+      "docs": 10,
+      "frames": 7
+    },
+    "video": {
+      "status": "Website content detected",
+      "title": "- YouTube",
+      "time": 0,
+      "paused": true,
+      "ready": 0,
+      "net": 0,
+      "error": null,
+      "buffered": 0,
+      "src": "",
+      "app": {
+        "elements": 1425,
+        "player": true,
+        "flexy": false,
+        "botcheck": false
+      }
+    },
+    "answerMs": 1
+  },
+  "peakRendererMB": 553,
+  "peakHeapMB": 80,
+  "requests": 66,
+  "failed": 0,
+  "byHost": {
+    "localhost:8782 script": 15,
+    "www.youtube.com script": 12,
+    "rr4---sn-5hnekn7k.googlevideo.com fetch": 6,
+    "www.youtube.com stylesheet": 5,
+    " fetch": 5,
+    "localhost:8782 fetch": 4,
+    "scramjet.wasm.js script": 2,
+    "localhost:8782 image": 2,
+    "localhost:8782 document": 1,
+    "localhost:8782 stylesheet": 1,
+    "localhost:8782 other": 1,
+    "www.youtube.com document": 1,
+    "i.ytimg.com other": 1,
+    "i.ytimg.com image": 1,
+    "fonts.googleapis.com stylesheet": 1,
+    "rr2---sn-aj2im9-5j.googlevideo.com other": 1,
+    "rr3---sn-ojvgq5-51.c.youtube.com other": 1,
+    "accounts.google.com document": 1,
+    "static.doubleclick.net script": 1,
+    "www.gstatic.com script": 1,
+    "www.google.com script": 1,
+    "www.youtube.com image": 1,
+    "www.youtube.com xhr": 1
+  },
+  "pageErrors": [],
+  "consoleErrors": [
+    "0.7s Request \"https://localhost:4443/health\" failed with error code 7: Could not connect to server",
+    "3.2s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "4.3s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "4.3s Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "5.3s Request \"https://rr4---sn-5hnekn7k.googlevideo.com/videoplayback?expire=4441116047&ei=hKmxixEORPAYMq1RrPP4U-O&ip=0.57.31.47&id=o-AFn5O0x7y6pjta4PFS4RfRiPy0t16Mwkk5RnveqGSLOo9&itag=18&source=youtube&requiressl=yes&mh=X6&mm=730%2C99655%2C28395&mn=ejN23%2CcJds9%2CVTeCI&ms=ejN23%2CcJds9%2CVTeCI&mv=k&mvi",
+    "5.3s Error in controller request handler: TypeError: Request failed with error code 35: SSL connect error\n    at finish_callback (http://localhost:8782/libcurl/index.mjs:5829:20)\n    at Object.real_end_callback [as end] (http://localhost:8782/libcurl/index.mjs:5766:9)\n    at HTTPSession.end_callback (htt",
+    "5.3s TypeError: Request failed with error code 35: SSL connect error\n    at finish_callback (http://localhost:8782/libcurl/index.mjs:5829:20)\n    at Object.real_end_callback [as end] (http://localhost:8782/libcurl/index.mjs:5766:9)\n    at HTTPSession.end_callback (http://localhost:8782/libcurl/index.mjs:",
+    "5.3s Service Worker error: Error: TypeError: Request failed with error code 35: SSL connect error\n    at o.recieve (http://localhost:8782/controller/controller.sw.js:1:456)\n    at MessagePort.<anonymous> (http://localhost:8782/controller/controller.sw.js:1:2935)",
+    "5.3s Request \"https://rr4---sn-5hnekn7k.googlevideo.com/videoplayback?expire=4441116047&ei=hKmxixEORPAYMq1RrPP4U-O&ip=0.57.31.47&id=o-AFn5O0x7y6pjta4PFS4RfRiPy0t16Mwkk5RnveqGSLOo9&itag=18&source=youtube&requiressl=yes&mh=X6&mm=730%2C99655%2C28395&mn=ejN23%2CcJds9%2CVTeCI&ms=ejN23%2CcJds9%2CVTeCI&mv=k&mvi",
+    "5.3s Error in controller request handler: TypeError: Request failed with error code 35: SSL connect error\n    at finish_callback (http://localhost:8782/libcurl/index.mjs:5829:20)\n    at Object.real_end_callback [as end] (http://localhost:8782/libcurl/index.mjs:5766:9)\n    at HTTPSession.end_callback (htt",
+    "5.3s TypeError: Request failed with error code 35: SSL connect error\n    at finish_callback (http://localhost:8782/libcurl/index.mjs:5829:20)\n    at Object.real_end_callback [as end] (http://localhost:8782/libcurl/index.mjs:5766:9)\n    at HTTPSession.end_callback (http://localhost:8782/libcurl/index.mjs:",
+    "5.3s Service Worker error: Error: TypeError: Request failed with error code 35: SSL connect error\n    at o.recieve (http://localhost:8782/controller/controller.sw.js:1:456)\n    at MessagePort.<anonymous> (http://localhost:8782/controller/controller.sw.js:1:2935)",
+    "5.3s Failed to load resource: the server responded with a status of 500 ()",
+    "5.3s Failed to load resource: the server responded with a status of 500 ()",
+    "5.3s Request \"https://rr4---sn-5hnekn7k.googlevideo.com/videoplayback?expire=4441116047&ei=hKmxixEORPAYMq1RrPP4U-O&ip=0.57.31.47&id=o-AFn5O0x7y6pjta4PFS4RfRiPy0t16Mwkk5RnveqGSLOo9&itag=18&source=youtube&requiressl=yes&mh=X6&mm=730%2C99655%2C28395&mn=ejN23%2CcJds9%2CVTeCI&ms=ejN23%2CcJds9%2CVTeCI&mv=k&mvi",
+    "5.3s Error in controller request handler: TypeError: Request failed with error code 35: SSL connect error\n    at finish_callback (http://localhost:8782/libcurl/index.mjs:5829:20)\n    at Object.real_end_callback [as end] (http://localhost:8782/libcurl/index.mjs:5766:9)\n    at HTTPSession.end_callback (htt",
+    "5.3s Service Worker error: Error: TypeError: Request failed with error code 35: SSL connect error\n    at o.recieve (http://localhost:8782/controller/controller.sw.js:1:456)\n    at MessagePort.<anonymous> (http://localhost:8782/controller/controller.sw.js:1:2935)",
+    "5.3s TypeError: Request failed with error code 35: SSL connect error\n    at finish_callback (http://localhost:8782/libcurl/index.mjs:5829:20)\n    at Object.real_end_callback [as end] (http://localhost:8782/libcurl/index.mjs:5766:9)\n    at HTTPSession.end_callback (http://localhost:8782/libcurl/index.mjs:",
+    "5.3s Failed to load resource: the server responded with a status of 500 ()",
+    "5.3s Request \"https://rr4---sn-5hnekn7k.googlevideo.com/videoplayback?expire=4441116047&ei=hKmxixEORPAYMq1RrPP4U-O&ip=0.57.31.47&id=o-AFn5O0x7y6pjta4PFS4RfRiPy0t16Mwkk5RnveqGSLOo9&itag=18&source=youtube&requiressl=yes&mh=X6&mm=730%2C99655%2C28395&mn=ejN23%2CcJds9%2CVTeCI&ms=ejN23%2CcJds9%2CVTeCI&mv=k&mvi",
+    "5.3s Error in controller request handler: TypeError: Request failed with error code 35: SSL connect error\n    at finish_callback (http://localhost:8782/libcurl/index.mjs:5829:20)\n    at Object.real_end_callback [as end] (http://localhost:8782/libcurl/index.mjs:5766:9)\n    at HTTPSession.end_callback (htt",
+    "5.3s TypeError: Request failed with error code 35: SSL connect error\n    at finish_callback (http://localhost:8782/libcurl/index.mjs:5829:20)\n    at Object.real_end_callback [as end] (http://localhost:8782/libcurl/index.mjs:5766:9)\n    at HTTPSession.end_callback (http://localhost:8782/libcurl/index.mjs:",
+    "5.3s Service Worker error: Error: TypeError: Request failed with error code 35: SSL connect error\n    at o.recieve (http://localhost:8782/controller/controller.sw.js:1:456)\n    at MessagePort.<anonymous> (http://localhost:8782/controller/controller.sw.js:1:2935)",
+    "5.3s Failed to load resource: the server responded with a status of 500 ()",
+    "5.3s Request \"https://rr4---sn-5hnekn7k.googlevideo.com/videoplayback?expire=4441116047&ei=hKmxixEORPAYMq1RrPP4U-O&ip=0.57.31.47&id=o-AFn5O0x7y6pjta4PFS4RfRiPy0t16Mwkk5RnveqGSLOo9&itag=18&source=youtube&requiressl=yes&mh=X6&mm=730%2C99655%2C28395&mn=ejN23%2CcJds9%2CVTeCI&ms=ejN23%2CcJds9%2CVTeCI&mv=k&mvi"
+  ]
+}
