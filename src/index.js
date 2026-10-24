@@ -47,7 +47,7 @@ async function iconResponse(url) {
 // every 10 minutes) calls its /health so it never gets there. The address is
 // read from config.js, the file the browser uses, so moving the backend only
 // means changing wispUrl there.
-const FALLBACK_HEALTH_URL = "https://backend-ivvq.onrender.com/health";
+const FALLBACK_HEALTH_URL = "https://backend-rust-qr67.onrender.com/health";
 export async function backendHealthUrl(env) {
   try {
     const r = await env.ASSETS.fetch("https://assets.local/config.js");

@@ -108,7 +108,7 @@ function createHarness({ failing = false, transport = "/libcurl/index.mjs", fetc
     self, URL, Response, Error, console, setTimeout, JSON, Promise,
     ...(indexedDB ? { indexedDB } : {}),
     BareMux: { BareMuxConnection },
-    _CONFIG: { wispUrl: "wss://backend-ivvq.onrender.com/wisp/" },
+    _CONFIG: { wispUrl: "wss://backend-rust-qr67.onrender.com/wisp/" },
     fetch: async () => new Response("Static asset", { status: 200 })
   });
   return {
@@ -179,7 +179,7 @@ test("pages get a transport (libcurl) restored once after BareMux restarts", asy
   const responses = await Promise.all([h.request(asset("a.css"), "no-cors"), h.request(asset("b.js"), "no-cors")]);
   assert.deepEqual(responses.map((r) => r.status), [200, 200]);
   assert.equal(h.transports.length, 1, "concurrent requests share one setTransport call");
-  assert.equal(JSON.stringify(h.transports[0]), JSON.stringify(["/libcurl/index.mjs", [{ websocket: "wss://backend-ivvq.onrender.com/wisp/" }]]));
+  assert.equal(JSON.stringify(h.transports[0]), JSON.stringify(["/libcurl/index.mjs", [{ websocket: "wss://backend-rust-qr67.onrender.com/wisp/" }]]));
   await h.request(asset("c.png"), "no-cors");
   assert.equal(h.transports.length, 1);
 });

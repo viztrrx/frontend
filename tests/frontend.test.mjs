@@ -6,7 +6,7 @@ import { runInNewContext } from "node:vm";
 const source = readFileSync(new URL("../public/index.js", import.meta.url), "utf8");
 const blockSource = readFileSync(new URL("../public/blocked.js", import.meta.url), "utf8");
 
-function setup({ games = null, epoxyFails = false, libcurlFails = false, wispUrl = "wss://backend-ivvq.onrender.com/wisp/", socketFails = false, controllerFails = false, workerHang = false, transportHang = false, blankFrame = false, noLoad = false, storage = {}, versionFetch, embed = false, realUrls = false } = {}) {
+function setup({ games = null, epoxyFails = false, libcurlFails = false, wispUrl = "wss://backend-rust-qr67.onrender.com/wisp/", socketFails = false, controllerFails = false, workerHang = false, transportHang = false, blankFrame = false, noLoad = false, storage = {}, versionFetch, embed = false, realUrls = false } = {}) {
   const posts = [];
   const winMessage = { fns: [], fn: (event) => winMessage.fns.forEach((f) => f(event)) };
   const elements = new Map();
@@ -222,7 +222,7 @@ test("checks Render Wisp and configures the transport before navigating", async 
   assert.equal(x.websocketCount(), 1);
   assert.equal(x.transports.length, 1);
   assert.equal(x.transports[0][0], "/libcurl/index.mjs", "libcurl, proven on iPhone");
-  assert.equal(x.transports[0][1][0].websocket, "wss://backend-ivvq.onrender.com/wisp/");
+  assert.equal(x.transports[0][1][0].websocket, "wss://backend-rust-qr67.onrender.com/wisp/");
   assert.equal(x.frames.length, 1);
   assert.equal(x.frames[0].url, "https://example.com");
   assert.equal(x.elements.get("sj-view").hidden, false);
@@ -251,7 +251,7 @@ test("broken backend handshake does not create a black frame", async () => {
   await x.submit();
   assert.equal(x.websocketCount(), 3);
   assert.equal(x.frames.length, 0);
-  assert.match(x.elements.get("sj-error-code").textContent, /Cannot connect to wss:\/\/backend-ivvq/);
+  assert.match(x.elements.get("sj-error-code").textContent, /Cannot connect to wss:\/\/backend-rust-qr67/);
 });
 
 test("controller initialization failure is shown without masking the page", async () => {
@@ -269,7 +269,7 @@ test("a connection failure retries once with the other transport, then Reload re
   // Retried by itself with Epoxy.
   assert.equal(x.transports.length, 2);
   assert.equal(x.transports[1][0], "/epoxy/index.mjs");
-  assert.equal(x.transports[1][1][0].wisp, "wss://backend-ivvq.onrender.com/wisp/");
+  assert.equal(x.transports[1][1][0].wisp, "wss://backend-rust-qr67.onrender.com/wisp/");
   assert.equal(x.frames.length, 2);
   assert.equal(x.frames[0].removed, true);
   // The retry fails too: the failure is shown, no endless retrying.

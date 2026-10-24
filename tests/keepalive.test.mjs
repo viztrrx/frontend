@@ -7,11 +7,11 @@ const config = readFileSync(new URL("../public/config.js", import.meta.url), "ut
 const assets = (text) => ({ fetch: async () => new Response(text) });
 
 test("the backend's /health address comes from config.js", async () => {
-  assert.equal(await backendHealthUrl({ ASSETS: assets(config) }), "https://backend-ivvq.onrender.com/health");
+  assert.equal(await backendHealthUrl({ ASSETS: assets(config) }), "https://backend-rust-qr67.onrender.com/health");
   // After moving the backend, only wispUrl in config.js changes.
   const moved = 'let _CONFIG = { wispUrl: "wss://saints-backend-va.onrender.com/wisp/" };';
   assert.equal(await backendHealthUrl({ ASSETS: assets(moved) }), "https://saints-backend-va.onrender.com/health");
-  assert.equal(await backendHealthUrl({ ASSETS: assets("garbage") }), "https://backend-ivvq.onrender.com/health");
+  assert.equal(await backendHealthUrl({ ASSETS: assets("garbage") }), "https://backend-rust-qr67.onrender.com/health");
 });
 
 test("the cron trigger pings the backend's /health", async () => {
@@ -28,7 +28,7 @@ test("the cron trigger pings the backend's /health", async () => {
     globalThis.fetch = realFetch;
     console.log = quiet;
   }
-  assert.deepEqual(pinged, ["https://backend-ivvq.onrender.com/health"]);
+  assert.deepEqual(pinged, ["https://backend-rust-qr67.onrender.com/health"]);
 });
 
 test("wrangler.jsonc runs the keep-awake job every 10 minutes", () => {
