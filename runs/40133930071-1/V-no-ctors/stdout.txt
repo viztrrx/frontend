@@ -1,0 +1,87 @@
+{
+  "target": "http://localhost:8782",
+  "transport": "epoxy",
+  "block": "",
+  "shots": false,
+  "sjconfig": "",
+  "fix": "V:no-ctors",
+  "crashed": false,
+  "lastTick": {
+    "t": 32.6,
+    "kind": "tick",
+    "memory": [
+      {
+        "pid": 4556,
+        "mb": 140
+      },
+      {
+        "pid": 4565,
+        "mb": 463
+      },
+      {
+        "pid": 4603,
+        "mb": 104
+      }
+    ],
+    "heap": {
+      "usedMB": 45,
+      "totalMB": 57,
+      "nodes": 2884,
+      "docs": 10,
+      "frames": 7
+    },
+    "video": {
+      "status": "Website content detected",
+      "title": "- YouTube",
+      "time": 0,
+      "paused": true,
+      "ready": 0,
+      "net": 0,
+      "error": null,
+      "buffered": 0,
+      "src": "",
+      "app": {
+        "elements": 1424,
+        "player": true,
+        "flexy": false,
+        "botcheck": false
+      }
+    },
+    "answerMs": 1
+  },
+  "peakRendererMB": 594,
+  "peakHeapMB": 80,
+  "requests": 61,
+  "failed": 0,
+  "byHost": {
+    "localhost:8782 script": 15,
+    "www.youtube.com script": 13,
+    "www.youtube.com stylesheet": 5,
+    " fetch": 5,
+    "localhost:8782 fetch": 4,
+    "scramjet.wasm.js script": 2,
+    "localhost:8782 image": 2,
+    "localhost:8782 document": 1,
+    "localhost:8782 stylesheet": 1,
+    "localhost:8782 other": 1,
+    "www.youtube.com document": 1,
+    "i.ytimg.com other": 1,
+    "i.ytimg.com image": 1,
+    "fonts.googleapis.com stylesheet": 1,
+    "rr2---sn-aj2im9-5j.googlevideo.com other": 1,
+    "rr2---sn-2imeyn7r.c.youtube.com other": 1,
+    "accounts.google.com document": 1,
+    "www.gstatic.com script": 1,
+    "static.doubleclick.net script": 1,
+    "www.google.com script": 1,
+    "www.youtube.com image": 1,
+    "www.youtube.com xhr": 1
+  },
+  "pageErrors": [],
+  "consoleErrors": [
+    "0.7s Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: UnexpectedEof, error: \"tls handshake eof\" })) (client error (IO: Custom { kind: UnexpectedEof, error: \"tls handshake eof\" } (tls handshake eof)))\n    at imports.wbg.__wbindgen_error_new (http://localhost:8782/epoxy/ind",
+    "3.9s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "5s Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "5.2s Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ]
+}

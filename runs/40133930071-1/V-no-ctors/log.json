@@ -1,0 +1,3825 @@
+[
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 1,
+  "method": "GET",
+  "type": "document",
+  "url": "http://localhost:8782/",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 2,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/scram/scramjet.js",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 3,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/controller/controller.api.js",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 4,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/engine2.js",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 5,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "http://localhost:8782/index.css",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 6,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/register-sw.js",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 7,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/search.js",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 8,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/config.js",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 9,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/blocked.js",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 10,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/index.js",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 11,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/sessions.js",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "done",
+  "id": 1,
+  "status": 200,
+  "size": 9650
+ },
+ {
+  "t": 0.4,
+  "kind": "done",
+  "id": 5,
+  "status": 200,
+  "size": 20762
+ },
+ {
+  "t": 0.4,
+  "kind": "done",
+  "id": 4,
+  "status": 200,
+  "size": 10566
+ },
+ {
+  "t": 0.4,
+  "kind": "done",
+  "id": 3,
+  "status": 200,
+  "size": 17099
+ },
+ {
+  "t": 0.4,
+  "kind": "done",
+  "id": 2,
+  "status": 200,
+  "size": 227123
+ },
+ {
+  "t": 0.5,
+  "kind": "done",
+  "id": 6,
+  "status": 200,
+  "size": 609
+ },
+ {
+  "t": 0.5,
+  "kind": "done",
+  "id": 7,
+  "status": 200,
+  "size": 940
+ },
+ {
+  "t": 0.5,
+  "kind": "done",
+  "id": 8,
+  "status": 200,
+  "size": 68
+ },
+ {
+  "t": 0.5,
+  "kind": "done",
+  "id": 9,
+  "status": 200,
+  "size": 4972
+ },
+ {
+  "t": 0.5,
+  "kind": "done",
+  "id": 10,
+  "status": 200,
+  "size": 61339
+ },
+ {
+  "t": 0.5,
+  "kind": "done",
+  "id": 12,
+  "status": 200,
+  "size": 915
+ },
+ {
+  "t": 0.5,
+  "kind": "done",
+  "id": 11,
+  "status": 200,
+  "size": 16207
+ },
+ {
+  "t": 0.5,
+  "kind": "done",
+  "id": 13,
+  "status": 200,
+  "size": 915
+ },
+ {
+  "t": 0.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   155,
+   74
+  ]
+ },
+ {
+  "t": 0.6,
+  "kind": "req",
+  "id": 14,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/sw.js",
+  "sw": true
+ },
+ {
+  "t": 0.6,
+  "kind": "req",
+  "id": 15,
+  "method": "GET",
+  "type": "other",
+  "url": "http://localhost:8782/controller/controller.sw.js",
+  "sw": true
+ },
+ {
+  "t": 0.6,
+  "kind": "done",
+  "id": 15,
+  "status": 200,
+  "size": -272
+ },
+ {
+  "t": 0.6,
+  "kind": "done",
+  "id": 14,
+  "status": 200,
+  "size": 0
+ },
+ {
+  "t": 0.6,
+  "kind": "req",
+  "id": 16,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/epoxy/index.mjs",
+  "sw": false
+ },
+ {
+  "t": 0.6,
+  "kind": "done",
+  "id": 16,
+  "status": 200,
+  "size": 1717636
+ },
+ {
+  "t": 0.7,
+  "kind": "console",
+  "type": "log",
+  "text": "service worker activated, notifying clients to revive"
+ },
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 17,
+  "method": "GET",
+  "type": "fetch",
+  "url": "http://localhost:8782/scram/scramjet.wasm",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "done",
+  "id": 17,
+  "status": 200,
+  "size": 586293
+ },
+ {
+  "t": 0.7,
+  "kind": "console",
+  "type": "error",
+  "text": "Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: UnexpectedEof, error: \"tls handshake eof\" })) (client error (IO: Custom { kind: UnexpectedEof, error: \"tls handshake eof\" } (tls handshake eof)))\n    at imports.wbg.__wbindgen_error_new (http://localhost:8782/epoxy/index.mjs:1366:17)\n    at wasm://wasm/004c6846:wasm-function[2742]:0xde850\n    at wasm://wasm/004c6846:wasm-function[1833]:0xd177a\n    at wasm://wasm/004c6846:wasm-function[123]:0xc060\n    at wasm://wasm/004c6846:wasm-function[542]:0x9d36a\n    at wasm://wasm/004c6846:wasm-function[2584]:0xdc9d1\n    at "
+ },
+ {
+  "t": 0.8,
+  "kind": "mem",
+  "mb": [
+   144,
+   216,
+   74
+  ]
+ },
+ {
+  "t": 1,
+  "kind": "mem",
+  "mb": [
+   144,
+   216,
+   104
+  ]
+ },
+ {
+  "t": 1.2,
+  "kind": "mem",
+  "mb": [
+   144,
+   216,
+   104
+  ]
+ },
+ {
+  "t": 1.4,
+  "kind": "mem",
+  "mb": [
+   144,
+   216,
+   104
+  ]
+ },
+ {
+  "t": 1.6,
+  "kind": "mem",
+  "mb": [
+   144,
+   196,
+   104
+  ]
+ },
+ {
+  "t": 1.8,
+  "kind": "mem",
+  "mb": [
+   144,
+   196,
+   104
+  ]
+ },
+ {
+  "t": 2,
+  "kind": "mem",
+  "mb": [
+   144,
+   196,
+   104
+  ]
+ },
+ {
+  "t": 2,
+  "kind": "req",
+  "id": 18,
+  "method": "GET",
+  "type": "fetch",
+  "url": "http://localhost:8782/version.json",
+  "sw": false
+ },
+ {
+  "t": 2,
+  "kind": "version",
+  "version": {
+   "engine": 2,
+   "commit": "3c6298e20285da9eb5959184f647eeb774326a0d",
+   "branch": "diag-youtube",
+   "message": "diag: bisect webcomponents-sd install steps",
+   "committedAt": "2026-10-24T21:22:28Z",
+   "builtAt": "2026-10-24T21:23:02.209Z"
+  }
+ },
+ {
+  "t": 2,
+  "kind": "done",
+  "id": 18,
+  "status": 200,
+  "size": 255
+ },
+ {
+  "t": 2.1,
+  "kind": "req",
+  "id": 19,
+  "method": "GET",
+  "type": "document",
+  "url": "https://www.youtube.com/watch?v=jNQXAC9IVRw",
+  "sw": false
+ },
+ {
+  "t": 2.1,
+  "kind": "opened",
+  "video": "https://www.youtube.com/watch?v=jNQXAC9IVRw"
+ },
+ {
+  "t": 2.2,
+  "kind": "mem",
+  "mb": [
+   144,
+   201,
+   104
+  ]
+ },
+ {
+  "t": 2.4,
+  "kind": "mem",
+  "mb": [
+   144,
+   204,
+   104
+  ]
+ },
+ {
+  "t": 2.6,
+  "kind": "mem",
+  "mb": [
+   144,
+   204,
+   104
+  ]
+ },
+ {
+  "t": 2.8,
+  "kind": "mem",
+  "mb": [
+   144,
+   205,
+   104
+  ]
+ },
+ {
+  "t": 3,
+  "kind": "mem",
+  "mb": [
+   144,
+   205,
+   104
+  ]
+ },
+ {
+  "t": 3.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4556,
+    "mb": 144
+   },
+   {
+    "pid": 4565,
+    "mb": 205
+   },
+   {
+    "pid": 4603,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 3,
+   "totalMB": 16,
+   "nodes": 513,
+   "docs": 4,
+   "frames": 4
+  },
+  "video": {
+   "status": "Loading website…",
+   "title": "",
+   "app": {
+    "elements": 3,
+    "player": false,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 3.2,
+  "kind": "mem",
+  "mb": [
+   144,
+   205,
+   104
+  ]
+ },
+ {
+  "t": 3.4,
+  "kind": "mem",
+  "mb": [
+   144,
+   205,
+   104
+  ]
+ },
+ {
+  "t": 3.6,
+  "kind": "mem",
+  "mb": [
+   144,
+   212,
+   104
+  ]
+ },
+ {
+  "t": 3.7,
+  "kind": "req",
+  "id": 20,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/scram/scramjet.js",
+  "sw": false
+ },
+ {
+  "t": 3.7,
+  "kind": "req",
+  "id": 21,
+  "method": "GET",
+  "type": "script",
+  "url": "scramjet.wasm.js",
+  "sw": false
+ },
+ {
+  "t": 3.7,
+  "kind": "req",
+  "id": 22,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/controller/controller.inject.js",
+  "sw": false
+ },
+ {
+  "t": 3.7,
+  "kind": "req",
+  "id": 23,
+  "method": "GET",
+  "type": "other",
+  "url": "https://i.ytimg.com/generate_204",
+  "sw": false
+ },
+ {
+  "t": 3.7,
+  "kind": "req",
+  "id": 24,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/base.js",
+  "sw": false
+ },
+ {
+  "t": 3.7,
+  "kind": "req",
+  "id": 25,
+  "method": "GET",
+  "type": "image",
+  "url": "https://i.ytimg.com/vi/jNQXAC9IVRw/hqdefault.jpg",
+  "sw": false
+ },
+ {
+  "t": 3.7,
+  "kind": "req",
+  "id": 26,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/_/ytmainappweb/_/js/k=ytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O/am=AAAAAAIAEICU/d=1/br=1/rs=AGKMywF-Wk0PyFZguN2MlsgW9E9wRJ1RoA/m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk",
+  "sw": false
+ },
+ {
+  "t": 3.7,
+  "kind": "req",
+  "id": 27,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/web-animations-next-lite.min.vflset/web-animations-next-lite.min.js",
+  "sw": false
+ },
+ {
+  "t": 3.7,
+  "kind": "req",
+  "id": 28,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/custom-elements-es5-adapter.vflset/custom-elements-es5-adapter.js",
+  "sw": false
+ },
+ {
+  "t": 3.7,
+  "kind": "req",
+  "id": 29,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/webcomponents-sd.vflset/webcomponents-sd.js",
+  "sw": false
+ },
+ {
+  "t": 3.7,
+  "kind": "req",
+  "id": 30,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/intersection-observer.min.vflset/intersection-observer.min.js",
+  "sw": false
+ },
+ {
+  "t": 3.7,
+  "kind": "req",
+  "id": 31,
+  "method": "GET",
+  "type": "fetch",
+  "url": "http://localhost:8782/scram/scramjet.wasm",
+  "sw": false
+ },
+ {
+  "t": 3.7,
+  "kind": "req",
+  "id": 32,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/scheduler.vflset/scheduler.js",
+  "sw": false
+ },
+ {
+  "t": 3.7,
+  "kind": "req",
+  "id": 33,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/www-i18n-constants-en_US.vflset/www-i18n-constants.js",
+  "sw": false
+ },
+ {
+  "t": 3.7,
+  "kind": "req",
+  "id": 34,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=YouTube+Sans:wght@300..900&display=swap",
+  "sw": false
+ },
+ {
+  "t": 3.7,
+  "kind": "req",
+  "id": 35,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/www-player.css",
+  "sw": false
+ },
+ {
+  "t": 3.7,
+  "kind": "req",
+  "id": 36,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-main-desktop-watch-page-skeleton.css",
+  "sw": false
+ },
+ {
+  "t": 3.7,
+  "kind": "req",
+  "id": 37,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-main-desktop-player-skeleton.css",
+  "sw": false
+ },
+ {
+  "t": 3.7,
+  "kind": "req",
+  "id": 38,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-onepick.css",
+  "sw": false
+ },
+ {
+  "t": 3.7,
+  "kind": "req",
+  "id": 39,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/_/ytmainappweb/_/ss/k=ytmainappweb.kevlar_base.NZ7X3F12ieY.L.B1.O/am=AAAAAALAEMCe/d=0/br=1/rs=AGKMywG1ZrGUMzn_SEel2HjBo0S7VO4L5w",
+  "sw": false
+ },
+ {
+  "t": 3.7,
+  "kind": "req",
+  "id": 40,
+  "method": "GET",
+  "type": "other",
+  "url": "https://rr2---sn-aj2im9-5j.googlevideo.com/generate_204",
+  "sw": false
+ },
+ {
+  "t": 3.7,
+  "kind": "req",
+  "id": 41,
+  "method": "GET",
+  "type": "other",
+  "url": "https://rr2---sn-2imeyn7r.c.youtube.com/generate_204",
+  "sw": false
+ },
+ {
+  "t": 3.7,
+  "kind": "req",
+  "id": 42,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/spf.vflset/spf.js",
+  "sw": false
+ },
+ {
+  "t": 3.7,
+  "kind": "req",
+  "id": 43,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/network.vflset/network.js",
+  "sw": false
+ },
+ {
+  "t": 3.8,
+  "kind": "mem",
+  "mb": [
+   144,
+   260,
+   104
+  ]
+ },
+ {
+  "t": 3.8,
+  "kind": "done",
+  "id": 22,
+  "status": 200,
+  "size": 6449
+ },
+ {
+  "t": 3.8,
+  "kind": "done",
+  "id": 20,
+  "status": 200,
+  "size": 227123
+ },
+ {
+  "t": 3.8,
+  "kind": "done",
+  "id": 19,
+  "status": 200,
+  "size": -10218
+ },
+ {
+  "t": 3.8,
+  "kind": "req",
+  "id": 44,
+  "method": "GET",
+  "type": "fetch",
+  "url": "http://localhost:8782/diag-wc/no-ctors.js",
+  "sw": false
+ },
+ {
+  "t": 3.8,
+  "kind": "done",
+  "id": 31,
+  "status": 200,
+  "size": 586293
+ },
+ {
+  "t": 3.8,
+  "kind": "done",
+  "id": 44,
+  "status": 200,
+  "size": 78875
+ },
+ {
+  "t": 3.8,
+  "kind": "done",
+  "id": 21,
+  "status": 200,
+  "size": -57
+ },
+ {
+  "t": 3.9,
+  "kind": "console",
+  "type": "log",
+  "text": "diag variant served: V:no-ctors 78861"
+ },
+ {
+  "t": 3.9,
+  "kind": "done",
+  "id": 29,
+  "status": 200,
+  "size": -50
+ },
+ {
+  "t": 3.9,
+  "kind": "req",
+  "id": 45,
+  "method": "GET",
+  "type": "image",
+  "url": "http://localhost:8782/icon?d=youtube.com",
+  "sw": false
+ },
+ {
+  "t": 3.9,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+ },
+ {
+  "t": 3.9,
+  "kind": "done",
+  "id": 45,
+  "status": 404,
+  "size": 19
+ },
+ {
+  "t": 4,
+  "kind": "mem",
+  "mb": [
+   145,
+   292,
+   104
+  ]
+ },
+ {
+  "t": 4,
+  "kind": "done",
+  "id": 27,
+  "status": 200,
+  "size": -728
+ },
+ {
+  "t": 4,
+  "kind": "done",
+  "id": 30,
+  "status": 200,
+  "size": -727
+ },
+ {
+  "t": 4,
+  "kind": "done",
+  "id": 32,
+  "status": 200,
+  "size": -727
+ },
+ {
+  "t": 4.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   355,
+   104
+  ]
+ },
+ {
+  "t": 4.2,
+  "kind": "done",
+  "id": 33,
+  "status": 200,
+  "size": -727
+ },
+ {
+  "t": 4.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4556,
+    "mb": 145
+   },
+   {
+    "pid": 4565,
+    "mb": 329
+   },
+   {
+    "pid": 4603,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 23,
+   "totalMB": 40,
+   "nodes": 555,
+   "docs": 7,
+   "frames": 5
+  },
+  "video": {
+   "status": "Website responded (HTTP 200)",
+   "title": "",
+   "app": {
+    "elements": 23,
+    "player": false,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 82
+ },
+ {
+  "t": 4.2,
+  "kind": "done",
+  "id": 36,
+  "status": 200,
+  "size": -720
+ },
+ {
+  "t": 4.2,
+  "kind": "done",
+  "id": 35,
+  "status": 200,
+  "size": -721
+ },
+ {
+  "t": 4.2,
+  "kind": "done",
+  "id": 37,
+  "status": 200,
+  "size": -719
+ },
+ {
+  "t": 4.2,
+  "kind": "done",
+  "id": 38,
+  "status": 200,
+  "size": -719
+ },
+ {
+  "t": 4.2,
+  "kind": "done",
+  "id": 28,
+  "status": 200,
+  "size": -717
+ },
+ {
+  "t": 4.2,
+  "kind": "done",
+  "id": 43,
+  "status": 200,
+  "size": -727
+ },
+ {
+  "t": 4.2,
+  "kind": "done",
+  "id": 42,
+  "status": 200,
+  "size": -728
+ },
+ {
+  "t": 4.2,
+  "kind": "done",
+  "id": 23,
+  "status": 204,
+  "size": -140
+ },
+ {
+  "t": 4.3,
+  "kind": "done",
+  "id": 25,
+  "status": 200,
+  "size": -558
+ },
+ {
+  "t": 4.3,
+  "kind": "done",
+  "id": 39,
+  "status": 200,
+  "size": -669
+ },
+ {
+  "t": 4.3,
+  "kind": "done",
+  "id": 24,
+  "status": 200,
+  "size": -729
+ },
+ {
+  "t": 4.3,
+  "kind": "done",
+  "id": 40,
+  "status": 204,
+  "size": -720
+ },
+ {
+  "t": 4.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   400,
+   104
+  ]
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 34,
+  "status": 200,
+  "size": -699
+ },
+ {
+  "t": 4.5,
+  "kind": "done",
+  "id": 41,
+  "status": 204,
+  "size": -720
+ },
+ {
+  "t": 4.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   445,
+   104
+  ]
+ },
+ {
+  "t": 4.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   500,
+   104
+  ]
+ },
+ {
+  "t": 4.9,
+  "kind": "req",
+  "id": 46,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/offline.js",
+  "sw": false
+ },
+ {
+  "t": 4.9,
+  "kind": "req",
+  "id": 48,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/remote.js",
+  "sw": false
+ },
+ {
+  "t": 4.9,
+  "kind": "req",
+  "id": 49,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/miniplayer.js",
+  "sw": false
+ },
+ {
+  "t": 4.9,
+  "kind": "req",
+  "id": 50,
+  "method": "GET",
+  "type": "document",
+  "url": "https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3D%252Fsignin_passive%26feature%3Dpassive&hl=en",
+  "sw": false
+ },
+ {
+  "t": 5,
+  "kind": "mem",
+  "mb": [
+   145,
+   517,
+   104
+  ]
+ },
+ {
+  "t": 5,
+  "kind": "done",
+  "id": 46,
+  "status": 200,
+  "size": -728
+ },
+ {
+  "t": 5,
+  "kind": "done",
+  "id": 49,
+  "status": 200,
+  "size": -727
+ },
+ {
+  "t": 5,
+  "kind": "done",
+  "id": 48,
+  "status": 200,
+  "size": -728
+ },
+ {
+  "t": 5,
+  "kind": "req",
+  "id": 51,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.gstatic.com/cv/js/sender/v1/cast_sender.js",
+  "sw": false
+ },
+ {
+  "t": 5,
+  "kind": "done",
+  "id": 47,
+  "status": 200,
+  "size": -525
+ },
+ {
+  "t": 5,
+  "kind": "req",
+  "id": 52,
+  "method": "GET",
+  "type": "script",
+  "url": "https://static.doubleclick.net/instream/ad_status.js",
+  "sw": false
+ },
+ {
+  "t": 5,
+  "kind": "console",
+  "type": "warning",
+  "text": "%cI -> b%c detected quirky document structure parsing @ https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3D%252Fsignin_passive%26feature%3Dpassive&hl=en! \n  \tbackground-color: #f80;\n  \tcolor: #fff;\n  \tpadding: 4px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n   "
+ },
+ {
+  "t": 5,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+ },
+ {
+  "t": 5,
+  "kind": "req",
+  "id": 53,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/scram/scramjet.js",
+  "sw": false
+ },
+ {
+  "t": 5,
+  "kind": "req",
+  "id": 54,
+  "method": "GET",
+  "type": "script",
+  "url": "scramjet.wasm.js",
+  "sw": false
+ },
+ {
+  "t": 5,
+  "kind": "req",
+  "id": 55,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/controller/controller.inject.js",
+  "sw": false
+ },
+ {
+  "t": 5.1,
+  "kind": "done",
+  "id": 50,
+  "status": 401,
+  "size": -640
+ },
+ {
+  "t": 5.1,
+  "kind": "done",
+  "id": 55,
+  "status": 200,
+  "size": 6449
+ },
+ {
+  "t": 5.1,
+  "kind": "done",
+  "id": 53,
+  "status": 200,
+  "size": 227123
+ },
+ {
+  "t": 5.1,
+  "kind": "done",
+  "id": 51,
+  "status": 200,
+  "size": -585
+ },
+ {
+  "t": 5.1,
+  "kind": "done",
+  "id": 54,
+  "status": 200,
+  "size": -57
+ },
+ {
+  "t": 5.1,
+  "kind": "done",
+  "id": 52,
+  "status": 200,
+  "size": -712
+ },
+ {
+  "t": 5.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   601,
+   104
+  ]
+ },
+ {
+  "t": 5.2,
+  "kind": "req",
+  "id": 56,
+  "method": "GET",
+  "type": "image",
+  "url": "http://localhost:8782/icon?d=youtube.com",
+  "sw": false
+ },
+ {
+  "t": 5.2,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+ },
+ {
+  "t": 5.2,
+  "kind": "done",
+  "id": 56,
+  "status": 404,
+  "size": 19
+ },
+ {
+  "t": 5.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4556,
+    "mb": 145
+   },
+   {
+    "pid": 4565,
+    "mb": 594
+   },
+   {
+    "pid": 4603,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 21,
+   "totalMB": 46,
+   "nodes": 1485,
+   "docs": 9,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 622,
+    "player": true,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 5.3,
+  "kind": "done",
+  "id": 26,
+  "status": 200,
+  "size": -677
+ },
+ {
+  "t": 5.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   509,
+   104
+  ]
+ },
+ {
+  "t": 5.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   518,
+   104
+  ]
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "info",
+  "text": "LegacyDataMixin will be applied to all legacy elements.\nSet `_legacyUndefinedCheck: true` on element class to enable."
+ },
+ {
+  "t": 5.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   490,
+   104
+  ]
+ },
+ {
+  "t": 5.8,
+  "kind": "req",
+  "id": 57,
+  "method": "GET",
+  "type": "fetch",
+  "url": "data:application/json;base64,eyJhZFBsYWNlbWVudHMiOnRydWUsInBsYXllckFkcyI6dHJ1ZSwicGxheWVyUmVzcG9uc2UiOnsiYWRQbGFjZW1lbnRzIjp0cnVlLCJwbGF5ZXJBZHMiOnRydWUsInBsYXllckNvbmZpZyI6IHsiYXVkaW9Db25maWciOiB7fSwgInN0cmVhbVNlbGVjdGlvbkNvbmZpZyI6IHt9LCAid2ViUGxheWVyQ29uZmlnIjogeyJ3ZWJQbGF5ZXJBY3Rpb25zUG9ydGluZyI",
+  "sw": false
+ },
+ {
+  "t": 5.8,
+  "kind": "req",
+  "id": 58,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.google.com/js/th/WqKOXfWIFxB-XN3hBm5zepers2HYXoMPp6sS78jI_4Y.js",
+  "sw": false
+ },
+ {
+  "t": 5.9,
+  "kind": "req",
+  "id": 59,
+  "method": "GET",
+  "type": "fetch",
+  "url": "data:application/json;base64,W3siYWRQbGFjZW1lbnRzIjp0cnVlLCJwbGF5ZXJBZHMiOnRydWUsInBsYXllclJlc3BvbnNlIjp7ImFkUGxhY2VtZW50cyI6dHJ1ZSwicGxheWVyQWRzIjp0cnVlfX1d",
+  "sw": false
+ },
+ {
+  "t": 5.9,
+  "kind": "done",
+  "id": 57,
+  "status": 200,
+  "size": -136
+ },
+ {
+  "t": 5.9,
+  "kind": "done",
+  "id": 59,
+  "status": 200,
+  "size": -136
+ },
+ {
+  "t": 5.9,
+  "kind": "req",
+  "id": 60,
+  "method": "GET",
+  "type": "fetch",
+  "url": "data:application/json;base64,eyJyZXNwb25zZUNvbnRleHQiOnsic2VydmljZVRyYWNraW5nUGFyYW1zIjpbeyJzZXJ2aWNlIjoiR0ZFRURCQUNLIiwicGFyYW1zIjpbeyJrZXkiOiJrYyIsInZhbHVlIjoiNjYifSx7ImtleSI6ImN3IiwidmFsdWUiOiJzdCJ9LHsia2V5IjoiemIiLCJ2YWx1ZSI6Inh6In0seyJrZXkiOiJ6bCIsInZhbHVlIjoiMTYifSx7ImtleSI6InBmIiwidmFsdWUiOiJ",
+  "sw": false
+ },
+ {
+  "t": 5.9,
+  "kind": "done",
+  "id": 60,
+  "status": 200,
+  "size": -136
+ },
+ {
+  "t": 5.9,
+  "kind": "req",
+  "id": 61,
+  "method": "GET",
+  "type": "fetch",
+  "url": "data:application/json;base64,eyJwbGF5ZXJSZXNwb25zZSI6eyJyZXNwb25zZUNvbnRleHQiOnsic2VydmljZVRyYWNraW5nUGFyYW1zIjpbeyJzZXJ2aWNlIjoiR0ZFRURCQUNLIiwicGFyYW1zIjpbeyJrZXkiOiJrYyIsInZhbHVlIjoiNjYifSx7ImtleSI6ImN3IiwidmFsdWUiOiJzdCJ9LHsia2V5IjoiemIiLCJ2YWx1ZSI6Inh6In0seyJrZXkiOiJ6bCIsInZhbHVlIjoiMTYifSx7Imt",
+  "sw": false
+ },
+ {
+  "t": 5.9,
+  "kind": "done",
+  "id": 58,
+  "status": 200,
+  "size": -602
+ },
+ {
+  "t": 5.9,
+  "kind": "done",
+  "id": 61,
+  "status": 200,
+  "size": -136
+ },
+ {
+  "t": 6,
+  "kind": "mem",
+  "mb": [
+   145,
+   518,
+   104
+  ]
+ },
+ {
+  "t": 6,
+  "kind": "req",
+  "id": 62,
+  "method": "GET",
+  "type": "fetch",
+  "url": "data:application/json;base64,eyJyZXNwb25zZUNvbnRleHQiOnsic2VydmljZVRyYWNraW5nUGFyYW1zIjpbeyJzZXJ2aWNlIjoiR0ZFRURCQUNLIiwicGFyYW1zIjpbeyJrZXkiOiJpcGNjIiwidmFsdWUiOiIwIn0seyJrZXkiOiJpc192aWV3ZWRfbGl2ZSIsInZhbHVlIjoiRmFsc2UifSx7ImtleSI6ImlzX2FsY19zdXJmYWNlIiwidmFsdWUiOiJmYWxzZSJ9LHsia2V5IjoicHJlbWl1bV9",
+  "sw": false
+ },
+ {
+  "t": 6,
+  "kind": "done",
+  "id": 62,
+  "status": 200,
+  "size": -136
+ },
+ {
+  "t": 6.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   530,
+   104
+  ]
+ },
+ {
+  "t": 6.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4556,
+    "mb": 145
+   },
+   {
+    "pid": 4565,
+    "mb": 531
+   },
+   {
+    "pid": 4603,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 65,
+   "totalMB": 109,
+   "nodes": 3090,
+   "docs": 11,
+   "frames": 7
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 1425,
+    "player": true,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 17
+ },
+ {
+  "t": 6.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   544,
+   104
+  ]
+ },
+ {
+  "t": 6.4,
+  "kind": "req",
+  "id": 63,
+  "method": "GET",
+  "type": "image",
+  "url": "https://www.youtube.com/generate_204?v3foHg",
+  "sw": false
+ },
+ {
+  "t": 6.4,
+  "kind": "done",
+  "id": 63,
+  "status": 204,
+  "size": -140
+ },
+ {
+  "t": 6.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "%cI -> b%c detected quirky document structure parsing @ https://www.youtube.com/! \n  \tbackground-color: #f80;\n  \tcolor: #fff;\n  \tpadding: 4px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n   "
+ },
+ {
+  "t": 6.5,
+  "kind": "console",
+  "type": "warning",
+  "text": "%cvalue -> A%c failed rewriting js for \n  \tbackground-color: #f80;\n  \tcolor: #fff;\n  \tpadding: 4px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n    (direct eval proxy) JS Rewriter: oxc panicked in parser: Unterminated string\n x='"
+ },
+ {
+  "t": 6.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   547,
+   104
+  ]
+ },
+ {
+  "t": 6.6,
+  "kind": "req",
+  "id": 64,
+  "method": "POST",
+  "type": "xhr",
+  "url": "https://www.youtube.com/api/jnn/v1/GenerateIT",
+  "sw": false
+ },
+ {
+  "t": 6.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "No available adapters."
+ },
+ {
+  "t": 6.6,
+  "kind": "done",
+  "id": 64,
+  "status": 200,
+  "size": -242
+ },
+ {
+  "t": 6.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   550,
+   104
+  ]
+ },
+ {
+  "t": 7,
+  "kind": "mem",
+  "mb": [
+   145,
+   550,
+   104
+  ]
+ },
+ {
+  "t": 7.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   550,
+   104
+  ]
+ },
+ {
+  "t": 7.3,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4556,
+    "mb": 145
+   },
+   {
+    "pid": 4565,
+    "mb": 550
+   },
+   {
+    "pid": 4603,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 53,
+   "totalMB": 122,
+   "nodes": 3106,
+   "docs": 11,
+   "frames": 7
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 1424,
+    "player": true,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 7.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   550,
+   104
+  ]
+ },
+ {
+  "t": 7.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   550,
+   104
+  ]
+ },
+ {
+  "t": 7.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   550,
+   104
+  ]
+ },
+ {
+  "t": 8,
+  "kind": "mem",
+  "mb": [
+   145,
+   550,
+   104
+  ]
+ },
+ {
+  "t": 8.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   550,
+   104
+  ]
+ },
+ {
+  "t": 8.3,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4556,
+    "mb": 145
+   },
+   {
+    "pid": 4565,
+    "mb": 550
+   },
+   {
+    "pid": 4603,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 54,
+   "totalMB": 122,
+   "nodes": 3106,
+   "docs": 11,
+   "frames": 7
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 1424,
+    "player": true,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 8.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   550,
+   104
+  ]
+ },
+ {
+  "t": 8.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   550,
+   104
+  ]
+ },
+ {
+  "t": 8.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   550,
+   104
+  ]
+ },
+ {
+  "t": 9,
+  "kind": "mem",
+  "mb": [
+   145,
+   550,
+   104
+  ]
+ },
+ {
+  "t": 9.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   550,
+   104
+  ]
+ },
+ {
+  "t": 9.3,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4556,
+    "mb": 145
+   },
+   {
+    "pid": 4565,
+    "mb": 550
+   },
+   {
+    "pid": 4603,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 54,
+   "totalMB": 122,
+   "nodes": 3106,
+   "docs": 11,
+   "frames": 7
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 1424,
+    "player": true,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 9.4,
+  "kind": "mem",
+  "mb": [
+   145,
+   550,
+   104
+  ]
+ },
+ {
+  "t": 9.6,
+  "kind": "mem",
+  "mb": [
+   145,
+   550,
+   104
+  ]
+ },
+ {
+  "t": 9.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "The resource http://localhost:8782/~/sj/xbcjhag7/z736ggdo/https%3A%2F%2Frr2---sn-2imeyn7r.c.youtube.com%2Fgenerate_204?%24io=https%3A%2F%2Fwww.youtube.com was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+ },
+ {
+  "t": 9.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "The resource http://localhost:8782/~/sj/xbcjhag7/z736ggdo/https%3A%2F%2Fi.ytimg.com%2Fgenerate_204?%24io=https%3A%2F%2Fwww.youtube.com was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+ },
+ {
+  "t": 9.6,
+  "kind": "console",
+  "type": "warning",
+  "text": "The resource http://localhost:8782/~/sj/xbcjhag7/z736ggdo/https%3A%2F%2Frr2---sn-aj2im9-5j.googlevideo.com%2Fgenerate_204?%24io=https%3A%2F%2Fwww.youtube.com was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+ },
+ {
+  "t": 9.8,
+  "kind": "mem",
+  "mb": [
+   145,
+   550,
+   104
+  ]
+ },
+ {
+  "t": 10,
+  "kind": "mem",
+  "mb": [
+   145,
+   549,
+   104
+  ]
+ },
+ {
+  "t": 10.2,
+  "kind": "mem",
+  "mb": [
+   145,
+   548,
+   104
+  ]
+ },
+ {
+  "t": 10.3,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4556,
+    "mb": 143
+   },
+   {
+    "pid": 4565,
+    "mb": 544
+   },
+   {
+    "pid": 4603,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 54,
+   "totalMB": 122,
+   "nodes": 3106,
+   "docs": 11,
+   "frames": 7
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 1424,
+    "player": true,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 10.4,
+  "kind": "mem",
+  "mb": [
+   143,
+   544,
+   104
+  ]
+ },
+ {
+  "t": 10.6,
+  "kind": "mem",
+  "mb": [
+   143,
+   544,
+   104
+  ]
+ },
+ {
+  "t": 10.8,
+  "kind": "mem",
+  "mb": [
+   143,
+   543,
+   104
+  ]
+ },
+ {
+  "t": 11,
+  "kind": "mem",
+  "mb": [
+   143,
+   539,
+   104
+  ]
+ },
+ {
+  "t": 11.2,
+  "kind": "mem",
+  "mb": [
+   143,
+   540,
+   104
+  ]
+ },
+ {
+  "t": 11.3,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4556,
+    "mb": 143
+   },
+   {
+    "pid": 4565,
+    "mb": 540
+   },
+   {
+    "pid": 4603,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 60,
+   "totalMB": 123,
+   "nodes": 3106,
+   "docs": 11,
+   "frames": 7
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 1424,
+    "player": true,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 11.4,
+  "kind": "mem",
+  "mb": [
+   143,
+   540,
+   104
+  ]
+ },
+ {
+  "t": 11.6,
+  "kind": "mem",
+  "mb": [
+   143,
+   540,
+   104
+  ]
+ },
+ {
+  "t": 11.8,
+  "kind": "mem",
+  "mb": [
+   143,
+   540,
+   104
+  ]
+ },
+ {
+  "t": 12,
+  "kind": "mem",
+  "mb": [
+   143,
+   540,
+   104
+  ]
+ },
+ {
+  "t": 12.2,
+  "kind": "mem",
+  "mb": [
+   143,
+   540,
+   104
+  ]
+ },
+ {
+  "t": 12.3,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4556,
+    "mb": 143
+   },
+   {
+    "pid": 4565,
+    "mb": 540
+   },
+   {
+    "pid": 4603,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 60,
+   "totalMB": 123,
+   "nodes": 3106,
+   "docs": 11,
+   "frames": 7
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 1424,
+    "player": true,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 12.4,
+  "kind": "mem",
+  "mb": [
+   143,
+   540,
+   104
+  ]
+ },
+ {
+  "t": 12.6,
+  "kind": "mem",
+  "mb": [
+   143,
+   540,
+   104
+  ]
+ },
+ {
+  "t": 12.8,
+  "kind": "mem",
+  "mb": [
+   143,
+   540,
+   104
+  ]
+ },
+ {
+  "t": 13,
+  "kind": "mem",
+  "mb": [
+   143,
+   540,
+   104
+  ]
+ },
+ {
+  "t": 13.2,
+  "kind": "mem",
+  "mb": [
+   143,
+   540,
+   104
+  ]
+ },
+ {
+  "t": 13.3,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4556,
+    "mb": 143
+   },
+   {
+    "pid": 4565,
+    "mb": 540
+   },
+   {
+    "pid": 4603,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 60,
+   "totalMB": 123,
+   "nodes": 3106,
+   "docs": 11,
+   "frames": 7
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 1424,
+    "player": true,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 13.4,
+  "kind": "mem",
+  "mb": [
+   143,
+   540,
+   104
+  ]
+ },
+ {
+  "t": 13.6,
+  "kind": "mem",
+  "mb": [
+   143,
+   540,
+   104
+  ]
+ },
+ {
+  "t": 13.8,
+  "kind": "mem",
+  "mb": [
+   143,
+   540,
+   104
+  ]
+ },
+ {
+  "t": 14,
+  "kind": "mem",
+  "mb": [
+   143,
+   540,
+   104
+  ]
+ },
+ {
+  "t": 14.2,
+  "kind": "mem",
+  "mb": [
+   143,
+   540,
+   104
+  ]
+ },
+ {
+  "t": 14.4,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4556,
+    "mb": 143
+   },
+   {
+    "pid": 4565,
+    "mb": 540
+   },
+   {
+    "pid": 4603,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 60,
+   "totalMB": 123,
+   "nodes": 3106,
+   "docs": 11,
+   "frames": 7
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 1424,
+    "player": true,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 14.4,
+  "kind": "mem",
+  "mb": [
+   143,
+   540,
+   104
+  ]
+ },
+ {
+  "t": 14.6,
+  "kind": "mem",
+  "mb": [
+   143,
+   540,
+   104
+  ]
+ },
+ {
+  "t": 14.8,
+  "kind": "mem",
+  "mb": [
+   143,
+   540,
+   104
+  ]
+ },
+ {
+  "t": 15,
+  "kind": "mem",
+  "mb": [
+   143,
+   540,
+   104
+  ]
+ },
+ {
+  "t": 15.2,
+  "kind": "mem",
+  "mb": [
+   143,
+   540,
+   104
+  ]
+ },
+ {
+  "t": 15.4,
+  "kind": "mem",
+  "mb": [
+   143,
+   540,
+   104
+  ]
+ },
+ {
+  "t": 15.4,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4556,
+    "mb": 143
+   },
+   {
+    "pid": 4565,
+    "mb": 540
+   },
+   {
+    "pid": 4603,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 60,
+   "totalMB": 123,
+   "nodes": 3106,
+   "docs": 11,
+   "frames": 7
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 1424,
+    "player": true,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 15.6,
+  "kind": "mem",
+  "mb": [
+   143,
+   540,
+   104
+  ]
+ },
+ {
+  "t": 15.8,
+  "kind": "mem",
+  "mb": [
+   143,
+   540,
+   104
+  ]
+ },
+ {
+  "t": 16,
+  "kind": "mem",
+  "mb": [
+   143,
+   540,
+   104
+  ]
+ },
+ {
+  "t": 16.2,
+  "kind": "mem",
+  "mb": [
+   143,
+   541,
+   104
+  ]
+ },
+ {
+  "t": 16.4,
+  "kind": "mem",
+  "mb": [
+   143,
+   541,
+   104
+  ]
+ },
+ {
+  "t": 16.4,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4556,
+    "mb": 143
+   },
+   {
+    "pid": 4565,
+    "mb": 541
+   },
+   {
+    "pid": 4603,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 67,
+   "totalMB": 123,
+   "nodes": 3106,
+   "docs": 11,
+   "frames": 7
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 1424,
+    "player": true,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 16.6,
+  "kind": "mem",
+  "mb": [
+   143,
+   541,
+   104
+  ]
+ },
+ {
+  "t": 16.8,
+  "kind": "mem",
+  "mb": [
+   143,
+   541,
+   104
+  ]
+ },
+ {
+  "t": 17,
+  "kind": "mem",
+  "mb": [
+   143,
+   541,
+   104
+  ]
+ },
+ {
+  "t": 17.2,
+  "kind": "mem",
+  "mb": [
+   143,
+   541,
+   104
+  ]
+ },
+ {
+  "t": 17.4,
+  "kind": "mem",
+  "mb": [
+   143,
+   541,
+   104
+  ]
+ },
+ {
+  "t": 17.4,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4556,
+    "mb": 143
+   },
+   {
+    "pid": 4565,
+    "mb": 541
+   },
+   {
+    "pid": 4603,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 67,
+   "totalMB": 123,
+   "nodes": 3106,
+   "docs": 11,
+   "frames": 7
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 1424,
+    "player": true,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 17.6,
+  "kind": "mem",
+  "mb": [
+   143,
+   541,
+   104
+  ]
+ },
+ {
+  "t": 17.8,
+  "kind": "mem",
+  "mb": [
+   143,
+   541,
+   104
+  ]
+ },
+ {
+  "t": 18,
+  "kind": "mem",
+  "mb": [
+   143,
+   541,
+   104
+  ]
+ },
+ {
+  "t": 18.2,
+  "kind": "mem",
+  "mb": [
+   143,
+   541,
+   104
+  ]
+ },
+ {
+  "t": 18.4,
+  "kind": "mem",
+  "mb": [
+   143,
+   541,
+   104
+  ]
+ },
+ {
+  "t": 18.4,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4556,
+    "mb": 143
+   },
+   {
+    "pid": 4565,
+    "mb": 541
+   },
+   {
+    "pid": 4603,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 67,
+   "totalMB": 123,
+   "nodes": 3106,
+   "docs": 11,
+   "frames": 7
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 1424,
+    "player": true,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 18.6,
+  "kind": "mem",
+  "mb": [
+   143,
+   541,
+   104
+  ]
+ },
+ {
+  "t": 18.8,
+  "kind": "mem",
+  "mb": [
+   143,
+   541,
+   104
+  ]
+ },
+ {
+  "t": 19,
+  "kind": "mem",
+  "mb": [
+   143,
+   541,
+   104
+  ]
+ },
+ {
+  "t": 19.2,
+  "kind": "mem",
+  "mb": [
+   143,
+   541,
+   104
+  ]
+ },
+ {
+  "t": 19.4,
+  "kind": "mem",
+  "mb": [
+   143,
+   541,
+   104
+  ]
+ },
+ {
+  "t": 19.4,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4556,
+    "mb": 143
+   },
+   {
+    "pid": 4565,
+    "mb": 541
+   },
+   {
+    "pid": 4603,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 67,
+   "totalMB": 123,
+   "nodes": 3106,
+   "docs": 11,
+   "frames": 7
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 1424,
+    "player": true,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 19.6,
+  "kind": "mem",
+  "mb": [
+   143,
+   541,
+   104
+  ]
+ },
+ {
+  "t": 19.8,
+  "kind": "mem",
+  "mb": [
+   143,
+   541,
+   104
+  ]
+ },
+ {
+  "t": 20,
+  "kind": "mem",
+  "mb": [
+   143,
+   541,
+   104
+  ]
+ },
+ {
+  "t": 20.2,
+  "kind": "mem",
+  "mb": [
+   143,
+   541,
+   104
+  ]
+ },
+ {
+  "t": 20.4,
+  "kind": "mem",
+  "mb": [
+   143,
+   541,
+   104
+  ]
+ },
+ {
+  "t": 20.4,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4556,
+    "mb": 143
+   },
+   {
+    "pid": 4565,
+    "mb": 541
+   },
+   {
+    "pid": 4603,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 67,
+   "totalMB": 123,
+   "nodes": 3106,
+   "docs": 11,
+   "frames": 7
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 1424,
+    "player": true,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 20.6,
+  "kind": "mem",
+  "mb": [
+   143,
+   541,
+   104
+  ]
+ },
+ {
+  "t": 20.8,
+  "kind": "mem",
+  "mb": [
+   143,
+   541,
+   104
+  ]
+ },
+ {
+  "t": 21,
+  "kind": "mem",
+  "mb": [
+   143,
+   541,
+   104
+  ]
+ },
+ {
+  "t": 21.2,
+  "kind": "mem",
+  "mb": [
+   143,
+   542,
+   104
+  ]
+ },
+ {
+  "t": 21.4,
+  "kind": "mem",
+  "mb": [
+   143,
+   542,
+   104
+  ]
+ },
+ {
+  "t": 21.5,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4556,
+    "mb": 143
+   },
+   {
+    "pid": 4565,
+    "mb": 542
+   },
+   {
+    "pid": 4603,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 73,
+   "totalMB": 124,
+   "nodes": 3106,
+   "docs": 11,
+   "frames": 7
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 1424,
+    "player": true,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 21.6,
+  "kind": "mem",
+  "mb": [
+   143,
+   542,
+   104
+  ]
+ },
+ {
+  "t": 21.8,
+  "kind": "mem",
+  "mb": [
+   143,
+   542,
+   104
+  ]
+ },
+ {
+  "t": 22,
+  "kind": "mem",
+  "mb": [
+   143,
+   542,
+   104
+  ]
+ },
+ {
+  "t": 22.2,
+  "kind": "mem",
+  "mb": [
+   143,
+   542,
+   104
+  ]
+ },
+ {
+  "t": 22.4,
+  "kind": "mem",
+  "mb": [
+   143,
+   542,
+   104
+  ]
+ },
+ {
+  "t": 22.5,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4556,
+    "mb": 143
+   },
+   {
+    "pid": 4565,
+    "mb": 542
+   },
+   {
+    "pid": 4603,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 73,
+   "totalMB": 124,
+   "nodes": 3106,
+   "docs": 11,
+   "frames": 7
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 1424,
+    "player": true,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 22.6,
+  "kind": "mem",
+  "mb": [
+   143,
+   542,
+   104
+  ]
+ },
+ {
+  "t": 22.8,
+  "kind": "mem",
+  "mb": [
+   143,
+   542,
+   104
+  ]
+ },
+ {
+  "t": 23,
+  "kind": "mem",
+  "mb": [
+   143,
+   542,
+   104
+  ]
+ },
+ {
+  "t": 23.2,
+  "kind": "mem",
+  "mb": [
+   143,
+   542,
+   104
+  ]
+ },
+ {
+  "t": 23.4,
+  "kind": "mem",
+  "mb": [
+   143,
+   542,
+   104
+  ]
+ },
+ {
+  "t": 23.5,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4556,
+    "mb": 143
+   },
+   {
+    "pid": 4565,
+    "mb": 542
+   },
+   {
+    "pid": 4603,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 73,
+   "totalMB": 124,
+   "nodes": 3106,
+   "docs": 11,
+   "frames": 7
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 1424,
+    "player": true,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 23.6,
+  "kind": "mem",
+  "mb": [
+   143,
+   542,
+   104
+  ]
+ },
+ {
+  "t": 23.8,
+  "kind": "mem",
+  "mb": [
+   143,
+   542,
+   104
+  ]
+ },
+ {
+  "t": 24,
+  "kind": "mem",
+  "mb": [
+   143,
+   542,
+   104
+  ]
+ },
+ {
+  "t": 24.2,
+  "kind": "mem",
+  "mb": [
+   143,
+   542,
+   104
+  ]
+ },
+ {
+  "t": 24.4,
+  "kind": "mem",
+  "mb": [
+   143,
+   542,
+   104
+  ]
+ },
+ {
+  "t": 24.5,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4556,
+    "mb": 143
+   },
+   {
+    "pid": 4565,
+    "mb": 542
+   },
+   {
+    "pid": 4603,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 73,
+   "totalMB": 124,
+   "nodes": 3106,
+   "docs": 11,
+   "frames": 7
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 1424,
+    "player": true,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 24.6,
+  "kind": "mem",
+  "mb": [
+   143,
+   542,
+   104
+  ]
+ },
+ {
+  "t": 24.8,
+  "kind": "mem",
+  "mb": [
+   143,
+   542,
+   104
+  ]
+ },
+ {
+  "t": 25,
+  "kind": "mem",
+  "mb": [
+   143,
+   542,
+   104
+  ]
+ },
+ {
+  "t": 25.2,
+  "kind": "mem",
+  "mb": [
+   143,
+   542,
+   104
+  ]
+ },
+ {
+  "t": 25.4,
+  "kind": "mem",
+  "mb": [
+   143,
+   542,
+   104
+  ]
+ },
+ {
+  "t": 25.5,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4556,
+    "mb": 143
+   },
+   {
+    "pid": 4565,
+    "mb": 542
+   },
+   {
+    "pid": 4603,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 73,
+   "totalMB": 124,
+   "nodes": 3106,
+   "docs": 11,
+   "frames": 7
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 1424,
+    "player": true,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 25.6,
+  "kind": "mem",
+  "mb": [
+   143,
+   542,
+   104
+  ]
+ },
+ {
+  "t": 25.8,
+  "kind": "mem",
+  "mb": [
+   143,
+   542,
+   104
+  ]
+ },
+ {
+  "t": 26,
+  "kind": "mem",
+  "mb": [
+   143,
+   542,
+   104
+  ]
+ },
+ {
+  "t": 26.2,
+  "kind": "mem",
+  "mb": [
+   143,
+   543,
+   104
+  ]
+ },
+ {
+  "t": 26.4,
+  "kind": "mem",
+  "mb": [
+   143,
+   543,
+   104
+  ]
+ },
+ {
+  "t": 26.5,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4556,
+    "mb": 143
+   },
+   {
+    "pid": 4565,
+    "mb": 543
+   },
+   {
+    "pid": 4603,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 79,
+   "totalMB": 125,
+   "nodes": 3106,
+   "docs": 11,
+   "frames": 7
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 1424,
+    "player": true,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 26.6,
+  "kind": "mem",
+  "mb": [
+   143,
+   543,
+   104
+  ]
+ },
+ {
+  "t": 26.8,
+  "kind": "mem",
+  "mb": [
+   143,
+   543,
+   104
+  ]
+ },
+ {
+  "t": 27,
+  "kind": "mem",
+  "mb": [
+   143,
+   543,
+   104
+  ]
+ },
+ {
+  "t": 27.2,
+  "kind": "mem",
+  "mb": [
+   143,
+   543,
+   104
+  ]
+ },
+ {
+  "t": 27.4,
+  "kind": "mem",
+  "mb": [
+   143,
+   543,
+   104
+  ]
+ },
+ {
+  "t": 27.5,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4556,
+    "mb": 143
+   },
+   {
+    "pid": 4565,
+    "mb": 543
+   },
+   {
+    "pid": 4603,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 79,
+   "totalMB": 125,
+   "nodes": 3106,
+   "docs": 11,
+   "frames": 7
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 1424,
+    "player": true,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 27.6,
+  "kind": "mem",
+  "mb": [
+   143,
+   543,
+   104
+  ]
+ },
+ {
+  "t": 27.8,
+  "kind": "mem",
+  "mb": [
+   143,
+   543,
+   104
+  ]
+ },
+ {
+  "t": 28,
+  "kind": "mem",
+  "mb": [
+   143,
+   543,
+   104
+  ]
+ },
+ {
+  "t": 28.2,
+  "kind": "mem",
+  "mb": [
+   143,
+   543,
+   104
+  ]
+ },
+ {
+  "t": 28.4,
+  "kind": "mem",
+  "mb": [
+   143,
+   543,
+   104
+  ]
+ },
+ {
+  "t": 28.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4556,
+    "mb": 143
+   },
+   {
+    "pid": 4565,
+    "mb": 543
+   },
+   {
+    "pid": 4603,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 79,
+   "totalMB": 125,
+   "nodes": 3106,
+   "docs": 11,
+   "frames": 7
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 1424,
+    "player": true,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 28.6,
+  "kind": "mem",
+  "mb": [
+   143,
+   543,
+   104
+  ]
+ },
+ {
+  "t": 28.8,
+  "kind": "mem",
+  "mb": [
+   143,
+   543,
+   104
+  ]
+ },
+ {
+  "t": 29,
+  "kind": "mem",
+  "mb": [
+   143,
+   543,
+   104
+  ]
+ },
+ {
+  "t": 29.2,
+  "kind": "mem",
+  "mb": [
+   143,
+   543,
+   104
+  ]
+ },
+ {
+  "t": 29.4,
+  "kind": "mem",
+  "mb": [
+   143,
+   543,
+   104
+  ]
+ },
+ {
+  "t": 29.6,
+  "kind": "mem",
+  "mb": [
+   143,
+   543,
+   104
+  ]
+ },
+ {
+  "t": 29.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4556,
+    "mb": 143
+   },
+   {
+    "pid": 4565,
+    "mb": 543
+   },
+   {
+    "pid": 4603,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 79,
+   "totalMB": 125,
+   "nodes": 3106,
+   "docs": 11,
+   "frames": 7
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 1424,
+    "player": true,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 13
+ },
+ {
+  "t": 29.8,
+  "kind": "mem",
+  "mb": [
+   143,
+   543,
+   104
+  ]
+ },
+ {
+  "t": 30,
+  "kind": "mem",
+  "mb": [
+   143,
+   543,
+   104
+  ]
+ },
+ {
+  "t": 30.2,
+  "kind": "mem",
+  "mb": [
+   143,
+   543,
+   104
+  ]
+ },
+ {
+  "t": 30.4,
+  "kind": "mem",
+  "mb": [
+   143,
+   543,
+   104
+  ]
+ },
+ {
+  "t": 30.6,
+  "kind": "mem",
+  "mb": [
+   142,
+   543,
+   104
+  ]
+ },
+ {
+  "t": 30.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4556,
+    "mb": 142
+   },
+   {
+    "pid": 4565,
+    "mb": 543
+   },
+   {
+    "pid": 4603,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 80,
+   "totalMB": 125,
+   "nodes": 3106,
+   "docs": 11,
+   "frames": 7
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 1424,
+    "player": true,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 30.8,
+  "kind": "mem",
+  "mb": [
+   142,
+   459,
+   104
+  ]
+ },
+ {
+  "t": 31,
+  "kind": "mem",
+  "mb": [
+   142,
+   459,
+   104
+  ]
+ },
+ {
+  "t": 31.2,
+  "kind": "mem",
+  "mb": [
+   140,
+   463,
+   104
+  ]
+ },
+ {
+  "t": 31.4,
+  "kind": "mem",
+  "mb": [
+   140,
+   463,
+   104
+  ]
+ },
+ {
+  "t": 31.6,
+  "kind": "mem",
+  "mb": [
+   140,
+   463,
+   104
+  ]
+ },
+ {
+  "t": 31.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4556,
+    "mb": 140
+   },
+   {
+    "pid": 4565,
+    "mb": 463
+   },
+   {
+    "pid": 4603,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 45,
+   "totalMB": 57,
+   "nodes": 2884,
+   "docs": 10,
+   "frames": 7
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 1424,
+    "player": true,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 31.8,
+  "kind": "mem",
+  "mb": [
+   140,
+   463,
+   104
+  ]
+ },
+ {
+  "t": 32,
+  "kind": "mem",
+  "mb": [
+   140,
+   463,
+   104
+  ]
+ },
+ {
+  "t": 32.2,
+  "kind": "mem",
+  "mb": [
+   140,
+   463,
+   104
+  ]
+ },
+ {
+  "t": 32.4,
+  "kind": "mem",
+  "mb": [
+   140,
+   463,
+   104
+  ]
+ },
+ {
+  "t": 32.6,
+  "kind": "mem",
+  "mb": [
+   140,
+   463,
+   104
+  ]
+ },
+ {
+  "t": 32.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 4556,
+    "mb": 140
+   },
+   {
+    "pid": 4565,
+    "mb": 463
+   },
+   {
+    "pid": 4603,
+    "mb": 104
+   }
+  ],
+  "heap": {
+   "usedMB": 45,
+   "totalMB": 57,
+   "nodes": 2884,
+   "docs": 10,
+   "frames": 7
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 1424,
+    "player": true,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ }
+]

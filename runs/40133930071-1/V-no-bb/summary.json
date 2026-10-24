@@ -1,0 +1,105 @@
+{
+  "target": "http://localhost:8782",
+  "transport": "epoxy",
+  "block": "",
+  "shots": false,
+  "sjconfig": "",
+  "fix": "V:no-bb",
+  "crashed": false,
+  "lastTick": {
+    "t": 32.6,
+    "kind": "tick",
+    "memory": [
+      {
+        "pid": 2787,
+        "mb": 139
+      },
+      {
+        "pid": 2796,
+        "mb": 440
+      },
+      {
+        "pid": 2818,
+        "mb": 103
+      }
+    ],
+    "heap": {
+      "usedMB": 44,
+      "totalMB": 49,
+      "nodes": 2878,
+      "docs": 10,
+      "frames": 7
+    },
+    "video": {
+      "status": "Website content detected",
+      "title": "- YouTube",
+      "time": 0,
+      "paused": true,
+      "ready": 0,
+      "net": 0,
+      "error": null,
+      "buffered": 0,
+      "src": "",
+      "app": {
+        "elements": 1423,
+        "player": true,
+        "flexy": false,
+        "botcheck": false
+      }
+    },
+    "answerMs": 1
+  },
+  "peakRendererMB": 526,
+  "peakHeapMB": 74,
+  "requests": 67,
+  "failed": 6,
+  "byHost": {
+    "localhost:8782 script": 15,
+    "www.youtube.com script": 12,
+    "rr5---sn-hgn7yn76.googlevideo.com fetch": 6,
+    "www.youtube.com stylesheet": 5,
+    " fetch": 5,
+    "localhost:8782 fetch": 4,
+    "scramjet.wasm.js script": 2,
+    "localhost:8782 image": 2,
+    "www.youtube.com image": 2,
+    "localhost:8782 document": 1,
+    "localhost:8782 stylesheet": 1,
+    "localhost:8782 other": 1,
+    "www.youtube.com document": 1,
+    "i.ytimg.com other": 1,
+    "i.ytimg.com image": 1,
+    "fonts.googleapis.com stylesheet": 1,
+    "rr2---sn-2imeyn7r.googlevideo.com other": 1,
+    "rr2---sn-aj2im9-5j.c.youtube.com other": 1,
+    "accounts.google.com document": 1,
+    "www.gstatic.com script": 1,
+    "static.doubleclick.net script": 1,
+    "www.google.com script": 1,
+    "www.youtube.com xhr": 1
+  },
+  "pageErrors": [
+    "TypeError: window.__shady_native_addEventListener is not a function\n    at Gb (http://localhost:8782/~/sj/487ji3w3/3tvq9eb5/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:52:38)\n    at http://localhos",
+    "TypeError: this.__shady_native_dispatchEvent is not a function\n    at Cb (http://localhost:8782/~/sj/487ji3w3/3tvq9eb5/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:47:110)\n    at k.dispatchEvent (ht",
+    "TypeError: this.__shady_native_dispatchEvent is not a function\n    at Cb (http://localhost:8782/~/sj/487ji3w3/3tvq9eb5/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:47:110)\n    at k.dispatchEvent (ht",
+    "TypeError: this.__shady_native_dispatchEvent is not a function\n    at Cb (http://localhost:8782/~/sj/487ji3w3/3tvq9eb5/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:47:110)\n    at k.dispatchEvent (ht",
+    "TypeError: this.__shady_native_dispatchEvent is not a function\n    at Cb (http://localhost:8782/~/sj/487ji3w3/3tvq9eb5/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:47:110)\n    at k.dispatchEvent (ht",
+    "TypeError: this.__shady_native_dispatchEvent is not a function\n    at Cb (http://localhost:8782/~/sj/487ji3w3/3tvq9eb5/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:47:110)\n    at k.dispatchEvent (ht",
+    "TypeError: this.__shady_native_dispatchEvent is not a function\n    at Cb (http://localhost:8782/~/sj/487ji3w3/3tvq9eb5/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:47:110)\n    at k.dispatchEvent (ht",
+    "TypeError: this.__shady_native_dispatchEvent is not a function\n    at Cb (http://localhost:8782/~/sj/487ji3w3/3tvq9eb5/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:47:110)\n    at k.dispatchEvent (ht",
+    "TypeError: this.__shady_native_dispatchEvent is not a function\n    at Cb (http://localhost:8782/~/sj/487ji3w3/3tvq9eb5/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:47:110)\n    at k.dispatchEvent (ht",
+    "TypeError: this.__shady_native_dispatchEvent is not a function\n    at Cb (http://localhost:8782/~/sj/487ji3w3/3tvq9eb5/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:47:110)\n    at k.dispatchEvent (ht"
+  ],
+  "consoleErrors": [
+    "0.8s Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: UnexpectedEof, error: \"tls handshake eof\" })) (client error (IO: Custom { kind: UnexpectedEof, error: \"tls handshake eof\" } (tls handshake eof)))\n    at imports.wbg.__wbindgen_error_new (http://localhost:8782/epoxy/ind",
+    "3.4s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "5.2s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "5.2s Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+    "5.7s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "5.7s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "6.1s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "6.1s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "6.5s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "6.5s Failed to load resource: the server responded with a status of 403 (Forbidden)"
+  ]
+}
