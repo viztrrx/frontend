@@ -1,0 +1,2126 @@
+[
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 1,
+  "method": "GET",
+  "type": "document",
+  "url": "http://127.0.0.1:8099/rrweb-shady",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "req",
+  "id": 2,
+  "method": "GET",
+  "type": "script",
+  "url": "http://127.0.0.1:8099/wc-sd.js",
+  "sw": false
+ },
+ {
+  "t": 0.4,
+  "kind": "done",
+  "id": 1,
+  "status": 200,
+  "size": 1532
+ },
+ {
+  "t": 0.4,
+  "kind": "done",
+  "id": 2,
+  "status": 200,
+  "size": 78954
+ },
+ {
+  "t": 0.5,
+  "kind": "mem",
+  "mb": [
+   144,
+   72,
+   133
+  ]
+ },
+ {
+  "t": 0.7,
+  "kind": "mem",
+  "mb": [
+   144,
+   86,
+   164
+  ]
+ },
+ {
+  "t": 0.9,
+  "kind": "mem",
+  "mb": [
+   144,
+   103,
+   199
+  ]
+ },
+ {
+  "t": 1.1,
+  "kind": "mem",
+  "mb": [
+   144,
+   103,
+   239
+  ]
+ },
+ {
+  "t": 1.3,
+  "kind": "mem",
+  "mb": [
+   144,
+   103,
+   265
+  ]
+ },
+ {
+  "t": 1.5,
+  "kind": "mem",
+  "mb": [
+   144,
+   103,
+   297
+  ]
+ },
+ {
+  "t": 1.7,
+  "kind": "mem",
+  "mb": [
+   144,
+   103,
+   334
+  ]
+ },
+ {
+  "t": 1.9,
+  "kind": "mem",
+  "mb": [
+   144,
+   103,
+   368
+  ]
+ },
+ {
+  "t": 2,
+  "kind": "opened",
+  "video": "http://127.0.0.1:8099/rrweb-shady"
+ },
+ {
+  "t": 2,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+ },
+ {
+  "t": 2.1,
+  "kind": "mem",
+  "mb": [
+   144,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 2.3,
+  "kind": "mem",
+  "mb": [
+   144,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 2.5,
+  "kind": "mem",
+  "mb": [
+   144,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 2.7,
+  "kind": "mem",
+  "mb": [
+   144,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 2.9,
+  "kind": "mem",
+  "mb": [
+   144,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 3,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3680,
+    "mb": 144
+   },
+   {
+    "pid": 3689,
+    "mb": 103
+   },
+   {
+    "pid": 3690,
+    "mb": 369
+   }
+  ],
+  "heap": {
+   "usedMB": 141,
+   "totalMB": 150,
+   "nodes": 2741,
+   "docs": 625,
+   "frames": 401
+  },
+  "video": {
+   "title": "rrweb shady",
+   "app": {
+    "elements": 9,
+    "player": false,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 5
+ },
+ {
+  "t": 3.1,
+  "kind": "mem",
+  "mb": [
+   144,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 3.3,
+  "kind": "mem",
+  "mb": [
+   144,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 3.5,
+  "kind": "mem",
+  "mb": [
+   144,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 3.7,
+  "kind": "mem",
+  "mb": [
+   144,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 3.9,
+  "kind": "mem",
+  "mb": [
+   144,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 4,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3680,
+    "mb": 144
+   },
+   {
+    "pid": 3689,
+    "mb": 103
+   },
+   {
+    "pid": 3690,
+    "mb": 370
+   }
+  ],
+  "heap": {
+   "usedMB": 141,
+   "totalMB": 151,
+   "nodes": 2741,
+   "docs": 625,
+   "frames": 401
+  },
+  "video": {
+   "title": "rrweb shady",
+   "app": {
+    "elements": 9,
+    "player": false,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 4.1,
+  "kind": "mem",
+  "mb": [
+   144,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 4.3,
+  "kind": "mem",
+  "mb": [
+   144,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 4.5,
+  "kind": "mem",
+  "mb": [
+   144,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 4.7,
+  "kind": "mem",
+  "mb": [
+   144,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 4.9,
+  "kind": "mem",
+  "mb": [
+   144,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 5,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3680,
+    "mb": 145
+   },
+   {
+    "pid": 3689,
+    "mb": 103
+   },
+   {
+    "pid": 3690,
+    "mb": 370
+   }
+  ],
+  "heap": {
+   "usedMB": 141,
+   "totalMB": 151,
+   "nodes": 2741,
+   "docs": 625,
+   "frames": 401
+  },
+  "video": {
+   "title": "rrweb shady",
+   "app": {
+    "elements": 9,
+    "player": false,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 5.1,
+  "kind": "mem",
+  "mb": [
+   145,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 5.3,
+  "kind": "mem",
+  "mb": [
+   145,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 5.5,
+  "kind": "mem",
+  "mb": [
+   145,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 5.7,
+  "kind": "mem",
+  "mb": [
+   145,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 5.9,
+  "kind": "mem",
+  "mb": [
+   145,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3680,
+    "mb": 145
+   },
+   {
+    "pid": 3689,
+    "mb": 103
+   },
+   {
+    "pid": 3690,
+    "mb": 370
+   }
+  ],
+  "heap": {
+   "usedMB": 141,
+   "totalMB": 151,
+   "nodes": 2741,
+   "docs": 625,
+   "frames": 401
+  },
+  "video": {
+   "title": "rrweb shady",
+   "app": {
+    "elements": 9,
+    "player": false,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 6.1,
+  "kind": "mem",
+  "mb": [
+   145,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 6.3,
+  "kind": "mem",
+  "mb": [
+   145,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 6.5,
+  "kind": "mem",
+  "mb": [
+   145,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 6.7,
+  "kind": "mem",
+  "mb": [
+   145,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 6.9,
+  "kind": "mem",
+  "mb": [
+   145,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 7,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3680,
+    "mb": 145
+   },
+   {
+    "pid": 3689,
+    "mb": 103
+   },
+   {
+    "pid": 3690,
+    "mb": 370
+   }
+  ],
+  "heap": {
+   "usedMB": 141,
+   "totalMB": 151,
+   "nodes": 2741,
+   "docs": 625,
+   "frames": 401
+  },
+  "video": {
+   "title": "rrweb shady",
+   "app": {
+    "elements": 9,
+    "player": false,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 7.1,
+  "kind": "mem",
+  "mb": [
+   145,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 7.3,
+  "kind": "mem",
+  "mb": [
+   145,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 7.5,
+  "kind": "mem",
+  "mb": [
+   145,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 7.7,
+  "kind": "mem",
+  "mb": [
+   145,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 7.9,
+  "kind": "mem",
+  "mb": [
+   145,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 8.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3680,
+    "mb": 145
+   },
+   {
+    "pid": 3689,
+    "mb": 103
+   },
+   {
+    "pid": 3690,
+    "mb": 370
+   }
+  ],
+  "heap": {
+   "usedMB": 141,
+   "totalMB": 151,
+   "nodes": 2741,
+   "docs": 625,
+   "frames": 401
+  },
+  "video": {
+   "title": "rrweb shady",
+   "app": {
+    "elements": 9,
+    "player": false,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 8.1,
+  "kind": "mem",
+  "mb": [
+   145,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 8.3,
+  "kind": "mem",
+  "mb": [
+   145,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 8.5,
+  "kind": "mem",
+  "mb": [
+   145,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 8.7,
+  "kind": "mem",
+  "mb": [
+   145,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 8.9,
+  "kind": "mem",
+  "mb": [
+   145,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 9.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3680,
+    "mb": 145
+   },
+   {
+    "pid": 3689,
+    "mb": 103
+   },
+   {
+    "pid": 3690,
+    "mb": 370
+   }
+  ],
+  "heap": {
+   "usedMB": 141,
+   "totalMB": 151,
+   "nodes": 2741,
+   "docs": 625,
+   "frames": 401
+  },
+  "video": {
+   "title": "rrweb shady",
+   "app": {
+    "elements": 9,
+    "player": false,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 9.1,
+  "kind": "mem",
+  "mb": [
+   145,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 9.3,
+  "kind": "mem",
+  "mb": [
+   145,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 9.5,
+  "kind": "mem",
+  "mb": [
+   145,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 9.7,
+  "kind": "mem",
+  "mb": [
+   145,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 9.9,
+  "kind": "mem",
+  "mb": [
+   145,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 10.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3680,
+    "mb": 145
+   },
+   {
+    "pid": 3689,
+    "mb": 103
+   },
+   {
+    "pid": 3690,
+    "mb": 370
+   }
+  ],
+  "heap": {
+   "usedMB": 141,
+   "totalMB": 151,
+   "nodes": 2741,
+   "docs": 625,
+   "frames": 401
+  },
+  "video": {
+   "title": "rrweb shady",
+   "app": {
+    "elements": 9,
+    "player": false,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 10.1,
+  "kind": "mem",
+  "mb": [
+   145,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 10.3,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 10.5,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 10.7,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 10.9,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 11.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3680,
+    "mb": 143
+   },
+   {
+    "pid": 3689,
+    "mb": 103
+   },
+   {
+    "pid": 3690,
+    "mb": 369
+   }
+  ],
+  "heap": {
+   "usedMB": 141,
+   "totalMB": 151,
+   "nodes": 2741,
+   "docs": 625,
+   "frames": 401
+  },
+  "video": {
+   "title": "rrweb shady",
+   "app": {
+    "elements": 9,
+    "player": false,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 11.1,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   370
+  ]
+ },
+ {
+  "t": 11.3,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 11.5,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 11.7,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 11.9,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 12.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3680,
+    "mb": 143
+   },
+   {
+    "pid": 3689,
+    "mb": 103
+   },
+   {
+    "pid": 3690,
+    "mb": 369
+   }
+  ],
+  "heap": {
+   "usedMB": 141,
+   "totalMB": 151,
+   "nodes": 2741,
+   "docs": 625,
+   "frames": 401
+  },
+  "video": {
+   "title": "rrweb shady",
+   "app": {
+    "elements": 9,
+    "player": false,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 12.1,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 12.3,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 12.5,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 12.7,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 12.9,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 13.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3680,
+    "mb": 143
+   },
+   {
+    "pid": 3689,
+    "mb": 103
+   },
+   {
+    "pid": 3690,
+    "mb": 369
+   }
+  ],
+  "heap": {
+   "usedMB": 141,
+   "totalMB": 151,
+   "nodes": 2741,
+   "docs": 625,
+   "frames": 401
+  },
+  "video": {
+   "title": "rrweb shady",
+   "app": {
+    "elements": 9,
+    "player": false,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 13.1,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 13.3,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 13.5,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 13.7,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 13.9,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 14.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3680,
+    "mb": 143
+   },
+   {
+    "pid": 3689,
+    "mb": 103
+   },
+   {
+    "pid": 3690,
+    "mb": 369
+   }
+  ],
+  "heap": {
+   "usedMB": 141,
+   "totalMB": 151,
+   "nodes": 2741,
+   "docs": 625,
+   "frames": 401
+  },
+  "video": {
+   "title": "rrweb shady",
+   "app": {
+    "elements": 9,
+    "player": false,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 14.1,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 14.3,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 14.5,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 14.7,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 14.9,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 15.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3680,
+    "mb": 143
+   },
+   {
+    "pid": 3689,
+    "mb": 103
+   },
+   {
+    "pid": 3690,
+    "mb": 369
+   }
+  ],
+  "heap": {
+   "usedMB": 141,
+   "totalMB": 151,
+   "nodes": 2741,
+   "docs": 625,
+   "frames": 401
+  },
+  "video": {
+   "title": "rrweb shady",
+   "app": {
+    "elements": 9,
+    "player": false,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 15.1,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 15.3,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 15.5,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 15.7,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 15.9,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 16.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3680,
+    "mb": 143
+   },
+   {
+    "pid": 3689,
+    "mb": 103
+   },
+   {
+    "pid": 3690,
+    "mb": 369
+   }
+  ],
+  "heap": {
+   "usedMB": 141,
+   "totalMB": 151,
+   "nodes": 2741,
+   "docs": 625,
+   "frames": 401
+  },
+  "video": {
+   "title": "rrweb shady",
+   "app": {
+    "elements": 9,
+    "player": false,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 16.1,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 16.3,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 16.5,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 16.7,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 16.9,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 17.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3680,
+    "mb": 143
+   },
+   {
+    "pid": 3689,
+    "mb": 103
+   },
+   {
+    "pid": 3690,
+    "mb": 369
+   }
+  ],
+  "heap": {
+   "usedMB": 141,
+   "totalMB": 151,
+   "nodes": 2741,
+   "docs": 625,
+   "frames": 401
+  },
+  "video": {
+   "title": "rrweb shady",
+   "app": {
+    "elements": 9,
+    "player": false,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 17.1,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 17.3,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 17.5,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 17.7,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 17.9,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 18.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3680,
+    "mb": 143
+   },
+   {
+    "pid": 3689,
+    "mb": 103
+   },
+   {
+    "pid": 3690,
+    "mb": 369
+   }
+  ],
+  "heap": {
+   "usedMB": 141,
+   "totalMB": 151,
+   "nodes": 2741,
+   "docs": 625,
+   "frames": 401
+  },
+  "video": {
+   "title": "rrweb shady",
+   "app": {
+    "elements": 9,
+    "player": false,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 18.1,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 18.3,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 18.5,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 18.7,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 18.9,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 19.2,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 19.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3680,
+    "mb": 143
+   },
+   {
+    "pid": 3689,
+    "mb": 103
+   },
+   {
+    "pid": 3690,
+    "mb": 369
+   }
+  ],
+  "heap": {
+   "usedMB": 141,
+   "totalMB": 151,
+   "nodes": 2741,
+   "docs": 625,
+   "frames": 401
+  },
+  "video": {
+   "title": "rrweb shady",
+   "app": {
+    "elements": 9,
+    "player": false,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 19.4,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 19.6,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 19.8,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 20,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 20.2,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 20.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3680,
+    "mb": 143
+   },
+   {
+    "pid": 3689,
+    "mb": 103
+   },
+   {
+    "pid": 3690,
+    "mb": 369
+   }
+  ],
+  "heap": {
+   "usedMB": 141,
+   "totalMB": 151,
+   "nodes": 2741,
+   "docs": 625,
+   "frames": 401
+  },
+  "video": {
+   "title": "rrweb shady",
+   "app": {
+    "elements": 9,
+    "player": false,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 20.4,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 20.6,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 20.8,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 21,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 21.2,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 21.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3680,
+    "mb": 143
+   },
+   {
+    "pid": 3689,
+    "mb": 103
+   },
+   {
+    "pid": 3690,
+    "mb": 369
+   }
+  ],
+  "heap": {
+   "usedMB": 141,
+   "totalMB": 151,
+   "nodes": 2741,
+   "docs": 625,
+   "frames": 401
+  },
+  "video": {
+   "title": "rrweb shady",
+   "app": {
+    "elements": 9,
+    "player": false,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 21.4,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 21.6,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 21.8,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 22,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 22.2,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 22.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3680,
+    "mb": 143
+   },
+   {
+    "pid": 3689,
+    "mb": 103
+   },
+   {
+    "pid": 3690,
+    "mb": 369
+   }
+  ],
+  "heap": {
+   "usedMB": 141,
+   "totalMB": 151,
+   "nodes": 2741,
+   "docs": 625,
+   "frames": 401
+  },
+  "video": {
+   "title": "rrweb shady",
+   "app": {
+    "elements": 9,
+    "player": false,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 22.4,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 22.6,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 22.8,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 23,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 23.2,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 23.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3680,
+    "mb": 143
+   },
+   {
+    "pid": 3689,
+    "mb": 103
+   },
+   {
+    "pid": 3690,
+    "mb": 369
+   }
+  ],
+  "heap": {
+   "usedMB": 141,
+   "totalMB": 151,
+   "nodes": 2741,
+   "docs": 625,
+   "frames": 401
+  },
+  "video": {
+   "title": "rrweb shady",
+   "app": {
+    "elements": 9,
+    "player": false,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 23.4,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 23.6,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 23.8,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 24,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 24.2,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 24.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3680,
+    "mb": 143
+   },
+   {
+    "pid": 3689,
+    "mb": 103
+   },
+   {
+    "pid": 3690,
+    "mb": 369
+   }
+  ],
+  "heap": {
+   "usedMB": 141,
+   "totalMB": 151,
+   "nodes": 2741,
+   "docs": 625,
+   "frames": 401
+  },
+  "video": {
+   "title": "rrweb shady",
+   "app": {
+    "elements": 9,
+    "player": false,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 24.4,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 24.6,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 24.8,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 25,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 25.2,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 25.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3680,
+    "mb": 143
+   },
+   {
+    "pid": 3689,
+    "mb": 103
+   },
+   {
+    "pid": 3690,
+    "mb": 369
+   }
+  ],
+  "heap": {
+   "usedMB": 141,
+   "totalMB": 151,
+   "nodes": 2741,
+   "docs": 625,
+   "frames": 401
+  },
+  "video": {
+   "title": "rrweb shady",
+   "app": {
+    "elements": 9,
+    "player": false,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 25.4,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 25.6,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 25.8,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 26,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 26.2,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 26.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3680,
+    "mb": 143
+   },
+   {
+    "pid": 3689,
+    "mb": 103
+   },
+   {
+    "pid": 3690,
+    "mb": 369
+   }
+  ],
+  "heap": {
+   "usedMB": 141,
+   "totalMB": 151,
+   "nodes": 2741,
+   "docs": 625,
+   "frames": 401
+  },
+  "video": {
+   "title": "rrweb shady",
+   "app": {
+    "elements": 9,
+    "player": false,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 26.4,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 26.6,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 26.8,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 27,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 27.2,
+  "kind": "mem",
+  "mb": [
+   143,
+   103,
+   369
+  ]
+ },
+ {
+  "t": 27.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3680,
+    "mb": 143
+   },
+   {
+    "pid": 3689,
+    "mb": 103
+   },
+   {
+    "pid": 3690,
+    "mb": 369
+   }
+  ],
+  "heap": {
+   "usedMB": 141,
+   "totalMB": 151,
+   "nodes": 2741,
+   "docs": 625,
+   "frames": 401
+  },
+  "video": {
+   "title": "rrweb shady",
+   "app": {
+    "elements": 9,
+    "player": false,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 1
+ }
+]

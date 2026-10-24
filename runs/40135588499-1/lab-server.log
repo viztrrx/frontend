@@ -1,0 +1,3 @@
+frontend /tmp/dist1 on http://localhost:8781
+frontend /tmp/dist2 on http://localhost:8782
+wisp on wss://localhost:4443/wisp/

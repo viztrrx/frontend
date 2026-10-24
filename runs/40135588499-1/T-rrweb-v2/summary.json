@@ -1,0 +1,65 @@
+{
+  "target": "http://localhost:8782",
+  "transport": "epoxy",
+  "block": "",
+  "shots": false,
+  "sjconfig": "",
+  "fix": "",
+  "noprobe": false,
+  "crashed": false,
+  "lastTick": {
+    "t": 28,
+    "kind": "tick",
+    "memory": [
+      {
+        "pid": 2492,
+        "mb": 170
+      },
+      {
+        "pid": 2508,
+        "mb": 881
+      },
+      {
+        "pid": 2531,
+        "mb": 101
+      }
+    ],
+    "heap": {
+      "usedMB": 439,
+      "totalMB": 510,
+      "nodes": 2447,
+      "docs": 467,
+      "frames": 405
+    },
+    "video": {
+      "status": "Website content detected",
+      "title": "rrweb",
+      "app": {
+        "elements": 7,
+        "player": false,
+        "flexy": false,
+        "botcheck": false
+      }
+    },
+    "answerMs": 2
+  },
+  "peakRendererMB": 887,
+  "peakHeapMB": 439,
+  "requests": 22,
+  "failed": 0,
+  "byHost": {
+    "localhost:8782 script": 13,
+    "localhost:8782 fetch": 3,
+    "localhost:8782 document": 1,
+    "localhost:8782 stylesheet": 1,
+    "localhost:8782 other": 1,
+    "127.0.0.1:8099 document": 1,
+    "scramjet.wasm.js script": 1,
+    "localhost:8782 image": 1
+  },
+  "pageErrors": [],
+  "consoleErrors": [
+    "1.1s Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: InvalidData, error: InvalidCertificate(Other(OtherError(CaUsedAsEndEntity))) })) (client error (IO: Custom { kind: InvalidData, error: InvalidCertificate(Other(OtherError(CaUsedAsEndEntity))) } (invalid peer certificat",
+    "6.9s Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ]
+}

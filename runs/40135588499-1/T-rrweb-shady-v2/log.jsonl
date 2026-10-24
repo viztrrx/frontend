@@ -1,0 +1,210 @@
+{"t":0.6,"kind":"req","id":1,"method":"GET","type":"document","url":"http://localhost:8782/","sw":false}
+{"t":0.7,"kind":"req","id":2,"method":"GET","type":"script","url":"http://localhost:8782/scram/scramjet.js","sw":false}
+{"t":0.7,"kind":"req","id":3,"method":"GET","type":"script","url":"http://localhost:8782/controller/controller.api.js","sw":false}
+{"t":0.7,"kind":"req","id":4,"method":"GET","type":"script","url":"http://localhost:8782/engine2.js","sw":false}
+{"t":0.7,"kind":"req","id":5,"method":"GET","type":"stylesheet","url":"http://localhost:8782/index.css","sw":false}
+{"t":0.7,"kind":"req","id":6,"method":"GET","type":"script","url":"http://localhost:8782/register-sw.js","sw":false}
+{"t":0.7,"kind":"req","id":7,"method":"GET","type":"script","url":"http://localhost:8782/search.js","sw":false}
+{"t":0.7,"kind":"req","id":8,"method":"GET","type":"script","url":"http://localhost:8782/config.js","sw":false}
+{"t":0.7,"kind":"req","id":9,"method":"GET","type":"script","url":"http://localhost:8782/blocked.js","sw":false}
+{"t":0.7,"kind":"req","id":10,"method":"GET","type":"script","url":"http://localhost:8782/index.js","sw":false}
+{"t":0.7,"kind":"req","id":11,"method":"GET","type":"script","url":"http://localhost:8782/sessions.js","sw":false}
+{"t":0.7,"kind":"done","id":1,"status":200,"size":9650}
+{"t":0.7,"kind":"done","id":5,"status":200,"size":20762}
+{"t":0.7,"kind":"done","id":3,"status":200,"size":17099}
+{"t":0.7,"kind":"done","id":4,"status":200,"size":10566}
+{"t":0.7,"kind":"done","id":2,"status":200,"size":227123}
+{"t":0.7,"kind":"done","id":6,"status":200,"size":609}
+{"t":0.7,"kind":"done","id":7,"status":200,"size":940}
+{"t":0.7,"kind":"done","id":8,"status":200,"size":68}
+{"t":0.7,"kind":"done","id":9,"status":200,"size":4972}
+{"t":0.7,"kind":"done","id":10,"status":200,"size":61339}
+{"t":0.7,"kind":"done","id":11,"status":200,"size":16207}
+{"t":0.8,"kind":"done","id":12,"status":200,"size":915}
+{"t":0.8,"kind":"done","id":13,"status":200,"size":915}
+{"t":0.8,"kind":"req","id":14,"method":"GET","type":"script","url":"http://localhost:8782/sw.js","sw":true}
+{"t":0.8,"kind":"req","id":15,"method":"GET","type":"other","url":"http://localhost:8782/controller/controller.sw.js","sw":true}
+{"t":0.8,"kind":"mem","mb":[144,153,73]}
+{"t":0.8,"kind":"done","id":15,"status":200,"size":-272}
+{"t":0.8,"kind":"done","id":14,"status":200,"size":0}
+{"t":0.8,"kind":"req","id":16,"method":"GET","type":"script","url":"http://localhost:8782/epoxy/index.mjs","sw":false}
+{"t":0.9,"kind":"done","id":16,"status":200,"size":1717636}
+{"t":0.9,"kind":"console","type":"log","text":"service worker activated, notifying clients to revive"}
+{"t":1,"kind":"req","id":17,"method":"GET","type":"fetch","url":"http://localhost:8782/scram/scramjet.wasm","sw":false}
+{"t":1,"kind":"done","id":17,"status":200,"size":586293}
+{"t":1,"kind":"console","type":"error","text":"Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: InvalidData, error: InvalidCertificate(Other(OtherError(CaUsedAsEndEntity))) })) (client error (IO: Custom { kind: InvalidData, error: InvalidCertificate(Other(OtherError(CaUsedAsEndEntity))) } (invalid peer certificate: Other(OtherError(CaUsedAsEndEntity)))))\n    at imports.wbg.__wbindgen_error_new (http://localhost:8782/epoxy/index.mjs:1366:17)\n    at wasm://wasm/004c6846:wasm-function[2742]:0xde850\n    at wasm://wasm/004c6846:wasm-function[1833]:0xd177a\n    at wasm://wasm/004c6846:wasm-function[123]:0xc060\n   "}
+{"t":1,"kind":"mem","mb":[145,209,73]}
+{"t":1.2,"kind":"mem","mb":[145,209,103]}
+{"t":1.4,"kind":"mem","mb":[145,209,103]}
+{"t":1.6,"kind":"mem","mb":[145,209,103]}
+{"t":1.8,"kind":"mem","mb":[145,189,103]}
+{"t":2,"kind":"mem","mb":[145,189,103]}
+{"t":2.2,"kind":"mem","mb":[145,189,103]}
+{"t":2.3,"kind":"req","id":18,"method":"GET","type":"fetch","url":"http://localhost:8782/version.json","sw":false}
+{"t":2.3,"kind":"version","version":{"engine":2,"commit":"1039ecc4beb71d8ab270cf887b4284d009b88665","branch":"diag-youtube","message":"diag: minimal rrweb/ShadyDOM repro pages on Chrome 155","committedAt":"2026-10-24T21:45:03Z","builtAt":"2026-10-24T21:45:31.486Z"}}
+{"t":2.3,"kind":"done","id":18,"status":200,"size":266}
+{"t":2.3,"kind":"req","id":19,"method":"GET","type":"document","url":"http://127.0.0.1:8099/rrweb-shady","sw":false}
+{"t":2.3,"kind":"opened","video":"http://127.0.0.1:8099/rrweb-shady"}
+{"t":2.4,"kind":"req","id":20,"method":"GET","type":"script","url":"http://localhost:8782/scram/scramjet.js","sw":false}
+{"t":2.4,"kind":"req","id":21,"method":"GET","type":"script","url":"scramjet.wasm.js","sw":false}
+{"t":2.4,"kind":"req","id":22,"method":"GET","type":"script","url":"http://localhost:8782/controller/controller.inject.js","sw":false}
+{"t":2.4,"kind":"req","id":23,"method":"GET","type":"script","url":"http://127.0.0.1:8099/wc-sd.js","sw":false}
+{"t":2.4,"kind":"req","id":24,"method":"GET","type":"fetch","url":"http://localhost:8782/scram/scramjet.wasm","sw":false}
+{"t":2.4,"kind":"done","id":19,"status":200,"size":-285}
+{"t":2.4,"kind":"done","id":22,"status":200,"size":6449}
+{"t":2.4,"kind":"done","id":24,"status":200,"size":586293}
+{"t":2.4,"kind":"done","id":20,"status":200,"size":227123}
+{"t":2.4,"kind":"mem","mb":[145,230,103]}
+{"t":2.4,"kind":"done","id":23,"status":200,"size":-247}
+{"t":2.4,"kind":"done","id":21,"status":200,"size":-57}
+{"t":2.6,"kind":"mem","mb":[145,267,103]}
+{"t":2.8,"kind":"mem","mb":[145,299,103]}
+{"t":3,"kind":"mem","mb":[145,354,103]}
+{"t":3.2,"kind":"mem","mb":[145,397,103]}
+{"t":3.4,"kind":"mem","mb":[145,419,103]}
+{"t":3.6,"kind":"mem","mb":[145,440,103]}
+{"t":3.8,"kind":"mem","mb":[145,482,103]}
+{"t":4,"kind":"mem","mb":[145,513,103]}
+{"t":4.2,"kind":"mem","mb":[145,554,103]}
+{"t":4.4,"kind":"mem","mb":[145,589,103]}
+{"t":4.6,"kind":"mem","mb":[145,625,103]}
+{"t":4.8,"kind":"mem","mb":[145,661,103]}
+{"t":5,"kind":"mem","mb":[145,704,103]}
+{"t":5.2,"kind":"mem","mb":[145,740,103]}
+{"t":5.4,"kind":"mem","mb":[145,776,103]}
+{"t":5.6,"kind":"mem","mb":[145,812,103]}
+{"t":5.8,"kind":"mem","mb":[145,842,103]}
+{"t":6,"kind":"mem","mb":[145,869,103]}
+{"t":6.2,"kind":"mem","mb":[145,877,103]}
+{"t":6.4,"kind":"mem","mb":[145,887,103]}
+{"t":6.5,"kind":"tick","memory":[{"pid":2881,"mb":145},{"pid":2903,"mb":414},{"pid":2937,"mb":103}],"heap":{"usedMB":98,"totalMB":166,"nodes":1228,"docs":164,"frames":89},"video":{"status":"Website responded (HTTP 200)","title":"rrweb shady","app":{"elements":9,"player":false,"flexy":false,"botcheck":false}},"answerMs":3161}
+{"t":6.6,"kind":"req","id":25,"method":"GET","type":"image","url":"http://localhost:8782/icon?d=127.0.0.1","sw":false}
+{"t":6.6,"kind":"console","type":"error","text":"Failed to load resource: the server responded with a status of 404 (Not Found)"}
+{"t":6.6,"kind":"done","id":25,"status":404,"size":19}
+{"t":6.6,"kind":"mem","mb":[145,892,103]}
+{"t":6.8,"kind":"mem","mb":[145,892,103]}
+{"t":7,"kind":"mem","mb":[145,892,103]}
+{"t":7.2,"kind":"mem","mb":[145,892,103]}
+{"t":7.4,"kind":"mem","mb":[145,889,103]}
+{"t":7.5,"kind":"tick","memory":[{"pid":2881,"mb":145},{"pid":2903,"mb":889},{"pid":2937,"mb":103}],"heap":{"usedMB":454,"totalMB":524,"nodes":2471,"docs":470,"frames":405},"video":{"status":"Website content detected","title":"rrweb shady","app":{"elements":9,"player":false,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":7.6,"kind":"mem","mb":[145,889,103]}
+{"t":7.8,"kind":"mem","mb":[145,889,103]}
+{"t":8,"kind":"mem","mb":[145,889,103]}
+{"t":8.2,"kind":"mem","mb":[145,889,103]}
+{"t":8.4,"kind":"mem","mb":[145,889,103]}
+{"t":8.5,"kind":"tick","memory":[{"pid":2881,"mb":145},{"pid":2903,"mb":889},{"pid":2937,"mb":103}],"heap":{"usedMB":454,"totalMB":524,"nodes":2471,"docs":470,"frames":405},"video":{"status":"Website content detected","title":"rrweb shady","app":{"elements":9,"player":false,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":8.6,"kind":"mem","mb":[145,889,103]}
+{"t":8.8,"kind":"mem","mb":[145,889,103]}
+{"t":9,"kind":"mem","mb":[145,889,103]}
+{"t":9.2,"kind":"mem","mb":[145,889,103]}
+{"t":9.4,"kind":"mem","mb":[145,889,103]}
+{"t":9.5,"kind":"tick","memory":[{"pid":2881,"mb":145},{"pid":2903,"mb":889},{"pid":2937,"mb":103}],"heap":{"usedMB":454,"totalMB":524,"nodes":2471,"docs":470,"frames":405},"video":{"status":"Website content detected","title":"rrweb shady","app":{"elements":9,"player":false,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":9.6,"kind":"mem","mb":[145,889,103]}
+{"t":9.8,"kind":"mem","mb":[145,889,103]}
+{"t":10,"kind":"mem","mb":[145,889,103]}
+{"t":10.2,"kind":"mem","mb":[145,889,103]}
+{"t":10.4,"kind":"mem","mb":[145,889,103]}
+{"t":10.6,"kind":"tick","memory":[{"pid":2881,"mb":145},{"pid":2903,"mb":889},{"pid":2937,"mb":103}],"heap":{"usedMB":454,"totalMB":524,"nodes":2471,"docs":470,"frames":405},"video":{"status":"Website content detected","title":"rrweb shady","app":{"elements":9,"player":false,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":10.6,"kind":"mem","mb":[144,887,103]}
+{"t":10.8,"kind":"mem","mb":[144,887,103]}
+{"t":11,"kind":"mem","mb":[144,887,103]}
+{"t":11.2,"kind":"mem","mb":[144,887,103]}
+{"t":11.4,"kind":"mem","mb":[144,887,103]}
+{"t":11.6,"kind":"tick","memory":[{"pid":2881,"mb":144},{"pid":2903,"mb":887},{"pid":2937,"mb":103}],"heap":{"usedMB":454,"totalMB":524,"nodes":2471,"docs":470,"frames":405},"video":{"status":"Website content detected","title":"rrweb shady","app":{"elements":9,"player":false,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":11.6,"kind":"mem","mb":[144,885,103]}
+{"t":11.8,"kind":"mem","mb":[144,883,103]}
+{"t":12,"kind":"mem","mb":[144,883,103]}
+{"t":12.2,"kind":"mem","mb":[144,883,103]}
+{"t":12.4,"kind":"mem","mb":[144,883,103]}
+{"t":12.6,"kind":"tick","memory":[{"pid":2881,"mb":144},{"pid":2903,"mb":883},{"pid":2937,"mb":103}],"heap":{"usedMB":454,"totalMB":524,"nodes":2471,"docs":470,"frames":405},"video":{"status":"Website content detected","title":"rrweb shady","app":{"elements":9,"player":false,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":12.6,"kind":"mem","mb":[144,883,103]}
+{"t":12.8,"kind":"mem","mb":[144,883,103]}
+{"t":13,"kind":"mem","mb":[144,883,103]}
+{"t":13.2,"kind":"mem","mb":[144,883,103]}
+{"t":13.4,"kind":"mem","mb":[144,883,103]}
+{"t":13.6,"kind":"tick","memory":[{"pid":2881,"mb":144},{"pid":2903,"mb":883},{"pid":2937,"mb":103}],"heap":{"usedMB":454,"totalMB":524,"nodes":2471,"docs":470,"frames":405},"video":{"status":"Website content detected","title":"rrweb shady","app":{"elements":9,"player":false,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":13.6,"kind":"mem","mb":[144,883,103]}
+{"t":13.8,"kind":"mem","mb":[144,883,103]}
+{"t":14,"kind":"mem","mb":[144,883,103]}
+{"t":14.2,"kind":"mem","mb":[144,883,103]}
+{"t":14.4,"kind":"mem","mb":[144,882,103]}
+{"t":14.6,"kind":"tick","memory":[{"pid":2881,"mb":144},{"pid":2903,"mb":882},{"pid":2937,"mb":103}],"heap":{"usedMB":454,"totalMB":524,"nodes":2471,"docs":470,"frames":405},"video":{"status":"Website content detected","title":"rrweb shady","app":{"elements":9,"player":false,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":14.6,"kind":"mem","mb":[144,882,103]}
+{"t":14.8,"kind":"mem","mb":[144,882,103]}
+{"t":15,"kind":"mem","mb":[144,882,103]}
+{"t":15.2,"kind":"mem","mb":[144,882,103]}
+{"t":15.4,"kind":"mem","mb":[144,882,103]}
+{"t":15.6,"kind":"tick","memory":[{"pid":2881,"mb":144},{"pid":2903,"mb":882},{"pid":2937,"mb":103}],"heap":{"usedMB":454,"totalMB":524,"nodes":2471,"docs":470,"frames":405},"video":{"status":"Website content detected","title":"rrweb shady","app":{"elements":9,"player":false,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":15.6,"kind":"mem","mb":[144,882,103]}
+{"t":15.8,"kind":"mem","mb":[144,882,103]}
+{"t":16,"kind":"mem","mb":[144,882,103]}
+{"t":16.2,"kind":"mem","mb":[144,882,103]}
+{"t":16.4,"kind":"mem","mb":[144,882,103]}
+{"t":16.6,"kind":"tick","memory":[{"pid":2881,"mb":144},{"pid":2903,"mb":882},{"pid":2937,"mb":103}],"heap":{"usedMB":454,"totalMB":524,"nodes":2471,"docs":470,"frames":405},"video":{"status":"Website content detected","title":"rrweb shady","app":{"elements":9,"player":false,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":16.6,"kind":"mem","mb":[144,882,103]}
+{"t":16.8,"kind":"mem","mb":[144,882,103]}
+{"t":17,"kind":"mem","mb":[144,882,103]}
+{"t":17.2,"kind":"mem","mb":[144,882,103]}
+{"t":17.4,"kind":"mem","mb":[144,882,103]}
+{"t":17.6,"kind":"tick","memory":[{"pid":2881,"mb":144},{"pid":2903,"mb":882},{"pid":2937,"mb":103}],"heap":{"usedMB":454,"totalMB":524,"nodes":2471,"docs":470,"frames":405},"video":{"status":"Website content detected","title":"rrweb shady","app":{"elements":9,"player":false,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":17.6,"kind":"mem","mb":[144,882,103]}
+{"t":17.8,"kind":"mem","mb":[144,882,103]}
+{"t":18,"kind":"mem","mb":[144,882,103]}
+{"t":18.2,"kind":"mem","mb":[144,882,103]}
+{"t":18.4,"kind":"mem","mb":[144,882,103]}
+{"t":18.6,"kind":"tick","memory":[{"pid":2881,"mb":144},{"pid":2903,"mb":882},{"pid":2937,"mb":103}],"heap":{"usedMB":454,"totalMB":524,"nodes":2471,"docs":470,"frames":405},"video":{"status":"Website content detected","title":"rrweb shady","app":{"elements":9,"player":false,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":18.6,"kind":"mem","mb":[144,882,103]}
+{"t":18.8,"kind":"mem","mb":[144,882,103]}
+{"t":19,"kind":"mem","mb":[144,882,103]}
+{"t":19.2,"kind":"mem","mb":[144,882,103]}
+{"t":19.4,"kind":"mem","mb":[144,882,103]}
+{"t":19.6,"kind":"tick","memory":[{"pid":2881,"mb":144},{"pid":2903,"mb":882},{"pid":2937,"mb":103}],"heap":{"usedMB":454,"totalMB":524,"nodes":2471,"docs":470,"frames":405},"video":{"status":"Website content detected","title":"rrweb shady","app":{"elements":9,"player":false,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":19.6,"kind":"mem","mb":[144,882,103]}
+{"t":19.8,"kind":"mem","mb":[144,882,103]}
+{"t":20,"kind":"mem","mb":[144,882,103]}
+{"t":20.2,"kind":"mem","mb":[144,882,103]}
+{"t":20.4,"kind":"mem","mb":[144,882,103]}
+{"t":20.6,"kind":"mem","mb":[144,882,103]}
+{"t":20.6,"kind":"tick","memory":[{"pid":2881,"mb":144},{"pid":2903,"mb":882},{"pid":2937,"mb":103}],"heap":{"usedMB":454,"totalMB":524,"nodes":2471,"docs":470,"frames":405},"video":{"status":"Website content detected","title":"rrweb shady","app":{"elements":9,"player":false,"flexy":false,"botcheck":false}},"answerMs":8}
+{"t":20.8,"kind":"mem","mb":[144,882,103]}
+{"t":21,"kind":"mem","mb":[144,882,103]}
+{"t":21.2,"kind":"mem","mb":[144,882,103]}
+{"t":21.4,"kind":"mem","mb":[144,882,103]}
+{"t":21.6,"kind":"mem","mb":[144,882,103]}
+{"t":21.7,"kind":"tick","memory":[{"pid":2881,"mb":144},{"pid":2903,"mb":882},{"pid":2937,"mb":103}],"heap":{"usedMB":454,"totalMB":524,"nodes":2471,"docs":470,"frames":405},"video":{"status":"Website content detected","title":"rrweb shady","app":{"elements":9,"player":false,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":21.8,"kind":"mem","mb":[144,882,103]}
+{"t":22,"kind":"mem","mb":[144,882,103]}
+{"t":22.3,"kind":"mem","mb":[144,882,103]}
+{"t":22.5,"kind":"mem","mb":[144,882,103]}
+{"t":22.7,"kind":"mem","mb":[144,882,103]}
+{"t":22.7,"kind":"tick","memory":[{"pid":2881,"mb":144},{"pid":2903,"mb":882},{"pid":2937,"mb":103}],"heap":{"usedMB":454,"totalMB":524,"nodes":2471,"docs":470,"frames":405},"video":{"status":"Website content detected","title":"rrweb shady","app":{"elements":9,"player":false,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":22.9,"kind":"mem","mb":[144,882,103]}
+{"t":23.1,"kind":"mem","mb":[144,882,103]}
+{"t":23.3,"kind":"mem","mb":[144,882,103]}
+{"t":23.5,"kind":"mem","mb":[144,882,103]}
+{"t":23.7,"kind":"mem","mb":[144,882,103]}
+{"t":23.7,"kind":"tick","memory":[{"pid":2881,"mb":144},{"pid":2903,"mb":882},{"pid":2937,"mb":103}],"heap":{"usedMB":455,"totalMB":524,"nodes":2471,"docs":470,"frames":405},"video":{"status":"Website content detected","title":"rrweb shady","app":{"elements":9,"player":false,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":23.9,"kind":"mem","mb":[144,882,103]}
+{"t":24.1,"kind":"mem","mb":[144,882,103]}
+{"t":24.3,"kind":"mem","mb":[144,882,103]}
+{"t":24.5,"kind":"mem","mb":[144,882,103]}
+{"t":24.7,"kind":"mem","mb":[144,882,103]}
+{"t":24.7,"kind":"tick","memory":[{"pid":2881,"mb":144},{"pid":2903,"mb":882},{"pid":2937,"mb":103}],"heap":{"usedMB":455,"totalMB":524,"nodes":2471,"docs":470,"frames":405},"video":{"status":"Website content detected","title":"rrweb shady","app":{"elements":9,"player":false,"flexy":false,"botcheck":false}},"answerMs":3}
+{"t":24.9,"kind":"mem","mb":[144,882,103]}
+{"t":25.1,"kind":"mem","mb":[144,882,103]}
+{"t":25.3,"kind":"mem","mb":[144,882,103]}
+{"t":25.5,"kind":"mem","mb":[144,882,103]}
+{"t":25.7,"kind":"mem","mb":[144,882,103]}
+{"t":25.7,"kind":"tick","memory":[{"pid":2881,"mb":144},{"pid":2903,"mb":882},{"pid":2937,"mb":103}],"heap":{"usedMB":455,"totalMB":524,"nodes":2471,"docs":470,"frames":405},"video":{"status":"Website content detected","title":"rrweb shady","app":{"elements":9,"player":false,"flexy":false,"botcheck":false}},"answerMs":1}
+{"t":25.9,"kind":"mem","mb":[144,882,103]}
+{"t":26.1,"kind":"mem","mb":[144,882,103]}
+{"t":26.3,"kind":"mem","mb":[144,882,103]}
+{"t":26.5,"kind":"mem","mb":[144,882,103]}
+{"t":26.7,"kind":"mem","mb":[144,882,103]}
+{"t":26.7,"kind":"tick","memory":[{"pid":2881,"mb":144},{"pid":2903,"mb":882},{"pid":2937,"mb":103}],"heap":{"usedMB":455,"totalMB":524,"nodes":2471,"docs":470,"frames":405},"video":{"status":"Website content detected","title":"rrweb shady","app":{"elements":9,"player":false,"flexy":false,"botcheck":false}},"answerMs":2}
+{"t":26.9,"kind":"mem","mb":[144,882,103]}
+{"t":27.1,"kind":"mem","mb":[144,882,103]}
+{"t":27.3,"kind":"mem","mb":[144,882,103]}
+{"t":27.5,"kind":"mem","mb":[144,882,103]}
+{"t":27.7,"kind":"mem","mb":[144,882,103]}
+{"t":27.7,"kind":"tick","memory":[{"pid":2881,"mb":144},{"pid":2903,"mb":882},{"pid":2937,"mb":103}],"heap":{"usedMB":455,"totalMB":524,"nodes":2471,"docs":470,"frames":405},"video":{"status":"Website content detected","title":"rrweb shady","app":{"elements":9,"player":false,"flexy":false,"botcheck":false}},"answerMs":2}

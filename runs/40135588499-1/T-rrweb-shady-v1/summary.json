@@ -1,0 +1,69 @@
+{
+  "target": "http://localhost:8781",
+  "transport": "libcurl",
+  "block": "",
+  "shots": false,
+  "sjconfig": "",
+  "fix": "",
+  "noprobe": false,
+  "crashed": false,
+  "lastTick": {
+    "t": 27.7,
+    "kind": "tick",
+    "memory": [
+      {
+        "pid": 3260,
+        "mb": 145
+      },
+      {
+        "pid": 3269,
+        "mb": 565
+      },
+      {
+        "pid": 3297,
+        "mb": 133
+      },
+      {
+        "pid": 3357,
+        "mb": 103
+      }
+    ],
+    "heap": {
+      "usedMB": 209,
+      "totalMB": 268,
+      "nodes": 3082,
+      "docs": 594,
+      "frames": 405
+    },
+    "video": {
+      "status": "Website content detected",
+      "title": "rrweb shady",
+      "app": {
+        "elements": 10,
+        "player": false,
+        "flexy": false,
+        "botcheck": false
+      }
+    },
+    "answerMs": 1
+  },
+  "peakRendererMB": 573,
+  "peakHeapMB": 209,
+  "requests": 31,
+  "failed": 0,
+  "byHost": {
+    "localhost:8781 script": 12,
+    "localhost:8781 fetch": 9,
+    "localhost:8781 other": 4,
+    "localhost:8781 image": 2,
+    "localhost:8781 document": 1,
+    "localhost:8781 stylesheet": 1,
+    "127.0.0.1:8099 document": 1,
+    "127.0.0.1:8099 script": 1
+  },
+  "pageErrors": [],
+  "consoleErrors": [
+    "2.1s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "4.6s Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ]
+}
