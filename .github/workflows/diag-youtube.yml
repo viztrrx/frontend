@@ -35,7 +35,8 @@ jobs:
       - name: Start the local proxy
         run: |
           openssl req -x509 -newkey rsa:2048 -nodes -keyout /tmp/key.pem -out /tmp/cert.pem -days 2 -subj "/CN=localhost" -addext "subjectAltName=DNS:localhost" 2>/dev/null
-          WISP_JS_PATH=/tmp/wisp/node_modules/@mercuryworkshop/wisp-js/src/entrypoints/server.mjs \
+          nohup node diag/test-site.mjs > /tmp/test-site.log 2>&1 &
+          LAB_LOCAL=1 WISP_JS_PATH=/tmp/wisp/node_modules/@mercuryworkshop/wisp-js/src/entrypoints/server.mjs \
             nohup node diag/lab-server.mjs /tmp/dist1 /tmp/dist2 /tmp/cert.pem /tmp/key.pem > /tmp/lab-server.log 2>&1 &
           sleep 3; cat /tmp/lab-server.log
       - name: Save YouTube's desktop scripts for offline study
@@ -58,13 +59,14 @@ jobs:
           while IFS=';' read -r name port transport block extra; do
             [ -z "$name" ] && continue
             mkdir -p "out/$name"
-            timeout 240 xvfb-run -a node diag/youtube.mjs --headed --insecure --url "http://localhost:$port" --transport "$transport" --block "$block" $extra --video "$VIDEO" --seconds 60 --out "out/$name" 2> "out/$name/browser.log" > "out/$name/stdout.txt" || true
+            timeout 240 xvfb-run -a node diag/youtube.mjs --headed --insecure --url "http://localhost:$port" --transport "$transport" --video "$VIDEO" --block "$block" $extra --seconds 25 --out "out/$name" 2> "out/$name/browser.log" > "out/$name/stdout.txt" || true
             echo "== $name crashed=$(grep -o '"crashed": [a-z]*' "out/$name/stdout.txt")"
             grep -iE "fatal|check failed|out of memory|oom|v8|renderer|crash" "out/$name/browser.log" | grep -viE "crashpad|cpufreq" | head -15 || true
           done <<'RUNS'
-          V-hasinstance;8782;epoxy;;--fix V:hasinstance
-          V-hasinstance-libcurl;8782;libcurl;;--fix V:hasinstance
-          V-orig;8782;epoxy;;--fix V:orig
+          T-rrweb-v2;8782;epoxy;;--video http://127.0.0.1:8099/rrweb
+          T-rrweb-shady-v2;8782;epoxy;;--video http://127.0.0.1:8099/rrweb-shady
+          T-rrweb-shady-v1;8781;libcurl;;--video http://127.0.0.1:8099/rrweb-shady
+          T-rrweb-shady-direct;8782;epoxy;;--direct --video http://127.0.0.1:8099/rrweb-shady
           RUNS
           cp /tmp/lab-server.log out/
       - name: Save results to the diag-results branch
