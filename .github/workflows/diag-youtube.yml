@@ -41,7 +41,7 @@ jobs:
           DEBUG: pw:browser
         run: |
           google-chrome --version
-          node diag/youtube.mjs --url "${{ matrix.url }}" --transport "${{ matrix.transport }}" --out "out/${{ matrix.name }}" 2> "out-${{ matrix.name }}-browser.log" || true
+          xvfb-run -a node diag/youtube.mjs --headed --url "${{ matrix.url }}" --transport "${{ matrix.transport }}" --out "out/${{ matrix.name }}" 2> "out-${{ matrix.name }}-browser.log" || true
           mkdir -p "out/${{ matrix.name }}" && mv "out-${{ matrix.name }}-browser.log" "out/${{ matrix.name }}/browser.log"
           grep -iE "fatal|check failed|oom|out of memory|crash|trap|signal" "out/${{ matrix.name }}/browser.log" | head -40 || true
       - name: Save results to the diag-results branch

@@ -15,6 +15,7 @@ const { values: args } = parseArgs({
     out: { type: "string", default: "out" },
     seconds: { type: "string", default: "75" },
     channel: { type: "string", default: "chrome" },
+    headed: { type: "boolean", default: false },
   },
 });
 const { chromium } = await import(process.env.PLAYWRIGHT_PATH || "playwright");
@@ -44,6 +45,8 @@ const decode = (u) => {
 
 const browser = await chromium.launch({
   channel: args.channel === "chromium" ? undefined : args.channel,
+  // Headed (under xvfb in CI): YouTube asks headless Chrome to sign in.
+  headless: !args.headed,
   args: ["--autoplay-policy=no-user-gesture-required", "--enable-precise-memory-info"],
 });
 const context = await browser.newContext({ viewport: { width: 1280, height: 800 } });
