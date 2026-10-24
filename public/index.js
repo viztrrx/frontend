@@ -718,6 +718,18 @@ loadPreference("sj-search-engine", (value) => {
   if ([...(searchEngine.options || [])].some((option) => option.value === value)) searchEngine.value = value;
 });
 searchEngine.addEventListener?.("change", () => savePreference("sj-search-engine", searchEngine.value));
+
+// YouTube-via-Invidious instance field (youtube.js does the mapping).
+const ytInstance = document.getElementById("sj-yt-instance");
+if (ytInstance && globalThis.saintsYouTube) {
+  ytInstance.value = globalThis.saintsYouTube.readInstance();
+  const saveYt = () => {
+    globalThis.saintsYouTube.writeInstance(ytInstance.value);
+    ytInstance.value = globalThis.saintsYouTube.readInstance();
+  };
+  ytInstance.addEventListener("change", saveYt);
+  ytInstance.addEventListener("blur", saveYt);
+}
 // Sites always open under the toolbar, like Chrome: the old "full tab"
 // option (it replaced this page, toolbar and all) is gone with its setting.
 try { localStorage.removeItem("sj-fulltab"); } catch {}
@@ -1040,6 +1052,7 @@ async function warmUp() {
 
 async function openUrl(url, { retry = false } = {}) {
   if (busy) return;
+  url = globalThis.saintsYouTube ? globalThis.saintsYouTube.mapYouTubeUrl(url) : url;
   // Signed in from the Saints console, sites open inside a session
   // (sessions.js): start or resume one first, then this site opens.
   if (!retry && globalThis.saintsSessions?.required?.()) {
@@ -1224,6 +1237,7 @@ function readTitle(element) {
 // Somewhere new while a site is open: navigate the same frame, so Back
 // returns to the page before it (a fresh frame would lose that).
 function navigateFrame(url) {
+  url = globalThis.saintsYouTube ? globalThis.saintsYouTube.mapYouTubeUrl(url) : url;
   lastUrl = url;
   transportRetried = false;
   followRedirect = false;
