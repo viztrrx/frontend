@@ -1,0 +1,2493 @@
+[
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 1,
+  "method": "GET",
+  "type": "document",
+  "url": "http://localhost:8782/",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 2,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/scram/scramjet.js",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 3,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/controller/controller.api.js",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 4,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/engine2.js",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 5,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "http://localhost:8782/index.css",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 6,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/register-sw.js",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 7,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/search.js",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 8,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/config.js",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 9,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/blocked.js",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 10,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/index.js",
+  "sw": false
+ },
+ {
+  "t": 0.7,
+  "kind": "req",
+  "id": 11,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/sessions.js",
+  "sw": false
+ },
+ {
+  "t": 0.8,
+  "kind": "done",
+  "id": 1,
+  "status": 200,
+  "size": 9650
+ },
+ {
+  "t": 0.8,
+  "kind": "done",
+  "id": 5,
+  "status": 200,
+  "size": 20762
+ },
+ {
+  "t": 0.8,
+  "kind": "done",
+  "id": 3,
+  "status": 200,
+  "size": 17099
+ },
+ {
+  "t": 0.8,
+  "kind": "done",
+  "id": 4,
+  "status": 200,
+  "size": 10566
+ },
+ {
+  "t": 0.8,
+  "kind": "done",
+  "id": 6,
+  "status": 200,
+  "size": 609
+ },
+ {
+  "t": 0.8,
+  "kind": "done",
+  "id": 7,
+  "status": 200,
+  "size": 940
+ },
+ {
+  "t": 0.8,
+  "kind": "done",
+  "id": 2,
+  "status": 200,
+  "size": 227123
+ },
+ {
+  "t": 0.8,
+  "kind": "done",
+  "id": 8,
+  "status": 200,
+  "size": 68
+ },
+ {
+  "t": 0.8,
+  "kind": "done",
+  "id": 9,
+  "status": 200,
+  "size": 4972
+ },
+ {
+  "t": 0.8,
+  "kind": "done",
+  "id": 10,
+  "status": 200,
+  "size": 61339
+ },
+ {
+  "t": 0.8,
+  "kind": "done",
+  "id": 11,
+  "status": 200,
+  "size": 16207
+ },
+ {
+  "t": 0.9,
+  "kind": "mem",
+  "mb": [
+   121,
+   132,
+   72
+  ]
+ },
+ {
+  "t": 0.9,
+  "kind": "done",
+  "id": 12,
+  "status": 200,
+  "size": 915
+ },
+ {
+  "t": 0.9,
+  "kind": "done",
+  "id": 13,
+  "status": 200,
+  "size": 915
+ },
+ {
+  "t": 0.9,
+  "kind": "req",
+  "id": 14,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/sw.js",
+  "sw": true
+ },
+ {
+  "t": 0.9,
+  "kind": "req",
+  "id": 15,
+  "method": "GET",
+  "type": "other",
+  "url": "http://localhost:8782/controller/controller.sw.js",
+  "sw": true
+ },
+ {
+  "t": 0.9,
+  "kind": "done",
+  "id": 15,
+  "status": 200,
+  "size": -272
+ },
+ {
+  "t": 0.9,
+  "kind": "req",
+  "id": 16,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/libcurl/index.mjs",
+  "sw": false
+ },
+ {
+  "t": 1,
+  "kind": "done",
+  "id": 16,
+  "status": 200,
+  "size": 2113850
+ },
+ {
+  "t": 1,
+  "kind": "console",
+  "type": "log",
+  "text": "service worker activated, notifying clients to revive"
+ },
+ {
+  "t": 1.1,
+  "kind": "mem",
+  "mb": [
+   146,
+   169,
+   73
+  ]
+ },
+ {
+  "t": 1.1,
+  "kind": "console",
+  "type": "log",
+  "text": "loaded libcurl.js v0.7.5"
+ },
+ {
+  "t": 1.1,
+  "kind": "console",
+  "type": "log",
+  "text": "running libcurl.js v0.7.5"
+ },
+ {
+  "t": 1.1,
+  "kind": "req",
+  "id": 17,
+  "method": "GET",
+  "type": "fetch",
+  "url": "http://localhost:8782/scram/scramjet.wasm",
+  "sw": false
+ },
+ {
+  "t": 1.1,
+  "kind": "done",
+  "id": 17,
+  "status": 200,
+  "size": 586293
+ },
+ {
+  "t": 1.1,
+  "kind": "console",
+  "type": "error",
+  "text": "Request \"https://localhost:4443/health\" failed with error code 35: SSL connect error"
+ },
+ {
+  "t": 1.3,
+  "kind": "mem",
+  "mb": [
+   146,
+   179,
+   77
+  ]
+ },
+ {
+  "t": 1.5,
+  "kind": "mem",
+  "mb": [
+   146,
+   179,
+   103
+  ]
+ },
+ {
+  "t": 1.7,
+  "kind": "mem",
+  "mb": [
+   146,
+   179,
+   103
+  ]
+ },
+ {
+  "t": 1.9,
+  "kind": "mem",
+  "mb": [
+   146,
+   179,
+   103
+  ]
+ },
+ {
+  "t": 2.1,
+  "kind": "mem",
+  "mb": [
+   146,
+   179,
+   103
+  ]
+ },
+ {
+  "t": 2.3,
+  "kind": "mem",
+  "mb": [
+   146,
+   179,
+   103
+  ]
+ },
+ {
+  "t": 2.4,
+  "kind": "req",
+  "id": 18,
+  "method": "GET",
+  "type": "fetch",
+  "url": "http://localhost:8782/version.json",
+  "sw": false
+ },
+ {
+  "t": 2.4,
+  "kind": "version",
+  "version": {
+   "engine": 2,
+   "commit": "5c00dbbaca4480570c9ef131336a178e9c892743",
+   "branch": "diag-youtube",
+   "message": "diag: trace who reads the replaced ShadowRoot",
+   "committedAt": "2026-10-24T21:32:55Z",
+   "builtAt": "2026-10-24T21:33:24.500Z"
+  }
+ },
+ {
+  "t": 2.4,
+  "kind": "done",
+  "id": 18,
+  "status": 200,
+  "size": 257
+ },
+ {
+  "t": 2.4,
+  "kind": "req",
+  "id": 19,
+  "method": "GET",
+  "type": "document",
+  "url": "https://www.youtube.com/watch?v=jNQXAC9IVRw",
+  "sw": false
+ },
+ {
+  "t": 2.5,
+  "kind": "mem",
+  "mb": [
+   146,
+   191,
+   103
+  ]
+ },
+ {
+  "t": 2.5,
+  "kind": "opened",
+  "video": "https://www.youtube.com/watch?v=jNQXAC9IVRw"
+ },
+ {
+  "t": 2.7,
+  "kind": "mem",
+  "mb": [
+   146,
+   196,
+   103
+  ]
+ },
+ {
+  "t": 2.9,
+  "kind": "mem",
+  "mb": [
+   146,
+   216,
+   103
+  ]
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 20,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/scram/scramjet.js",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 21,
+  "method": "GET",
+  "type": "script",
+  "url": "scramjet.wasm.js",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 22,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/controller/controller.inject.js",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 23,
+  "method": "GET",
+  "type": "other",
+  "url": "https://i.ytimg.com/generate_204",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 24,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/base.js",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 25,
+  "method": "GET",
+  "type": "image",
+  "url": "https://i.ytimg.com/vi/jNQXAC9IVRw/hqdefault.jpg",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 26,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/_/ytmainappweb/_/js/k=ytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O/am=AAAAABAAEICU/d=1/br=1/rs=AGKMywEjYeRliTUTGR3mqOvVlw2C226fnA/m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 27,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/web-animations-next-lite.min.vflset/web-animations-next-lite.min.js",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 28,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/custom-elements-es5-adapter.vflset/custom-elements-es5-adapter.js",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 29,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/webcomponents-sd.vflset/webcomponents-sd.js",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 30,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/intersection-observer.min.vflset/intersection-observer.min.js",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 31,
+  "method": "GET",
+  "type": "fetch",
+  "url": "http://localhost:8782/scram/scramjet.wasm",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 32,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/scheduler.vflset/scheduler.js",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 33,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/www-i18n-constants-en_US.vflset/www-i18n-constants.js",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 34,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=YouTube+Sans:wght@300..900&display=swap",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 35,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/www-player.css",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 36,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-main-desktop-watch-page-skeleton.css",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 37,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-main-desktop-player-skeleton.css",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 38,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-onepick.css",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 39,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/_/ytmainappweb/_/ss/k=ytmainappweb.kevlar_base.NZ7X3F12ieY.L.B1.O/am=AAAAABDAEMCe/d=0/br=1/rs=AGKMywFXHx2rgLLLhdwwkpv7vW7RgKu6OQ",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 40,
+  "method": "GET",
+  "type": "other",
+  "url": "https://rr3---sn-nx5e6nl7.googlevideo.com/generate_204",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 41,
+  "method": "GET",
+  "type": "other",
+  "url": "https://rr3---sn-nx5e6nl7.c.youtube.com/generate_204",
+  "sw": false
+ },
+ {
+  "t": 3,
+  "kind": "req",
+  "id": 42,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/spf.vflset/spf.js",
+  "sw": false
+ },
+ {
+  "t": 3.1,
+  "kind": "mem",
+  "mb": [
+   146,
+   249,
+   103
+  ]
+ },
+ {
+  "t": 3.1,
+  "kind": "req",
+  "id": 43,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/network.vflset/network.js",
+  "sw": false
+ },
+ {
+  "t": 3.1,
+  "kind": "done",
+  "id": 22,
+  "status": 200,
+  "size": 6449
+ },
+ {
+  "t": 3.1,
+  "kind": "done",
+  "id": 20,
+  "status": 200,
+  "size": 227123
+ },
+ {
+  "t": 3.1,
+  "kind": "done",
+  "id": 19,
+  "status": 200,
+  "size": -10152
+ },
+ {
+  "t": 3.1,
+  "kind": "req",
+  "id": 44,
+  "method": "GET",
+  "type": "image",
+  "url": "http://localhost:8782/icon?d=youtube.com",
+  "sw": false
+ },
+ {
+  "t": 3.1,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+ },
+ {
+  "t": 3.1,
+  "kind": "done",
+  "id": 44,
+  "status": 404,
+  "size": 19
+ },
+ {
+  "t": 3.1,
+  "kind": "req",
+  "id": 45,
+  "method": "GET",
+  "type": "fetch",
+  "url": "http://localhost:8782/diag-wc/trace.js",
+  "sw": false
+ },
+ {
+  "t": 3.2,
+  "kind": "done",
+  "id": 31,
+  "status": 200,
+  "size": 586293
+ },
+ {
+  "t": 3.2,
+  "kind": "done",
+  "id": 45,
+  "status": 200,
+  "size": 79284
+ },
+ {
+  "t": 3.2,
+  "kind": "console",
+  "type": "log",
+  "text": "diag variant served: V:trace 79270"
+ },
+ {
+  "t": 3.2,
+  "kind": "done",
+  "id": 21,
+  "status": 200,
+  "size": -57
+ },
+ {
+  "t": 3.3,
+  "kind": "mem",
+  "mb": [
+   146,
+   274,
+   103
+  ]
+ },
+ {
+  "t": 3.3,
+  "kind": "done",
+  "id": 29,
+  "status": 200,
+  "size": -50
+ },
+ {
+  "t": 3.5,
+  "kind": "mem",
+  "mb": [
+   146,
+   308,
+   103
+  ]
+ },
+ {
+  "t": 3.5,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3002,
+    "mb": 146
+   },
+   {
+    "pid": 3011,
+    "mb": 316
+   },
+   {
+    "pid": 3036,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 38,
+   "totalMB": 45,
+   "nodes": 535,
+   "docs": 5,
+   "frames": 5
+  },
+  "video": {
+   "status": "Website responded (HTTP 200)",
+   "title": "",
+   "app": {
+    "elements": 22,
+    "player": false,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 62
+ },
+ {
+  "t": 3.6,
+  "kind": "done",
+  "id": 27,
+  "status": 200,
+  "size": -730
+ },
+ {
+  "t": 3.6,
+  "kind": "done",
+  "id": 28,
+  "status": 200,
+  "size": -728
+ },
+ {
+  "t": 3.6,
+  "kind": "done",
+  "id": 30,
+  "status": 200,
+  "size": -731
+ },
+ {
+  "t": 3.7,
+  "kind": "mem",
+  "mb": [
+   146,
+   385,
+   103
+  ]
+ },
+ {
+  "t": 3.7,
+  "kind": "done",
+  "id": 24,
+  "status": 200,
+  "size": -733
+ },
+ {
+  "t": 3.7,
+  "kind": "done",
+  "id": 32,
+  "status": 200,
+  "size": -731
+ },
+ {
+  "t": 3.8,
+  "kind": "done",
+  "id": 33,
+  "status": 200,
+  "size": -731
+ },
+ {
+  "t": 3.9,
+  "kind": "mem",
+  "mb": [
+   146,
+   400,
+   103
+  ]
+ },
+ {
+  "t": 4.1,
+  "kind": "mem",
+  "mb": [
+   146,
+   448,
+   103
+  ]
+ },
+ {
+  "t": 4.3,
+  "kind": "mem",
+  "mb": [
+   146,
+   542,
+   103
+  ]
+ },
+ {
+  "t": 4.3,
+  "kind": "done",
+  "id": 36,
+  "status": 200,
+  "size": -723
+ },
+ {
+  "t": 4.3,
+  "kind": "done",
+  "id": 37,
+  "status": 200,
+  "size": -721
+ },
+ {
+  "t": 4.3,
+  "kind": "done",
+  "id": 38,
+  "status": 200,
+  "size": -722
+ },
+ {
+  "t": 4.3,
+  "kind": "done",
+  "id": 23,
+  "status": 204,
+  "size": -121
+ },
+ {
+  "t": 4.3,
+  "kind": "done",
+  "id": 34,
+  "status": 200,
+  "size": -699
+ },
+ {
+  "t": 4.3,
+  "kind": "done",
+  "id": 35,
+  "status": 200,
+  "size": -722
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 39,
+  "status": 200,
+  "size": -680
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 40,
+  "status": 204,
+  "size": -720
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 43,
+  "status": 200,
+  "size": -731
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 42,
+  "status": 200,
+  "size": -731
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 41,
+  "status": 204,
+  "size": -720
+ },
+ {
+  "t": 4.5,
+  "kind": "mem",
+  "mb": [
+   146,
+   563,
+   103
+  ]
+ },
+ {
+  "t": 4.5,
+  "kind": "req",
+  "id": 46,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/offline.js",
+  "sw": false
+ },
+ {
+  "t": 4.5,
+  "kind": "req",
+  "id": 48,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/remote.js",
+  "sw": false
+ },
+ {
+  "t": 4.5,
+  "kind": "req",
+  "id": 49,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/miniplayer.js",
+  "sw": false
+ },
+ {
+  "t": 4.5,
+  "kind": "req",
+  "id": 50,
+  "method": "GET",
+  "type": "document",
+  "url": "https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3D%252Fsignin_passive%26feature%3Dpassive&hl=en",
+  "sw": false
+ },
+ {
+  "t": 4.5,
+  "kind": "done",
+  "id": 25,
+  "status": 200,
+  "size": -558
+ },
+ {
+  "t": 4.6,
+  "kind": "req",
+  "id": 51,
+  "method": "GET",
+  "type": "image",
+  "url": "http://localhost:8782/icon?d=youtube.com",
+  "sw": false
+ },
+ {
+  "t": 4.6,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+ },
+ {
+  "t": 4.6,
+  "kind": "done",
+  "id": 51,
+  "status": 404,
+  "size": 19
+ },
+ {
+  "t": 4.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3002,
+    "mb": 146
+   },
+   {
+    "pid": 3011,
+    "mb": 602
+   },
+   {
+    "pid": 3036,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 19,
+   "totalMB": 36,
+   "nodes": 1409,
+   "docs": 8,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 605,
+    "player": true,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 36
+ },
+ {
+  "t": 4.6,
+  "kind": "done",
+  "id": 46,
+  "status": 200,
+  "size": -731
+ },
+ {
+  "t": 4.6,
+  "kind": "done",
+  "id": 48,
+  "status": 200,
+  "size": -731
+ },
+ {
+  "t": 4.6,
+  "kind": "done",
+  "id": 49,
+  "status": 200,
+  "size": -730
+ },
+ {
+  "t": 4.6,
+  "kind": "req",
+  "id": 52,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.gstatic.com/cv/js/sender/v1/cast_sender.js",
+  "sw": false
+ },
+ {
+  "t": 4.7,
+  "kind": "mem",
+  "mb": [
+   146,
+   553,
+   103
+  ]
+ },
+ {
+  "t": 4.7,
+  "kind": "console",
+  "type": "warning",
+  "text": "%cI -> b%c detected quirky document structure parsing @ https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3D%252Fsignin_passive%26feature%3Dpassive&hl=en! \n  \tbackground-color: #f80;\n  \tcolor: #fff;\n  \tpadding: 4px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n   "
+ },
+ {
+  "t": 4.7,
+  "kind": "req",
+  "id": 53,
+  "method": "GET",
+  "type": "script",
+  "url": "https://static.doubleclick.net/instream/ad_status.js",
+  "sw": false
+ },
+ {
+  "t": 4.7,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+ },
+ {
+  "t": 4.7,
+  "kind": "req",
+  "id": 54,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/scram/scramjet.js",
+  "sw": false
+ },
+ {
+  "t": 4.7,
+  "kind": "req",
+  "id": 55,
+  "method": "GET",
+  "type": "script",
+  "url": "scramjet.wasm.js",
+  "sw": false
+ },
+ {
+  "t": 4.7,
+  "kind": "req",
+  "id": 56,
+  "method": "GET",
+  "type": "script",
+  "url": "http://localhost:8782/controller/controller.inject.js",
+  "sw": false
+ },
+ {
+  "t": 4.7,
+  "kind": "done",
+  "id": 47,
+  "status": 200,
+  "size": -525
+ },
+ {
+  "t": 4.7,
+  "kind": "done",
+  "id": 50,
+  "status": 401,
+  "size": -640
+ },
+ {
+  "t": 4.7,
+  "kind": "done",
+  "id": 56,
+  "status": 200,
+  "size": 6449
+ },
+ {
+  "t": 4.7,
+  "kind": "done",
+  "id": 54,
+  "status": 200,
+  "size": 227123
+ },
+ {
+  "t": 4.7,
+  "kind": "done",
+  "id": 55,
+  "status": 200,
+  "size": -57
+ },
+ {
+  "t": 4.8,
+  "kind": "done",
+  "id": 26,
+  "status": 200,
+  "size": -688
+ },
+ {
+  "t": 4.9,
+  "kind": "mem",
+  "mb": [
+   146,
+   507,
+   103
+  ]
+ },
+ {
+  "t": 5.1,
+  "kind": "mem",
+  "mb": [
+   146,
+   558,
+   103
+  ]
+ },
+ {
+  "t": 5.3,
+  "kind": "mem",
+  "mb": [
+   146,
+   556,
+   103
+  ]
+ },
+ {
+  "t": 5.3,
+  "kind": "console",
+  "type": "info",
+  "text": "LegacyDataMixin will be applied to all legacy elements.\nSet `_legacyUndefinedCheck: true` on element class to enable."
+ },
+ {
+  "t": 5.4,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#1     at mWN (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEjYeRliTUTGR3mqOvVlw2C226fnA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk?%24io=https%3A%2F%2Fwww.youtube.com:3737:26) |     at KxR (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3D1%2Frs"
+ },
+ {
+  "t": 5.5,
+  "kind": "mem",
+  "mb": [
+   146,
+   519,
+   103
+  ]
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#2     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at ed (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:133:274) |     at S.fire (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XI"
+ },
+ {
+  "t": 5.5,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#3     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at ed (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:133:274) |     at S.fire (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XI"
+ },
+ {
+  "t": 5.5,
+  "kind": "req",
+  "id": 57,
+  "method": "GET",
+  "type": "fetch",
+  "url": "data:application/json;base64,eyJhZFBsYWNlbWVudHMiOnRydWUsInBsYXllckFkcyI6dHJ1ZSwicGxheWVyUmVzcG9uc2UiOnsiYWRQbGFjZW1lbnRzIjp0cnVlLCJwbGF5ZXJBZHMiOnRydWUsInBsYXllckNvbmZpZyI6IHsiYXVkaW9Db25maWciOiB7fSwgInN0cmVhbVNlbGVjdGlvbkNvbmZpZyI6IHt9LCAid2ViUGxheWVyQ29uZmlnIjogeyJ3ZWJQbGF5ZXJBY3Rpb25zUG9ydGluZyI",
+  "sw": false
+ },
+ {
+  "t": 5.5,
+  "kind": "req",
+  "id": 58,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://rr1---sn-q4fl6nsr.googlevideo.com/videoplayback?expire=5764971027&ei=ddbBXcNpptGBY_PrQojjIzY&ip=35.80.73.31&id=o-AFwlu7FWxtqtMkoU4aAkfp5y3imBn99PN7JbFzbg18df5&itag=18&source=youtube&requiressl=yes&mh=X6&mm=396%2C35785%2C84878&mn=0ErfT%2CpEfta%2C4GC3r&ms=0ErfT%2CpEfta%2C4GC3r&mv=g&mvi=2&pl=65",
+  "sw": false
+ },
+ {
+  "t": 5.5,
+  "kind": "req",
+  "id": 59,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://rr1---sn-q4fl6nsr.googlevideo.com/videoplayback?expire=5764971027&ei=ddbBXcNpptGBY_PrQojjIzY&ip=35.80.73.31&id=o-AFwlu7FWxtqtMkoU4aAkfp5y3imBn99PN7JbFzbg18df5&itag=18&source=youtube&requiressl=yes&mh=X6&mm=396%2C35785%2C84878&mn=0ErfT%2CpEfta%2C4GC3r&ms=0ErfT%2CpEfta%2C4GC3r&mv=g&mvi=2&pl=65",
+  "sw": false
+ },
+ {
+  "t": 5.5,
+  "kind": "done",
+  "id": 52,
+  "status": 200,
+  "size": -585
+ },
+ {
+  "t": 5.5,
+  "kind": "req",
+  "id": 60,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.google.com/js/th/YI2XvVwvdBJTNOg4tmE81lkRxYCcxVDASxYzC3ult3w.js",
+  "sw": false
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#4     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at Object.ed (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:133:274) |     at _.Gg (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US."
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#5     at Q.attachShadow [as __shady_attachShadow] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:96:199) |     at k.attachShadow (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:124:124) |     at T._attachDom (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmaina"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#6     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at ed (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:133:274) |     at j17 (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#7     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at Q.getRootNode [as __shady_getRootNode] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:68:180) |     at k.mb (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcom"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#8     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at HTMLElement.getRootNode [as __shady_getRootNode] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:68:180) |     at Q.getRootNode [as __shady_getRootNode] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.c"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#9     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at HTMLBodyElement.getRootNode [as __shady_getRootNode] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:68:180) |     at HTMLElement.getRootNode [as __shady_getRootNode] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#10     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at HTMLHtmlElement.getRootNode [as __shady_getRootNode] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:68:180) |     at HTMLBodyElement.getRootNode [as __shady_getRootNode] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#11     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at HTMLDocument.getRootNode [as __shady_getRootNode] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:68:180) |     at HTMLHtmlElement.getRootNode [as __shady_getRootNode] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#12     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at k.mb (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:108:58) |     at k.nb (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#13     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at ed (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:133:274) |     at S._attachDom (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_U"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#14     at U.attachShadow [as __shady_attachShadow] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:96:199) |     at k.attachShadow (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:124:124) |     at S._attachDom (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmain"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#15     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at DocumentFragment.appendChild (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:66:80) |     at S._attachDom (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmai"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#16     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at DocumentFragment.appendChild (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:66:80) |     at T._attachDom (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmai"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#17     at new vH (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEjYeRliTUTGR3mqOvVlw2C226fnA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk?%24io=https%3A%2F%2Fwww.youtube.com:15439:412) |     at _.o4 (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#18     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at Object.ed (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:133:274) |     at _.Gg (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#19     at HH (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEjYeRliTUTGR3mqOvVlw2C226fnA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk?%24io=https%3A%2F%2Fwww.youtube.com:3427:67) |     at rTN (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3D1%2Frs"
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#20     at HH (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEjYeRliTUTGR3mqOvVlw2C226fnA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk?%24io=https%3A%2F%2Fwww.youtube.com:3427:78) |     at rTN (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3D1%2Frs"
+ },
+ {
+  "t": 5.6,
+  "kind": "req",
+  "id": 61,
+  "method": "GET",
+  "type": "xhr",
+  "url": "https://googleads.g.doubleclick.net/pagead/id",
+  "sw": false
+ },
+ {
+  "t": 5.6,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#21     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at ed (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:133:274) |     at S.attributeChangedCallback (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.ke"
+ },
+ {
+  "t": 5.7,
+  "kind": "mem",
+  "mb": [
+   146,
+   537,
+   103
+  ]
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#22     at HTMLElement.attachShadow [as __shady_attachShadow] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:96:199) |     at k.attachShadow (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:124:124) |     at S._attachDom (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#23     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at ed (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:133:274) |     at _.G.disconnectedCallback (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevl"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#24     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at ed (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:133:274) |     at S.fire (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3X"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#25     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at HTMLDivElement.getRootNode [as __shady_getRootNode] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:68:180) |     at Q.getRootNode [as __shady_getRootNode] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtu"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#26     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at HTMLDivElement.getRootNode [as __shady_getRootNode] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:68:180) |     at HTMLDivElement.getRootNode [as __shady_getRootNode] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#27     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at DocumentFragment.getRootNode (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:68:180) |     at HTMLDivElement.getRootNode [as __shady_getRootNode] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#28     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at U.getRootNode [as __shady_getRootNode] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:68:180) |     at k.mb (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebco"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#29     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at HTMLDivElement.getRootNode [as __shady_getRootNode] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:68:180) |     at U.getRootNode [as __shady_getRootNode] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtu"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#30     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at DocumentFragment.getRootNode (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:68:180) |     at HTMLDivElement.getRootNode [as __shady_getRootNode] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#31     at new vH (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEjYeRliTUTGR3mqOvVlw2C226fnA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk?%24io=https%3A%2F%2Fwww.youtube.com:15439:412) |     at _.o4 (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#32     at new Hib (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEjYeRliTUTGR3mqOvVlw2C226fnA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk?%24io=https%3A%2F%2Fwww.youtube.com:15450:333) |     at _.cH (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#33     at new vH (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEjYeRliTUTGR3mqOvVlw2C226fnA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk?%24io=https%3A%2F%2Fwww.youtube.com:15439:412) |     at _.o4 (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#34     at new Hib (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEjYeRliTUTGR3mqOvVlw2C226fnA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk?%24io=https%3A%2F%2Fwww.youtube.com:15450:333) |     at _.cH (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#35     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at HTMLDivElement.getRootNode [as __shady_getRootNode] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:68:180) |     at HTMLDivElement.getRootNode [as __shady_getRootNode] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#36     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at ed (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:133:274) |     at S.fire (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3X"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#37     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at Object.ed (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:133:274) |     at _.Gg (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#38     at Q.attachShadow [as __shady_attachShadow] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:96:199) |     at k.attachShadow (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:124:124) |     at _.G.ready (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainapp"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#39     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at DocumentFragment.appendChild (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:66:80) |     at _.G.ready (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainap"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#40     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at Q.getRootNode [as __shady_getRootNode] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:68:180) |     at pb (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomp"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#41     at q.attachShadow [as __shady_attachShadow] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:96:199) |     at k.attachShadow (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:124:124) |     at T._attachDom (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmain"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#42     at new Hib (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEjYeRliTUTGR3mqOvVlw2C226fnA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk?%24io=https%3A%2F%2Fwww.youtube.com:15450:333) |     at _.cH (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#43     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at ed (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:133:274) |     at H._valueToNodeAttribute (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevla"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#44     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at ed (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:133:274) |     at k.bc (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#45     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at HTMLDivElement.getRootNode [as __shady_getRootNode] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:68:180) |     at k.getRootNode (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#46     at new Hib (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEjYeRliTUTGR3mqOvVlw2C226fnA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk?%24io=https%3A%2F%2Fwww.youtube.com:15450:333) |     at _.cH (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#47     at new vH (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEjYeRliTUTGR3mqOvVlw2C226fnA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk?%24io=https%3A%2F%2Fwww.youtube.com:15439:412) |     at _.o4 (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#48     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at Object.ed (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:133:274) |     at _.Gg (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#49     at new vH (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEjYeRliTUTGR3mqOvVlw2C226fnA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk?%24io=https%3A%2F%2Fwww.youtube.com:15439:412) |     at _.o4 (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#50     at HH (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEjYeRliTUTGR3mqOvVlw2C226fnA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk?%24io=https%3A%2F%2Fwww.youtube.com:3427:67) |     at insertBefore (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#51     at HH (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEjYeRliTUTGR3mqOvVlw2C226fnA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk?%24io=https%3A%2F%2Fwww.youtube.com:3427:78) |     at insertBefore (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#52     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at I (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:122:145) |     at DocumentFragment.insertBefore (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#53     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at DocumentFragment.insertBefore (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:65:373) |     at insertBefore (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytm"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#54     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at ed (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:133:274) |     at _.G.__ensureInstance (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_b"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#55     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at ed (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:133:274) |     at _.G.__ensureTemplate (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_b"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#56     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at ed (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:133:274) |     at _.G.__createAndInsertInstance (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#57     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at I (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:122:145) |     at DocumentFragment.insertBefore (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd"
+ },
+ {
+  "t": 5.7,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#58     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at DocumentFragment.insertBefore (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:65:373) |     at _.G.__createAndInsertInstance (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2"
+ },
+ {
+  "t": 5.8,
+  "kind": "req",
+  "id": 62,
+  "method": "GET",
+  "type": "image",
+  "url": "https://www.youtube.com/watch?v=jNQXAC9IVRw",
+  "sw": false
+ },
+ {
+  "t": 5.8,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#59     at new vH (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEjYeRliTUTGR3mqOvVlw2C226fnA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk?%24io=https%3A%2F%2Fwww.youtube.com:15439:412) |     at _.o4 (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3"
+ },
+ {
+  "t": 5.8,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#60     at HH (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEjYeRliTUTGR3mqOvVlw2C226fnA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk?%24io=https%3A%2F%2Fwww.youtube.com:3427:67) |     at _.PhN (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3D1%2F"
+ },
+ {
+  "t": 5.8,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#61     at HH (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEjYeRliTUTGR3mqOvVlw2C226fnA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk?%24io=https%3A%2F%2Fwww.youtube.com:3427:78) |     at _.PhN (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3D1%2F"
+ },
+ {
+  "t": 5.8,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#62     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at DocumentFragment.getRootNode (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:68:180) |     at I (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.v"
+ },
+ {
+  "t": 5.8,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#63     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at I (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:122:145) |     at DocumentFragment.insertBefore (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd"
+ },
+ {
+  "t": 5.8,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#64     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at HTMLSpanElement.getRootNode [as __shady_getRootNode] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:68:180) |     at I (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjs"
+ },
+ {
+  "t": 5.8,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#65     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at HTMLDivElement.getRootNode [as __shady_getRootNode] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:68:180) |     at HTMLSpanElement.getRootNode [as __shady_getRootNode] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%"
+ },
+ {
+  "t": 5.8,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#66     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at I (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:122:145) |     at HTMLDivElement.removeChild [as __shady_removeChild] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjs"
+ },
+ {
+  "t": 5.8,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#67     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at HTMLDivElement.removeChild [as __shady_removeChild] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:67:90) |     at DocumentFragment.insertBefore (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs"
+ },
+ {
+  "t": 5.8,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#68     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at DocumentFragment.insertBefore (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:65:373) |     at DocumentFragment.appendChild (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%"
+ },
+ {
+  "t": 5.8,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3002,
+    "mb": 146
+   },
+   {
+    "pid": 3011,
+    "mb": 533
+   },
+   {
+    "pid": 3036,
+    "mb": 103
+   }
+  ],
+  "heap": {
+   "usedMB": 61,
+   "totalMB": 104,
+   "nodes": 3294,
+   "docs": 10,
+   "frames": 6
+  },
+  "video": {
+   "status": "Website content detected",
+   "title": "- YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": "",
+   "app": {
+    "elements": 1536,
+    "player": true,
+    "flexy": false,
+    "botcheck": false
+   }
+  },
+  "answerMs": 166
+ },
+ {
+  "t": 5.8,
+  "kind": "console",
+  "type": "error",
+  "text": "Request \"https://rr1---sn-q4fl6nsr.googlevideo.com/videoplayback?expire=5764971027&ei=ddbBXcNpptGBY_PrQojjIzY&ip=35.80.73.31&id=o-AFwlu7FWxtqtMkoU4aAkfp5y3imBn99PN7JbFzbg18df5&itag=18&source=youtube&requiressl=yes&mh=X6&mm=396%2C35785%2C84878&mn=0ErfT%2CpEfta%2C4GC3r&ms=0ErfT%2CpEfta%2C4GC3r&mv=g&mvi=2&pl=65&ctier=L&initcwndbps=3940425&siu=2&spc=woji3OA67yEKRKgpQJKfTI66zqlRkf5UPDID5IoQVCgC&vprv=2&svpuc=2&mime=video%2Fmp4&ns=LtqeHcDLX9Ie46mZPFXEohxg&cnr=65&ratebypass=yes&dur=76275242&lmt=5479080200049318&mt=5764971027&fvip=3&c=WEB&txp=3940425&n=FvszF0BMEsM9vz7Y&sparams=expire%2Cei%2Cip%2Cid%2Ci"
+ },
+ {
+  "t": 5.8,
+  "kind": "console",
+  "type": "error",
+  "text": "Error in controller request handler: TypeError: Request failed with error code 35: SSL connect error\n    at finish_callback (http://localhost:8782/libcurl/index.mjs:5829:20)\n    at Object.real_end_callback [as end] (http://localhost:8782/libcurl/index.mjs:5766:9)\n    at HTTPSession.end_callback (http://localhost:8782/libcurl/index.mjs:5635:42)\n    at http://localhost:8782/libcurl/index.mjs:5613:14\n    at wasm://wasm/0055efd2:wasm-function[1780]:0xda681\n    at http://localhost:8782/libcurl/index.mjs:692:25\n    at HTTPSession.start_request (http://localhost:8782/libcurl/index.mjs:5685:7)\n    at "
+ },
+ {
+  "t": 5.8,
+  "kind": "console",
+  "type": "error",
+  "text": "TypeError: Request failed with error code 35: SSL connect error\n    at finish_callback (http://localhost:8782/libcurl/index.mjs:5829:20)\n    at Object.real_end_callback [as end] (http://localhost:8782/libcurl/index.mjs:5766:9)\n    at HTTPSession.end_callback (http://localhost:8782/libcurl/index.mjs:5635:42)\n    at http://localhost:8782/libcurl/index.mjs:5613:14\n    at wasm://wasm/0055efd2:wasm-function[1780]:0xda681\n    at http://localhost:8782/libcurl/index.mjs:692:25\n    at HTTPSession.start_request (http://localhost:8782/libcurl/index.mjs:5685:7)\n    at http://localhost:8782/libcurl/index.m"
+ },
+ {
+  "t": 5.8,
+  "kind": "console",
+  "type": "error",
+  "text": "Service Worker error: Error: TypeError: Request failed with error code 35: SSL connect error\n    at o.recieve (http://localhost:8782/controller/controller.sw.js:1:456)\n    at MessagePort.<anonymous> (http://localhost:8782/controller/controller.sw.js:1:2935)"
+ },
+ {
+  "t": 5.8,
+  "kind": "console",
+  "type": "error",
+  "text": "Request \"https://rr1---sn-q4fl6nsr.googlevideo.com/videoplayback?expire=5764971027&ei=ddbBXcNpptGBY_PrQojjIzY&ip=35.80.73.31&id=o-AFwlu7FWxtqtMkoU4aAkfp5y3imBn99PN7JbFzbg18df5&itag=18&source=youtube&requiressl=yes&mh=X6&mm=396%2C35785%2C84878&mn=0ErfT%2CpEfta%2C4GC3r&ms=0ErfT%2CpEfta%2C4GC3r&mv=g&mvi=2&pl=65&initcwndbps=3940425&siu=2&spc=woji3OA67yEKRKgpQJKfTI66zqlRkf5UPDID5IoQVCgC&vprv=2&svpuc=2&mime=video%2Fmp4&ns=LtqeHcDLX9Ie46mZPFXEohxg&cnr=65&ratebypass=yes&dur=76275242&lmt=5479080200049318&mt=5764971027&fvip=3&c=WEB&txp=3940425&n=FvszF0BMEsM9vz7Y&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Cso"
+ },
+ {
+  "t": 5.8,
+  "kind": "console",
+  "type": "error",
+  "text": "Error in controller request handler: TypeError: Request failed with error code 35: SSL connect error\n    at finish_callback (http://localhost:8782/libcurl/index.mjs:5829:20)\n    at Object.real_end_callback [as end] (http://localhost:8782/libcurl/index.mjs:5766:9)\n    at HTTPSession.end_callback (http://localhost:8782/libcurl/index.mjs:5635:42)\n    at http://localhost:8782/libcurl/index.mjs:5613:14\n    at wasm://wasm/0055efd2:wasm-function[1780]:0xda681\n    at http://localhost:8782/libcurl/index.mjs:692:25\n    at HTTPSession.event_loop_func (http://localhost:8782/libcurl/index.mjs:5698:9)\n    a"
+ },
+ {
+  "t": 5.8,
+  "kind": "console",
+  "type": "error",
+  "text": "TypeError: Request failed with error code 35: SSL connect error\n    at finish_callback (http://localhost:8782/libcurl/index.mjs:5829:20)\n    at Object.real_end_callback [as end] (http://localhost:8782/libcurl/index.mjs:5766:9)\n    at HTTPSession.end_callback (http://localhost:8782/libcurl/index.mjs:5635:42)\n    at http://localhost:8782/libcurl/index.mjs:5613:14\n    at wasm://wasm/0055efd2:wasm-function[1780]:0xda681\n    at http://localhost:8782/libcurl/index.mjs:692:25\n    at HTTPSession.event_loop_func (http://localhost:8782/libcurl/index.mjs:5698:9)\n    at http://localhost:8782/libcurl/index"
+ },
+ {
+  "t": 5.8,
+  "kind": "console",
+  "type": "error",
+  "text": "Service Worker error: Error: TypeError: Request failed with error code 35: SSL connect error\n    at o.recieve (http://localhost:8782/controller/controller.sw.js:1:456)\n    at MessagePort.<anonymous> (http://localhost:8782/controller/controller.sw.js:1:2935)"
+ },
+ {
+  "t": 5.8,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 500 ()"
+ },
+ {
+  "t": 5.8,
+  "kind": "req",
+  "id": 63,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://rr1---sn-q4fl6nsr.googlevideo.com/videoplayback?expire=5764971027&ei=ddbBXcNpptGBY_PrQojjIzY&ip=35.80.73.31&id=o-AFwlu7FWxtqtMkoU4aAkfp5y3imBn99PN7JbFzbg18df5&itag=18&source=youtube&requiressl=yes&mh=X6&mm=396%2C35785%2C84878&mn=0ErfT%2CpEfta%2C4GC3r&ms=0ErfT%2CpEfta%2C4GC3r&mv=g&mvi=2&pl=65",
+  "sw": false
+ },
+ {
+  "t": 5.8,
+  "kind": "done",
+  "id": 57,
+  "status": 200,
+  "size": -136
+ },
+ {
+  "t": 5.8,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 500 ()"
+ },
+ {
+  "t": 5.8,
+  "kind": "req",
+  "id": 64,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://rr1---sn-q4fl6nsr.googlevideo.com/videoplayback?expire=5764971027&ei=ddbBXcNpptGBY_PrQojjIzY&ip=35.80.73.31&id=o-AFwlu7FWxtqtMkoU4aAkfp5y3imBn99PN7JbFzbg18df5&itag=18&source=youtube&requiressl=yes&mh=X6&mm=396%2C35785%2C84878&mn=0ErfT%2CpEfta%2C4GC3r&ms=0ErfT%2CpEfta%2C4GC3r&mv=g&mvi=2&pl=65",
+  "sw": false
+ },
+ {
+  "t": 5.8,
+  "kind": "req",
+  "id": 65,
+  "method": "GET",
+  "type": "fetch",
+  "url": "data:application/json;base64,W3siYWRQbGFjZW1lbnRzIjp0cnVlLCJwbGF5ZXJBZHMiOnRydWUsInBsYXllclJlc3BvbnNlIjp7ImFkUGxhY2VtZW50cyI6dHJ1ZSwicGxheWVyQWRzIjp0cnVlfX1d",
+  "sw": false
+ },
+ {
+  "t": 5.8,
+  "kind": "done",
+  "id": 53,
+  "status": 200,
+  "size": -712
+ },
+ {
+  "t": 5.9,
+  "kind": "mem",
+  "mb": [
+   146,
+   556,
+   103
+  ]
+ },
+ {
+  "t": 5.9,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#69     at goJ (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEjYeRliTUTGR3mqOvVlw2C226fnA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk?%24io=https%3A%2F%2Fwww.youtube.com:5286:337) |     at $Mp (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3D1%2F"
+ },
+ {
+  "t": 5.9,
+  "kind": "console",
+  "type": "error",
+  "text": "Request \"https://rr1---sn-q4fl6nsr.googlevideo.com/videoplayback?expire=5764971027&ei=ddbBXcNpptGBY_PrQojjIzY&ip=35.80.73.31&id=o-AFwlu7FWxtqtMkoU4aAkfp5y3imBn99PN7JbFzbg18df5&itag=18&source=youtube&requiressl=yes&mh=X6&mm=396%2C35785%2C84878&mn=0ErfT%2CpEfta%2C4GC3r&ms=0ErfT%2CpEfta%2C4GC3r&mv=g&mvi=2&pl=65&ctier=L&initcwndbps=3940425&siu=2&spc=woji3OA67yEKRKgpQJKfTI66zqlRkf5UPDID5IoQVCgC&vprv=2&svpuc=2&mime=video%2Fmp4&ns=LtqeHcDLX9Ie46mZPFXEohxg&cnr=65&ratebypass=yes&dur=76275242&lmt=5479080200049318&mt=5764971027&fvip=3&c=WEB&txp=3940425&n=FvszF0BMEsM9vz7Y&sparams=expire%2Cei%2Cip%2Cid%2Ci"
+ },
+ {
+  "t": 5.9,
+  "kind": "console",
+  "type": "error",
+  "text": "Error in controller request handler: TypeError: Request failed with error code 35: SSL connect error\n    at finish_callback (http://localhost:8782/libcurl/index.mjs:5829:20)\n    at Object.real_end_callback [as end] (http://localhost:8782/libcurl/index.mjs:5766:9)\n    at HTTPSession.end_callback (http://localhost:8782/libcurl/index.mjs:5635:42)\n    at http://localhost:8782/libcurl/index.mjs:5613:14\n    at wasm://wasm/0055efd2:wasm-function[1780]:0xda681\n    at http://localhost:8782/libcurl/index.mjs:692:25\n    at HTTPSession.event_loop_func (http://localhost:8782/libcurl/index.mjs:5698:9)\n    a"
+ },
+ {
+  "t": 5.9,
+  "kind": "console",
+  "type": "error",
+  "text": "TypeError: Request failed with error code 35: SSL connect error\n    at finish_callback (http://localhost:8782/libcurl/index.mjs:5829:20)\n    at Object.real_end_callback [as end] (http://localhost:8782/libcurl/index.mjs:5766:9)\n    at HTTPSession.end_callback (http://localhost:8782/libcurl/index.mjs:5635:42)\n    at http://localhost:8782/libcurl/index.mjs:5613:14\n    at wasm://wasm/0055efd2:wasm-function[1780]:0xda681\n    at http://localhost:8782/libcurl/index.mjs:692:25\n    at HTTPSession.event_loop_func (http://localhost:8782/libcurl/index.mjs:5698:9)\n    at http://localhost:8782/libcurl/index"
+ },
+ {
+  "t": 5.9,
+  "kind": "console",
+  "type": "error",
+  "text": "Service Worker error: Error: TypeError: Request failed with error code 35: SSL connect error\n    at o.recieve (http://localhost:8782/controller/controller.sw.js:1:456)\n    at MessagePort.<anonymous> (http://localhost:8782/controller/controller.sw.js:1:2935)"
+ },
+ {
+  "t": 5.9,
+  "kind": "done",
+  "id": 58,
+  "status": 500,
+  "size": -57
+ },
+ {
+  "t": 5.9,
+  "kind": "done",
+  "id": 65,
+  "status": 200,
+  "size": -136
+ },
+ {
+  "t": 5.9,
+  "kind": "req",
+  "id": 66,
+  "method": "GET",
+  "type": "fetch",
+  "url": "data:application/json;base64,eyJyZXNwb25zZUNvbnRleHQiOnsic2VydmljZVRyYWNraW5nUGFyYW1zIjpbeyJzZXJ2aWNlIjoiR0ZFRURCQUNLIiwicGFyYW1zIjpbeyJrZXkiOiJrYyIsInZhbHVlIjoiNjYifSx7ImtleSI6ImN3IiwidmFsdWUiOiJzdCJ9LHsia2V5IjoiemIiLCJ2YWx1ZSI6Inh6In0seyJrZXkiOiJ6bCIsInZhbHVlIjoiMTYifSx7ImtleSI6InBmIiwidmFsdWUiOiJ",
+  "sw": false
+ },
+ {
+  "t": 5.9,
+  "kind": "done",
+  "id": 60,
+  "status": 200,
+  "size": -605
+ },
+ {
+  "t": 5.9,
+  "kind": "done",
+  "id": 59,
+  "status": 500,
+  "size": -57
+ },
+ {
+  "t": 5.9,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 500 ()"
+ },
+ {
+  "t": 5.9,
+  "kind": "req",
+  "id": 67,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://rr1---sn-q4fl6nsr.googlevideo.com/videoplayback?expire=5764971027&ei=ddbBXcNpptGBY_PrQojjIzY&ip=35.80.73.31&id=o-AFwlu7FWxtqtMkoU4aAkfp5y3imBn99PN7JbFzbg18df5&itag=18&source=youtube&requiressl=yes&mh=X6&mm=396%2C35785%2C84878&mn=0ErfT%2CpEfta%2C4GC3r&ms=0ErfT%2CpEfta%2C4GC3r&mv=g&mvi=2&pl=65",
+  "sw": false
+ },
+ {
+  "t": 5.9,
+  "kind": "console",
+  "type": "error",
+  "text": "Request \"https://rr1---sn-q4fl6nsr.googlevideo.com/videoplayback?expire=5764971027&ei=ddbBXcNpptGBY_PrQojjIzY&ip=35.80.73.31&id=o-AFwlu7FWxtqtMkoU4aAkfp5y3imBn99PN7JbFzbg18df5&itag=18&source=youtube&requiressl=yes&mh=X6&mm=396%2C35785%2C84878&mn=0ErfT%2CpEfta%2C4GC3r&ms=0ErfT%2CpEfta%2C4GC3r&mv=g&mvi=2&pl=65&initcwndbps=3940425&siu=2&spc=woji3OA67yEKRKgpQJKfTI66zqlRkf5UPDID5IoQVCgC&vprv=2&svpuc=2&mime=video%2Fmp4&ns=LtqeHcDLX9Ie46mZPFXEohxg&cnr=65&ratebypass=yes&dur=76275242&lmt=5479080200049318&mt=5764971027&fvip=3&c=WEB&txp=3940425&n=FvszF0BMEsM9vz7Y&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Cso"
+ },
+ {
+  "t": 5.9,
+  "kind": "console",
+  "type": "error",
+  "text": "Error in controller request handler: TypeError: Request failed with error code 35: SSL connect error\n    at finish_callback (http://localhost:8782/libcurl/index.mjs:5829:20)\n    at Object.real_end_callback [as end] (http://localhost:8782/libcurl/index.mjs:5766:9)\n    at HTTPSession.end_callback (http://localhost:8782/libcurl/index.mjs:5635:42)\n    at http://localhost:8782/libcurl/index.mjs:5613:14\n    at wasm://wasm/0055efd2:wasm-function[1780]:0xda681\n    at http://localhost:8782/libcurl/index.mjs:692:25\n    at HTTPSession.event_loop_func (http://localhost:8782/libcurl/index.mjs:5698:9)\n    a"
+ },
+ {
+  "t": 5.9,
+  "kind": "console",
+  "type": "error",
+  "text": "TypeError: Request failed with error code 35: SSL connect error\n    at finish_callback (http://localhost:8782/libcurl/index.mjs:5829:20)\n    at Object.real_end_callback [as end] (http://localhost:8782/libcurl/index.mjs:5766:9)\n    at HTTPSession.end_callback (http://localhost:8782/libcurl/index.mjs:5635:42)\n    at http://localhost:8782/libcurl/index.mjs:5613:14\n    at wasm://wasm/0055efd2:wasm-function[1780]:0xda681\n    at http://localhost:8782/libcurl/index.mjs:692:25\n    at HTTPSession.event_loop_func (http://localhost:8782/libcurl/index.mjs:5698:9)\n    at http://localhost:8782/libcurl/index"
+ },
+ {
+  "t": 5.9,
+  "kind": "console",
+  "type": "error",
+  "text": "Service Worker error: Error: TypeError: Request failed with error code 35: SSL connect error\n    at o.recieve (http://localhost:8782/controller/controller.sw.js:1:456)\n    at MessagePort.<anonymous> (http://localhost:8782/controller/controller.sw.js:1:2935)"
+ },
+ {
+  "t": 5.9,
+  "kind": "req",
+  "id": 68,
+  "method": "GET",
+  "type": "xhr",
+  "url": "https://googleads.g.doubleclick.net/pagead/id?slf_rd=1",
+  "sw": false
+ },
+ {
+  "t": 5.9,
+  "kind": "done",
+  "id": 61,
+  "status": 302,
+  "size": 0
+ },
+ {
+  "t": 6,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 500 ()"
+ },
+ {
+  "t": 6,
+  "kind": "req",
+  "id": 69,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://rr1---sn-q4fl6nsr.googlevideo.com/videoplayback?expire=5764971027&ei=ddbBXcNpptGBY_PrQojjIzY&ip=35.80.73.31&id=o-AFwlu7FWxtqtMkoU4aAkfp5y3imBn99PN7JbFzbg18df5&itag=18&source=youtube&requiressl=yes&mh=X6&mm=396%2C35785%2C84878&mn=0ErfT%2CpEfta%2C4GC3r&ms=0ErfT%2CpEfta%2C4GC3r&mv=g&mvi=2&pl=65",
+  "sw": false
+ },
+ {
+  "t": 6,
+  "kind": "console",
+  "type": "error",
+  "text": "Request \"https://rr1---sn-q4fl6nsr.googlevideo.com/videoplayback?expire=5764971027&ei=ddbBXcNpptGBY_PrQojjIzY&ip=35.80.73.31&id=o-AFwlu7FWxtqtMkoU4aAkfp5y3imBn99PN7JbFzbg18df5&itag=18&source=youtube&requiressl=yes&mh=X6&mm=396%2C35785%2C84878&mn=0ErfT%2CpEfta%2C4GC3r&ms=0ErfT%2CpEfta%2C4GC3r&mv=g&mvi=2&pl=65&ctier=L&initcwndbps=3940425&siu=2&spc=woji3OA67yEKRKgpQJKfTI66zqlRkf5UPDID5IoQVCgC&vprv=2&svpuc=2&mime=video%2Fmp4&ns=LtqeHcDLX9Ie46mZPFXEohxg&cnr=65&ratebypass=yes&dur=76275242&lmt=5479080200049318&mt=5764971027&fvip=3&c=WEB&txp=3940425&n=FvszF0BMEsM9vz7Y&sparams=expire%2Cei%2Cip%2Cid%2Ci"
+ },
+ {
+  "t": 6,
+  "kind": "console",
+  "type": "error",
+  "text": "Error in controller request handler: TypeError: Request failed with error code 35: SSL connect error\n    at finish_callback (http://localhost:8782/libcurl/index.mjs:5829:20)\n    at Object.real_end_callback [as end] (http://localhost:8782/libcurl/index.mjs:5766:9)\n    at HTTPSession.end_callback (http://localhost:8782/libcurl/index.mjs:5635:42)\n    at http://localhost:8782/libcurl/index.mjs:5613:14\n    at wasm://wasm/0055efd2:wasm-function[1780]:0xda681\n    at http://localhost:8782/libcurl/index.mjs:692:25\n    at HTTPSession.event_loop_func (http://localhost:8782/libcurl/index.mjs:5698:9)\n    a"
+ },
+ {
+  "t": 6,
+  "kind": "console",
+  "type": "error",
+  "text": "TypeError: Request failed with error code 35: SSL connect error\n    at finish_callback (http://localhost:8782/libcurl/index.mjs:5829:20)\n    at Object.real_end_callback [as end] (http://localhost:8782/libcurl/index.mjs:5766:9)\n    at HTTPSession.end_callback (http://localhost:8782/libcurl/index.mjs:5635:42)\n    at http://localhost:8782/libcurl/index.mjs:5613:14\n    at wasm://wasm/0055efd2:wasm-function[1780]:0xda681\n    at http://localhost:8782/libcurl/index.mjs:692:25\n    at HTTPSession.event_loop_func (http://localhost:8782/libcurl/index.mjs:5698:9)\n    at http://localhost:8782/libcurl/index"
+ },
+ {
+  "t": 6,
+  "kind": "console",
+  "type": "error",
+  "text": "Service Worker error: Error: TypeError: Request failed with error code 35: SSL connect error\n    at o.recieve (http://localhost:8782/controller/controller.sw.js:1:456)\n    at MessagePort.<anonymous> (http://localhost:8782/controller/controller.sw.js:1:2935)"
+ },
+ {
+  "t": 6,
+  "kind": "done",
+  "id": 66,
+  "status": 200,
+  "size": -136
+ },
+ {
+  "t": 6,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 500 ()"
+ },
+ {
+  "t": 6,
+  "kind": "req",
+  "id": 70,
+  "method": "GET",
+  "type": "fetch",
+  "url": "data:application/json;base64,eyJwbGF5ZXJSZXNwb25zZSI6eyJyZXNwb25zZUNvbnRleHQiOnsic2VydmljZVRyYWNraW5nUGFyYW1zIjpbeyJzZXJ2aWNlIjoiR0ZFRURCQUNLIiwicGFyYW1zIjpbeyJrZXkiOiJrYyIsInZhbHVlIjoiNjYifSx7ImtleSI6ImN3IiwidmFsdWUiOiJzdCJ9LHsia2V5IjoiemIiLCJ2YWx1ZSI6Inh6In0seyJrZXkiOiJ6bCIsInZhbHVlIjoiMTYifSx7Imt",
+  "sw": false
+ },
+ {
+  "t": 6,
+  "kind": "console",
+  "type": "error",
+  "text": "Service Worker error: Error: TypeError: Request failed with error code 35: SSL connect error\n    at o.recieve (http://localhost:8782/controller/controller.sw.js:1:456)\n    at MessagePort.<anonymous> (http://localhost:8782/controller/controller.sw.js:1:2935)"
+ },
+ {
+  "t": 6,
+  "kind": "console",
+  "type": "error",
+  "text": "Request \"https://rr1---sn-q4fl6nsr.googlevideo.com/videoplayback?expire=5764971027&ei=ddbBXcNpptGBY_PrQojjIzY&ip=35.80.73.31&id=o-AFwlu7FWxtqtMkoU4aAkfp5y3imBn99PN7JbFzbg18df5&itag=18&source=youtube&requiressl=yes&mh=X6&mm=396%2C35785%2C84878&mn=0ErfT%2CpEfta%2C4GC3r&ms=0ErfT%2CpEfta%2C4GC3r&mv=g&mvi=2&pl=65&initcwndbps=3940425&siu=2&spc=woji3OA67yEKRKgpQJKfTI66zqlRkf5UPDID5IoQVCgC&vprv=2&svpuc=2&mime=video%2Fmp4&ns=LtqeHcDLX9Ie46mZPFXEohxg&cnr=65&ratebypass=yes&dur=76275242&lmt=5479080200049318&mt=5764971027&fvip=3&c=WEB&txp=3940425&n=FvszF0BMEsM9vz7Y&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Cso"
+ },
+ {
+  "t": 6,
+  "kind": "console",
+  "type": "error",
+  "text": "Error in controller request handler: TypeError: Request failed with error code 35: SSL connect error\n    at finish_callback (http://localhost:8782/libcurl/index.mjs:5829:20)\n    at Object.real_end_callback [as end] (http://localhost:8782/libcurl/index.mjs:5766:9)\n    at HTTPSession.end_callback (http://localhost:8782/libcurl/index.mjs:5635:42)\n    at http://localhost:8782/libcurl/index.mjs:5613:14\n    at wasm://wasm/0055efd2:wasm-function[1780]:0xda681\n    at http://localhost:8782/libcurl/index.mjs:692:25\n    at HTTPSession.event_loop_func (http://localhost:8782/libcurl/index.mjs:5698:9)\n    a"
+ },
+ {
+  "t": 6,
+  "kind": "console",
+  "type": "error",
+  "text": "TypeError: Request failed with error code 35: SSL connect error\n    at finish_callback (http://localhost:8782/libcurl/index.mjs:5829:20)\n    at Object.real_end_callback [as end] (http://localhost:8782/libcurl/index.mjs:5766:9)\n    at HTTPSession.end_callback (http://localhost:8782/libcurl/index.mjs:5635:42)\n    at http://localhost:8782/libcurl/index.mjs:5613:14\n    at wasm://wasm/0055efd2:wasm-function[1780]:0xda681\n    at http://localhost:8782/libcurl/index.mjs:692:25\n    at HTTPSession.event_loop_func (http://localhost:8782/libcurl/index.mjs:5698:9)\n    at http://localhost:8782/libcurl/index"
+ },
+ {
+  "t": 6,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 500 ()"
+ },
+ {
+  "t": 6,
+  "kind": "done",
+  "id": 63,
+  "status": 500,
+  "size": -57
+ },
+ {
+  "t": 6,
+  "kind": "done",
+  "id": 68,
+  "status": 200,
+  "size": -610
+ },
+ {
+  "t": 6,
+  "kind": "done",
+  "id": 70,
+  "status": 200,
+  "size": -136
+ },
+ {
+  "t": 6,
+  "kind": "req",
+  "id": 71,
+  "method": "GET",
+  "type": "fetch",
+  "url": "data:application/json;base64,eyJyZXNwb25zZUNvbnRleHQiOnsic2VydmljZVRyYWNraW5nUGFyYW1zIjpbeyJzZXJ2aWNlIjoiR0ZFRURCQUNLIiwicGFyYW1zIjpbeyJrZXkiOiJpcGNjIiwidmFsdWUiOiIwIn0seyJrZXkiOiJpc192aWV3ZWRfbGl2ZSIsInZhbHVlIjoiRmFsc2UifSx7ImtleSI6ImlzX2FsY19zdXJmYWNlIiwidmFsdWUiOiJmYWxzZSJ9LHsia2V5IjoicHJlbWl1bV9",
+  "sw": false
+ },
+ {
+  "t": 6.1,
+  "kind": "mem",
+  "mb": [
+   146,
+   574,
+   103
+  ]
+ },
+ {
+  "t": 6.1,
+  "kind": "done",
+  "id": 64,
+  "status": 500,
+  "size": -57
+ },
+ {
+  "t": 6.1,
+  "kind": "done",
+  "id": 67,
+  "status": 500,
+  "size": -57
+ },
+ {
+  "t": 6.1,
+  "kind": "done",
+  "id": 71,
+  "status": 200,
+  "size": -136
+ },
+ {
+  "t": 6.1,
+  "kind": "done",
+  "id": 69,
+  "status": 500,
+  "size": -57
+ },
+ {
+  "t": 6.1,
+  "kind": "done",
+  "id": 62,
+  "status": 200,
+  "size": -8657
+ },
+ {
+  "t": 6.2,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#70     at new vH (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEjYeRliTUTGR3mqOvVlw2C226fnA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk?%24io=https%3A%2F%2Fwww.youtube.com:15439:412) |     at _.o4 (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3"
+ },
+ {
+  "t": 6.2,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#71     at new vH (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEjYeRliTUTGR3mqOvVlw2C226fnA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk?%24io=https%3A%2F%2Fwww.youtube.com:15439:412) |     at _.o4 (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3"
+ },
+ {
+  "t": 6.2,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#72     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at Object.ed (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:133:274) |     at _.Gg (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US"
+ },
+ {
+  "t": 6.2,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#73     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at Object.ed (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:133:274) |     at _.Gg (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US"
+ },
+ {
+  "t": 6.3,
+  "kind": "mem",
+  "mb": [
+   146,
+   553,
+   103
+  ]
+ },
+ {
+  "t": 6.3,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#74     at new vH (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEjYeRliTUTGR3mqOvVlw2C226fnA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk?%24io=https%3A%2F%2Fwww.youtube.com:15439:412) |     at _.o4 (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3"
+ },
+ {
+  "t": 6.3,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#75     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at HTMLDivElement.getRootNode [as __shady_getRootNode] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:68:180) |     at HTMLDivElement.getRootNode [as __shady_getRootNode] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2"
+ },
+ {
+  "t": 6.3,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#76     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at DocumentFragment.getRootNode [as __shady_getRootNode] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:68:180) |     at HTMLDivElement.getRootNode [as __shady_getRootNode] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A"
+ },
+ {
+  "t": 6.3,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#77     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at Q.getRootNode [as __shady_getRootNode] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:68:180) |     at k.getRootNode (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbi"
+ },
+ {
+  "t": 6.3,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#78     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at HTMLDivElement.getRootNode [as __shady_getRootNode] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:68:180) |     at Q.getRootNode [as __shady_getRootNode] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtu"
+ },
+ {
+  "t": 6.3,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#79     at y (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:17:189) |     at HTMLDivElement.getRootNode [as __shady_getRootNode] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2Fdesktop%2Fdc0b62b0%2Fjsbin%2Fwebcomponents-sd.vflset%2Fwebcomponents-sd.js?%24io=https%3A%2F%2Fwww.youtube.com:68:180) |     at Q.getRootNode [as __shady_getRootNode] (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtu"
+ },
+ {
+  "t": 6.3,
+  "kind": "console",
+  "type": "log",
+  "text": "SR-READ#80     at new vH (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEjYeRliTUTGR3mqOvVlw2C226fnA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk?%24io=https%3A%2F%2Fwww.youtube.com:15439:412) |     at _.o4 (http://localhost:8782/~/sj/1bj0a1ub/aogskve3/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAABAAEICU%2Fd%3D1%2Fbr%3"
+ },
+ {
+  "t": 6.5,
+  "kind": "mem",
+  "mb": [
+   146,
+   553,
+   103
+  ]
+ },
+ {
+  "t": 6.5,
+  "kind": "req",
+  "id": 72,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/www-player.css",
+  "sw": false
+ },
+ {
+  "t": 6.7,
+  "kind": "mem",
+  "mb": [
+   146,
+   556,
+   103
+  ]
+ },
+ {
+  "t": 6.9,
+  "kind": "mem",
+  "mb": [
+   146,
+   556,
+   103
+  ]
+ },
+ {
+  "t": 7.1,
+  "kind": "mem",
+  "mb": [
+   146,
+   556,
+   103
+  ]
+ },
+ {
+  "t": 7.3,
+  "kind": "mem",
+  "mb": [
+   146,
+   556,
+   103
+  ]
+ },
+ {
+  "t": 7.5,
+  "kind": "mem",
+  "mb": [
+   146,
+   563,
+   103
+  ]
+ },
+ {
+  "t": 7.7,
+  "kind": "mem",
+  "mb": [
+   146,
+   564,
+   103
+  ]
+ },
+ {
+  "t": 7.9,
+  "kind": "mem",
+  "mb": [
+   146,
+   564,
+   103
+  ]
+ },
+ {
+  "t": 8.1,
+  "kind": "mem",
+  "mb": [
+   146,
+   564,
+   103
+  ]
+ },
+ {
+  "t": 8.3,
+  "kind": "mem",
+  "mb": [
+   146,
+   564,
+   103
+  ]
+ },
+ {
+  "t": 8.5,
+  "kind": "mem",
+  "mb": [
+   146,
+   564,
+   103
+  ]
+ },
+ {
+  "t": 8.7,
+  "kind": "mem",
+  "mb": [
+   146,
+   564,
+   103
+  ]
+ },
+ {
+  "t": 8.9,
+  "kind": "mem",
+  "mb": [
+   146,
+   564,
+   103
+  ]
+ },
+ {
+  "t": 9.1,
+  "kind": "mem",
+  "mb": [
+   146,
+   564,
+   103
+  ]
+ },
+ {
+  "t": 9.3,
+  "kind": "mem",
+  "mb": [
+   146,
+   564,
+   103
+  ]
+ },
+ {
+  "t": 9.5,
+  "kind": "mem",
+  "mb": [
+   146,
+   564,
+   103
+  ]
+ },
+ {
+  "t": 9.6,
+  "kind": "CRASH",
+  "memory": [
+   {
+    "pid": 3002,
+    "mb": 146
+   },
+   {
+    "pid": 3036,
+    "mb": 103
+   }
+  ]
+ },
+ {
+  "t": 9.7,
+  "kind": "mem",
+  "mb": [
+   146,
+   103
+  ]
+ },
+ {
+  "t": 9.9,
+  "kind": "mem",
+  "mb": [
+   146,
+   103
+  ]
+ },
+ {
+  "t": 10.1,
+  "kind": "mem",
+  "mb": [
+   146,
+   103
+  ]
+ },
+ {
+  "t": 10.3,
+  "kind": "mem",
+  "mb": [
+   146,
+   103
+  ]
+ },
+ {
+  "t": 10.5,
+  "kind": "mem",
+  "mb": [
+   146,
+   103
+  ]
+ },
+ {
+  "t": 10.7,
+  "kind": "mem",
+  "mb": [
+   145,
+   103
+  ]
+ },
+ {
+  "t": 10.9,
+  "kind": "mem",
+  "mb": [
+   145,
+   103
+  ]
+ },
+ {
+  "t": 11.1,
+  "kind": "mem",
+  "mb": [
+   145,
+   103
+  ]
+ },
+ {
+  "t": 11.3,
+  "kind": "mem",
+  "mb": [
+   145,
+   103
+  ]
+ },
+ {
+  "t": 11.5,
+  "kind": "mem",
+  "mb": [
+   145,
+   103
+  ]
+ },
+ {
+  "t": 11.7,
+  "kind": "mem",
+  "mb": [
+   145,
+   103
+  ]
+ },
+ {
+  "t": 11.8,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 3002,
+    "mb": 146
+   },
+   {
+    "pid": 3011,
+    "mb": 556
+   },
+   {
+    "pid": 3036,
+    "mb": 103
+   }
+  ],
+  "heap": null,
+  "video": {
+   "evalError": "page.evaluate: Target crashed "
+  },
+  "answerMs": 1
+ }
+]

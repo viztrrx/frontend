@@ -1,0 +1,15 @@
+frontend /tmp/dist1 on http://localhost:8781
+frontend /tmp/dist2 on http://localhost:8782
+wisp on wss://localhost:4443/wisp/
+[2026/10/24 - 21:33:50] warn: (68326122) refusing to create a stream to localhost:4443
+[2026/10/24 - 21:33:50] warn: (68326122) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 21:34:05] warn: (f9de69a0) refusing to create a stream to 127.0.0.1:4443
+[2026/10/24 - 21:34:05] warn: (f9de69a0) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 21:34:10] warn: (f9de69a0) creating a stream to rr1---sn-q4fl6nsr.googlevideo.com:443 failed - Error: getaddrinfo ENOTFOUND rr1---sn-q4fl6nsr.googlevideo.com
+[2026/10/24 - 21:34:10] warn: (f9de69a0) creating a stream to rr1---sn-q4fl6nsr.googlevideo.com:443 failed - Error: getaddrinfo ENOTFOUND rr1---sn-q4fl6nsr.googlevideo.com
+[2026/10/24 - 21:34:10] warn: (f9de69a0) creating a stream to rr1---sn-q4fl6nsr.googlevideo.com:443 failed - Error: getaddrinfo ENOTFOUND rr1---sn-q4fl6nsr.googlevideo.com
+[2026/10/24 - 21:34:10] warn: (f9de69a0) creating a stream to rr1---sn-q4fl6nsr.googlevideo.com:443 failed - Error: getaddrinfo ENOTFOUND rr1---sn-q4fl6nsr.googlevideo.com
+[2026/10/24 - 21:34:10] warn: (f9de69a0) creating a stream to rr1---sn-q4fl6nsr.googlevideo.com:443 failed - Error: getaddrinfo ENOTFOUND rr1---sn-q4fl6nsr.googlevideo.com
+[2026/10/24 - 21:34:10] warn: (f9de69a0) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 21:34:10] warn: (f9de69a0) creating a stream to rr1---sn-q4fl6nsr.googlevideo.com:443 failed - Error: getaddrinfo ENOTFOUND rr1---sn-q4fl6nsr.googlevideo.com
+[2026/10/24 - 21:34:10] warn: (f9de69a0) received a DATA packet for a stream which doesn't exist
