@@ -1,0 +1,62 @@
+{
+  "target": "https://frontend-beta.viztrrx.workers.dev",
+  "transport": "libcurl",
+  "crashed": false,
+  "lastTick": {
+    "t": 113.7,
+    "kind": "tick",
+    "memory": [
+      {
+        "pid": 2270,
+        "mb": 166
+      },
+      {
+        "pid": 2277,
+        "mb": 336
+      },
+      {
+        "pid": 2312,
+        "mb": 108
+      }
+    ],
+    "heap": {
+      "usedMB": 24,
+      "totalMB": 25,
+      "nodes": 691,
+      "docs": 12,
+      "frames": 11
+    },
+    "video": {
+      "status": "HTTP 429: the site is rate-limiting the backend server. Try another search engine.",
+      "title": "https://www.youtube.com/watch?v=jNQXAC9IVRw"
+    }
+  },
+  "peakRendererMB": 482,
+  "peakHeapMB": 39,
+  "requests": 45,
+  "failed": 0,
+  "byHost": {
+    "frontend-beta.viztrrx.workers.dev script": 17,
+    "frontend-beta.viztrrx.workers.dev fetch": 3,
+    "www.google.com document": 3,
+    "scramjet.wasm.js script": 3,
+    "www.gstatic.com script": 3,
+    " image": 3,
+    "frontend-beta.viztrrx.workers.dev other": 2,
+    "www.google.com script": 2,
+    "www.gstatic.com stylesheet": 2,
+    "frontend-beta.viztrrx.workers.dev document": 1,
+    "frontend-beta.viztrrx.workers.dev stylesheet": 1,
+    "www.youtube.com document": 1,
+    "frontend-beta.viztrrx.workers.dev image": 1,
+    "scramjet.wasm.js other": 1,
+    " other": 1,
+    "www.gstatic.com other": 1
+  },
+  "pageErrors": [
+    "ReferenceError: solveSimpleChallenge is not defined\n    at onload (https://frontend-beta.viztrrx.workers.dev/~/sj/fgsqm1so/p9wn8f2c/https%3A%2F%2Fwww.google.com%2Fsorry%2Findex%3Fcontinue%3Dhttps%3A%2F%2Fwww.youtube.com%2Fwatch%253Fv%253DjNQXAC9IVRw%26q%3DEgRK3DEHGM2l9NYGIjDamelVM_5G445SjfG22m6J8Yvz"
+  ],
+  "consoleErrors": [
+    "39.3s Failed to load resource: the server responded with a status of 429 (Too Many Requests)"
+  ]
+}
