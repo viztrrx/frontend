@@ -38,6 +38,14 @@ jobs:
           WISP_JS_PATH=/tmp/wisp/node_modules/@mercuryworkshop/wisp-js/src/entrypoints/server.mjs \
             nohup node diag/lab-server.mjs /tmp/dist1 /tmp/dist2 /tmp/cert.pem /tmp/key.pem > /tmp/lab-server.log 2>&1 &
           sleep 3; cat /tmp/lab-server.log
+      - name: Save YouTube's desktop scripts for offline study
+        run: |
+          mkdir -p out/yt
+          UA="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36"
+          curl -sL -A "$UA" "https://www.youtube.com/watch?v=jNQXAC9IVRw" -o out/yt/watch.html
+          grep -oE '/s/desktop/[a-z0-9]+/jsbin/[A-Za-z0-9_.-]+\.vflset/[A-Za-z0-9_.-]+\.js' out/yt/watch.html | sort -u | tee out/yt/scripts.txt
+          while read -r p; do curl -sL -A "$UA" "https://www.youtube.com$p" -o "out/yt/$(basename "$p")"; done < out/yt/scripts.txt
+          ls -la out/yt
       - name: Play the video
         env:
           PLAYWRIGHT_PATH: /tmp/pw/node_modules/playwright/index.mjs
@@ -53,14 +61,6 @@ jobs:
             echo "== $name crashed=$(grep -o '"crashed": [a-z]*' "out/$name/stdout.txt")"
             grep -iE "fatal|check failed|out of memory|oom|v8|renderer|crash" "out/$name/browser.log" | grep -viE "crashpad|cpufreq" | head -15 || true
           done <<'RUNS'
-          no-webanim;8782;epoxy;web-animations-next-lite;
-          no-ce-adapter;8782;epoxy;custom-elements-es5-adapter;
-          no-webcomponents;8782;epoxy;webcomponents-sd;
-          no-intersection;8782;epoxy;intersection-observer;
-          no-scheduler;8782;epoxy;jsbin/scheduler\.vflset;
-          no-spf;8782;epoxy;jsbin/spf\.vflset;
-          no-network;8782;epoxy;jsbin/network\.vflset;
-          no-polymer;8782;epoxy;desktop_polymer|polymer;
           RUNS
           cp /tmp/lab-server.log out/
       - name: Save results to the diag-results branch
