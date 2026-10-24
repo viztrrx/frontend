@@ -1,0 +1,12 @@
+frontend /tmp/dist1 on http://localhost:8781
+frontend /tmp/dist2 on http://localhost:8782
+wisp on wss://localhost:4443/wisp/
+[2026/10/24 - 20:55:54] warn: (6baa570e) refusing to create a stream to 127.0.0.1:4443
+[2026/10/24 - 20:55:54] warn: (6baa570e) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 20:56:06] warn: (dde10ea0) refusing to create a stream to localhost:4443
+[2026/10/24 - 20:56:06] warn: (dde10ea0) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 20:56:19] warn: (fb4e3d88) refusing to create a stream to 127.0.0.1:4443
+[2026/10/24 - 20:56:24] warn: tcp stream to rr1---sn-aigzrnz7.googlevideo.com ended with error - Error: read ECONNRESET
+[2026/10/24 - 20:56:24] warn: tcp stream to rr1---sn-aigzrnz7.googlevideo.com ended with error - Error: read ECONNRESET
+[2026/10/24 - 20:56:25] warn: tcp stream to rr1---sn-aigzrnz7.googlevideo.com ended with error - Error: read ECONNRESET
+[2026/10/24 - 20:56:25] warn: tcp stream to rr1---sn-aigzrnz7.googlevideo.com ended with error - Error: read ECONNRESET

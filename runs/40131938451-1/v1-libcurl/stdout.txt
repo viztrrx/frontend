@@ -1,0 +1,67 @@
+{
+  "target": "http://localhost:8781",
+  "transport": "libcurl",
+  "crashed": true,
+  "lastTick": {
+    "t": 12.1,
+    "kind": "tick",
+    "memory": [
+      {
+        "pid": 3228,
+        "mb": 145
+      },
+      {
+        "pid": 3239,
+        "mb": 581
+      },
+      {
+        "pid": 3293,
+        "mb": 168
+      },
+      {
+        "pid": 3362,
+        "mb": 104
+      }
+    ],
+    "heap": null,
+    "video": {
+      "evalError": "page.evaluate: Target crashed "
+    },
+    "answerMs": 2
+  },
+  "peakRendererMB": 581,
+  "peakHeapMB": 27,
+  "requests": 78,
+  "failed": 2,
+  "byHost": {
+    "localhost:8781 script": 14,
+    "www.youtube.com script": 13,
+    "localhost:8781 fetch": 11,
+    "www.youtube.com stylesheet": 5,
+    " fetch": 5,
+    "www.gstatic.com script": 5,
+    "localhost:8781 other": 4,
+    "rr1---sn-aigzrnz7.googlevideo.com fetch": 4,
+    "localhost:8781 image": 2,
+    "accounts.google.com document": 2,
+    "googleads.g.doubleclick.net xhr": 2,
+    "localhost:8781 document": 1,
+    "localhost:8781 stylesheet": 1,
+    "www.youtube.com document": 1,
+    "i.ytimg.com other": 1,
+    "i.ytimg.com image": 1,
+    "fonts.googleapis.com stylesheet": 1,
+    "rr8---sn-ojq4f5-51.googlevideo.com other": 1,
+    "rr4---sn-q4flrne7.c.youtube.com other": 1,
+    "www.google.com script": 1,
+    "www.youtube.com image": 1,
+    "static.doubleclick.net script": 1
+  },
+  "pageErrors": [],
+  "consoleErrors": [
+    "3.7s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "6.3s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "6.5s Failed to load resource: the server responded with a status of 403 (Forbidden)",
+    "6.6s Failed to load resource: the server responded with a status of 403 (Forbidden)"
+  ]
+}
