@@ -213,6 +213,11 @@ body.ss {
   color: var(--text); font: inherit; font-size: 13.5px; cursor: pointer;
 }
 .ss-options select:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.ss-field-wide { flex: 1 1 260px; }
+.ss-options input { padding: 7px 10px; border: 1px solid #333; border-radius: 10px; background: #111; color: var(--text); font: inherit; width: 100%; box-sizing: border-box; }
+.ss-options input:focus-visible { outline: 2px solid var(--accent); outline-offset: 1px; }
+.ss-opt-hint { max-width: 620px; margin: 8px auto 0; color: var(--sub); font-size: 12px; line-height: 1.5; }
+.ss-opt-hint a { color: var(--accent); }
 .ss-check input[type="checkbox"] { width: 17px; height: 17px; accent-color: var(--accent); }
 
 /* ---- Quick-launch apps ---- */

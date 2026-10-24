@@ -16,6 +16,7 @@
 		<script src="config.js" defer></script>
 		<script src="blocked.js" defer></script>
 		<script src="sitefixes.js" defer></script>
+		<script src="youtube.js" defer></script>
 		<script src="index.js" defer></script>
 		<script src="sessions.js" defer></script>
 	</head>
@@ -105,7 +106,12 @@
 						<option value="https://www.bing.com/search?q=%s">Bing</option>
 					</select>
 				</label>
+				<label class="ss-field ss-field-wide">
+					<span>YouTube via</span>
+					<input id="sj-yt-instance" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="yewtu.be — blank uses youtube.com" aria-describedby="sj-yt-hint" />
+				</label>
 			</div>
+			<p id="sj-yt-hint" class="ss-opt-hint">YouTube opens through this Invidious instance (youtube.com itself won’t render). Instances go down often — pick a working one from the <a href="https://docs.invidious.io/instances/" target="_blank" rel="noopener">Invidious list</a>, or leave blank to use youtube.com.</p>
 
 			<div class="ss-msg">
 				<p id="sj-progress" role="status" hidden></p>

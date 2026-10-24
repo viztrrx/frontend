@@ -71,6 +71,14 @@ Storage: the `SESSIONS` binding in `wrangler.jsonc` points at the R2 bucket **`d
 
 > The bucket has **public access enabled**. Session objects hold sign-in cookies, and anyone who learns an object's full key can download it through the public URL. The keys contain a random 128-bit ID and are never shown to anyone but their owner, but a private bucket is safer. To use one, create it and change `bucket_name` above.
 
+## YouTube (via Invidious)
+
+youtube.com's own site is a heavy web-components app that doesn't render through the proxy — the results feed stays blank. So YouTube is opened through **Invidious**, a light, server-rendered YouTube frontend that renders and plays through the proxy. The Invidious server fetches the video from YouTube itself, so YouTube sees the instance's IP, not this backend's.
+
+- `public/youtube.js` maps `youtube.com` / `youtu.be` / `m.youtube.com` URLs (watch, shorts, search, channels, playlists, home) to the configured instance. `index.js` applies it in `openUrl` and `navigateFrame`, so typed addresses, the YouTube app tile and in-app navigation all go through it.
+- The instance is the **"YouTube via"** field on `saints://home` (stored in `localStorage` as `sj-yt-instance`). Default is `yewtu.be`; leave it blank to use youtube.com directly.
+- **Public instances go down often** (YouTube blocks them). When YouTube stops loading, pick a working instance from the [Invidious list](https://docs.invidious.io/instances/) (or self-host one) and paste it in that field. Self-hosting is the most reliable option.
+
 ## Blocked pages
 
 `public/blocked.js` lists what the proxy won't show (AI sites; signing in with Google goes through). `public/index.js` shows a notice in the page area instead, and `public/sw.js` refuses the requests, so links, redirects, pop-ups and scripts can't get around it:

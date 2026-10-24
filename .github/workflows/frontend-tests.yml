@@ -31,6 +31,7 @@ jobs:
           node --check public/engine2.js
           node --check public/sw2.js
           node --check public/sitefixes.js
+          node --check public/youtube.js
           node --check src/index.js
           node --check src/sessions.js
           node --check src/game-parts.js
