@@ -1,0 +1,74 @@
+{
+  "target": "http://localhost:8781",
+  "transport": "libcurl",
+  "block": "",
+  "shots": false,
+  "crashed": true,
+  "lastTick": {
+    "t": 10.2,
+    "kind": "tick",
+    "memory": [
+      {
+        "pid": 3990,
+        "mb": 144
+      },
+      {
+        "pid": 3999,
+        "mb": 607
+      },
+      {
+        "pid": 4038,
+        "mb": 172
+      },
+      {
+        "pid": 4053,
+        "mb": 104
+      }
+    ],
+    "heap": {
+      "usedMB": 67,
+      "totalMB": 94,
+      "nodes": 4890,
+      "docs": 22,
+      "frames": 13
+    },
+    "video": {
+      "evalError": "page.evaluate: Target crashed "
+    },
+    "answerMs": 3687
+  },
+  "peakRendererMB": 607,
+  "peakHeapMB": 67,
+  "requests": 83,
+  "failed": 2,
+  "byHost": {
+    "localhost:8781 script": 14,
+    "www.youtube.com script": 13,
+    "localhost:8781 fetch": 11,
+    "www.gstatic.com script": 11,
+    "www.youtube.com stylesheet": 5,
+    " fetch": 5,
+    "localhost:8781 other": 4,
+    "accounts.google.com document": 3,
+    "localhost:8781 image": 2,
+    "googleads.g.doubleclick.net xhr": 2,
+    "localhost:8781 document": 1,
+    "localhost:8781 stylesheet": 1,
+    "www.youtube.com document": 1,
+    "i.ytimg.com other": 1,
+    "i.ytimg.com image": 1,
+    "fonts.googleapis.com stylesheet": 1,
+    "rr2---sn-2imeyn7r.googlevideo.com other": 1,
+    "rr2---sn-aj2im9-5j.c.youtube.com other": 1,
+    "www.google.com script": 1,
+    "www.youtube.com image": 1,
+    "static.doubleclick.net script": 1,
+    "accounts.youtube.com document": 1,
+    "accounts.google.com fetch": 1
+  },
+  "pageErrors": [],
+  "consoleErrors": [
+    "3.1s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "5.7s Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ]
+}

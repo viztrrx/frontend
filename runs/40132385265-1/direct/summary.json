@@ -1,0 +1,86 @@
+{
+  "target": "direct",
+  "transport": "libcurl",
+  "block": "",
+  "shots": false,
+  "crashed": false,
+  "lastTick": {
+    "t": 59.5,
+    "kind": "tick",
+    "memory": [
+      {
+        "pid": 2653,
+        "mb": 168
+      },
+      {
+        "pid": 2661,
+        "mb": 429
+      },
+      {
+        "pid": 2693,
+        "mb": 136
+      },
+      {
+        "pid": 2726,
+        "mb": 109
+      }
+    ],
+    "heap": {
+      "usedMB": 71,
+      "totalMB": 81,
+      "nodes": 29941,
+      "docs": 6,
+      "frames": 4
+    },
+    "video": {
+      "title": "Me at the zoo - YouTube",
+      "time": 0,
+      "paused": true,
+      "ready": 0,
+      "net": 0,
+      "error": null,
+      "buffered": 0,
+      "src": ""
+    },
+    "answerMs": 2
+  },
+  "peakRendererMB": 549,
+  "peakHeapMB": 104,
+  "requests": 96,
+  "failed": 7,
+  "byHost": {
+    "www.youtube.com fetch": 26,
+    "www.youtube.com script": 17,
+    "i.ytimg.com image": 8,
+    "rr4---sn-q4fl6n6z.googlevideo.com fetch": 6,
+    "www.youtube.com stylesheet": 5,
+    "yt3.ggpht.com image": 5,
+    "googleads.g.doubleclick.net xhr": 4,
+    "www.youtube.com media": 4,
+    "fonts.googleapis.com stylesheet": 3,
+    "www.gstatic.com xhr": 3,
+    "www.gstatic.com script": 2,
+    "www.youtube.com xhr": 2,
+    "www.youtube.com document": 1,
+    "i.ytimg.com other": 1,
+    "rr2---sn-2imeyn7r.googlevideo.com other": 1,
+    "rr2---sn-aj2im9-5j.c.youtube.com other": 1,
+    "accounts.google.com document": 1,
+    "www.google.com script": 1,
+    "static.doubleclick.net script": 1,
+    "www.youtube.com image": 1,
+    "www.youtube.com other": 1,
+    "www.google.com image": 1,
+    "youtube.com fetch": 1
+  },
+  "pageErrors": [],
+  "consoleErrors": [
+    "13.3s Failed to load resource: the server responded with a status of 401 ()",
+    "14.4s Failed to load resource: net::ERR_NAME_NOT_RESOLVED",
+    "14.4s Failed to load resource: net::ERR_NAME_NOT_RESOLVED",
+    "14.4s Failed to load resource: net::ERR_NAME_NOT_RESOLVED",
+    "14.5s Failed to load resource: net::ERR_NAME_NOT_RESOLVED",
+    "14.5s Failed to load resource: net::ERR_NAME_NOT_RESOLVED",
+    "14.5s Failed to load resource: net::ERR_NAME_NOT_RESOLVED"
+  ]
+}

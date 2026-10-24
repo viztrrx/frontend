@@ -1,0 +1,227 @@
+{"t":0.5,"kind":"req","id":1,"method":"GET","type":"document","url":"http://localhost:8781/","sw":false}
+{"t":0.5,"kind":"req","id":2,"method":"GET","type":"script","url":"http://localhost:8781/scram/scramjet.all.js","sw":false}
+{"t":0.5,"kind":"req","id":3,"method":"GET","type":"script","url":"http://localhost:8781/baremux/index.js","sw":false}
+{"t":0.5,"kind":"req","id":4,"method":"GET","type":"stylesheet","url":"http://localhost:8781/index.css","sw":false}
+{"t":0.5,"kind":"req","id":5,"method":"GET","type":"script","url":"http://localhost:8781/register-sw.js","sw":false}
+{"t":0.5,"kind":"req","id":6,"method":"GET","type":"script","url":"http://localhost:8781/search.js","sw":false}
+{"t":0.5,"kind":"req","id":7,"method":"GET","type":"script","url":"http://localhost:8781/config.js","sw":false}
+{"t":0.5,"kind":"req","id":8,"method":"GET","type":"script","url":"http://localhost:8781/blocked.js","sw":false}
+{"t":0.5,"kind":"req","id":9,"method":"GET","type":"script","url":"http://localhost:8781/index.js","sw":false}
+{"t":0.6,"kind":"req","id":10,"method":"GET","type":"script","url":"http://localhost:8781/sessions.js","sw":false}
+{"t":0.6,"kind":"console","type":"debug","text":"bare-mux: running v2.1.9 (build dc9dc6e)"}
+{"t":0.6,"kind":"done","id":1,"status":200,"size":9604}
+{"t":0.6,"kind":"done","id":4,"status":200,"size":20762}
+{"t":0.6,"kind":"done","id":3,"status":200,"size":8689}
+{"t":0.6,"kind":"done","id":2,"status":200,"size":180333}
+{"t":0.6,"kind":"done","id":5,"status":200,"size":609}
+{"t":0.6,"kind":"done","id":6,"status":200,"size":940}
+{"t":0.6,"kind":"done","id":7,"status":200,"size":68}
+{"t":0.6,"kind":"done","id":8,"status":200,"size":4972}
+{"t":0.6,"kind":"done","id":9,"status":200,"size":61339}
+{"t":0.6,"kind":"done","id":10,"status":200,"size":16207}
+{"t":0.7,"kind":"done","id":11,"status":200,"size":915}
+{"t":0.7,"kind":"console","type":"warning","text":"you are using the last version of scramjet v1, if possible, please upgrade to v2 for better performance and more features"}
+{"t":0.7,"kind":"done","id":12,"status":200,"size":915}
+{"t":0.7,"kind":"console","type":"log","text":"%cinit%c config loaded \n  \tbackground-color: #000;\n  \tcolor: #fff;\n  \tpadding: 2px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n   "}
+{"t":0.7,"kind":"req","id":13,"method":"GET","type":"script","url":"http://localhost:8781/sw.js","sw":true}
+{"t":0.7,"kind":"req","id":14,"method":"GET","type":"other","url":"http://localhost:8781/scram/scramjet.all.js","sw":true}
+{"t":0.8,"kind":"req","id":15,"method":"GET","type":"other","url":"http://localhost:8781/baremux/index.js","sw":true}
+{"t":0.8,"kind":"console","type":"debug","text":"bare-mux: running v2.1.9 (build dc9dc6e)"}
+{"t":0.8,"kind":"req","id":16,"method":"GET","type":"other","url":"http://localhost:8781/config.js","sw":true}
+{"t":0.8,"kind":"req","id":17,"method":"GET","type":"other","url":"http://localhost:8781/blocked.js","sw":true}
+{"t":0.8,"kind":"done","id":14,"status":200,"size":-272}
+{"t":0.8,"kind":"done","id":15,"status":200,"size":-272}
+{"t":0.8,"kind":"done","id":16,"status":200,"size":-272}
+{"t":0.8,"kind":"console","type":"debug","text":"bare-mux: running v2.1.9 (build dc9dc6e)"}
+{"t":0.8,"kind":"done","id":17,"status":200,"size":-272}
+{"t":0.9,"kind":"req","id":18,"method":"GET","type":"script","url":"http://localhost:8781/baremux/worker.js","sw":false}
+{"t":0.9,"kind":"console","type":"debug","text":"bare-mux: setting localStorage bare-mux-path to /baremux/worker.js"}
+{"t":0.9,"kind":"req","id":19,"method":"GET","type":"fetch","url":"http://localhost:8781/scram/scramjet.wasm.wasm","sw":true}
+{"t":0.9,"kind":"done","id":19,"status":200,"size":537008}
+{"t":0.9,"kind":"req","id":20,"method":"GET","type":"fetch","url":"http://localhost:8781/baremux/worker.js","sw":true}
+{"t":0.9,"kind":"done","id":20,"status":200,"size":2915}
+{"t":0.9,"kind":"console","type":"debug","text":"bare-mux: recieved request for port from sw"}
+{"t":0.9,"kind":"req","id":21,"method":"GET","type":"fetch","url":"http://localhost:8781/libcurl/index.mjs","sw":true}
+{"t":0.9,"kind":"done","id":21,"status":200,"size":2111122}
+{"t":1,"kind":"console","type":"debug","text":"bare-mux: got localStorage bare-mux-path: /baremux/worker.js"}
+{"t":1.9,"kind":"console","type":"warning","text":"bare-mux: failed to get a bare-mux SharedWorker MessagePort within 1s, retrying"}
+{"t":1.9,"kind":"console","type":"debug","text":"bare-mux: recieved request for port from sw"}
+{"t":1.9,"kind":"console","type":"debug","text":"bare-mux: recieved request for port from sw"}
+{"t":2.2,"kind":"req","id":22,"method":"GET","type":"fetch","url":"http://localhost:8781/version.json","sw":false}
+{"t":2.2,"kind":"req","id":23,"method":"GET","type":"fetch","url":"http://localhost:8781/version.json","sw":true}
+{"t":2.2,"kind":"done","id":23,"status":200,"size":263}
+{"t":2.2,"kind":"version","version":{"engine":1,"commit":"eb8be741fe7edbd20952d18f06876df323580849","branch":"diag-youtube","message":"diag: controls (direct YouTube, screenshots on/off)","committedAt":"2026-10-24T21:01:26Z","builtAt":"2026-10-24T21:02:03.179Z"}}
+{"t":2.2,"kind":"done","id":22,"status":200,"size":-273}
+{"t":2.2,"kind":"console","type":"debug","text":"bare-mux: setting localStorage bare-mux-path to /baremux/worker.js"}
+{"t":2.2,"kind":"opened","video":"https://www.youtube.com/watch?v=jNQXAC9IVRw"}
+{"t":2.2,"kind":"console","type":"log","text":"%copenUrl -> go%c navigated to \n  \tbackground-color: #000;\n  \tcolor: #fff;\n  \tpadding: 2px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n    https://www.youtube.com/watch?v=jNQXAC9IVRw"}
+{"t":2.2,"kind":"req","id":24,"method":"GET","type":"document","url":"https://www.youtube.com/watch?v=jNQXAC9IVRw","sw":false}
+{"t":2.2,"kind":"console","type":"debug","text":"bare-mux: recieved request for port from sw"}
+{"t":2.2,"kind":"console","type":"debug","text":"bare-mux: recieved request for port from sw"}
+{"t":2.2,"kind":"console","type":"debug","text":"bare-mux: recieved request for port from sw"}
+{"t":2.9,"kind":"req","id":25,"method":"GET","type":"fetch","url":"http://localhost:8781/scram/scramjet.all.js","sw":true}
+{"t":2.9,"kind":"req","id":26,"method":"GET","type":"fetch","url":"http://localhost:8781/scram/scramjet.wasm.wasm","sw":true}
+{"t":2.9,"kind":"req","id":27,"method":"GET","type":"script","url":"http://localhost:8781/scram/scramjet.wasm.wasm","sw":false}
+{"t":2.9,"kind":"req","id":28,"method":"GET","type":"script","url":"http://localhost:8781/scram/scramjet.all.js","sw":false}
+{"t":2.9,"kind":"req","id":29,"method":"GET","type":"other","url":"https://i.ytimg.com/generate_204","sw":false}
+{"t":2.9,"kind":"req","id":30,"method":"GET","type":"script","url":"https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/base.js","sw":false}
+{"t":2.9,"kind":"req","id":31,"method":"GET","type":"image","url":"https://i.ytimg.com/vi/jNQXAC9IVRw/hqdefault.jpg","sw":false}
+{"t":2.9,"kind":"req","id":32,"method":"GET","type":"script","url":"https://www.youtube.com/s/_/ytmainappweb/_/js/k=ytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O/am=AAAAEAAAEICU/d=1/br=1/rs=AGKMywEymXHB80m60_9V4p8T8EDMf-ZwZA/m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk","sw":false}
+{"t":2.9,"kind":"req","id":33,"method":"GET","type":"script","url":"https://www.youtube.com/s/desktop/dc0b62b0/jsbin/web-animations-next-lite.min.vflset/web-animations-next-lite.min.js","sw":false}
+{"t":2.9,"kind":"req","id":34,"method":"GET","type":"script","url":"https://www.youtube.com/s/desktop/dc0b62b0/jsbin/custom-elements-es5-adapter.vflset/custom-elements-es5-adapter.js","sw":false}
+{"t":3,"kind":"req","id":35,"method":"GET","type":"script","url":"https://www.youtube.com/s/desktop/dc0b62b0/jsbin/webcomponents-sd.vflset/webcomponents-sd.js","sw":false}
+{"t":3,"kind":"req","id":36,"method":"GET","type":"script","url":"https://www.youtube.com/s/desktop/dc0b62b0/jsbin/intersection-observer.min.vflset/intersection-observer.min.js","sw":false}
+{"t":3,"kind":"done","id":25,"status":200,"size":180333}
+{"t":3,"kind":"done","id":26,"status":200,"size":537008}
+{"t":3,"kind":"req","id":37,"method":"GET","type":"script","url":"https://www.youtube.com/s/desktop/dc0b62b0/jsbin/scheduler.vflset/scheduler.js","sw":false}
+{"t":3,"kind":"req","id":38,"method":"GET","type":"script","url":"https://www.youtube.com/s/desktop/dc0b62b0/jsbin/www-i18n-constants-en_US.vflset/www-i18n-constants.js","sw":false}
+{"t":3,"kind":"req","id":39,"method":"GET","type":"stylesheet","url":"https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=YouTube+Sans:wght@300..900&display=swap","sw":false}
+{"t":3,"kind":"req","id":40,"method":"GET","type":"stylesheet","url":"https://www.youtube.com/s/player/cbcfbf2f/www-player.css","sw":false}
+{"t":3,"kind":"req","id":41,"method":"GET","type":"stylesheet","url":"https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-main-desktop-watch-page-skeleton.css","sw":false}
+{"t":3,"kind":"req","id":42,"method":"GET","type":"stylesheet","url":"https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-main-desktop-player-skeleton.css","sw":false}
+{"t":3,"kind":"req","id":43,"method":"GET","type":"stylesheet","url":"https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-onepick.css","sw":false}
+{"t":3,"kind":"req","id":44,"method":"GET","type":"stylesheet","url":"https://www.youtube.com/s/_/ytmainappweb/_/ss/k=ytmainappweb.kevlar_base.NZ7X3F12ieY.L.B1.O/am=AAAAEADAEMCe/d=0/br=1/rs=AGKMywEsar3z3PzLb3vovjlDdC0SLIvlqA","sw":false}
+{"t":3,"kind":"req","id":45,"method":"GET","type":"other","url":"https://rr2---sn-2imeyn7r.googlevideo.com/generate_204","sw":false}
+{"t":3,"kind":"req","id":46,"method":"GET","type":"other","url":"https://rr2---sn-aj2im9-5j.c.youtube.com/generate_204","sw":false}
+{"t":3,"kind":"req","id":47,"method":"GET","type":"script","url":"https://www.youtube.com/s/desktop/dc0b62b0/jsbin/spf.vflset/spf.js","sw":false}
+{"t":3,"kind":"req","id":48,"method":"GET","type":"script","url":"https://www.youtube.com/s/desktop/dc0b62b0/jsbin/network.vflset/network.js","sw":false}
+{"t":3,"kind":"done","id":28,"status":200,"size":-272}
+{"t":3,"kind":"done","id":24,"status":200,"size":-10245}
+{"t":3,"kind":"done","id":27,"status":200,"size":-48}
+{"t":3.1,"kind":"console","type":"debug","text":"bare-mux: running v2.1.9 (build dc9dc6e)"}
+{"t":3.1,"kind":"console","type":"log","text":"%cg%c initializing scramjet client \n  \tbackground-color: #000;\n  \tcolor: #fff;\n  \tpadding: 2px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n   "}
+{"t":3.1,"kind":"console","type":"warning","text":"%cg -> g%c Creating SingletonBox \n  \tbackground-color: #f80;\n  \tcolor: #fff;\n  \tpadding: 4px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n   "}
+{"t":3.1,"kind":"console","type":"debug","text":"bare-mux: got localStorage bare-mux-path: /baremux/worker.js"}
+{"t":3.1,"kind":"req","id":49,"method":"GET","type":"fetch","url":"http://localhost:8781/icon?d=youtube.com","sw":true}
+{"t":3.1,"kind":"req","id":50,"method":"GET","type":"image","url":"http://localhost:8781/icon?d=youtube.com","sw":false}
+{"t":3.1,"kind":"console","type":"error","text":"Failed to load resource: the server responded with a status of 404 (Not Found)"}
+{"t":3.1,"kind":"done","id":49,"status":404,"size":19}
+{"t":3.1,"kind":"done","id":50,"status":404,"size":-248}
+{"t":3.1,"kind":"done","id":34,"status":200,"size":-675}
+{"t":3.2,"kind":"done","id":36,"status":200,"size":-676}
+{"t":3.2,"kind":"done","id":37,"status":200,"size":-676}
+{"t":3.2,"kind":"done","id":38,"status":200,"size":-676}
+{"t":3.2,"kind":"done","id":42,"status":200,"size":-668}
+{"t":3.2,"kind":"done","id":33,"status":200,"size":-677}
+{"t":3.2,"kind":"done","id":43,"status":200,"size":-668}
+{"t":3.3,"kind":"tick","memory":[{"pid":3990,"mb":144},{"pid":3999,"mb":295},{"pid":4038,"mb":162},{"pid":4053,"mb":104}],"heap":{"usedMB":11,"totalMB":18,"nodes":642,"docs":12,"frames":7},"video":{"status":"Website responded (HTTP 200)","title":""},"answerMs":4}
+{"t":3.3,"kind":"done","id":35,"status":200,"size":-677}
+{"t":3.3,"kind":"done","id":41,"status":200,"size":-669}
+{"t":3.3,"kind":"done","id":40,"status":200,"size":-669}
+{"t":3.3,"kind":"done","id":47,"status":200,"size":-677}
+{"t":3.3,"kind":"done","id":48,"status":200,"size":-676}
+{"t":4.1,"kind":"done","id":30,"status":200,"size":-678}
+{"t":4.2,"kind":"done","id":44,"status":200,"size":-680}
+{"t":4.3,"kind":"tick","memory":[{"pid":3990,"mb":144},{"pid":3999,"mb":465},{"pid":4038,"mb":179},{"pid":4053,"mb":104}],"heap":{"usedMB":15,"totalMB":21,"nodes":673,"docs":14,"frames":7},"video":{"status":"Website responded (HTTP 200)","title":""},"answerMs":4}
+{"t":4.4,"kind":"done","id":31,"status":200,"size":-559}
+{"t":4.4,"kind":"done","id":29,"status":204,"size":-121}
+{"t":4.4,"kind":"done","id":46,"status":204,"size":-716}
+{"t":4.5,"kind":"done","id":39,"status":200,"size":-686}
+{"t":4.5,"kind":"done","id":45,"status":204,"size":-716}
+{"t":4.5,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_cfg' cannot have a negative start time.\n    at hy (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2034:492)\n    at http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:1307:139\n    at Object.oy [as tick] (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2060:66)\n    at playerBootstrap (http://localhost:878"}
+{"t":4.6,"kind":"req","id":51,"method":"GET","type":"script","url":"https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/offline.js","sw":false}
+{"t":4.6,"kind":"req","id":53,"method":"GET","type":"script","url":"https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/remote.js","sw":false}
+{"t":4.6,"kind":"req","id":54,"method":"GET","type":"script","url":"https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/miniplayer.js","sw":false}
+{"t":4.7,"kind":"done","id":32,"status":200,"size":-689}
+{"t":4.7,"kind":"done","id":51,"status":200,"size":-676}
+{"t":4.7,"kind":"done","id":54,"status":200,"size":-675}
+{"t":4.7,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_bs' cannot have a negative start time.\n    at hy (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2034:492)\n    at http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:1307:139\n    at Object.oy [as tick] (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2060:66)\n    at http://localhost:8781/scramjet/https%3"}
+{"t":4.7,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_ai' cannot have a negative start time.\n    at hy (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2034:492)\n    at http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:1307:139\n    at Object.oy [as tick] (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2060:66)\n    at http://localhost:8781/scramjet/https%3"}
+{"t":4.7,"kind":"req","id":55,"method":"GET","type":"document","url":"https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3D%252Fsignin_passive%26feature%3Dpassive&hl=en","sw":false}
+{"t":4.7,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_nc_pj' cannot have a negative start time.\n    at hy (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2034:492)\n    at http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:1307:139\n    at Object.oy [as tick] (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2060:66)\n    at http://localhost:8781/scramjet/http"}
+{"t":4.7,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_rsbe_dpj' cannot have a negative start time.\n    at hy (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2034:492)\n    at http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:1307:139\n    at Object.oy [as tick] (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2060:66)\n    at http://localhost:8781/scramjet/h"}
+{"t":4.7,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_js_ld' cannot have a negative start time.\n    at hy (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2034:492)\n    at http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:1307:139\n    at Object.oy [as tick] (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2Fplayer%2Fcbcfbf2f%2Fplayer_es6.vflset%2Fen_US%2Fbase.js:2060:66)\n    at http://localhost:8781/scramjet/http"}
+{"t":4.8,"kind":"req","id":56,"method":"GET","type":"document","url":"https://accounts.google.com/v3/signin/identifier?continue=https://www.youtube.com/signin?action_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3D%252Fsignin_passive%26feature%3Dpassive&hl=en&passive=true&service=youtube&uilel=3&flowName=GlifWebSignIn&flowEntry=ServiceLogin&dsh=S890047812:1792","sw":false}
+{"t":4.9,"kind":"done","id":55,"status":302,"size":0}
+{"t":5.3,"kind":"console","type":"info","text":"LegacyDataMixin will be applied to all legacy elements.\nSet `_legacyUndefinedCheck: true` on element class to enable."}
+{"t":5.5,"kind":"done","id":52,"status":200,"size":-524}
+{"t":5.5,"kind":"req","id":57,"method":"GET","type":"fetch","url":"data:application/json;base64,eyJhZFBsYWNlbWVudHMiOnRydWUsInBsYXllckFkcyI6dHJ1ZSwicGxheWVyUmVzcG9uc2UiOnsiYWRQbGFjZW1lbnRzIjp0cnVlLCJwbGF5ZXJBZHMiOnRydWUsInBsYXllckNvbmZpZyI6IHsiYXVkaW9Db25maWciOiB7fSwgInN0cmVhbVNlbGVjdGlvbkNvbmZpZyI6IHt9LCAid2ViUGxheWVyQ29uZmlnIjogeyJ3ZWJQbGF5ZXJBY3Rpb25zUG9ydGluZyI","sw":false}
+{"t":5.5,"kind":"done","id":53,"status":200,"size":-676}
+{"t":5.5,"kind":"req","id":58,"method":"GET","type":"fetch","url":"http://localhost:8781/scram/scramjet.all.js","sw":true}
+{"t":5.5,"kind":"req","id":59,"method":"GET","type":"script","url":"http://localhost:8781/scram/scramjet.wasm.wasm","sw":false}
+{"t":5.5,"kind":"req","id":60,"method":"GET","type":"script","url":"http://localhost:8781/scram/scramjet.all.js","sw":false}
+{"t":5.5,"kind":"req","id":61,"method":"GET","type":"script","url":"https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0BAFBFAAE/d=1/excm=_b,_tp,identifierview/ed=1/dg=0/wt=2/ujg=1/rs=AOaEmlGaX03bAasRe4_qyTkyocOyp6guOg/dti=1/m=_b,_tp","sw":false}
+{"t":5.5,"kind":"tick","memory":[{"pid":3990,"mb":144},{"pid":3999,"mb":506},{"pid":4038,"mb":179},{"pid":4053,"mb":104}],"heap":{"usedMB":29,"totalMB":37,"nodes":1469,"docs":8,"frames":8},"video":{"status":"Website responded (HTTP 200)","title":"- YouTube","time":0,"paused":true,"ready":0,"net":0,"error":null,"buffered":0,"src":""},"answerMs":208}
+{"t":5.5,"kind":"req","id":63,"method":"GET","type":"fetch","url":"http://localhost:8781/scram/scramjet.wasm.wasm","sw":true}
+{"t":5.5,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_rsef_dpj' cannot have a negative start time.\n    at YAK (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAEAAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEymXHB80m60_9V4p8T8EDMf-ZwZA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk:2703:511)\n    at _.uK (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5"}
+{"t":5.5,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_rsae_dpj' cannot have a negative start time.\n    at YAK (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAEAAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEymXHB80m60_9V4p8T8EDMf-ZwZA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk:2703:511)\n    at _.uK (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5"}
+{"t":5.5,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_js_r' cannot have a negative start time.\n    at YAK (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAEAAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEymXHB80m60_9V4p8T8EDMf-ZwZA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk:2703:511)\n    at _.uK (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2"}
+{"t":5.5,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_ac' cannot have a negative start time.\n    at YAK (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAEAAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEymXHB80m60_9V4p8T8EDMf-ZwZA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk:2703:511)\n    at _.uK (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fa"}
+{"t":5.5,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_apr' cannot have a negative start time.\n    at YAK (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAEAAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEymXHB80m60_9V4p8T8EDMf-ZwZA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk:2703:511)\n    at _.uK (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2F"}
+{"t":5.5,"kind":"done","id":58,"status":200,"size":180333}
+{"t":5.5,"kind":"req","id":64,"method":"GET","type":"script","url":"https://www.google.com/js/th/YI2XvVwvdBJTNOg4tmE81lkRxYCcxVDASxYzC3ult3w.js","sw":false}
+{"t":5.5,"kind":"done","id":63,"status":200,"size":537008}
+{"t":5.5,"kind":"req","id":65,"method":"GET","type":"image","url":"http://localhost:8781/icon?d=youtube.com","sw":false}
+{"t":5.5,"kind":"console","type":"warning","text":"CAUGHT ERROR SyntaxError: Unexpected token 'Y', \"YOUTUBE_LOGO\" is not valid JSON\n    at JSON.parse (<anonymous>)\n    at S._deserializeValue (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAEAAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEymXHB80m60_9V4p8T8EDMf-ZwZA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk:8750:114)\n    at H._attributeToProperty (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevl"}
+{"t":5.6,"kind":"req","id":66,"method":"GET","type":"fetch","url":"http://localhost:8781/icon?d=youtube.com","sw":true}
+{"t":5.6,"kind":"done","id":66,"status":404,"size":19}
+{"t":5.7,"kind":"req","id":67,"method":"GET","type":"xhr","url":"https://googleads.g.doubleclick.net/pagead/id","sw":false}
+{"t":5.7,"kind":"console","type":"debug","text":"bare-mux: got localStorage bare-mux-path: /baremux/worker.js"}
+{"t":5.7,"kind":"req","id":68,"method":"GET","type":"image","url":"https://www.youtube.com/watch?v=jNQXAC9IVRw","sw":false}
+{"t":5.7,"kind":"console","type":"error","text":"Failed to load resource: the server responded with a status of 404 (Not Found)"}
+{"t":5.7,"kind":"done","id":65,"status":404,"size":-248}
+{"t":5.7,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_pdc' cannot have a negative start time.\n    at YAK (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAEAAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEymXHB80m60_9V4p8T8EDMf-ZwZA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk:2703:511)\n    at _.uK (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2F"}
+{"t":5.7,"kind":"done","id":56,"status":200,"size":-2036}
+{"t":5.7,"kind":"done","id":60,"status":200,"size":-272}
+{"t":5.8,"kind":"done","id":59,"status":200,"size":-48}
+{"t":5.8,"kind":"done","id":64,"status":200,"size":-606}
+{"t":5.8,"kind":"done","id":57,"status":200,"size":-136}
+{"t":5.8,"kind":"req","id":69,"method":"GET","type":"script","url":"https://www.gstatic.com/cv/js/sender/v1/cast_sender.js","sw":false}
+{"t":5.8,"kind":"console","type":"debug","text":"bare-mux: running v2.1.9 (build dc9dc6e)"}
+{"t":5.8,"kind":"console","type":"log","text":"%cg%c initializing scramjet client \n  \tbackground-color: #000;\n  \tcolor: #fff;\n  \tpadding: 2px;\n  \tfont-weight: bold;\n  \tfont-family: monospace;\n  \tfont-size: 0.9em;\n   "}
+{"t":5.8,"kind":"console","type":"debug","text":"bare-mux: got localStorage bare-mux-path: /baremux/worker.js"}
+{"t":5.9,"kind":"done","id":62,"status":200,"size":-615}
+{"t":5.9,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_pdr' cannot have a negative start time.\n    at YAK (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAEAAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEymXHB80m60_9V4p8T8EDMf-ZwZA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk:2703:511)\n    at _.uK (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2F"}
+{"t":5.9,"kind":"req","id":70,"method":"GET","type":"xhr","url":"https://googleads.g.doubleclick.net/pagead/id?slf_rd=1","sw":false}
+{"t":5.9,"kind":"done","id":67,"status":302,"size":0}
+{"t":5.9,"kind":"req","id":71,"method":"GET","type":"fetch","url":"data:application/json;base64,W3siYWRQbGFjZW1lbnRzIjp0cnVlLCJwbGF5ZXJBZHMiOnRydWUsInBsYXllclJlc3BvbnNlIjp7ImFkUGxhY2VtZW50cyI6dHJ1ZSwicGxheWVyQWRzIjp0cnVlfX1d","sw":false}
+{"t":5.9,"kind":"done","id":69,"status":200,"size":-585}
+{"t":5.9,"kind":"done","id":61,"status":200,"size":-680}
+{"t":6,"kind":"req","id":72,"method":"GET","type":"script","url":"https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0BAFBFAAE/d=1/exm=_b,_tp/excm=_b,_tp,identifierview/ed=1/wt=2/ujg=1/rs=AOaEmlFgO8oknP4pn62iFdb","sw":false}
+{"t":6,"kind":"console","type":"verbose","text":"[DOM] Password field is not contained in a form: (More info: https://goo.gl/9p2vKq) %o"}
+{"t":6,"kind":"req","id":73,"method":"GET","type":"script","url":"https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0BAFBFAAE/d=1/exm=LEikZe,_b,_tp,byfTOb,lsjVmc/excm=_b,_tp,identifierview/ed=1/wt=2/ujg=1/rs=AO","sw":false}
+{"t":6,"kind":"console","type":"warning","text":"CAUGHT ERROR zkg"}
+{"t":6,"kind":"console","type":"warning","text":"CAUGHT ERROR ZMP"}
+{"t":6,"kind":"done","id":70,"status":200,"size":-610}
+{"t":6,"kind":"req","id":74,"method":"GET","type":"script","url":"https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0BAFBFAAE/d=1/exm=CMcBD,DqMihc,EFQ78c,EN3i8d,Fndnac,GwYlN,IZT63,K0PMbc,K1ZKnb,KUM7Z,L9OGUe,LDQ","sw":false}
+{"t":6,"kind":"done","id":71,"status":200,"size":-136}
+{"t":6,"kind":"req","id":75,"method":"GET","type":"fetch","url":"data:application/json;base64,eyJyZXNwb25zZUNvbnRleHQiOnsic2VydmljZVRyYWNraW5nUGFyYW1zIjpbeyJzZXJ2aWNlIjoiR0ZFRURCQUNLIiwicGFyYW1zIjpbeyJrZXkiOiJrYyIsInZhbHVlIjoiNjYifSx7ImtleSI6ImN3IiwidmFsdWUiOiJzdCJ9LHsia2V5IjoiemIiLCJ2YWx1ZSI6Inh6In0seyJrZXkiOiJ6bCIsInZhbHVlIjoiMTYifSx7ImtleSI6InBmIiwidmFsdWUiOiJ","sw":false}
+{"t":6,"kind":"console","type":"debug","text":"bare-mux: got localStorage bare-mux-path: /baremux/worker.js"}
+{"t":6,"kind":"done","id":72,"status":200,"size":-679}
+{"t":6,"kind":"done","id":75,"status":200,"size":-136}
+{"t":6.1,"kind":"req","id":76,"method":"GET","type":"fetch","url":"data:application/json;base64,eyJwbGF5ZXJSZXNwb25zZSI6eyJyZXNwb25zZUNvbnRleHQiOnsic2VydmljZVRyYWNraW5nUGFyYW1zIjpbeyJzZXJ2aWNlIjoiR0ZFRURCQUNLIiwicGFyYW1zIjpbeyJrZXkiOiJrYyIsInZhbHVlIjoiNjYifSx7ImtleSI6ImN3IiwidmFsdWUiOiJzdCJ9LHsia2V5IjoiemIiLCJ2YWx1ZSI6Inh6In0seyJrZXkiOiJ6bCIsInZhbHVlIjoiMTYifSx7Imt","sw":false}
+{"t":6.1,"kind":"done","id":74,"status":200,"size":-678}
+{"t":6.1,"kind":"done","id":76,"status":200,"size":-136}
+{"t":6.1,"kind":"req","id":77,"method":"GET","type":"fetch","url":"data:application/json;base64,eyJyZXNwb25zZUNvbnRleHQiOnsic2VydmljZVRyYWNraW5nUGFyYW1zIjpbeyJzZXJ2aWNlIjoiR0ZFRURCQUNLIiwicGFyYW1zIjpbeyJrZXkiOiJpcGNjIiwidmFsdWUiOiIwIn0seyJrZXkiOiJpc192aWV3ZWRfbGl2ZSIsInZhbHVlIjoiRmFsc2UifSx7ImtleSI6ImlzX2FsY19zdXJmYWNlIiwidmFsdWUiOiJmYWxzZSJ9LHsia2V5IjoicHJlbWl1bV9","sw":false}
+{"t":6.1,"kind":"done","id":68,"status":200,"size":-8697}
+{"t":6.1,"kind":"req","id":78,"method":"GET","type":"script","url":"https://static.doubleclick.net/instream/ad_status.js","sw":false}
+{"t":6.2,"kind":"done","id":77,"status":200,"size":-136}
+{"t":6.3,"kind":"done","id":73,"status":200,"size":-680}
+{"t":6.4,"kind":"req","id":84,"method":"GET","type":"script","url":"https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0BAFBFAAE/d=1/exm=CMcBD,DqMihc,E87wgc,EFQ78c,EN3i8d,Fndnac,GwYlN,IZT63,K0PMbc,K1ZKnb,KUM7Z,L9O","sw":false}
+{"t":6.4,"kind":"req","id":85,"method":"GET","type":"script","url":"https://www.gstatic.com/feedback/js/help/prod/service/lazy.min.js","sw":false}
+{"t":6.4,"kind":"req","id":86,"method":"GET","type":"script","url":"https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0BAFBFAAE/d=1/exm=CMcBD,DqMihc,E87wgc,EFQ78c,EN3i8d,Fndnac,GwYlN,IZT63,K0PMbc,K1ZKnb,KUM7Z,L9O","sw":false}
+{"t":6.4,"kind":"req","id":87,"method":"GET","type":"script","url":"https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0BAFBFAAE/d=1/exm=CMcBD,DqMihc,E87wgc,EFQ78c,EN3i8d,Fndnac,GwYlN,IZT63,K0PMbc,K1ZKnb,KUM7Z,L9O","sw":false}
+{"t":6.4,"kind":"req","id":88,"method":"GET","type":"script","url":"https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0BAFBFAAE/d=1/exm=A7fCU,CMcBD,DqMihc,E87wgc,EFQ78c,EN3i8d,Fndnac,GwYlN,IZT63,K0PMbc,K1ZKnb,KUM","sw":false}
+{"t":6.4,"kind":"done","id":80,"status":200,"size":-548}
+{"t":6.4,"kind":"done","id":83,"status":200,"size":-548}
+{"t":6.4,"kind":"done","id":78,"status":200,"size":-712}
+{"t":6.4,"kind":"req","id":89,"method":"GET","type":"script","url":"https://www.gstatic.com/_/mss/boq-identity/_/js/k=boq-identity.AccountsSignInUi.en.Hv99bHM5rb0.es5.O/ck=boq-identity.AccountsSignInUi.3Dcbv-MmpUc.L.B1.O/am=nw8IAQAAADjCSwAAkACgfwMACBCsA95rAZgAIQMAAAAAAAAAAF0BAFBFAAE/d=1/exm=A7fCU,CMcBD,DqMihc,E87wgc,EFQ78c,EN3i8d,Fndnac,GwYlN,IZT63,K0PMbc,K1ZKnb,KUM","sw":false}
+{"t":6.4,"kind":"done","id":85,"status":200,"size":-638}
+{"t":6.4,"kind":"done","id":84,"status":200,"size":-679}
+{"t":6.5,"kind":"done","id":86,"status":200,"size":-678}
+{"t":6.5,"kind":"done","id":87,"status":200,"size":-677}
+{"t":6.5,"kind":"req","id":90,"method":"GET","type":"document","url":"https://accounts.youtube.com/accounts/CheckConnection?pmpo=https%3A%2F%2Faccounts.google.com&v=-1819474176&timestamp=1792875876684","sw":false}
+{"t":6.5,"kind":"done","id":88,"status":200,"size":-678}
+{"t":6.5,"kind":"done","id":89,"status":200,"size":-678}
+{"t":6.5,"kind":"req","id":91,"method":"GET","type":"document","url":"https://accounts.google.com/_/bscframe","sw":false}
+{"t":6.5,"kind":"req","id":92,"method":"POST","type":"fetch","url":"https://accounts.google.com/v3/signin/_/AccountsSignInUi/data/batchexecute?rpcids=UEkKwb&source-path=%2Fv3%2Fsignin%2Fidentifier&f.sid=-6336495716932618456&bl=boq_identityfrontendauthuiserver_20261020.03_p0&hl=en&dsh=S890047812%3A1792875875021317&_reqid=75877&rt=c","sw":false}
+{"t":6.5,"kind":"console","type":"warning","text":"CAUGHT ERROR TypeError: Failed to execute 'mark' on 'Performance': 'mark_pr' cannot have a negative start time.\n    at YAK (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAEAAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEymXHB80m60_9V4p8T8EDMf-ZwZA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk:2703:511)\n    at _.uK (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fa"}
+{"t":6.6,"kind":"done","id":79,"status":200,"size":-548}
+{"t":6.6,"kind":"done","id":81,"status":200,"size":-548}
+{"t":6.6,"kind":"done","id":82,"status":200,"size":-515}
+{"t":6.6,"kind":"console","type":"warning","text":"CAUGHT ERROR SyntaxError: Unexpected end of JSON input\n    at JSON.parse (<anonymous>)\n    at S._deserializeValue (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O%2Fam%3DAAAAEAAAEICU%2Fd%3D1%2Fbr%3D1%2Frs%3DAGKMywEymXHB80m60_9V4p8T8EDMf-ZwZA%2Fm%3Dkevlar_base_module%2Ckevlar_main_module%2Ckevlar_base_sync_mod_chunk:8750:114)\n    at H._attributeToProperty (http://localhost:8781/scramjet/https%3A%2F%2Fwww.youtube.com%2Fs%2F_%2Fytmainappweb%2F_%2Fjs%2Fk%3Dytmainappweb.kevlar_base.en_US.S-3XIVWH93E."}
+{"t":10.2,"kind":"failed","id":91,"url":"https://accounts.google.com/_/bscframe","error":"net::ERR_ABORTED"}
+{"t":10.2,"kind":"failed","id":90,"url":"https://accounts.youtube.com/accounts/CheckConnection?pmpo=https%3A%2F%2Faccounts.google.com&v=-1819474176&timestamp=1792875876684","error":"net::ERR_ABORTED"}
+{"t":10.2,"kind":"CRASH","memory":[{"pid":3990,"mb":144},{"pid":4053,"mb":104}]}
+{"t":10.2,"kind":"tick","memory":[{"pid":3990,"mb":144},{"pid":3999,"mb":607},{"pid":4038,"mb":172},{"pid":4053,"mb":104}],"heap":{"usedMB":67,"totalMB":94,"nodes":4890,"docs":22,"frames":13},"video":{"evalError":"page.evaluate: Target crashed "},"answerMs":3687}
+{"t":10.3,"kind":"done","id":13,"status":null,"size":null}

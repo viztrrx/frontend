@@ -1,0 +1,79 @@
+{
+  "target": "direct",
+  "transport": "libcurl",
+  "block": "",
+  "shots": true,
+  "crashed": false,
+  "lastTick": {
+    "t": 47.7,
+    "kind": "tick",
+    "memory": [
+      {
+        "pid": 2993,
+        "mb": 141
+      },
+      {
+        "pid": 3002,
+        "mb": 413
+      },
+      {
+        "pid": 3041,
+        "mb": 136
+      },
+      {
+        "pid": 3052,
+        "mb": 110
+      }
+    ],
+    "heap": {
+      "usedMB": 73,
+      "totalMB": 81,
+      "nodes": 30099,
+      "docs": 6,
+      "frames": 4
+    },
+    "video": {
+      "title": "Me at the zoo - YouTube",
+      "time": 0,
+      "paused": true,
+      "ready": 0,
+      "net": 0,
+      "error": null,
+      "buffered": 0,
+      "src": ""
+    },
+    "answerMs": 2
+  },
+  "peakRendererMB": 572,
+  "peakHeapMB": 103,
+  "requests": 87,
+  "failed": 1,
+  "byHost": {
+    "www.youtube.com fetch": 25,
+    "www.youtube.com script": 16,
+    "i.ytimg.com image": 8,
+    "www.youtube.com stylesheet": 5,
+    "googleads.g.doubleclick.net xhr": 4,
+    "www.youtube.com media": 4,
+    "yt3.ggpht.com image": 4,
+    "fonts.googleapis.com stylesheet": 3,
+    "www.gstatic.com xhr": 3,
+    "www.gstatic.com script": 2,
+    "www.youtube.com xhr": 2,
+    "www.youtube.com document": 1,
+    "i.ytimg.com other": 1,
+    "rr2---sn-aj2im9-5j.googlevideo.com other": 1,
+    "rr2---sn-aj2im9-5j.c.youtube.com other": 1,
+    "accounts.google.com document": 1,
+    "www.google.com script": 1,
+    "static.doubleclick.net script": 1,
+    "www.youtube.com other": 1,
+    "www.youtube.com image": 1,
+    "www.google.com image": 1,
+    "youtube.com fetch": 1
+  },
+  "pageErrors": [],
+  "consoleErrors": [
+    "1.9s Failed to load resource: the server responded with a status of 401 ()"
+  ]
+}

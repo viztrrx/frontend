@@ -1,0 +1,9 @@
+frontend /tmp/dist1 on http://localhost:8781
+frontend /tmp/dist2 on http://localhost:8782
+wisp on wss://localhost:4443/wisp/
+[2026/10/24 - 21:04:06] warn: (457c48ef) refusing to create a stream to localhost:4443
+[2026/10/24 - 21:04:18] warn: (b06fbd4f) refusing to create a stream to 127.0.0.1:4443
+[2026/10/24 - 21:04:18] warn: (b06fbd4f) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 21:04:31] warn: (6c26c3ad) refusing to create a stream to 127.0.0.1:4443
+[2026/10/24 - 21:04:41] warn: (4df6c9ef) refusing to create a stream to localhost:4443
+[2026/10/24 - 21:04:41] warn: (4df6c9ef) received a DATA packet for a stream which doesn't exist

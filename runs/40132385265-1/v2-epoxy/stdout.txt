@@ -1,0 +1,65 @@
+{
+  "target": "http://localhost:8782",
+  "transport": "epoxy",
+  "block": "",
+  "shots": false,
+  "crashed": true,
+  "lastTick": {
+    "t": 11.4,
+    "kind": "tick",
+    "memory": [
+      {
+        "pid": 3294,
+        "mb": 145
+      },
+      {
+        "pid": 3303,
+        "mb": 564
+      },
+      {
+        "pid": 3325,
+        "mb": 103
+      }
+    ],
+    "heap": null,
+    "video": {
+      "evalError": "page.evaluate: Target crashed "
+    },
+    "answerMs": 2
+  },
+  "peakRendererMB": 564,
+  "peakHeapMB": 51,
+  "requests": 62,
+  "failed": 0,
+  "byHost": {
+    "localhost:8782 script": 15,
+    "www.youtube.com script": 13,
+    "www.youtube.com stylesheet": 6,
+    " fetch": 5,
+    "localhost:8782 fetch": 3,
+    "scramjet.wasm.js script": 2,
+    "localhost:8782 image": 2,
+    "googleads.g.doubleclick.net xhr": 2,
+    "localhost:8782 document": 1,
+    "localhost:8782 stylesheet": 1,
+    "localhost:8782 other": 1,
+    "www.youtube.com document": 1,
+    "i.ytimg.com other": 1,
+    "i.ytimg.com image": 1,
+    "fonts.googleapis.com stylesheet": 1,
+    "rr2---sn-2imeyn7r.googlevideo.com other": 1,
+    "rr2---sn-aj2im9-5j.c.youtube.com other": 1,
+    "accounts.google.com document": 1,
+    "www.gstatic.com script": 1,
+    "static.doubleclick.net script": 1,
+    "www.google.com script": 1,
+    "www.youtube.com image": 1
+  },
+  "pageErrors": [],
+  "consoleErrors": [
+    "0.9s Error: Hyper client: hyper_util::client::legacy::Error(Connect, Io(Custom { kind: UnexpectedEof, error: \"tls handshake eof\" })) (client error (IO: Custom { kind: UnexpectedEof, error: \"tls handshake eof\" } (tls handshake eof)))\n    at imports.wbg.__wbindgen_error_new (http://localhost:8782/epoxy/ind",
+    "3.2s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "4.4s Failed to load resource: the server responded with a status of 404 (Not Found)",
+    "4.6s Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+  ]
+}

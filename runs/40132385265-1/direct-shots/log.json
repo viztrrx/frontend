@@ -1,0 +1,3958 @@
+[
+ {
+  "t": 0.8,
+  "kind": "req",
+  "id": 1,
+  "method": "GET",
+  "type": "document",
+  "url": "https://www.youtube.com/watch?v=jNQXAC9IVRw",
+  "sw": false
+ },
+ {
+  "t": 1,
+  "kind": "req",
+  "id": 2,
+  "method": "GET",
+  "type": "other",
+  "url": "https://i.ytimg.com/generate_204",
+  "sw": false
+ },
+ {
+  "t": 1,
+  "kind": "req",
+  "id": 3,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/base.js",
+  "sw": false
+ },
+ {
+  "t": 1,
+  "kind": "req",
+  "id": 4,
+  "method": "GET",
+  "type": "image",
+  "url": "https://i.ytimg.com/vi/jNQXAC9IVRw/hqdefault.jpg",
+  "sw": false
+ },
+ {
+  "t": 1,
+  "kind": "req",
+  "id": 5,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/_/ytmainappweb/_/js/k=ytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O/am=AAAAIAAAEICU/d=1/br=1/rs=AGKMywFE8F3YM8ibRUUCCROvvbqWKnrzSQ/m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk",
+  "sw": false
+ },
+ {
+  "t": 1,
+  "kind": "req",
+  "id": 6,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/web-animations-next-lite.min.vflset/web-animations-next-lite.min.js",
+  "sw": false
+ },
+ {
+  "t": 1,
+  "kind": "req",
+  "id": 7,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/custom-elements-es5-adapter.vflset/custom-elements-es5-adapter.js",
+  "sw": false
+ },
+ {
+  "t": 1,
+  "kind": "req",
+  "id": 8,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/webcomponents-sd.vflset/webcomponents-sd.js",
+  "sw": false
+ },
+ {
+  "t": 1,
+  "kind": "req",
+  "id": 9,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/scheduler.vflset/scheduler.js",
+  "sw": false
+ },
+ {
+  "t": 1,
+  "kind": "req",
+  "id": 10,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/www-i18n-constants-en_US.vflset/www-i18n-constants.js",
+  "sw": false
+ },
+ {
+  "t": 1,
+  "kind": "req",
+  "id": 11,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=YouTube+Sans:wght@300..900&display=swap",
+  "sw": false
+ },
+ {
+  "t": 1,
+  "kind": "req",
+  "id": 12,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/www-player.css",
+  "sw": false
+ },
+ {
+  "t": 1,
+  "kind": "req",
+  "id": 13,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-main-desktop-watch-page-skeleton.css",
+  "sw": false
+ },
+ {
+  "t": 1,
+  "kind": "req",
+  "id": 14,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-main-desktop-player-skeleton.css",
+  "sw": false
+ },
+ {
+  "t": 1,
+  "kind": "req",
+  "id": 15,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-onepick.css",
+  "sw": false
+ },
+ {
+  "t": 1,
+  "kind": "req",
+  "id": 16,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://www.youtube.com/s/_/ytmainappweb/_/ss/k=ytmainappweb.kevlar_base.NZ7X3F12ieY.L.B1.O/am=AAAAIADAEMCe/d=0/br=1/rs=AGKMywFsrmIWbf-sEzR9ZzMTHYrjySDpeg",
+  "sw": false
+ },
+ {
+  "t": 1.1,
+  "kind": "done",
+  "id": 14,
+  "status": 200,
+  "size": 704
+ },
+ {
+  "t": 1.1,
+  "kind": "done",
+  "id": 15,
+  "status": 200,
+  "size": 357
+ },
+ {
+  "t": 1.1,
+  "kind": "done",
+  "id": 12,
+  "status": 200,
+  "size": 59409
+ },
+ {
+  "t": 1.1,
+  "kind": "done",
+  "id": 13,
+  "status": 200,
+  "size": 1475
+ },
+ {
+  "t": 1.1,
+  "kind": "done",
+  "id": 6,
+  "status": 200,
+  "size": 14148
+ },
+ {
+  "t": 1.1,
+  "kind": "done",
+  "id": 9,
+  "status": 200,
+  "size": 3014
+ },
+ {
+  "t": 1.1,
+  "kind": "done",
+  "id": 8,
+  "status": 200,
+  "size": 21565
+ },
+ {
+  "t": 1.1,
+  "kind": "done",
+  "id": 10,
+  "status": 200,
+  "size": 1611
+ },
+ {
+  "t": 1.1,
+  "kind": "done",
+  "id": 2,
+  "status": 204,
+  "size": 117
+ },
+ {
+  "t": 1.1,
+  "kind": "done",
+  "id": 4,
+  "status": 200,
+  "size": 16269
+ },
+ {
+  "t": 1.1,
+  "kind": "done",
+  "id": 7,
+  "status": 200,
+  "size": 812
+ },
+ {
+  "t": 1.2,
+  "kind": "done",
+  "id": 16,
+  "status": 200,
+  "size": 306493
+ },
+ {
+  "t": 1.2,
+  "kind": "done",
+  "id": 11,
+  "status": 200,
+  "size": 15674
+ },
+ {
+  "t": 1.3,
+  "kind": "done",
+  "id": 3,
+  "status": 200,
+  "size": 687743
+ },
+ {
+  "t": 1.4,
+  "kind": "req",
+  "id": 17,
+  "method": "GET",
+  "type": "other",
+  "url": "https://rr2---sn-aj2im9-5j.googlevideo.com/generate_204",
+  "sw": false
+ },
+ {
+  "t": 1.4,
+  "kind": "req",
+  "id": 18,
+  "method": "GET",
+  "type": "other",
+  "url": "https://rr2---sn-aj2im9-5j.c.youtube.com/generate_204",
+  "sw": false
+ },
+ {
+  "t": 1.6,
+  "kind": "done",
+  "id": 1,
+  "status": 200,
+  "size": 137056
+ },
+ {
+  "t": 1.6,
+  "kind": "done",
+  "id": 18,
+  "status": 204,
+  "size": 11
+ },
+ {
+  "t": 1.6,
+  "kind": "done",
+  "id": 17,
+  "status": 204,
+  "size": 11
+ },
+ {
+  "t": 1.6,
+  "kind": "done",
+  "id": 5,
+  "status": 200,
+  "size": 2189708
+ },
+ {
+  "t": 1.7,
+  "kind": "req",
+  "id": 19,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/offline.js",
+  "sw": false
+ },
+ {
+  "t": 1.7,
+  "kind": "req",
+  "id": 21,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/remote.js",
+  "sw": false
+ },
+ {
+  "t": 1.7,
+  "kind": "req",
+  "id": 22,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/miniplayer.js",
+  "sw": false
+ },
+ {
+  "t": 1.7,
+  "kind": "req",
+  "id": 23,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/spf.vflset/spf.js",
+  "sw": false
+ },
+ {
+  "t": 1.7,
+  "kind": "req",
+  "id": 24,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/network.vflset/network.js",
+  "sw": false
+ },
+ {
+  "t": 1.7,
+  "kind": "done",
+  "id": 19,
+  "status": 200,
+  "size": 22776
+ },
+ {
+  "t": 1.7,
+  "kind": "done",
+  "id": 22,
+  "status": 200,
+  "size": 2545
+ },
+ {
+  "t": 1.7,
+  "kind": "done",
+  "id": 21,
+  "status": 200,
+  "size": 34676
+ },
+ {
+  "t": 1.7,
+  "kind": "req",
+  "id": 25,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.gstatic.com/cv/js/sender/v1/cast_sender.js",
+  "sw": false
+ },
+ {
+  "t": 1.7,
+  "kind": "done",
+  "id": 23,
+  "status": 200,
+  "size": 12211
+ },
+ {
+  "t": 1.7,
+  "kind": "done",
+  "id": 24,
+  "status": 200,
+  "size": 5046
+ },
+ {
+  "t": 1.7,
+  "kind": "req",
+  "id": 26,
+  "method": "GET",
+  "type": "document",
+  "url": "https://accounts.google.com/ServiceLogin?service=youtube&uilel=3&passive=true&continue=https%3A%2F%2Fwww.youtube.com%2Fsignin%3Faction_handle_signin%3Dtrue%26app%3Ddesktop%26hl%3Den%26next%3D%252Fsignin_passive%26feature%3Dpassive&hl=en",
+  "sw": false
+ },
+ {
+  "t": 1.9,
+  "kind": "console",
+  "type": "error",
+  "text": "Failed to load resource: the server responded with a status of 401 ()"
+ },
+ {
+  "t": 1.9,
+  "kind": "done",
+  "id": 26,
+  "status": 401,
+  "size": 1915
+ },
+ {
+  "t": 2.2,
+  "kind": "console",
+  "type": "info",
+  "text": "LegacyDataMixin will be applied to all legacy elements.\nSet `_legacyUndefinedCheck: true` on element class to enable."
+ },
+ {
+  "t": 2.3,
+  "kind": "done",
+  "id": 20,
+  "status": 200,
+  "size": 43168
+ },
+ {
+  "t": 2.3,
+  "kind": "done",
+  "id": 25,
+  "status": 200,
+  "size": 2534
+ },
+ {
+  "t": 2.4,
+  "kind": "req",
+  "id": 27,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.google.com/js/th/YI2XvVwvdBJTNOg4tmE81lkRxYCcxVDASxYzC3ult3w.js",
+  "sw": false
+ },
+ {
+  "t": 2.4,
+  "kind": "req",
+  "id": 28,
+  "method": "GET",
+  "type": "xhr",
+  "url": "https://googleads.g.doubleclick.net/pagead/id",
+  "sw": false
+ },
+ {
+  "t": 2.5,
+  "kind": "req",
+  "id": 29,
+  "method": "GET",
+  "type": "xhr",
+  "url": "https://googleads.g.doubleclick.net/pagead/id?slf_rd=1",
+  "sw": false
+ },
+ {
+  "t": 2.5,
+  "kind": "done",
+  "id": 27,
+  "status": 200,
+  "size": 24295
+ },
+ {
+  "t": 2.5,
+  "kind": "done",
+  "id": 28,
+  "status": 302,
+  "size": 0
+ },
+ {
+  "t": 2.5,
+  "kind": "opened",
+  "video": "https://www.youtube.com/watch?v=jNQXAC9IVRw"
+ },
+ {
+  "t": 2.5,
+  "kind": "done",
+  "id": 29,
+  "status": 200,
+  "size": 146
+ },
+ {
+  "t": 2.5,
+  "kind": "req",
+  "id": 30,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.gstatic.com/eureka/clank/155/cast_sender.js",
+  "sw": false
+ },
+ {
+  "t": 2.6,
+  "kind": "done",
+  "id": 30,
+  "status": 200,
+  "size": 13515
+ },
+ {
+  "t": 2.6,
+  "kind": "req",
+  "id": 31,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/sw.js",
+  "sw": true
+ },
+ {
+  "t": 2.6,
+  "kind": "req",
+  "id": 32,
+  "method": "GET",
+  "type": "script",
+  "url": "https://static.doubleclick.net/instream/ad_status.js",
+  "sw": false
+ },
+ {
+  "t": 2.7,
+  "kind": "done",
+  "id": 33,
+  "status": 200,
+  "size": 247
+ },
+ {
+  "t": 2.7,
+  "kind": "req",
+  "id": 34,
+  "method": "GET",
+  "type": "other",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/serviceworker-kevlar-appshell.vflset/serviceworker-kevlar-appshell.js",
+  "sw": true
+ },
+ {
+  "t": 2.8,
+  "kind": "req",
+  "id": 36,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/sw.js_data",
+  "sw": true
+ },
+ {
+  "t": 2.8,
+  "kind": "done",
+  "id": 34,
+  "status": 200,
+  "size": 0
+ },
+ {
+  "t": 2.8,
+  "kind": "done",
+  "id": 31,
+  "status": 200,
+  "size": -11855
+ },
+ {
+  "t": 2.8,
+  "kind": "done",
+  "id": 32,
+  "status": 200,
+  "size": 495
+ },
+ {
+  "t": 2.8,
+  "kind": "req",
+  "id": 37,
+  "method": "GET",
+  "type": "image",
+  "url": "https://www.youtube.com/generate_204?-BvBAA",
+  "sw": false
+ },
+ {
+  "t": 2.8,
+  "kind": "done",
+  "id": 37,
+  "status": 204,
+  "size": 10
+ },
+ {
+  "t": 2.9,
+  "kind": "done",
+  "id": 36,
+  "status": 200,
+  "size": 1438
+ },
+ {
+  "t": 3.2,
+  "kind": "req",
+  "id": 39,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/lottie-light.vflset/lottie-light.js",
+  "sw": false
+ },
+ {
+  "t": 3.3,
+  "kind": "req",
+  "id": 40,
+  "method": "GET",
+  "type": "image",
+  "url": "https://www.google.com/pagead/lvz?evtid=ACd6KtzvYI-Vp7VTlkAeRFmNR9oAgYZ24foCZ7C371cbWdS9jIhwkykQhIADwvIB-HOUlOBm_9WDh8NQhb-dpHH0K3MG0wTaAw&req_ts=1792875798&pg=MainAppBootstrap%3AWatch&az=1&sigh=AB9vU41SK-WYSw1ToX53H2_oyyXMp8qNvQ",
+  "sw": false
+ },
+ {
+  "t": 3.3,
+  "kind": "done",
+  "id": 40,
+  "status": 200,
+  "size": 67
+ },
+ {
+  "t": 3.3,
+  "kind": "done",
+  "id": 35,
+  "status": 200,
+  "size": 188
+ },
+ {
+  "t": 3.4,
+  "kind": "req",
+  "id": 41,
+  "method": "GET",
+  "type": "media",
+  "url": "https://www.youtube.com/s/search/audio/failure.mp3",
+  "sw": false
+ },
+ {
+  "t": 3.4,
+  "kind": "req",
+  "id": 42,
+  "method": "GET",
+  "type": "media",
+  "url": "https://www.youtube.com/s/search/audio/no_input.mp3",
+  "sw": false
+ },
+ {
+  "t": 3.4,
+  "kind": "req",
+  "id": 43,
+  "method": "GET",
+  "type": "media",
+  "url": "https://www.youtube.com/s/search/audio/open.mp3",
+  "sw": false
+ },
+ {
+  "t": 3.4,
+  "kind": "req",
+  "id": 44,
+  "method": "GET",
+  "type": "media",
+  "url": "https://www.youtube.com/s/search/audio/success.mp3",
+  "sw": false
+ },
+ {
+  "t": 3.4,
+  "kind": "done",
+  "id": 39,
+  "status": 200,
+  "size": 53560
+ },
+ {
+  "t": 3.4,
+  "kind": "req",
+  "id": 45,
+  "method": "GET",
+  "type": "image",
+  "url": "https://i.ytimg.com/vi/9OSuhIHrVgI/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDb3MwhZmnmIzOcCd6gbGQ_TvpkFw",
+  "sw": false
+ },
+ {
+  "t": 3.4,
+  "kind": "req",
+  "id": 46,
+  "method": "GET",
+  "type": "image",
+  "url": "https://i.ytimg.com/vi/26P1KyvrmjI/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLBpBEtk7myzJBzSltzhVKSYAvAbhQ",
+  "sw": false
+ },
+ {
+  "t": 3.4,
+  "kind": "req",
+  "id": 47,
+  "method": "GET",
+  "type": "image",
+  "url": "https://i.ytimg.com/vi/bWKhKZmCBAc/hqdefault_custom_3.jpg?sqp=CNC49NYG-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDbPURUcZuIiPtKgbx-1lawBFuQvw",
+  "sw": false
+ },
+ {
+  "t": 3.4,
+  "kind": "req",
+  "id": 48,
+  "method": "GET",
+  "type": "image",
+  "url": "https://i.ytimg.com/vi/Cv4SyBVeUWA/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLDaZlzpcbU7SXjYfwXy-Zhia06Lpw",
+  "sw": false
+ },
+ {
+  "t": 3.4,
+  "kind": "req",
+  "id": 50,
+  "method": "GET",
+  "type": "image",
+  "url": "https://yt3.ggpht.com/uI3VE4PVqvCy0xnWLqMJnEzyBUm3T8VHOCp4ee-1RxdHqKXCdUE_qXYQnpf9AfuEoIPactVyDhM=s48-c-k-c0x00ffffff-no-rj",
+  "sw": false
+ },
+ {
+  "t": 3.4,
+  "kind": "done",
+  "id": 45,
+  "status": 200,
+  "size": 21952
+ },
+ {
+  "t": 3.4,
+  "kind": "req",
+  "id": 51,
+  "method": "GET",
+  "type": "image",
+  "url": "https://i.ytimg.com/vi/lziw6Wx4pV0/hqdefault_custom_1.jpg?sqp=CNC49NYG-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLB9QEiPZ9cbwBKpUVMZcKACSH0mlg",
+  "sw": false
+ },
+ {
+  "t": 3.4,
+  "kind": "done",
+  "id": 47,
+  "status": 200,
+  "size": 15826
+ },
+ {
+  "t": 3.4,
+  "kind": "done",
+  "id": 46,
+  "status": 200,
+  "size": 15549
+ },
+ {
+  "t": 3.4,
+  "kind": "done",
+  "id": 49,
+  "status": 200,
+  "size": 248
+ },
+ {
+  "t": 3.4,
+  "kind": "done",
+  "id": 48,
+  "status": 200,
+  "size": 18971
+ },
+ {
+  "t": 3.5,
+  "kind": "done",
+  "id": 50,
+  "status": 200,
+  "size": 2202
+ },
+ {
+  "t": 3.5,
+  "kind": "done",
+  "id": 38,
+  "status": 200,
+  "size": 1217
+ },
+ {
+  "t": 3.5,
+  "kind": "req",
+  "id": 52,
+  "method": "GET",
+  "type": "xhr",
+  "url": "https://www.gstatic.com/youtube/img/lottie/subscribe_action/subscribe_action_container_light_v5.json",
+  "sw": false
+ },
+ {
+  "t": 3.5,
+  "kind": "req",
+  "id": 53,
+  "method": "GET",
+  "type": "xhr",
+  "url": "https://www.gstatic.com/youtube/img/lottie/subscribe_action/subscribe_action_sparkles_light_v4.json",
+  "sw": false
+ },
+ {
+  "t": 3.5,
+  "kind": "done",
+  "id": 51,
+  "status": 200,
+  "size": 13394
+ },
+ {
+  "t": 3.5,
+  "kind": "done",
+  "id": 41,
+  "status": 206,
+  "size": 6557
+ },
+ {
+  "t": 3.5,
+  "kind": "done",
+  "id": 42,
+  "status": 206,
+  "size": 6981
+ },
+ {
+  "t": 3.5,
+  "kind": "done",
+  "id": 44,
+  "status": 206,
+  "size": 6664
+ },
+ {
+  "t": 3.5,
+  "kind": "done",
+  "id": 43,
+  "status": 206,
+  "size": 6195
+ },
+ {
+  "t": 3.5,
+  "kind": "req",
+  "id": 54,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://fonts.googleapis.com/css?family=Roboto:300italic,400italic,500italic,700italic",
+  "sw": false
+ },
+ {
+  "t": 3.5,
+  "kind": "req",
+  "id": 55,
+  "method": "GET",
+  "type": "stylesheet",
+  "url": "https://fonts.googleapis.com/css?family=Roboto+Mono:400",
+  "sw": false
+ },
+ {
+  "t": 3.5,
+  "kind": "done",
+  "id": 55,
+  "status": 200,
+  "size": 730
+ },
+ {
+  "t": 3.5,
+  "kind": "done",
+  "id": 54,
+  "status": 200,
+  "size": 1836
+ },
+ {
+  "t": 3.6,
+  "kind": "done",
+  "id": 52,
+  "status": 200,
+  "size": 633
+ },
+ {
+  "t": 3.6,
+  "kind": "req",
+  "id": 56,
+  "method": "GET",
+  "type": "image",
+  "url": "https://i.ytimg.com/vi/lVI_J1cbFb4/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLC8JMlaILuKJmhBlSs56dRTuHNZAA",
+  "sw": false
+ },
+ {
+  "t": 3.6,
+  "kind": "done",
+  "id": 53,
+  "status": 200,
+  "size": 1356
+ },
+ {
+  "t": 3.6,
+  "kind": "done",
+  "id": 56,
+  "status": 200,
+  "size": 9311
+ },
+ {
+  "t": 3.7,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 145
+   },
+   {
+    "pid": 3002,
+    "mb": 341
+   },
+   {
+    "pid": 3041,
+    "mb": 133
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 70,
+   "totalMB": 88,
+   "nodes": 12411,
+   "docs": 8,
+   "frames": 5
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 142
+ },
+ {
+  "t": 3.7,
+  "kind": "req",
+  "id": 57,
+  "method": "GET",
+  "type": "image",
+  "url": "https://i.ytimg.com/vi/dRRJw649vxM/hqdefault.jpg?sqp=-oaymwEnCNACELwBSFryq4qpAxkIARUAAIhCGAHYAQHiAQoIGBACGAY4AUAB&rs=AOn4CLC8dUwZ5ZtuIYLydJ00Kng6Mv0-vA",
+  "sw": false
+ },
+ {
+  "t": 3.7,
+  "kind": "done",
+  "id": 57,
+  "status": 200,
+  "size": 18566
+ },
+ {
+  "t": 3.7,
+  "kind": "req",
+  "id": 58,
+  "method": "POST",
+  "type": "xhr",
+  "url": "https://www.youtube.com/api/jnn/v1/GenerateIT",
+  "sw": false
+ },
+ {
+  "t": 3.7,
+  "kind": "req",
+  "id": 59,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/app_shell",
+  "sw": true
+ },
+ {
+  "t": 3.7,
+  "kind": "done",
+  "id": 58,
+  "status": 200,
+  "size": 148
+ },
+ {
+  "t": 3.8,
+  "kind": "done",
+  "id": 60,
+  "status": 200,
+  "size": 20585
+ },
+ {
+  "t": 3.8,
+  "kind": "req",
+  "id": 61,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/web-animations-next-lite.min.vflset/web-animations-next-lite.min.js",
+  "sw": true
+ },
+ {
+  "t": 3.8,
+  "kind": "req",
+  "id": 62,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/custom-elements-es5-adapter.vflset/custom-elements-es5-adapter.js",
+  "sw": true
+ },
+ {
+  "t": 3.8,
+  "kind": "req",
+  "id": 63,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/webcomponents-sd.vflset/webcomponents-sd.js",
+  "sw": true
+ },
+ {
+  "t": 3.8,
+  "kind": "req",
+  "id": 64,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/scheduler.vflset/scheduler.js",
+  "sw": true
+ },
+ {
+  "t": 3.8,
+  "kind": "req",
+  "id": 65,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/www-i18n-constants-en_US.vflset/www-i18n-constants.js",
+  "sw": true
+ },
+ {
+  "t": 3.8,
+  "kind": "req",
+  "id": 66,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-main-desktop-home-page-skeleton.css",
+  "sw": true
+ },
+ {
+  "t": 3.8,
+  "kind": "req",
+  "id": 67,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-onepick.css",
+  "sw": true
+ },
+ {
+  "t": 3.8,
+  "kind": "req",
+  "id": 68,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/_/ytmainappweb/_/ss/k=ytmainappweb.kevlar_base.NZ7X3F12ieY.L.B1.O/am=AAAAIADAEMCe/d=0/br=1/rs=AGKMywFsrmIWbf-sEzR9ZzMTHYrjySDpeg",
+  "sw": true
+ },
+ {
+  "t": 3.8,
+  "kind": "req",
+  "id": 69,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/base.js",
+  "sw": true
+ },
+ {
+  "t": 3.8,
+  "kind": "req",
+  "id": 70,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/_/ytmainappweb/_/js/k=ytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O/am=AAAAIAAAEICU/d=1/br=1/rs=AGKMywFE8F3YM8ibRUUCCROvvbqWKnrzSQ/m=kevlar_base_module,kevlar_main_module,kevlar_base_sync_mod_chunk",
+  "sw": true
+ },
+ {
+  "t": 3.8,
+  "kind": "req",
+  "id": 71,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/cssbin/www-main-desktop-watch-page-skeleton.css",
+  "sw": true
+ },
+ {
+  "t": 3.8,
+  "kind": "req",
+  "id": 72,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/captions.js",
+  "sw": true
+ },
+ {
+  "t": 3.8,
+  "kind": "req",
+  "id": 73,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/endscreen.js",
+  "sw": true
+ },
+ {
+  "t": 3.8,
+  "kind": "req",
+  "id": 74,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/offline.js",
+  "sw": true
+ },
+ {
+  "t": 3.8,
+  "kind": "req",
+  "id": 75,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/miniplayer.js",
+  "sw": true
+ },
+ {
+  "t": 3.8,
+  "kind": "req",
+  "id": 76,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/player_es6.vflset/en_US/remote.js",
+  "sw": true
+ },
+ {
+  "t": 3.8,
+  "kind": "req",
+  "id": 77,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/player/cbcfbf2f/www-player.css",
+  "sw": true
+ },
+ {
+  "t": 3.8,
+  "kind": "req",
+  "id": 79,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/spf.vflset/spf.js",
+  "sw": true
+ },
+ {
+  "t": 3.8,
+  "kind": "req",
+  "id": 80,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/s/desktop/dc0b62b0/jsbin/network.vflset/network.js",
+  "sw": true
+ },
+ {
+  "t": 3.8,
+  "kind": "done",
+  "id": 61,
+  "status": 200,
+  "size": -688
+ },
+ {
+  "t": 3.8,
+  "kind": "done",
+  "id": 62,
+  "status": 200,
+  "size": -686
+ },
+ {
+  "t": 3.8,
+  "kind": "done",
+  "id": 63,
+  "status": 200,
+  "size": -688
+ },
+ {
+  "t": 3.8,
+  "kind": "done",
+  "id": 64,
+  "status": 200,
+  "size": -687
+ },
+ {
+  "t": 3.8,
+  "kind": "done",
+  "id": 65,
+  "status": 200,
+  "size": -687
+ },
+ {
+  "t": 3.8,
+  "kind": "done",
+  "id": 67,
+  "status": 200,
+  "size": -679
+ },
+ {
+  "t": 3.8,
+  "kind": "done",
+  "id": 66,
+  "status": 200,
+  "size": 930
+ },
+ {
+  "t": 3.9,
+  "kind": "done",
+  "id": 68,
+  "status": 200,
+  "size": -907
+ },
+ {
+  "t": 3.9,
+  "kind": "done",
+  "id": 69,
+  "status": 200,
+  "size": 687404
+ },
+ {
+  "t": 3.9,
+  "kind": "req",
+  "id": 81,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://youtube.com/",
+  "sw": false
+ },
+ {
+  "t": 3.9,
+  "kind": "done",
+  "id": 71,
+  "status": 200,
+  "size": -680
+ },
+ {
+  "t": 3.9,
+  "kind": "req",
+  "id": 82,
+  "method": "GET",
+  "type": "xhr",
+  "url": "https://googleads.g.doubleclick.net/pagead/id",
+  "sw": false
+ },
+ {
+  "t": 3.9,
+  "kind": "req",
+  "id": 83,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/_/ytmainappweb/_/js/k=ytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O/am=AAAAIAAAEICU/d=1/exm=kevlar_base_module,kevlar_base_sync_mod_chunk,kevlar_main_module/ed=1/br=1/rs=AGKMywFE8F3YM8ibRUUCCROvvbqWKnrzSQ/m=QlbBce,De8mUc",
+  "sw": false
+ },
+ {
+  "t": 3.9,
+  "kind": "console",
+  "type": "warning",
+  "text": "No available adapters."
+ },
+ {
+  "t": 4,
+  "kind": "done",
+  "id": 83,
+  "status": 200,
+  "size": 1605
+ },
+ {
+  "t": 4,
+  "kind": "req",
+  "id": 85,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/",
+  "sw": false
+ },
+ {
+  "t": 4,
+  "kind": "failed",
+  "id": 85,
+  "url": "https://www.youtube.com/",
+  "error": "net::ERR_ABORTED"
+ },
+ {
+  "t": 4,
+  "kind": "req",
+  "id": 86,
+  "method": "GET",
+  "type": "xhr",
+  "url": "https://googleads.g.doubleclick.net/pagead/id?slf_rd=1",
+  "sw": false
+ },
+ {
+  "t": 4,
+  "kind": "req",
+  "id": 112,
+  "method": "GET",
+  "type": "script",
+  "url": "https://www.youtube.com/s/_/ytmainappweb/_/js/k=ytmainappweb.kevlar_base.en_US.S-3XIVWH93E.es5.O/am=AAAAIAAAEICU/d=1/exm=De8mUc,QlbBce,kevlar_base_module,kevlar_base_sync_mod_chunk,kevlar_main_module/ed=1/br=1/rs=AGKMywFE8F3YM8ibRUUCCROvvbqWKnrzSQ/m=yTIahe",
+  "sw": false
+ },
+ {
+  "t": 4,
+  "kind": "done",
+  "id": 81,
+  "status": 301,
+  "size": 0
+ },
+ {
+  "t": 4,
+  "kind": "done",
+  "id": 82,
+  "status": 302,
+  "size": 0
+ },
+ {
+  "t": 4,
+  "kind": "done",
+  "id": 84,
+  "status": 200,
+  "size": 226
+ },
+ {
+  "t": 4,
+  "kind": "req",
+  "id": 113,
+  "method": "POST",
+  "type": "fetch",
+  "url": "https://www.youtube.com/youtubei/v1/next?prettyPrint=false",
+  "sw": false
+ },
+ {
+  "t": 4.1,
+  "kind": "done",
+  "id": 86,
+  "status": 200,
+  "size": 146
+ },
+ {
+  "t": 4.1,
+  "kind": "done",
+  "id": 112,
+  "status": 200,
+  "size": 212
+ },
+ {
+  "t": 4.1,
+  "kind": "done",
+  "id": 87,
+  "status": 200,
+  "size": 305
+ },
+ {
+  "t": 4.1,
+  "kind": "done",
+  "id": 88,
+  "status": 200,
+  "size": 179
+ },
+ {
+  "t": 4.1,
+  "kind": "done",
+  "id": 89,
+  "status": 200,
+  "size": 234
+ },
+ {
+  "t": 4.1,
+  "kind": "done",
+  "id": 90,
+  "status": 200,
+  "size": 269
+ },
+ {
+  "t": 4.1,
+  "kind": "done",
+  "id": 91,
+  "status": 200,
+  "size": 591
+ },
+ {
+  "t": 4.1,
+  "kind": "done",
+  "id": 92,
+  "status": 200,
+  "size": 417
+ },
+ {
+  "t": 4.1,
+  "kind": "done",
+  "id": 93,
+  "status": 200,
+  "size": 246
+ },
+ {
+  "t": 4.1,
+  "kind": "done",
+  "id": 94,
+  "status": 200,
+  "size": 212
+ },
+ {
+  "t": 4.1,
+  "kind": "done",
+  "id": 95,
+  "status": 200,
+  "size": 222
+ },
+ {
+  "t": 4.1,
+  "kind": "done",
+  "id": 96,
+  "status": 200,
+  "size": 306
+ },
+ {
+  "t": 4.1,
+  "kind": "done",
+  "id": 97,
+  "status": 200,
+  "size": 224
+ },
+ {
+  "t": 4.1,
+  "kind": "done",
+  "id": 98,
+  "status": 200,
+  "size": 288
+ },
+ {
+  "t": 4.1,
+  "kind": "done",
+  "id": 99,
+  "status": 200,
+  "size": 249
+ },
+ {
+  "t": 4.1,
+  "kind": "done",
+  "id": 100,
+  "status": 200,
+  "size": 188
+ },
+ {
+  "t": 4.1,
+  "kind": "done",
+  "id": 101,
+  "status": 200,
+  "size": 338
+ },
+ {
+  "t": 4.1,
+  "kind": "done",
+  "id": 102,
+  "status": 200,
+  "size": 572
+ },
+ {
+  "t": 4.1,
+  "kind": "done",
+  "id": 103,
+  "status": 200,
+  "size": 335
+ },
+ {
+  "t": 4.1,
+  "kind": "done",
+  "id": 104,
+  "status": 200,
+  "size": 215
+ },
+ {
+  "t": 4.1,
+  "kind": "done",
+  "id": 105,
+  "status": 200,
+  "size": 221
+ },
+ {
+  "t": 4.1,
+  "kind": "done",
+  "id": 106,
+  "status": 200,
+  "size": 203
+ },
+ {
+  "t": 4.1,
+  "kind": "done",
+  "id": 107,
+  "status": 200,
+  "size": 310
+ },
+ {
+  "t": 4.1,
+  "kind": "done",
+  "id": 108,
+  "status": 200,
+  "size": 303
+ },
+ {
+  "t": 4.1,
+  "kind": "done",
+  "id": 109,
+  "status": 200,
+  "size": 345
+ },
+ {
+  "t": 4.1,
+  "kind": "done",
+  "id": 111,
+  "status": 200,
+  "size": 239
+ },
+ {
+  "t": 4.1,
+  "kind": "done",
+  "id": 110,
+  "status": 200,
+  "size": 374
+ },
+ {
+  "t": 4.2,
+  "kind": "req",
+  "id": 114,
+  "method": "POST",
+  "type": "xhr",
+  "url": "https://www.youtube.com/youtubei/v1/log_event?alt=json",
+  "sw": false
+ },
+ {
+  "t": 4.2,
+  "kind": "done",
+  "id": 114,
+  "status": 200,
+  "size": 53
+ },
+ {
+  "t": 4.3,
+  "kind": "done",
+  "id": 115,
+  "status": 200,
+  "size": 245
+ },
+ {
+  "t": 4.3,
+  "kind": "done",
+  "id": 116,
+  "status": 200,
+  "size": 259
+ },
+ {
+  "t": 4.3,
+  "kind": "done",
+  "id": 117,
+  "status": 200,
+  "size": 312
+ },
+ {
+  "t": 4.3,
+  "kind": "done",
+  "id": 118,
+  "status": 200,
+  "size": 247
+ },
+ {
+  "t": 4.3,
+  "kind": "done",
+  "id": 119,
+  "status": 200,
+  "size": 286
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 120,
+  "status": 200,
+  "size": 361
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 121,
+  "status": 200,
+  "size": 381
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 122,
+  "status": 200,
+  "size": 284
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 123,
+  "status": 200,
+  "size": 270
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 124,
+  "status": 200,
+  "size": 350
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 128,
+  "status": 200,
+  "size": 550
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 125,
+  "status": 200,
+  "size": 250
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 126,
+  "status": 200,
+  "size": 267
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 127,
+  "status": 200,
+  "size": 225
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 129,
+  "status": 200,
+  "size": 377
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 130,
+  "status": 200,
+  "size": 364
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 131,
+  "status": 200,
+  "size": 299
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 132,
+  "status": 200,
+  "size": 366
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 133,
+  "status": 200,
+  "size": 336
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 134,
+  "status": 200,
+  "size": 369
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 135,
+  "status": 200,
+  "size": 498
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 136,
+  "status": 200,
+  "size": 496
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 137,
+  "status": 200,
+  "size": 356
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 138,
+  "status": 200,
+  "size": 306
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 139,
+  "status": 200,
+  "size": 259
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 140,
+  "status": 200,
+  "size": 303
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 147,
+  "status": 200,
+  "size": 4515
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 163,
+  "status": 200,
+  "size": 335
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 166,
+  "status": 200,
+  "size": 1137
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 168,
+  "status": 200,
+  "size": 352
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 167,
+  "status": 200,
+  "size": 334
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 181,
+  "status": 200,
+  "size": 171
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 141,
+  "status": 200,
+  "size": 219
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 70,
+  "status": 200,
+  "size": -916
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 72,
+  "status": 200,
+  "size": 23340
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 142,
+  "status": 200,
+  "size": 270
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 143,
+  "status": 200,
+  "size": 402
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 144,
+  "status": 200,
+  "size": 308
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 145,
+  "status": 200,
+  "size": 261
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 146,
+  "status": 200,
+  "size": 286
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 148,
+  "status": 200,
+  "size": 235
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 149,
+  "status": 200,
+  "size": 239
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 150,
+  "status": 200,
+  "size": 267
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 151,
+  "status": 200,
+  "size": 276
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 152,
+  "status": 200,
+  "size": 291
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 153,
+  "status": 200,
+  "size": 280
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 154,
+  "status": 200,
+  "size": 233
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 155,
+  "status": 200,
+  "size": 243
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 156,
+  "status": 200,
+  "size": 432
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 157,
+  "status": 200,
+  "size": 266
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 158,
+  "status": 200,
+  "size": 274
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 159,
+  "status": 200,
+  "size": 287
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 160,
+  "status": 200,
+  "size": 318
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 161,
+  "status": 200,
+  "size": 353
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 162,
+  "status": 200,
+  "size": 390
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 164,
+  "status": 200,
+  "size": 223
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 165,
+  "status": 200,
+  "size": 331
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 169,
+  "status": 200,
+  "size": 325
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 170,
+  "status": 200,
+  "size": 462
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 171,
+  "status": 200,
+  "size": 236
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 172,
+  "status": 200,
+  "size": 236
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 173,
+  "status": 200,
+  "size": 221
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 174,
+  "status": 200,
+  "size": 281
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 175,
+  "status": 200,
+  "size": 271
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 176,
+  "status": 200,
+  "size": 423
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 177,
+  "status": 200,
+  "size": 337
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 178,
+  "status": 200,
+  "size": 393
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 179,
+  "status": 200,
+  "size": 312
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 180,
+  "status": 200,
+  "size": 359
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 113,
+  "status": 200,
+  "size": 27069
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 74,
+  "status": 200,
+  "size": -688
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 73,
+  "status": 200,
+  "size": 7071
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 75,
+  "status": 200,
+  "size": -687
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 76,
+  "status": 200,
+  "size": -688
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 77,
+  "status": 200,
+  "size": 59051
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 78,
+  "status": 200,
+  "size": -676
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 79,
+  "status": 200,
+  "size": -688
+ },
+ {
+  "t": 4.4,
+  "kind": "done",
+  "id": 80,
+  "status": 200,
+  "size": -687
+ },
+ {
+  "t": 4.5,
+  "kind": "req",
+  "id": 182,
+  "method": "GET",
+  "type": "xhr",
+  "url": "https://www.gstatic.com/youtube/img/emojis/emojis-png-7.json",
+  "sw": false
+ },
+ {
+  "t": 4.6,
+  "kind": "done",
+  "id": 182,
+  "status": 200,
+  "size": 46285
+ },
+ {
+  "t": 4.6,
+  "kind": "req",
+  "id": 183,
+  "method": "GET",
+  "type": "image",
+  "url": "https://yt3.ggpht.com/a/default-user=s48-c-k-c0x00ffffff-no-rj",
+  "sw": false
+ },
+ {
+  "t": 4.6,
+  "kind": "req",
+  "id": 184,
+  "method": "GET",
+  "type": "image",
+  "url": "https://yt3.ggpht.com/i8RqA9tYqbbnOi4mlnYEY7IR3kXAoDqQbM_5Sfzw7OjTubiGsOaTdlrIZmj-I0q0Vup68eqs=s88-c-k-c0x00ffffff-no-rj",
+  "sw": false
+ },
+ {
+  "t": 4.6,
+  "kind": "req",
+  "id": 185,
+  "method": "GET",
+  "type": "image",
+  "url": "https://yt3.ggpht.com/uI3VE4PVqvCy0xnWLqMJnEzyBUm3T8VHOCp4ee-1RxdHqKXCdUE_qXYQnpf9AfuEoIPactVyDhM=s88-c-k-c0x00ffffff-no-rj",
+  "sw": false
+ },
+ {
+  "t": 4.7,
+  "kind": "done",
+  "id": 183,
+  "status": 200,
+  "size": 1008
+ },
+ {
+  "t": 4.7,
+  "kind": "done",
+  "id": 184,
+  "status": 200,
+  "size": 5154
+ },
+ {
+  "t": 4.7,
+  "kind": "done",
+  "id": 185,
+  "status": 200,
+  "size": 4524
+ },
+ {
+  "t": 4.7,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 145
+   },
+   {
+    "pid": 3002,
+    "mb": 572
+   },
+   {
+    "pid": 3041,
+    "mb": 133
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 91,
+   "totalMB": 124,
+   "nodes": 22561,
+   "docs": 8,
+   "frames": 5
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 18
+ },
+ {
+  "t": 5.4,
+  "kind": "done",
+  "id": 186,
+  "status": 200,
+  "size": 579
+ },
+ {
+  "t": 5.4,
+  "kind": "done",
+  "id": 187,
+  "status": 200,
+  "size": 592
+ },
+ {
+  "t": 5.4,
+  "kind": "done",
+  "id": 188,
+  "status": 200,
+  "size": 419
+ },
+ {
+  "t": 5.4,
+  "kind": "done",
+  "id": 189,
+  "status": 200,
+  "size": 232
+ },
+ {
+  "t": 5.4,
+  "kind": "done",
+  "id": 190,
+  "status": 200,
+  "size": 302
+ },
+ {
+  "t": 5.4,
+  "kind": "done",
+  "id": 191,
+  "status": 200,
+  "size": 244
+ },
+ {
+  "t": 5.4,
+  "kind": "done",
+  "id": 192,
+  "status": 200,
+  "size": 477
+ },
+ {
+  "t": 5.4,
+  "kind": "done",
+  "id": 193,
+  "status": 200,
+  "size": 321
+ },
+ {
+  "t": 5.4,
+  "kind": "done",
+  "id": 194,
+  "status": 200,
+  "size": 366
+ },
+ {
+  "t": 5.6,
+  "kind": "done",
+  "id": 59,
+  "status": 200,
+  "size": 79372
+ },
+ {
+  "t": 5.6,
+  "kind": "req",
+  "id": 195,
+  "method": "GET",
+  "type": "fetch",
+  "url": "https://www.youtube.com/sw.js_data",
+  "sw": true
+ },
+ {
+  "t": 5.7,
+  "kind": "req",
+  "id": 196,
+  "method": "POST",
+  "type": "fetch",
+  "url": "https://www.youtube.com/youtubei/v1/notification_registration/set_registration?prettyPrint=false",
+  "sw": true
+ },
+ {
+  "t": 5.7,
+  "kind": "done",
+  "id": 195,
+  "status": 200,
+  "size": 1471
+ },
+ {
+  "t": 5.7,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 145
+   },
+   {
+    "pid": 3002,
+    "mb": 527
+   },
+   {
+    "pid": 3041,
+    "mb": 133
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 103,
+   "totalMB": 147,
+   "nodes": 35350,
+   "docs": 8,
+   "frames": 5
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 5.8,
+  "kind": "done",
+  "id": 196,
+  "status": 200,
+  "size": 708
+ },
+ {
+  "t": 6.7,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 145
+   },
+   {
+    "pid": 3002,
+    "mb": 527
+   },
+   {
+    "pid": 3041,
+    "mb": 133
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 103,
+   "totalMB": 147,
+   "nodes": 35350,
+   "docs": 8,
+   "frames": 5
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 7.8,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 145
+   },
+   {
+    "pid": 3002,
+    "mb": 524
+   },
+   {
+    "pid": 3041,
+    "mb": 133
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 69,
+   "totalMB": 153,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 8.4,
+  "kind": "console",
+  "type": "warning",
+  "text": "The resource https://rr2---sn-aj2im9-5j.googlevideo.com/generate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+ },
+ {
+  "t": 8.4,
+  "kind": "console",
+  "type": "warning",
+  "text": "The resource https://rr2---sn-aj2im9-5j.c.youtube.com/generate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+ },
+ {
+  "t": 8.4,
+  "kind": "console",
+  "type": "warning",
+  "text": "The resource https://i.ytimg.com/generate_204 was preloaded using link preload but not used within a few seconds from the window's load event. Please make sure it has an appropriate `as` value and it is preloaded intentionally."
+ },
+ {
+  "t": 8.8,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 145
+   },
+   {
+    "pid": 3002,
+    "mb": 520
+   },
+   {
+    "pid": 3041,
+    "mb": 133
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 69,
+   "totalMB": 153,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 9.8,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 145
+   },
+   {
+    "pid": 3002,
+    "mb": 514
+   },
+   {
+    "pid": 3041,
+    "mb": 133
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 69,
+   "totalMB": 153,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 10.8,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 144
+   },
+   {
+    "pid": 3002,
+    "mb": 506
+   },
+   {
+    "pid": 3041,
+    "mb": 133
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 69,
+   "totalMB": 153,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 11.9,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 144
+   },
+   {
+    "pid": 3002,
+    "mb": 506
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 70,
+   "totalMB": 153,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 12.9,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 144
+   },
+   {
+    "pid": 3002,
+    "mb": 506
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 77,
+   "totalMB": 154,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 13.9,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 144
+   },
+   {
+    "pid": 3002,
+    "mb": 506
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 77,
+   "totalMB": 154,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 14.9,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 144
+   },
+   {
+    "pid": 3002,
+    "mb": 506
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 77,
+   "totalMB": 154,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 15.9,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 144
+   },
+   {
+    "pid": 3002,
+    "mb": 506
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 77,
+   "totalMB": 154,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 17,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 144
+   },
+   {
+    "pid": 3002,
+    "mb": 506
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 77,
+   "totalMB": 154,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 18,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 144
+   },
+   {
+    "pid": 3002,
+    "mb": 507
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 83,
+   "totalMB": 155,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 19,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 144
+   },
+   {
+    "pid": 3002,
+    "mb": 504
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 83,
+   "totalMB": 155,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 20,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 144
+   },
+   {
+    "pid": 3002,
+    "mb": 504
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 83,
+   "totalMB": 155,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 21.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 144
+   },
+   {
+    "pid": 3002,
+    "mb": 504
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 83,
+   "totalMB": 155,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 22.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 144
+   },
+   {
+    "pid": 3002,
+    "mb": 504
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 83,
+   "totalMB": 155,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 23.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 144
+   },
+   {
+    "pid": 3002,
+    "mb": 506
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 88,
+   "totalMB": 155,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 24.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 144
+   },
+   {
+    "pid": 3002,
+    "mb": 506
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 88,
+   "totalMB": 155,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 25.1,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 144
+   },
+   {
+    "pid": 3002,
+    "mb": 505
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 89,
+   "totalMB": 155,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 26.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 144
+   },
+   {
+    "pid": 3002,
+    "mb": 505
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 89,
+   "totalMB": 155,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 27.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 144
+   },
+   {
+    "pid": 3002,
+    "mb": 505
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 89,
+   "totalMB": 155,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 28.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 144
+   },
+   {
+    "pid": 3002,
+    "mb": 506
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 94,
+   "totalMB": 156,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 29.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 144
+   },
+   {
+    "pid": 3002,
+    "mb": 506
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 94,
+   "totalMB": 156,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 30.2,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 144
+   },
+   {
+    "pid": 3002,
+    "mb": 506
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 94,
+   "totalMB": 156,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 31.3,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 143
+   },
+   {
+    "pid": 3002,
+    "mb": 508
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 70,
+   "totalMB": 73,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 3
+ },
+ {
+  "t": 32.4,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 141
+   },
+   {
+    "pid": 3002,
+    "mb": 404
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 70,
+   "totalMB": 71,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 33.4,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 141
+   },
+   {
+    "pid": 3002,
+    "mb": 410
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 70,
+   "totalMB": 76,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 34.4,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 141
+   },
+   {
+    "pid": 3002,
+    "mb": 408
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 70,
+   "totalMB": 76,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 35.4,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 141
+   },
+   {
+    "pid": 3002,
+    "mb": 408
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 71,
+   "totalMB": 76,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 36.4,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 141
+   },
+   {
+    "pid": 3002,
+    "mb": 408
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 71,
+   "totalMB": 76,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 37.4,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 141
+   },
+   {
+    "pid": 3002,
+    "mb": 407
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 71,
+   "totalMB": 76,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 38.5,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 141
+   },
+   {
+    "pid": 3002,
+    "mb": 411
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 71,
+   "totalMB": 79,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 39.5,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 141
+   },
+   {
+    "pid": 3002,
+    "mb": 411
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 71,
+   "totalMB": 79,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 40.5,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 141
+   },
+   {
+    "pid": 3002,
+    "mb": 411
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 71,
+   "totalMB": 79,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 41.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 141
+   },
+   {
+    "pid": 3002,
+    "mb": 410
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 71,
+   "totalMB": 79,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 42.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 141
+   },
+   {
+    "pid": 3002,
+    "mb": 410
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 71,
+   "totalMB": 79,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 43.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 141
+   },
+   {
+    "pid": 3002,
+    "mb": 413
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 73,
+   "totalMB": 81,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 2
+ },
+ {
+  "t": 44.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 141
+   },
+   {
+    "pid": 3002,
+    "mb": 413
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 73,
+   "totalMB": 81,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 45.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 141
+   },
+   {
+    "pid": 3002,
+    "mb": 413
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 73,
+   "totalMB": 81,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 46.6,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 141
+   },
+   {
+    "pid": 3002,
+    "mb": 413
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 73,
+   "totalMB": 81,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 1
+ },
+ {
+  "t": 47.7,
+  "kind": "tick",
+  "memory": [
+   {
+    "pid": 2993,
+    "mb": 141
+   },
+   {
+    "pid": 3002,
+    "mb": 413
+   },
+   {
+    "pid": 3041,
+    "mb": 136
+   },
+   {
+    "pid": 3052,
+    "mb": 110
+   }
+  ],
+  "heap": {
+   "usedMB": 73,
+   "totalMB": 81,
+   "nodes": 30099,
+   "docs": 6,
+   "frames": 4
+  },
+  "video": {
+   "title": "Me at the zoo - YouTube",
+   "time": 0,
+   "paused": true,
+   "ready": 0,
+   "net": 0,
+   "error": null,
+   "buffered": 0,
+   "src": ""
+  },
+  "answerMs": 2
+ }
+]
