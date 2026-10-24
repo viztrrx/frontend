@@ -1227,8 +1227,9 @@ function navigateFrame(url) {
   setWarning(false);
   setLoading(true);
   toolbarStatus.textContent = "Loading website…";
-  try { currentNavigationPath = new URL(scramjetController.encodeUrl(url), location.href).pathname; } catch {}
   currentSjFrame.go(url);
+  // go() sets the frame's address synchronously; its response comes later.
+  try { currentNavigationPath = new URL(currentFrame.getAttribute?.("src") || currentFrame.src, location.href).pathname; } catch {}
 }
 
 // What the address bar (or the home page box) was given: saints://home,

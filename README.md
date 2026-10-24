@@ -77,9 +77,43 @@ Storage: the `SESSIONS` binding in `wrangler.jsonc` points at the R2 bucket **`d
 ## Speed
 
 - **The backend stays awake.** A cron trigger (`wrangler.jsonc`, every 10 minutes) calls the backend's `/health` (`src/index.js`), so Render's free plan never puts it to sleep and nobody waits for it to wake. The address is read from `wispUrl` in `public/config.js`, so moving the backend only means changing that line. Each ping is logged under **Workers & Pages → frontend → Logs**.
-- **Transports.** Pages go through libcurl (`/libcurl/`), the transport proven on iPhone Safari. A browser that can't set libcurl up uses Epoxy (`/epoxy/`, `@mercuryworkshop/epoxy-transport` 2.1.28) instead and keeps it on that device (`sj-transport` in localStorage). When a page fails with a connection error (for example Epoxy's "tls handshake eof" or libcurl's "error code 52"), it's retried once with the other transport before the error is shown.
+- **Transports.** Pages go through libcurl (`/libcurl/`), the transport proven on iPhone Safari. A browser that can't set libcurl up uses Epoxy (`/epoxy/`, `@mercuryworkshop/epoxy-transport` 2.1.29) instead and keeps it on that device (`sj-transport` in localStorage). When a page fails with a connection error (for example Epoxy's "tls handshake eof" or libcurl's "error code 52"), it's retried once with the other transport before the error is shown.
 - **One connection per visit.** The backend check, Scramjet, the service worker and the transport are set up once, when Saints Search finishes loading (with one small request to the backend's `/health` to start the TLS engine). Every site opened after that uses the same connection.
 - **Backend region.** For Florida, the backend should be in Render's **Virginia** region. Render can't move a service, so create a new one there, then set its address in `public/config.js`.
+
+## Scramjet 2 beta (`frontend-beta`)
+
+The same site can be built on **Scramjet 2** (`@mercuryworkshop/scramjet` 2.0.67-alpha.2), the next version of the proxy engine, with many site fixes since 1.1. It runs as a second Worker, **`https://frontend-beta.viztrrx.workers.dev`**, so it can be compared with production before switching. Production is untouched.
+
+- **Build:** `pnpm build:beta` (`SCRAMJET_ENGINE=2`). `scripts/build.mjs` then ships Scramjet 2, its controller, `libcurl-transport` 2 and `epoxy-transport` 3 (installed under the aliases `scramjet2`, `scramjet-controller2`, `libcurl-transport2`, `epoxy-transport3`), uses `public/sw2.js` as `/sw.js`, and loads `public/engine2.js` in place of Scramjet 1.1 and BareMux. `version.json` says `"engine": 2`.
+- **How it differs:** Scramjet 2 fetches and rewrites in the page, and the transport (libcurl or Epoxy) runs in the page too; there's no BareMux SharedWorker. `public/engine2.js` gives `index.js` the same controller, frame and BareMux functions it uses with 1.1, blocks `blocked.js` sites and reports navigation status from Scramjet 2's hooks. Scramjet 2 saves its cookie jar itself, so `sw2.js` is small: it routes requests to the page and answers saved-session requests from the jar in IndexedDB.
+- **Sessions:** the beta Worker keeps saved sessions under `proxy-sessions-beta/` (`SESSIONS_PREFIX` in `wrangler.beta.jsonc`), apart from production's.
+- **Checked:** the Site check runs against both Workers, so their tables can be compared on each run's summary page.
+
+### Set up the beta Worker (once)
+
+In Cloudflare: **Workers & Pages → Create → Import a repository → `viztrrx/frontend`**, then:
+
+| Setting | Value |
+| --- | --- |
+| Worker name | `frontend-beta` |
+| Production branch | `main` |
+| Build command | `pnpm build:beta` |
+| Deploy command | `npx wrangler deploy --config wrangler.beta.jsonc` |
+
+Every push to `main` then deploys both Workers. To move production to Scramjet 2 later, change the production Worker's build command to `pnpm build:beta` (the Worker name stays `frontend`, set by `wrangler.jsonc`).
+
+## Site check (which sites work, and how fast)
+
+`.github/workflows/site-check.yml` opens about 30 popular sites (`site-check/sites.json`) through the live proxy in headless Chrome every 6 hours, and records for each one whether it showed content, how long that took, and a screenshot.
+
+- **Results:** each run's summary page under **Actions → Site check**, the `site-report-*` artifact (results and screenshots), and the **`site-reports`** branch: `reports/<target>/summary.md` is the latest run, and `history.csv` is every run, for trends.
+- **Targets:** `production` (`https://frontend.viztrrx.workers.dev`) and `beta` (`https://frontend-beta.viztrrx.workers.dev`, or the `BETA_URL` repository variable). A target that isn't deployed is skipped.
+- **On demand:** **Actions → Site check → Run workflow**. Fill in "only" (for example `youtube,spotify`) to check just those sites; partial runs aren't saved to `site-reports`.
+- ✅ shows content (and the expected text, and a playing video for video pages); ⚠️ loaded, but the expected text is missing (consent page, captcha) or the site answered HTTP 4xx/5xx; ❌ error, Scramjet's error page, or nothing after 45 s; ⛔ blocked on purpose (`public/blocked.js`).
+- **Run it yourself:** `npm i --prefix /tmp/pw playwright && npx --prefix /tmp/pw playwright install chromium`, then `PLAYWRIGHT_PATH=/tmp/pw/node_modules/playwright/index.mjs node site-check/run.mjs --url https://frontend.viztrrx.workers.dev`. `--only`, `--transport libcurl|epoxy`, `--timeout` and `--previous` are described at the top of `site-check/run.mjs`.
+
+To test another site, add it to `site-check/sites.json`: `name`, `url`, `expect` (text that only shows when the real page loaded, or `""`), and `"media": true` for pages whose video should start.
 
 ## Games (`saints://games`)
 

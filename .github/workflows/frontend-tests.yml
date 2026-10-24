@@ -28,6 +28,8 @@ jobs:
           node --check public/sw.js
           node --check public/sessions.js
           node --check public/blocked.js
+          node --check public/engine2.js
+          node --check public/sw2.js
           node --check src/index.js
           node --check src/sessions.js
           node --check src/game-parts.js
@@ -39,9 +41,14 @@ jobs:
           node --check tests/blocked.test.mjs
           node --check tests/keepalive.test.mjs
           node --check tests/games.test.mjs
+          node --check site-check/run.mjs
       - name: Run frontend regression tests
         run: npm test
       - name: Build Cloudflare Worker assets
         run: pnpm build
       - name: Check Worker packaging without deploying
         run: npx --yes wrangler deploy --dry-run --outdir .wrangler-dry-run
+      - name: Build the Scramjet 2 beta
+        run: pnpm build:beta
+      - name: Check the beta Worker's packaging without deploying
+        run: npx --yes wrangler deploy --dry-run --config wrangler.beta.jsonc --outdir .wrangler-dry-run-beta

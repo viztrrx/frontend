@@ -52,3 +52,41 @@ test("renamed repository matches Cloudflare Worker configuration", () => {
   assert.equal(config.assets.run_worker_first, true);
   assert.match(worker, /env\.ASSETS\.fetch\(request\)/);
 });
+
+test("SCRAMJET_ENGINE=2 builds the Scramjet 2 beta; the default build is Scramjet 1.1", () => {
+  const build = (engine) => execFileSync(process.execPath, ["scripts/build.mjs"], {
+    cwd: root, env: { ...process.env, SCRAMJET_ENGINE: engine }, stdio: "ignore",
+  });
+  const read = (path) => readFileSync(new URL("dist/" + path, root), "utf8");
+  const exists = (path) => { try { readFileSync(new URL("dist/" + path, root)); return true; } catch { return false; } };
+  try {
+    build("2");
+    assert.equal(JSON.parse(read("version.json")).engine, 2);
+    const html = read("index.html");
+    assert.match(html, /<script src="\/scram\/scramjet\.js"><\/script>\s*<script src="\/controller\/controller\.api\.js"><\/script>\s*<script src="\/engine2\.js"><\/script>/);
+    assert.doesNotMatch(html, /baremux|scramjet\.all\.js/);
+    assert.match(read("sw.js"), /importScripts\("\/controller\/controller\.sw\.js"\)/);
+    assert.ok(!exists("sw2.js") && !exists("baremux/index.js"));
+    for (const file of ["scram/scramjet.js", "scram/scramjet.wasm", "controller/controller.api.js", "controller/controller.sw.js", "controller/controller.inject.js", "libcurl/index.mjs", "epoxy/index.mjs"]) {
+      assert.ok(exists(file), file);
+    }
+  } finally {
+    build("");
+  }
+  assert.equal(JSON.parse(read("version.json")).engine, 1);
+  assert.match(read("index.html"), /scramjet\.all\.js/);
+  assert.ok(!exists("engine2.js") && !exists("sw2.js"));
+  assert.match(read("sw.js"), /ScramjetServiceWorker/);
+});
+
+test("the beta Worker is the same Worker code with its own name and sessions", () => {
+  const strip = (text) => JSON.parse(text.replace(/^\s*\/\/.*$/gm, ""));
+  const prod = strip(readFileSync(new URL("wrangler.jsonc", root), "utf8"));
+  const beta = strip(readFileSync(new URL("wrangler.beta.jsonc", root), "utf8"));
+  assert.equal(beta.name, "frontend-beta");
+  assert.equal(beta.main, prod.main);
+  assert.deepEqual(beta.assets, prod.assets);
+  assert.deepEqual(beta.r2_buckets, prod.r2_buckets);
+  assert.equal(beta.vars.SESSIONS_PREFIX, "proxy-sessions-beta/");
+  assert.equal(beta.triggers, undefined, "production's cron already keeps the backend awake");
+});

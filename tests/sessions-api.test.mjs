@@ -118,3 +118,13 @@ test("without the R2 binding the API says so instead of failing", async () => {
   const r = await call({}, "GET", "/sessions", "tok-ivan");
   assert.equal(r.status, 503);
 });
+
+test("SESSIONS_PREFIX keeps the beta Worker's sessions apart", async () => {
+  const bucket = fakeBucket();
+  const prod = { SESSIONS: bucket };
+  const beta = { SESSIONS: bucket, SESSIONS_PREFIX: "proxy-sessions-beta/" };
+  assert.equal((await call(beta, "POST", "/sessions", "tok-ivan", { name: "Beta" })).status, 200);
+  assert.ok([...bucket.objects.keys()].every((k) => k.startsWith("proxy-sessions-beta/")));
+  assert.equal((await call(prod, "GET", "/sessions", "tok-ivan")).data.sessions.length, 0);
+  assert.equal((await call(beta, "GET", "/sessions", "tok-ivan")).data.sessions.length, 1);
+});

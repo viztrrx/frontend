@@ -131,7 +131,8 @@ export async function handleSessions(request, env, url) {
   }
   if (!user) return fail(401, "Sign in to Saints to use saved sessions.");
 
-  const prefix = PREFIX + (await sha256Hex(user)) + "/";
+  // SESSIONS_PREFIX keeps another deployment's sessions apart (the beta Worker).
+  const prefix = (env.SESSIONS_PREFIX || PREFIX) + (await sha256Hex(user)) + "/";
   const rest = url.pathname.slice("/sessions".length).replace(/^\/+/, "");
 
   if (!rest) {
