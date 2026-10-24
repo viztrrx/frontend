@@ -1,0 +1,27 @@
+frontend /tmp/dist1 on http://localhost:8781
+frontend /tmp/dist2 on http://localhost:8782
+wisp on wss://localhost:4443/wisp/
+[2026/10/24 - 21:36:03] warn: (66d09380) refusing to create a stream to localhost:4443
+[2026/10/24 - 21:36:03] warn: (66d09380) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 21:36:08] warn: tcp stream to rr4---sn-q4flrnel.googlevideo.com ended with error - Error: read ECONNRESET
+[2026/10/24 - 21:36:08] warn: (66d09380) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 21:36:08] warn: tcp stream to rr4---sn-q4flrnel.googlevideo.com ended with error - Error: read ECONNRESET
+[2026/10/24 - 21:36:08] warn: tcp stream to rr4---sn-q4flrnel.googlevideo.com ended with error - Error: read ECONNRESET
+[2026/10/24 - 21:36:08] warn: tcp stream to rr4---sn-q4flrnel.googlevideo.com ended with error - Error: read ECONNRESET
+[2026/10/24 - 21:36:08] warn: tcp stream to rr4---sn-q4flrnel.googlevideo.com ended with error - Error: read ECONNRESET
+[2026/10/24 - 21:36:13] warn: (8fc1a64d) refusing to create a stream to 127.0.0.1:4443
+[2026/10/24 - 21:36:19] warn: tcp stream to rr4---sn-q4flrnel.googlevideo.com ended with error - Error: read ECONNRESET
+[2026/10/24 - 21:36:19] warn: tcp stream to rr4---sn-q4flrnel.googlevideo.com ended with error - Error: read ECONNRESET
+[2026/10/24 - 21:36:19] warn: tcp stream to rr4---sn-q4flrnel.googlevideo.com ended with error - Error: read ECONNRESET
+[2026/10/24 - 21:36:19] warn: tcp stream to rr4---sn-q4flrnel.googlevideo.com ended with error - Error: read ECONNRESET
+[2026/10/24 - 21:36:19] warn: tcp stream to rr4---sn-q4flrnel.googlevideo.com ended with error - Error: read ECONNRESET
+[2026/10/24 - 21:36:26] warn: (d1143a98) refusing to create a stream to 127.0.0.1:4443
+[2026/10/24 - 21:36:26] warn: (d1143a98) received a DATA packet for a stream which doesn't exist
+[2026/10/24 - 21:36:31] warn: tcp stream to rr2---sn-q4fl6ndz.googlevideo.com ended with error - Error: read ECONNRESET
+[2026/10/24 - 21:36:31] warn: tcp stream to rr2---sn-q4fl6ndz.googlevideo.com ended with error - Error: read ECONNRESET
+[2026/10/24 - 21:36:31] warn: tcp stream to rr2---sn-q4fl6ndz.googlevideo.com ended with error - Error: read ECONNRESET
+[2026/10/24 - 21:36:31] warn: tcp stream to rr2---sn-q4fl6ndz.googlevideo.com ended with error - Error: read ECONNRESET
+[2026/10/24 - 21:36:31] warn: tcp stream to rr2---sn-q4fl6ndz.googlevideo.com ended with error - Error: read ECONNRESET
+[2026/10/24 - 21:36:31] warn: tcp stream to rr2---sn-q4fl6ndz.googlevideo.com ended with error - Error: read ECONNRESET
+[2026/10/24 - 21:36:38] warn: (3e5f5516) refusing to create a stream to localhost:4443
+[2026/10/24 - 21:36:38] warn: (3e5f5516) received a DATA packet for a stream which doesn't exist
