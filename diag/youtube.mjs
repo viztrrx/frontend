@@ -21,6 +21,7 @@ const { values: args } = parseArgs({
     block: { type: "string", default: "" },
     shots: { type: "boolean", default: false },
     sjconfig: { type: "string", default: "" },
+    fix: { type: "string", default: "" },
     direct: { type: "boolean", default: false },
   },
 });
@@ -69,6 +70,7 @@ const browser = await chromium.launch({
 });
 const context = await browser.newContext({ viewport: { width: 1280, height: 800 }, ignoreHTTPSErrors: args.insecure });
 await context.addInitScript((name) => { try { localStorage.setItem("sj-transport", name); } catch {} }, args.transport);
+if (args.fix) await context.addInitScript((fix) => { self.__saintsDiagFix = fix; }, args.fix);
 if (args.sjconfig) await context.addInitScript((json) => { self.__saintsDiagSjConfig = JSON.parse(json); }, args.sjconfig);
 if (args.block) await context.addInitScript((source) => { self.__saintsDiagBlock = new RegExp(source); }, args.block);
 const page = await context.newPage();
@@ -132,7 +134,9 @@ while (Date.now() < deadline && !crashed) {
       const d = direct ? document : f && f.contentDocument;
       const v = d && d.querySelector("video");
       const status = document.getElementById("sj-toolbar-status")?.textContent;
-      if (!v) return { status, title: d?.title };
+      // How much of YouTube's app has been built.
+      const app = d ? { elements: d.getElementsByTagName("*").length, player: !!d.querySelector("#movie_player"), flexy: !!d.querySelector("ytd-watch-flexy"), botcheck: /confirm you.re not a bot/i.test(d.body?.innerText || "") } : null;
+      if (!v) return { status, title: d?.title, app };
       const b = v.buffered;
       return {
         status, title: d.title,
@@ -140,6 +144,7 @@ while (Date.now() < deadline && !crashed) {
         error: v.error ? v.error.code + " " + v.error.message : null,
         buffered: b.length ? Number(b.end(b.length - 1).toFixed(1)) : 0,
         src: (v.currentSrc || "").slice(0, 60),
+        app,
       };
     }, args.direct), 8000, "page.evaluate");
   } catch (e) { video = { evalError: String(e.message).slice(0, 200) }; }
@@ -166,7 +171,7 @@ for (const e of log.filter((e) => e.kind === "req")) {
 }
 const ticks = log.filter((e) => e.kind === "tick");
 const summary = {
-  target: args.direct ? "direct" : args.url, transport: args.transport, block: args.block, shots: args.shots, sjconfig: args.sjconfig, crashed,
+  target: args.direct ? "direct" : args.url, transport: args.transport, block: args.block, shots: args.shots, sjconfig: args.sjconfig, fix: args.fix, crashed,
   lastTick: ticks.at(-1),
   peakRendererMB: Math.max(0, ...ticks.flatMap((e) => e.memory.map((m) => m.mb))),
   peakHeapMB: Math.max(0, ...ticks.map((e) => e.heap?.usedMB || 0)),

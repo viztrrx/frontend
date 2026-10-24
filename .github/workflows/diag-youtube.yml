@@ -61,6 +61,11 @@ jobs:
             echo "== $name crashed=$(grep -o '"crashed": [a-z]*' "out/$name/stdout.txt")"
             grep -iE "fatal|check failed|out of memory|oom|v8|renderer|crash" "out/$name/browser.log" | grep -viE "crashpad|cpufreq" | head -15 || true
           done <<'RUNS'
+          direct;8782;libcurl;;--direct
+          v2-base;8782;epoxy;;
+          v2-fixA;8782;epoxy;;--fix A
+          v2-fixB;8782;epoxy;;--fix B
+          v2-fixA-libcurl;8782;libcurl;;--fix A
           RUNS
           cp /tmp/lab-server.log out/
       - name: Save results to the diag-results branch

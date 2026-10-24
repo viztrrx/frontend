@@ -115,6 +115,13 @@
     // Blocked sites (blocked.js): pages, pop-ups, frames and requests alike.
     plugin.tap(inner.hooks.fetch.intercept, (context, props) => {
       const site = context.parsed.url.href;
+      // DIAGNOSTIC BRANCH ONLY: fix A serves an empty webcomponents-sd.js on YouTube.
+      if (self.__saintsDiagFix === "A" && /(^|\.)youtube\.com$/.test(context.parsed.url.hostname) && /\/webcomponents-sd\.js$/.test(context.parsed.url.pathname)) {
+        const headers = new $scramjet.ScramjetHeaders();
+        headers.set("content-type", "text/javascript");
+        props.response = { body: "/* webcomponents-sd skipped */", headers, status: 200, statusText: "OK" };
+        return;
+      }
       // DIAGNOSTIC BRANCH ONLY: diag/youtube.mjs --block refuses matching requests.
       if (self.__saintsDiagBlock && self.__saintsDiagBlock.test(site)) {
         props.response = ownPage("diag-blocked", "diag-blocked", 403);
@@ -128,6 +135,12 @@
         escapeHtml(block.message) + '</p><p style="margin:0;color:#9c9c9c;font-size:.8em">' + escapeHtml(context.parsed.url.hostname) + "</p>", 403);
     });
     plugin.tap(inner.hooks.fetch.response, (context, props) => {
+      // DIAGNOSTIC BRANCH ONLY: fix B turns off YouTube's forced ShadyDOM polyfill.
+      if (self.__saintsDiagFix === "B" && typeof props.response.body === "string" && /(^|\.)youtube\.com$/.test(context.parsed.url.hostname)) {
+        const before = props.response.body;
+        props.response.body = before.replace(/(ShadyDOM\s*=\s*\{\s*force\s*:\s*)(true|!0)/, "$1false");
+        console.log("diag fix B applied:", before !== props.response.body, context.parsed.url.href.slice(0, 80));
+      }
       if (context.request.mode === "navigate") reportNavigation(context.request.rawUrl.pathname, props.response.status, "");
     });
     // The site couldn't be reached: index.js retries with the other transport,
