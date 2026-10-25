@@ -1,7 +1,7 @@
 {
   "target": "beta",
   "frontend": "https://frontend-beta.viztrrx.workers.dev/",
-  "testedAt": "2026-10-25T16:30:41.813Z",
+  "testedAt": "2026-10-25T21:05:34.767Z",
   "version": {
     "engine": 2,
     "commit": "a91069ad4f2b02205b0aba81707a168dccf6d697",
@@ -14,24 +14,24 @@
   "partial": 2,
   "failed": 8,
   "total": 30,
-  "medianMs": 1667,
+  "medianMs": 1677,
   "results": [
     {
       "name": "Google Search",
       "url": "https://www.google.com/search?q=weather",
       "status": "pass",
       "note": "",
-      "ms": 2630,
-      "title": "https://www.google.com/search?q=weather&sg_ss=*Qn6afhryAAYCqQfUIql9b8iHDjrmfR0EAEABEArZ1NvnniYIlTHQBP33u87lGKuhxjSYrP3T5SsllFUUlMPAflIRvysrkRb0dSfzNIfvA-Q5UTBqUDDEuDD5PQAAAV5tAAAAS1cBB0EANZhnD2tKd8D6KXiMzZI_nENcJKNQQRYGf0wuiu9n2Q68SWym5h97DEFrt364ECBKJqT4xWWvNQDEpowP52w9SuqK1Ev0Q5Zq1_VHyauEdVlr9N0ZrqFIAsSd2CiQC12aA3Fwc3qdf7uEavq-TzCZP323z9HUMfZuPTXH7ELaWGg9hy6vDwdpUkaKB-7v2JJRjM95puwmVoYnqvHhRGsFOsZh1jH5zNYoWzHQV8WBHZlKaTKJxBi0p1nmOxL1RctFrydSOSZdsibXO275sHiDy7L41bU4JSAZozwu0-LT8OLjxFV_9-0ZKBxF3GPOfzaF9uS7Y2-w7-AidcxDlaYCfDXYzBWMLlgF53lpIsDNXrCNeeR-ak7U_v88FDc67gPCYd6ou6laUIOiFB6967K0MiwbfXTccGnZCeWWefXthhE6HvaUljH57heZDhfssUYdjbE49SdtWBpkz93XB6oaZH4c7y_gXvPB-eegdBjZCE0RSCzV3yRpjSMKR52lY715dhmGYDsiiyVqXYs0Pci85RDQoWIBFkj-vvijnyPTwnWUDOwDjTejAaYzGy7kt5TkiYTzzWp9WM3DgxEOs09bR6tp8wztCnNFwTgr_NYIR0eQRqt0-oS_BfZcWAhTB8ReARN-AkEKccnp40FTRVXCInGlzPQyxvCsqo00HuNhHOfI6BkBWzYhl8rB98mcw4oSrADYTizI-AnHw4iXwHZy1wBoi1_gomhumOAqzg8nZ5DEWnNqblbT-jFqOr-d6GBfhu-XtbMwVjQSXg1UZN2_d8YPqhe2y_puultZeVkJ9CSxhDkNSvByzlXRpuR7CFCJJWJWzQvQWI1WkoZUGlXbgkIm1ipTU91qeci1kd3JD66SA2qIFfEOPwi-uk81qDfVOkF40vubkkG5H6JV0NjSREloDxNe4w1bgJG4XGrsByCfkubQ8kHWXIhtqV7kVLvc0eaK66yfTp-maRBLK5repv8BafDfHZBLxiggFZAfu-8KcJ26_Sdo1YcV0GkFLPwUVBE_1zooQVbcQCJncfydfIiQGlV895P3Ib3UUYJHFAuZui5-NBTAT77UNNMYxJBqod17lPHvCOv80Eg9W_PPkzKGQDrVL1LcyXDd-YQrfb0-BI4SBau_AHi2QVft0H8uTkVnNz91SLG88WYY9oKL6VIhg-luvyJiy6-6RQ&sei=vizeaoboMpGf5NoPn9KTmAw",
-      "address": "https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dweather%26sg_ss%3D*Qn6afhryAAYCqQfUIql9b8iHDjrmfR0EAEABEArZ1NvnniYIlTHQBP33u87lGKuhxjSYrP3T5SsllFUUlMPAflIRvysrkRb0dSfzNIfvA-Q5UTBqUDDEuDD5PQAAAV5tAAAAS1cBB0EANZhnD2tKd8D6KXiMzZI_nENcJKNQQRYGf0wuiu9n2Q68SWym5h97DEFrt364ECBKJqT4xWWvNQDEpowP52w9SuqK1Ev0Q5Zq1_VHyauEdVlr9N0ZrqFIAsSd2CiQC12aA3Fwc3qdf7uEavq-TzCZP323z9HUMfZuPTXH7ELaWGg9hy6vDwdpUkaKB-7v2JJRjM95puwmVoYnqvHhRGsFOsZh1jH5zNYoWzHQV8WBHZlKaTKJxBi0p1nmOxL1RctFrydSOSZdsibXO275sHiDy7L41bU4JSAZozwu0-LT8OLjxFV_9-0ZKBxF3GPOfzaF9uS7Y2-w7-AidcxDlaYCfDXYzBWMLlgF53lpIsDNXrCNeeR-ak7U_v88FDc67gPCYd6ou6laUIOiFB6967K0MiwbfXTccGnZCeWWefXthhE6HvaUljH57heZDhfssUYdjbE49SdtWBpkz93XB6oaZH4c7y_gXvPB-eegdBjZCE0RSCzV3yRpjSMKR52lY715dhmGYDsiiyVqXYs0Pci85RDQoWIBFkj-vvijnyPTwnWUDOwDjTejAaYzGy7kt5TkiYTzzWp9WM3DgxEOs09bR6tp8wztCnNFwTgr_NYIR0eQRqt0-oS_BfZcWAhTB8ReARN-AkEKccnp40FTRVXCInGlzPQyxvCsqo00HuNhHOfI6BkBWzYhl8rB98mcw4oSrADYTizI-AnHw4iXwHZy1wBoi1_gomhumOAqzg8nZ5DEWnNqblbT-jFqOr-d6GBfhu-XtbMwVjQSXg1UZN2_d8YPqhe2y_puultZeVkJ9CSxhDkNSvByzlXRpuR7CFCJJWJWzQvQWI1WkoZUGlXbgkIm1ipTU91qeci1kd3JD66SA2qIFfEOPwi-uk81qDfVOkF40vubkkG5H6JV0NjSREloDxNe4w1bgJG4XGrsByCfkubQ8kHWXIhtqV7kVLvc0eaK66yfTp-maRBLK5repv8BafDfHZBLxiggFZAfu-8KcJ26_Sdo1YcV0GkFLPwUVBE_1zooQVbcQCJncfydfIiQGlV895P3Ib3UUYJHFAuZui5-NBTAT77UNNMYxJBqod17lPHvCOv80Eg9W_PPkzKGQDrVL1LcyXDd-YQrfb0-BI4SBau_AHi2QVft0H8uTkVnNz91SLG88WYY9oKL6VIhg-luvyJiy6-6RQ%26sei%3DvizeaoboMpGf5NoPn9KTmAw&q=EgRK3DEHGL_Z-NYGIjDjbLeJ7BBQpbger-3slGB8Kpw2eX3RGr8pJzoppblWPjh4Np3a14foAQEsMbny1CgyAVJaAUNgn_zvjdKkhMcG",
-      "consoleErrors": 4,
+      "ms": 2748,
+      "title": "https://www.google.com/search?q=weather&sg_ss=*KBSaFHDyAAYCqQfUIql9jkdzRlokzYQEAEABEArZ1NxBO4n4RfwdOgxV9BspCeJ30_XAcHZE4LBH1OjjlzRMyRoKJisYoxwzoLXcoU_IjuQ8PTR3QykjF48FPQAAAVptAAAASFcBB0EANVCedLjD5_LOCGaT9IXZU_U6nZD2DXT-VN0hiXchOPwXRdePf5-fB8Dm520_WtKeDCzp9Y4mpgJ_02JupetlMBuEC1YvwMWcjVePX4npCrNu9CIewhFLMmaweyYZIU_FrEsV1avTYtsK_qCqunSjxGFhbOqFdqz4yrEXkJUDR8oYHA6HCbEeK26w8oR8RuQrJq2cO80ztZRvwS6GfD0fq-YYfWRzxJkIgAcoaanlNomZk6iEanT690c-F4t3ze_EpZPH5xeXeG4l5sTjDaXpjA63WrHCEa3vji-04rw9YdF-LzJwn3oK1e0XcDStNeAFZWdWv1hUw5HTa_DCWBJwmPjpZoLOwhHX223GzcZZgl99cQCbUTJ_UiNMzubcohF-FxAxsGgkoAw5KVfgSzlkAN07ZNCS1rOip2KPl3dpe4Qcs-xoXncF5rcGsLTSOTzWxlvPMhZEUVZxq517DjSyKUkBmoCU4Np9KhSjrnmZO7_AdUMKoGUsstZsLv6HOoAs3jpQkSDZCwq1ceiPJBR9CO0FAsDvJyhdHMpWneq8YOuosiYrhwODMrfAG3xxpRTHnDc1P6H17Ge-WOdmfLnlUwYxRjW7GXV-wsLCuNYBlYsf1jmP8w1tqisfEb7sziqkhiIUhzyaP3FG-FPDYdaSRkRj5O0AvSQZsNU2w6rVO1oN64wwi5NJjdwmbOoEFKmmUdcfu0Fb_HJD7scs-wAPneba5Eht-9b4pZybu0Cc7e0jjmKzpyMDUNW78HViNRsrI4B5PgC4d9OthBSBv24Ic3syXYFtPeG2GMXtzPIVzWhVgA5JCuo3ok9qtUlXSVJQXUh895FIypZFwtbXtbZcGb82Y2j5jrhyzrtz_NGPBh8YtK3y26CTanc3q2E89jCFTAmzbwLi4TClPDp9WlgdUzl6YvBnlCWf&sei=KW3eapKxCuis5NoPiOKh2A8",
+      "address": "https://www.google.com/sorry/index?continue=https://www.google.com/search%3Fq%3Dweather%26sg_ss%3D*KBSaFHDyAAYCqQfUIql9jkdzRlokzYQEAEABEArZ1NxBO4n4RfwdOgxV9BspCeJ30_XAcHZE4LBH1OjjlzRMyRoKJisYoxwzoLXcoU_IjuQ8PTR3QykjF48FPQAAAVptAAAASFcBB0EANVCedLjD5_LOCGaT9IXZU_U6nZD2DXT-VN0hiXchOPwXRdePf5-fB8Dm520_WtKeDCzp9Y4mpgJ_02JupetlMBuEC1YvwMWcjVePX4npCrNu9CIewhFLMmaweyYZIU_FrEsV1avTYtsK_qCqunSjxGFhbOqFdqz4yrEXkJUDR8oYHA6HCbEeK26w8oR8RuQrJq2cO80ztZRvwS6GfD0fq-YYfWRzxJkIgAcoaanlNomZk6iEanT690c-F4t3ze_EpZPH5xeXeG4l5sTjDaXpjA63WrHCEa3vji-04rw9YdF-LzJwn3oK1e0XcDStNeAFZWdWv1hUw5HTa_DCWBJwmPjpZoLOwhHX223GzcZZgl99cQCbUTJ_UiNMzubcohF-FxAxsGgkoAw5KVfgSzlkAN07ZNCS1rOip2KPl3dpe4Qcs-xoXncF5rcGsLTSOTzWxlvPMhZEUVZxq517DjSyKUkBmoCU4Np9KhSjrnmZO7_AdUMKoGUsstZsLv6HOoAs3jpQkSDZCwq1ceiPJBR9CO0FAsDvJyhdHMpWneq8YOuosiYrhwODMrfAG3xxpRTHnDc1P6H17Ge-WOdmfLnlUwYxRjW7GXV-wsLCuNYBlYsf1jmP8w1tqisfEb7sziqkhiIUhzyaP3FG-FPDYdaSRkRj5O0AvSQZsNU2w6rVO1oN64wwi5NJjdwmbOoEFKmmUdcfu0Fb_HJD7scs-wAPneba5Eht-9b4pZybu0Cc7e0jjmKzpyMDUNW78HViNRsrI4B5PgC4d9OthBSBv24Ic3syXYFtPeG2GMXtzPIVzWhVgA5JCuo3ok9qtUlXSVJQXUh895FIypZFwtbXtbZcGb82Y2j5jrhyzrtz_NGPBh8YtK3y26CTanc3q2E89jCFTAmzbwLi4TClPDp9WlgdUzl6YvBnlCWf%26sei%3DKW3eapKxCuis5NoPiOKh2A8&q=EgRK3DEHGKna-dYGIjBuGkNo-qIpMEb01Dj1qVyIEfkiyni7r2ywIMCSMPBHlwnPiNo2wH9RhJVYyE2RRygyAVJaAUNg_8HIkvma8Y9B",
+      "consoleErrors": 3,
       "failedRequests": 0,
       "firstErrors": [
         "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
         "requestStorageAccess: Permission denied.",
         "pageerror: solveSimpleChallenge is not defined"
       ],
-      "totalMs": 6179
+      "totalMs": 6409
     },
     {
       "name": "YouTube",
@@ -41,38 +41,44 @@
       "ms": null,
       "title": "YouTube",
       "address": "https://www.youtube.com/",
-      "consoleErrors": 1,
-      "failedRequests": 1,
+      "consoleErrors": 7,
+      "failedRequests": 7,
       "firstErrors": [
-        "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
+        "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+        "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "Failed to load resource: the server responded with a status of 403 (Forbidden)"
       ],
-      "totalMs": 47223
+      "totalMs": 46905
     },
     {
       "name": "YouTube video",
       "url": "https://www.youtube.com/watch?v=jNQXAC9IVRw",
       "status": "partial",
       "note": "page loaded but the video didn't start",
-      "ms": 3398,
+      "ms": 2884,
       "title": "- YouTube",
       "address": "https://www.youtube.com/watch?v=jNQXAC9IVRw",
-      "consoleErrors": 0,
-      "failedRequests": 0,
-      "firstErrors": [],
-      "totalMs": 9210
+      "consoleErrors": 12,
+      "failedRequests": 12,
+      "firstErrors": [
+        "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "Failed to load resource: the server responded with a status of 403 (Forbidden)",
+        "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+      ],
+      "totalMs": 8842
     },
     {
       "name": "Wikipedia",
       "url": "https://en.wikipedia.org/wiki/Web_browser",
       "status": "pass",
       "note": "",
-      "ms": 621,
+      "ms": 631,
       "title": "Web browser - Wikipedia",
       "address": "https://en.wikipedia.org/wiki/Web_browser",
       "consoleErrors": 0,
       "failedRequests": 0,
       "firstErrors": [],
-      "totalMs": 3888
+      "totalMs": 3899
     },
     {
       "name": "Reddit",
@@ -81,14 +87,14 @@
       "note": "no content after 45s (text 143 chars, 1 images)",
       "ms": null,
       "title": "",
-      "address": "https://www.reddit.com/r/AskReddit/?solution=adf162d328e0918aadf162d328e0918a&js_challenge=1&jsc_token=2824be10929bdc604753c70a67a1c331a188e1c9495a9e931d470332a4ca52af&jsc_orig_r=",
+      "address": "https://www.reddit.com/r/AskReddit/?solution=47ad05623f391caa47ad05623f391caa&js_challenge=1&jsc_token=2824be10929bdc604753c70a67a1c33168dcbac45f6c02bc727646532050b473&jsc_orig_r=",
       "consoleErrors": 2,
       "failedRequests": 1,
       "firstErrors": [
         "Failed to load resource: the server responded with a status of 403 (Forbidden)",
         "Failed to load resource: the server responded with a status of 403 (Forbidden)"
       ],
-      "totalMs": 46945
+      "totalMs": 46893
     },
     {
       "name": "X (Twitter)",
@@ -103,46 +109,44 @@
       "firstErrors": [
         "Failed to load resource: the server responded with a status of 403 (Forbidden)"
       ],
-      "totalMs": 47197
+      "totalMs": 47064
     },
     {
       "name": "Instagram",
       "url": "https://www.instagram.com/",
       "status": "pass",
       "note": "",
-      "ms": 1822,
+      "ms": 1617,
       "title": "Instagram",
       "address": "https://www.instagram.com/",
       "consoleErrors": 4,
       "failedRequests": 0,
       "firstErrors": [
+        "ErrorUtils caught an error:\n\nError connecting to Credential Management service.\n\nSubsequent non-fatal errors won't be logged; see https://fburl.com/debugjs. {column: 240, clientTime: 1792961994, extra: Object, guardList: Array(0), hash: 3qvmrb}",
         "Failed to load resource: the server responded with a status of 429 (Too Many Requests)",
-        "ErrorUtils caught an error:\n\nError connecting to Credential Management service.\n\nSubsequent non-fatal errors won't be logged; see https://fburl.com/debugjs. {column: 240, clientTime: 1792945504, extra: Object, guardList: Array(0), hash: caw2cb}",
         "Failed to load resource: the server responded with a status of 429 (Too Many Requests)"
       ],
-      "totalMs": 5252
+      "totalMs": 4884
     },
     {
       "name": "TikTok",
       "url": "https://www.tiktok.com/explore",
       "status": "pass",
       "note": "",
-      "ms": 1667,
+      "ms": 1677,
       "title": "TikTok",
       "address": "https://www.tiktok.com/404?fromUrl=%2Fundefined",
-      "consoleErrors": 1,
+      "consoleErrors": 0,
       "failedRequests": 26,
-      "firstErrors": [
-        "Failed to load resource: the server responded with a status of 404 (Not Found)"
-      ],
-      "totalMs": 5058
+      "firstErrors": [],
+      "totalMs": 5116
     },
     {
       "name": "Discord",
       "url": "https://discord.com/login",
       "status": "pass",
       "note": "",
-      "ms": 7762,
+      "ms": 8371,
       "title": "Discord",
       "address": "https://discord.com/login",
       "consoleErrors": 1,
@@ -150,14 +154,14 @@
       "firstErrors": [
         "Failed to load resource: the server responded with a status of 404 ()"
       ],
-      "totalMs": 10989
+      "totalMs": 11635
     },
     {
       "name": "Spotify",
       "url": "https://open.spotify.com/",
       "status": "pass",
       "note": "",
-      "ms": 3152,
+      "ms": 3317,
       "title": "Spotify - Web Player: Listen to Music, Podcasts, and Audiobooks Online",
       "address": "https://open.spotify.com/",
       "consoleErrors": 1,
@@ -165,14 +169,14 @@
       "firstErrors": [
         "requestStorageAccess: Permission denied."
       ],
-      "totalMs": 6740
+      "totalMs": 7014
     },
     {
       "name": "SoundCloud",
       "url": "https://soundcloud.com/discover",
       "status": "pass",
       "note": "",
-      "ms": 2143,
+      "ms": 2139,
       "title": "Discover the top streamed music and songs online on Soundcloud",
       "address": "https://soundcloud.com/discover",
       "consoleErrors": 3,
@@ -182,14 +186,14 @@
         "Failed to load resource: the server responded with a status of 404 ()",
         "Failed to load resource: the server responded with a status of 404 ()"
       ],
-      "totalMs": 6145
+      "totalMs": 6547
     },
     {
       "name": "Twitch",
       "url": "https://www.twitch.tv/directory",
       "status": "pass",
       "note": "",
-      "ms": 2979,
+      "ms": 2853,
       "title": "undefined - Twitch",
       "address": "https://www.twitch.tv/undefined",
       "consoleErrors": 1,
@@ -197,14 +201,14 @@
       "firstErrors": [
         "Failed to load resource: the server responded with a status of 429 (Too Many Requests)"
       ],
-      "totalMs": 6240
+      "totalMs": 6195
     },
     {
       "name": "GitHub",
       "url": "https://github.com/MercuryWorkshop/scramjet",
       "status": "pass",
       "note": "",
-      "ms": 1725,
+      "ms": 2072,
       "title": "GitHub - MercuryWorkshop/scramjet: Scramjet is a versatile web proxy designed to bypass internet censorship. · GitHub",
       "address": "https://github.com/MercuryWorkshop/scramjet",
       "consoleErrors": 1,
@@ -212,7 +216,7 @@
       "firstErrors": [
         "Failed to load resource: the server responded with a status of 404 (Not Found)"
       ],
-      "totalMs": 4971
+      "totalMs": 5329
     },
     {
       "name": "Amazon",
@@ -225,13 +229,13 @@
       "consoleErrors": 0,
       "failedRequests": 0,
       "firstErrors": [],
-      "totalMs": 46955
+      "totalMs": 46977
     },
     {
       "name": "eBay",
       "url": "https://www.ebay.com/",
       "status": "fail",
-      "note": "HTTP 403: the site refused the backend server; no content after 45s (text 150 chars, 0 images)",
+      "note": "HTTP 403: the site refused the backend server; no content after 45s (text 151 chars, 0 images)",
       "ms": null,
       "title": "Error Page | eBay",
       "address": "https://www.ebay.com/",
@@ -240,14 +244,14 @@
       "firstErrors": [
         "Failed to load resource: the server responded with a status of 403 (Forbidden)"
       ],
-      "totalMs": 47048
+      "totalMs": 46982
     },
     {
       "name": "Roblox",
       "url": "https://www.roblox.com/",
       "status": "pass",
       "note": "",
-      "ms": 4872,
+      "ms": 5120,
       "title": "Play Free Online Games on Roblox - Sign Up to Play!",
       "address": "https://www.roblox.com/",
       "consoleErrors": 1,
@@ -255,61 +259,58 @@
       "firstErrors": [
         "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
       ],
-      "totalMs": 8220
+      "totalMs": 8583
     },
     {
       "name": "now.gg",
       "url": "https://now.gg/",
       "status": "pass",
       "note": "",
-      "ms": 576,
+      "ms": 548,
       "title": "Play Online Games for Free | now.gg Mobile Cloud",
       "address": "https://now.gg/",
       "consoleErrors": 1,
-      "failedRequests": 1,
+      "failedRequests": 0,
       "firstErrors": [
         "Failed to load resource: the server responded with a status of 429 (Too Many Requests)"
       ],
-      "totalMs": 4259
+      "totalMs": 4245
     },
     {
       "name": "Poki",
       "url": "https://poki.com/",
       "status": "pass",
       "note": "",
-      "ms": 1123,
+      "ms": 1170,
       "title": "404 not found",
       "address": "https://poki.com/undefined",
       "consoleErrors": 2,
-      "failedRequests": 10,
+      "failedRequests": 8,
       "firstErrors": [
         "Failed to load resource: the server responded with a status of 403 (Forbidden)",
         "Failed to load resource: the server responded with a status of 401 (Unauthorized)"
       ],
-      "totalMs": 4444
+      "totalMs": 4419
     },
     {
       "name": "CrazyGames",
       "url": "https://www.crazygames.com/",
       "status": "pass",
       "note": "",
-      "ms": 666,
+      "ms": 647,
       "title": "Free Online Games on CrazyGames | Play Now!",
       "address": "https://www.crazygames.com/",
-      "consoleErrors": 2,
-      "failedRequests": 3,
-      "firstErrors": [
-        "Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOriginAfterDefaultedToSameOriginByCoep",
-        "Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOriginAfterDefaultedToSameOriginByCoep"
-      ],
-      "totalMs": 4712
+      "consoleErrors": 0,
+      "failedRequests": 0,
+      "firstErrors": [],
+      "totalMs": 4361
     },
     {
       "name": "Coolmath Games",
       "url": "https://www.coolmathgames.com/",
       "status": "pass",
       "note": "",
-      "ms": 595,
+      "ms": 637,
       "title": "Cool Math Games - Free Online Games for Learning and Fun",
       "address": "https://www.coolmathgames.com/",
       "consoleErrors": 2,
@@ -318,37 +319,37 @@
         "Failed to load resource: the server responded with a status of 404 ()",
         "Failed to load resource: the server responded with a status of 404 ()"
       ],
-      "totalMs": 4677
+      "totalMs": 4785
     },
     {
       "name": "Scratch",
       "url": "https://scratch.mit.edu/explore/projects/all",
       "status": "pass",
       "note": "",
-      "ms": 1040,
+      "ms": 1038,
       "title": "Scratch - Explore",
       "address": "https://scratch.mit.edu/explore/projects/all",
       "consoleErrors": 0,
       "failedRequests": 1,
       "firstErrors": [],
-      "totalMs": 4307
+      "totalMs": 4315
     },
     {
       "name": "Khan Academy",
       "url": "https://www.khanacademy.org/",
       "status": "pass",
       "note": "",
-      "ms": 1120,
+      "ms": 2069,
       "title": "Khan Academy | Free Online Courses, Lessons & Practice",
       "address": "https://www.khanacademy.org/",
-      "consoleErrors": 4,
-      "failedRequests": 9,
+      "consoleErrors": 3,
+      "failedRequests": 8,
       "firstErrors": [
         "Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOriginAfterDefaultedToSameOriginByCoep",
         "Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOriginAfterDefaultedToSameOriginByCoep",
         "Failed to load resource: net::ERR_BLOCKED_BY_RESPONSE.NotSameOriginAfterDefaultedToSameOriginByCoep"
       ],
-      "totalMs": 4365
+      "totalMs": 5300
     },
     {
       "name": "Quizlet",
@@ -358,21 +359,21 @@
       "ms": null,
       "title": "Just a moment...",
       "address": "https://quizlet.com/",
-      "consoleErrors": 49,
-      "failedRequests": 5,
+      "consoleErrors": 47,
+      "failedRequests": 6,
       "firstErrors": [
         "Failed to load resource: the server responded with a status of 403 (Forbidden)",
-        "Request \"https://brunhild.challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/i/a5029779ea43990a/i.nKZ3Yt_prUZbfKde9AxxNZqqX3N7Lp8jkr5TXV4nI-1792945678-1.2.1.1-QFpaiFfzuU0mlfcTvOZEE4_.Db49V9wxQ88kAiuMymZEZuiH8s7Q.o.yzHBJt66y\" failed with error code 35: SSL connect error",
-        "Error in controller request handler: TypeError: Request failed with error code 35: SSL connect error\n    at finish_callback (https://frontend-beta.viztrrx.workers.dev/libcurl/index.mjs:5829:20)\n    at Object.real_end_callback [as end] (https://frontend-beta.viztrrx.workers.dev/libcurl/index.mjs:5766"
+        "ERROR FROM SCRAMJET INTERNALS TypeError: Cannot read properties of null (reading 'tagName')\n    at Object.apply (https://frontend-beta.viztrrx.workers.dev/scram/scramjet.js:18:10119)\n    at RawProxy.r.apply.l.apply (https://frontend-beta.viztrrx.workers.dev/scram/scramjet.js:18:710)\n    at WN (https",
+        "ERROR FROM SCRAMJET INTERNALS TypeError: Cannot read properties of null (reading 'Symbol(xhr original args)')\n    at Object.apply (https://frontend-beta.viztrrx.workers.dev/scram/scramjet.js:18:38663)\n    at RawProxy.r.apply.l.apply (https://frontend-beta.viztrrx.workers.dev/scram/scramjet.js:18:710"
       ],
-      "totalMs": 46743
+      "totalMs": 47195
     },
     {
       "name": "ESPN",
       "url": "https://www.espn.com/",
       "status": "pass",
       "note": "",
-      "ms": 1105,
+      "ms": 1215,
       "title": "ESPN - Serving Sports Fans. Anytime. Anywhere.",
       "address": "https://www.espn.com/",
       "consoleErrors": 1,
@@ -380,7 +381,7 @@
       "firstErrors": [
         "Failed to load resource: the server responded with a status of 403 (Forbidden)"
       ],
-      "totalMs": 4869
+      "totalMs": 5136
     },
     {
       "name": "CNN",
@@ -393,38 +394,37 @@
       "consoleErrors": 0,
       "failedRequests": 0,
       "firstErrors": [],
-      "totalMs": 46975
+      "totalMs": 46988
     },
     {
       "name": "Weather.com",
       "url": "https://weather.com/",
       "status": "pass",
       "note": "",
-      "ms": 1118,
+      "ms": 1252,
       "title": "National and Local Weather Radar, Daily Forecast, Hurricane and information from The Weather Channel and weather.com",
       "address": "https://weather.com/",
-      "consoleErrors": 1,
+      "consoleErrors": 0,
       "failedRequests": 0,
-      "firstErrors": [
-        "%cAY background: linear-gradient(-152deg,#6937ea,#377fea 65%);border-radius: 3px;color: white;padding: 1px 5px Prebid requestBids executed before s2s client script was loaded!"
-      ],
-      "totalMs": 5551
+      "firstErrors": [],
+      "totalMs": 5225
     },
     {
       "name": "Pinterest",
       "url": "https://www.pinterest.com/ideas/",
       "status": "pass",
       "note": "",
-      "ms": 1133,
+      "ms": 1100,
       "title": "Pinterest",
-      "address": "https://www.pinterest.com/ideas/undefined",
-      "consoleErrors": 2,
-      "failedRequests": 2,
+      "address": "https://www.pinterest.com/ideas/",
+      "consoleErrors": 50,
+      "failedRequests": 32,
       "firstErrors": [
-        "Unexpected hydration error Minified React error #418; visit https://react.dev/errors/418?args[]=HTML&args[]= for the full message or use the non-minified dev environment for full errors and additional helpful warnings. \n    at div (<anonymous>)\n    at r (https://frontend-beta.viztrrx.workers.dev/~/s",
-        "Failed to load resource: the server responded with a status of 404 (Not Found)"
+        "Request \"https://s.pinimg.com/webapp/17603-d1679dc30e1361cb.mjs\" failed with error code 55: Failed sending data to the peer",
+        "Error in controller request handler: TypeError: Request failed with error code 55: Failed sending data to the peer\n    at finish_callback (https://frontend-beta.viztrrx.workers.dev/libcurl/index.mjs:5829:20)\n    at Object.real_end_callback [as end] (https://frontend-beta.viztrrx.workers.dev/libcurl/",
+        "TypeError: Request failed with error code 55: Failed sending data to the peer\n    at finish_callback (https://frontend-beta.viztrrx.workers.dev/libcurl/index.mjs:5829:20)\n    at Object.real_end_callback [as end] (https://frontend-beta.viztrrx.workers.dev/libcurl/index.mjs:5766:9)\n    at HTTPSession."
       ],
-      "totalMs": 4741
+      "totalMs": 4405
     },
     {
       "name": "IMDb",
@@ -439,37 +439,37 @@
       "firstErrors": [
         "Failed to load resource: the server responded with a status of 403 (Forbidden)"
       ],
-      "totalMs": 46973
+      "totalMs": 46975
     },
     {
       "name": "DuckDuckGo",
       "url": "https://duckduckgo.com/?q=weather",
       "status": "partial",
       "note": "loaded, but \"weather\" wasn't on the page (consent page or captcha?)",
-      "ms": 567,
+      "ms": 1029,
       "title": "DuckDuckGo - Protection. Privacy. Peace of mind.",
       "address": "https://duckduckgo.com/static-pages/home-error/418.html?bno=84f2&is_tor=0&is_ar=0&is_netp=0",
       "consoleErrors": 0,
       "failedRequests": 0,
       "firstErrors": [],
-      "totalMs": 3999
+      "totalMs": 4366
     },
     {
       "name": "Stack Overflow",
       "url": "https://stackoverflow.com/questions",
       "status": "pass",
       "note": "",
-      "ms": 2175,
+      "ms": 2596,
       "title": "Newest Questions - Stack Overflow",
       "address": "https://stackoverflow.com/questions",
       "consoleErrors": 4,
       "failedRequests": 2,
       "firstErrors": [
         "Failed to load resource: the server responded with a status of 403 (Forbidden)",
-        "[Cloudflare Turnstile] Unexpected error caught: Uncaught NetworkError: Failed to execute 'importScripts' on 'WorkerGlobalScope': The script at 'https://frontend-beta.viztrrx.workers.dev/scram/scramjet.js' failed to load. , with debug info: kww46C6rihA0BWALDtTnRjxUw8x2B4/hUqiBH3Fj/dmCLl8PavyApxFBKWBF",
-        "pageerror: Uncaught NetworkError: Failed to execute 'importScripts' on 'WorkerGlobalScope': The script at 'https://frontend-beta.viztrrx.workers.dev/scram/scramjet.js' failed to load."
+        "[Cloudflare Turnstile] Unexpected error caught: Uncaught NetworkError: Failed to execute 'importScripts' on 'WorkerGlobalScope': The script at 'https://frontend-beta.viztrrx.workers.dev/~/sj/xdrssmhr/329nxz42/data:text/javascript;charset=utf-8;base64,JHNjcmFtamV0JHB1c2hzb3VyY2VtYXAoWzcsMCwwLDAsMTA0L",
+        "pageerror: Uncaught NetworkError: Failed to execute 'importScripts' on 'WorkerGlobalScope': The script at 'https://frontend-beta.viztrrx.workers.dev/~/sj/xdrssmhr/329nxz42/data:text/javascript;charset=utf-8;base64,JHNjcmFtamV0JHB1c2hzb3VyY2VtYXAoWzcsMCwwLDAsMTA0LDAsMCwwLDI4LDAsMCwwLDAsMTU1LDAsMCwwLDEsMCwwLDAsM"
       ],
-      "totalMs": 5394
+      "totalMs": 5943
     }
   ]
 }
