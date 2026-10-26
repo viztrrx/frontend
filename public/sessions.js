@@ -24,6 +24,12 @@
 // /sessions/auth, which keeps it in an HttpOnly cookie for /sessions, and is
 // dropped from this page: proxied sites run on this origin, so no script here
 // keeps it. Both ways lead to the account's one list of sessions.
+//
+// Framed by the console (in its tab or its about:blank window), the same form
+// shows whenever the console hasn't handed over a sign-in it can use. That
+// proxy-only token stays in memory for this frame, like the console's: the
+// sign-in cookie is SameSite=Strict, so a frame on another site never gets it
+// back.
 (function () {
   const section = document.getElementById("sj-sessions");
   if (!section) return;
@@ -43,9 +49,12 @@
 
   const embedded = window.parent && window.parent !== window;
   const AUTH_BASE = String((typeof _CONFIG === "object" && _CONFIG && _CONFIG.authUrl) || "https://donnajbe.viztrrx.workers.dev").replace(/\/+$/, "");
-  // { user, token } from the console, or { user, token: "", viaCookie: true }
-  // when Saints Search signed in on its own (the token is in the cookie).
+  // { user, token } from the console, { user, token: "", viaCookie: true }
+  // when Saints Search signed in on its own (the token is in the cookie), or
+  // { user, token, own: true } when it signed in on its own while framed.
   let account = null;
+  // A console token /sessions refused: ignored until the console sends another.
+  let refusedConsoleToken = "";
   let sessions = [];         // this account's saved sessions (metadata)
   let loaded = false;        // list fetched for the current account
   let loadError = false;     // the list couldn't be fetched (browsing isn't held up then)
@@ -97,9 +106,13 @@
     if (!r.ok || !d.ok) {
       const err = new Error(d.error || "The server answered HTTP " + r.status + ".");
       err.status = r.status;
-      // Saints Search's own sign-in ended (expired, revoked, signed out
-      // elsewhere): back to the sign-in form.
-      if (account && account.viaCookie && (r.status === 401 || r.status === 403)) signedOut(d.error);
+      // The sign-in ended (expired, revoked, signed out elsewhere): back to
+      // the sign-in form. A console token that stopped working is set aside
+      // so the form can take over until the console signs in again.
+      if (account && (r.status === 401 || r.status === 403)) {
+        if (!account.viaCookie && !account.own) refusedConsoleToken = account.token;
+        signedOut(d.error);
+      }
       throw err;
     }
     return d;
@@ -384,9 +397,9 @@
     }
     render();
   }
-  async function setAccount(user, token, viaCookie) {
+  async function setAccount(user, token, viaCookie, own) {
     const next = user && (token || viaCookie)
-      ? { user: String(user).toLowerCase(), token: viaCookie ? "" : String(token), viaCookie: !!viaCookie }
+      ? { user: String(user).toLowerCase(), token: viaCookie ? "" : String(token), viaCookie: !!viaCookie, own: !!own }
       : null;
     const changedUser = (account && account.user) !== (next && next.user);
     account = next;
@@ -414,7 +427,13 @@
       if (event.source !== window.parent) return;
       const d = event.data;
       if (!d || d.saintsProxy !== 1 || d.type !== "account") return;
-      void setAccount(typeof d.user === "string" ? d.user : "", typeof d.token === "string" ? d.token : "");
+      const user = typeof d.user === "string" ? d.user : "";
+      const token = typeof d.token === "string" ? d.token : "";
+      // The console has no sign-in this page can use: keep the one made here.
+      if ((!token || token === refusedConsoleToken) && account && account.own) return;
+      if (token && token === refusedConsoleToken) { if (!account) render(); return; }
+      if (token) refusedConsoleToken = "";
+      void setAccount(user, token);
     });
     // Ask for the account in case the console's message came before this ran.
     try { window.parent.postMessage({ saintsProxy: 1, type: "account?" }, "*"); } catch {}
@@ -491,7 +510,7 @@
       "</div>" +
       '<div class="ss-sess-actions"><button type="submit" class="ss-sess-btn is-primary">Save my student number</button><button type="button" class="ss-sess-btn ss-sid-cancel">Cancel</button></div>';
     currentEl.after(form, sid);
-    signIn = { form, sid, user: form.querySelector("#ss-in-user"), pin: form.querySelector("#ss-in-pin"), pending: "" };
+    signIn = { form, sid, user: form.querySelector("#ss-in-user"), pin: form.querySelector("#ss-in-pin"), pending: "", pendingUser: "" };
     form.addEventListener("submit", (event) => { event.preventDefault(); void submitSignIn(); });
     sid.addEventListener("submit", (event) => { event.preventDefault(); void submitStudentId(); });
     sid.querySelector(".ss-sid-cancel").addEventListener("click", () => {
@@ -527,15 +546,17 @@
         return;
       }
       signIn.pin.value = "";
+      const signedInAs = (r.data.account && r.data.account.user) || user;
       if (r.data.account && r.data.account.needsStudentId) {
         // Kept only until the number is saved (or this is cancelled).
         signIn.pending = r.data.token;
+        signIn.pendingUser = signedInAs;
         signIn.form.hidden = true;
         signIn.sid.hidden = false;
         say("");
         return;
       }
-      await finishSignIn(r.data.token);
+      await finishSignIn(r.data.token, signedInAs);
     } catch (cause) {
       say(cause.message || String(cause), true);
     } finally {
@@ -554,33 +575,38 @@
       const r = await authPost("/auth/student-id", { studentId: a, confirm: b }, signIn.pending);
       if (!r.data.ok && !r.data.saved) { say(r.data.error || "Couldn’t save it. Try again.", true); return; }
       const token = signIn.pending;
+      const user = signIn.pendingUser;
       signIn.pending = "";
-      await finishSignIn(token);
+      signIn.pendingUser = "";
+      await finishSignIn(token, user);
     } catch (cause) {
       say(cause.message || String(cause), true);
     } finally {
       signInBusy(false);
     }
   }
-  async function finishSignIn(token) {
-    const user = await keepToken(token);
+  async function finishSignIn(token, user) {
+    // Framed: the cookie wouldn't come back, so the token stays in memory.
+    if (!embedded) user = await keepToken(token);
     signIn.sid.hidden = true;
     signIn.form.hidden = false;
     say("");
     working = false;
-    await setAccount(user, "", true);
+    if (embedded) await setAccount(user, token, false, true);
+    else await setAccount(user, "", true);
   }
   // Pauses the active session (saved first), closes every tab, clears this
   // browser's sign-ins and ends the proxy-only token.
   function signOut() {
-    if (!account || !account.viaCookie) return;
+    if (!account || !(account.viaCookie || account.own)) return;
     return run("Signing out…", async () => {
       if (saving) await saving;
       if (mine(readActive())) await persist();
       closeTabs();
       await clearHere();
       writeActive(null);
-      await fetch("/sessions/auth/logout", { method: "POST", cache: "no-store" }).catch(() => {});
+      if (account.own) await authPost("/auth/proxy-logout", {}, account.token).catch(() => {});
+      else await fetch("/sessions/auth/logout", { method: "POST", cache: "no-store" }).catch(() => {});
       account = null;
       sessions = [];
       loaded = false;
@@ -620,25 +646,24 @@
   let signOutBtn = null;
   function render() {
     section.hidden = false;
-    if (!embedded && !signIn) buildSignIn();
+    if (!signIn) buildSignIn();
     if (signIn) signIn.form.hidden = !!account || !signIn.sid.hidden;
     if (!account) {
       whoEl.textContent = "";
       actionsEl.hidden = true;
       listEl.replaceChildren();
-      currentEl.textContent = embedded
-        ? "Sign in to the Saints console to save your sign-ins and pick them up here next time."
-        : "";
+      currentEl.textContent = "";
       return;
     }
     if (signIn) signIn.sid.hidden = true;
     whoEl.textContent = account.user;
     actionsEl.hidden = false;
-    if (account.viaCookie && !signOutBtn) {
+    const ownSignIn = account.viaCookie || account.own;
+    if (ownSignIn && !signOutBtn) {
       signOutBtn = button("Sign out", "", () => signOut(), false);
       actionsEl.appendChild(signOutBtn);
     }
-    if (signOutBtn) { signOutBtn.hidden = !account.viaCookie; signOutBtn.disabled = working; }
+    if (signOutBtn) { signOutBtn.hidden = !ownSignIn; signOutBtn.disabled = working; }
     const active = readActive();
     const activeId = mine(active) ? active.id : "";
     newBtn.disabled = working;
