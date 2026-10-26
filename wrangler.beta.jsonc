@@ -17,9 +17,16 @@
     "run_worker_first": true
   },
   // No keep-alive cron here: production's already keeps the backend awake.
+  // Saved sessions (src/sessions.js) hold sign-in cookies, so they live in
+  // a private bucket. The old public one is only read to move sessions
+  // saved before over (each account's, the first time it's seen).
   "r2_buckets": [
     {
       "binding": "SESSIONS",
+      "bucket_name": "saints-proxy-sessions"
+    },
+    {
+      "binding": "SESSIONS_LEGACY",
       "bucket_name": "donnajbe-eaglercraft-client"
     }
   ],

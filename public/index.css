@@ -415,3 +415,10 @@ body.ss {
   .ss-title { font-size: 26px; }
   .ss-logo { width: 68px; height: 68px; }
 }
+/* Saints Search's own sign-in (sessions.js), when it isn't framed by the console. */
+.ss-signin { margin: 0 0 10px; text-align: left; }
+.ss-signin[hidden] { display: none; }
+.ss-signin-fields { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 8px 12px; margin-bottom: 10px; }
+.ss-signin-fields .ss-pick-label { margin: 0; }
+.ss-signin-check { display: flex; gap: 8px; align-items: flex-start; margin: 0 0 10px; font-size: 13.5px; }
+@media (max-width: 420px) { .ss-signin-fields { grid-template-columns: 1fr; } }

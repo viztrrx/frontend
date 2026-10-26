@@ -16,6 +16,14 @@
 // The account comes from the Saints console that frames this page: it posts
 // {saintsProxy:1, type:"account", user, token} whenever its sign-in changes.
 // The token is only ever sent back to this origin's /sessions API.
+//
+// Opened on its own, Saints Search signs in with the same Saints name and PIN
+// (the form on saints://home). The PIN is turned into the console's verifier
+// here and checked by the Saints Worker's /auth/proxy-login, which hands back
+// a proxy-only token: the console stays signed in. The token goes straight to
+// /sessions/auth, which keeps it in an HttpOnly cookie for /sessions, and is
+// dropped from this page: proxied sites run on this origin, so no script here
+// keeps it. Both ways lead to the account's one list of sessions.
 (function () {
   const section = document.getElementById("sj-sessions");
   if (!section) return;
@@ -34,7 +42,10 @@
   const AUTOSAVE_MS = 30 * 1000;
 
   const embedded = window.parent && window.parent !== window;
-  let account = null;        // { user, token } from the console
+  const AUTH_BASE = String((typeof _CONFIG === "object" && _CONFIG && _CONFIG.authUrl) || "https://donnajbe.viztrrx.workers.dev").replace(/\/+$/, "");
+  // { user, token } from the console, or { user, token: "", viaCookie: true }
+  // when Saints Search signed in on its own (the token is in the cookie).
+  let account = null;
   let sessions = [];         // this account's saved sessions (metadata)
   let loaded = false;        // list fetched for the current account
   let loadError = false;     // the list couldn't be fetched (browsing isn't held up then)
@@ -76,7 +87,7 @@
   // ---- The API (same origin; the Worker checks the token) ------------------
   async function api(method, path, body) {
     if (!account) throw new Error("Sign in to Saints first.");
-    const init = { method, headers: { "X-GPA-Session": account.token }, cache: "no-store" };
+    const init = { method, headers: account.token ? { "X-GPA-Session": account.token } : {}, cache: "no-store" };
     if (body !== undefined) {
       init.headers["Content-Type"] = "application/json";
       init.body = JSON.stringify(body);
@@ -86,6 +97,9 @@
     if (!r.ok || !d.ok) {
       const err = new Error(d.error || "The server answered HTTP " + r.status + ".");
       err.status = r.status;
+      // Saints Search's own sign-in ended (expired, revoked, signed out
+      // elsewhere): back to the sign-in form.
+      if (account && account.viaCookie && (r.status === 401 || r.status === 403)) signedOut(d.error);
       throw err;
     }
     return d;
@@ -370,8 +384,10 @@
     }
     render();
   }
-  async function setAccount(user, token) {
-    const next = user && token ? { user: String(user).toLowerCase(), token: String(token) } : null;
+  async function setAccount(user, token, viaCookie) {
+    const next = user && (token || viaCookie)
+      ? { user: String(user).toLowerCase(), token: viaCookie ? "" : String(token), viaCookie: !!viaCookie }
+      : null;
     const changedUser = (account && account.user) !== (next && next.user);
     account = next;
     if (!changedUser) { render(); return; }
@@ -404,6 +420,193 @@
     try { window.parent.postMessage({ saintsProxy: 1, type: "account?" }, "*"); } catch {}
   }
 
+  // ---- Saints Search's own sign-in (not framed by the console) --------------
+  // The console's PIN verifier: PBKDF2-SHA256 of "gpa-server|<name>|<PIN>",
+  // salt "gpa-server-salt|<name>", 210000 rounds (script.js serverVerifier).
+  async function verifierFor(user, pin) {
+    const u = String(user).toLowerCase();
+    const enc = new TextEncoder();
+    const key = await crypto.subtle.importKey("raw", enc.encode("gpa-server|" + u + "|" + pin), "PBKDF2", false, ["deriveBits"]);
+    const bits = await crypto.subtle.deriveBits({ name: "PBKDF2", hash: "SHA-256", salt: enc.encode("gpa-server-salt|" + u), iterations: 210000 }, key, 256);
+    return [...new Uint8Array(bits)].map((b) => b.toString(16).padStart(2, "0")).join("");
+  }
+  // This browser's id for the Saints Worker's device lockouts.
+  function deviceId() {
+    try {
+      let id = localStorage.getItem("sj-device-id");
+      if (!/^[0-9a-f]{32}$/.test(id || "")) {
+        id = [...crypto.getRandomValues(new Uint8Array(16))].map((b) => b.toString(16).padStart(2, "0")).join("");
+        localStorage.setItem("sj-device-id", id);
+      }
+      return id;
+    } catch { return ""; }
+  }
+  async function authPost(path, body, token) {
+    // text/plain, as the console sends it: no CORS preflight.
+    const headers = { "Content-Type": "text/plain" };
+    if (token) headers["X-GPA-Session"] = token;
+    let r;
+    try {
+      r = await fetch(AUTH_BASE + path, { method: "POST", headers, body: JSON.stringify(body), cache: "no-store" });
+    } catch {
+      throw new Error("Couldn’t reach Saints to sign in. Check your connection and try again.");
+    }
+    const d = await r.json().catch(() => ({}));
+    return { status: r.status, data: d };
+  }
+  // Keeps the proxy-only token in the sign-in cookie (/sessions/auth).
+  async function keepToken(token) {
+    const r = await fetch("/sessions/auth", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ token }), cache: "no-store" });
+    const d = await r.json().catch(() => ({}));
+    if (!r.ok || !d.ok) throw new Error(d.error || "Saints Search couldn’t keep your sign-in (HTTP " + r.status + ").");
+    return d.user;
+  }
+
+  let signIn = null;   // the sign-in form's elements, built on first use
+  function buildSignIn() {
+    const form = document.createElement("form");
+    form.className = "ss-signin";
+    form.setAttribute("autocomplete", "off");
+    form.innerHTML =
+      '<p class="ss-pick-text">Sign in with your Saints account (the name and PIN you use in the Saints console) to save the sites you sign in to and pick them up on any device.</p>' +
+      '<div class="ss-signin-fields">' +
+      '<label class="ss-pick-label" for="ss-in-user">Name</label>' +
+      '<input id="ss-in-user" class="ss-pick-input" type="text" maxlength="40" autocomplete="username" autocapitalize="off" spellcheck="false" />' +
+      '<label class="ss-pick-label" for="ss-in-pin">PIN</label>' +
+      '<input id="ss-in-pin" class="ss-pick-input" type="password" maxlength="64" autocomplete="current-password" inputmode="numeric" />' +
+      "</div>" +
+      '<div class="ss-sess-actions"><button type="submit" class="ss-sess-btn is-primary">Sign in</button></div>';
+    const sid = document.createElement("form");
+    sid.className = "ss-signin";
+    sid.hidden = true;
+    sid.setAttribute("autocomplete", "off");
+    sid.innerHTML =
+      '<p class="ss-pick-text">Your account needs your <b>school student number</b> before you can continue, as in the Saints console. It’s your 6-digit number (your school email is that number @alseducation.onmicrosoft.com), and it’s how you reset your PIN if you forget it. Type <b>your own</b> number: once it’s saved, only the owner can change it.</p>' +
+      '<label class="ss-signin-check"><input type="checkbox" id="ss-sid-ok" /> The number I’m typing is my own student number.</label>' +
+      '<div class="ss-signin-fields">' +
+      '<label class="ss-pick-label" for="ss-sid-1">Student number</label>' +
+      '<input id="ss-sid-1" class="ss-pick-input" inputmode="numeric" maxlength="6" placeholder="000000" autocomplete="off" />' +
+      '<label class="ss-pick-label" for="ss-sid-2">Type it again</label>' +
+      '<input id="ss-sid-2" class="ss-pick-input" inputmode="numeric" maxlength="6" placeholder="000000" autocomplete="off" />' +
+      "</div>" +
+      '<div class="ss-sess-actions"><button type="submit" class="ss-sess-btn is-primary">Save my student number</button><button type="button" class="ss-sess-btn ss-sid-cancel">Cancel</button></div>';
+    currentEl.after(form, sid);
+    signIn = { form, sid, user: form.querySelector("#ss-in-user"), pin: form.querySelector("#ss-in-pin"), pending: "" };
+    form.addEventListener("submit", (event) => { event.preventDefault(); void submitSignIn(); });
+    sid.addEventListener("submit", (event) => { event.preventDefault(); void submitStudentId(); });
+    sid.querySelector(".ss-sid-cancel").addEventListener("click", () => {
+      signIn.pending = "";
+      sid.hidden = true;
+      form.hidden = false;
+      say("");
+    });
+    for (const input of sid.querySelectorAll("input[inputmode]")) {
+      input.addEventListener("input", () => { const v = input.value.replace(/\D/g, "").slice(0, 6); if (v !== input.value) input.value = v; });
+    }
+  }
+  function signInBusy(on) {
+    working = on;
+    for (const el of signIn.form.querySelectorAll("input, button")) el.disabled = on;
+    for (const el of signIn.sid.querySelectorAll("input, button")) el.disabled = on;
+  }
+  async function submitSignIn() {
+    if (working) return;
+    const user = signIn.user.value.trim();
+    const pin = signIn.pin.value;
+    if (!user || !pin) { say("Type your Saints name and PIN.", true); return; }
+    if (browserBusy()) { say("Wait for the page to finish opening, then try again.", true); return; }
+    signInBusy(true);
+    say("Signing in…");
+    try {
+      // No page keeps running while a token is in this page.
+      closeTabs();
+      const verifier = await verifierFor(user, pin);
+      const r = await authPost("/auth/proxy-login", { user, verifier, device: deviceId() });
+      if (r.status !== 200 || !r.data.ok || !r.data.token) {
+        say(r.data.error || "Saints didn’t accept that sign-in (HTTP " + r.status + ").", true);
+        return;
+      }
+      signIn.pin.value = "";
+      if (r.data.account && r.data.account.needsStudentId) {
+        // Kept only until the number is saved (or this is cancelled).
+        signIn.pending = r.data.token;
+        signIn.form.hidden = true;
+        signIn.sid.hidden = false;
+        say("");
+        return;
+      }
+      await finishSignIn(r.data.token);
+    } catch (cause) {
+      say(cause.message || String(cause), true);
+    } finally {
+      signInBusy(false);
+    }
+  }
+  async function submitStudentId() {
+    if (working || !signIn.pending) return;
+    const a = signIn.sid.querySelector("#ss-sid-1").value;
+    const b = signIn.sid.querySelector("#ss-sid-2").value;
+    if (!signIn.sid.querySelector("#ss-sid-ok").checked) { say("Check the box first: the number must be your own.", true); return; }
+    if (!/^\d{6}$/.test(a) || a !== b) { say("Type the same 6 digits in both boxes.", true); return; }
+    signInBusy(true);
+    say("Saving…");
+    try {
+      const r = await authPost("/auth/student-id", { studentId: a, confirm: b }, signIn.pending);
+      if (!r.data.ok && !r.data.saved) { say(r.data.error || "Couldn’t save it. Try again.", true); return; }
+      const token = signIn.pending;
+      signIn.pending = "";
+      await finishSignIn(token);
+    } catch (cause) {
+      say(cause.message || String(cause), true);
+    } finally {
+      signInBusy(false);
+    }
+  }
+  async function finishSignIn(token) {
+    const user = await keepToken(token);
+    signIn.sid.hidden = true;
+    signIn.form.hidden = false;
+    say("");
+    working = false;
+    await setAccount(user, "", true);
+  }
+  // Pauses the active session (saved first), closes every tab, clears this
+  // browser's sign-ins and ends the proxy-only token.
+  function signOut() {
+    if (!account || !account.viaCookie) return;
+    return run("Signing out…", async () => {
+      if (saving) await saving;
+      if (mine(readActive())) await persist();
+      closeTabs();
+      await clearHere();
+      writeActive(null);
+      await fetch("/sessions/auth/logout", { method: "POST", cache: "no-store" }).catch(() => {});
+      account = null;
+      sessions = [];
+      loaded = false;
+      say("Signed out. Your sessions are saved to your account.");
+    });
+  }
+  // The sign-in cookie stopped working (the API said so).
+  function signedOut(message) {
+    account = null;
+    sessions = [];
+    loaded = false;
+    closePicker();
+    render();
+    if (message) setTimeout(() => say(message, true), 0);
+  }
+  // Signed in here before? The cookie says who (or nothing).
+  async function restoreSignIn() {
+    try {
+      const r = await fetch("/sessions/whoami", { cache: "no-store" });
+      const d = await r.json().catch(() => ({}));
+      if (r.ok && d.ok && d.user) { await setAccount(d.user, "", true); return; }
+      if (d.error && r.status !== 401) say(d.error, true);
+    } catch {}
+    render();
+  }
+
   // ---- Rendering ------------------------------------------------------------
   function button(label, cls, onClick, disabled) {
     const b = document.createElement("button");
@@ -414,19 +617,28 @@
     b.addEventListener("click", onClick);
     return b;
   }
+  let signOutBtn = null;
   function render() {
     section.hidden = false;
+    if (!embedded && !signIn) buildSignIn();
+    if (signIn) signIn.form.hidden = !!account || !signIn.sid.hidden;
     if (!account) {
       whoEl.textContent = "";
       actionsEl.hidden = true;
       listEl.replaceChildren();
       currentEl.textContent = embedded
         ? "Sign in to the Saints console to save your sign-ins and pick them up here next time."
-        : "Open Saints Search from the Saints console while signed in to use saved sessions.";
+        : "";
       return;
     }
+    if (signIn) signIn.sid.hidden = true;
     whoEl.textContent = account.user;
     actionsEl.hidden = false;
+    if (account.viaCookie && !signOutBtn) {
+      signOutBtn = button("Sign out", "", () => signOut(), false);
+      actionsEl.appendChild(signOutBtn);
+    }
+    if (signOutBtn) { signOutBtn.hidden = !account.viaCookie; signOutBtn.disabled = working; }
     const active = readActive();
     const activeId = mine(active) ? active.id : "";
     newBtn.disabled = working;
@@ -554,9 +766,10 @@
   async function resumeThenOpen(s) {
     if (await resume(s) && picker && !picker.hidden) finishPicker();
   }
-  // Whether opening a site has to wait for a session (index.js asks).
+  // Whether opening a site has to wait for a session (index.js asks):
+  // signed in (from the console or here), sites open inside one.
   function required() {
-    return embedded && !!account && loaded && !loadError && !mine(readActive());
+    return !!account && loaded && !loadError && !mine(readActive());
   }
 
   newBtn.addEventListener("click", () => openPicker(null));
@@ -575,4 +788,5 @@
   };
 
   render();
+  if (!embedded) void restoreSignIn();
 })();
