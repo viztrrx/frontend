@@ -72,3 +72,19 @@ test("Eaglercraft replaces Minecraft Classic and launches the Saints Worker's ga
   assert.equal(e.frame, "https://donnajbe.viztrrx.workers.dev/eagler/?autoPack=1", "the same frame as the console's Eaglercraft tab");
   assert.match(readFileSync(pub(e.image), "utf8"), /^<svg/);
 });
+
+test("fixed-size games are scaled to fill their frame", () => {
+  // fit.js scales the game's box (keys and offsetX-based pointers still line up).
+  const fitted = { "doodle-jump": ".container", spaceinvaders: "#game", dinosaur: ".runner-container" };
+  for (const [dir, selector] of Object.entries(fitted)) {
+    const html = readFileSync(pub("/games/public/" + dir + "/index.html"), "utf8");
+    assert.ok(html.includes('<script src="/games/fit.js" data-fit="' + selector + '"></script>'), dir);
+  }
+  assert.ok(existsSync(pub("/games/fit.js")));
+  // Drift Hunters' Unity player fills the frame instead of a fixed 960x600 box.
+  assert.match(readFileSync(pub("/games/public/drift/index.html"), "utf8"), /id="gameContainer" style="width: 100vw; height: 100vh"/);
+  // Chroma: the largest 8:5 box that fits, centred (not a fixed 960x600 set high).
+  assert.match(readFileSync(pub("/games/public/chroma/game.min.css"), "utf8"), /width:min\(100vw,160vh\);height:min\(100vh,62\.5vw\);transform:translate\(-50%,-50%\)/);
+  // Friendly Fire scales by any amount, not only whole numbers.
+  assert.ok(readFileSync(pub("/games/public/friendlyfire/FriendlyFire.js"), "utf8").includes("const scale = Math.min(window.innerWidth / width, window.innerHeight / height);"));
+});
