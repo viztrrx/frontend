@@ -115,10 +115,25 @@ function syncGameKeys() {
   tellConsole("game", { playing: on });
 }
 // Keys go to the game: the console focuses its frame (Saints Search), and
-// Saints Search focuses the game's frame inside it.
+// Saints Search focuses the game's frame inside it. The console's focus()
+// on its frame arrives after this page focused the game and takes the
+// keyboard back to this page (WASD then did nothing until the game was
+// clicked), so the game is focused again once the console has done it.
+// Focusing the <iframe> alone isn't enough when it's already this page's
+// focused element (it is, after the console's focus()): the keyboard stays
+// on this page until the game's own window is focused too.
 function focusGame(element) {
   tellConsole("focus");
-  try { element.focus({ preventScroll: true }); } catch { try { element.focus(); } catch {} }
+  const apply = () => {
+    if (element.isConnected === false) return;
+    try { element.focus({ preventScroll: true }); } catch { try { element.focus(); } catch {} }
+    try { element.contentWindow?.focus?.(); } catch {}
+  };
+  apply();
+  if (parentConsole) {
+    window.addEventListener?.("focus", () => { if (currentFrame === element) apply(); }, { once: true });
+    for (const ms of [150, 600]) setTimeout(() => { if (currentFrame === element) apply(); }, ms);
+  }
 }
 if (exitButton) exitButton.hidden = !parentConsole;
 exitButton?.addEventListener?.("click", () => tellConsole("close"));
@@ -614,7 +629,8 @@ function showStart(page) {
 // A game in the page area (or, for an online game, its site through the proxy).
 function openGame(game) {
   if (busy || !game) return;
-  if (game.url) { pendingQuery = ""; void openUrl(game.url); return; }
+  // Online games keep the keyboard once their page loads, like the others.
+  if (game.url) { pendingQuery = ""; void openUrl(game.url, { game: true }); return; }
   closeFrame();
   const element = document.createElement("iframe");
   element.className = "sj-frame";
@@ -835,6 +851,7 @@ function reportNavigationFailure(details) {
 const CONNECTION_ERROR = /tls|handshake|eof|connect|reset|refused|timed? ?out|hyper client|error code \d+|wisp|websocket/i;
 let followRedirect = false;
 let transportRetried = false;   // this page already had its one retry
+let openedGame = false;         // the open page is an online game (it takes the keyboard)
 function retryWithOtherTransport() {
   if (transportRetried || !lastUrl || !currentFrame || currentGame) return false;
   transportRetried = true;
@@ -842,7 +859,7 @@ function retryWithOtherTransport() {
   transportKind = otherTransport(transportKind);
   const url = currentSite || lastUrl;
   closeFrame();
-  void openUrl(url, { retry: true });
+  void openUrl(url, { retry: true, game: openedGame });
   showProgress("Retrying with another connection\u2026");
   return true;
 }
@@ -1114,13 +1131,13 @@ async function warmUp() {
   }
 }
 
-async function openUrl(url, { retry = false } = {}) {
+async function openUrl(url, { retry = false, game = false } = {}) {
   if (busy) return;
   url = globalThis.saintsYouTube ? globalThis.saintsYouTube.mapYouTubeUrl(url) : url;
   // Signed in from the Saints console, sites open inside a session
   // (sessions.js): start or resume one first, then this site opens.
   if (!retry && globalThis.saintsSessions?.required?.()) {
-    globalThis.saintsSessions.ask(() => openUrl(url));
+    globalThis.saintsSessions.ask(() => openUrl(url, { game }));
     return;
   }
   if (!retry) {
@@ -1130,6 +1147,7 @@ async function openUrl(url, { retry = false } = {}) {
     if (transportKind !== preferred) { transportKind = preferred; proxyReady = false; }
   }
   followRedirect = false;
+  openedGame = game;
   const block = blockOf(url);
   if (block) { showBlock(url, block); return; }
   busy = true;
@@ -1221,6 +1239,8 @@ async function openUrl(url, { retry = false } = {}) {
       loaded = true;
       reportPage(element);
       readTitle(element);
+      // An online game from saints://games: WASD and arrows go to it without a click first.
+      if (game) focusGame(element);
       if (!httpWarning) {
         toolbarStatus.textContent = navigationResponseStatus === null
           ? "Checking website content…"

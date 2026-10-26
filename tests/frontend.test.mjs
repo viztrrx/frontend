@@ -1136,3 +1136,16 @@ test("the Scramjet 2 beta build keeps Spotify in its own frames", async () => {
   assert.equal(x.frames[0].dataset?.engine, undefined);
   assert.equal(x.frames[0].url, "https://open.spotify.com");
 });
+
+test("games: an online game takes the keyboard once its page loads", async () => {
+  const games = [{ slug: "paper-io", title: "Paper.io", url: "https://paperio.site/" }];
+  const x = setup({ games });
+  x.elements.get("sj-address").value = "saints://games/paper-io";
+  await x.submit();
+  await x.advance(4000);
+  const frame = x.frames.at(-1);
+  let focused = false;
+  frame.focus = () => { focused = true; };
+  frame.dispatch("load");
+  assert.equal(focused, true, "WASD and arrows go to the game without a click first");
+});
