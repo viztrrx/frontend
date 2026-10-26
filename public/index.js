@@ -126,6 +126,8 @@ fullscreenButton?.addEventListener?.("click", () => tellConsole("fullscreen"));
 // The real site a Scramjet frame is on (it runs on this origin, so its
 // encoded location is readable here), decoded back to the site's own URL.
 function frameRealUrl(element) {
+  const s2 = engine2Host(element);
+  if (s2) { try { return s2.url() || ""; } catch { return ""; } }
   let href = "";
   try { href = element?.contentWindow?.location?.href || ""; } catch {}
   if (!href || href === "about:blank") return "";
@@ -133,6 +135,59 @@ function frameRealUrl(element) {
     try { const real = scramjetController.decodeUrl(href); if (real) return real; } catch {}
   }
   return href;
+}
+
+// ---- Spotify on Scramjet 2 (spotify.js, public/s2/) -------------------------
+// Spotify only works through Scramjet 2, so its sites open in a Scramjet 2
+// page at /s2/ (its own service worker, scope /s2/) framed in the tab, and
+// every other site stays on Scramjet 1.1. Links inside a Spotify tab stay on
+// Scramjet 2 (its sign-in pages need the same cookies); a Scramjet 1.1 page
+// that lands on Spotify reopens there. The Scramjet 2 beta build is Scramjet 2
+// throughout, so nothing moves there.
+function isEngine2Url(url) {
+  if (globalThis.saintsEngine?.version === 2) return false;
+  try { return !!globalThis.saintsSpotify?.isSpotify(url); } catch { return false; }
+}
+const isEngine2Frame = (sj) => !!sj && sj.engine === 2;
+// The /s2/ page's window.saintsS2 (host.js), once it has loaded.
+function engine2Host(element) {
+  if (!element?.dataset || element.dataset.engine !== "2") return null;
+  try { return element.contentWindow?.saintsS2 || null; } catch { return null; }
+}
+// The frame the site itself is in: the one inside the /s2/ page for Spotify.
+function pageFrame(element) {
+  const s2 = engine2Host(element);
+  if (!s2) return element;
+  try { return s2.frame() || null; } catch { return null; }
+}
+// Scramjet 1.1's ScramjetFrame shape (frame, go, back, forward, reload,
+// "urlchange") around the /s2/ page, so the rest of this file treats both alike.
+function createEngine2Frame() {
+  const element = document.createElement("iframe");
+  element.dataset.engine = "2";
+  const listeners = [];
+  let host = null;
+  const waiting = [];
+  const call = (run) => { if (host) run(host); else waiting.push(run); };
+  element.addEventListener("load", () => {
+    const next = engine2Host(element);
+    if (!next || next === host) return;
+    host = next;
+    host.onUrlChange((url) => { for (const fn of listeners) fn({ url }); });
+    for (const run of waiting.splice(0)) run(host);
+  });
+  return {
+    engine: 2,
+    frame: element,
+    addEventListener(type, fn) { if (type === "urlchange") listeners.push(fn); },
+    go(url) {
+      if (element.getAttribute("src")) { call((h) => h.go(url)); return; }
+      element.setAttribute("src", "/s2/#" + new URLSearchParams({ url, transport: transportKind }));
+    },
+    back() { call((h) => h.back()); },
+    forward() { call((h) => h.forward()); },
+    reload() { call((h) => h.reload()); },
+  };
 }
 
 // ---- Blocked pages (blocked.js) --------------------------------------------
@@ -177,6 +232,12 @@ function showBlock(url, info) {
 function frameLanded(url) {
   const info = blockOf(url);
   if (info) { showBlock(url, info); return true; }
+  // A Scramjet 1.1 page went to Spotify (a link, a redirect): reopen it on Scramjet 2.
+  if (currentSjFrame && !isEngine2Frame(currentSjFrame) && isEngine2Url(url) && !busy) {
+    pendingQuery = "";
+    void openUrl(url);
+    return true;
+  }
   if (blocked && currentFrame) { blocked = null; renderBlock(); showAddress(); }
   return false;
 }
@@ -673,7 +734,7 @@ function googleQuery(url) {
   } catch { return ""; }
 }
 function visibleTextLength(element) {
-  try { return String(element.contentDocument?.body?.innerText || "").trim().length; } catch { return -1; }
+  try { return String(pageFrame(element)?.contentDocument?.body?.innerText || "").trim().length; } catch { return -1; }
 }
 function hideAltSearch() {
   clearTimeout(altSearchTimer);
@@ -743,6 +804,9 @@ function describeHttpStatus(status, message) {
 
 function inspectPage(element) {
   try {
+    // Spotify's /s2/ page: what counts is the site in its frame.
+    if (element?.dataset?.engine === "2") element = pageFrame(element);
+    if (!element) return false;
     const doc = element.contentDocument;
     if (!doc || doc.URL === "about:blank") return false;
     const body = doc.body;
@@ -1086,10 +1150,18 @@ async function openUrl(url, { retry = false } = {}) {
   try {
     // A warm-up already under way carries on, now showing its steps here.
     if (preparing) showProgress(setupStep || "Connecting to backend…");
-    const scramjet = await prepare(showProgress);
+    // Spotify's Scramjet 2 page (/s2/) sets itself up; it only needs the
+    // backend awake. Everything else goes through Scramjet 1.1 here.
+    const engine2 = isEngine2Url(url);
+    let scramjet = null;
+    if (engine2) {
+      if (!proxyReady) await waitForWisp(getWispUrl(), showProgress);
+    } else {
+      scramjet = await prepare(showProgress);
+    }
 
     showProgress("Loading website…");
-    const frame = scramjet.createFrame();
+    const frame = engine2 ? createEngine2Frame() : scramjet.createFrame();
     if (!frame || !frame.frame) throw new Error("Scramjet did not create a browser frame.");
     const element = frame.frame;
     element.className = "sj-frame";
@@ -1104,6 +1176,8 @@ async function openUrl(url, { retry = false } = {}) {
       if (currentFrame !== element) { backgroundPage(element, u); return; }
       if (frameLanded(u)) return;
       frameUrlChanged(u); reportToConsole(u, "");
+      // Spotify's pages load inside the /s2/ page, so its frame has no load event of its own.
+      if (isEngine2Frame(frame)) readTitle(element);
     });
     syncNav();
     loading.hidden = false;
@@ -1208,7 +1282,7 @@ function backgroundPage(element, url) {
     return;
   }
   if (url && url !== "about:blank") t.site = url;
-  try { t.title = String(element.contentDocument?.title || "").trim().slice(0, 80); } catch {}
+  try { t.title = String(pageFrame(element)?.contentDocument?.title || "").trim().slice(0, 80); } catch {}
   renderTabs();
 }
 // ---- Sound --------------------------------------------------------------------
@@ -1229,7 +1303,7 @@ playbackAudio(window);
 function readTitle(element) {
   if (currentFrame !== element) return;
   try {
-    const title = String(element.contentDocument?.title || "").trim().slice(0, 80);
+    const title = String(pageFrame(element)?.contentDocument?.title || "").trim().slice(0, 80);
     if (title && title !== frameTitle) { frameTitle = title; renderTabs(); }
   } catch {}
 }
@@ -1238,6 +1312,8 @@ function readTitle(element) {
 // returns to the page before it (a fresh frame would lose that).
 function navigateFrame(url) {
   url = globalThis.saintsYouTube ? globalThis.saintsYouTube.mapYouTubeUrl(url) : url;
+  // Spotify and other sites use different engines: the other one opens it afresh.
+  if (isEngine2Url(url) !== isEngine2Frame(currentSjFrame)) { void openUrl(url); return; }
   lastUrl = url;
   transportRetried = false;
   followRedirect = false;
@@ -1280,7 +1356,7 @@ async function go(raw) {
   pendingQuery = looksLikeUrl(text) ? "" : text.slice(0, 200);
   const block = blockOf(url);
   if (block) { showBlock(url, block); return; }
-  if (currentFrame && currentSjFrame && scramjetController && !busy && !navigationError) {
+  if (currentFrame && currentSjFrame && (scramjetController || isEngine2Frame(currentSjFrame)) && !busy && !navigationError) {
     if (document.activeElement !== address) address.value = url;
     navigateFrame(url);
     return;

@@ -29,6 +29,12 @@ const assets = engine === 2
       [libcurlPath, "libcurl/"],
       [epoxyPath, "epoxy/"],
       [baremuxPath, "baremux/"],
+      // Spotify only works through Scramjet 2: production opens it with
+      // Scramjet 2 at /s2/ (public/s2/), next to Scramjet 1.1 for every other site.
+      [modules("scramjet2"), "s2/scram/"],
+      [modules("scramjet-controller2"), "s2/controller/"],
+      [modules("libcurl-transport2"), "s2/libcurl/"],
+      [modules("epoxy-transport3"), "s2/epoxy/"],
     ];
 for (const [from, dest] of [[new URL("../public/", import.meta.url), ""], ...assets]) {
   if (!(await stat(from)).isDirectory()) throw new Error("Not a directory: " + from);
@@ -40,9 +46,12 @@ if (engine === 1) {
     const path = new URL("libcurl/" + file, out);
     await writeFile(path, patchLibcurlTransport(await readFile(path, "utf8")));
   }
-  await rm(new URL("engine2.js", out));
+  // engine2.js runs only in Spotify's Scramjet 2 page here (public/s2/index.html).
+  await rename(new URL("engine2.js", out), new URL("s2/engine2.js", out));
   await rm(new URL("sw2.js", out));
 } else {
+  // The whole site is Scramjet 2 here, Spotify included: no separate /s2/.
+  await rm(new URL("s2/", out), { recursive: true });
   // Scramjet 2's worker and page scripts in place of Scramjet 1.1's.
   await rm(new URL("sw.js", out));
   await rename(new URL("sw2.js", out), new URL("sw.js", out));

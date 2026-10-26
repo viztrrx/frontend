@@ -12,15 +12,20 @@
 //   BareMux.BareClient         fetch(url) through the transport
 // and does in the page what sw.js does for Scramjet 1.1: refuses blocked sites
 // (blocked.js) and reports each navigation's status to index.js.
+//
+// The production build also runs it at /s2/ (public/s2/, for Spotify only):
+// there saintsEngine2Base is "/s2", and every path below, the service worker
+// and its scope move under it, apart from Scramjet 1.1 at "/".
 (function () {
+  const BASE = typeof self.saintsEngine2Base === "string" ? self.saintsEngine2Base : "";
   const CONFIG = {
-    prefix: "/~/sj/",
-    scramjetPath: "/scram/scramjet.js",
-    wasmPath: "/scram/scramjet.wasm",
-    injectPath: "/controller/controller.inject.js",
+    prefix: BASE + "/~/sj/",
+    scramjetPath: BASE + "/scram/scramjet.js",
+    wasmPath: BASE + "/scram/scramjet.wasm",
+    injectPath: BASE + "/controller/controller.inject.js",
   };
-  // "/~/sj/<controller id>/<frame id>/<encoded URL>"
-  const PROXIED = /^\/~\/sj\/[^/]+\/[^/]+\/(.+)$/;
+  // "<base>/~/sj/<controller id>/<frame id>/<encoded URL>"
+  const PROXIED = new RegExp("^" + CONFIG.prefix.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "[^/]+/[^/]+/(.+)$");
 
   let controller = null;   // $scramjetController.Controller, made with the first transport
   let transport = null;
@@ -30,6 +35,16 @@
   function serviceWorker() {
     worker ??= (async () => {
       if (!navigator.serviceWorker) throw new Error("This browser can't run service workers.");
+      if (BASE) {
+        // Under /s2/ the page may first be controlled by Scramjet 1.1's worker
+        // (scope "/" covers /s2/ until ours is installed). The controller must
+        // talk to ours: one it doesn't know never answers, and proxied frames
+        // (routed by our scope) were then refused.
+        const registration = await navigator.serviceWorker.register(BASE + "/sw.js", { scope: BASE + "/" });
+        const active = await activated(registration);
+        if (!active) throw new Error("The proxy's service worker didn't start.");
+        return active;
+      }
       const registration = await navigator.serviceWorker.register("/sw.js");
       await navigator.serviceWorker.ready;
       if (!navigator.serviceWorker.controller) {
@@ -44,6 +59,20 @@
       return active;
     })().catch((cause) => { worker = null; throw cause; });
     return worker;
+  }
+  // The registration's worker once it's active (it installs on a first visit).
+  async function activated(registration) {
+    if (registration.active) return registration.active;
+    const pending = registration.installing || registration.waiting;
+    if (pending) {
+      await new Promise((resolve) => {
+        const check = () => { if (pending.state === "activated" || pending.state === "redundant") resolve(); };
+        pending.addEventListener("statechange", check);
+        check();
+        setTimeout(resolve, 10000);
+      });
+    }
+    return registration.active;
   }
 
   async function setTransport(path, args) {
@@ -188,6 +217,12 @@
     createFrame() {
       if (!controller) throw new Error("The proxy isn't connected yet.");
       const inner = controller.createFrame();
+      // Scramjet 2 drops sites' own COEP headers and only adds its own when this
+      // page is cross-origin isolated, which it reads once, here. Framed by the
+      // Saints console (no COEP of its own) this page isn't isolated, but the
+      // Worker still sends it COEP require-corp, so every proxied page without
+      // COEP was blocked (Chrome's error page). Proxied pages always get it.
+      if (inner.fetchHandler) inner.fetchHandler.crossOriginIsolated = true;
       watchFrame(inner);
       return new SaintsFrame(inner);
     }

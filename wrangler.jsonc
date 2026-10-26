@@ -16,6 +16,10 @@
   "r2_buckets": [
     {
       "binding": "SESSIONS",
+      "bucket_name": "saints-proxy-sessions"
+    },
+    {
+      "binding": "SESSIONS_LEGACY",
       "bucket_name": "donnajbe-eaglercraft-client"
     }
   ]

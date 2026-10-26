@@ -5,8 +5,9 @@ import { runInNewContext } from "node:vm";
 
 const source = readFileSync(new URL("../public/index.js", import.meta.url), "utf8");
 const blockSource = readFileSync(new URL("../public/blocked.js", import.meta.url), "utf8");
+const spotifySource = readFileSync(new URL("../public/spotify.js", import.meta.url), "utf8");
 
-function setup({ games = null, epoxyFails = false, libcurlFails = false, wispUrl = "wss://backend-rust-qr67.onrender.com/wisp/", socketFails = false, controllerFails = false, workerHang = false, transportHang = false, blankFrame = false, noLoad = false, storage = {}, versionFetch, embed = false, realUrls = false } = {}) {
+function setup({ games = null, epoxyFails = false, libcurlFails = false, wispUrl = "wss://backend-rust-qr67.onrender.com/wisp/", socketFails = false, controllerFails = false, workerHang = false, transportHang = false, blankFrame = false, noLoad = false, storage = {}, versionFetch, embed = false, realUrls = false, engine = 1 } = {}) {
   const posts = [];
   const winMessage = { fns: [], fn: (event) => winMessage.fns.forEach((f) => f(event)) };
   const elements = new Map();
@@ -62,11 +63,13 @@ function setup({ games = null, epoxyFails = false, libcurlFails = false, wispUrl
       const node = {
         textContent: "", className: "", dataset: {}, style: {}, children: [], attrs: {},
         setAttribute(k, v) { this.attrs[k] = v; },
-        addEventListener(kind, fn) { callbacks.set(kind, fn); },
-        dispatch(kind, event = {}) { callbacks.get(kind)?.({ preventDefault() {}, stopPropagation() {}, ...event }); },
+        getAttribute(k) { return k in this.attrs ? this.attrs[k] : null; },
+        // Every listener runs, as in a browser (a Spotify frame has two for "load").
+        addEventListener(kind, fn) { callbacks.set(kind, [...(callbacks.get(kind) || []), fn]); },
+        dispatch(kind, event = {}) { for (const fn of callbacks.get(kind) || []) fn({ preventDefault() {}, stopPropagation() {}, ...event }); },
         append(...nodes) { this.children.push(...nodes); },
         appendChild(n) { this.children.push(n); },
-        remove() {},
+        remove() { this.removed = true; },
       };
       return node;
     },
@@ -152,6 +155,7 @@ function setup({ games = null, epoxyFails = false, libcurlFails = false, wispUrl
     registerSW: async () => {},
     search: (value) => "https://" + value,
     URL,
+    URLSearchParams,
     location: { href: "https://frontend.viztrrx.workers.dev/", assign: (url) => assigned.push(url) },
     localStorage: {
       getItem: (key) => (key in storage ? storage[key] : null),
@@ -178,7 +182,10 @@ function setup({ games = null, epoxyFails = false, libcurlFails = false, wispUrl
     },
     clearTimeout(id) { timers.delete(id); },
   };
+  // The Scramjet 2 beta build's engine2.js says so; production has no saintsEngine.
+  if (engine === 2) ctx.saintsEngine = { version: 2 };
   runInNewContext(blockSource, ctx, { filename: "public/blocked.js" });
+  runInNewContext(spotifySource, ctx, { filename: "public/spotify.js" });
   runInNewContext(source, ctx, { filename: "public/index.js" });
   const initialAddress = elements.get("sj-address").value;
   elements.get("sj-address").value = "example.com";   // what the tests type
@@ -1006,4 +1013,126 @@ test("tabs: the + button comes right after the last tab", async () => {
   x.elements.get("sj-newtab").dispatch("click");
   assert.equal(items().length, 3, "two tabs, then +");
   assert.equal(items().at(-1), x.elements.get("sj-newtab"));
+});
+
+// ---- Spotify on Scramjet 2 (public/s2/) ---------------------------------------
+// The /s2/ page's window.saintsS2 (host.js), on a frame index.js made for Spotify.
+function hostSpotify(frame, { url = "https://open.spotify.com/", text = "Spotify – Web Player", title = "Spotify" } = {}) {
+  const inner = { contentDocument: { URL: "x", title, body: { innerText: text, querySelector: () => null } } };
+  const calls = [];
+  let onUrl = null;
+  const host = {
+    url: () => host.at,
+    at: "",
+    frame: () => inner,
+    go: (u) => calls.push(["go", u]),
+    back: () => calls.push(["back"]),
+    forward: () => calls.push(["forward"]),
+    reload: () => calls.push(["reload"]),
+    onUrlChange: (fn) => { onUrl = fn; },
+  };
+  frame.contentWindow = { saintsS2: host, navigator: {}, location: { href: "https://frontend.viztrrx.workers.dev/s2/" } };
+  frame.dispatch("load");
+  return { host, inner, calls, land(u) { host.at = u; onUrl?.(u); } };
+}
+
+test("spotify.js: Spotify's domains, and nothing that only looks like them", () => {
+  const ctx = { URL };
+  runInNewContext(spotifySource, ctx);
+  const { isSpotify } = ctx.saintsSpotify;
+  for (const url of ["https://open.spotify.com/", "https://accounts.spotify.com/login", "https://www.spotify.com/us/", "https://spotify.com",
+    "https://spotify.link/abc", "https://spoti.fi/x", "https://spotify.app.link/x", "https://i.scdn.co/image/1", "https://OPEN.SPOTIFY.COM./track/1"]) {
+    assert.equal(isSpotify(url), true, url);
+  }
+  for (const url of ["https://example.com/", "https://notspotify.com/", "https://spotify.com.evil.example/", "https://example.com/?q=spotify.com",
+    "https://www.google.com/search?q=spotify", "not a url", ""]) {
+    assert.equal(isSpotify(url), false, url);
+  }
+});
+
+test("Spotify opens with Scramjet 2 at /s2/, without Scramjet 1.1's transport", async () => {
+  const x = setup();
+  x.elements.get("sj-address").value = "open.spotify.com";
+  await x.submit();
+  assert.equal(x.elements.get("sj-error-code").textContent, "");
+  assert.equal(x.frames.length, 1);
+  const frame = x.frames[0];
+  assert.equal(frame.dataset.engine, "2");
+  const src = new URL(frame.attrs.src, "https://frontend.viztrrx.workers.dev/");
+  assert.equal(src.pathname, "/s2/");
+  const params = new URLSearchParams(src.hash.slice(1));
+  assert.equal(params.get("url"), "https://open.spotify.com");
+  assert.equal(params.get("transport"), "libcurl");
+  assert.equal(x.transports.length, 0, "Scramjet 1.1's BareMux transport isn't set up for Spotify");
+  assert.equal(x.websocketCount(), 1, "the backend is still woken first");
+
+  const s = hostSpotify(frame);
+  s.land("https://open.spotify.com/");
+  await x.advance(4000);
+  assert.equal(x.elements.get("sj-address").value, "https://open.spotify.com/");
+  assert.equal(x.elements.get("sj-loading").hidden, true, "Spotify's own page counts as content");
+  assert.equal(x.elements.get("sj-tabs").items[0].title, "Spotify", "the tab takes Spotify's title");
+
+  // Inside Spotify, links and the address bar stay on Scramjet 2 in the same frame.
+  x.elements.get("sj-address").value = "open.spotify.com/search";
+  await x.submit();
+  assert.deepEqual(s.calls.at(-1), ["go", "https://open.spotify.com/search"]);
+  assert.equal(x.frames.length, 1);
+  s.land("https://open.spotify.com/search");
+  await x.elements.get("sj-back").dispatch("click");
+  assert.deepEqual(s.calls.at(-1), ["back"]);
+  await x.elements.get("sj-reload").dispatch("click");
+  assert.deepEqual(s.calls.at(-1), ["reload"]);
+});
+
+test("leaving Spotify for another site goes back to Scramjet 1.1", async () => {
+  const x = setup({ realUrls: true });
+  x.elements.get("sj-address").value = "open.spotify.com";
+  await x.submit();
+  const spotify = x.frames[0];
+  hostSpotify(spotify).land("https://open.spotify.com/");
+  x.elements.get("sj-address").value = "example.com";
+  await x.submit();
+  await x.advance(4000);
+  assert.equal(spotify.removed, true, "Spotify's Scramjet 2 page is closed");
+  assert.equal(x.frames.length, 2);
+  assert.equal(x.frames[1].dataset?.engine, undefined);
+  assert.equal(x.frames[1].url, "https://example.com");
+  assert.equal(x.transports[0][0], "/libcurl/index.mjs", "Scramjet 1.1 connects through BareMux as before");
+});
+
+test("a Scramjet 1.1 page that goes to Spotify reopens it on Scramjet 2", async () => {
+  const x = setup({ realUrls: true });
+  await x.submit();
+  await x.advance(4000);
+  const frame = x.frames[0];
+  // A link in a search result leads to Spotify.
+  frame.url = "https://open.spotify.com/track/1";
+  frame.contentWindow.location.href = "https://frontend.viztrrx.workers.dev/scramjet/" + encodeURIComponent(frame.url);
+  frame.dispatch("load");
+  await x.advance(4000);
+  assert.equal(frame.removed, true);
+  const spotify = x.frames.at(-1);
+  assert.equal(spotify.dataset.engine, "2");
+  assert.equal(new URLSearchParams(new URL(spotify.attrs.src, "https://f/").hash.slice(1)).get("url"), "https://open.spotify.com/track/1");
+});
+
+test("Spotify failing to connect retries once with the other transport", async () => {
+  const x = setup();
+  x.elements.get("sj-address").value = "open.spotify.com";
+  await x.submit();
+  x.sendNavStatusFor("/s2/", 0, "hyper client error");
+  await x.advance(4000);
+  const retry = x.frames.at(-1);
+  assert.notEqual(retry, x.frames[0]);
+  assert.equal(retry.dataset.engine, "2");
+  assert.equal(new URLSearchParams(new URL(retry.attrs.src, "https://f/").hash.slice(1)).get("transport"), "epoxy");
+});
+
+test("the Scramjet 2 beta build keeps Spotify in its own frames", async () => {
+  const x = setup({ engine: 2 });
+  x.elements.get("sj-address").value = "open.spotify.com";
+  await x.submit();
+  assert.equal(x.frames[0].dataset?.engine, undefined);
+  assert.equal(x.frames[0].url, "https://open.spotify.com");
 });
