@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, shrink-to-fit=no" />
+		<title>Spotify · Saints Search</title>
+		<style>
+			html, body { margin: 0; height: 100%; background: #131313; color: #e6e6e6; overflow: hidden; }
+			body { font: 16px/1.5 -apple-system, system-ui, sans-serif; }
+			iframe { display: block; width: 100%; height: 100%; border: 0; background: #fff; }
+			#s2-status { position: absolute; inset: 0; display: grid; place-items: center; padding: 16px; text-align: center; box-sizing: border-box; }
+			#s2-status[hidden] { display: none; }
+		</style>
+
+		<!-- Scramjet 2 lives under /s2/ (scripts/build.mjs), apart from Scramjet 1.1. -->
+		<script>self.saintsEngine2Base = "/s2";</script>
+		<script src="/s2/scram/scramjet.js"></script>
+		<script src="/s2/controller/controller.api.js"></script>
+		<script src="/s2/engine2.js"></script>
+
+		<script src="/config.js" defer></script>
+		<script src="/blocked.js" defer></script>
+		<script src="/sitefixes.js" defer></script>
+		<script src="/s2/host.js" defer></script>
+	</head>
+	<body>
+		<p id="s2-status" role="status">Starting Spotify…</p>
+	</body>
+</html>

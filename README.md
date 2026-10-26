@@ -92,6 +92,17 @@ youtube.com's own site is a heavy web-components app that doesn't render through
 - **One connection per visit.** The backend check, Scramjet, the service worker and the transport are set up once, when Saints Search finishes loading (with one small request to the backend's `/health` to start the TLS engine). Every site opened after that uses the same connection.
 - **Backend region.** For Florida, the backend should be in Render's **Virginia** region. Render can't move a service, so create a new one there, then set its address in `public/config.js`.
 
+## Spotify (Scramjet 2, production)
+
+Spotify only works through Scramjet 2, so production (`frontend`) opens Spotify's sites with Scramjet 2 and every other site with Scramjet 1.1, as before:
+
+- `public/spotify.js` lists Spotify's domains (`spotify.com` and its subdomains, `spotify.link`, `spoti.fi`, `spotify.app.link`, and Spotify's CDNs).
+- `pnpm build` also copies Scramjet 2 to `/s2/` (`/s2/scram/`, `/s2/controller/`, `/s2/libcurl/`, `/s2/epoxy/`). The page at `/s2/` (`public/s2/`) runs it with its own service worker, scoped to `/s2/`, so it never touches Scramjet 1.1's `/sw.js`.
+- A Spotify address (typed, the Spotify tile, or a link from another site) opens in a tab framing `/s2/`; any other address opens on Scramjet 1.1. Links inside a Spotify tab stay on Scramjet 2, so its sign-in pages keep the same cookies.
+- Saved sessions cover both engines: a session stores Scramjet 1.1's cookie jar (`cookies`), Scramjet 2's (`cookies2`, read and written in IndexedDB `__scramjet_controller` by `public/sessions.js`) and proxied sites' localStorage, which both engines keep as `<host>@<key>`. Sessions saved before this have no `cookies2` and resume with Spotify signed out.
+
+The beta build (`SCRAMJET_ENGINE=2`) is Scramjet 2 throughout and has no `/s2/`.
+
 ## Scramjet 2 beta (`frontend-beta`)
 
 The same site can be built on **Scramjet 2** (`@mercuryworkshop/scramjet` 2.0.67-alpha.2), the next version of the proxy engine, with many site fixes since 1.1. It runs as a second Worker, **`https://frontend-beta.viztrrx.workers.dev`**, so it can be compared with production before switching. Production is untouched.

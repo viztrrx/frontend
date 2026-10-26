@@ -5,7 +5,9 @@
 //
 // What signs you in to a proxied site lives on this origin: Scramjet's cookie
 // jar (in the service worker, see sw.js) and the site's localStorage, which
-// Scramjet keeps here under "<host>@<key>". A session is a snapshot of both,
+// Scramjet keeps here under "<host>@<key>". Production also runs Spotify on
+// Scramjet 2 (public/s2/), which has a cookie jar of its own in IndexedDB and
+// keeps localStorage the same way. A session is a snapshot of all of it,
 // saved per Saints account in R2 by the Worker (src/sessions.js). Resuming one
 // closes every tab, swaps the jar and the storage, and the next site you open
 // sees that session's sign-ins. The active session is saved again as you
@@ -107,6 +109,53 @@
     });
   }
 
+  // ---- Spotify's cookie jar (Scramjet 2, public/s2/) -------------------------
+  // Scramjet 2's controller keeps its jar in IndexedDB ("__scramjet_controller",
+  // store "state", key "cookies": {updatedAt, cookies}) on this origin, and
+  // reloads it in every open page when told on its BroadcastChannel. It's read
+  // and written here directly, so it works on a device that never opened
+  // Spotify yet. The Scramjet 2 beta build has no second jar: its service
+  // worker's jar (worker() above) is this one.
+  const JAR2_DB = "__scramjet_controller";
+  const JAR2_STORE = "state";
+  const JAR2_KEY = "cookies";
+  const JAR2_CHANNEL = "__scramjet_controller_channel";
+  const hasJar2 = () => globalThis.saintsEngine?.version !== 2 && !!globalThis.saintsSpotify && typeof indexedDB !== "undefined";
+  function jar2Request(mode, run) {
+    return new Promise((resolve, reject) => {
+      const open = indexedDB.open(JAR2_DB, 1);
+      open.onupgradeneeded = () => {
+        if (!open.result.objectStoreNames.contains(JAR2_STORE)) open.result.createObjectStore(JAR2_STORE);
+      };
+      open.onerror = () => reject(open.error || new Error("Spotify's cookie store couldn't be opened."));
+      open.onsuccess = () => {
+        const db = open.result;
+        try {
+          const tx = db.transaction(JAR2_STORE, mode);
+          const result = run(tx.objectStore(JAR2_STORE));
+          tx.oncomplete = () => { db.close(); resolve(result.result); };
+          tx.onerror = tx.onabort = () => { db.close(); reject(tx.error || new Error("Spotify's cookie store transaction was aborted.")); };
+        } catch (cause) { db.close(); reject(cause); }
+      };
+    });
+  }
+  async function dumpJar2() {
+    const state = await jar2Request("readonly", (store) => store.get(JAR2_KEY));
+    return state && typeof state.cookies === "string" ? state.cookies : "{}";
+  }
+  async function loadJar2(cookies) {
+    let text = "{}";
+    try {
+      const parsed = JSON.parse(typeof cookies === "string" && cookies ? cookies : "{}");
+      if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) text = JSON.stringify(parsed);
+    } catch {}
+    const current = await jar2Request("readonly", (store) => store.get(JAR2_KEY));
+    // Newer than anything a controller has, so open pages take this one.
+    const updatedAt = Math.max(Date.now(), ((current && current.updatedAt) || 0) + 1);
+    await jar2Request("readwrite", (store) => store.put({ updatedAt, cookies: text }, JAR2_KEY));
+    try { const channel = new BroadcastChannel(JAR2_CHANNEL); channel.postMessage({ updatedAt }); channel.close(); } catch {}
+  }
+
   // ---- Proxied sites' localStorage -----------------------------------------
   function proxiedKeys() {
     const keys = [];
@@ -135,12 +184,25 @@
 
   async function snapshot() {
     const { cookies } = await worker("dump");
+    const cookies2 = hasJar2() ? await dumpJar2() : undefined;
     const storage = readStorage();
     const sites = new Set();
-    try { for (const c of Object.values(JSON.parse(cookies || "{}"))) if (c && c.domain) sites.add(siteOf(c.domain)); } catch {}
+    for (const jar of [cookies, cookies2]) {
+      try { for (const c of Object.values(JSON.parse(jar || "{}"))) if (c && c.domain) sites.add(siteOf(c.domain)); } catch {}
+    }
     for (const k of Object.keys(storage)) sites.add(siteOf(k.slice(0, k.indexOf("@"))));
     sites.delete("");
-    return { cookies: cookies || "{}", storage, sites: [...sites].sort() };
+    return snap(cookies, cookies2, storage, [...sites].sort());
+  }
+  // A snapshot, in the same shape whether it was just taken or downloaded,
+  // so comparing their JSON says whether anything changed. cookies2 (Spotify's
+  // Scramjet 2 jar) is left out where there's no second jar (the beta build).
+  function snap(cookies, cookies2, storage, sites) {
+    const out = { cookies: cookies || "{}" };
+    if (hasJar2()) out.cookies2 = cookies2 || "{}";
+    out.storage = storage || {};
+    out.sites = sites || [];
+    return out;
   }
 
   // Saves the active session if it belongs to the signed-in account and
@@ -202,6 +264,7 @@
   }
   async function clearHere() {
     await worker("clear");
+    if (hasJar2()) await loadJar2("{}");
     replaceStorage({});
     lastSaved = "";
   }
@@ -213,9 +276,11 @@
       const d = await api("GET", "/" + s.id);
       closeTabs();
       await worker("load", { cookies: d.session.cookies || "{}" });
+      // Sessions saved before Spotify had its own jar have none: it starts empty.
+      if (hasJar2()) await loadJar2(d.session.cookies2 || "{}");
       replaceStorage(d.session.storage || {});
       writeActive({ user: account.user, id: s.id, name: d.session.name });
-      lastSaved = JSON.stringify({ cookies: d.session.cookies || "{}", storage: d.session.storage || {}, sites: d.session.sites || [] });
+      lastSaved = JSON.stringify(snap(d.session.cookies, d.session.cookies2, d.session.storage, d.session.sites));
       say("“" + d.session.name + "” is open. Sites you open now use its sign-ins.");
     });
   }

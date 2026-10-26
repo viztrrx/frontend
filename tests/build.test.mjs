@@ -67,6 +67,7 @@ test("SCRAMJET_ENGINE=2 builds the Scramjet 2 beta; the default build is Scramje
     assert.doesNotMatch(html, /baremux|scramjet\.all\.js/);
     assert.match(read("sw.js"), /importScripts\("\/controller\/controller\.sw\.js"\)/);
     assert.ok(!exists("sw2.js") && !exists("baremux/index.js"));
+    assert.ok(!exists("s2/index.html") && !exists("s2/scram/scramjet.js"), "the beta is Scramjet 2 throughout: no separate /s2/");
     for (const file of ["scram/scramjet.js", "scram/scramjet.wasm", "controller/controller.api.js", "controller/controller.sw.js", "controller/controller.inject.js", "libcurl/index.mjs", "epoxy/index.mjs"]) {
       assert.ok(exists(file), file);
     }
@@ -77,6 +78,25 @@ test("SCRAMJET_ENGINE=2 builds the Scramjet 2 beta; the default build is Scramje
   assert.match(read("index.html"), /scramjet\.all\.js/);
   assert.ok(!exists("engine2.js") && !exists("sw2.js"));
   assert.match(read("sw.js"), /ScramjetServiceWorker/);
+});
+
+test("production also ships Scramjet 2 at /s2/, for Spotify only", () => {
+  execFileSync(process.execPath, ["scripts/build.mjs"], { cwd: root, env: { ...process.env, SCRAMJET_ENGINE: "" }, stdio: "ignore" });
+  const read = (path) => readFileSync(new URL("dist/" + path, root), "utf8");
+  const exists = (path) => { try { readFileSync(new URL("dist/" + path, root)); return true; } catch { return false; } };
+  for (const file of ["s2/index.html", "s2/host.js", "s2/sw.js", "s2/engine2.js", "s2/scram/scramjet.js", "s2/scram/scramjet.wasm",
+    "s2/controller/controller.api.js", "s2/controller/controller.sw.js", "s2/controller/controller.inject.js", "s2/libcurl/index.mjs", "s2/epoxy/index.mjs", "spotify.js"]) {
+    assert.ok(exists(file), file);
+  }
+  // Scramjet 1.1 keeps "/" (its worker, scripts and BareMux) for every other site.
+  assert.match(read("index.html"), /<script src="\/scram\/scramjet\.all\.js"><\/script>/);
+  assert.match(read("index.html"), /<script src="spotify\.js" defer><\/script>[\s\S]*<script src="index\.js" defer><\/script>/);
+  assert.match(read("sw.js"), /ScramjetServiceWorker/);
+  assert.match(read("s2/sw.js"), /importScripts\("\/s2\/controller\/controller\.sw\.js"\)/);
+  const host = read("s2/index.html");
+  assert.match(host, /saintsEngine2Base = "\/s2"[\s\S]*\/s2\/scram\/scramjet\.js[\s\S]*\/s2\/controller\/controller\.api\.js[\s\S]*\/s2\/engine2\.js/);
+  assert.doesNotMatch(host, /baremux|scramjet\.all\.js/);
+  assert.match(read("s2/engine2.js"), /register\(BASE \+ "\/sw\.js", \{ scope: BASE \+ "\/" \}\)/);
 });
 
 test("the beta Worker is the same Worker code with its own name and sessions", () => {

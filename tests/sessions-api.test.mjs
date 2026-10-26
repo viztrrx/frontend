@@ -149,3 +149,15 @@ test("a refused sign-in says why, and a non-JSON answer is reported as unreachab
     globalThis.fetch = saved;
   }
 });
+
+test("Spotify's Scramjet 2 cookie jar (cookies2) is saved and resumed with the session", async () => {
+  const env = { SESSIONS: fakeBucket() };
+  const id = (await call(env, "POST", "/sessions", "tok-ivan", { name: "Music" })).data.session.id;
+  assert.equal((await call(env, "GET", "/sessions/" + id, "tok-ivan")).data.session.cookies2, "{}", "a new session starts with an empty jar");
+  const cookies2 = JSON.stringify({ "open.spotify.com@/@sp_t": { name: "sp_t", value: "y", domain: "open.spotify.com", path: "/" } });
+  assert.equal((await call(env, "PUT", "/sessions/" + id, "tok-ivan", { cookies2, sites: ["spotify.com"] })).status, 200);
+  const full = (await call(env, "GET", "/sessions/" + id, "tok-ivan")).data.session;
+  assert.equal(full.cookies2, cookies2);
+  assert.equal(full.cookies, "{}", "saving one jar leaves the other alone");
+  assert.equal((await call(env, "PUT", "/sessions/" + id, "tok-ivan", { cookies2: { not: "a string" } })).status, 400);
+});

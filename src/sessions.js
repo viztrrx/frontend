@@ -1,7 +1,8 @@
 // Saved proxy sessions, per Saints account, kept in R2.
 //
 // A session is what keeps someone signed in to sites they opened through the
-// proxy: Scramjet's cookie jar plus each site's localStorage. The page
+// proxy: Scramjet's cookie jar (cookies), Spotify's Scramjet 2 cookie jar
+// (cookies2, production only) and each site's localStorage. The page
 // (public/sessions.js) uploads a snapshot and downloads it again to resume.
 // Every request carries the Saints console sign-in token (X-GPA-Session); the
 // donnajbe Worker's /auth/me says which account it belongs to, and a request
@@ -128,7 +129,7 @@ async function write(bucket, key, record) {
 }
 
 // /sessions               GET list · POST create {name}
-// /sessions/<id>          GET snapshot · PUT save {name?, cookies?, storage?, sites?} · DELETE
+// /sessions/<id>          GET snapshot · PUT save {name?, cookies?, cookies2?, storage?, sites?} · DELETE
 export async function handleSessions(request, env, url) {
   const bucket = env.SESSIONS;
   if (!bucket) return fail(503, "Saved sessions aren't set up on this server (no SESSIONS bucket).");
@@ -158,7 +159,7 @@ export async function handleSessions(request, env, url) {
       const now = Date.now();
       const record = {
         v: 1, name: cleanName(body.data.name, "Session " + (existing.length + 1)),
-        createdAt: now, updatedAt: now, sites: [], cookies: "{}", storage: {},
+        createdAt: now, updatedAt: now, sites: [], cookies: "{}", cookies2: "{}", storage: {},
       };
       const id = randomId();
       await write(bucket, prefix + id + ".json", record);
@@ -187,6 +188,10 @@ export async function handleSessions(request, env, url) {
     if (d.cookies !== undefined) {
       if (typeof d.cookies !== "string") return fail(400, "cookies must be a string");
       record.cookies = d.cookies;
+    }
+    if (d.cookies2 !== undefined) {
+      if (typeof d.cookies2 !== "string") return fail(400, "cookies2 must be a string");
+      record.cookies2 = d.cookies2;
     }
     if (d.storage !== undefined) {
       if (!d.storage || typeof d.storage !== "object" || Array.isArray(d.storage)) return fail(400, "storage must be an object");
