@@ -102,3 +102,13 @@ test("frontendFetch under /px: the sessions API and its cookie stay under /px/se
   const root = await frontendFetch(new Request("https://w.example/sessions/auth/logout", { method: "POST" }), e);
   assert.match(root.headers.get("set-cookie"), /; Path=\/sessions;/);
 });
+
+test("frontendFetch under /px: logging out with a token keeps the cookie path, and AUTH_FETCH does the Saints call", async () => {
+  const e = env();
+  const calls = [];
+  e.AUTH_FETCH = async (url, init) => { calls.push([url, init.method || "GET", init.headers["X-GPA-Session"]]); return new Response("{}"); };
+  const r = await frontendFetch(new Request("https://w.example/px/sessions/auth/logout", { method: "POST", headers: { Cookie: "saints_px=tok123.sig456" } }), e, { base: "/px" });
+  assert.equal(r.status, 200);
+  assert.match(r.headers.get("set-cookie"), /; Path=\/px\/sessions;/);
+  assert.deepEqual(calls, [["https://donnajbe.viztrrx.workers.dev/auth/proxy-logout", "POST", "tok123.sig456"]]);
+});
