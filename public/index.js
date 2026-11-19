@@ -38,6 +38,34 @@ const GAMES_URL = "saints://games";
 const parentConsole =
   (typeof window !== "undefined" && window.parent && window.parent !== window &&
     typeof window.parent.postMessage === "function") ? window.parent : null;
+// Embedded mode (?embed=1, inside the console): the console draws its own
+// address bar and buttons. This page hides its toolbar, takes back, forward,
+// reload, home and games from the console ({saintsProxy:1, type:"command",
+// command}) and tells it what those buttons can do ({type:"state", …}).
+const embedMode = !!parentConsole && (() => {
+  try { return new URLSearchParams(location.search).get("embed") === "1"; } catch { return false; }
+})();
+if (embedMode) { try { document.body.classList.add("sb-embedded"); } catch {} }
+let lastState = "";
+function reportState() {
+  if (!embedMode) return;
+  try {
+    const state = {
+      url: blocked ? blocked.url : currentFrame ? (currentSite || lastUrl || "") : startPage === "games" ? GAMES_URL : HOME_URL,
+      title: document.title,
+      canBack: !!backButton && !backButton.disabled,
+      canForward: !!forwardButton && !forwardButton.disabled,
+      loading: !!toolbar?.classList?.contains("is-loading"),
+      busy: !!busy,
+    };
+    const key = JSON.stringify(state);
+    if (key === lastState) return;
+    lastState = key;
+    parentConsole.postMessage({ saintsProxy: 1, type: "state", ...state }, "*");
+  } catch {
+    // Called during startup before the page's state exists; the next change reports it.
+  }
+}
 let scramjetController = null;
 let lastReportedUrl = null;
 // What the user typed to reach the current page, when it was a search term
@@ -92,6 +120,14 @@ if (parentConsole && typeof window.addEventListener === "function") {
         fullscreenButton.title = label;
         fullscreenButton.setAttribute?.("aria-label", label);
       }
+      return;
+    }
+    // The console's own back/forward/reload/home/games buttons (embedded mode).
+    if (data.type === "command" && embedMode) {
+      if (data.command === "games") { void go(GAMES_URL); return; }
+      if (data.command === "state") { lastState = ""; reportState(); return; }
+      const button = { back: backButton, forward: forwardButton, reload: reloadButton, home: homeButton }[data.command];
+      if (button && !button.disabled) button.click();
       return;
     }
     if (data.type !== "navigate" || typeof data.query !== "string") return;
@@ -487,6 +523,7 @@ document.addEventListener?.("keydown", (event) => {
 function setLoading(on) {
   try { toolbar.classList?.toggle("is-loading", !!on); } catch {}
   try { view?.classList?.toggle("is-loading", !!on); } catch {}
+  reportState();
 }
 function setWarning(on) {
   try { view?.classList?.toggle("has-warning", !!on); } catch {}
@@ -504,6 +541,7 @@ function showAddress() {
       : startPage === "games" ? "Games · Saints Search" : "Saints Search";
   } catch {}
   renderTabs();
+  reportState();
 }
 function hostOf(url) {
   try { return new URL(url).hostname.replace(/^www\./, ""); } catch { return ""; }
@@ -511,6 +549,7 @@ function hostOf(url) {
 function syncNav() {
   if (backButton) backButton.disabled = !currentFrame;
   if (forwardButton) forwardButton.disabled = currentFrame ? forwardCount <= 0 : !homeForward;
+  reportState();
 }
 // Page area vs. saints://home.
 function showView(on) {
@@ -934,6 +973,9 @@ async function initializeController() {
       }
       const { ScramjetController } = $scramjetLoadController();
       const instance = new ScramjetController({
+        // Scramjet's default, spelled out so a build under a path (BASE=/px,
+        // scripts/base-path.mjs) moves it with everything else.
+        prefix: "/scramjet/",
         files: {
           wasm: "/scram/scramjet.wasm.wasm",
           all: "/scram/scramjet.all.js",

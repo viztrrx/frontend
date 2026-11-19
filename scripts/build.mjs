@@ -5,13 +5,24 @@ import { scramjetPath } from "@mercuryworkshop/scramjet/path";
 import { libcurlPath } from "@mercuryworkshop/libcurl-transport";
 import { epoxyPath } from "@mercuryworkshop/epoxy-transport";
 import { baremuxPath } from "@mercuryworkshop/bare-mux/node";
+import { resolve } from "node:path";
+import { pathToFileURL } from "node:url";
+import { normalizeBase, rewriteForBase } from "./base-path.mjs";
 
 // Which Scramjet to build: 1 (Scramjet 1.1 + BareMux, production) or 2
 // (Scramjet 2 alpha, the beta Worker; see wrangler.beta.jsonc).
 const engine = process.env.SCRAMJET_ENGINE === "2" ? 2 : 1;
 
-const out = new URL("../dist/", import.meta.url);
-await rm(out, { recursive: true, force: true });
+// BASE=/px builds the site to be served under a path (the Saints Worker
+// mounts it at /px/): the files go in dist/px/ and every absolute path the
+// site uses is moved under /px (scripts/base-path.mjs). No BASE: the site is
+// served at "/", exactly as before. OUT_DIR picks another output folder.
+const BASE = normalizeBase(process.env.BASE);
+if (BASE && engine === 2) throw new Error("BASE is only supported for the Scramjet 1.1 build.");
+
+const outRoot = process.env.OUT_DIR ? pathToFileURL(resolve(process.env.OUT_DIR) + "/") : new URL("../dist/", import.meta.url);
+const out = BASE ? new URL(BASE.slice(1) + "/", outRoot) : outRoot;
+await rm(outRoot, { recursive: true, force: true });
 await mkdir(out, { recursive: true });
 
 // Scramjet 2's packages are installed under aliases (package.json) next to
@@ -81,5 +92,9 @@ const version = {
   committedAt: git("log", "-1", "--format=%cI"),
   builtAt: new Date().toISOString(),
 };
-await writeFile(new URL("version.json", out), JSON.stringify(version, null, 2) + "\n");
-console.log("Scramjet " + (engine === 2 ? "2" : "1.1") + " frontend assets prepared in dist/ (" + (version.commit.slice(0, 7) || "unknown commit") + ")");
+await writeFile(new URL("version.json", out), JSON.stringify({ ...version, ...(BASE ? { base: BASE } : {}) }, null, 2) + "\n");
+if (BASE) {
+  const changed = await rewriteForBase(out, BASE);
+  console.log("Moved the site under " + BASE + "/ (" + changed + " paths in its own files)");
+}
+console.log("Scramjet " + (engine === 2 ? "2" : "1.1") + " frontend assets prepared in dist/" + (BASE ? BASE.slice(1) + "/" : "") + " (" + (version.commit.slice(0, 7) || "unknown commit") + ")");

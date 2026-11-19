@@ -32,6 +32,9 @@ body.ss {
 
 /* ---- Browser chrome (always on top; the page area starts below it) ---- */
 :root { --tabs-h: 40px; --chrome-h: calc(var(--tabs-h) + 52px + env(safe-area-inset-top, 0px)); }
+/* Embedded in the console (index.js embedMode): its own bar replaces this one. */
+body.sb-embedded { --chrome-h: 0px; }
+body.sb-embedded .sb-chrome { display: none; }
 .sb-chrome {
   position: fixed; z-index: 40; top: 0; left: 0; right: 0;
   padding-top: env(safe-area-inset-top, 0px);

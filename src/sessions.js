@@ -124,11 +124,11 @@ function cookieToken(request) {
   }
   return "";
 }
-// HttpOnly: no script on this origin can read it. Path=/sessions: it only
-// ever goes to this API, never to proxied pages (/scramjet/, /s2/).
-function setCookie(token, url) {
+// HttpOnly: no script on this origin can read it. Path=<base>/sessions: it
+// only ever goes to this API, never to proxied pages (/scramjet/, /s2/).
+function setCookie(token, url, base = "") {
   const secure = url.protocol === "https:" || url.hostname === "localhost" || url.hostname === "127.0.0.1" ? "; Secure" : "";
-  return COOKIE + "=" + token + "; Path=/sessions; HttpOnly" + secure + "; SameSite=Strict; Max-Age=" + (token ? COOKIE_MAX_AGE : 0);
+  return COOKIE + "=" + token + "; Path=" + base + "/sessions; HttpOnly" + secure + "; SameSite=Strict; Max-Age=" + (token ? COOKIE_MAX_AGE : 0);
 }
 // Tokens are "<base64url payload>.<base64url signature>".
 const TOKEN_RE = /^[A-Za-z0-9_-]{4,3000}\.[A-Za-z0-9_-]{4,200}$/;
@@ -199,11 +199,12 @@ async function write(bucket, key, record) {
 // /sessions/whoami        GET who the sign-in (header or cookie) is
 // /sessions/auth          POST {token}: keep a proxy-only token in the cookie
 // /sessions/auth/logout   POST: end that token and clear the cookie
-export async function handleSessions(request, env, url) {
+// base: where the site is mounted ("" at the root, "/px" in the Saints Worker).
+export async function handleSessions(request, env, url, base = "") {
   const bucket = env.SESSIONS;
   if (!bucket) return fail(503, "Saved sessions aren't set up on this server (no SESSIONS bucket).");
   if (request.headers.get("Origin") && request.headers.get("Origin") !== url.origin) return fail(403, "forbidden");
-  const rest = url.pathname.slice("/sessions".length).replace(/^\/+/, "");
+  const rest = url.pathname.slice((base + "/sessions").length).replace(/^\/+/, "");
 
   if (rest === "auth" || rest === "auth/logout") {
     if (request.method !== "POST") return fail(405, "method not allowed");
@@ -214,7 +215,7 @@ export async function handleSessions(request, env, url) {
         const base = String(env.AUTH_BASE || DEFAULT_AUTH_BASE).replace(/\/+$/, "");
         try { await fetch(base + "/auth/proxy-logout", { method: "POST", headers: { "X-GPA-Session": token } }); } catch {}
       }
-      return json({ ok: true }, 200, { "set-cookie": setCookie("", url) });
+      return json({ ok: true }, 200, { "set-cookie": setCookie("", url, base) });
     }
     const body = await readBody(request);
     if (body.error) return fail(400, body.error);
@@ -231,7 +232,7 @@ export async function handleSessions(request, env, url) {
     // stays with the console.
     if (auth.kind !== "proxy") return fail(400, "Sign in with your name and PIN here.");
     if (auth.needsStudentId) return fail(403, signInMessage("student_id"));
-    return json({ ok: true, user: auth.user }, 200, { "set-cookie": setCookie(auth.renewed || token, url) });
+    return json({ ok: true, user: auth.user }, 200, { "set-cookie": setCookie(auth.renewed || token, url, base) });
   }
 
   // The console's token (framed by it) comes first, then Saints Search's own cookie.
@@ -246,13 +247,13 @@ export async function handleSessions(request, env, url) {
     return fail(502, "Can't check your Saints sign-in right now (" + cause.message + ").");
   }
   // A cookie that no longer works is cleared, so the page shows the sign-in form.
-  const clear = viaCookie && token ? { "set-cookie": setCookie("", url) } : {};
+  const clear = viaCookie && token ? { "set-cookie": setCookie("", url, base) } : {};
   if (!auth.user) return json({ ok: false, error: signInMessage(auth.reason) }, 401, clear);
   // The console's rule: everyone but the owner has a student number on file.
   if (auth.needsStudentId) return json({ ok: false, error: signInMessage("student_id"), studentId: true }, 403, clear);
   const user = auth.user;
   // A proxy-only token past half its life comes back renewed: keep the new one.
-  const renew = viaCookie && auth.renewed ? { "set-cookie": setCookie(auth.renewed, url) } : {};
+  const renew = viaCookie && auth.renewed ? { "set-cookie": setCookie(auth.renewed, url, base) } : {};
   const answer = (data, status = 200) => json(data, status, renew);
 
   // SESSIONS_PREFIX keeps another deployment's sessions apart (the beta Worker).
