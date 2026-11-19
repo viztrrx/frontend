@@ -7,7 +7,7 @@ const source = readFileSync(new URL("../public/index.js", import.meta.url), "utf
 const blockSource = readFileSync(new URL("../public/blocked.js", import.meta.url), "utf8");
 const spotifySource = readFileSync(new URL("../public/spotify.js", import.meta.url), "utf8");
 
-function setup({ games = null, epoxyFails = false, libcurlFails = false, wispUrl = "wss://backend-rust-qr67.onrender.com/wisp/", socketFails = false, controllerFails = false, workerHang = false, transportHang = false, blankFrame = false, noLoad = false, storage = {}, versionFetch, embed = false, realUrls = false, engine = 1 } = {}) {
+function setup({ games = null, epoxyFails = false, libcurlFails = false, wispUrl = "wss://backend-rust-qr67.onrender.com/wisp/", socketFails = false, controllerFails = false, workerHang = false, transportHang = false, blankFrame = false, noLoad = false, storage = {}, versionFetch, embed = false, embedMode = false, realUrls = false, engine = 1 } = {}) {
   const posts = [];
   const winMessage = { fns: [], fn: (event) => winMessage.fns.forEach((f) => f(event)) };
   const elements = new Map();
@@ -26,6 +26,7 @@ function setup({ games = null, epoxyFails = false, libcurlFails = false, wispUrl
       textContent: "", value: "", disabled: false, removed: false,
       addEventListener: (kind, fn) => callbacks.set(kind, fn),
       dispatch: (kind, event = {}) => callbacks.get(kind)?.({ preventDefault() {}, ...event }),
+      click() { return this.dispatch("click"); },
       attrs: {},
       setAttribute(k, v) { this.attrs[k] = v; },
       style: {},
@@ -53,11 +54,12 @@ function setup({ games = null, epoxyFails = false, libcurlFails = false, wispUrl
     { value: "https://www.google.com/search?q=%s" }, { value: "https://duckduckgo.com/?q=%s" },
   ];
   const assigned = [];
+  const bodyClasses = new Set();
   elements.get("sj-address").value = "example.com";
   const document = {
     activeElement: null,
     getElementById: (id) => elements.get(id),
-    body: { appendChild: (node) => frames.push(node) },
+    body: { appendChild: (node) => frames.push(node), classList: { add: (c) => bodyClasses.add(c) } },
     createElement: () => {
       const callbacks = new Map();
       const node = {
@@ -156,7 +158,7 @@ function setup({ games = null, epoxyFails = false, libcurlFails = false, wispUrl
     search: (value) => "https://" + value,
     URL,
     URLSearchParams,
-    location: { href: "https://frontend.viztrrx.workers.dev/", assign: (url) => assigned.push(url) },
+    location: { href: "https://frontend.viztrrx.workers.dev/" + (embedMode ? "?embed=1" : ""), search: embedMode ? "?embed=1" : "", assign: (url) => assigned.push(url) },
     localStorage: {
       getItem: (key) => (key in storage ? storage[key] : null),
       setItem: (key, value) => { storage[key] = String(value); },
@@ -196,6 +198,8 @@ function setup({ games = null, epoxyFails = false, libcurlFails = false, wispUrl
     message: (event) => winMessage.fn(event),
     navigate: (query) => winMessage.fn?.({ source: ctx.window.parent, data: { saintsProxy: 1, type: "navigate", query } }),
     chrome: (opts) => winMessage.fn?.({ source: ctx.window.parent, data: { saintsProxy: 1, type: "chrome", ...opts } }),
+    command: (command) => winMessage.fn?.({ source: ctx.window.parent, data: { saintsProxy: 1, type: "command", command } }),
+    bodyClasses,
     websocketCount: () => websocketCount,
     submit: () => elements.get("sj-form").dispatch("submit"),
     sendNavStatusFor(path, status, message = "") {
@@ -1148,4 +1152,46 @@ test("games: an online game takes the keyboard once its page loads", async () =>
   frame.focus = () => { focused = true; };
   frame.dispatch("load");
   assert.equal(focused, true, "WASD and arrows go to the game without a click first");
+});
+
+// ---- Embedded mode (?embed=1): the console's bar drives this page ----
+const states = (x) => x.posts.filter((m) => m.type === "state");
+test("embedded mode: hides its own toolbar and reports what the console's buttons can do", async () => {
+  const x = setup({ embed: true, embedMode: true });
+  assert.ok(x.bodyClasses.has("sb-embedded"));
+  x.command("state");
+  assert.deepEqual({ ...states(x).at(-1) }, { saintsProxy: 1, type: "state", url: "saints://home", title: "Saints Search", canBack: false, canForward: false, loading: false, busy: false });
+  await x.submit();
+  await x.advance(4000);
+  const open = states(x).at(-1);
+  assert.equal(open.url, "https://example.com/");
+  assert.equal(open.canBack, true);
+  assert.equal(open.loading, false);
+});
+
+test("embedded mode: back, home and games come from the console", async () => {
+  const x = setup({ embed: true, embedMode: true });
+  await x.submit();
+  await x.advance(4000);
+  x.command("back");             // the first page goes back to saints://home
+  await x.advance(0);
+  assert.equal(states(x).at(-1).url, "saints://home");
+  assert.equal(states(x).at(-1).canBack, false);
+  x.command("games");
+  await x.advance(0);
+  assert.equal(states(x).at(-1).url, "saints://games");
+  x.command("home");
+  await x.advance(0);
+  assert.equal(states(x).at(-1).url, "saints://home");
+  x.command("nonsense");         // ignored
+});
+
+test("embed=1 does nothing outside a console frame, and no state is sent without it", async () => {
+  const solo = setup({ embedMode: true });
+  assert.ok(!solo.bodyClasses.has("sb-embedded"));
+  const framed = setup({ embed: true });
+  await framed.submit();
+  await framed.advance(4000);
+  assert.ok(!framed.bodyClasses.has("sb-embedded"));
+  assert.equal(states(framed).length, 0);
 });

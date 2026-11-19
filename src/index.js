@@ -48,9 +48,9 @@ async function iconResponse(url) {
 // read from config.js, the file the browser uses, so moving the backend only
 // means changing wispUrl there.
 const FALLBACK_HEALTH_URL = "https://backend-rust-qr67.onrender.com/health";
-export async function backendHealthUrl(env) {
+export async function backendHealthUrl(env, { base = "" } = {}) {
   try {
-    const r = await env.ASSETS.fetch("https://assets.local/config.js");
+    const r = await env.ASSETS.fetch("https://assets.local" + base + "/config.js");
     const m = /wispUrl\s*:\s*["']([^"']+)["']/.exec(await r.text());
     if (m) {
       const u = new URL(m[1]);
@@ -62,8 +62,8 @@ export async function backendHealthUrl(env) {
   } catch {}
   return FALLBACK_HEALTH_URL;
 }
-export async function pingBackend(env) {
-  const url = await backendHealthUrl(env);
+export async function pingBackend(env, { base = "" } = {}) {
+  const url = await backendHealthUrl(env, { base });
   const started = Date.now();
   try {
     // Waking from sleep can take most of a minute.
@@ -80,8 +80,8 @@ export async function pingBackend(env) {
 // Cloudflare serves static files up to 25 MiB, but two game data files are
 // bigger (Drift, Duck Life 4). They're stored as <file>.part0, .part1, … and
 // streamed back as the one file the game asks for (game-parts.json lists them).
-async function joinedGameFile(request, env, url) {
-  const entry = GAME_PARTS[url.pathname];
+async function joinedGameFile(request, env, url, path = url.pathname) {
+  const entry = GAME_PARTS[path];
   if (request.method !== "GET" && request.method !== "HEAD") return new Response("method not allowed", { status: 405 });
   const headers = new Headers({
     "content-type": "application/octet-stream",
@@ -105,29 +105,46 @@ async function joinedGameFile(request, env, url) {
   return new Response(readable, { status: 200, headers });
 }
 
+// Files that must never be served stale after a deployment (boot scripts,
+// configuration, service workers), as paths inside the site.
+const NO_STORE = ["/config.js", "/index.js", "/sessions.js", "/blocked.js", "/sitefixes.js", "/youtube.js", "/register-sw.js", "/sw.js", "/version.json", "/spotify.js", "/s2/", "/s2/index.html", "/s2/host.js", "/s2/engine2.js", "/s2/sw.js"];
+
+// The whole site. base: where it is mounted ("" at the root, as this Worker
+// serves it; "/px" when the Saints Worker serves it, with a build made with
+// BASE=/px so the files sit under px/ in its assets). Returns null for a path
+// outside the base, so a host Worker can fall through to its own routes.
+export async function frontendFetch(request, env, { base = "" } = {}) {
+  const url = new URL(request.url);
+  if (base) {
+    if (url.pathname === base) return Response.redirect(url.origin + base + "/" + url.search, 308);
+    if (!url.pathname.startsWith(base + "/")) return null;
+  }
+  const path = url.pathname.slice(base.length);   // the path inside the site
+  if (path === "/icon") return iconResponse(url);
+  if (path === "/sessions" || path.startsWith("/sessions/")) {
+    return handleSessions(request, env, url, base);
+  }
+
+  const response = Object.hasOwn(GAME_PARTS, path)
+    ? await joinedGameFile(request, env, url, path)
+    : await env.ASSETS.fetch(request);
+  const headers = new Headers(response.headers);
+  // Match the isolation headers used by Scramjet-App's original server.
+  headers.set("Cross-Origin-Opener-Policy", "same-origin");
+  headers.set("Cross-Origin-Embedder-Policy", "require-corp");
+  // Avoid stale configuration, boot scripts and service worker code after deployment.
+  if (NO_STORE.includes(path)) {
+    headers.set("Cache-Control", "no-store");
+  }
+  return new Response(response.body, { status: response.status, headers });
+}
+
 export default {
   async scheduled(event, env, ctx) {
     ctx.waitUntil(pingBackend(env));
   },
 
   async fetch(request, env) {
-    const url = new URL(request.url);
-    if (url.pathname === "/icon") return iconResponse(url);
-    if (url.pathname === "/sessions" || url.pathname.startsWith("/sessions/")) {
-      return handleSessions(request, env, url);
-    }
-
-    const response = Object.hasOwn(GAME_PARTS, url.pathname)
-      ? await joinedGameFile(request, env, url)
-      : await env.ASSETS.fetch(request);
-    const headers = new Headers(response.headers);
-    // Match the isolation headers used by Scramjet-App's original server.
-    headers.set("Cross-Origin-Opener-Policy", "same-origin");
-    headers.set("Cross-Origin-Embedder-Policy", "require-corp");
-    // Avoid stale configuration, boot scripts and service worker code after deployment.
-    if (["/config.js", "/index.js", "/sessions.js", "/blocked.js", "/sitefixes.js", "/youtube.js", "/register-sw.js", "/sw.js", "/version.json", "/spotify.js", "/s2/", "/s2/index.html", "/s2/host.js", "/s2/engine2.js", "/s2/sw.js"].includes(url.pathname)) {
-      headers.set("Cache-Control", "no-store");
-    }
-    return new Response(response.body, { status: response.status, headers });
+    return frontendFetch(request, env);
   },
 };
