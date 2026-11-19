@@ -20,6 +20,10 @@
 // public one (SESSIONS_LEGACY) move over the first time their account is seen.
 
 const DEFAULT_AUTH_BASE = "https://donnajbe.viztrrx.workers.dev";
+// How sign-ins are checked with the Saints Worker. When the Saints Worker
+// serves this site itself (mounted at /px), it passes env.AUTH_FETCH, its own
+// request handler, so the check never goes back out over the network.
+const authFetch = (env) => (typeof env.AUTH_FETCH === "function" ? env.AUTH_FETCH : fetch);
 const COOKIE = "saints_px";
 const COOKIE_MAX_AGE = 14 * 24 * 3600;   // the token's own lifetime
 const PREFIX = "proxy-sessions/";
@@ -63,7 +67,7 @@ async function accountFor(token, env) {
   const ask = async (path) => {
     let r;
     try {
-      r = await fetch(base + path, { headers: { "X-GPA-Session": token } });
+      r = await authFetch(env)(base + path, { headers: { "X-GPA-Session": token } });
     } catch (cause) {
       throw new Error("unreachable (" + (cause && cause.message || cause) + ")");
     }
@@ -212,8 +216,8 @@ export async function handleSessions(request, env, url, base = "") {
       const token = cookieToken(request);
       if (token) {
         authCache.delete(token);
-        const base = String(env.AUTH_BASE || DEFAULT_AUTH_BASE).replace(/\/+$/, "");
-        try { await fetch(base + "/auth/proxy-logout", { method: "POST", headers: { "X-GPA-Session": token } }); } catch {}
+        const authBase = String(env.AUTH_BASE || DEFAULT_AUTH_BASE).replace(/\/+$/, "");
+        try { await authFetch(env)(authBase + "/auth/proxy-logout", { method: "POST", headers: { "X-GPA-Session": token } }); } catch {}
       }
       return json({ ok: true }, 200, { "set-cookie": setCookie("", url, base) });
     }
